@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="GB18030"?>
+<project basedir="." default="zip" name="DBMigrationTool">
+	<property name="dbmt.build" value="${basedir}\build" />
+	<property name="dbmt.jar.name" value="DBMigrationTools.jar" />
+	<property name="dbmt.jar.mainclass" value="org.ybygjy.ui.UIDataMigration" />
+	<property name="dbmt.compile.src" value="${basedir}\src" />
+	<property name="dbmt.compile.classes" value="${dbmt.build}\classes" />
+	<property name="dbmt.compile.lib" value="${dbmt.build}\lib" />
+	<property name="dbmt.zip.fileName" value="${dbmt.build}\DMT_Beta1.4.zip" />
+	<path id="dbmt.compile.path">
+		<fileset dir="${dbmt.compile.lib}">
+			<include name="**/*.jar" />
+		</fileset>
+	</path>
+	<target name="javac">
+		<javac srcdir="${dbmt.compile.src}" destdir="${dbmt.compile.classes}" debug="on" target="1.5">
+			<classpath refid="dbmt.compile.path" />
+			<include name="**/*.java" />
+		</javac>
+	</target>
+	<target name="jar" depends="javac">
+		<jar destfile="${dbmt.build}/${dbmt.jar.name}">
+			<fileset dir="${dbmt.compile.classes}">
+				<include name="**/*" />
+			</fileset>
+			<manifest>
+				<attribute name="Main-Class" value="${dbmt.jar.mainclass}" />
+			</manifest>
+		</jar>
+	</target>
+	<target name="zip" depends="jar">
+		<zip destfile="${dbmt.zip.fileName}" encoding="GBK" whenempty="fail" update="true">
+			<fileset dir="${dbmt.build}">
+				<include name="run.bat"/>
+				<include name="${dbmt.jar.name}"/>
+			</fileset>
+			<zipfileset dir="${dbmt.compile.lib}" prefix="lib">
+				<exclude name="**/*.svn" />
+			</zipfileset>
+		</zip>
+	</target>
+</project>
