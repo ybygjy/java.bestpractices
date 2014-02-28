@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+PUBLIC "-//iBATIS.com//DTD SQL Map 2.0//EN"
+"http://www.ibatis.com/dtd/sql-map-2.dtd">
+<sqlMap namespace="User">
+	<typeAlias alias="loanLog" type="org.ybygjy.ibatis.LoanLog"/>
+	<typeAlias alias="user" type="org.ybygjy.ibatis.User"/>
+	<resultMap id="getUserMap" class="user">
+		<result property="userId" column="userId"/>
+		<result property="userName" column="userName"/>
+		<result property="passWord" column="passWord"/>
+		<result property="userNo" column="userNo"/>
+		<result property="companyName" column="T_COMPANY.companyName"/>
+		<result property="loanLoges" column="userId" select="getLoanLoges"/>
+	</resultMap>
+	<select id="getUser"
+		parameterClass="user"
+		resultMap="getUserMap">
+	<![CDATA[
+		select userName, userId, passWord,emplName as userNo, T_COMPANY.companyName from t_user LEFT JOIN T_COMPANY ON T_USER.companyId=T_COMPANY.companyId
+	]]>
+		<dynamic prepend="WHERE">
+			<isNotEmpty prepend="AND" property="userId">
+				<![CDATA[userId=#userId#]]>
+				<isNull prepend="AND" property="userName">
+					<![CDATA[userName like '%']]>
+				</isNull>
+			</isNotEmpty>
+		</dynamic>
+	</select>
+	<select id="getLoanLoges"
+		parameterClass="java.lang.Integer"
+		resultClass="loanLog">
+	<![CDATA[
+		select * from t_loanlog where readerId=#userId#
+	]]>
+	</select>
+	<select id="getUserById"
+		parameterClass="user"
+		resultClass="user">
+	<![CDATA[
+		select userName, userId, passWord from t_user where userId=#userId#
+	]]>
+	</select>
+	<update id="updateUserName"
+		parameterClass="user">
+	<![CDATA[UPDATE t_user SET emplName=#userName#,userName=#userName# WHERE userId = #userId#]]>
+	</update>
+	<update id="updateUserNo"
+		parameterClass="user">
+	<![CDATA[UPDATE t_user SET emplNo=#userNo# WHERE userId = #userId#]]>
+	</update>
+	<delete id="deleteUser" parameterClass="java.lang.String">
+		<![CDATA[ delete from t_user where id = #userId# ]]>
+	</delete>
+</sqlMap>

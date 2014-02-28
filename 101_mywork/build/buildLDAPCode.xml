@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AutoTest" default="checkOutLDAPCode" basedir=".">
+	<!--源文件目录 Begin-->
+	<property name="src" value="../src" />
+	<property name="test" value="../test" />
+	<property name="output" value="output" />
+	<target name="checkOutLDAPCode">
+		<zip destfile="${output}/LDAPTestCode.rar">
+			<fileset dir="${src}">
+				<filename name="**/jndi/**"/>
+			</fileset>
+			<fileset dir="${test}">
+				<filename name="**/jndi/**"/>
+			</fileset>
+		</zip>
+	</target>
+</project>

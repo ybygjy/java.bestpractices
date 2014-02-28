@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." name="SimpleTask" default="main">
+	<property name="classes.dir" value="D:\work\workspace\mywork\webRoot\WEB-INF\classes"/>
+	<target name="jar">
+		<jar destfile="${ant.project.name}.jar" basedir="${classes.dir}"></jar>
+	</target>
+	<target name="main" depends="jar">
+		<taskdef name="SimpleTask" classname="org.ybygjy.ant.SimpleTask" classpath="${ant.project.name}.jar"></taskdef>
+		<SimpleTask>
+			<FileList path="ABC"/>
+			<FileList path="DEF"/>
+		</SimpleTask>
+	</target>
+</project>

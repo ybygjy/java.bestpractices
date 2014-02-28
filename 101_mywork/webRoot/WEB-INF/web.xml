@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
+	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<!-- Root server Begin -->
+	<servlet>
+		<servlet-name>StartupServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.StartupServlet</servlet-class>
+		<init-param>
+			<param-name>logConf</param-name>
+			<param-value>WEB-INF/classes/log4j.properties</param-value>
+		</init-param>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>ContextServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.Servlet</servlet-class>
+		<load-on-startup>0</load-on-startup>
+	</servlet>
+	<servlet>
+		<servlet-name>SingleThreadServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.SingleThreadServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>JQueryAjaxServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.ajax.JQueryAjax</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>FormServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.servlet.FormServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>HttpClientServlet</servlet-name>
+		<servlet-class>org.ybygjy.web.servlet.HttpClientServlet</servlet-class>
+	</servlet>
+	<!-- Root server End -->
+	<servlet-mapping>
+		<servlet-name>ContextServlet</servlet-name>
+		<url-pattern>/org.ybygjy.Servlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>SingleThreadServlet</servlet-name>
+		<url-pattern>/singleThreadServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>JQueryAjaxServlet</servlet-name>
+		<url-pattern>/org.ybygjy.web.ajax.JQueryAjax</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>FormServlet</servlet-name>
+		<url-pattern>/org.ybygjy.servlet.FormServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>HttpClientServlet</servlet-name>
+		<url-pattern>/org.ybygjy.web.servlet.HttpClientServlet</url-pattern>
+	</servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>login.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AutoTest" default="JUnitReport" basedir=".">
+	<!--源文件目录 Begin-->
+	<property name="src" value="../src" />
+	<property name="test" value="../test" />
+	<property name="output" value="output" />
+	<!--源文件目录 End-->
+	<!--第三方Jar包 Begin-->
+	<property name="root" value="../webRoot" />
+	<property name="lib" value="${root}\WEB-INF\lib" />
+	<!--第三方Jar包 End-->
+	<!--测试结果 Begin-->
+	<property name="reportDir" value="${root}\TESTREPORT" />
+	<!--测试结果 End-->
+	<target name="init" depends="destroy">
+		<mkdir dir="${reportDir}" />
+		<mkdir dir="${output}" />
+		<echo message="环境初始" />
+	</target>
+	<target name="destroy">
+		<delete dir="${output}"/>
+	</target>
+	<!--编译Begin-->
+	<target name="compileSrc">
+		<echo message="开始全部源码编译.." />
+		<javac srcdir="${src}" destdir="${output}" debug="on" nowarn="true">
+			<exclude name="**/ibatis/**" />
+			<exclude name="**/log4j/**" />
+			<exclude name="**/xml/**" />
+			<exclude name="**/net/**" />
+			<exclude name="**/file/**" />
+			<exclude name="**/collect/**" />
+			<exclude name="**/web/**" />
+			<classpath>
+				<pathelement path="${classpath}" />
+				<fileset dir="${lib}" includes="**/*.jar" />
+			</classpath>
+		</javac>
+		<echo message="全部源码编译完毕.." />
+	</target>
+	<target name="compileTest" depends="compileSrc">
+		<echo message="开始编译单元测试源码.." />
+		<javac srcdir="${test}" destdir="${output}" debug="on">
+			<exclude name="**/ibatis/**" />
+			<exclude name="**/log4j/**" />
+			<exclude name="**/xml/**" />
+			<exclude name="**/net/**" />
+			<exclude name="**/file/**" />
+			<exclude name="**/collect/**" />
+			<exclude name="**/web/**" />
+			<classpath>
+				<fileset dir="${output}" includes="*.*" />
+				<fileset dir="${lib}" includes="**/*.jar" />
+				<fileset dir="lib" includes="**/*.jar"/>
+				<pathelement path="${classpath}" />
+			</classpath>
+		</javac>
+		<echo message="编译单元测试源码完毕.." />
+	</target>
+	<!--编译End-->
+	<target name="JUnitReport" depends="init,compileTest">
+		<junit printsummary="on" fork="true" showoutput="true">
+			<classpath>
+				<pathelement path="${output}" />
+				<fileset dir="lib" includes="**/*.jar"/>
+			</classpath>
+			<!--
+			<formatter type="plain"/>
+			-->
+			<formatter type="xml" />
+			<batchtest todir="${reportDir}">
+				<fileset dir="${output}">
+					<include name="**/*Test*" />
+				</fileset>
+			</batchtest>
+		</junit>
+		<junitreport todir="${reportDir}">
+			<fileset dir="${reportDir}">
+				<include name="TEST-*.xml" />
+			</fileset>
+			<report format="frames" todir="${reportDir}\webReport" />
+		</junitreport>
+	</target>
+</project>

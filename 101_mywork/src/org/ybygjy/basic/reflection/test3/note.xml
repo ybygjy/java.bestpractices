@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<desc>描述某一实体类在没有gett/sett方法的情况下,利用反射机制赋值的可行性.</desc>
+</root>

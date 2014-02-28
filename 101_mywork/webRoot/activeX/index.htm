@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+	#mainDiv{width:1000px;height:1000px;margin:0px auto;padding:0px auto;background:#abcdef;}
+	#contentDiv{width:100%;background:gray;border:1px solid blue;}
+</style>
+<script language="javaScript">
+	window.$=function(id) {
+		return typeof id == "string" ? document.getElementById(id):id;
+	}
+	var currPageInst = function() {
+		return {
+			doDebug:function() {
+				try {
+					var tmpResult = activeXComp.interactiveMethod();
+					alert("返回内容:" + tmpResult.toString());
+				}catch(e) {
+					alert(e.message);
+				}
+			}
+		};
+	}();
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+	<div id="contentDiv">
+		<div id="contentDiv_Top">
+			<input id="debugBtn" type="button" value="测试" onclick="currPageInst.doDebug()" />
+			<a href="HaydenActiveX.cab">下载CAB</a>
+		</div>
+		<div id="contentDiv_Center">
+<!--			<object id="activeXComp" classid="clsid:655BC3B4-2239-45f7-B53F-01250F49341A" codebase="ActiveX4CAB.CAB"></object>-->
+			<object id="activeXComp" classid="clsid:5820AA85-9D1E-4091-853D-D86EAA84BCBD" codebase="http://192.168.1.235:8090/activeX/ActiveX.cab"></object>
+		</div>
+	</div>
+</div>
+</body>
+</html>

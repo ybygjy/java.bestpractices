@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="GB18030"?>
+<project basedir="." default="retrieve"  xmlns:ivy="antlib:org.apache.ivy.ant">
+	<property name="build.dir" value="build"/>
+	<property name="build.src.java.dir" value="${basedir}\src\java"/>
+	<property name="build.src.test.dir" value="${basedir}\src\test"/>
+	<property name="build.compile.lib" value="${build.dir}\lib"/>
+	<property name="build.compile.dir" value="${build.dir}\classes"/>
+	<property name="build.jar.filename" value="mywork"/>
+	<property name="build.jar.version" value="1.0"/>
+	<property name="build.web.dir" value="${basedir}\webRoot"/>
+	<property name="build.web.classes" value="${build.web.dir}\WEB-INF\classes"/>
+	<property name="build.web.lib" value="${build.web.dir}\WEB-INF\lib"></property>
+	<!--
+	<property name="ivy.default.ivy.user.dir" value="D:\DEV\env\apache-ivy-2.2.0\tmp"/>
+	-->
+	<path id="build.compile.path">
+		<fileset dir="${build.compile.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<target name="retrieve" >
+		<!--
+		<ivy:retrieve sync="true" type="jar" pattern="lib/[conf]/[artifact]-[revision].[ext]"/>
+		-->
+		<ivy:retrieve pattern="${build.compile.lib}/[conf]/[type]/[artifact]-[revision]-[type].[ext]"/>
+	</target>
+	<target name="task.ivy.resolve">
+		<ivy:resolve transitive="true"/>
+	</target>
+	<target name="task.prepare">
+		<delete dir="${build.compile.dir}"/>
+		<mkdir dir="${build.compile.dir}"/>
+		<antcall target="retrieve"/>
+	</target>
+	<target name="javac" depends="task.prepare">
+		<javac srcdir="${build.src.java.dir}" destdir="${build.compile.dir}" verbose="true" encoding="UTF-8">
+			<classpath refid="build.compile.path"/>
+		</javac>
+	</target>
+	<target name="jar" depends="javac">
+		<jar destfile="${build.dir}\${build.jar.filename}.jar">
+			<fileset dir="${build.compile.dir}">
+			</fileset>
+			<manifest>
+				<attribute name="Manifest-Version" value="1.0"/>
+				<attribute name="Implementation-Title" value="${build.jar.filename}"/>
+				<attribute name="Implementation-Vendor" value="ybygjy"/>
+				<attribute name="Implementation-Vendor-Id" value="org.ybygjy"/>
+				<attribute name="Implementation-Version" value="3.0"/>
+			</manifest>
+		</jar>
+		<antcall target="task.jar.after"></antcall>
+	</target>
+</project>
