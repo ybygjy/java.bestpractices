@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Table学习001</title>
+	</head>
+	<body>
+	<form id="page.mainform" method="post" action="/org.ybygjy.servlet.FormServlet">
+		<div>
+			<input type="button" id="submitBtn" value="提交"/>
+			<input type="button" id="addBtn" value="添加"/>
+			<input type="button" id="delBtn" value="删除"/>
+		</div>
+		<div>
+			<h4>第一个表格</h4>
+			<table border="1">
+				<caption>表格头</caption>
+				<thead>
+					<tr>
+						<th>H1</th>
+						<th>H2</th>
+						<th>H3</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td>Foot 1</td>
+						<td>Foot 2</td>
+						<td>Foot 3</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>A</td>
+						<td>B</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>E</td>
+						<td>F</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div>
+			<h4>第二个表格</h4>
+			<table border="1">
+				<caption>Table caption here</caption>
+				<colgroup span="1"/>
+				<colgroup span="2"/>
+				<thead>
+					<tr>
+						<th>Head1</th>
+						<th>Head2</th>
+						<th>Head3</th>
+					</tr>
+				</thead>
+				<tfoot>
+					<tr>
+						<td>Foot 1</td>
+						<td>Foot 2</td>
+						<td>Foot 3</td>
+					</tr>
+				</tfoot>
+				<tbody>
+					<tr>
+						<td>A</td>
+						<td>B</td>
+						<td>C</td>
+					</tr>
+					<tr>
+						<td>D</td>
+						<td>E</td>
+						<td>F</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	</body>
+	<script type="text/javascript" src="org.ybygjy.page.js"></script>
+	<script type="text/javascript">
+		window.onload=function() {
+			if (page) {
+				page.bindAction('submitBtn',function(){
+					$('page.mainform').submit();
+				});
+			}
+		}
+	</script>
+</html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Build CopyFile" default="main" basedir=".">
+	<property name="classes.dir" value="F:\work\nstc\2_事务\007_集成工具\IniBuilder\bin"/>
+	<property name="src.dir" value="F:\work\nstc\2_事务\007_集成工具\IniBuilder\src"/>
+	<path id="taskdef.path">
+		<fileset dir="${basedir}\lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<target name="jar">
+		<jar destfile="${basedir}\lib\nstc.comparefolder.jar">
+			<fileset dir="${classes.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+			<fileset dir="${src.dir}">
+				<include name="**/*.*"/>
+			</fileset>
+		</jar>
+	</target>
+	<target name="main" depends="jar">
+		<echo>Over</echo>
+		<taskdef name="nstc.comparefolder" classname="com.nstc.adapter.FileCompareTask" classpathref="taskdef.path" loaderref="taskdef.path.loader"></taskdef>
+		<nstc.comparefolder source="D:/test/1/CRM" target="D:/test/2/CRM" confPath="D:/test" outputPath="D:/test"/>
+	</target>
+</project>

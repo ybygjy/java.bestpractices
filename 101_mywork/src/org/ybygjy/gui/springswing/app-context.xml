@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN"
+"http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<bean id="mainFrame" class="org.ybygjy.gui.springswing.MainFrame" init-method="init">
+		<property name="title">
+			<value>SpringSwingIOC</value>
+		</property>
+		<property name="contentPane">
+			<ref bean="mainPanel"/>
+		</property>
+	</bean>
+	<bean id="mainPanel" class="org.ybygjy.gui.springswing.comp.BoxLayoutPanel" init-method="init">
+		<property name="axis">
+			<value>1</value>
+		</property>
+		<property name="panelComponents">
+			<list>
+				<ref bean="itemScrollPane"/>
+				<ref bean="buttonPanel"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="itemScrollPane" class="javax.swing.JScrollPane">
+		<constructor-arg>
+			<ref bean="itemTable"/>
+		</constructor-arg>
+	</bean>
+	<bean id="itemTable" class="javax.swing.JTable">
+		<property name="model">
+			<ref bean="itemTableModel"/>
+		</property>
+	</bean>
+	<bean id="itemTableModel" class="org.ybygjy.gui.springswing.comp.ItemTableModel">
+		<property name="itemList">
+			<ref bean="itemList"/>
+		</property>
+	</bean>
+	<bean name="itemList" class="java.util.ArrayList">
+		<constructor-arg>
+			<list>
+				<value>Item 1</value>
+				<value>Item 2</value>
+				<value>Item 3</value>
+				<value>Item 4</value>
+			</list>
+		</constructor-arg>
+	</bean>
+	<bean id="buttonPanel" class="org.ybygjy.gui.springswing.comp.BoxLayoutPanel" init-method="init">
+		<property name="axis">
+			<value>0</value>
+		</property>
+		<property name="panelComponents">
+			<list>
+				<ref bean="addButton"/>
+				<ref bean="deleteButton"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="deleteButton" class="org.ybygjy.gui.springswing.comp.ActionListenerButton" init-method="init">
+		<property name="actionListener">
+			<ref bean="deleteButtonActionListener"/>
+		</property>
+		<property name="text">
+			<value>删除</value>
+		</property>
+	</bean>
+	<bean id="deleteButtonActionListener" class="org.ybygjy.gui.springswing.comp.DeleteButtonActionListener">
+		<property name="list">
+			<ref bean="itemList"/>
+		</property>
+		<property name="table">
+			<ref bean="itemTable"/>
+		</property>
+	</bean>
+	<bean name="addButton" class="org.ybygjy.gui.springswing.comp.ActionListenerButton" init-method="init">
+		<property name="text">
+			<value>添加</value>
+		</property>
+		<property name="actionListener">
+			<ref bean="addButtonActionListener"/>
+		</property>
+	</bean>
+	<bean name="addButtonActionListener" class="org.ybygjy.gui.springswing.comp.AddNewButtonActionListener">
+		<property name="list">
+			<ref bean="itemList"/>
+		</property>
+		<property name="table">
+			<ref bean="itemTable"/>
+		</property>
+	</bean>
+</beans>

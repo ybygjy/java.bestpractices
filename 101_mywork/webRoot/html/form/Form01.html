@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=GB18030">
+		<title>Insert title here</title>
+	</head>
+	<body>
+		<h4>Form元素</h4>
+		<form id="form01" action="/org.ybygjy.servlet.FormServlet" method="post">
+			<ul>
+				<li>
+					<label for="textField">文本框：</label><input type="text" id="textField" name="textField"/>
+				</li>
+				<li>
+					<label for="passwordField">密码框：</label><input type="password" id="passwordField" name="passwordField"/>
+				</li>
+				<li>
+					<label for="fileField">文件框：</label><input type="file" id="fileField" name="fileField"/>
+				</li>
+				<!-- 
+				<li>
+					<label for="imageField">图片框：</label><input type="image" id="imageField" src="http://www.qianduan.net/wp-content/uploads/2009/11/table1.png"/>
+				</li>
+				 -->
+				<li>
+					<label for="hiddField">隐藏域</label><input type="hidden" id="hiddField" name="hiddField"/>
+				</li>
+				<li>
+					<label for="singleField">单选：</label><input type="radio" name="singleField" value="男" checked/><input type="radio" name="singleField" value="女" checked/>
+				</li>
+				<li>
+					<label>复选：</label><label for="check01">check01</label><input type="checkbox" id="check01"/><label for="check02">check02</label><input type="checkbox" id="check02"/>
+				</li>
+				<li>
+					<label>下拉</label>
+					<select id="list01">
+						<option value="1" selected="true">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+					</select>
+				</li>
+				<li>
+					<label>大文本</label>
+					<textarea rows="10" cols="10" id="textArea">1234567890</textarea>
+				</li>
+			</ul>
+			<span>
+				<input type="submit" value="提交"/>
+				<input type="reset"" value="Reset"/>
+			</span>
+		</form>
+		<hr/>
+	</body>
+</html>

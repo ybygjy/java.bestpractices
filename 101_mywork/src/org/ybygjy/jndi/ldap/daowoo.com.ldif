@@ -1,0 +1,328 @@
+dn: dc=daowoo,dc=com
+objectClass: top
+objectClass: dcObject
+objectClass: organization
+dc: daowoo
+o: daowoo
+
+dn: ou=Groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Groups
+
+dn: cn=Directory Administrators,ou=Groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Directory Administrators
+uniqueMember: cn=WangYanCheng,ou=People,dc=daowoo,dc=com
+uniqueMember: cn=JinXiao,ou=People,dc=daowoo,dc=com
+description: 目录服务管理
+ou: Groups
+
+dn: cn=Accounting Managers,ou=groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: Accounting Managers
+uniqueMember: cn=XueWenHua,ou=People,dc=daowoo,dc=com
+uniqueMember: cn=DoneFang,ou=People,dc=daowoo,dc=com
+description: 账号管理
+ou: groups
+
+dn: cn=HR Managers,ou=groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: HR Managers
+uniqueMember: cn=JiangPengCheng,ou=People,dc=daowoo,dc=com
+uniqueMember: cn=ChenHui,ou=People,dc=daowoo,dc=com
+description: 人事管理
+ou: groups
+
+dn: cn=R&D,ou=groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: R&D
+uniqueMember: cn=XieDaYun,ou=People,dc=daowoo,dc=com
+uniqueMember: cn=WangBing,ou=People,dc=daowoo,dc=com
+description: R&D
+ou: groups
+
+dn: cn=QA Managers,ou=groups,dc=daowoo,dc=com
+objectClass: top
+objectClass: groupOfUniqueNames
+cn: QA Managers
+uniqueMember: cn=DongFang,ou=People,dc=daowoo,dc=com
+description: 质量管理
+ou: groups
+
+dn: ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: People
+
+dn: cn=XieDaYun,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: XieDaYun
+sn: Xie
+userid: xiedayun
+userPassword:: {md5}123456
+jpegPhoto:: /9j/4AAQSkZJRgABAQAAAQABAAD/xAAfAAABBQEBAQEBAQAAAAAAAAAAAQIDBAUG
+ BwgJCgv/xAAfAQADAQEBAQEBAQEBAAAAAAAAAQIDBAUGBwgJCgv/xAC1EAACAQMDAgQDBQUEBAA
+ AAX0BAgMABBEFEiExQQYTUWEHInEUMoGRoQgjQrHBFVLR8CQzYnKCCQoWFxgZGiUmJygpKjQ1Nj
+ c4OTpDREVGR0hJSlNUVVZXWFlaY2RlZmdoaWpzdHV2d3h5eoOEhYaHiImKkpOUlZaXmJmaoqOkp
+ aanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4eLj5OXm5+jp6vHy8/T19vf4+fr/xAC1
+ EQACAQIEBAMEBwUEBAABAncAAQIDEQQFITEGEkFRB2FxEyIygQgUQpGhscEJIzNS8BVictEKFiQ
+ 04SXxFxgZGiYnKCkqNTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqCg4SFho
+ eIiYqSk5SVlpeYmZqio6Slpqeoqaqys7S1tre4ubrCw8TFxsfIycrS09TV1tfY2dri4+Tl5ufo6
+ ery8/T19vf4+fr/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERX
+ RTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2N
+ jY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wAARCABKAEoDABEAAREBAhEB/9
+ oADAMAAAERAhEAPwDvqCQoAKAKk2qWNvcpbzXUSSvnCFhnjr9KB2HNf2iozm5jKrydrbiPwFAEg
+ uITIsYlTewyF3DJ/CgRJQAtABQAfjX0WBnTVCKljpU3r7qU2lr5O2u/zP1rhv8A5FdL/t7/ANKY
+ V86fkoUAULyd2v7WyicoZA0rsO6rgYHuSw/AGgYsOk6fDJI6WcO+Q5cldxJ/GgCzHbwQktFDGjH
+ jKoBQBHc2lrOrNcRRtxyx4IA96QFXSpGW5vLRnlkSBlKPIeSGB4+nHFMDToEFABX3GUV8VDBwjT
+ cra7J23f8A05n/AOlP5bL9b4a/5FdL/t7/ANKYV8OfkgUAc5q7XRn1ZbAt9sFtCYQh+b77bsfp+
+ lIZnWesa1FbiTzYLlQxiEdwvlSDAzuP6j3pjHW2ua3Ppz30WlAyxNiYkkCVQD0B5yM5oEVWvbrx
+ BC0V/qH2SGT/AJdoYyJd3ZeeoIBOfagDo/D8F1aWqWt3uJiDIH2Y3qCNpJ9cE0gNmmIKACvrctw
+ /PhYy5L768t+r6+wn/wClP5bL9a4b/wCRXS/7e/8ASmFfJH5KFAGPLEo8VQz/AGdwfszJ5gGQ2S
+ D+GMf+PCgYut6bYTqLy5WOO4jK+XMwJIw24D+f5mgBk00cemxpJqkytNl/OCHJ9hxwAcflQBNo1
+ nDHAkzzC7uyoLzsPmI5x16CkBXvdTTS9bC3TzvFcRjy1RSypggEkD6jmmBsQTxXEQkhcOh7igRJ
+ QAlevhvq3slz+zv/AHva3+fL7v3dN9T9a4b/AORXS/7e/wDSmLXkH5KZviGQw6LPKCw2FGO3rgO
+ Cf0oAx9DvIm1cM9xcRLMHjgtpzu5BVmOe2QVwPrSGdDLaCa7hndyRCCVTtuPG76gZH4mmBOzKq5
+ YgDpkmgRV8mO6nhvIXaMqSCQMeYvIwfbPP4UDMy+sJm1uW5kuYRZyQqrRSNjow79R+HfFAFrRLE
+ Wb3ZilZraWXfEh/h9cHuD60AzVoEJ+FfW5bQ58LGXs7768t+r6+wn/6U/lsv0TI6NGWApuWF53r
+ 71qeur/mknptqLXyR+dkVzGJraWJm2iRSmfTIxQBxN54dfS1hKajEwjuI32MMSMMhRg/8COfoPS
+ gZ2sFxHcGUR5/dOY2z6jB/rSAkZVcYYAjrg0xAzBBlmCjgZJxQBh6xNpl3aqJjGt3dQvHbCYEEl
+ uAMfXFAzagjEUEcYAUKoGAOBQIkoAT8a9bDfV/ZLn9nf8Ave1v8+X3fu6b6n6fw/h6k8upyjWlF
+ a6JRt8T7xb/ABFryT8wCgDC1vw4urXK3JnKPGv7tQAMMM4O7rjJH5UDuY01/JpF/ayazB9mkd94
+ NvLuWUgbSXHbAbP4UDOzjkSWNZI2DowyGByDQSY2v6mlvc2losLXUsjb/syrkuF5HPYg4b8KBot
+ WVq800t3fW6LJIRsjOH2AdCD68/pQBpUCCgAr7jKJ5msHBUIScdbWlTS3fSUG9+7/AAP1vhr/AJ
+ FdL/t7/wBKYV8OfkgUAQXV3b2UDT3UqxRL1ZjgUAcdqV5pniTXtKgWOaSPMituTarAqeQe/IFBQ
+ 6TwlbyKzadql55WCIxG25FOcYzn1OfpmgRQs9Mbw/4q0qe/1COdJvMAkyfl+UgZJ92oA9DR1dQ6
+ MGU8gg5BoEOoAKACvosDOKoRThF77yop79pwcvvfppY/WuG/+RXS/wC3v/SmFfOn5KU9Q1Sy02I
+ yXlwkQ7Ank/h+FAFW20/7e0d9qO2VuWhjBJRFOMcHq3v70DKN3oV1aav/AGppLRO2wqbab7vOPu
+ n+HpQBlX3mrqMoX7VY71X7RFEQqSNyCRwfzFAzH17WIdTvbCP+z3hhtQVkWXurEDPt9fWgRq+HN
+ ei0WP7HeiVbSQCW3kI3bVJxyaAO3t547mBJoHDxOMqw6EUCJaACvosDlmKr0I1KeGjNO+rk03r2
+ 516bH61w3/yK6X/b3/pTCvnT8lOJsUSfV7+WZVkkEpUM4yQNycZPakUdqAAAAMAdqZIDvQNi0CO
+ R1EA+K5MgfMsKt7jPQ+3FDKOhe2ga/jRoYyohYBSoxjctAin4WAGmyqBhVuJFUDoBnoKSBmzTEF
+ fp/D+AwtXLqc6lKLbvq4pv4n5H63w1/wAiul/29/6Uz//Z
+mail: xiedayun@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=ChenHui,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: ChenHui
+sn: Chen
+userid: chenhui
+userPassword:: {md5}123456
+mail: chenhui@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=JiangPengCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: JiangPengCheng
+sn: Jiang
+userid: jiangpengcheng
+userPassword:: {md5}123456
+mail: jiangpengcheng@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=XueWenHua,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: XueWenHua
+sn: Xue
+userid: xuewenhua
+userPassword:: {md5}123456
+mail: xuewenhua@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=JinXiao,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: JinXiao
+sn: Jin
+userid: jinxiao
+userPassword:: {md5}123456
+mail: JinXiao@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=DongFang,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: DongFang
+sn: Dong
+userid: dongFang
+userPassword:: {md5}123456
+mail: DongFang@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=WangBing,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: WangBing
+sn: Wang
+userid: wangbing
+userPassword:: {md5}123456
+mail: WangBing@daowoo.com
+telephoneNumber: 12345678
+
+dn: cn=WangYanCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: WangYanCheng
+sn: Wang
+userid: wangyancheng
+userPassword:: e01ENX00UXJjT1VtNldhdStWdUJYOGcrSVBnPT0=
+mail: WangYanCheng@daowoo.com
+telephoneNumber: 12345678
+
+dn: uid=WangYanCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: person
+objectClass: organizationalPerson
+objectClass: inetOrgPerson
+cn: WangYanCheng
+sn: Wang
+#userid: WangYanCheng
+userPassword:: e01ENX00UXJjT1VtNldhdStWdUJYOGcrSVBnPT0=
+mail: WangYanCheng@daowoo.com
+telephoneNumber: 15810779839
+
+dn: cn=homedir,cn=WangYanCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaNamingReference
+objectClass: javaContainer
+cn: homedir
+javaClassName: com.sun.jndi.fscontext.RefFSContext
+javaFactory: com.sun.jndi.fscontext.RefFSContextFactory
+javaReferenceAddress: #0#URL#file:/tmp
+
+dn: ou=Objects,cn=WangYanCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: organizationalUnit
+ou: Objects
+
+dn: cn=Hashtable,ou=objects,cn=WangYanCheng,ou=People,dc=daowo
+ o,dc=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaSerializedObject
+objectClass: javaContainer
+cn: Hashtable
+javaClassName: java.util.Hashtable
+javaSerializedData:: rO0ABXNyABNqYXZhLnV0aWwuSGFzaHRhYmxlE7sPJSFK5LgDAAJGAAp
+ sb2FkRmFjdG9ySQAJdGhyZXNob2xkeHA/QAAAAAAACHcIAAAACwAAAAJ0ABhqYXZhLm5hbWluZy
+ 5wcm92aWRlci51cmx0ABRsZGFwOi8vYWx0b28uZW5nOjU4OXQAG2phdmEubmFtaW5nLmZhY3Rvc
+ nkuaW5pdGlhbHQAIGNvbS5zdW4uam5kaS5sZGFwLkxkYXBDdHhGYWN0b3J5eA==
+
+dn: cn=Integer,ou=Objects,cn=WangYanCheng,ou=People,dc=daowoo,
+ dc=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaSerializedObject
+objectClass: javaContainer
+cn: Integer
+javaClassName: java.lang.Integer
+javaSerializedData:: rO0ABXNyABFqYXZhLmxhbmcuSW50ZWdlchLioKT3gYc4AgABSQAFdmF
+ sdWV4cgAQamF2YS5sYW5nLk51bWJlcoaslR0LlOCLAgAAeHAAAAAK
+
+dn: cn=Button,ou=Objects,cn=WangYanCheng,ou=People,dc=daowoo,d
+ c=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaSerializedObject
+objectClass: javaContainer
+cn: Button
+javaClassName: java.awt.Button
+javaSerializedData:: rO0ABXNyAA9qYXZhLmF3dC5CdXR0b26GOg+meMJTngMAA0kAG2J1dHR
+ vblNlcmlhbGl6ZWREYXRhVmVyc2lvbkwADWFjdGlvbkNvbW1hbmR0ABJMamF2YS9sYW5nL1N0cm
+ luZztMAAVsYWJlbHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hyABJqYXZhLmF3dC5Db21wb25lbnSV6
+ qZZ1zykmgMAE0kAHmNvbXBvbmVudFNlcmlhbGl6ZWREYXRhVmVyc2lvbloAB2VuYWJsZWRKAAll
+ dmVudE1hc2tJAAZoZWlnaHRaAA1uZXdFdmVudHNPbmx5WgAFdmFsaWRaAAd2aXNpYmxlSQAFd2l
+ kdGhJAAF4SQABeUwACmJhY2tncm91bmR0ABBMamF2YS9hd3QvQ29sb3I7TAAGY3Vyc29ydAARTG
+ phdmEvYXd0L0N1cnNvcjtMAARmb250dAAPTGphdmEvYXd0L0ZvbnQ7TAAKZm9yZWdyb3VuZHQAE
+ ExqYXZhL2F3dC9Db2xvcjtMAAZsb2NhbGV0ABJMamF2YS91dGlsL0xvY2FsZTtMAAdtaW5TaXpl
+ dAAUTGphdmEvYXd0L0RpbWVuc2lvbjtMAARuYW1ldAASTGphdmEvbGFuZy9TdHJpbmc7TAAGcG9
+ wdXBzdAASTGphdmEvdXRpbC9WZWN0b3I7TAAIcHJlZlNpemV0ABRMamF2YS9hd3QvRGltZW5zaW
+ 9uO3hwAAAAAQEAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAABwc3IAD2phdmEuYXd0LkN1cnNvc
+ m9qB3f3EgGgAgABSQAEdHlwZXhwAAAAAHBwcHB0AAdidXR0b24wcHBweAAAAAFwdAAFSGVsbG9w
+ eA==
+
+dn: cn=Choice,ou=Objects,cn=WangYanCheng,ou=People,dc=daowoo,dc=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaSerializedObject
+objectClass: javaContainer
+cn: Choice
+javaClassName: java.awt.Choice
+javaSerializedData:: rO0ABXNyAA9qYXZhLmF3dC5DaG9pY2XHcZaIgbud0QMAA0kAG2Nob2l
+ jZVNlcmlhbGl6ZWREYXRhVmVyc2lvbkkADXNlbGVjdGVkSW5kZXhMAAZwSXRlbXN0ABJMamF2YS
+ 91dGlsL1ZlY3Rvcjt4cgASamF2YS5hd3QuQ29tcG9uZW50leqmWdc8pJoDABNJAB5jb21wb25lb
+ nRTZXJpYWxpemVkRGF0YVZlcnNpb25aAAdlbmFibGVkSgAJZXZlbnRNYXNrSQAGaGVpZ2h0WgAN
+ bmV3RXZlbnRzT25seVoABXZhbGlkWgAHdmlzaWJsZUkABXdpZHRoSQABeEkAAXlMAApiYWNrZ3J
+ vdW5kdAAQTGphdmEvYXd0L0NvbG9yO0wABmN1cnNvcnQAEUxqYXZhL2F3dC9DdXJzb3I7TAAEZm
+ 9udHQAD0xqYXZhL2F3dC9Gb250O0wACmZvcmVncm91bmR0ABBMamF2YS9hd3QvQ29sb3I7TAAGb
+ G9jYWxldAASTGphdmEvdXRpbC9Mb2NhbGU7TAAHbWluU2l6ZXQAFExqYXZhL2F3dC9EaW1lbnNp
+ b247TAAEbmFtZXQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABnBvcHVwc3QAEkxqYXZhL3V0aWwvVmV
+ jdG9yO0wACHByZWZTaXpldAAUTGphdmEvYXd0L0RpbWVuc2lvbjt4cAAAAAEBAAAAAAAAAAAAAA
+ AAAAABAAAAAAAAAAAAAAAAcHNyAA9qYXZhLmF3dC5DdXJzb3Jvagd39xIBoAIAAUkABHR5cGV4c
+ AAAAABwcHBwdAAHY2hvaWNlMHBwcHgAAAABAAAAAHNyABBqYXZhLnV0aWwuVmVjdG9y2Zd9W4A7
+ rwECAANJABFjYXBhY2l0eUluY3JlbWVudEkADGVsZW1lbnRDb3VudFsAC2VsZW1lbnREYXRhdAA
+ TW0xqYXZhL2xhbmcvT2JqZWN0O3hwAAAAAAAAAAJ1cgATW0xqYXZhLmxhbmcuT2JqZWN0O5DOWJ
+ 8QcylsAgAAeHAAAAAKdAAIY2hvaWNlIDF0AAhjaG9pY2UgMnBwcHBwcHBwcHg=
+
+dn: cn=CheckboxGroup,ou=Objects,cn=WangYanCheng,ou=People,dc=d
+ aowoo,dc=com
+objectClass: top
+objectClass: javaObject
+objectClass: javaSerializedObject
+objectClass: javaContainer
+cn: CheckboxGroup
+javaClassName: java.awt.Panel
+javaSerializedData:: rO0ABXNyAA5qYXZhLmF3dC5QYW5lbNokKjEQ5hPeAgAAeHIAEmphdmE
+ uYXd0LkNvbnRhaW5lckAHgHP9FAwnAwAGSQAeY29udGFpbmVyU2VyaWFsaXplZERhdGFWZXJzaW
+ 9uSQALbmNvbXBvbmVudHNbAAljb21wb25lbnR0ABVbTGphdmEvYXd0L0NvbXBvbmVudDtMAApka
+ XNwYXRjaGVydAAgTGphdmEvYXd0L0xpZ2h0d2VpZ2h0RGlzcGF0Y2hlcjtMAAlsYXlvdXRNZ3J0
+ ABhMamF2YS9hd3QvTGF5b3V0TWFuYWdlcjtMAAdtYXhTaXpldAAUTGphdmEvYXd0L0RpbWVuc2l
+ vbjt4cgASamF2YS5hd3QuQ29tcG9uZW50leqmWdc8pJoDABNJAB5jb21wb25lbnRTZXJpYWxpem
+ VkRGF0YVZlcnNpb25aAAdlbmFibGVkSgAJZXZlbnRNYXNrSQAGaGVpZ2h0WgANbmV3RXZlbnRzT
+ 25seVoABXZhbGlkWgAHdmlzaWJsZUkABXdpZHRoSQABeEkAAXlMAApiYWNrZ3JvdW5kdAAQTGph
+ dmEvYXd0L0NvbG9yO0wABmN1cnNvcnQAEUxqYXZhL2F3dC9DdXJzb3I7TAAEZm9udHQAD0xqYXZ
+ hL2F3dC9Gb250O0wACmZvcmVncm91bmR0ABBMamF2YS9hd3QvQ29sb3I7TAAGbG9jYWxldAASTG
+ phdmEvdXRpbC9Mb2NhbGU7TAAHbWluU2l6ZXQAFExqYXZhL2F3dC9EaW1lbnNpb247TAAEbmFtZ
+ XQAEkxqYXZhL2xhbmcvU3RyaW5nO0wABnBvcHVwc3QAEkxqYXZhL3V0aWwvVmVjdG9yO0wACHBy
+ ZWZTaXpldAAUTGphdmEvYXd0L0RpbWVuc2lvbjt4cAAAAAEBAAAAAAAAAAAAAAAAAAABAAAAAAA
+ AAAAAAAAAcHNyAA9qYXZhLmF3dC5DdXJzb3Jvagd39xIBoAIAAUkABHR5cGV4cAAAAABwcHBwdA
+ AGcGFuZWwwcHBweAAAAAEAAAADdXIAFVtMamF2YS5hd3QuQ29tcG9uZW50OxUPiQ0W5qp1AgAAe
+ HAAAAAEc3IAEWphdmEuYXd0LkNoZWNrYm94ZObEJlsAwIMDAARJAB1jaGVja2JveFNlcmlhbGl6
+ ZWREYXRhVmVyc2lvbloABXN0YXRlTAAFZ3JvdXB0ABhMamF2YS9hd3QvQ2hlY2tib3hHcm91cDt
+ MAAVsYWJlbHQAEkxqYXZhL2xhbmcvU3RyaW5nO3hxAH4ABgAAAAEBAAAAAAAAAAAAAAAAAAABAA
+ AAAAAAAAAAAAAAcHEAfgAScHBwcHQACWNoZWNrYm94MHBwcHgAAAABAXNyABZqYXZhLmF3dC5Da
+ GVja2JveEdyb3VwM8LXO2C16hcCAAFMABBzZWxlY3RlZENoZWNrYm94dAATTGphdmEvYXd0L0No
+ ZWNrYm94O3hwcQB+ABl0AAhTZW5kIG5vd3B4c3EAfgAWAAAAAQEAAAAAAAAAAAAAAAAAAAEAAAA
+ AAAAAAAAAAABwcQB+ABJwcHBwdAAJY2hlY2tib3gxcHBweAAAAAEAcQB+AB10AApTZW5kIGxhdG
+ VycHhzcQB+ABYAAAABAQAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAHBxAH4AEnBwcHB0AAlja
+ GVja2JveDJwcHB4AAAAAQBxAH4AHXQACkRvbid0IHNlbmRweHBwc3IAE2phdmEuYXd0LkdyaWRM
+ YXlvdXSZI/rrS9wW6wIABEkABGNvbHNJAARoZ2FwSQAEcm93c0kABHZnYXB4cAAAAAEAAAAAAAA
+ AAAAAAABwcHg=
+

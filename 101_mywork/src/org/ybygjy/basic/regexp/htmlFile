@@ -1,0 +1,3 @@
+<div id="page">
+<div style="border: 1px solid rgb(204, 204, 204); width: 30%; float: left; margin: 5px;" id="target" class="droppable"><span>&nbsp;<br>&nbsp;</span><div class="drag" id="d1" style="cursor: auto; position: static; left: 1px; top: 15.4px;"><div style="float: left;">dddddd</div><div style="float: left;">dddddd</div><div style="float: left;"><div>HelloWorld
+</div></div></div></div><div style="border: 1px solid rgb(204, 204, 204); width: 30%; float: left; margin: 5px;" id="target2" class="droppable"><span>&nbsp;<br>&nbsp;</span></div><div style="border: 1px solid rgb(204, 204, 204); width: 30%; float: left; margin: 5px;" id="target3" class="droppable"><span>&nbsp;<br>&nbsp;</span></div></div>

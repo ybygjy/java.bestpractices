@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<taglib xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-jsptaglibrary_2_1.xsd"
+	version="2.1">
+	<description>TagLibTest</description>
+	<tlib-version>0.05</tlib-version>
+	<short-name>tlibTest</short-name>
+	<uri>http://org.ybygjy.com/taglib</uri>
+	<tag>
+		<name>TagLibTest</name>
+		<tag-class>org.ybygjy.web.taglib.TagLibTest</tag-class>
+		<attribute>
+			<name>userName</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<body-content>Empty</body-content>
+		<description>TagLibTest</description>
+	</tag>
+</taglib>

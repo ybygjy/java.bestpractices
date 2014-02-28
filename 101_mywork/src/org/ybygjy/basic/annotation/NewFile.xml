@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CLASSE>
+	<NAME>Address Class Defined</NAME>
+	<DESC>Address Class Description</DESC>
+</CLASSE>
+<CLASSE>
+	<NAME>Address Class Defined</NAME>
+	<DESC>Address Class Description</DESC>
+</CLASSE>
+<CLASSE>
+	<NAME>AddressList</NAME>
+	<DESC>address List</DESC>
+	<FIELDS>
+		<FIELD>
+			<FIELD_NAME>friendName</FIELD_NAME>
+			<FIELD_TYPE>String</FIELD_TYPE>
+			<FIELD_VALUE>wyc</FIELD_VALUE>
+		</FIELD>
+		<FIELD>
+			<FIELD_NAME>friendAge</FIELD_NAME>
+			<FIELD_TYPE>String</FIELD_TYPE>
+			<FIELD_VALUE>10</FIELD_VALUE>
+		</FIELD>
+		<FIELD>
+			<FIELD_NAME>friendAddress</FIELD_NAME>
+			<FIELD_TYPE>List</FIELD_TYPE>
+			<FIELD_VALUE></FIELD_VALUE>
+		</FIELD>
+	</FIELDS>
+	<METHODS>
+		<METHOD>
+			<NAME>getFriendName</NAME>
+			<RETURN_TYPE>String</RETURN_TYPE>
+		</METHOD>
+		<METHOD>
+			<NAME>setFriendName</NAME>
+			<RETURN_TYPE>void</RETURN_TYPE>
+			<ARGUMENTS>
+				<ARGUMENT>
+					<TYPE>String</TYPE>
+					<NAME>arg0</NAME>
+				</ARGUMENT>
+			</ARGUMENTS>
+		</METHOD>
+	</METHODS>
+</CLASSE>

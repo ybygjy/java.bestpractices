@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="GBK"?>
+<leopard>
+	<config-item>
+		<!-- 数据库连接失败等候时间（秒）-->
+		<item-name>nTimeOut</item-name>
+		<item-value>15</item-value>
+	</config-item>	
+	<config-item>
+		<!-- 数据库连接失败重试次数-->
+		<item-name>nRetry</item-name>
+		<item-value>5</item-value>
+	</config-item>
+	<config-item>
+		<!-- 是否监测系统内存 yes监测/no不监测-->
+		<item-name>logMemory</item-name>
+		<item-value>no</item-value>
+	</config-item>
+	<config-item>
+		<!-- 监测系统内存的间隔时间(计量单位为秒),只有在监测内存启用的情况下有效-->
+		<item-name>period</item-name>
+		<item-value>0</item-value>
+	</config-item>
+	<config-item>
+		<!-- 监控数据库操作的记录数，0表示不监控；数值表示只记录结果集大于该数值的操作 -->
+		<item-name>logRowCount</item-name>
+		<item-value>0</item-value>
+	</config-item>
+	<config-item>
+		<!-- 监控数据库查询的执行时间，0表示不监控；数值表示只记录查询时间大于该数值的操作 -->
+		<item-name>logRowTime</item-name>
+		<item-value>0</item-value>
+	</config-item>
+	<config-item>
+		<!-- URL操作路径 -->
+		<item-name>URLMap</item-name>
+		<item-value>com.hd.DoServlet</item-value>
+	</config-item>
+
+	<config-item>
+		<!-- 数据源支持多数据源-->
+		<item-name>DataSources</item-name>
+		<item-values>
+			<item-value id="Leopard" name="技术平台" DBDialect="ORACLE" default="true">jdbc/hd</item-value>
+			<item-value id="Version" name="版本管理" DBDialect="ORACLE" >jdbc/version</item-value>
+		</item-values>
+	</config-item>
+	
+	<config-item>
+		<!-- 启动项-->
+		<item-name>StartupClass</item-name>
+		<item-values>
+			<!-- <item-value id="Cache" name="缓存管理组件" class="com.hd.sy.util.CacheMgrAppListener"/>  -->
+		</item-values>
+	</config-item>
+	
+	<config-item>
+		<!-- 日志纪录配置文件名称 -->
+		<item-name>logConfig</item-name>
+		<item-value>log4j.properties</item-value>
+	</config-item>
+	<config-item>
+		<!-- URL虚拟路径 -->
+		<item-name>URLPath</item-name>
+		<item-value></item-value>
+	</config-item>
+	<config-item>
+		<!-- 产品线编码 -->
+		<item-name>productLineCode</item-name>
+		<item-value>LEOPARD</item-value>
+	</config-item>
+	<config-item>
+		<!-- 实例编码 -->
+		<item-name>instanceCode</item-name>
+		<item-value>LEOPARD</item-value>
+	</config-item>
+	<config-item>
+		<!-- 编码前缀 -->
+		<item-name>SY_CODE_PREFIX</item-name>
+		<item-value></item-value>
+	</config-item>
+	<config-item>
+		<!-- 文件上传路径 如果为空表示目标为数据库-->
+		<item-name>SY_FILE_UPLOAD_PATH</item-name>
+		<item-value>d:\hdeamfilepath</item-value>
+	</config-item>
+	<config-item>
+		<!-- 上传文件大小限制 -1为不限制,其余以MB为单位 -->
+		<item-name>SY_FILE_UPLOAD_MAXSIZE_XML</item-name>
+		<item-value>-1</item-value>
+	</config-item>
+	<config-item>
+		<!-- 默认首页 必须与web.xml中的默认首页一致-->
+		<item-name>defaultPage</item-name>
+		<item-value>index.jsp</item-value>
+	</config-item>
+	<!--LDAP参数设置-->
+	<config-item>
+		<!--是否启用LDAP功能-->
+		<item-name>LDAPEnabled</item-name>
+		<item-value>false</item-value>
+	</config-item>	
+	<config-item>
+		<!--LDAP服务器类型，参见枚举类LDAPType-->
+		<item-name>LDAPType</item-name>
+		<item-value>AD</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP服务器地址-->
+		<item-name>LDAPServer</item-name>
+		<item-value>10.10.10.2</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP服务器端口-->
+		<item-name>LDAPPort</item-name>
+		<item-value>389</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP服务器安全端口-->
+		<item-name>LDAPSSLPort</item-name>
+		<item-value>636</item-value>
+	</config-item>	
+	<config-item>
+		<!--LDAP管理员-->
+		<item-name>LDAPUser</item-name>
+		<item-value>Administrator@xtoolsoft.local</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP管理员密码-->
+		<item-name>LDAPPwd</item-name>
+		<item-value>123456</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP 安全连接证书库-->
+		<item-name>LDAPKeyStore</item-name>
+		<item-value>c:/ushayden.keystore</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP 安全连接证书库密码-->
+		<item-name>LDAPKeyStorePwd</item-name>
+		<item-value>123456</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP前缀-->
+		<item-name>LDAPBase</item-name>
+		<item-value>ou=EAMOU,dc=xtoolsoft,dc=local</item-value>
+	</config-item>
+	<config-item>
+		<!--LDAP根部门-->
+		<item-name>LDAPRoot</item-name>
+		<item-value>ou=A01</item-value>
+	</config-item>
+</leopard>

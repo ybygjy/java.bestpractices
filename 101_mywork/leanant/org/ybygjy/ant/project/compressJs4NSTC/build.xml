@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Compress JavaScript、CSS、HTML" default="main" basedir=".">
+	<property file="build.properties"></property>
+	<!--
+	<property name="compress.encoding" value="UTF-8" />
+	<property name="compress.destdir" value="C:\test\fssgate\WEB-INF\compjs" />
+	<property name="compress.srcdir" value="C:\test\fssgate\WEB-INF\js" />
+	-->
+	<property name="compress.restore" value="compjs" />
+	<property name="compress.contrib.path" value="${basedir}/lib/ant-contrib-1.0b3.jar" />
+	<property name="compress.jar" value="${basedir}/lib/yuicompressor-2.4.2.jar" />
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${compress.contrib.path}" />
+		</classpath>
+	</taskdef>
+	<target name="doConvert">
+		<foreach param="srcFilePath" target="doConvertInner">
+			<fileset dir="${compress.srcdir}">
+				<include name="**/*.js"/>
+			</fileset>
+		</foreach>
+	</target>
+	<target name="doConvertInner">
+		<propertyregex override="true" property="realFileName" input="${srcFilePath}" regexp="(\w+.*\\)+(.*\.{1}\w+)" replace="\2" />
+		<propertyregex override="true" property="realFilePath" input="${srcFilePath}" regexp="(\w+.*\\)+(.*\.{1}\w+)" replace="\1" />
+		<echo message="${realFileName}" />
+		<echo message="${realFilePath}" />
+		<echo message="${srcFilePath}" />
+		<java jar="${compress.jar}" dir="${basedir}" failonerror="false" fork="true">
+			<arg value="${srcFilePath}" />
+			<arg value="-o" />
+			<arg value="${realFilePath}/${realFileName}_CM" />
+			<arg value="--charset" />
+			<arg value="${compress.encoding}" />
+		</java>
+	</target>
+	<target name="moveCompFile">
+		<move todir="${compress.destdir}">
+			<fileset dir="${compress.srcdir}">
+				<include name="**/*_CM" />
+			</fileset>
+		</move>
+	</target>
+	<target name="restoreFile">
+		<foreach param="compFilePath" target="innerRestoreFile">
+			<path>
+				<fileset dir="${compress.destdir}">
+					<include name="**/*_CM"/>
+				</fileset>
+			</path>
+		</foreach>
+	</target>
+	<target name="innerRestoreFile">
+		<propertyregex override="true" property="realFileName" input="${compFilePath}" regexp="(\w+.*\\)+(.*\.{1}\w+)_CM$" replace="\1\2"/>
+		<echo message="${realFileName}"/>
+		<move file="${compFilePath}" tofile="${realFileName}"></move>
+	</target>
+	<target name="main" depends="doConvert,moveCompFile,restoreFile">
+		<echo>Over</echo>
+	</target>
+</project>

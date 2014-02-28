@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="testOpen" name="org.ybygjy.ant.project.openfile">
+	<property name="ant.openfile.basedir" value="${basedir}"/>
+	<property name="ant.openfile.classesdir" value="D:\work\workspace\mywork\webRoot\WEB-INF\classes"/>
+	<path id="taskdef.path">
+		<fileset dir="${basedir}" includes="lib/*.jar"/>
+	</path>
+	<target name="testOpen" depends="jar">
+		<!-- 定义Ant任务 -->
+		<taskdef name="ant.openfile" classname="org.ybygjy.ant.project.openfile.OpenFile" classpathref="taskdef.path" loaderref="taskdef.path.loader"></taskdef>
+		<!-- 测试Ant任务 -->
+		<ant.openfile fileInst="c:\test.log"/>
+	</target>
+    <target name="jar" description="jar">
+    	<jar destfile="${basedir}\lib\${ant.project.name}.jar" basedir="${ant.openfile.classesdir}">
+    		<include name="**/ant/project/openfile/*.class"/>
+    	</jar>
+    </target>
+</project>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Compress JavaScript、CSS、HTML" default="main" basedir=".">
+	<property file="build.properties"></property>
+	<property name="compress.destdir" value="${build}/dest"></property>
+	<!--源压缩文件所在目录-->
+	<path id="compress.dir.path">
+		<fileset dir="${compress.dir}">
+			<include name="**/*.jsp"/>
+			<include name="**/*.js"/>
+			<include name="**/*.css"/>
+			<exclude name="**/ext*.*"/>
+			<exclude name="**/resources/css/**"/>
+		</fileset>
+	</path>
+	<path id="build.path"></path>
+	<!--外部任务-->
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="${plugin-contrib-path}"/>
+		</classpath>
+	</taskdef>
+	<!--初始化-->
+	<target name="init" depends="init.check" if="init.check.run">
+		<delete dir="${compress.destdir}"/>
+		<echo message="init.."></echo>
+	</target>
+	<!--验证-->
+	<target name="init.check">
+		<condition property="init.check.run">
+			<and>
+				<available file="${compress.jar}"/>
+				<available file="${plugin-contrib-path}"/>
+				<available file="${compress.destdir}"/>
+				<available file="${compress.dir}"/>
+			</and>
+		</condition>
+	</target>
+	<target name="doConvert">
+		<foreach param="srcFilePath" target="doConvertInner">
+			<path refid="compress.dir.path"/>
+		</foreach>
+	</target>
+	<target name="doConvertInner">
+		<propertyregex override="true" property="realFileName" input="${srcFilePath}" regexp="(\w+.*\\)+(\w+.*[.]{1}\w+)" replace="\2"/>
+		<propertyregex override="true" property="realFilePath" input="${srcFilePath}" regexp="(\w+.*\\)+(\w+.*[.]{1}\w+)" replace="\1"/>
+		<echo message="${realFileName}"></echo>
+		<echo message="${realFilePath}"></echo>
+		<java jar="${compress.jar}" dir="${basedir}" failonerror="false" fork="true">
+				<arg value="${srcFilePath}"/>
+				<arg value="-o"/>
+				<arg value="${realFilePath}/C_M_${realFileName}"/>
+				<arg value="--charset"/>
+				<arg value="${compress.encoding}"/>
+				<classpath refid="build.path"></classpath>
+		</java>
+	</target>
+	<target name="doCopyConvertFile">
+		<move todir="${compress.destdir}">
+			<fileset dir="${compress.dir}" includes="**/C_M_*.jsp"/>
+			<fileset dir="${compress.dir}" includes="**/C_M_*.js"/>
+			<fileset dir="${compress.dir}" includes="**/C_M_*.css"/>
+		</move>
+	</target>
+	<!--释放资源-->
+	<target name="clean">
+		<echo message="clean..."></echo>
+	</target>
+	<!--处理流调用-->
+	<target name="main" depends="init,doConvert,doCopyConvertFile,clean">
+		<echo message="convertFinished"></echo>
+	</target>
+</project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AutoTest" default="junit3" basedir=".">
+	<!--源文件目录 Begin-->
+	<property name="appName" value="JUnit3Simple" />
+	<!--源文件目录 End-->
+	<!--测试结果 End-->
+	<target name="init">
+		<mkdir dir="${reportDir}" />
+		<mkdir dir="${output}" />
+		<echo message="环境初始" />
+	</target>
+	<target name="JUNIT">
+		<available classname="junit.framework.TestCase" property="junit.present" />
+	</target>
+	<target name="compile" depends="JUNIT">
+		<javac srcdir="../test/" destdir="classes">
+			<include name="**/testunit/**.java" />
+		</javac>
+	</target>
+	<target name="jar" depends="compile">
+		<jar jarfile="${appName}.jar" basedir="classes" includes="**">
+		</jar>
+	</target>
+	<target name="junit3" depends="jar">
+		<!-- junit.textui.TestRunner -->
+		<java fork="yes" classname="org.junit.runner.JUnitCore" failonerror="true">
+			<arg value="org.ybygjy.testunit.AllJUnitTests" />
+			<classpath>
+				<fileset dir="lib">
+					<include name="*.jar" />
+				</fileset>
+				<pathelement location="${appName}.jar" />
+			</classpath>
+		</java>
+	</target>
+</project>
