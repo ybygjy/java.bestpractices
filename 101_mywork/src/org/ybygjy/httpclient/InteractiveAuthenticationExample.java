@@ -1,3 +1,4 @@
+package org.ybygjy.httpclient;
 /*
  * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//httpclient/src/examples/InteractiveAuthenticationExample.java,v 1.2 2004/02/22 18:08:45 olegk Exp $
  * $Revision: 155418 $

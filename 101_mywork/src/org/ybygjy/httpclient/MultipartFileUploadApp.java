@@ -1,3 +1,4 @@
+package org.ybygjy.httpclient;
 /*
  * $Header$
  * $Revision: 155418 $
