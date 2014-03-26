@@ -1,3 +1,4 @@
+package org.ybygjy.httpclient;
 /*
  * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//httpclient/src/examples/TrivialApp.java,v 1.18 2004/06/12 22:47:23 olegk Exp $
  * $Revision: 155418 $

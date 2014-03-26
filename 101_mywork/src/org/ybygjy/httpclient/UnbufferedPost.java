@@ -1,3 +1,4 @@
+package org.ybygjy.httpclient;
 /*
  * $Header: /home/jerenkrantz/tmp/commons/commons-convert/cvs/home/cvs/jakarta-commons//httpclient/src/examples/UnbufferedPost.java,v 1.5 2004/05/12 20:43:53 olegk Exp $
  * $Revision: 155418 $
