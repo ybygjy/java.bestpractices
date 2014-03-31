@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>200_002_jms</groupId>
+	<artifactId>200_002_jms</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>jms</name>
+	<description>Simple of JMS</description>
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-all</artifactId>
+			<version>5.5.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.6</version>
+		</dependency>
+	</dependencies>
+</project>
