@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<project name="DBStructCompare" default="main" basedir=".">
+	<property name="restoreFile" value="C:\build\DBCompare.LOG"/>
+	<path id="dbcompare.path">
+		<fileset dir="F:\work\nstc\2_事务\数据库比对\trunk\lib">
+			<include name="**/*.jar"/>
+		</fileset>
+	</path>
+	<target name="dbCMP">
+		<taskdef name="DBCompare" classname="com.nstc.dbcompare.adapter.DBCompare4AntTask" classpathref="dbcompare.path" loaderref="dbcompare.path.loader"/>
+		<!--
+		<DBCompare dbType="ORACLE" dburl="jdbc:oracle:thin:sys/PASS@192.168.0.71:1521/NSTEST" srcUser="NSTEST_SRC" targetUser="NSTEST_TAR" restoreFilePath="${restoreFile}"/>
+		<DBCompare dbType="MSSQL" dburl="jdbc:sqlserver://192.168.0.101:1433;databaseName=MASTER;user=sa;password=PASS" srcUser="NSTEST_SRC" targetUser="NSTEST_TAR" restoreFilePath="${restoreFile}"/>
+		-->
+	</target>
+	<target name="fileCMP">
+		<taskdef name="FileComparator" classname="com.nstc.filecompare.adapter.FileComparator4Ant" classpathref="dbcompare.path" loaderref="dbcompare.path.loader"/>
+		<FileComparator logfile="C:\\FileComparator.log" targetpath="F:\work\nstc\2_事务\003_1文件比较\sql-oracle-trunk\BDG"
+			excludeDir=".SVN" includeFile="PDC,FNC,PRC,SQL,TRG,TPS,VW,TAB">
+			<FilePath path="F:\work\nstc\2_事务\003_1文件比较\PATCH\N62.0-SP3\bin.oracle.bs\BDG"/>
+		</FileComparator>
+	</target>
+	<target name="main">
+	</target>
+</project>
