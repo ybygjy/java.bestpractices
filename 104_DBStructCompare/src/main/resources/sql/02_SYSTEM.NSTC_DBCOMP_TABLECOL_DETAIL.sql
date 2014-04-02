@@ -1,0 +1,41 @@
+-- Create table
+create table SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL
+(
+  TABLE_NAME    VARCHAR2(40) not null,
+  FIELD_NAME    VARCHAR2(40) not null,
+  SRCSCHEMA     VARCHAR2(20) not null,
+  TARSCHEMA     VARCHAR2(20) not null,
+  FIELD_TYPE    VARCHAR2(40),
+  FIELD_LEN     VARCHAR2(40),
+  FIELD_PRE     VARCHAR2(40),
+  FIELD_SCA     VARCHAR2(40),
+  FIELD_NULL    VARCHAR2(40),
+  FIELD_DEFVLEN VARCHAR2(40),
+  FIELD_DEFVALUE VARCHAR2(2000)
+);
+-- Add comments to the table 
+comment on table SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL
+  is '数据库对象结构比较_表字段比较结果';
+-- Add comments to the columns 
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.TABLE_NAME
+  is '表编码';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_NAME
+  is '字段编码';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.SRCSCHEMA
+  is '源用户';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.TARSCHEMA
+  is '参照用户';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_TYPE
+  is '字段类型';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_LEN
+  is '字段长度';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_PRE
+  is '字段精度';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_SCA
+  is '字段精度';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_NULL
+  is '字段非空标记';
+comment on column SYSTEM.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_DEFVLEN
+  is '字段默认值长度';
+COMMENT ON COLUMN system.NSTC_DBCOMP_TABLECOL_DETAIL.FIELD_DEFVALUE
+  IS '字段默认值内容';

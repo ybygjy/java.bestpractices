@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="BuildDBCompare" default="main" basedir=".">
+	<property name="jarDescFile" value="DBStructCompare.jar"/>
+	<property name="descClasses" value="classes" />
+	<target name="main">
+		<jar destfile="${jarDescFile}">
+			<fileset dir="${descClasses}">
+				<include name="**"/>
+			</fileset>
+		</jar>
+	</target>
+</project>
