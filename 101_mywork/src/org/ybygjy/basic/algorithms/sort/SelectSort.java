@@ -56,7 +56,7 @@ public class SelectSort {
      * @param args 参数列表
      */
     public static void main(String[] args) {
-        int[] a = {7, 6, 5, 3, 4, 2, 0, 8};
+        int[] a = {7, 6, 5, 3, 4, 2, 0, 8, 1};
         SelectSort ssInst = new SelectSort();
         System.out.println(Arrays.toString(ssInst.sortA(a)));
         //System.out.println(Arrays.toString(ssInst.sortB(a)));
