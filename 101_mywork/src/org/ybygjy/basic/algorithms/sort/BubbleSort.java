@@ -36,10 +36,10 @@ public class BubbleSort {
         int[] array = a;
         for (int i = array.length - 1; i > 1; i--) {
             for (int j = 0; j < i; j++) {
-                if (array[j] > array[j + 1]) {
+                if (array[j] > array[i]) {
                     int tmp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = tmp;
+                    array[j] = array[i];
+                    array[i] = tmp;
                 }
             }
         }
@@ -53,6 +53,6 @@ public class BubbleSort {
         int[] arr = {0,2,1,3,7,7,1,5,4,6};
         BubbleSort bubbleSort = new BubbleSort();
         System.out.println(Arrays.toString(bubbleSort.sortA(arr)));
-        //System.out.println(Arrays.toString(bubbleSort.sortB(arr)));
+        System.out.println(Arrays.toString(bubbleSort.sortB(new int[]{4,3,2,1})));
     }
 }
