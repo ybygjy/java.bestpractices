@@ -35,7 +35,7 @@ public class KeyStoreManager {
     public KeyStoreManager(File keyStoreFile, String keyStorePass) {
         this.keyStoreFile = keyStoreFile;
         this.keyStorePass = keyStorePass;
-        this.keyStore = createKeyStore(keyStoreFile, keyStorePass);
+        this.keyStore = loadKeyStore(keyStoreFile, keyStorePass);
     }
 
     /**
@@ -44,7 +44,7 @@ public class KeyStoreManager {
      * @param keyStorePass √‹¬Î–≈œ¢
      * @return rtnKeyStore {@link KeyStore}
      */
-    private KeyStore createKeyStore(File keyStoreFile, String keyStorePass) {
+    private KeyStore loadKeyStore(File keyStoreFile, String keyStorePass) {
         KeyStore keyStore = null;
         FileInputStream fisInst = null;
         try {
