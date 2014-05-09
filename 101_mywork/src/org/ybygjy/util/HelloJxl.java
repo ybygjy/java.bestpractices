@@ -1,4 +1,4 @@
-package org.ybygjy.jxl;
+package org.ybygjy.util;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -25,7 +25,7 @@ import jxl.write.biff.RowsExceededException;
  * @author WangYanCheng
  * @version 2010-11-15
  */
-public class JxlStudy {
+public class HelloJxl {
     /***/
     private String fileName = "ExcelTest";
     /**
@@ -152,13 +152,13 @@ System.out.println(cellContent);
      * @param args 参数列表
      */
     public static void main(String[] args) {
-        JxlStudy jxlStudy = new JxlStudy();
+        HelloJxl helloJxl = new HelloJxl();
         try {
-            jxlStudy.doCreateExcel();
-            jxlStudy.doReadExcel();
-            jxlStudy.doModifyExcel();
-            File tmpFile = jxlStudy.doRefWorkbook();
-            jxlStudy.doWrite(tmpFile);
+            helloJxl.doCreateExcel();
+            helloJxl.doReadExcel();
+            helloJxl.doModifyExcel();
+            File tmpFile = helloJxl.doRefWorkbook();
+            helloJxl.doWrite(tmpFile);
         } catch (BiffException e) {
             e.printStackTrace();
         } catch (WriteException e) {

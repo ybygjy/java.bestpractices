@@ -1,4 +1,4 @@
-package org.ybygjy.fileEdit;
+package org.ybygjy.basic.file.fileedit;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
