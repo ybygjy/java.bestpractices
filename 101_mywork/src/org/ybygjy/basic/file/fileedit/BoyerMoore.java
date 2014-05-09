@@ -1,4 +1,4 @@
-package org.ybygjy.fileEdit;
+package org.ybygjy.basic.file.fileedit;
 
 /**
  * 一种字符串匹配查找算法 <br>

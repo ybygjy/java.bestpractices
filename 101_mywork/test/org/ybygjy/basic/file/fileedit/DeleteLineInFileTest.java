@@ -1,4 +1,4 @@
-package org.ybygjy.fileEdit;
+package org.ybygjy.basic.file.fileedit;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,6 +9,7 @@ import java.nio.channels.FileChannel;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import org.ybygjy.basic.file.fileedit.DeleteLineInFile;
 
 /**
  * µ¥Ôª²âÊÔ

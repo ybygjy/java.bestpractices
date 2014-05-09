@@ -1,4 +1,4 @@
-package org.ybygjy.fileEdit;
+package org.ybygjy.basic.file.fileedit;
 
 import java.io.File;
 import java.io.FileFilter;
@@ -14,6 +14,7 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.ybygjy.basic.file.fileedit.FileReplaceBeta1;
 
 /**
  * ≤‚ ‘”√¿˝
