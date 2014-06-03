@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<note
+ xmlns="http://www.ybygjy.org"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.ybygjy.org file:///D:/DEV/09_gitwork/1001_mywork/101_mywork/src/org/ybygjy/xml/schema/schema-data-content.xml">
+	<to>mail@google.com</to>
+	<from>mail@ybygjy.org</from>
+	<heading>XML Schema</heading>
+	<body>这是一封测试邮件，请不要回复！</body>
+</note>
