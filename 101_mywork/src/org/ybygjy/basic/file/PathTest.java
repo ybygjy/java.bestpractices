@@ -5,6 +5,7 @@ import java.net.MalformedURLException;
 import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.TreeMap;
 
 import org.ybygjy.basic.TestInterface;
 import org.ybygjy.test.TestUtils;
@@ -16,7 +17,7 @@ import org.ybygjy.test.TestUtils;
  */
 public class PathTest implements TestInterface {
     /** hashMap */
-    private Map<String, String> contentMap = new HashMap<String, String>();
+    private Map<String, String> contentMap = new TreeMap<String, String>();
 
     /**
      * {@inheritDoc}
@@ -36,17 +37,18 @@ public class PathTest implements TestInterface {
         contentMap.put("Thread.currentThread().getContextClassLoader().getResource2", Thread.currentThread()
             .getContextClassLoader().getResource(".").toString());
         contentMap.put("ClassLoader.getSystemResource", ClassLoader.getSystemResource("").toString());
+        contentMap.put("PathTest.class.getResource(\"\").toString()", PathTest.class.getResource("").toString());
         TestUtils.doPrint(contentMap);
     }
     public void doTestFile2URL() {
         File fileInst = new File("C:\\Agreement");
         try {
             System.out.println("fileInst.toURL()==>" + fileInst.toURL());
-            System.out.println("fileInst.toURL()==>" + fileInst.toURL().getPath());
-            System.out.println("fileInst.toURL()==>" + fileInst.toURL().getFile());
-            System.out.println("fileInst.toURL()==>" + fileInst.toURL().toString());
-            System.out.println("fileInst.toURL()==>" + fileInst.toURL().getAuthority());
-            System.out.println("fileInst.toURL()==>" + fileInst.toURL().toURI());
+            System.out.println("fileInst.toURL().getPath()==>" + fileInst.toURL().getPath());
+            System.out.println("fileInst.toURL().getFile()==>" + fileInst.toURL().getFile());
+            System.out.println("fileInst.toURL().toString()==>" + fileInst.toURL().toString());
+            System.out.println("fileInst.toURL().getAuthority()==>" + fileInst.toURL().getAuthority());
+            System.out.println("fileInst.toURL().toURI()==>" + fileInst.toURL().toURI());
         } catch (MalformedURLException e) {
             e.printStackTrace();
         } catch (URISyntaxException e) {
@@ -60,7 +62,11 @@ public class PathTest implements TestInterface {
      */
     public static void main(String[] args) {
         PathTest pathTest = new PathTest();
+        System.out.println("pathTest.doTest()#Begin");
         pathTest.doTest();
-        //pathTest.doTestFile2URL();
+        System.out.println("pathTest.doTest()#End");
+        System.out.println("pathTest.doTestFile2URL()#Begin");
+        pathTest.doTestFile2URL();
+        System.out.println("pathTest.doTestFile2URL()#End");
     }
 }
