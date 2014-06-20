@@ -1,45 +1,50 @@
 <?xml version="1.0" encoding="GB18030"?>
-<project basedir="." default="retrieve"  xmlns:ivy="antlib:org.apache.ivy.ant">
-	<property name="build.dir" value="build"/>
-	<property name="build.src.java.dir" value="${basedir}\src\java"/>
-	<property name="build.src.test.dir" value="${basedir}\src\test"/>
-	<property name="build.compile.lib" value="${build.dir}\lib"/>
-	<property name="build.compile.dir" value="${build.dir}\classes"/>
+<project basedir="." default="task.jar" xmlns:artifact="antlib:org.apache.maven.artifact.ant">
+	<property name="build.dir" value="target"/>
+	<property name="build.lib" value="${build.dir}\lib"/>
+	<property name="build.class" value="${build.dir}\classes"/>
+	<property name="build.src.java.dir" value="${basedir}\src"/>
+	<property name="build.src.test.dir" value="${basedir}\test"/>
 	<property name="build.jar.filename" value="mywork"/>
 	<property name="build.jar.version" value="1.0"/>
 	<property name="build.web.dir" value="${basedir}\webRoot"/>
-	<property name="build.web.classes" value="${build.web.dir}\WEB-INF\classes"/>
 	<property name="build.web.lib" value="${build.web.dir}\WEB-INF\lib"></property>
-	<!--
-	<property name="ivy.default.ivy.user.dir" value="D:\DEV\env\apache-ivy-2.2.0\tmp"/>
-	-->
+	<path id="mvn-ant-tasks.classpath" path="${ant.home}/lib/maven-ant-tasks-2.1.3.jar"/>
+	<typedef resource="org/apache/maven/artifact/ant/antlib.xml" uri="antlib:org.apache.maven.artifact.ant" classpathref="mvn-ant-tasks.classpath"/>
+	<artifact:pom id="maven.project" file="pom.xml"/>
+	<artifact:dependencies filesetid="deps.fileset.compile" usescope="compile">
+		<localrepository path="D:\DEV\01_env\apache-maven-3.2.1\repository"/>
+		<pom refid="maven.project"/>
+	</artifact:dependencies>
 	<path id="build.compile.path">
-		<fileset dir="${build.compile.lib}">
+		<fileset dir="${build.web.lib}">
+			<include name="**/*.jar"/>
+		</fileset>
+		<fileset dir="${build.lib}">
 			<include name="**/*.jar"/>
 		</fileset>
 	</path>
-	<target name="retrieve" >
-		<!--
-		<ivy:retrieve sync="true" type="jar" pattern="lib/[conf]/[artifact]-[revision].[ext]"/>
-		-->
-		<ivy:retrieve pattern="${build.compile.lib}/[conf]/[type]/[artifact]-[revision]-[type].[ext]"/>
-	</target>
-	<target name="task.ivy.resolve">
-		<ivy:resolve transitive="true"/>
+	<target name="mvn-download-copy-lib">
+		<copy todir="${build.web.lib}">
+			<fileset refid="deps.fileset.compile"></fileset>
+			<mapper type="flatten"></mapper>
+		</copy>
 	</target>
 	<target name="task.prepare">
 		<delete dir="${build.compile.dir}"/>
 		<mkdir dir="${build.compile.dir}"/>
-		<antcall target="retrieve"/>
+		<mkdir dir="${build.lib}"/>
+		<antcall target="mvn-download-copy-lib"/>
 	</target>
-	<target name="javac" depends="task.prepare">
-		<javac srcdir="${build.src.java.dir}" destdir="${build.compile.dir}" verbose="true" encoding="UTF-8">
+	<target name="task.javac" depends="task.prepare">
+		<javac srcdir="${build.src.java.dir}" destdir="${build.class}" verbose="true" encoding="GB18030" debug="true">
 			<classpath refid="build.compile.path"/>
 		</javac>
 	</target>
-	<target name="jar" depends="javac">
+	<target name="task.jar" depends="task.javac">
 		<jar destfile="${build.dir}\${build.jar.filename}.jar">
-			<fileset dir="${build.compile.dir}">
+			<fileset dir="${build.class}">
+				<include name="*"/>
 			</fileset>
 			<manifest>
 				<attribute name="Manifest-Version" value="1.0"/>
@@ -49,6 +54,5 @@
 				<attribute name="Implementation-Version" value="3.0"/>
 			</manifest>
 		</jar>
-		<antcall target="task.jar.after"></antcall>
 	</target>
 </project>
