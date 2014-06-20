@@ -1,6 +1,7 @@
 /101_mywork/build/lib
-/101_mywork/webRoot/WEB-INF/classes
 /103_jms/bin
+/101_mywork/webRoot/WEB-INF/classes
+/101_mywork/webRoot/WEB-INF/lib/*.lib
 /103_jms/target
 /104_DBStructCompare/target
 /104_DBStructCompare/build/classes
