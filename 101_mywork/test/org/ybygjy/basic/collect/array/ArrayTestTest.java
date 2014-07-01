@@ -25,7 +25,6 @@ public class ArrayTestTest {
         atInst.doTestSysArrCopy();
         System.out.println(tmpList.toArray(new String[tmpList.size()])[0]);
     }
-
     @Test
     public void testdoTestSysArrCopy2() {
         atInst.doTestSysArrCopy2();
