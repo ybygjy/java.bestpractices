@@ -3,6 +3,14 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee
 	http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+	<filter>
+		<filter-name>CORSOriginHeaderScrutiny</filter-name>
+		<filter-class>org.ybygjy.web.filter.CORSOriginHeaderScutinyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>CORSOriginHeaderScrutiny</filter-name>
+		<url-pattern>*</url-pattern>
+	</filter-mapping>
 	<!-- Root server Begin -->
 	<servlet>
 		<servlet-name>StartupServlet</servlet-name>
