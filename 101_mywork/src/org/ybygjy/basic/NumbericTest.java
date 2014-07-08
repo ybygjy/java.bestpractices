@@ -10,9 +10,12 @@ import java.math.RoundingMode;
  */
 public class NumbericTest {
     public void testBigDecimalDivide() {
-        BigDecimal bigDecimal = new BigDecimal(new Double(12341234));
-        BigDecimal divideResult = bigDecimal.divide(new BigDecimal(100D), 2, RoundingMode.HALF_UP);
+        BigDecimal bigDecimal = new BigDecimal(12545);
+        BigDecimal divideResult = bigDecimal.divide(new BigDecimal(100), 2, RoundingMode.HALF_UP);
         System.out.println(divideResult.doubleValue());
+        System.out.println("divideResult.toEngineeringString()=>" + divideResult.toEngineeringString());
+        System.out.println("divideResult.toPlainString()=>" + divideResult.toPlainString());
+        System.out.println("divideResult.toString()=>" + divideResult.toString());
     }
     public static void main(String[] args) {
         new NumbericTest().testBigDecimalDivide();
