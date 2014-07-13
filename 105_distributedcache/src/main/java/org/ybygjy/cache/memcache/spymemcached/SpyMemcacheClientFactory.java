@@ -7,6 +7,7 @@ import net.spy.memcached.ConnectionFactory;
 import net.spy.memcached.DefaultConnectionFactory;
 import net.spy.memcached.MemcachedClient;
 import net.spy.memcached.auth.AuthDescriptor;
+import net.spy.memcached.auth.PlainCallbackHandler;
 
 import org.ybygjy.cache.Cache;
 import org.ybygjy.cache.CacheClientFactory;
@@ -69,19 +70,22 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 				return super.isDaemon();
 			}
 		};
-		return new DefaultConnectionFactory();
+		return rtnConnectionFactory;
 	}
 	private AuthDescriptor createAuthDescriptor() {
 		String userName = properties.getProperty(PROP_USERNAME);
 		String password = properties.getProperty(PROP_PASSWORD);
-		return null;
+		if (null == userName || null == password) {
+			return null;
+		}
+		return new AuthDescriptor(new String[]{"PLAIN"}, new PlainCallbackHandler(userName, password));
 	}
 	/**
 	 * 取缓存服务器列表
-	 * @return
+	 * @return rtnServerList
 	 */
 	private String getServerList() {
-		return null;
+		return properties.getProperty(PROP_SERVERS);
 	}
 	/** 配置前缀*/
 	private static final String PROP_PREFIX = "cache.distribution.";
