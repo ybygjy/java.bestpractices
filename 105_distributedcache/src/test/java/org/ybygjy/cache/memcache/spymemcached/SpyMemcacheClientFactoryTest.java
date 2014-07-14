@@ -10,14 +10,21 @@ import org.junit.Test;
 import org.ybygjy.cache.Cache;
 import org.ybygjy.cache.CacheClientFactory;
 
+/**
+ * 单元测试#SpyMemcacheClientFactory
+ * @author WangYanCheng
+ * @version 2014-7-14
+ */
 public class SpyMemcacheClientFactoryTest {
+	/** 缓存配置文件*/
+	private String confFile = "cache.distributed.properties";
 	private Cache cacheInst;
 	
 	@Before
 	public void beforeTest() {
 		Properties properties = new Properties();
 		try {
-			properties.load(this.getClass().getClassLoader().getResourceAsStream("cache.distributed.properties"));
+			properties.load(this.getClass().getClassLoader().getResourceAsStream(confFile));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -32,5 +39,4 @@ public class SpyMemcacheClientFactoryTest {
 	public void testCreateCache() {
 		Assert.assertNotNull(cacheInst);
 	}
-
 }

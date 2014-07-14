@@ -65,12 +65,14 @@ public class SpyMemcache implements Cache {
 		}
 	}
 
-	public void incr(String key, int factor, int startingValue) {
+	public long incr(String key, int factor, int startingValue) {
 		try {
 			log.info("org.ybygjy.cache.memcache.spymemcached.SpyMemcache.incr(String, int, int)=>" + key + "#" + factor + "#" + startingValue);
+			return memcachedClient.incr(key, factor, startingValue);
 		} catch (Exception e) {
 			exceptionHandler.handleErrorOnIncr(key, factor, startingValue, e);
 		}
+		return -1;
 	}
 
 	public void shutdown() {

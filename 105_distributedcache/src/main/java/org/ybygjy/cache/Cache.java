@@ -16,7 +16,7 @@ public interface Cache {
 
     public void delete(String key);
 
-    public void incr(String key, int factor, int startingValue);
+    public long incr(String key, int factor, int startingValue);
 
     public void shutdown();
 }
