@@ -42,14 +42,15 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 		throw new IllegalArgumentException("未被支持的缓存工厂类型，Key:" + PROP_CONNECTION_FACTORY + "Value:" + getConnectionFactoryName());
 	}
 	private boolean connectionFactoryNameEquals(Class<?> clazz) {
-		clazz.getSimpleName().equals(getConnectionFactoryName());
-		return false;
+System.out.println("clazz.getSimpleName()=>" + clazz.getName());
+		return clazz.getName().equals(getConnectionFactoryName());
 	}
 	private String getConnectionFactoryName() {
 		String rtnValue = properties.getProperty(PROP_CONNECTION_FACTORY);
 		if (rtnValue == null) {
 			rtnValue = DefaultConnectionFactory.class.getSimpleName();
 		}
+System.out.println("rtnValue=>" + rtnValue);
 		return rtnValue;
 	}
 	private DefaultConnectionFactory buildDefaultConnectionFactory() {
