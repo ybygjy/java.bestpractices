@@ -7,7 +7,7 @@ import junit.framework.Assert;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.ybygjy.cache.Cache;
+import org.ybygjy.cache.CacheClient;
 import org.ybygjy.cache.CacheClientFactory;
 
 /**
@@ -18,7 +18,7 @@ import org.ybygjy.cache.CacheClientFactory;
 public class SpyMemcacheClientFactoryTest {
 	/** ª∫¥Ê≈‰÷√Œƒº˛*/
 	private String confFile = "cache.distributed.properties";
-	private Cache cacheInst;
+	private CacheClient cacheInst;
 	
 	@Before
 	public void beforeTest() {
@@ -30,7 +30,7 @@ public class SpyMemcacheClientFactoryTest {
 		}
 		CacheClientFactory cacheClientFactory = new SpyMemcacheClientFactory(properties);
 		try {
-			cacheInst = cacheClientFactory.createCache();
+			cacheInst = cacheClientFactory.createCacheClient();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
