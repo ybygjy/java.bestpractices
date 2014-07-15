@@ -9,7 +9,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.ybygjy.cache.Cache;
+import org.ybygjy.cache.CacheClient;
 import org.ybygjy.cache.CacheClientFactory;
 
 /**
@@ -18,14 +18,14 @@ import org.ybygjy.cache.CacheClientFactory;
  * @version 2014-7-14
  */
 public class SpyMemcacheTest {
-	private Cache cacheInst = null;
+	private CacheClient cacheInst = null;
 	/**KeyÇ°×º*/
 	private static String CACHE_PREFIX = "spyclient.test";
 	@Before
 	public void setUp() throws Exception {
 		TestUtil testUtil = new TestUtil();
 		CacheClientFactory cacheClientFactory = new SpyMemcacheClientFactory(testUtil.getProperties());
-		cacheInst = cacheClientFactory.createCache();
+		cacheInst = cacheClientFactory.createCacheClient();
 	}
 
 	@After
@@ -54,7 +54,7 @@ public class SpyMemcacheTest {
 		printObj("Starting to setValue¡£¡£¡£");
 		for (int i = 0; i < 100; i++) {
 			String key = buildKey(i);
-			cacheInst.set(key, (int)(Math.random() * 10), String.valueOf(i));
+			cacheInst.set(key, 1000, String.valueOf(i));
 		}
 		for (int i = 100; i < 200; i++) {
 			Map<String, String> dataVal = new HashMap<String, String>();

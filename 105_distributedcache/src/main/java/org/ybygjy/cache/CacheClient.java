@@ -7,7 +7,7 @@ import java.util.Map;
  * @author WangYanCheng
  * @version 2014-7-11
  */
-public interface Cache {
+public interface CacheClient {
     public Object get(String key);
 
     public Map<String, Object> getMulti(String... keys);

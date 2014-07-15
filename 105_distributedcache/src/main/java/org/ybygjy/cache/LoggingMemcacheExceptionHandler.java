@@ -8,7 +8,7 @@ import java.util.logging.Logger;
  * @author WangYanCheng
  * @version 2014-7-11
  */
-public class LoggingMemcacheExceptionHandler implements CacheExceptionHandler {
+public class LoggingMemcacheExceptionHandler implements CacheClientExceptionHandler {
 	private static Logger logger = Logger.getLogger(LoggingMemcacheExceptionHandler.class.getName());
 	public void handleErrorOnGet(String key, Exception e) {
 		logger.log(Level.WARNING, "缓存_取数据异常{key:" + key + "}", e.getCause());

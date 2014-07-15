@@ -6,17 +6,17 @@ import java.util.logging.Logger;
 
 import net.spy.memcached.MemcachedClient;
 
-import org.ybygjy.cache.Cache;
-import org.ybygjy.cache.CacheExceptionHandler;
+import org.ybygjy.cache.CacheClient;
+import org.ybygjy.cache.CacheClientExceptionHandler;
 import org.ybygjy.cache.LoggingMemcacheExceptionHandler;
 /**
- * {@link Cache}，SypMemcache实现
+ * {@link CacheClient}，SypMemcache实现
  * @author WangYanCheng
  * @version 2014-7-11
  */
-public class SpyMemcache implements Cache {
+public class SpyMemcache implements CacheClient {
 	private static final Logger log = Logger.getLogger(SpyMemcache.class.getName());
-	private static CacheExceptionHandler exceptionHandler = new LoggingMemcacheExceptionHandler();
+	private static CacheClientExceptionHandler exceptionHandler = new LoggingMemcacheExceptionHandler();
 	/** SpyMemcache客户端实例，通过构造函数初始化*/
 	private final MemcachedClient memcachedClient;
 	/**
@@ -84,7 +84,7 @@ public class SpyMemcache implements Cache {
 		return memcachedClient;
 	}
 
-	public static void setExceptionHandler(CacheExceptionHandler exceptionHandler) {
+	public static void setExceptionHandler(CacheClientExceptionHandler exceptionHandler) {
 		SpyMemcache.exceptionHandler = exceptionHandler;
 	}
 }

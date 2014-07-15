@@ -5,7 +5,7 @@ package org.ybygjy.cache;
  * @author WangYanCheng
  * @version 2014-7-11
  */
-public interface CacheExceptionHandler {
+public interface CacheClientExceptionHandler {
     void handleErrorOnGet(String key, Exception e);
 
     void handleErrorOnSet(String key, int cacheTimeSeconds, Object o, Exception e);
