@@ -48,14 +48,25 @@ class DelegatingVehicleTracker {
     }
     /**
      * 取车辆位置信息，实时非快照方式
-     * @return
+     * @return unmodifiableMap
      */
     public Map<String, Point> getLocations() {
         return unmodifiableMap;
     }
+    /**
+     * 给定车辆的位置信息
+     * @param id 机车ID
+     * @return rtnPoint {@link Point} 位置信息
+     */
     public Point getLocation(String id) {
         return locations.get(id);
     }
+    /**
+     * 更新车辆位置信息
+     * @param id 机车ID
+     * @param x 横坐标
+     * @param y 纵坐标
+     */
     public void setLocation(String id, int x, int y) {
         if (null == locations.replace(id, new Point(x, y))) {
             throw new IllegalArgumentException("Invalid vehicle name: " + id);
