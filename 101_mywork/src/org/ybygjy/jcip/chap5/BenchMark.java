@@ -13,6 +13,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 /**
  * 此类负责对Java各容器的基本性能测试，注意该类的设计思想具备推广价值
  * <p>源地址：http://www.kafka0102.com/2010/11/405.html</p>
+<<<<<<< HEAD
  * <p>1、使用闭锁处理等待多个线程全部执行完成的问题</p>
  * <p>2、封装了</p>
  * @version 2014年7月31日
@@ -36,10 +37,29 @@ public class BenchMark {
      * @param ratio 测试容器读/写频率因子
      */
     public BenchMark(final int loop, final int threads, final float ratio) {
+=======
+ * @version 2014年7月31日
+ */
+public class BenchMark {
+
+    public volatile long totalTime;
+
+    private CountDownLatch latch;
+
+    private final int loop;
+
+    private final int threads;
+
+    private final float ratio;
+
+    public BenchMark(final int loop, final int threads, final float ratio) {
+        super();
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         this.loop = loop;
         this.threads = threads;
         this.ratio = ratio;
     }
+<<<<<<< HEAD
     /**
      * 内部类负责执行针对容器的基准测试
      * @author WangYanCheng
@@ -58,6 +78,17 @@ public class BenchMark {
         public BenchMarkRunnable(final MapWrapper mapWrapper, final int mapSize) {
             this.mapWrapper = mapWrapper;
             this.size = mapSize;
+=======
+    class BenchMarkRunnable implements Runnable {
+
+        private final MapWrapper mapWrapper;
+
+        private final int size;
+
+        public BenchMarkRunnable(final MapWrapper mapWrapper, final int size) {
+            this.mapWrapper = mapWrapper;
+            this.size = size;
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         }
         public void benchmarkRandomReadPut(final MapWrapper mapWrapper, final int loop) {
             final Random random = new Random();
@@ -80,7 +111,11 @@ public class BenchMark {
             latch.countDown();
         }
     }
+<<<<<<< HEAD
     public void doTest(final MapWrapper mapWrapper) {
+=======
+    public void benchmark(final MapWrapper mapWrapper) {
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         final float size = loop * threads * ratio;
         totalTime = 0;
         for (int k = 0; k < 3; k++) {
@@ -102,10 +137,18 @@ public class BenchMark {
             }
         }
         final int rwratio = (int) (1.0 / ratio);
+<<<<<<< HEAD
         System.out.println("[" + mapWrapper.getName() + "]线程数[" + threads + "]读/写因子[" + rwratio + "]平均时间[" + totalTime / 3 + "]");
     }
 
     public static void doTest(final int loop, final int threads, final float ratio) {
+=======
+        System.out.println("[" + mapWrapper.getName() + "]threadnum[" + threads + "]ratio[" + rwratio
+            + "]avgtime[" + totalTime / 3 + "]");
+    }
+
+    public static void benchmark2(final int loop, final int threads, final float ratio) {
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         final BenchMark benchMark = new BenchMark(loop, threads, ratio);
         final MapWrapper[] wrappers = new MapWrapper[] { new HashTableMapWrapper(),
         new SyncMapWrapper(),
@@ -115,6 +158,7 @@ public class BenchMark {
         new WriteLockMapWrapper()
         };
         for (final MapWrapper wrapper : wrappers) {
+<<<<<<< HEAD
             benchMark.doTest(wrapper);
         }
     }
@@ -145,6 +189,32 @@ public class BenchMark {
  * @author WangYanCheng
  * @version 2014年8月8日
  */
+=======
+            benchMark.benchmark(wrapper);
+        }
+    }
+    public static void test() {
+        benchmark2(100, 10, 1);// r:w 1:1
+        benchmark2(100, 10, 0.1f);// r:w 10:1
+        benchmark2(100, 10, 0.01f);// r:w 100:1
+        benchmark2(100, 10, 0.001f);// r:w 1000:1
+        // ///
+        benchmark2(100, 50, 0.1f);// r:w 10:1
+        benchmark2(100, 50, 0.01f);// r:w 100:1
+        benchmark2(100, 50, 0.001f);// r:w 1000:1
+        // ///
+        benchmark2(100, 100, 1f);// r:w 10:1
+        benchmark2(100, 100, 0.1f);// r:w 10:1
+        benchmark2(100, 100, 0.01f);// r:w 100:1
+        benchmark2(100, 100, 0.001f);// r:w 1000:1
+        // //
+    }
+    public static void main(final String[] args) {
+        test();
+    }
+}
+
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
 class HashTableMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
 
@@ -169,6 +239,7 @@ class HashTableMapWrapper implements MapWrapper {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 采用实例级别同步的Map集合
  * @author WangYanCheng
@@ -176,6 +247,11 @@ class HashTableMapWrapper implements MapWrapper {
  */
 class SyncMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
+=======
+class SyncMapWrapper implements MapWrapper {
+    private final Map<Object, Object> map;
+
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
     public SyncMapWrapper() {
         map = new HashMap<Object, Object>();
     }
@@ -197,11 +273,14 @@ class SyncMapWrapper implements MapWrapper {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 采用重入锁控制读/写操作的Map集合
  * @author WangYanCheng
  * @version 2014年8月8日
  */
+=======
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
 class LockMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
     private final Lock lock;
@@ -215,7 +294,10 @@ class LockMapWrapper implements MapWrapper {
         try {
             map.clear();
         } catch (final Exception e) {
+<<<<<<< HEAD
             e.printStackTrace();
+=======
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         } finally {
             lock.unlock();
         }
@@ -226,7 +308,11 @@ class LockMapWrapper implements MapWrapper {
         try {
             return map.get(key);
         } catch (final Exception e) {
+<<<<<<< HEAD
             e.printStackTrace();
+=======
+            // TODO: handle exception
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         } finally {
             lock.unlock();
         }
@@ -238,7 +324,10 @@ class LockMapWrapper implements MapWrapper {
         try {
             map.put(key, value);
         } catch (final Exception e) {
+<<<<<<< HEAD
             e.printStackTrace();
+=======
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         } finally {
             lock.unlock();
         }
@@ -249,6 +338,7 @@ class LockMapWrapper implements MapWrapper {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 带有可重入读写锁控制并发的Map集合
  * @author WangYanCheng
@@ -258,6 +348,16 @@ class RWLockMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
     private final Lock readLock;
     private final Lock writeLock;
+=======
+class RWLockMapWrapper implements MapWrapper {
+
+    private final Map<Object, Object> map;
+
+    private final Lock readLock;
+
+    private final Lock writeLock;
+
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
     public RWLockMapWrapper() {
         map = new HashMap<Object, Object>();
         final ReentrantReadWriteLock lock = new ReentrantReadWriteLock();
@@ -282,7 +382,11 @@ class RWLockMapWrapper implements MapWrapper {
         try {
             return map.get(key);
         } catch (final Exception e) {
+<<<<<<< HEAD
             e.printStackTrace();
+=======
+            // TODO: handle exception
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
         } finally {
             readLock.unlock();
         }
@@ -304,11 +408,14 @@ class RWLockMapWrapper implements MapWrapper {
         return "rwlock";
     }
 }
+<<<<<<< HEAD
 /**
  * JDK1.5加入的并发容器Map集合
  * @author WangYanCheng
  * @version 2014年8月8日
  */
+=======
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
 class ConcurrentMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
     public ConcurrentMapWrapper() {
@@ -332,11 +439,14 @@ class ConcurrentMapWrapper implements MapWrapper {
     }
 }
 
+<<<<<<< HEAD
 /**
  * 采用重入锁只控制写锁并发的Map集合
  * @author WangYanCheng
  * @version 2014年8月8日
  */
+=======
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
 class WriteLockMapWrapper implements MapWrapper {
     private final Map<Object, Object> map;
     private final Lock lock;
@@ -373,6 +483,7 @@ class WriteLockMapWrapper implements MapWrapper {
         return "writelock";
     }
 }
+<<<<<<< HEAD
 /**
  * 定义被测试Map集合的行为，定义参与测试的容器必须包括的行为，如put/get
  * @author WangYanCheng
@@ -402,5 +513,15 @@ interface MapWrapper {
      * 返回测试实体的标识
      * @return rtnName
      */
+=======
+interface MapWrapper {
+
+    void put(Object key, Object value);
+
+    Object get(Object key);
+
+    void clear();
+
+>>>>>>> 158d2ea208de16f43c5005313a35bb9c01caa13a
     String getName();
 }
