@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
  * 此类负责对Java各容器的基本性能测试，注意该类的设计思想具备推广价值
  * <p>源地址：http://www.kafka0102.com/2010/11/405.html</p>
  * <p>1、使用闭锁处理等待多个线程全部执行完成的问题</p>
- * <p>2、封装了</p>
+ * <p>2、定义被测试容器接口统一测试方法</p>
  * @version 2014年7月31日
  */
 public class BenchMark {
