@@ -48,7 +48,7 @@ public class BenchMark {
     class BenchMarkRunnable implements Runnable {
         /** 被测试容器*/
         private final MapWrapper mapWrapper;
-        /** */
+        /** 被测试容器存储元素的目标大小*/
         private final int size;
         /**
          * Constructor
