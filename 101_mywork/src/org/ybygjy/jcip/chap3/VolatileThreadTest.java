@@ -91,6 +91,7 @@ public class VolatileThreadTest {
  * @version 2014-7-17
  */
 class VolatileVO {
+	/** 使用volatile确保并发环境下值的可见性*/
     private volatile int step;
 
     public int getStep() {
