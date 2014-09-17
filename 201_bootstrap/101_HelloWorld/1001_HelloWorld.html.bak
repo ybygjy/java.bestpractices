@@ -208,12 +208,6 @@
 							<td class="is-visible">
 								Visible
 							</td>
-							<td class="is-hidden">
-								Hidden
-							</td>
-							<td class="is-hidden">
-								Hidden
-							</td>
 						</tr>
 					</tbody>
 				</table>
