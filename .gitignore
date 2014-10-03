@@ -1,5 +1,5 @@
 /101_mywork/.project
-/101_mywork/.settings/org.eclipse.jdt.core.prefs
+/101_mywork/.settings/*
 /101_mywork/build/lib
 /103_jms/bin
 /101_mywork/webRoot/WEB-INF/classes
