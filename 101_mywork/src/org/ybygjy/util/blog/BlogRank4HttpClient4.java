@@ -29,6 +29,7 @@ public class BlogRank4HttpClient4 {
     private List<String> cachePage;
     public BlogRank4HttpClient4() {
         httpClient = new HttpClient(new SimpleHttpConnectionManager(false));
+        httpClient.getHttpConnectionManager().getParams().setConnectionTimeout(3000);
         cachePage = new ArrayList<String>();
         pageCount = new AtomicInteger(0);
         articleCount = new AtomicInteger(0);
