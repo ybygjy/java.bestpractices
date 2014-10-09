@@ -6,4 +6,4 @@
 */classes
 /WEB-INF/lib/*.lib
 */target/*
-*/.settings/*
+*/.settings/
