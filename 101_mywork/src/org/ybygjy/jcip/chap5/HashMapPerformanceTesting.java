@@ -100,7 +100,7 @@ public class HashMapPerformanceTesting {
 			new Hashtable<Object, Object>()
 		};
 		for (Map<Object, Object> targetMap : mapArray) {
-			HashMapPerformanceTesting hmptInst = new HashMapPerformanceTesting(10, 100, 1F, targetMap);
+			HashMapPerformanceTesting hmptInst = new HashMapPerformanceTesting(10, 100, 0.1f, targetMap);
 			try {
 				hmptInst.doTest();
 			} catch (InterruptedException e) {
