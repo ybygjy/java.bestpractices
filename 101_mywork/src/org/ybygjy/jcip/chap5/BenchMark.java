@@ -10,7 +10,7 @@ import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4SynchroFactoryMap;
 import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4WriteLock;
 
 /**
- * 该类描述了对Java各容器的基本性能测试，需要注意该类的设计思想非常有意思
+ * 该类描述了对Java各容器的基本性能测试，需要注意原作者的设计思路非常具有通用性
  * <p>源地址：http://www.kafka0102.com/2010/11/405.html</p>
  * <p>1、使用闭锁处理等待多个线程全部执行完成的问题</p>
  * <p>2、定义被测试容器接口统一测试方法</p>
