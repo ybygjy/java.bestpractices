@@ -1,16 +1,13 @@
 package org.ybygjy.jcip.chap5;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
-import java.util.concurrent.locks.Lock;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.concurrent.locks.ReentrantReadWriteLock;
 
+import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4ConcurrentMap;
 import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4HashTable;
+import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4RWLock;
 import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4ReentLock;
 import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4SynchroFactoryMap;
+import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4WriteLock;
 
 /**
  * 该类描述了对Java各容器的基本性能测试，需要注意该类的设计思想非常有意思
@@ -47,12 +44,20 @@ public class BenchMark {
      * @param mapWrapper
      */
     private void doTest(final BenchMarkMapWrapper mapWrapper) {
-        final float size = loop * threads * ratio;
+        final float maxSize = loop * threads * ratio;
         totalTime = 0;
-        for (int k = 0; k < 3; k++) {
+        //执行4次取平均耗时
+        for (int k = 0; k < 4; k++) {
             latch = new CountDownLatch(threads);
             for (int i = 0; i < threads; i++) {
-                new Thread(new BenchMarkRunnable(mapWrapper, (int) size, loop)).start();
+            	BenchmarkRunnable bmrInst = new BenchmarkRunnable(mapWrapper, (int) maxSize, loop, latch, new BenchmarkRunnableCallback() {
+					@Override
+					public void callback(BenchmarkRunnable benchmarkRunnable) {
+						totalTime += benchmarkRunnable.getTimeConsume();
+					}
+				});
+                new Thread(bmrInst, mapWrapper + "_" + i).start();
+//System.out.println(mapWrapper.getName() + ":" + this.totalTime);
             }
             try {
                 latch.await();
@@ -65,21 +70,27 @@ public class BenchMark {
             try {
                 Thread.sleep(1000);
             } catch (final Exception e) {
+            	e.printStackTrace();
             }
         }
-        final int rwratio = (int) (1.0 / ratio);
-        System.out.println("[" + mapWrapper.getName() + "]线程数[" + threads + "]读/写因子[" + rwratio + "]平均时间[" + totalTime / 3 + "]");
+        System.out.println("[" + mapWrapper.getName() + "]线程数[" + threads + "]读/写因子[" + this.ratio + "]平均时间(秒)[" + (totalTime / 4.0)/(1000*1000*1000) + "]");
     }
 
+    /**
+     * 测试入口
+     * @param loop 循环次数
+     * @param threads 线程数量
+     * @param ratio R/W因子
+     */
     public static void doTest(final int loop, final int threads, final float ratio) {
         final BenchMark benchMark = new BenchMark(loop, threads, ratio);
         final BenchMarkMapWrapper[] wrappers = new BenchMarkMapWrapper[] {
 	        new BenchMarkMapWrapperImpl4SynchroFactoryMap(),
 	        new BenchMarkMapWrapperImpl4HashTable(),
 	        new BenchMarkMapWrapperImpl4ReentLock(),
-	        new RWLockMapWrapper(),
-	        new ConcurrentMapWrapper(),
-	        new WriteLockMapWrapper()
+	        new BenchMarkMapWrapperImpl4WriteLock(),
+	        new BenchMarkMapWrapperImpl4ConcurrentMap(),
+	        new BenchMarkMapWrapperImpl4RWLock()
         };
         for (final BenchMarkMapWrapper wrapper : wrappers) {
             benchMark.doTest(wrapper);
@@ -91,6 +102,7 @@ public class BenchMark {
      */
     public static void main(final String[] args) {
         doTest(100, 10, 1);// r:w 1:1
+        /*
         doTest(100, 10, 0.1f);// r:w 10:1
         doTest(100, 10, 0.01f);// r:w 100:1
         doTest(100, 10, 0.001f);// r:w 1000:1
@@ -104,47 +116,6 @@ public class BenchMark {
         doTest(100, 100, 0.01f);// r:w 100:1
         doTest(100, 100, 0.001f);// r:w 1000:1
         // //
-    }
-}
-
-/**
- * 采用重入锁只控制写锁并发的Map集合
- * @author WangYanCheng
- * @version 2014年8月8日
- */
-class WriteLockMapWrapper implements BenchMarkMapWrapper {
-    private final Map<Object, Object> map;
-    private final Lock lock;
-    public WriteLockMapWrapper() {
-        map = new HashMap<Object, Object>();
-        lock = new ReentrantLock();
-    }
-    @Override
-    public void clear() {
-        lock.lock();
-        try {
-            map.clear();
-        } catch (final Exception e) {
-        } finally {
-            lock.unlock();
-        }
-    }
-    @Override
-    public Object get(final Object key) {
-        return map.get(key);
-    }
-    @Override
-    public void put(final Object key, final Object value) {
-        lock.lock();
-        try {
-            map.put(key, value);
-        } catch (final Exception e) {
-        } finally {
-            lock.unlock();
-        }
-    }
-    @Override
-    public String getName() {
-        return "writelock";
+        */
     }
 }

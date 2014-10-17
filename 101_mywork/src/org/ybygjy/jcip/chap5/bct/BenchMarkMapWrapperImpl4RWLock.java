@@ -38,7 +38,7 @@ public class BenchMarkMapWrapperImpl4RWLock implements BenchMarkMapWrapper {
 
 	@Override
 	public Object get(Object key) {
-		this.readLock.unlock();
+		this.readLock.lock();
 		try {
 			return this.container.get(key);
 		} catch (Exception e) {
