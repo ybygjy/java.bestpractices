@@ -5,7 +5,7 @@ package org.ybygjy.jcip.chap5;
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public interface BenchMarkMapWrapper {
+public interface BenchmarkMapWrapper {
 	/**
 	 * 键值对存储
 	 * @param key

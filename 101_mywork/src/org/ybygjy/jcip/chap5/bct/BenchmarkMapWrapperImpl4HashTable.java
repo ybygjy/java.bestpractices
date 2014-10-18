@@ -3,20 +3,20 @@ package org.ybygjy.jcip.chap5.bct;
 import java.util.Hashtable;
 import java.util.Map;
 
-import org.ybygjy.jcip.chap5.BenchMarkMapWrapper;
+import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
  * 容器测试接口HashTable实现
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public class BenchMarkMapWrapperImpl4HashTable implements BenchMarkMapWrapper {
+public class BenchmarkMapWrapperImpl4HashTable implements BenchmarkMapWrapper {
     private final Map<Object, Object> map;
 
     /**
      * Constructor
      */
-    public BenchMarkMapWrapperImpl4HashTable() {
+    public BenchmarkMapWrapperImpl4HashTable() {
         map = new Hashtable<Object, Object>();
     }
     @Override

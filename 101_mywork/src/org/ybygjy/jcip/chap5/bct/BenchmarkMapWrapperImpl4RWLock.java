@@ -4,21 +4,21 @@ import java.util.HashMap;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 
-import org.ybygjy.jcip.chap5.BenchMarkMapWrapper;
+import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
  * 测试容器实现#采用可重入读写锁控制容器并发
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public class BenchMarkMapWrapperImpl4RWLock implements BenchMarkMapWrapper {
+public class BenchmarkMapWrapperImpl4RWLock implements BenchmarkMapWrapper {
 	private HashMap<Object, Object> container;
 	private Lock readLock;
 	private Lock writeLock;
 	/**
 	 * 构造函数
 	 */
-	public BenchMarkMapWrapperImpl4RWLock() {
+	public BenchmarkMapWrapperImpl4RWLock() {
 		this.container = new HashMap<Object, Object>();
 		final ReentrantReadWriteLock rwLock = new ReentrantReadWriteLock();
 		this.readLock = rwLock.readLock();

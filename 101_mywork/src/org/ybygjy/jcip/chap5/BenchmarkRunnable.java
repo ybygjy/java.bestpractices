@@ -10,7 +10,7 @@ import java.util.concurrent.CountDownLatch;
  */
 public class BenchmarkRunnable implements Runnable {
 	/**被测试容器*/
-	private BenchMarkMapWrapper container;
+	private BenchmarkMapWrapper container;
 	/**最大容器存储元素个数*/
 	private int maxSize;
 	/**循环次数*/
@@ -23,11 +23,11 @@ public class BenchmarkRunnable implements Runnable {
 	private BenchmarkRunnableCallback callback;
 	/**
 	 * 构造函数
-	 * @param container {@link BenchMarkMapWrapper}
+	 * @param container {@link BenchmarkMapWrapper}
 	 * @param maxSize 最大容器存储元素个数
 	 * @param loopTimes 循环次数
 	 */
-	public BenchmarkRunnable(BenchMarkMapWrapper container, int maxSize, int loopTimes, CountDownLatch latch, BenchmarkRunnableCallback callback) {
+	public BenchmarkRunnable(BenchmarkMapWrapper container, int maxSize, int loopTimes, CountDownLatch latch, BenchmarkRunnableCallback callback) {
 		super();
 		this.container = container;
 		this.maxSize = maxSize;
