@@ -2,19 +2,19 @@ package org.ybygjy.jcip.chap5.bct;
 
 import java.util.concurrent.ConcurrentHashMap;
 
-import org.ybygjy.jcip.chap5.BenchMarkMapWrapper;
+import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
  * 测试容器实现#并发容器实现
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public class BenchMarkMapWrapperImpl4ConcurrentMap implements BenchMarkMapWrapper {
+public class BenchmarkMapWrapperImpl4ConcurrentMap implements BenchmarkMapWrapper {
 	private ConcurrentHashMap<Object, Object> container;
 	/**
 	 * Constructor
 	 */
-	public BenchMarkMapWrapperImpl4ConcurrentMap() {
+	public BenchmarkMapWrapperImpl4ConcurrentMap() {
 		this.container = new ConcurrentHashMap<Object, Object>();
 	}
 	@Override

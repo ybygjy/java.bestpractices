@@ -2,12 +2,12 @@ package org.ybygjy.jcip.chap5;
 
 import java.util.concurrent.CountDownLatch;
 
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4ConcurrentMap;
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4HashTable;
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4RWLock;
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4ReentLock;
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4SynchroFactoryMap;
-import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4WriteLock;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4ConcurrentMap;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4HashTable;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4RWLock;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4ReentLock;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4SynchroFactoryMap;
+import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4WriteLock;
 
 /**
  * 该类描述了对Java各容器的基本性能测试，需要注意原作者的设计思路非常具有通用性
@@ -16,7 +16,7 @@ import org.ybygjy.jcip.chap5.bct.BenchMarkMapWrapperImpl4WriteLock;
  * <p>2、定义被测试容器接口统一测试方法</p>
  * @version 2014年7月31日
  */
-public class BenchMark {
+public class BenchmarkTest {
     /** 总耗时*/
     public volatile long totalTime;
     /** 闭锁_用于控制多个测试线程同时开始并等待同时结束标识*/
@@ -34,7 +34,7 @@ public class BenchMark {
      * @param threads 测试线程数量
      * @param ratio 测试容器读/写频率因子
      */
-    public BenchMark(final int loop, final int threads, final float ratio) {
+    public BenchmarkTest(final int loop, final int threads, final float ratio) {
         this.loop = loop;
         this.threads = threads;
         this.ratio = ratio;
@@ -43,7 +43,7 @@ public class BenchMark {
      * 测试
      * @param mapWrapper
      */
-    private void doTest(final BenchMarkMapWrapper mapWrapper) {
+    private void doTest(final BenchmarkMapWrapper mapWrapper) {
         final float maxSize = loop * threads * ratio;
         totalTime = 0;
         //执行4次取平均耗时
@@ -83,16 +83,16 @@ public class BenchMark {
      * @param ratio R/W因子
      */
     public static void doTest(final int loop, final int threads, final float ratio) {
-        final BenchMark benchMark = new BenchMark(loop, threads, ratio);
-        final BenchMarkMapWrapper[] wrappers = new BenchMarkMapWrapper[] {
-	        new BenchMarkMapWrapperImpl4SynchroFactoryMap(),
-	        new BenchMarkMapWrapperImpl4HashTable(),
-	        new BenchMarkMapWrapperImpl4ReentLock(),
-	        new BenchMarkMapWrapperImpl4WriteLock(),
-	        new BenchMarkMapWrapperImpl4ConcurrentMap(),
-	        new BenchMarkMapWrapperImpl4RWLock()
+        final BenchmarkTest benchMark = new BenchmarkTest(loop, threads, ratio);
+        final BenchmarkMapWrapper[] wrappers = new BenchmarkMapWrapper[] {
+	        new BenchmarkMapWrapperImpl4SynchroFactoryMap(),
+	        new BenchmarkMapWrapperImpl4HashTable(),
+	        new BenchmarkMapWrapperImpl4ReentLock(),
+	        new BenchmarkMapWrapperImpl4WriteLock(),
+	        new BenchmarkMapWrapperImpl4ConcurrentMap(),
+	        new BenchmarkMapWrapperImpl4RWLock()
         };
-        for (final BenchMarkMapWrapper wrapper : wrappers) {
+        for (final BenchmarkMapWrapper wrapper : wrappers) {
             benchMark.doTest(wrapper);
         }
     }

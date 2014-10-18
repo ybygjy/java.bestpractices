@@ -4,19 +4,19 @@ import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.ybygjy.jcip.chap5.BenchMarkMapWrapper;
+import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
  * 采用同步封装器确保容器的同步容器测试接口实现
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public class BenchMarkMapWrapperImpl4SynchroFactoryMap implements BenchMarkMapWrapper {
+public class BenchmarkMapWrapperImpl4SynchroFactoryMap implements BenchmarkMapWrapper {
 	private Map<Object, Object> hashMap;
 	/**
 	 * 构造函数
 	 */
-	public BenchMarkMapWrapperImpl4SynchroFactoryMap() {
+	public BenchmarkMapWrapperImpl4SynchroFactoryMap() {
 		this.hashMap = Collections.synchronizedMap(new HashMap<Object, Object>());
 	}
 	@Override

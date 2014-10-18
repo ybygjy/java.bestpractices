@@ -1,63 +1,55 @@
 package org.ybygjy.jcip.chap5.bct;
 
 import java.util.HashMap;
+import java.util.Map;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
-import org.ybygjy.jcip.chap5.BenchMarkMapWrapper;
+import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * 测试容器实现#采用重入锁实现容器的并发控制
+ * 测试容器实现#
  * @author WangYanCheng
  * @version 2014年10月15日
  */
-public class BenchMarkMapWrapperImpl4ReentLock implements BenchMarkMapWrapper {
-	private HashMap<Object,Object> container;
-	private Lock reentLock;
-	public BenchMarkMapWrapperImpl4ReentLock() {
+public class BenchmarkMapWrapperImpl4WriteLock implements BenchmarkMapWrapper {
+	private Map<Object, Object> container;
+	private Lock lock;
+	/**
+	 * 构造函数
+	 */
+	public BenchmarkMapWrapperImpl4WriteLock() {
 		this.container = new HashMap<Object, Object>();
-		this.reentLock = new ReentrantLock();
+		this.lock = new ReentrantLock();
 	}
 	@Override
 	public void put(Object key, Object value) {
-		this.reentLock.lock();
+		this.lock.lock();
 		try {
 			this.container.put(key, value);
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			this.reentLock.unlock();
+			lock.unlock();
 		}
 	}
-
 	@Override
 	public Object get(Object key) {
-		this.reentLock.lock();
-		try {
-			return this.container.get(key);
-		} catch(Exception e) {
-			e.printStackTrace();
-		} finally {
-			this.reentLock.unlock();
-		}
-		return null;
+		return this.container.get(key);
 	}
-
 	@Override
 	public void clear() {
-		this.reentLock.lock();
+		this.lock.lock();
 		try {
 			this.container.clear();
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
-			this.reentLock.unlock();
+			this.lock.unlock();
 		}
 	}
-
 	@Override
 	public String getName() {
-		return "ReentLockContainer";
+		return "OnlyWriteLockContainer";
 	}
-
 }
