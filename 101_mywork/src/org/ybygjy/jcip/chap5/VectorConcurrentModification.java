@@ -61,7 +61,7 @@ public class VectorConcurrentModification {
         }
     }
     /**
-     * 负责
+     * 负责更新容器内容
      * @author WangYanCheng
      * @version 2014年7月25日
      */
