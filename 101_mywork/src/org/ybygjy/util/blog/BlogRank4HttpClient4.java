@@ -154,6 +154,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         blogRank.addRequestHeaderParam("Cache-Control", "no-cache");
         blogRank.addRequestHeaderParam("User-Agent", "Mozilla/5.0 (Windows NT 5.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.116 Safari/537.36");
         blogRank.addParam("viewmode", "contents");
+        blogRank.addParam("JSESSIONID", String.valueOf(Math.random()));
         blogRank.doWork();
     }
 }
