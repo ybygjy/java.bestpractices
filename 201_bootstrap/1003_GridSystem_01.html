@@ -1,0 +1,36 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>Bootstrap网格系统</title>
+		<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.0.3/css/bootstrap.min.css">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://libs.baidu.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div class="container">
+			<h1>HelloWorld</h1>
+			<div class="row">
+				<div class="col-sm-3 col-md-6 col-lg-8" style="background-color:#dedef8;box-shadow:inset 1px -1px 1px #444,inset -1px 1px 1px #444;">
+					<p>阻塞队列提供了可阻塞的put和take方法，以及支持定时的offer和poll方法。如果队列已经满了，那么put方法将阻塞直到有空间可用。如果队列为空，那么
+					take方法将会阻塞直到有元素可用。队列可以是有界的也可以是无界的，无界队列永远都不会充满，因为无界队列上的pull方法也永远不会阻塞。
+					</p>
+					<p>阻塞队列支持生产者-消费者这种设计模式。该模式将“找出需要完成的工作”与“执行工作”这两个过程分离开来，并把工作项放入一个“待完成”列表中以便在随后处理，
+					而不是找出后立即处理。生产者-消费者模式能简化开发过程，因为它消除了生产者类和消费者类之间的代码依赖性，此外，该模式还将生产数据的过程与使用数据的过程解耦开来
+					以简化工作负载的管理，因为这两个过程在处理数据的速率上有所不同。
+					</p>
+				</div>
+				<div class="col-sm-9 col-md-6 col-lg-4">
+					<p>
+						在基于阻塞队列构建的生产者-消费者设计中，当数据生成时，生产者把数据放入队列，而当消费者准备处理数据时，将从队列中获取数据。生产者不需要知道消费者的标识
+						或数量，或者它们是否是唯一的生产者，而只需将数据放入队列即可。同样，消费者也不需要知道生产者是谁，或者工作来自何处。BlockingQueue简化了生产者-消费者设计的
+						实现过程，它支持任意数量的生产者和消费者。一种常见的生产者-消费者设计模式就是线程池与工作队列的组合，在Executor任务执行框架中就体现了这种模式。
+					</p>
+					<p>
+						“生产者”和“消费者”的角色是相对的，某种环境中的消费者在另一种不同的环境中可能会成为生产者。烘干盘子的工作将“消费”洗干净的湿盘子，而产生烘干的盘子。
+						第三个人把洗干净的盘子整理好，在这种情况中，烘干盘子的人即是消费者，也是生产者，从而就有了两个共享的工作队列（每个队列都可能阻塞烘干工作的运行）。
+					</p>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
