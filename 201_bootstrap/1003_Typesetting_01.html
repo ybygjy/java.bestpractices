@@ -1,0 +1,159 @@
+<!DOCTYPE>
+<html>
+	<head>
+		<title>排版</title>
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+		<script src="/js/bootstrap.js"></script>
+	</head>
+	<body>
+		<div>
+			<h4>一、6种标题</h4>
+			<div>
+				<h1>我是标题 h1</h1>
+				<h2>我是标题 h2</h2>
+				<h3>我是标题 h3</h3>
+				<h4>我是标题 h4</h4>
+				<h5>我是标题 h5</h5>
+				<h6>我是标题 h6</h6>
+			</div>
+		</div>
+		<div>
+			<h4>二、字标题与副标题&nbsp;<small>副标题</small></h4>
+			<div>
+				<h1>我是标题1 h1 <small>我是标题1 h1</small></h1>
+				<h2>我是标题2 h2 <small>我是标题2 h2</small></h2>
+				<h3>我是标题3 h3 <small>我是标题3 h3</small></h3>
+				<h4>我是标题4 h4 <small>我是标题4 h4</small></h4>
+				<h5>我是标题5 h5 <small>我是标题5 h5</small></h5>
+				<h6>我是标题6 h6 <small>我是标题6 h6</small></h6>
+			</div>
+		</div>
+		<div>
+			<h4>三、引导主体副本</h4>
+			<div>
+				<p>class="lead"，得到更大更粗行高更高的文本</p>
+				<p class="lead">
+					许多Swing程序并没有在事件分派线程中初始化用户界面。在主线程中完成初始化是通常采用的方式。
+					在初始化语句结束后，main方法退出，需要注意的是，即出main并没有终止程序，终止的只是主线程。
+					事件分派线程保持程序处于激活状态，直到关闭框架或调用System.exit方法终止程序。
+				</p>
+			</div>
+		</div>
+		<div>
+			<h4>四、强调small/strong/em</h4>
+			<div>
+				<small>small设置文本为父文本大小的85%</small><br>
+				<strong>strong设置文件为更粗的文本</strong>
+				<em>设置文本为斜体</em>
+			</div>
+			<div>
+				<p class="text-left">向左对齐文本</p>
+				<p class="text-center">居中对齐文本</p>
+				<p class="text-right">向右对齐文本</p>
+				<p class="text-muted">本行内容是减弱的</p>
+				<p class="text-warning">本行内容带有一个warning class</p>
+				<p class="text-success">本行内容带有一个success class</p>
+				<p class="text-info">本行内容带有一个 info class</p>
+				<p class="text-primary">本行内容带有一个primary class</p>
+				<p class="text-danger">本行内容带有一个 danger class</p>
+			</div>
+		</div>
+		<div>
+			<h4>五、缩写abbr</h4>
+			<div>
+				<p>
+				html元素提供有缩写的标记，Bootstrap定义abbr的样式为显示在文本底部的一条虚线边框，当鼠标悬停在上面时会显示完整的文本。
+				如果想得到更小字体的文本，请添加.initialism为到abbr样式中。
+				</p>
+				<p class="text-danger">示例：</p>
+				<abbr title="World Wide Web">WWW</abbr><br>
+				<abbr title="Real Simple Syndication" class="initialism">RSS</abbr>
+			</div>
+		</div>
+		<div>
+			<h4>六、地址address</h4>
+			<div>
+				<p class="text-danger">Addr1</p>
+				<address>
+					<strong>Some Company, Inc.</strong>
+					007 street<br>
+					Some City, State XXXXX<br>
+					<abbr title="Phone">P:</abbr>(123)400-800-800
+				</address>
+				<p class="text-danger">Addr2</p>
+				<address>
+					<strong>Full Name:</strong>YanCheng Wang<br>
+					<a href="mailto:wyc_1020@163.com">wyc_1020@163.com</a>
+				</address>
+			</div>
+		</div>
+		<div>
+			<h4>七、引用Blockquote</h4>
+			<div>
+				<p class="text-danger">第一个blockquote</p>
+				<blockquote>
+					<p>
+						在Java程序中，异常都是继承于Throwable类，但在下一层分解为两个重要的分支：Error和Exception。
+						Error类层次结构描述了Java运行时系统的内部错误和资源耗尽错误。应用程序不应该抛出这种类型的对象。
+						Exception类层次结构描述了应用程序可抛出的异常，Exception层次结构又分解为两个分支：RuntimeException和其它异常分支。
+					</p>
+				</blockquote>
+				<p class="text-danger">第二个blockquote</p>
+				<blockquote>
+					“如果出现RuntimeException异常，那么就一定是你的问题”<small>这是一条相当有道理的规则<cite title"来源">Java核心技术卷I</cite></small>
+				</blockquote>
+				<p class="text-danger">第三个blockquote</p>
+				<blockquote class="pull-right">
+					一个方法必须声明所有可能抛出的已检查异常，而未检查异常要么不可控制（Error），要么就应该避免发生（RuntimeException）。
+					<small>这句话也很有道理，不是么？注意观察这个blockquote是向右的。。。</small>
+				</blockquote>
+			</div>
+		</div>
+		<div style="clear:both;"/>
+		<div>
+			<h4>八、列表ol、ul、dt</h4>
+			<div>
+				<p class="text-danger">Bootstrap支持三种列表：有序列表、无序列表、定义列表</p>
+				<p class="text-warning">1、有序列表</p>
+				<ol>
+					<li>Item_10</li>
+					<li>Item_20</li>
+					<li>Item_30</li>
+				</ol>
+				<p class="text-warning">2、无序列表</p>
+				<ul>
+					<li>Item_10</li>
+					<li>Item_20</li>
+					<li>Item_30</li>
+				</ul>
+				<p class="text-warning">2.1、定义内联无序列表</p>
+				<ul class="list-inline">
+					<li>Item_10</li>
+					<li>Item_20</li>
+					<li>Item_30</li>
+				</ul>
+				<p class="text-warning">2.2、未定义样式的无序列表</p>
+				<ul class="list-unstyled">
+					<li>Item_10</li>
+					<li>Item_20</li>
+					<li>Item_30</li>
+				</ul>
+				<p class="text-warning">3、定义列表</p>
+				<dl>
+					<dt>商品_10</dt>
+					<dd>商品_10_描述</dd>
+					<dt>商品_20</dt>
+					<dd>商品_20_描述</dd>
+				</dl>
+				<p class="text-warning">4、水平的定义列表</p>
+				<dl class="dl-horizontal">
+					<dt>商品_10</dt>
+					<dd>商品_10_描述</dd>
+					<dt>商品_20</dt>
+					<dd>商品_20_描述</dd>
+				</dl>
+			</div>
+		</div>
+	</body>
+</html>
