@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>表单</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="with=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<!-- 
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		 -->
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
+		<!--[if lt IE9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h4>一、基本表单</h4>
+		<div>
+			<form role="form" method="post" action="1007_forms.html" enctype="application/x-www-form-urlencoded">
+				<div class="form-group">
+					<label for="tx_name">名称：</label>
+					<input type="text" class="form-control" id="tx_name" name="tx_name" placeholder="请输入名称">
+				</div>
+				<div class="form-group">
+					<label for="tx_file">文件：</label>
+					<input type="file" id="tx_file" name="tx_file">
+					<p class="help-block">块级帮助文本示例！</p>
+				</div>
+				<div class="checkbox">
+					<label for="tx_check">请勾选：</label>
+					<input type="checkbox" name="tx_check" id="tx_check">
+				</div>
+				<button type="submit" class="btn btn-default">提交</button>
+			</form>
+		</div>
+		<h4>二、内联表单</h4>
+		<div>
+			<form class="form-inline" role="form">
+				<div class="form-group">
+					<label class="sr-only" for="tx_name">名称：</label>
+					<input type="text" class="form-control" id="tx_name" name="tx_name" placeholder="请输入名称">
+				</div>
+				<div class="form-group">
+					<label class="sr-only" for="tx_file">文件输入</label>
+					<input type="file" id="tx_file" name="tx_file">
+				</div>
+				<div class="form-group">
+					<label for="tx_check">请打钩：</label>
+					<input type="checkbox" id="tx_check" name="tx_check">
+				</div>
+				<button type="submit" class="btn btn-default">提交</button>
+			</form>
+		</div>
+		<h4>三、水平表单</h4>
+		<div class="col-sm-10">
+			<form class="form-horizontal" role="form">
+				<div class="form-group">
+					<label for="tx_firstname" class="col-sm-2 control-label">名字：</label> 
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="tx_firstname" placeholder="请输入名称">
+					</div>
+				</div>
+				<div class="form-group">
+					<label for="tx_lastname" class="col-sm-2 control-label">姓：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" id="tx_lastname" name="tx_lastname" placeholder="请输入您的姓">
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<div class="checkbox">
+							<label for="tx_check_remember">请记住我</label>
+							<input type="checkbox" id="tx_check_remember" name="tx_check_remember">
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="col-sm-offset-2 col-sm-10">
+						<button type="submit" class="btn btn-default">登录</button>
+					</div>
+				</div>
+			</form>
+		</div>
+		<div class="clearfix"></div>
+		<h4>四、支持的表单控件</h4>
+		<div class="col-sm-10 col-sm-offset-1">
+			<form role="form">
+				<div class="form-group">
+					<label for="tx_input_text">输入框input：</label>
+					<input type="text" id="tx_input_text" name="tx_input_text" class="form-control" placeholder="文本输入">
+				</div>
+				<div class="form-group">
+					<label for="tx_textarea">文本框textarea：</label>
+					<textarea class="form-control" id="tx_textarea" name="tx_textarea" rows="3"></textarea>
+				</div>
+				<div class="form-group">
+					<label style="display:block;">复选框checkbox：</label>
+					<input type="checkbox" value="1" id="tx_input_checkbox_1" name="tx_input_checkbox">
+					<label for="tx_input_checkbox_1">选项1</label>
+					<input type="checkbox" value="1" id="tx_input_checkbox_2" name="tx_input_checkbox">
+					<label for="tx_input_checkbox_2">选项2</label>
+				</div>
+				<div class="form-group">
+					<label style="display:block;">单选框radio：</label>
+					<input type="radio" name="tx_input_radio" id="tx_input_radio_1" value="1">
+					<label for="tx_input_radio_1">单选1</label>
+					<input type="radio" name="tx_input_radio" id="tx_input_radio_2" value="2">
+					<label for="tx_input_radio_2">单选2</label>
+				</div>
+				<div class="form-group">
+					<h5>内联的单选和复选按钮实例</h5>
+					<input type="checkbox" class="checkbox-inline" name="tx_input_checkbox_mix" id="tx_input_checkbox_mix_1" value="1">
+					<label for="tx_input_checkbox_mix_1">选项1</label>
+					<input type="checkbox" class="checkbox-inline" name="tx_input_checkbox_mix" id="tx_input_checkbox_mix_2" value="2">
+					<label for="tx_input_checkbox_mix_2">选项2</label>
+					<input type="checkbox" class="checkbox-inline" name="tx_input_checkbox_mix" id="tx_input_checkbox_mix_3" value="3">
+					<label for="tx_input_checkbox_mix_3">选项3</label>
+					<input type="radio" class="checkbox-inline" name="tx_input_checkbox_mix_radio" id="tx_input_checkbox_mix_4" value="4">
+					<label for="tx_input_checkbox_mix_4">选项4</label>
+					<input type="radio" class="checkbox-inline" name="tx_input_checkbox_mix_radio" id="tx_input_checkbox_mix_5" value="5">
+					<label for="tx_input_checkbox_mix_5">选项5</label>
+				</div>
+				<div class="form-group">
+					<h5>选择框select：</h5>
+					<label>选择列表：</label>
+					<select class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+					<label>可多选的选择列表：</label>
+					<select multiple="true" class="form-control">
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+					</select>
+				</div>
+			</form>
+		</div>
+		<div class="clearfix"></div>
+		<h4>五、静态控件：</h4>
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">Email</label>
+				<div class="col-sm-8">
+					<p class="form-control-static">email@example.com</p>
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label" for="tx_input_password">密码</label>
+				<div class="col-sm-8">
+					<input type="password" class="form-control" id="tx_input_password" name="tx_input_password" placeholder="请输入密码：">
+				</div>
+			</div>
+		</form>
+		<h4>六、表单控件状态</h4>
+		<form class="form-horizontal" role="form">
+			<div class="form-group">
+				<label class="col-sm-2 control-label">聚焦</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="tx_input_text_status" name="tx_input_text_status" placeholder="该输入框获得焦点">
+				</div>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label">禁用</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" id="tx_input_text_disable" name="tx_input_text_disable" placeholder="该输入框已禁用" disabled="true">
+				</div>
+			</div>
+			<fieldset disable="true">
+				<div class="form-group">
+					<label class="col-sm-4 control-label">禁用输入(fieldset disable)</label>
+					<div class="col-sm-6">
+						<input type="text" id="input_text_disablefieldset" name="input_text_disablefieldset" class="form-control" placeholder="禁止输入" disabled="true">
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="col-sm-4 control-label">禁用选择菜单(fieldset disable)</label>
+					<div class="col-sm-6">
+						<select id="tx_select_disable" name="tx_select_disable" class="form-control" disabled="true">
+							<option>禁止选择</option>
+						</select>
+					</div>
+				</div>
+			</fieldset>
+			<div class="form-group has-success">
+				<label class="col-sm-2 control-label" for="tx_input_success">输入成功</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="tx_input_success" id="tx_input_success">
+				</div>
+			</div>
+			<div class="form-group has-warning">
+				<label class="col-sm-2 control-label" for="tx_input_warning">输入警告</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="tx_input_warning" id="tx_input_warning">
+				</div>
+			</div>
+			<div class="form-group has-error">
+				<label class="col-sm-2 control-label" for="tx_input_error">输入错误</label>
+				<div class="col-sm-8">
+					<input type="text" class="form-control" name="tx_input_error" id="tx_input_error">
+				</div>
+			</div>
+		</form>
+		<h4>七、表单控件大小</h4>
+		<div>
+			<form role="form">
+				<div class="form-group">
+					<input class="form-control input-lg" type="text" placeholder=".input-lg">
+				</div>
+				<div class="form-group">
+					<input class="form-control" type="text" placeholder="默认输入">
+				</div>
+				<div class="form-group">
+					<input type="text" class="form-control input-sm" placeholder=".input-sm"> 
+				</div>
+				<div class="form-group">
+					<select class="form-control input-lg">
+						<option value="">.input-lg</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<select class="form-control">
+						<option value="">默认输入</option>
+					</select>
+				</div>
+				<div class="form-group">
+					<select class="form-control input-sm">
+						<option value="">.input-sm</option>
+					</select>
+				</div>
+				<div class="row">
+					<div class="col-lg-12">
+						<input type="text" class="form-control" placeholder=".col-lg-12">
+					</div>
+					<div class="col-lg-12">
+						<input type="text" class="form-control" placeholder=".col-lg-12">
+					</div>
+					<div class="col-lg-12">
+						<input type="text" class="form-control" placeholder=".col-lg-12">
+					</div>
+				</div>
+			</form>
+		</div>
+		<h4>八、表单帮助文本</h4>
+		<div class="col-sm-5 col-sm-offset-4">
+			<form role="form">
+				<span>帮助文本</span>
+				<input type="text" class="form-control" placeholder="帮助文本">
+				<span class="help-block">一个较长的帮助文本块，超过一行，需要扩展到下一行。本实例中的帮助文本总共有两行。</span>
+			</form>
+		</div>
+		<h3>九、又到总结啦！</h3>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hover table-condensed">
+				<caption>总结Bootstrap对表单的支持</caption>
+				<thead>
+					<tr>
+						<th>类</th>
+						<th>类描述</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="2">一、基本表单</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<ol>
+								<li>
+									为&lt;form&gt;元素添加role="form"
+								</li>
+								<li>
+									把&lt;form&gt;元素放在一个带有class .form-group的&lt;div&gt;中，这样可以获取元素间最佳间距
+								</li>
+								<li>
+									为所有form元素如&lt;input&gt;、&lt;textarea&gt;、&lt;select&gt;添加.form-control
+								</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>二、内联表单（form-inline）</td>
+						<td>表单内所有元素都是内联的，向左对齐</td>
+					</tr>
+					<tr>
+						<td colspan="2">三、水平表单（form-horizontal）</td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<ol>
+								<li>水平表单是基于基本表单的设置基础</li>
+								<li>向&lt;form&gt;元素添加.form-horizontal</li>
+								<li>把标签和控件放在一个带有.form-group类的&lt;div&gt;中</li>
+								<li>向标签添加.control-label</li>
+							</ol>
+						</td>
+					</tr>
+					<tr>
+						<td>form-inline</td>
+						<td>内联表单&lt;form class="form-inline" role="form"&gt;</td>
+					</tr>
+					<tr>
+						<td>form-horizontial</td>
+						<td>水平表单</td>
+					</tr>
+					<tr>
+						<td>role="form"</td>
+						<td>自定义属性标识bootstrap识别form</td>
+					</tr>
+					<tr>
+						<td>.form-group</td>
+						<td>我理解的是把form内的元素分组，这样元素位置间隔都可以精确控制</td>
+					</tr>
+					<tr>
+						<td>.form-control</td>
+						<td>基本&lt;form&gt;元素需要添加，如&lt;input&gt;、&lt;select&gt;&lt;select&gt;</td>
+					</tr>
+					<tr>
+						<td>.control-label</td>
+						<td>&lt;label class="col-sm-2 control-label"&gt;</td>
+					</tr>
+					<tr>
+						<td>.form-control-static</td>
+						<td>将&lt;p&gt;转换为&lt;form&gt;元素呈现</td>
+					</tr>
+					<tr>
+						<td>.checkbox-inline、.radio-inline</td>
+						<td>checkbox和radio控件对应的内联样式</td>
+					</tr>
+					<tr>
+						<td>.sr-only</td>
+						<td>隐藏表单&lt;label class="sr-only"&gt;元素</td>
+					</tr>
+					<tr>
+						<td>:focus</td>
+						<td>当输入框&lt;input&gt;接收到:focus时，输入框的轮廓会被移除，同时应用box-shadow</td>
+					</tr>
+					<tr>
+						<td>fieldset可被禁用</td>
+						<td>Bootstrap支持控件的状态禁用时改变控件的样式和鼠标指针悬停样式</td>
+					</tr>
+					<tr>
+						<td>.has-error、.has-warning、.has-success</td>
+						<td>验证状态</td>
+					</tr>
+					<tr>
+						<td>.input-lg、.input-sm</td>
+						<td>表单控件大小</td>
+					</tr>
+					<tr>
+						<td>.col-lg-*</td>
+						<td>利用控件所属组&lt;div&gt;控制控件自身的大小</td>
+					</tr>
+					<tr>
+						<td>.help-block</td>
+						<td>配合表单控件的提示文本，利用&lt;span&gt;添加在具体控件后</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
