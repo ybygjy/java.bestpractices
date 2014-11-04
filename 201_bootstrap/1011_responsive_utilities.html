@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bootstrap帮助</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="with=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
+		<!--[if lt IE9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h4>一、响应式实用工具</h4>
+		<div class="container" style="padding:40px;">
+			<div class="row visible-on">
+				<div class="col-xs-6 col-sm-3" style="background-color:#dedef8; box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+					<span class="hidden-xs">特别小型</span>
+					<span class="visible-xs">✔ 在特别小型设备上可见</span>
+				</div>
+				<div class="col-xs-6 col-sm-3" style="background-color:#dedef8; box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+					<span class="hidden-sm">小型</span>
+					<span class="visible-sm">✔ 在小型设备上可见</span>
+				</div>
+				<div class="clearfix visible-xs"></div>
+				<div class="col-xs-6 col-sm-3" style="background-color:#dedef8;box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+					<span class="hidden-md">中型</span>
+					<span class="visible-md">✔ 在中型设备上可见</span>
+				</div>
+				<div class="col-xs-6 col-sm-3" style="background-color:#dedef8; box-shadow:inset 1px -1px 1px #444, inset -1px 1px 1px #444;">
+					<span class="hidden-lg">大型</span>
+					<span class="visible-lg">✔ 在大型设备上可见</span>
+				</div>
+			</div>
+			<div class="row">
+				<span class="hidden-print">只对浏览器可见，但不可打印</span>
+				<span class="visible-print">对浏览器可见，并可打印</span>
+			</div>
+		</div>
+		<h4>二、又到一课总结时</h4>
+		<div class="container">
+			<p>所谓的响应式其实就是自动监测界面呈现设备的大小并自动对组件元素的大小进行等比例调整。</p>
+			<p>Bootstrap提供了一堆自动适应呈现设备大小的css类，使用这些类可以做到在不同大小的设备上呈现出的内容结构是不同的。</p>
+		</div>
+	</body>
+</html>
