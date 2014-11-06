@@ -78,7 +78,7 @@
 			if (val.length === 1) {
 				hex[nr] = '0' + val;
 			}
-			console.log(nr + ":" + val);
+			//console.log(nr + ":" + val);
 		});
 		return hex.join("").toUpperCase();
 	}
@@ -91,6 +91,20 @@
 		$('td > span').css('color', '#' + hex);
 	}
 	$(function() {
+		/**处理FontSize Begin*/
+		$('#bgc-slider').slider({
+			value:30,
+			min:0,
+			max:100,
+			step:1,
+			slide: function(event, ui) {
+				$('#bgc-slider-value').html(ui.value);
+				var fs = $('#bgc-slider-value').html();
+				$('td > span').css('font-size', fs + 'px');
+			}
+		});
+		/**处理FontSize End*/
+		/**处理颜色Begin*/
 		$('#bgc-red, #bgc-green, #bgc-blue').slider({
 			orientation : "horizontal",
 			range : "min",
@@ -102,7 +116,23 @@
 		$('#bgc-red').slider("value", 250);
 		$('#bgc-green').slider("value", 140);
 		$('#bgc-blue').slider("value", 60);
+		/**处理颜色End*/
+		/**绑定事件Begin*/
+		$('td').click(function() {
+			var html = $(this).html();
+			$('#bgc-code').text(html);
+			$('#bgc-code').show();
+			$('html, body').animate({scrollTop:0});
+		});
+		/**绑定事件End*/
 	});
+	function doCreateShadow() {
+		var offsetX = $('#bgc-offset-x').value();
+		var offsetY = $('#bgc-offset-y').value();
+		var blurValue = $('#bgc-blur').value();
+		var colorValue = $('#bgc-color').value();
+		$('td > span').css('text-shadow', offsetX + 'px ' + offsetY + 'px ' + blurValue + 'px ' + colorValue);
+	}
 </script>
 </head>
 <body>
