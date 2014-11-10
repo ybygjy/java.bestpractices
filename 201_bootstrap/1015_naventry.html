@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
+		<!--[if lt IE9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<h4>一、标签式的导航菜单元素</h4>
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">SVN</a></li>
+				<li><a href="#">Android</a></li>
+				<li><a href="#">IOS</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">PHP</a></li>
+			</ul>
+		</div>
+		<h4>二、胶囊式的导航菜单元素</h4>
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li><a href="#">Home</a></li>
+				<li><a href="#">SVN</a></li>
+				<li class="active"><a href="#">IOS</a></li>
+				<li class="active"><a href="#">Android</a></li>
+				<li><a href="#">C#</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">Java</a></li>
+			</ul>
+		</div>
+		<h4>三、垂直的胶囊式导航菜单元素</h4>
+		<div class="container">
+			<ul class="nav nav-pills nav-stacked">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">PHP</a></li>
+				<li><a href="#">C#</a></li>
+				<li><a href="#">Android</a></li>
+			</ul>
+		</div>
+		<h4>四、两端对齐的导航</h4>
+		<p>1.</p>
+		<div class="container">
+			<ul class="nav nav-pills nav-justified">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">.Net</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">PHP</a></li>
+			</ul>
+		</div>
+		<p>2.</p>
+		<div class="container">
+			<ul class="nav nav-tabs nav-justified">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">.Net</a></li>
+				<li><a href="#">JavaScript</a></li>
+				<li><a href="#">PHP</a></li>
+			</ul>
+		</div>
+		<h4>五、禁用链接</h4>
+		<p>1.</p>
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li class="disabled"><a href="#">IOS</a></li>
+				<li><a href="#">Android</a></li>
+			</ul>
+		</div>
+		<p>2.</p>
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li class="disabled"><a href="#">IOS</a></li>
+				<li><a href="#">Android</a></li>
+			</ul>
+		</div>
+		<h4>六、带有下拉菜单的标签</h4>
+		<div class="container">
+			<ul class="nav nav-tabs">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">Android</a></li>
+				<li><a href="#">IOS</a></li>
+				<li><a href="#">PL/SQL</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						Java<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Swing</a></li>
+						<li><a href="#">XML</a></li>
+						<li><a href="#">JNDI</a></li>
+						<li class="divider"></li>
+						<li><a href="#">分离的链接</a></li>
+					</ul>
+				</li>
+				<li><a href="#">.Net</a></li>
+			</ul>
+		</div>
+		<h4>七、带有下拉菜单的胶囊</h4>
+		<div class="container">
+			<ul class="nav nav-pills">
+				<li class="active"><a href="#">Home</a></li>
+				<li><a href="#">Java</a></li>
+				<li><a href="#">.Net</a></li>
+				<li class="dropdown">
+					<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+						Oracle<span class="caret"></span>
+					</a>
+					<ul class="dropdown-menu">
+						<li><a href="#">PL/SQL</a></li>
+						<li><a href="#">Listener</a></li>
+						<li><a href="#">块</a></li>
+						<li><a href="#">区</a></li>
+						<li><a href="#">段</a></li>
+						<li><a href="#">表空间</a></li>
+					</ul>
+				</li>
+				<li><a href="#">MySQL</a></li>
+				<li><a href="#">MS SQL</a></li>
+			</ul>
+		</div>
+		<h4>八、总结</h4>
+		<div class="container">
+			<p>1.Bootstrap的导航元素主要用的三个基本类（.nav .nav-tabs .nav-pills）</p>
+			<p>2..nav-stackted类可以呈现垂直模式的导航菜单</p>
+			<p>3..nav-justified类可支持菜单元素与所属父元素等宽</p>
+			<p>4..disabled可禁用具体的菜单元素项</p>
+			<p>5.导航元素与下拉菜单元素可配合使用，直接声明.dropdown类并在元素内添加相应弹出菜单元素即可</p>
+		</div>
+		<div style="height:300px;"></div>
+	</body>
+</html>
