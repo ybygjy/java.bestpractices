@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Bootstrap CDN</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<!-- 
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		 -->
+		<style type="text/css">
+			.table{
+				margin-bottom: 5px;
+				margin-top: 5px;
+				min-height: 50px;
+			}
+			ul[class="pagination"]{
+				margin-top: 0px;
+				margin-bottom: 5px;
+			}
+			.btn-group > *{
+				margin-right: 5px;
+				margin-top: 5px;
+				margin-bottom: 5px;
+			}
+		</style>
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
+		<!--[if lt IE9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+		<script type="text/javascript">
+			var PageObj = function(){
+			};
+			/**
+			 * 查询商品主数据
+			 */
+			PageObj.prototype.doQueryProductData=function() {
+				var dataArray = {
+					"tx_shop_id":$('#tx_shop_id').val(),
+					"tx_product_name":$('#tx_product_name').val(),
+					"tx_product_category":$('#tx_product_category').val()
+				};
+				$.post('http://localhost/1018_product_collogation.html', dataArray, function(data,status){
+					alert('回调成功');
+					console.log(data);
+					console.log(status);
+				});
+			}
+		</script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				var currPageObj = new PageObj();
+				$('#tx_maindata_qry_btn_submit').click(function(e){
+					//取各查询字段的值
+					//Ajax提交
+					currPageObj.doQueryProductData();
+				});
+			});
+			//1.绑定事件
+			//1.1.商品查询按钮事件
+			//1.2.搭配商品数据查询
+			//1.3.选择搭配商品数据查询
+			//1.2.搭配商品数据保存、删除事件
+			//1.3.选择搭配商品添加事件
+			//1.4.
+		</script>
+	</head>
+	<body>
+		<div class="container">
+			<h4>Header</h4>
+		</div>
+		<div class="container">
+			<div class="row">
+				<span class="label label-primary">商品过滤条件</span>
+				<div>
+					<form action="#" method="post" id="tx_maindata_qry_form" role="form">
+						<div class="form-group">
+							<label class="control-label col-sm-1">店铺ID</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="tx_shop_id" name="tx_shop_id">
+							</div>
+							<label class="control-label col-sm-1">商品名称</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="tx_product_name" name="tx_product_name">
+							</div>
+							<label class="control-label col-sm-1">商品分类</label>
+							<div class="col-sm-2">
+								<input type="text" class="form-control" id="tx_product_category" name="tx_product_category">
+							</div>
+							<div class="col-sm-2">
+								<button type="button" class="btn btn-success" id="tx_maindata_qry_btn_submit">查询</button>
+								<button type="button" class="btn btn-success" id="tx_maindata_qry_btn_reset">重置</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="clearfix"></div>
+				<div>
+					<label class="label label-primary">商品数据列表</label>
+					<table id="tx_product_datatable" class="table table-bordered table-striped table-hover table-condensed table-responsive">
+						<thead>
+							<tr>
+								<th>
+									<label for="tx_product_datatable_selectall">
+										<input type="checkbox" id="tx_product_datatable_selectall" name="tx_product_datatable_selectall">
+										选择
+									</label>
+								</th>
+								<th>商铺ID</th>
+								<th>商铺名称</th>
+								<th>商品名称</th>
+								<th>商品状态</th>
+								<th>商品分类</th>
+								<th>商品销量</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem" checked="1">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem" checked="1">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+							<tr>
+								<td>
+									<input type="checkbox" name="tx_product_datatable_selectitem">
+								</td>
+								<td>2</td>
+								<td>3</td>
+								<td>4</td>
+								<td>5</td>
+								<td>6</td>
+								<td>7</td>
+							</tr>
+						</tbody>
+					</table>
+					<div>
+						<ul class="pagination">
+							<li><a href="#">&laquo;</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li><a href="#">&raquo;</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<ul id="tx_detail_tab" class="nav nav-pills">
+					<li class="active">
+						<a href="#tx_tab_item_coll_data" data-toggle="tab">搭配商品数据</a>
+					</li>
+					<li>
+						<a href="#tx_tab_item_product_data" data-toggle="tab">选择搭配商品</a>
+					</li>
+				</ul>
+				<div id="tx_detail_tab_content" class="tab-content">
+					<div class="tab-pane fad in active" id="tx_tab_item_coll_data">
+						<div class="btn-toolbar" role="toolbar">
+							<div class="btn-group">
+								<button type="button" class="btn btn-success">保存</button>
+								<button type="button" class="btn btn-success">删除</button>
+							</div>
+						</div>
+						<table id="tx_collocation_datatable" class="table table-bordered table-striped table-hover table-condensed table-responsive">
+							<thead>
+								<tr>
+									<th>选择</th>
+									<th>商品名称</th>
+									<th>搭配顺序</th>
+									<th>描述</th>
+									<th>状态</th>
+									<th>添加时间</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="tab-pane fad" id="tx_tab_item_product_data">
+						<div class="btn-toolbar" role="toolbar">
+							<div class="btn-group">
+								<button type="button" class="btn btn-success">添加搭配商品</button>
+							</div>
+						</div>
+						<table id="tx_product_datatable" class="table table-bordered table-striped table-hover table-condensed table-responsive">
+							<thead>
+								<tr>
+									<th>选择</th>
+									<th>店铺名称</th>
+									<th>商品名称</th>
+									<th>商品状态</th>
+									<th>商品分类</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+									<td></td>
+								</tr>
+							</tbody>
+						</table>
+						<div>
+							<ul class="pagination">
+								<li><a href="#">&laquo;</a></li>
+								<li class="active"><a href="#">1</a></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">&raquo;</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="container">
+			<h4>Bottom</h4>
+		</div>
+	</body>
+</html>
