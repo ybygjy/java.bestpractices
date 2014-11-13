@@ -45,7 +45,16 @@ public class RandomNumberTest {
      * @return rtnC
      */
     public int nextIntFor() {
-        return (int)((Math.random() * 9 + 1) * 100000);
+    	double tmpV = Math.random();
+    	tmpV = tmpV * 9;
+    	System.out.println(tmpV + '\t');
+    	tmpV = tmpV + 1;
+    	System.out.println(tmpV + '\t');
+    	tmpV = tmpV * 1000000;
+    	System.out.println(tmpV + '\t');
+    	int rtnV = (int) tmpV;
+    	System.out.println(rtnV + '\t');
+        return rtnV;
     }
     /**
      * 取给定位数随机数(限制2~8位)
@@ -65,10 +74,10 @@ public class RandomNumberTest {
 //            System.out.println(rntInst.nextIntF(100, 200));
 //            System.out.println(rntInst.nextIntS());
 //            System.out.println(rntInst.nextIntT());
+            System.out.println(rntInst.nextIntFor());
 //            System.out.println(rntInst.nextIntFor());
-//            System.out.println(rntInst.nextIntFor());
-            Long batchNo = Long.parseLong(String.valueOf(rntInst.getRandomValue(8)) + "" + String.valueOf(rntInst.getRandomValue(8)));
-            System.out.println(batchNo);
+//            Long batchNo = Long.parseLong(String.valueOf(rntInst.getRandomValue(8)) + "" + String.valueOf(rntInst.getRandomValue(8)));
+//            System.out.println(batchNo);
         }
     }
 }
