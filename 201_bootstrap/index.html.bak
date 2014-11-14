@@ -69,6 +69,12 @@
 			<div>
 				<a href="1014_dropdowns.html">1014_菜单</a>
 			</div>
+<<<<<<< HEAD
+			<h4>1015_导航菜单元素</h4>
+			<div>
+				<a href="1015_naventry.html">1015_导航菜单元素</a>
+			</div>
+=======
 			<h4>1015_按钮组</h4>
 			<div>
 				<a href="1015_buttongroup.html">1015_按钮组</a>
@@ -81,13 +87,8 @@
 			<div>
 				<a href="1017_inputtextgroup.html">1017_输入框组</a>
 			</div>
-			<h4>1018_商品搭配</h4>
-			<div>
-				<a href="1018_product_collogation.html">1018_商品搭配</a>
-			<h4>1018_导航菜单元素</h4>
-			<div>
-				<a href="1015_naventry.html">1015_导航菜单元素</a>
-			</div>
+			
+>>>>>>> 6ed8f1a27ee5bc809860313da000fd926c8ea08b
 		</div>
 		<!-- JQuery(Bootstrap的JavaScript插件使用到了JQuery) -->
 		<script src="http://code.jquery.com/jquery.js"></script>
