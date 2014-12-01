@@ -16,7 +16,7 @@
 		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
 	</head>
-	<body>
+	<body style="padding:50px;">
 		<div class="container">
 			<h4>一、默认的导航栏</h4>
 			<nav class="navbar navbar-default" role="navigation">
@@ -164,6 +164,84 @@
 					<p class="navbar-text navbar-right">向右对齐-文本</p>
 				</div>
 			</nav>
+		</div>
+		<div class="container">
+			<h4>六、固定到顶部</h4>
+			<span>Bootstrap的导航栏默认是块级元素，基于在HTML中放置的位置定位，通过一些帮助器类，可以把它放置在页面的顶部或底部或是静态导航栏</span>
+			<span>navbar-fixed-bottom</span>
+			<nav class="navbar navbar-default" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">开发者</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">移动开发</a></li>
+						<li><a href="#">IOS</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Java<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">J2SE</a></li>
+								<li><a href="#">J2EE</a></li>
+								<li><a href="#">J2ME</a></li>
+								<li class="divider"></li>
+								<li><a href="#">Android</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav>
+		</div>
+		<div class="container">
+			<h4>七、静态的顶部</h4>
+			<nav class="navbar navbar-default navbar-static-top" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">移动开发者</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">开发工具</a></li>
+						<li><a href="#">Git</a></li>
+						<li><a href="#">SVN</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Java<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">IOS</a></li>
+								<li><a href="#">Object-C</a></li>
+								<li><a href="#">Java</a></li>
+								<li class="divider"></li>
+								<li><a href="#">.Net</a></li>
+								<li><a href="#">C++</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav> 
+		</div>
+		<div class="container">
+			<h4>八、倒置的导航栏</h4>
+			<nav class="navbar navbar-inverse" role="navigation">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">移动开发者</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li class="active"><a href="#">开发工具</a></li>
+						<li><a href="#">Git</a></li>
+						<li><a href="#">SVN</a></li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Java<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li><a href="#">IOS</a></li>
+								<li><a href="#">Object-C</a></li>
+								<li><a href="#">Java</a></li>
+								<li class="divider"></li>
+								<li><a href="#">.Net</a></li>
+								<li><a href="#">C++</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</nav> 
 		</div>
 	</body>
 </html>
