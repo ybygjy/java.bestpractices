@@ -5,9 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * ÖĞ×º±í´ïÊ½
+ * ä¸­ç¼€è¡¨è¾¾å¼
  * <p>
- * ÓÉÖĞ×º±í´ïÊ½Çóºó×º±í´ïÊ½£¬ÀûÓÃ¶ÔËãÊ½²Ù×÷·ûµÄ³öÈëÕ»À´Íê³É
+ * ç”±ä¸­ç¼€è¡¨è¾¾å¼æ±‚åç¼€è¡¨è¾¾å¼ï¼Œåˆ©ç”¨å¯¹ç®—å¼æ“ä½œç¬¦çš„å‡ºå…¥æ ˆæ¥å®Œæˆ
  * </p>
  * @author WangYanCheng
  * @version 2011-8-31
@@ -16,13 +16,13 @@ public class Infix {
     public static void main(String[] args) {
         Infix infix = new Infix();
         while (true) {
-            System.out.println("ÇëÊäÈëÖĞ×º±í´ïÊ½£º");
+            System.out.println("è¯·è¾“å…¥ä¸­ç¼€è¡¨è¾¾å¼ï¼š");
             String inStr = getStr();
             if (null == inStr) {
                 break;
             }
             InfoPost infoPost = infix.new InfoPost(inStr);
-            System.out.println("ÖĞ×º±í´ïÊ½£º".concat(inStr).concat("\tºó×º±í´ïÊ½£º").concat(infoPost.doTrans()));
+            System.out.println("ä¸­ç¼€è¡¨è¾¾å¼ï¼š".concat(inStr).concat("\tåç¼€è¡¨è¾¾å¼ï¼š").concat(infoPost.doTrans()));
         }
     }
 

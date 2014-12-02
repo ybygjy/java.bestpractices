@@ -4,19 +4,19 @@ import java.util.Vector;
 
 
 /**
- * JCIP#5001_ͬ�������ĸ��ϲ�����������⣬��ͬ����Ҫ����Ŀͻ��˴�������
- * <p>1���ڿͻ��˲�����������¶���������и��ϲ���ʱ���������</p>
- * <p>2�����������ԭ���ǿͻ����ڶ��̰߳�ȫ�������и��ϲ�������ԭ�ӵģ����뵱get/setͬʱ�����������������Ȼ�����ڲ���֤���������̰߳�ȫ�ԣ������ⲿ������ȴ�õ��˷�Ԥ�ڵĽ����</p>
- * ���
- * <p>1���ͻ��˼���</p>
- * <p>2��ע��ͻ���������������ʹ�õ�����ͬ������û���κ����壬���ҰѴ������صĸ��</p>
+ * JCIP#5001_同步容器的复合操作会出现问题，这同样需要额外的客户端处理机制
+ * <p>1、在客户端不加锁的情况下对容器类进行复合操作时会出现问题</p>
+ * <p>2、此类问题的原因是客户端在对线程安全容器进行复合操作不是原子的，试想当get/set同时操作容器的情况，虽然容器内部保证了自身的线程安全性，但是外部调用者却得到了非预期的结果。</p>
+ * 解决
+ * <p>1、客户端加锁</p>
+ * <p>2、注意客户端锁必须与容器使用的锁相同，否则没有任何意义，并且把错误隐藏的更深。</p>
  * @author WangYanCheng
  * @version 2014-7-24
  */
 public class VectorComplexOperation {
     /**
-     * �������
-     * @param args �����б�
+     * 测试入口
+     * @param args 参数列表
      */
     public static void main(String[] args) {
         Vector<String> vector = new Vector<String>();

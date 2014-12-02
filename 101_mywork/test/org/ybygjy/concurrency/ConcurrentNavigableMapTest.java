@@ -7,9 +7,9 @@ import java.util.concurrent.ConcurrentNavigableMap;
 import java.util.concurrent.ConcurrentSkipListMap;
 
 /**
- * Ñ§Ï°{@link ConcurrentNavigableMap}
+ * å­¦ä¹ {@link ConcurrentNavigableMap}
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ22ÈÕ
+ * @version 2014å¹´10æœˆ22æ—¥
  */
 public class ConcurrentNavigableMapTest {
 	private ConcurrentNavigableMap<String, String> concurrentNavigableMap;
@@ -17,7 +17,7 @@ public class ConcurrentNavigableMapTest {
 		this.concurrentNavigableMap = new ConcurrentSkipListMap<String, String>();
 	}
 	/**
-	 * ²âÊÔÈë¿Ú
+	 * æµ‹è¯•å…¥å£
 	 */
 	public void doTest() {
 		for (int i = 0; i < 2; i++) {

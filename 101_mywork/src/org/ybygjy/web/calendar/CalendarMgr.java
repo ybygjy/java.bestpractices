@@ -6,14 +6,14 @@ import java.util.Calendar;
 import java.util.List;
 
 /**
- * 负责定义和管理Calendar模块业务行为
+ * 璐熻矗瀹氫箟鍜岀鐞咰alendar妯″潡涓氬姟琛屼负
  * @author WangYanCheng
  * @version 2011-3-24
  */
 public class CalendarMgr {
     /**
-     * 查询事务数据
-     * @param qryBean 查询Bean
+     * 鏌ヨ浜嬪姟鏁版嵁
+     * @param qryBean 鏌ヨBean
      * @return rtn
      */
     public List<EventModel> queryEvents(Object qryBean) {
@@ -26,13 +26,13 @@ public class CalendarMgr {
             calendar.add(Calendar.HOUR, i);
             String stopDate = sdf.format(calendar.getTime());
             rtnList.add(new EventModel("" + i, i,
-                "我的时间是：".concat(startDate), stopDate, startDate, "", stopDate, "", false));
+                "鎴戠殑鏃堕棿鏄細".concat(startDate), stopDate, startDate, "", stopDate, "", false));
         }
         return rtnList;
     }
     /**
-     * 查询并返回JSON格式结果
-     * @param qryBean 查询Bean
+     * 鏌ヨ骞惰繑鍥濲SON鏍煎紡缁撴灉
+     * @param qryBean 鏌ヨBean
      * @return jsonStr jsonStr
      */
     public String queryEvents2JSON(Object qryBean) {

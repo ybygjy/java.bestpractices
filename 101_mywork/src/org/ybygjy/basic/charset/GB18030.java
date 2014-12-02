@@ -12637,7 +12637,7 @@ public class GB18030 extends Charset {
     public static void main(String[] args) {
         byte[] byteArray = null;
         try {
-            byteArray = "ÄãºÃJava".getBytes("GBK");
+            byteArray = "ä½ å¥½Java".getBytes("GBK");
         } catch (UnsupportedEncodingException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

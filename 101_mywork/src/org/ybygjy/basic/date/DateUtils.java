@@ -8,16 +8,16 @@ import java.util.Iterator;
 import java.util.List;
 
 /**
- * ·â×°ÈÕÆÚ´¦Àí
+ * å°è£…æ—¥æœŸå¤„ç†
  * @author WangYanCheng
  * @version 2012-9-6
  */
 public class DateUtils {
     /**
-     * È¡Á½ÈÕÆÚÏà¸ôÌìÊı
-     * @param date1 ÈÕÆÚ1
-     * @param date2 ÈÕÆÚ2
-     * @return diffDay Ïà¸ôÌìÊı
+     * å–ä¸¤æ—¥æœŸç›¸éš”å¤©æ•°
+     * @param date1 æ—¥æœŸ1
+     * @param date2 æ—¥æœŸ2
+     * @return diffDay ç›¸éš”å¤©æ•°
      */
     public static int getDiff(Date date1, Date date2) {
         long t1 = date1.getTime();
@@ -27,10 +27,10 @@ public class DateUtils {
     }
 
     /**
-     * È¡Á½ÈÕÆÚÏà¸ôµÄÈÕÆÚ×é
-     * @param date1 ÈÕÆÚ1
-     * @param date2 ÈÕÆÚ2
-     * @return rtnDateArr ÈÕÆÚ×é
+     * å–ä¸¤æ—¥æœŸç›¸éš”çš„æ—¥æœŸç»„
+     * @param date1 æ—¥æœŸ1
+     * @param date2 æ—¥æœŸ2
+     * @return rtnDateArr æ—¥æœŸç»„
      */
     public static String[] diffDateGroup(Date date1, Date date2) {
         if (date1.getTime() > date2.getTime()) {
@@ -47,9 +47,9 @@ public class DateUtils {
     }
 
     /**
-     * ×ª»»ÈÕÆÚ×é
-     * @param dateArr ÈÕÆÚ¼¯
-     * @return ÈÕÆÚ´®×é
+     * è½¬æ¢æ—¥æœŸç»„
+     * @param dateArr æ—¥æœŸé›†
+     * @return æ—¥æœŸä¸²ç»„
      */
     public static String[] convertDateArr2StrArr(List<Date> dateArr) {
         String[] rtnArr = new String[dateArr.size()];
@@ -61,10 +61,10 @@ public class DateUtils {
     }
 
     /**
-     * ½«¸ø¶¨ÈÕÆÚÒÀ¾İ¸ñÊ½×Ö·û´®½øĞĞ¸ñÊ½»¯
-     * @param date ÈÕÆÚ
-     * @param pattern ¸ñÊ½×Ö·û´®
-     * @return rtnStr ÈÕÆÚ×Ö·û´®
+     * å°†ç»™å®šæ—¥æœŸä¾æ®æ ¼å¼å­—ç¬¦ä¸²è¿›è¡Œæ ¼å¼åŒ–
+     * @param date æ—¥æœŸ
+     * @param pattern æ ¼å¼å­—ç¬¦ä¸²
+     * @return rtnStr æ—¥æœŸå­—ç¬¦ä¸²
      */
     public static String dateFormat(Date date, String pattern) {
         return new SimpleDateFormat(pattern).format(date);

@@ -1,9 +1,9 @@
 package org.ybygjy.basic.algorithms.sort;
 
 /**
- * ¿ìËÙÅÅĞò
- * <p>1¡¢»®·ÖË¼Ïë</p>
- * <p>2¡¢µİ¹é</p>
+ * å¿«é€Ÿæ’åº
+ * <p>1ã€åˆ’åˆ†æ€æƒ³</p>
+ * <p>2ã€é€’å½’</p>
  * @author WangYanCheng
  * @version 2014-4-29
  */
@@ -16,8 +16,8 @@ public class QuickSort {
         innerSort(0, dataArr.length - 1);
     }
     /**
-     * ÅÅĞò
-     * <p>µİ¹éµ÷ÓÃ</p>
+     * æ’åº
+     * <p>é€’å½’è°ƒç”¨</p>
      * @param left
      * @param right
      */
@@ -25,20 +25,20 @@ public class QuickSort {
         if (right - left <=0) {
             return;
         } else {
-            int pivot = dataArr[right];//È¡×îÓÒ¶ËÖµ×öÎªÊàÅ¦
-            System.out.println("»®·Ö£ºleft:" + left + ",right:" + right + ",pivot:" + pivot);
-            int partition = partitionIt(left, right, pivot);//»®·Ö
-            System.out.println("×óÇøÓòÅÅĞò£ºleft:" + left + ",right:" + (partition - 1));
-            innerSort(left, partition - 1);//×ó±ßÇøÓòÅÅĞò
-            System.out.println("ÓÒÇøÓòÅÅĞò£ºleft:" + (partition + 1) + ",right:" + right );
-            innerSort(partition + 1, right);//ÓÒ±ßÇøÓòÅÅĞò
+            int pivot = dataArr[right];//å–æœ€å³ç«¯å€¼åšä¸ºæ¢çº½
+            System.out.println("åˆ’åˆ†ï¼šleft:" + left + ",right:" + right + ",pivot:" + pivot);
+            int partition = partitionIt(left, right, pivot);//åˆ’åˆ†
+            System.out.println("å·¦åŒºåŸŸæ’åºï¼šleft:" + left + ",right:" + (partition - 1));
+            innerSort(left, partition - 1);//å·¦è¾¹åŒºåŸŸæ’åº
+            System.out.println("å³åŒºåŸŸæ’åºï¼šleft:" + (partition + 1) + ",right:" + right );
+            innerSort(partition + 1, right);//å³è¾¹åŒºåŸŸæ’åº
         }
     }
     /**
-     * »®·Ö
+     * åˆ’åˆ†
      * @param left
      * @param right
-     * @param pivot ÊàÅ¦
+     * @param pivot æ¢çº½
      * @return
      */
     private int partitionIt(int left, int right, int pivot) {
@@ -62,7 +62,7 @@ doPrint();
         return leftPtr;
     }
     /**
-     * ½»»»
+     * äº¤æ¢
      * @param leftPtr
      * @param rightPtr
      */
@@ -72,14 +72,14 @@ doPrint();
         dataArr[rightPtr] = tmpValue;
     }
     /**
-     * ´òÓ¡µ±Ç°Êı×éÔªËØ
+     * æ‰“å°å½“å‰æ•°ç»„å…ƒç´ 
      */
     public void doPrint() {
         System.out.println(java.util.Arrays.toString(dataArr));
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         int[] dataArr = new int[10];

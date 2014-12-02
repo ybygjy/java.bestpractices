@@ -66,8 +66,8 @@ public class CircularSet implements Invariant {
         return new InvariantOK();
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      * @throws InterruptedException InterruptedException
      */
     public static void main(String[] args) throws InterruptedException {

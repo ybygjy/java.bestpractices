@@ -1,9 +1,9 @@
 package org.ybygjy.basic.algorithms.queue;
 
 /**
- * ¶ÓÁĞ
- * <p>¶ÓÁĞµÄ»ù±¾ÌØĞÔ£ºÏÈ½øÏÈ³ö(FIFO)Ô­Ôò</p>
- * <p>Ê¹ÓÃÊı¾İÏî¼ÆÊı×Ö¶ÎÊµÏÖ¶ÓÁĞ</p>
+ * é˜Ÿåˆ—
+ * <p>é˜Ÿåˆ—çš„åŸºæœ¬ç‰¹æ€§ï¼šå…ˆè¿›å…ˆå‡º(FIFO)åŸåˆ™</p>
+ * <p>ä½¿ç”¨æ•°æ®é¡¹è®¡æ•°å­—æ®µå®ç°é˜Ÿåˆ—</p>
  * @author WangYanCheng
  * @version 2011-8-8
  */
@@ -45,8 +45,8 @@ class Queue {
     }
 
     /**
-     * ÔÚ¶ÓÎ²²åÈëÔªËØ
-     * @param s ÔªËØ
+     * åœ¨é˜Ÿå°¾æ’å…¥å…ƒç´ 
+     * @param s å…ƒç´ 
      */
     public void insert(int s) {
         if (rear == maxSize - 1) { // deal with wraparound

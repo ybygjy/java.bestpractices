@@ -5,9 +5,9 @@ import java.util.concurrent.ConcurrentHashMap;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ²âÊÔÈİÆ÷ÊµÏÖ#²¢·¢ÈİÆ÷ÊµÏÖ
+ * æµ‹è¯•å®¹å™¨å®ç°#å¹¶å‘å®¹å™¨å®ç°
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4ConcurrentMap implements BenchmarkMapWrapper {
 	private ConcurrentHashMap<Object, Object> container;

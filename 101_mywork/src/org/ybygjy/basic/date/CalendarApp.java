@@ -2,14 +2,14 @@ package org.ybygjy.basic.date;
 
 
 /**
- * Calendar 使用
+ * Calendar 浣跨敤
  * @author WangYanCheng
  * @version 2009-12-9
  */
 public class CalendarApp {
     /**
-     * 执行入口
-     * @param args 参数列表
+     * 鎵ц鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
 //        Calendar calenInst = Calendar.getInstance();
@@ -23,10 +23,10 @@ public class CalendarApp {
      * doStrCompare
      * @param str1 str1
      * @param str2 str2
-     * @return rtnResult {相等:大于:小于}
+     * @return rtnResult {鐩哥瓑:澶т簬:灏忎簬}
      */
     public String doStrCompare(String str1, String str2) {
         int rtnResult = str1.compareTo(str2);
-        return rtnResult == 0 ? "相等" : rtnResult < 0 ? str1 + "小于" + str2 : str1 + "大于" + str2;
+        return rtnResult == 0 ? "鐩哥瓑" : rtnResult < 0 ? str1 + "灏忎簬" + str2 : str1 + "澶т簬" + str2;
     }
 }

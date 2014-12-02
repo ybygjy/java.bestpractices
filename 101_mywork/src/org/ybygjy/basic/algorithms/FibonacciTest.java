@@ -4,22 +4,22 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÑéÖ¤Á½ÖÖµİ¹éÊµÏÖFibonacciµÄ·½·¨
+ * éªŒè¯ä¸¤ç§é€’å½’å®ç°Fibonacciçš„æ–¹æ³•
  * <p>
- * 1¡¢Ö±½ÓÊ¹ÓÃ¶ÑÕ»
+ * 1ã€ç›´æ¥ä½¿ç”¨å †æ ˆ
  * <p>
- * 2¡¢¼ÓÈë»º´æµÄ¸ÅÄî
+ * 2ã€åŠ å…¥ç¼“å­˜çš„æ¦‚å¿µ
  * @author WangYanCheng
  * @version 2012-9-5
  */
 public class FibonacciTest {
-    /** »º´æ */
+    /** ç¼“å­˜ */
     private Map<Integer, Long> cacheMap = new HashMap<Integer, Long>();
 
     /**
-     * µÚÒ»ÖÖ·½Ê½
-     * @param i Òª¼ÆËãµÄfibonacciÊı
-     * @return rtnNum fibonacciÖµ
+     * ç¬¬ä¸€ç§æ–¹å¼
+     * @param i è¦è®¡ç®—çš„fibonacciæ•°
+     * @return rtnNum fibonacciå€¼
      */
     private long fibonacciOne(int i) {
         if (i == 0 || i == 1) {
@@ -29,9 +29,9 @@ public class FibonacciTest {
     }
 
     /**
-     * µÚ¶şÖÖ·½Ê½_Ê¹ÓÃ»º´æ
-     * @param i Òª¼ÆËãµÄFibonacciÊı
-     * @return rtnNum fibonacciÖµ
+     * ç¬¬äºŒç§æ–¹å¼_ä½¿ç”¨ç¼“å­˜
+     * @param i è¦è®¡ç®—çš„Fibonacciæ•°
+     * @return rtnNum fibonacciå€¼
      */
     private long fibonacciTwo(int i) {
         if (cacheMap.containsKey(i)) {
@@ -46,24 +46,24 @@ public class FibonacciTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param n fibonacci²ÎÊı
+     * æµ‹è¯•å…¥å£
+     * @param n fibonacciå‚æ•°
      */
     public void doWork(int n) {
         long beginTime = System.currentTimeMillis();
         long rtnValue = this.fibonacciOne(n);
         long endTime = System.currentTimeMillis();
         double diff = endTime - beginTime;
-        System.out.println("µÚÒ»ÖÖ£¬ºÄÊ±£º".concat(String.valueOf(diff / (1000*60))).concat("Ãë£¬Öµ£º".concat(String.valueOf(rtnValue))));
+        System.out.println("ç¬¬ä¸€ç§ï¼Œè€—æ—¶ï¼š".concat(String.valueOf(diff / (1000*60))).concat("ç§’ï¼Œå€¼ï¼š".concat(String.valueOf(rtnValue))));
         beginTime = System.currentTimeMillis();
         rtnValue = this.fibonacciTwo(n);
         endTime = System.currentTimeMillis();
         diff = endTime - beginTime;
-        System.out.println("µÚ¶şÖÖ£¬ºÄÊ±£º".concat(String.valueOf(diff / (1000*60))).concat("Ãë£¬Öµ£º".concat(String.valueOf(rtnValue))));
+        System.out.println("ç¬¬äºŒç§ï¼Œè€—æ—¶ï¼š".concat(String.valueOf(diff / (1000*60))).concat("ç§’ï¼Œå€¼ï¼š".concat(String.valueOf(rtnValue))));
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args
      */
     public static void main(String[] args) {

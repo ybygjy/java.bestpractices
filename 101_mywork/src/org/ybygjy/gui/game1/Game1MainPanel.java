@@ -15,23 +15,23 @@ public class Game1MainPanel extends JPanel {
      * serialize Number
      */
     private static final long serialVersionUID = 3077726301480754029L;
-    /**´°ÌåµÄ¿í*/
+    /**çª—ä½“çš„å®½*/
     private static final int WIDTH = 480;
-    /**´°ÌåµÄ¸ß*/
+    /**çª—ä½“çš„é«˜*/
     private static final int HEIGHT = 480;
-    /**±³¾°·½¸ñµÄÄ¬ÈÏĞĞÊı*/
+    /**èƒŒæ™¯æ–¹æ ¼çš„é»˜è®¤è¡Œæ•°*/
     private static final int ROW = 15;
-    /**±³¾°·½¸ñµÄÄ¬ÈÏÁĞÊı*/
+    /**èƒŒæ™¯æ–¹æ ¼çš„é»˜è®¤åˆ—æ•°*/
     private static final int COL = 15;
     /**
-     * µ¥¸öÍ¼Ïñ´óĞ¡£¬ĞèÒªºÍ´°Ìå´óĞ¡±ÈÀıĞ­µ÷
-     * <p>ÆÁÄ»¿í¶È=µ¥¸öÍ¼Ïñ´óĞ¡*Ä¬ÈÏĞĞÊı=32*15=480<p>
-     * <p>ÆÁÄ»¸ß¶È=µ¥¸öÍ¼Ïñ´óĞ¡*Ä¬ÈÏÁĞÊı=32*15=480</p>
+     * å•ä¸ªå›¾åƒå¤§å°ï¼Œéœ€è¦å’Œçª—ä½“å¤§å°æ¯”ä¾‹åè°ƒ
+     * <p>å±å¹•å®½åº¦=å•ä¸ªå›¾åƒå¤§å°*é»˜è®¤è¡Œæ•°=32*15=480<p>
+     * <p>å±å¹•é«˜åº¦=å•ä¸ªå›¾åƒå¤§å°*é»˜è®¤åˆ—æ•°=32*15=480</p>
      */
     private static final int CS = 32;
     /**
-     * Éè¶¨µØÍ¼
-     * <p>Í¨³£ÔÚrpgÀàĞÍÓÎÏ·¿ª·¢ÖĞ£¬ÒÔ¶şÎ¬Êı×éÎª»ù´¡½øĞĞµØÍ¼´¦Àí£¬ÓÃÒÔÃè»æ³öX×ø±êºÍY×ø±ê</p>
+     * è®¾å®šåœ°å›¾
+     * <p>é€šå¸¸åœ¨rpgç±»å‹æ¸¸æˆå¼€å‘ä¸­ï¼Œä»¥äºŒç»´æ•°ç»„ä¸ºåŸºç¡€è¿›è¡Œåœ°å›¾å¤„ç†ï¼Œç”¨ä»¥æç»˜å‡ºXåæ ‡å’ŒYåæ ‡</p>
      */
     private int[][] map = {
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},
@@ -50,23 +50,23 @@ public class Game1MainPanel extends JPanel {
         {1,0,0,0,0,0,0,0,0,0,0,0,0,0,1},
         {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}
         };
-    /**±³¾°Í¼Ïñ*/
+    /**èƒŒæ™¯å›¾åƒ*/
     private Image floorImage;
-    /**³ÇÇ½Í¼Ïñ*/
+    /**åŸå¢™å›¾åƒ*/
     private Image wallImage;
     /**hero*/
     private Image heroImage;
-    /**½ÇÉ«×ø±êX*/
+    /**è§’è‰²åæ ‡X*/
     private volatile int hX;
-    /**½ÇÉ«×ø±êY*/
+    /**è§’è‰²åæ ‡Y*/
     private volatile int hY;
-    /**×ó±ßÒÆ¶¯*/
+    /**å·¦è¾¹ç§»åŠ¨*/
     private static final int LEFT = 0;
-    /**ÓÒ±ßÒÆ¶¯*/
+    /**å³è¾¹ç§»åŠ¨*/
     private static final int RIGHT = 1;
-    /**ÏòÉÏÒÆ¶¯*/
+    /**å‘ä¸Šç§»åŠ¨*/
     private static final int UP = 2;
-    /**ÏòÏÂÒÆ¶¯*/
+    /**å‘ä¸‹ç§»åŠ¨*/
     private static final int DOWN = 3;
     public Game1MainPanel() {
         setPreferredSize(new Dimension(WIDTH, HEIGHT));
@@ -112,8 +112,8 @@ public class Game1MainPanel extends JPanel {
         g.drawImage(heroImage, hX * CS, hY * CS, this);
     }
     /**
-     * ÒÆ¶¯hero
-     * @param flag ÒÆ¶¯±ê¼Ç£¬±êÊ¶ÊÇÄÄ¸ö·½ÏòÒÆ¶¯
+     * ç§»åŠ¨hero
+     * @param flag ç§»åŠ¨æ ‡è®°ï¼Œæ ‡è¯†æ˜¯å“ªä¸ªæ–¹å‘ç§»åŠ¨
      */
     private void move(int flag) {
         switch (flag) {

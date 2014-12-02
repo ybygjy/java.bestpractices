@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.interpreter;
 
 /**
- * 表达式的抽象
+ * 琛ㄨ揪寮忕殑鎶借薄
  * @author WangYanCheng
  * @version 2013-2-18
  */

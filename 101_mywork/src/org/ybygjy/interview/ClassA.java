@@ -2,7 +2,7 @@ package org.ybygjy.interview;
 
 
 public class ClassA {
-    //¾²Ì¬³ÉÔ±±äÁ¿
+    //é™æ€æˆå‘˜å˜é‡
     public static double serialNum = Math.random();
     public String userName;
     static {

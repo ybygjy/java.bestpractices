@@ -12,25 +12,25 @@ import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
 /**
- * Ñ§Ï°MappedByteBufferÏà¹ØÄÚÈİ
+ * å­¦ä¹ MappedByteBufferç›¸å…³å†…å®¹
  * @author WangYanCheng
  * @version 2011-12-27
  */
 public class MappedByteBufferTest {
     //new File("F://tools//rar//loadrunner//LoadRunner.V8.1.iso");
     private File fileInst = new File("C://sqlnet.log");
-    /** ÎÄ¼ş×Ö·û±àÂë */
+    /** æ–‡ä»¶å­—ç¬¦ç¼–ç  */
     private CharsetDecoder decoder;
     private String tokenStr = "error 12560";
     /**
-     * ¹¹Ôì·½·¨
+     * æ„é€ æ–¹æ³•
      */
     public MappedByteBufferTest() {
         decoder = Charset.forName("UTF-8").newDecoder();
     }
     /**
-     * ³ÊÏÖMappedByteBufferÖµ
-     * @param mbbInst MappedByteBuffer¶ÔÏó
+     * å‘ˆç°MappedByteBufferå€¼
+     * @param mbbInst MappedByteBufferå¯¹è±¡
      */
     public void showDetail(MappedByteBuffer mbbInst) {
         int position = mbbInst.position();
@@ -46,7 +46,7 @@ public class MappedByteBufferTest {
     }
 
     /**
-     * Èë¿Ú
+     * å…¥å£
      */
     public void doWork() {
         FileChannel channelInst = null;
@@ -72,8 +72,8 @@ public class MappedByteBufferTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         new Thread(new Runnable(){

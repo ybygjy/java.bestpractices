@@ -2,15 +2,15 @@ package org.ybygjy.basic.collect.maptest;
 
 
 /**
- * java.util.Dictionary²âÊÔ<br>
- * <strong>ÑéÖ¤Ä³¸ö×ÓÀàÔÚ¼Ì³Ğ¸¸ÀàÖĞÄ³·½·¨ÓëÊµÏÖ½Ó¿ÚÉùÃ÷µÄ·½·¨ÖØºÏÊ±µÄ´¦Àí</strong>
+ * java.util.Dictionaryæµ‹è¯•<br>
+ * <strong>éªŒè¯æŸä¸ªå­ç±»åœ¨ç»§æ‰¿çˆ¶ç±»ä¸­æŸæ–¹æ³•ä¸å®ç°æ¥å£å£°æ˜çš„æ–¹æ³•é‡åˆæ—¶çš„å¤„ç†</strong>
  * @author WangYanCheng
  * @version 2010-8-16
  */
 public class DictionaryTest {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         InnerClassATestPart icatpInst = new InnerClassATestPart();
@@ -19,25 +19,25 @@ public class DictionaryTest {
     }
 }
 /**
- * ÊµÏÖÀàÉùÃ÷
+ * å®ç°ç±»å£°æ˜
  * @author WangYanCheng
  * @version 2010-8-16
  */
 abstract class InnerClassA {
     /**
-     * ÉùÃ÷×ÓÀàÊµÏÖ½Ó¿Ú
+     * å£°æ˜å­ç±»å®ç°æ¥å£
      * @return rtnSize rtnSize
      */
     public abstract int size();
 }
 /***
- * ½Ó¿ÚÉùÃ÷
+ * æ¥å£å£°æ˜
  * @author WangYanCheng
  * @version 2010-8-16
  */
 interface InnerInterfaceA {
     /**
-     * ÉùÃ÷ÊµÏÖ½Ó¿Ú
+     * å£°æ˜å®ç°æ¥å£
      * @return rtnSize rtnSize
      */
     String size();

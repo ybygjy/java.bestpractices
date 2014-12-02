@@ -21,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.ybygjy.web.utils.WrapperRequest;
 
 /**
- * ¸ºÔğ¶ÔÎÄ¼şÊµÌå½øĞĞµÄ²Ù×÷
+ * è´Ÿè´£å¯¹æ–‡ä»¶å®ä½“è¿›è¡Œçš„æ“ä½œ
  * @author WangYanCheng
  * @version 2010-8-27
  */
@@ -62,7 +62,7 @@ doInnerTest(wrRequest.getRequest());
     }
 
     /**
-     * ·ÖÎö´æ´¢¶ş½øÖÆÊı¾İ
+     * åˆ†æå­˜å‚¨äºŒè¿›åˆ¶æ•°æ®
      * @param wrRequest wrRequest
      * @return fileItemArr fileItemArr
      */
@@ -109,7 +109,7 @@ doInnerTest(wrRequest.getRequest());
     }
 
     /**
-     * ½âÎöÑéÖ¤ÉÏ´«ÄÚÈİÊÇ·ñÎÄ¼şÀàĞÍ
+     * è§£æéªŒè¯ä¸Šä¼ å†…å®¹æ˜¯å¦æ–‡ä»¶ç±»å‹
      * @param os outStream
      * @param ins insStream
      * @return ifcInst ifcInst/null
@@ -125,7 +125,7 @@ doInnerTest(wrRequest.getRequest());
         if (tmpStr.indexOf("filename") != -1) {
             String[] tmpStrArr = tmpStr.split(";");
             if (tmpStrArr.length > 2) {
-                // È¡MIMEÎÄ¼şÀàĞÍ
+                // å–MIMEæ–‡ä»¶ç±»å‹
                 ByteArrayOutputStream baos = new ByteArrayOutputStream();
                 try {
                     doRead(ins, baos);
@@ -202,8 +202,8 @@ doInnerTest(wrRequest.getRequest());
         org.ybygjy.test.TestUtils.doPrint(testInfo);
     }
     /**
-     * ÒÔioÁ÷µÄĞÎÊ½´òÓ¡¸ø¶¨request´æ´¢µÄÊı¾İ
-     * @param request ÇëÇóÍ·
+     * ä»¥ioæµçš„å½¢å¼æ‰“å°ç»™å®šrequestå­˜å‚¨çš„æ•°æ®
+     * @param request è¯·æ±‚å¤´
      */
     public static void doPrintRequestData(HttpServletRequest request) {
         ByteBuffer buffer = ByteBuffer.allocate(1024);

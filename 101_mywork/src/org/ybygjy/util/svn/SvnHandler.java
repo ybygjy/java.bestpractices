@@ -66,7 +66,7 @@ public final class SvnHandler {
 
     public boolean isExist(String dir) {
         if (!StringUtil.hasLengthAfterTrim(dir)) {
-            throw new NullPointerException("dir" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("dir" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
 
         SVNClientManager svnClientManager = getSVNClientManager();
@@ -77,7 +77,7 @@ public final class SvnHandler {
             return true;
         } catch (SVNException e) {
             e.printStackTrace();
-            System.out.println(dir + "²»´æÔÚ£¡");
+            System.out.println(dir + "ä¸å­˜åœ¨ï¼");
             return false;
         } finally {
             svnClientManager.dispose();
@@ -86,20 +86,20 @@ public final class SvnHandler {
 
     public void deleteDir(String dir, String commitMessage) throws SVNException {
         if (!StringUtil.hasLengthAfterTrim(dir)) {
-            throw new NullPointerException("dir" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("dir" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
 
         if (!isExist(dir)) {
             return;
         }
-        // ÊµÏÖÉ¾³ıÄ¿Â¼µÄ¹¦ÄÜ
+        // å®ç°åˆ é™¤ç›®å½•çš„åŠŸèƒ½
         SVNClientManager svnClientManager = getSVNClientManager();
         try {
             SVNCommitClient svnCommitClient = svnClientManager.getCommitClient();
 
             String message = commitMessage;
             if (!StringUtil.hasLengthAfterTrim(message)) {
-                message = "×Ô¶¯É¾³ı" + dir;
+                message = "è‡ªåŠ¨åˆ é™¤" + dir;
             }
 
             SVNURL svnUrl = SVNURL.parseURIDecoded(dir);
@@ -117,19 +117,19 @@ public final class SvnHandler {
     public SVNCommitInfo copyToDir(String src, String des, String commitMessage) throws SVNException {
         SVNCommitInfo svnCommitInfo = null;
         if (!StringUtil.hasLengthAfterTrim(src)) {
-            throw new NullPointerException("src" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("src" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
 
         if (!StringUtil.hasLengthAfterTrim(des)) {
-            throw new NullPointerException("des" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("des" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
 
-        // ÊµÏÖ¿½±´Ä¿Â¼µÄ¹¦ÄÜ
+        // å®ç°æ‹·è´ç›®å½•çš„åŠŸèƒ½
         SVNClientManager svnClientManager = getSVNClientManager();
         try {
             String message = commitMessage;
             if (!StringUtil.hasLengthAfterTrim(message)) {
-                message = "×Ô¶¯½«" + src + "¿½±´µ½" + des;
+                message = "è‡ªåŠ¨å°†" + src + "æ‹·è´åˆ°" + des;
             }
 
             SVNURL srcSVNURL = SVNURL.parseURIDecoded(src);
@@ -150,23 +150,23 @@ public final class SvnHandler {
 
     public SVNCommitInfo deleteAndCopyTo(String src, String des, String commitMessage) throws SVNException {
         if (!StringUtil.hasLengthAfterTrim(src)) {
-            throw new NullPointerException("src" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("src" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
 
         if (!StringUtil.hasLengthAfterTrim(des)) {
-            throw new NullPointerException("des" + "²ÎÊı²»ÄÜÎª¿Õ£¡");
+            throw new NullPointerException("des" + "å‚æ•°ä¸èƒ½ä¸ºç©ºï¼");
         }
         if (des.toLowerCase().indexOf("trunk") > 0) {
-            throw new RuntimeException(des + "ÖĞ·¢ÏÖ trunk¹Ø¼ü×Ö,²»ÔÊĞíµÄ²Ù×÷!");
+            throw new RuntimeException(des + "ä¸­å‘ç° trunkå…³é”®å­—,ä¸å…è®¸çš„æ“ä½œ!");
         }
         if (des.indexOf("/branches/") <= 0 && des.indexOf("/tags/") <= 0 && des.indexOf("/AchV/") <= 0) {
-            throw new RuntimeException(des + "ÖĞÃ»ÓĞ·¢ÏÖ branches»òtags¹Ø¼ü×Ö,²»ÔÊĞíµÄ²Ù×÷!");
+            throw new RuntimeException(des + "ä¸­æ²¡æœ‰å‘ç° branchesæˆ–tagså…³é”®å­—,ä¸å…è®¸çš„æ“ä½œ!");
         }
         deleteDir(des, commitMessage);
-        System.out.println("É¾³ı" + des + "Íê³É");
-        // ½«Ô´Ä¿Â¼¿½±´µ½Ä¿±êÄ¿Â¼
+        System.out.println("åˆ é™¤" + des + "å®Œæˆ");
+        // å°†æºç›®å½•æ‹·è´åˆ°ç›®æ ‡ç›®å½•
         SVNCommitInfo svnCommitInfo = copyToDir(src, des, commitMessage);
-        System.out.println("¿½±´\r\n" + src + "\r\n" + des + "Íê³É");
+        System.out.println("æ‹·è´\r\n" + src + "\r\n" + des + "å®Œæˆ");
         return svnCommitInfo;
     }
 
@@ -200,13 +200,13 @@ public final class SvnHandler {
         SVNClientManager svnClientManager = getSVNClientManager();
         try {
             SVNStatus status = svnClientManager.getStatusClient().doStatus(commitFile, true);
-            // Èç¹û´ËÎÄ¼şÊÇĞÂÔö¼ÓµÄÔòÏÈ°Ñ´ËÎÄ¼şÌí¼Óµ½°æ±¾¿â£¬È»ºóÌá½»¡£
+            // å¦‚æœæ­¤æ–‡ä»¶æ˜¯æ–°å¢åŠ çš„åˆ™å…ˆæŠŠæ­¤æ–‡ä»¶æ·»åŠ åˆ°ç‰ˆæœ¬åº“ï¼Œç„¶åæäº¤ã€‚
             if (status.getContentsStatus().toString()
                 .equalsIgnoreCase(SVNStatusType.STATUS_UNVERSIONED.toString())) {
-                // °Ñ´ËÎÄ¼şÔö¼Óµ½°æ±¾¿âÖĞ
+                // æŠŠæ­¤æ–‡ä»¶å¢åŠ åˆ°ç‰ˆæœ¬åº“ä¸­
                 svnClientManager.getWCClient().doAdd(commitFile, false, false, false, SVNDepth.INFINITY,
                     false, false);
-                // Ìá½»´ËÎÄ¼ş
+                // æäº¤æ­¤æ–‡ä»¶
                 svnClientManager.getCommitClient().doCommit(new File[] { commitFile }, true, memo, null,
                     null, true, false, SVNDepth.INFINITY);
                 System.out.println("add");
@@ -215,7 +215,7 @@ public final class SvnHandler {
                 || status.getContentsStatus().toString()
                     .equalsIgnoreCase(SVNStatusType.STATUS_ADDED.toString())
                 || status.getContentsStatus().toString()
-                    .equalsIgnoreCase(SVNStatusType.STATUS_MODIFIED.toString())) {// Èç¹û´ËÎÄ¼ş²»ÊÇĞÂÔö¼ÓµÄ£¬Ö±½ÓÌá½»¡£
+                    .equalsIgnoreCase(SVNStatusType.STATUS_MODIFIED.toString())) {// å¦‚æœæ­¤æ–‡ä»¶ä¸æ˜¯æ–°å¢åŠ çš„ï¼Œç›´æ¥æäº¤ã€‚
                 svnClientManager.getCommitClient().doCommit(new File[] { commitFile }, true, memo, null,
                     null, true, false, SVNDepth.INFINITY);
                 System.out.println("commit");
@@ -302,24 +302,24 @@ public final class SvnHandler {
     }
 
     /*
-     * ´Ëº¯Êıµİ¹éµÄ»ñÈ¡°æ±¾¿âÖĞÄ³Ò»Ä¿Â¼ÏÂµÄËùÓĞÌõÄ¿
+     * æ­¤å‡½æ•°é€’å½’çš„è·å–ç‰ˆæœ¬åº“ä¸­æŸä¸€ç›®å½•ä¸‹çš„æ‰€æœ‰æ¡ç›®
      */
     public void delete(SVNRepository repository, String path, String memo) throws SVNException {
-        Collection entries = repository.getDir(path, -1, null, (Collection) null);// »ñÈ¡°æ±¾¿âµÄpathÄ¿Â¼ÏÂµÄËùÓĞÌõÄ¿¡£²ÎÊı£­1±íÊ¾ÊÇ×îĞÂ°æ±¾¡£
+        Collection entries = repository.getDir(path, -1, null, (Collection) null);// è·å–ç‰ˆæœ¬åº“çš„pathç›®å½•ä¸‹çš„æ‰€æœ‰æ¡ç›®ã€‚å‚æ•°ï¼1è¡¨ç¤ºæ˜¯æœ€æ–°ç‰ˆæœ¬ã€‚
         Iterator iterator = entries.iterator();
         while (iterator.hasNext()) {
             SVNDirEntry entry = (SVNDirEntry) iterator.next();
-            // µ±Ç°EntryÊÇÎÄ¼ş¼Ğ->recurse delete
+            // å½“å‰Entryæ˜¯æ–‡ä»¶å¤¹->recurse delete
             if (entry.getKind() == SVNNodeKind.DIR) {
                 delete(repository, entry.getRelativePath(), memo);
             }
-            // µ±Ç°ÊÇÎÄ¼ş delete
+            // å½“å‰æ˜¯æ–‡ä»¶ delete
             getSVNClientManager().getCommitClient().doDelete(new SVNURL[] { entry.getURL() }, memo);
         }
         SVNDirEntry svnDirEntry = repository.getDir(path, -1, false, null);
         if (svnDirEntry.getKind() == SVNNodeKind.DIR) {
             getSVNClientManager().getCommitClient().doDelete(new SVNURL[] { svnDirEntry.getURL() }, memo);
-            System.out.println("É¾³ı=>".concat(svnDirEntry.getRelativePath()));
+            System.out.println("åˆ é™¤=>".concat(svnDirEntry.getRelativePath()));
         }
     }
 
@@ -369,7 +369,7 @@ public final class SvnHandler {
             SVNURL svnUrl = SVNURL.parseURIEncoded(destPath);
             SVNRepository repository = svnClientManager.createRepository(svnUrl, false);
             SVNNodeKind svnNodeKind = repository.checkPath(".", -1l);
-            //ÑéÖ¤Ä¿Â¼ÊÇ·ñ´æÔÚ_Ö»ÔÚÄ¿Â¼²»´æÔÚµÄÇé¿öÏÂ´´½¨
+            //éªŒè¯ç›®å½•æ˜¯å¦å­˜åœ¨_åªåœ¨ç›®å½•ä¸å­˜åœ¨çš„æƒ…å†µä¸‹åˆ›å»º
             if (SVNNodeKind.NONE == svnNodeKind) {
                 System.out.println("repository.checkPath>>" + svnNodeKind);
                 System.out.println("repository.getFullPath(\".\")>>" + repository.getFullPath("."));

@@ -1,10 +1,10 @@
 package org.ybygjy.jcip.chap9;
 
 /**
- * SwingÖ´ĞĞ³¤Ê±¼äÈÎÎñµÄ·½Ê½
- * <p>1¡¢</p>
+ * Swingæ‰§è¡Œé•¿æ—¶é—´ä»»åŠ¡çš„æ–¹å¼
+ * <p>1ã€</p>
  * @author WangYanCheng
- * @version 2014Äê9ÔÂ8ÈÕ
+ * @version 2014å¹´9æœˆ8æ—¥
  */
 public class LongTermTaskPart2 {
 

@@ -1,6 +1,6 @@
 package org.ybygjy.pattern.eventsys.jbmulticastevent;
 /**
- * 事件机制-->JavaBean模式-->Multicast Event
+ * 浜嬩欢鏈哄埗-->JavaBean妯″紡-->Multicast Event
  * @author WangYanCheng
  * @version 2010-2-20
  */
@@ -20,7 +20,7 @@ public class Thermostat implements TemperatureChangeListener {
      */
     public void updateTemperature(TemperatureChangeEvent tceInst) {
         if (debug) {
-            String debugTmpl = "事件源{@ES@},PropagationId{@PI@},新值{@NV@},旧值{@OV@}";
+            String debugTmpl = "浜嬩欢婧恵@ES@},PropagationId{@PI@},鏂板�納@NV@},鏃у�納@OV@}";
             System.out.println(debugTmpl.replaceAll("@ES@", tceInst.getSource().toString())
                     .replaceAll("@NV@", tceInst.getNewValue().toString())
                     .replaceAll("@OV@", tceInst.getOldValue().toString())

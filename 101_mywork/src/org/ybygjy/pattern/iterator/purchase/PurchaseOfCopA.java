@@ -5,13 +5,13 @@ import org.ybygjy.pattern.iterator.Purchase;
 import org.ybygjy.pattern.iterator.iter.ForwardIterator;
 
 /**
- * ¾¯²ìA
+ * è­¦å¯ŸA
  * @author WangYanCheng
  * @version 2012-11-26
  */
 public class PurchaseOfCopA extends Purchase {
     /**
-     * ¹¹Ôì·½·¨
+     * æž„é€ æ–¹æ³•
      */
     public PurchaseOfCopA() {
         append("Dish Washer");

@@ -8,16 +8,16 @@ import java.util.List;
 
 
 /**
- * JCIP#5002_¶ÔÈÝÆ÷½øÐÐµü´ú²Ù×÷µÄ²¢·¢ÎÊÌâ
- * <p>ÈÝÆ÷ÔÚ½øÐÐµü´úÆÚ¼äÆäËüÏß³ÌÐÞ¸ÄÁËÈÝÆ÷</p>
- * 1¡¢½â¾ö°ì·¨:
- * <p>1.1¡¢½«¶ÔÈÝÆ÷µÄµü´úºÍÐÞ¸Ä³éÏóÎªÒ»×é¸´ºÏ²Ù×÷£¬ÔÚ¿Í»§¶Ë¶Ô²Ù×÷½øÐÐ¼ÓËø¡£</p>
- * <p>1.2¡¢²ÉÓÃCopyOnWriter·½Ê½(¿ËÂ¡)£¬ÔÚ¸±±¾ÉÏ½øÐÐµü´ú¡£</p>
- * <p>1.3¡¢×¢ÒâÒþÊ½µü´úÎÊÌâ£¬ÈÝÆ÷ÖÐÀàËÆtoString()¡¢hashCode()ÕâÀà·½·¨Îª¶Ô×ÔÉíÄÚÈÝ½øÐÐµü´ú¡£</p>
- * <p>1.4¡¢Í¨¹ýÒýÓÃ²¢·¢ÈÝÆ÷±ÜÃâ´ËÎÊÌâ</p>
- * 2¡¢»ù´¡:
- * <p>2.1¡¢Í¬²½ÈÝÆ÷½«ËùÓÐ¶ÔÈÝÆ÷×´Ì¬µÄ·ÃÎÊ¶¼´®ÐÐ»¯£¬ÒÔÊµÏÖËüÃÇµÄÏß³Ì°²È«ÐÔ¡£</p>
- * <p>2.2¡¢Í¬²½ÈÝÆ÷ÕâÖÖËø»úÖÆÑÏÖØ½µµÍÁË²¢·¢ÐÔ£¬¶àÏß³Ì¾ºÕùÇé¿öÏÂÍÌÍÂÁ¿ÑÏÖØ¼õµÍ¡£</p>
+ * JCIP#5002_å¯¹å®¹å™¨è¿›è¡Œè¿­ä»£æ“ä½œçš„å¹¶å‘é—®é¢˜
+ * <p>å®¹å™¨åœ¨è¿›è¡Œè¿­ä»£æœŸé—´å…¶å®ƒçº¿ç¨‹ä¿®æ”¹äº†å®¹å™¨</p>
+ * 1ã€è§£å†³åŠžæ³•:
+ * <p>1.1ã€å°†å¯¹å®¹å™¨çš„è¿­ä»£å’Œä¿®æ”¹æŠ½è±¡ä¸ºä¸€ç»„å¤åˆæ“ä½œï¼Œåœ¨å®¢æˆ·ç«¯å¯¹æ“ä½œè¿›è¡ŒåŠ é”ã€‚</p>
+ * <p>1.2ã€é‡‡ç”¨CopyOnWriteræ–¹å¼(å…‹éš†)ï¼Œåœ¨å‰¯æœ¬ä¸Šè¿›è¡Œè¿­ä»£ã€‚</p>
+ * <p>1.3ã€æ³¨æ„éšå¼è¿­ä»£é—®é¢˜ï¼Œå®¹å™¨ä¸­ç±»ä¼¼toString()ã€hashCode()è¿™ç±»æ–¹æ³•ä¸ºå¯¹è‡ªèº«å†…å®¹è¿›è¡Œè¿­ä»£ã€‚</p>
+ * <p>1.4ã€é€šè¿‡å¼•ç”¨å¹¶å‘å®¹å™¨é¿å…æ­¤é—®é¢˜</p>
+ * 2ã€åŸºç¡€:
+ * <p>2.1ã€åŒæ­¥å®¹å™¨å°†æ‰€æœ‰å¯¹å®¹å™¨çŠ¶æ€çš„è®¿é—®éƒ½ä¸²è¡ŒåŒ–ï¼Œä»¥å®žçŽ°å®ƒä»¬çš„çº¿ç¨‹å®‰å…¨æ€§ã€‚</p>
+ * <p>2.2ã€åŒæ­¥å®¹å™¨è¿™ç§é”æœºåˆ¶ä¸¥é‡é™ä½Žäº†å¹¶å‘æ€§ï¼Œå¤šçº¿ç¨‹ç«žäº‰æƒ…å†µä¸‹åžåé‡ä¸¥é‡å‡ä½Žã€‚</p>
  * @author WangYanCheng
  * @version 2014-7-24
  */
@@ -31,9 +31,9 @@ public class VectorConcurrentModification {
         new UpdateThread("UpdateThread", dataList).start();
     }
     /**
-     * ¸ºÔð¶ÔÈÝÆ÷½øÐÐµü´ú
+     * è´Ÿè´£å¯¹å®¹å™¨è¿›è¡Œè¿­ä»£
      * @author WangYanCheng
-     * @version 2014Äê7ÔÂ25ÈÕ
+     * @version 2014å¹´7æœˆ25æ—¥
      */
     static class IteratorThread extends Thread {
         private Iterable<String> iterableInstance;
@@ -61,9 +61,9 @@ public class VectorConcurrentModification {
         }
     }
     /**
-     * ¸ºÔð¸üÐÂÈÝÆ÷ÄÚÈÝ
+     * è´Ÿè´£æ›´æ–°å®¹å™¨å†…å®¹
      * @author WangYanCheng
-     * @version 2014Äê7ÔÂ25ÈÕ
+     * @version 2014å¹´7æœˆ25æ—¥
      */
     static class UpdateThread extends Thread {
         private List<String> dataList;

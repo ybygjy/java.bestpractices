@@ -20,9 +20,9 @@ import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
 
 /**
- * Êµ¼ùXML Schema
- * <p>1¡¢Í¨¹ıDOM4J¼ÓÔØXSDÑéÖ¤XML
- * <p>2¡¢http://lavasoft.blog.51cto.com/62575/97597/
+ * å®è·µXML Schema
+ * <p>1ã€é€šè¿‡DOM4JåŠ è½½XSDéªŒè¯XML
+ * <p>2ã€http://lavasoft.blog.51cto.com/62575/97597/
  * @author WangYanCheng
  * @version 2014-5-27
  */
@@ -36,15 +36,15 @@ public class XMLSchemaTest {
     public void validateByDTD() {
     }
     public void validateByXSD() {
-        //XML´íÎó´¦ÀíÆ÷
+        //XMLé”™è¯¯å¤„ç†å™¨
         XMLErrorHandler errorHandler = new XMLErrorHandler();
-        //»ùÓÚSAXµÄ½âÎöÆ÷
+        //åŸºäºSAXçš„è§£æå™¨
         SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-        //Ö¸¶¨½âÎöÆ÷ÔÚ½âÎöÎÄµµÊ±ÑéÖ¤ÎÄµµÄÚÈİ
+        //æŒ‡å®šè§£æå™¨åœ¨è§£ææ–‡æ¡£æ—¶éªŒè¯æ–‡æ¡£å†…å®¹
         saxParserFactory.setValidating(true);
-        //Ö¸¶¨½âÎöÆ÷¶ÔXMLÃû³Æ¿Õ¼äÖ§³Ö
+        //æŒ‡å®šè§£æå™¨å¯¹XMLåç§°ç©ºé—´æ”¯æŒ
         saxParserFactory.setNamespaceAware(true);
-        //Ê¹ÓÃ¹¤³§½âÎöÆ÷´´½¨SAXParserÊµÀı
+        //ä½¿ç”¨å·¥å‚è§£æå™¨åˆ›å»ºSAXParserå®ä¾‹
         SAXParser saxParser = null;
         try {
             saxParser = saxParserFactory.newSAXParser();
@@ -55,9 +55,9 @@ public class XMLSchemaTest {
             // TODO Auto-generated catch block
             e1.printStackTrace();
         }
-        //´´½¨ÎÄµµ¶ÁÈ¡ÊµÀı
+        //åˆ›å»ºæ–‡æ¡£è¯»å–å®ä¾‹
         SAXReader saxReader = new SAXReader();
-        //¶¨ÒåxmlÎÄµµÊµÀı
+        //å®šä¹‰xmlæ–‡æ¡£å®ä¾‹
         Document xmlDocument = null;
         try {
             xmlDocument = saxReader.read(xmlFile);
@@ -65,8 +65,8 @@ public class XMLSchemaTest {
             e.printStackTrace();
         }
         try {
-            //ÉèÖÃXMLReaderµÄ»ù´¡ÊµÏÖÖĞµÄÌØ¶¨ÊôĞÔÖµ¡£
-            //ºËĞÄ¹¦ÄÜºÍÊôĞÔÁĞ±í¿ÉÔÚhttp://sax.sourceforge.net/?selected=get-setÖĞÕÒµ½
+            //è®¾ç½®XMLReaderçš„åŸºç¡€å®ç°ä¸­çš„ç‰¹å®šå±æ€§å€¼ã€‚
+            //æ ¸å¿ƒåŠŸèƒ½å’Œå±æ€§åˆ—è¡¨å¯åœ¨http://sax.sourceforge.net/?selected=get-setä¸­æ‰¾åˆ°
             saxParser.setProperty("http://java.sun.com/xml/jaxp/properties/schemaLanguage", "http://www.w3.org/2001/XMLSchema");
             System.out.println("xsdFile.toURI().toString()==>" + xsdFile.toURI().toString());
             saxParser.setProperty("http://java.sun.com/xml/jaxp/properties/schemaSource", xsdFile.toURI().toString());
@@ -77,11 +77,11 @@ public class XMLSchemaTest {
         }
         SAXValidator validator = null;
         try {
-            //ÊµÀı»¯ÎÄ¼ş½ÏÄÑ¹¤¾ß
+            //å®ä¾‹åŒ–æ–‡ä»¶è¾ƒéš¾å·¥å…·
             validator = new SAXValidator(saxParser.getXMLReader());
-            //×¢²á´íÎó´¦ÀíÆ÷
+            //æ³¨å†Œé”™è¯¯å¤„ç†å™¨
             validator.setErrorHandler(errorHandler);
-            //Ğ£Ñé
+            //æ ¡éªŒ
             validator.validate(xmlDocument);
         } catch (SAXException e) {
             e.printStackTrace();
@@ -93,19 +93,19 @@ public class XMLSchemaTest {
             e.printStackTrace();
         }
         if (errorHandler.getErrors().hasContent()) {
-            System.out.println("XMLÎÄ¼şÍ¨¹ıXSDÎÄ¼şĞ£ÑéÊ§°Ü£¡");
+            System.out.println("XMLæ–‡ä»¶é€šè¿‡XSDæ–‡ä»¶æ ¡éªŒå¤±è´¥ï¼");
             try {
                 xmlWriter.write(errorHandler.getErrors());
             } catch (IOException e) {
                 e.printStackTrace();
             }
         } else {
-            System.out.println("XMLÎÄ¼şÍ¨¹ıXSDÎÄ¼şĞ£Ñé³É¹¦£¡");
+            System.out.println("XMLæ–‡ä»¶é€šè¿‡XSDæ–‡ä»¶æ ¡éªŒæˆåŠŸï¼");
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         File xmlFile = new File(XMLSchemaTest.class.getResource("schema-data-content.xml").getFile());

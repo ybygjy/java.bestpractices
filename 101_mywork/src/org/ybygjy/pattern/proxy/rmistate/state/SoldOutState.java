@@ -29,28 +29,28 @@ public class SoldOutState implements IState {
      */
     public void dispense() {
         this.gumballInst.setCurrState(this.gumballInst.getSoldOutState());
-        System.out.println("糖果已经售罄.");
+        System.out.println("绯栨灉宸茬粡鍞絼.");
     }
 
     /**
      * {@inheritDoc}
      */
     public void ejectQuarter() {
-        System.out.println("糖果已经售罄.");
+        System.out.println("绯栨灉宸茬粡鍞絼.");
     }
 
     /**
      * {@inheritDoc}
      */
     public void insertQuarter() {
-        System.out.println("糖果已经售罄.");
+        System.out.println("绯栨灉宸茬粡鍞絼.");
     }
 
     /**
      * {@inheritDoc}
      */
     public void turnCrank() {
-        System.out.println("糖果已经售罄.");
+        System.out.println("绯栨灉宸茬粡鍞絼.");
     }
 
 }

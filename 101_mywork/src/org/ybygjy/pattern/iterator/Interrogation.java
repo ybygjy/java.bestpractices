@@ -4,7 +4,7 @@ import org.ybygjy.pattern.iterator.purchase.PurchaseOfCopA;
 import org.ybygjy.pattern.iterator.purchase.PurchaseOfCopB;
 
 /**
- * 客户端类(审讯)
+ * 瀹㈡埛绔被(瀹¤)
  * @author WangYanCheng
  * @version 2012-11-26
  */

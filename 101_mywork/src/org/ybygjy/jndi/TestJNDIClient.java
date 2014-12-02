@@ -9,10 +9,10 @@ import javax.naming.NamingEnumeration;
 import javax.naming.NamingException;
 
 /**
- * TestJNDI£¬²âÊÔ»·¾³<br/>
+ * TestJNDIï¼Œæµ‹è¯•ç¯å¢ƒ<br/>
  * <ol>
- * <li>Æô¶¯%JAVA_HOME%/bin/tnameserv.exe</li>
- * <li>ÔËĞĞTestJNDIServer</li>
+ * <li>å¯åŠ¨%JAVA_HOME%/bin/tnameserv.exe</li>
+ * <li>è¿è¡ŒTestJNDIServer</li>
  * <li>
  * <pre>java -Djava.naming.factory.initial=com.sun.jndi.cosnaming.CNCtxFactory
  *           -Djava.naming.provider.url=iiop://localhost:900
@@ -25,7 +25,7 @@ import javax.naming.NamingException;
  */
 public class TestJNDIClient {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

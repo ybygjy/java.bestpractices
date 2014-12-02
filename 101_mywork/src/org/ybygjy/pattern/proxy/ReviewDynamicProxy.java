@@ -7,16 +7,16 @@ import java.util.Arrays;
 import java.util.Random;
 
 /**
- * ¸´Ï°Java×Ô´øµÄ¶¯Ì¬´úÀí
- * <p>1¡¢µ÷ÓÃ´¦ÀíÆ÷×Ü»á³ÖÓĞÕæÊµ¶ÔÏó</p>
- * <p>2¡¢µ÷ÓÃ´¦ÀíÆ÷Ìá¹©ÁËÕæÊµ¶ÔÏóĞĞÎªµÄ¼àÌı¡¢À©Õ¹Èë¿Ú</p>
+ * å¤ä¹ Javaè‡ªå¸¦çš„åŠ¨æ€ä»£ç†
+ * <p>1ã€è°ƒç”¨å¤„ç†å™¨æ€»ä¼šæŒæœ‰çœŸå®å¯¹è±¡</p>
+ * <p>2ã€è°ƒç”¨å¤„ç†å™¨æä¾›äº†çœŸå®å¯¹è±¡è¡Œä¸ºçš„ç›‘å¬ã€æ‰©å±•å…¥å£</p>
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class ReviewDynamicProxy {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Object[] elements = new Object[1000];
@@ -30,16 +30,16 @@ public class ReviewDynamicProxy {
     }
 }
 /**
- * »Øµ÷½ÓÊÕ´¦ÀíÆ÷
+ * å›è°ƒæ¥æ”¶å¤„ç†å™¨
  * @author WangYanCheng
  * @version 2011-2-24
  */
 class TraceHandler implements InvocationHandler {
-    /**Ô´Ä¿±ê¶ÔÏó*/
+    /**æºç›®æ ‡å¯¹è±¡*/
     private Object target;
     /**
      * Constructor
-     * @param target Ä¿±ê¶ÔÏó
+     * @param target ç›®æ ‡å¯¹è±¡
      */
     public TraceHandler(Object target) {
         this.target = target;

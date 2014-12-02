@@ -8,13 +8,13 @@ import java.io.IOException;
 import java.io.InputStream;
 
 /**
- * ×Ö½ÚÊı¾İĞ´Èëµ½ÎÄ¼ş
+ * å­—èŠ‚æ•°æ®å†™å…¥åˆ°æ–‡ä»¶
  * @author WangYanCheng
  * @version 2010-4-25
  */
 public class BitIO {
     /**
-     * ÎÄ¼ş¶ÁÈ¡×Ö½Ú
+     * æ–‡ä»¶è¯»å–å­—èŠ‚
      */
     public void doReadFile4Byte() {
         try {
@@ -30,7 +30,7 @@ public class BitIO {
         }
     }
     /**
-     * ÎÄ¼şĞ´Èë×Ö½Ú
+     * æ–‡ä»¶å†™å…¥å­—èŠ‚
      */
     public void doWriteFile4Byte() {
         byte[] buffer = {127, 127, 127};
@@ -56,7 +56,7 @@ public class BitIO {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments
      */
     public static void main(String[] args) {

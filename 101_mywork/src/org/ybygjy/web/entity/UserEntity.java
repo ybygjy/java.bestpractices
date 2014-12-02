@@ -16,8 +16,8 @@ public class UserEntity {
     }
     /**
      * constructor
-     * @param userName ÓÃ»§Ãû
-     * @param password ÃÜÂë
+     * @param userName ç”¨æˆ·å
+     * @param password å¯†ç 
      */
     public UserEntity(String userName, String password) {
         this.userName = userName;

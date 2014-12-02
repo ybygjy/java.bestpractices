@@ -13,7 +13,7 @@ import java.util.List;
  * @version 2009-12-15
  */
 public class TestMyAnnotation {
-    /**调试信息*/
+    /**璋冭瘯淇℃伅*/
     private List<String> debugInfo = new ArrayList<String>();
     /**
      * AnnotationTest
@@ -89,8 +89,8 @@ public class TestMyAnnotation {
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         TestMyAnnotation testMyAnnotation = new TestMyAnnotation();

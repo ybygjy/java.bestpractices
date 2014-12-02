@@ -5,7 +5,7 @@ import org.junit.runner.Runner;
 import org.junit.runner.notification.RunNotifier;
 
 /**
- * ²âÊÔÔËĞĞ¹ÜÀíÆ÷
+ * æµ‹è¯•è¿è¡Œç®¡ç†å™¨
  * @author WangYanCheng
  * @version 2010-12-8
  */

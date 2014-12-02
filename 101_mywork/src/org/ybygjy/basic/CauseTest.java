@@ -4,13 +4,13 @@ import java.io.PrintStream;
 import java.io.PrintWriter;
 
 /**
- * �쳣�����ѧϰ
+ * 异常概念的学习
  * <p>
- * 1���Զ����ܼ��쳣
+ * 1、自定义受检异常
  * <p>
- * 2���Զ�����ܼ��쳣
+ * 2、自定义非受检异常
  * <p>
- * 3���ܼ�����ܼ��쳣��ת��
+ * 3、受检与非受检异常的转换
  * @author WangYanCheng
  * @version 2012-11-15
  */

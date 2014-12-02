@@ -10,18 +10,18 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 /**
- * 文件转换swf格式支持
+ * 鏂囦欢杞崲swf鏍煎紡鏀寔
  * @author WangYanCheng
  * @version 2009-12-3
  */
 public class FileConvert4SwfImpl {
-    /**转换完成后的文件名称*/
+    /**杞崲瀹屾垚鍚庣殑鏂囦欢鍚嶇О*/
     private File fileInst = null;
-    /**输出目录*/
+    /**杈撳嚭鐩綍*/
     private File outFolder = null;
     /**
      * {@inheritDoc}
-     * <strong>需要验证fileInst是否为空</strong>
+     * <strong>闇�瑕侀獙璇乫ileInst鏄惁涓虹┖</strong>
      */
     public File doConvertFile(File inputFileInst, File outFilePath) {
         new InnerConvertThread(inputFileInst, outFilePath);
@@ -29,7 +29,7 @@ public class FileConvert4SwfImpl {
     }
     /**
      * {@inheritDoc}
-     * <strong>需要验证fileInst是否为空</strong>
+     * <strong>闇�瑕侀獙璇乫ileInst鏄惁涓虹┖</strong>
      */
     public File doConvertFile(File inputFileInst) {
         new InnerConvertThread(inputFileInst, null);
@@ -130,7 +130,7 @@ public class FileConvert4SwfImpl {
                 th.setDaemon(true);
                 th.start();
                 try {
-                    System.out.println("转换完成:" + proObj.waitFor());
+                    System.out.println("杞崲瀹屾垚:" + proObj.waitFor());
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -140,8 +140,8 @@ public class FileConvert4SwfImpl {
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         File inputFileInst = new File(args[0]),

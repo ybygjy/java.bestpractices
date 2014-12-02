@@ -7,14 +7,14 @@ import java.util.Map;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ²ÉÓÃÍ¬²½·â×°Æ÷È·±£ÈİÆ÷µÄÍ¬²½ÈİÆ÷²âÊÔ½Ó¿ÚÊµÏÖ
+ * é‡‡ç”¨åŒæ­¥å°è£…å™¨ç¡®ä¿å®¹å™¨çš„åŒæ­¥å®¹å™¨æµ‹è¯•æ¥å£å®ç°
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4SynchroFactoryMap implements BenchmarkMapWrapper {
 	private Map<Object, Object> hashMap;
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public BenchmarkMapWrapperImpl4SynchroFactoryMap() {
 		this.hashMap = Collections.synchronizedMap(new HashMap<Object, Object>());

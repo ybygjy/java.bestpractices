@@ -4,7 +4,7 @@ import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
- * 通用接口
+ * 閫氱敤鎺ュ彛
  * @author WangYanCheng
  * @version 2010-12-24
  */

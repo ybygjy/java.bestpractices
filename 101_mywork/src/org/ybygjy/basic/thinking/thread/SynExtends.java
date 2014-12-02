@@ -5,7 +5,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 /**
- * 父类的synchronized方法可以在子类中改变为非synchronized方法
+ * 鐖剁被鐨剆ynchronized鏂规硶鍙互鍦ㄥ瓙绫讳腑鏀瑰彉涓洪潪synchronized鏂规硶
  * @author WangYanCheng
  * @version 2012-11-12
  */
@@ -24,7 +24,7 @@ public class SynExtends {
                 while (true) {
                     Integer tmpI = pcInst.doWork();
                     if (!valueSet.add(tmpI)) {
-                        throw new IllegalStateException("数据状态不正确，出现重复：".concat(tmpI.toString()));
+                        throw new IllegalStateException("鏁版嵁鐘舵�佷笉姝ｇ‘锛屽嚭鐜伴噸澶嶏細".concat(tmpI.toString()));
                     }
                     try {
                         Thread.sleep(100);

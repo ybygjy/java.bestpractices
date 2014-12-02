@@ -4,7 +4,7 @@ import org.ybygjy.pattern.state.GumballMachine;
 import org.ybygjy.pattern.state.State;
 
 /**
- * 售罄
+ * 鍞絼
  * @author WangYanCheng
  * @version 2010-11-13
  */
@@ -23,27 +23,27 @@ public class SoldOutState implements State {
      * {@inheritDoc}
      */
     public void dispense() {
-        System.out.println("对不起，糖果已经售罄");
+        System.out.println("瀵逛笉璧凤紝绯栨灉宸茬粡鍞絼");
     }
 
     /**
      * {@inheritDoc}
      */
     public void enjectQuarter() {
-        System.out.println("您还没有投入钱币.");
+        System.out.println("鎮ㄨ繕娌℃湁鎶曞叆閽卞竵.");
     }
 
     /**
      * {@inheritDoc}
      */
     public void insertQuarter() {
-        System.out.println("对不起，糖果已经售罄");
+        System.out.println("瀵逛笉璧凤紝绯栨灉宸茬粡鍞絼");
     }
 
     /**
      * {@inheritDoc}
      */
     public void turnCrank() {
-        System.out.println("对不起，糖果已经售罄");
+        System.out.println("瀵逛笉璧凤紝绯栨灉宸茬粡鍞絼");
     }
 }

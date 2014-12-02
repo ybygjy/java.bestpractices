@@ -7,8 +7,8 @@ import org.ybygjy.basic.thinking.thread.testframework.state.InvariantOK;
 import org.ybygjy.basic.thinking.thread.testframework.state.InvariantState;
 
 /**
- * Ïß³Ì_ĞÅºÅÁ¿ <li>¶à¸öÏß³Ì¹²ÏíSemaphoreInstanceÁ¿£¬ÒÔÏÂ´úÂëÄ£ÄâÁË¶àÏß³Ì²Ù×İĞÅºÅÁ¿µ¼ÖÂÊı¾İ²»Ò»ÖÂÇé¿ö¡£</li>
- * ¶àÏß³ÌĞÅºÅÁ¿µÄ²»Ò»ÖÂ½â¾ö·½°¸ÓĞ¶àÖÖ <li>ÒıÈëÔ­×Ó²Ù×÷¸ÅÄî</li> <li>¼ÓÈëËø»úÖÆ</li>
+ * çº¿ç¨‹_ä¿¡å·é‡ <li>å¤šä¸ªçº¿ç¨‹å…±äº«SemaphoreInstanceé‡ï¼Œä»¥ä¸‹ä»£ç æ¨¡æ‹Ÿäº†å¤šçº¿ç¨‹æ“çºµä¿¡å·é‡å¯¼è‡´æ•°æ®ä¸ä¸€è‡´æƒ…å†µã€‚</li>
+ * å¤šçº¿ç¨‹ä¿¡å·é‡çš„ä¸ä¸€è‡´è§£å†³æ–¹æ¡ˆæœ‰å¤šç§ <li>å¼•å…¥åŸå­æ“ä½œæ¦‚å¿µ</li> <li>åŠ å…¥é”æœºåˆ¶</li>
  * @author WangYanCheng
  * @version 2010-9-30
  */
@@ -92,7 +92,7 @@ public class Semaphore {
     }
 
     /**
-     * Ê§°ÜµÄ°¸ÀıÖ®ÒıÈëËø»úÖÆµÄĞÅºÅÁ¿
+     * å¤±è´¥çš„æ¡ˆä¾‹ä¹‹å¼•å…¥é”æœºåˆ¶çš„ä¿¡å·é‡
      * @author WangYanCheng
      * @version 2010-10-8
      */
@@ -140,8 +140,8 @@ public class Semaphore {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      * @throws Exception Exception
      */
     public static void main(String[] args) throws Exception {

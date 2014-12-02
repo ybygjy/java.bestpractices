@@ -4,7 +4,7 @@ import java.awt.event.ActionEvent;
 
 import org.ybygjy.gui.springswing.comp.ListTableActionListener;
 /**
- * 负责添加按钮事件监听实现
+ * 璐熻矗娣诲姞鎸夐挳浜嬩欢鐩戝惉瀹炵幇
  * @author WangYanCheng
  * @version 2011-2-16
  */

@@ -10,36 +10,36 @@ import java.io.OutputStream;
 import org.ybygjy.web.utils.FileUtils;
 
 /**
- * ¸ºÔğÎÄ¼şµÄ´æ´¢½âÎö
+ * è´Ÿè´£æ–‡ä»¶çš„å­˜å‚¨è§£æ
  * @author WangYanCheng
  * @version 2010-08-31
  */
 public class FileItem {
-    /** Ô´ÎÄ¼şÂ·¾¶ */
+    /** æºæ–‡ä»¶è·¯å¾„ */
     private String srcFilePath;
-    /** Ô´ÎÄ¼şÈ«Ãû³Æ */
+    /** æºæ–‡ä»¶å…¨åç§° */
     private String srcFileFullName;
-    /** Ô´ÎÄ¼şÃû³Æ */
+    /** æºæ–‡ä»¶åç§° */
     private String srcFileName;
-    /** ÎÄ¼ş×ª´¢Â·¾¶ */
+    /** æ–‡ä»¶è½¬å‚¨è·¯å¾„ */
     private String filePath;
-    /** ÎÄ¼şÃû³Æ */
+    /** æ–‡ä»¶åç§° */
     private String fileName;
-    /** ÎÄ¼şÈ«Ãû³Æ */
+    /** æ–‡ä»¶å…¨åç§° */
     private String fileFullName;
-    /** ÉÏ´«ÎÄ¼ş²ÎÊıÃû³Æ */
+    /** ä¸Šä¼ æ–‡ä»¶å‚æ•°åç§° */
     private String paramName;
     /** MIME Type */
     private String mimeType;
-    /** ·Ö¸î´® */
+    /** åˆ†å‰²ä¸² */
     private String boundaryStr;
 
     /**
      * Constructor
-     * @param paramStr ²ÎÊıÃû³Æ
-     * @param fileStr Ô´ÎÄ¼şµØÖ·´®
+     * @param paramStr å‚æ•°åç§°
+     * @param fileStr æºæ–‡ä»¶åœ°å€ä¸²
      * @param mimeType MIMEType
-     * @param boundaryStr ·Ö¸îÔ¼Êø
+     * @param boundaryStr åˆ†å‰²çº¦æŸ
      */
     public FileItem(String paramStr, String fileStr, String mimeType, String boundaryStr) {
         String[] tmpStrArr = paramStr.split("=");
@@ -103,7 +103,7 @@ public class FileItem {
     }
 
     /**
-     * Ô´ÉÏ´«ÎÄ¼şÈ«Ãû³Æ
+     * æºä¸Šä¼ æ–‡ä»¶å…¨åç§°
      * @return the srcFileName
      */
     public String getSrcFileFullName() {
@@ -111,7 +111,7 @@ public class FileItem {
     }
 
     /**
-     * Ô´ÉÏ´«ÎÄ¼şÃû³Æ
+     * æºä¸Šä¼ æ–‡ä»¶åç§°
      * @return the srcFileName
      */
     public String getSrcFileName() {
@@ -119,7 +119,7 @@ public class FileItem {
     }
 
     /**
-     * ÎÄ¼ş´æ´¢Â·¾¶
+     * æ–‡ä»¶å­˜å‚¨è·¯å¾„
      * @return the filePath
      */
     public String getFilePath() {
@@ -127,7 +127,7 @@ public class FileItem {
     }
 
     /**
-     * È¡ÎÄ¼şÃû³Æ
+     * å–æ–‡ä»¶åç§°
      * @return the fileName
      */
     public String getFileName() {
@@ -135,7 +135,7 @@ public class FileItem {
     }
 
     /**
-     * È¡ÎÄ¼şÈ«Ãû³Æ
+     * å–æ–‡ä»¶å…¨åç§°
      * @return the fileFullName
      */
     public String getFileFullName() {
@@ -143,7 +143,7 @@ public class FileItem {
     }
 
     /**
-     * ×ª´¢ÎÄ¼ş
+     * è½¬å‚¨æ–‡ä»¶
      * @param ins ins
      * @throws IOException IOException
      */
@@ -169,7 +169,7 @@ public class FileItem {
     }
 
     /**
-     * ´æ´¢ÎÄ¼ş
+     * å­˜å‚¨æ–‡ä»¶
      * @param ins ins
      * @param bos bos
      * @throws IOException IOException
@@ -203,7 +203,7 @@ public class FileItem {
     }
 
     /**
-     * ¼ìÑéÊÇ·ñ±ß½ç
+     * æ£€éªŒæ˜¯å¦è¾¹ç•Œ
      * @param ins ins
      * @param byteArr byteArr
      * @return true/false

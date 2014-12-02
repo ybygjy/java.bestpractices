@@ -5,13 +5,13 @@ import java.rmi.RemoteException;
 import org.ybygjy.pattern.eventsys.service.esrmi.module.TemperatureChangeEvent;
 
 /**
- * ÕìÌıÆ÷½Ó¿Ú
+ * ä¾¦å¬å™¨æ¥å£
  * @author WangYanCheng
  * @version 2010-7-23
  */
 public interface TemperatureChangeListener extends java.util.EventListener, java.rmi.Remote {
     /**
-     * ÎÂ¶ÈÊÂ¼ş´¦Àí
+     * æ¸©åº¦äº‹ä»¶å¤„ç†
      * @param evtInst evtInst
      * @throws RemoteException RemoteException
      */

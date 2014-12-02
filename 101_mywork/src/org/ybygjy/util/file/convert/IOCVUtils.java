@@ -12,10 +12,10 @@ import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-/** IO ¹¤¾ßÀà */
+/** IO å·¥å…·ç±» */
 public class IOCVUtils {
     /**
-     * »ñÈ¡Ä¿Â¼µÄÈ«²¿ÎÄ¼ş
+     * è·å–ç›®å½•çš„å…¨éƒ¨æ–‡ä»¶
      * 
      * @param dir
      * @return
@@ -29,11 +29,11 @@ public class IOCVUtils {
         return new ArrayList<File>(Arrays.asList(files));
     }
     /**
-     * »ñÈ¡Ä¿Â¼µÄÈ«²¿ÎÄ¼ş, Ö¸¶¨À©Õ¹ÃûµÄÎÄ¼ş
+     * è·å–ç›®å½•çš„å…¨éƒ¨æ–‡ä»¶, æŒ‡å®šæ‰©å±•åçš„æ–‡ä»¶
      * 
      * @param dir
      * @param ext
-     *            ÎÄ¼şÀ©Õ¹Ãû
+     *            æ–‡ä»¶æ‰©å±•å
      * @return
      */
     public static List<File> listFile(File dir, final String ext) {
@@ -46,7 +46,7 @@ public class IOCVUtils {
         return new ArrayList<File>(Arrays.asList(files));
     }
     /**
-     * µİ¹é»ñÈ¡Ä¿Â¼µÄÈ«²¿ÎÄ¼ş
+     * é€’å½’è·å–ç›®å½•çš„å…¨éƒ¨æ–‡ä»¶
      * 
      * @param dir
      * @return
@@ -64,11 +64,11 @@ public class IOCVUtils {
         return all;
     }
     /**
-     * µİ¹é»ñÈ¡Ä¿Â¼µÄÈ«²¿ÎÄ¼ş, Ö¸¶¨À©Õ¹ÃûµÄÎÄ¼ş
+     * é€’å½’è·å–ç›®å½•çš„å…¨éƒ¨æ–‡ä»¶, æŒ‡å®šæ‰©å±•åçš„æ–‡ä»¶
      * 
      * @param dir
      * @param ext
-     *            ÎÄ¼şÀ©Õ¹Ãû
+     *            æ–‡ä»¶æ‰©å±•å
      * @return
      */
     public static List<File> listAll(String dir, String ext) {
@@ -76,11 +76,11 @@ public class IOCVUtils {
         return listAll(dirFile, ext);
     }
     /**
-     * µİ¹é»ñÈ¡Ä¿Â¼µÄÈ«²¿ÎÄ¼ş, Ö¸¶¨À©Õ¹ÃûµÄÎÄ¼ş
+     * é€’å½’è·å–ç›®å½•çš„å…¨éƒ¨æ–‡ä»¶, æŒ‡å®šæ‰©å±•åçš„æ–‡ä»¶
      * 
      * @param dir
      * @param ext
-     *            ÎÄ¼şÀ©Õ¹Ãû
+     *            æ–‡ä»¶æ‰©å±•å
      * @return
      */
     public static List<File> listAll(File dir, String ext) {
@@ -96,13 +96,13 @@ public class IOCVUtils {
         return all;
     }
     /**
-     * ¸´ÖÆÎÄ¼ş
+     * å¤åˆ¶æ–‡ä»¶
      */
     public static void cp(String from, String to) {
         cp(new File(from), new File(to));
     }
     /**
-     * ¸´ÖÆÎÄ¼ş
+     * å¤åˆ¶æ–‡ä»¶
      */
     public static void cp(File from, File to) {
         try {
@@ -117,11 +117,11 @@ public class IOCVUtils {
         // out.close();
     }
     /**
-     * ¸´ÖÆÎÄ¼ş
+     * å¤åˆ¶æ–‡ä»¶
      */
     public static void cp(InputStream in, OutputStream out) {
         try {
-            // 1K byte µÄ»º³åÇø!
+            // 1K byte çš„ç¼“å†²åŒº!
             byte[] buf = new byte[1024];
             int count;
             while ((count = in.read(buf)) != -1) {
@@ -136,19 +136,19 @@ public class IOCVUtils {
     }
     
     /**
-     * ÎÄ¼ş¸ÄÃû
+     * æ–‡ä»¶æ”¹å
      */
     public static boolean rename(String source, String target) {
         File file = new File(source);
         File targetFile = new File(target);
         return file.renameTo(targetFile);
     }
-    /** Ô´ÎÄ¼ş±àÂë */
+    /** æºæ–‡ä»¶ç¼–ç  */
     public static String sourceEncoding = null;
-    /** Ä¿±ê±àÂë */
+    /** ç›®æ ‡ç¼–ç  */
     public static String targetEncoding = "utf-8";
     /**
-     * ÓÃÍ¾£ºÎÄ¼şÄÚÈİ×ª±àÂë,À´Ô´»¥ÁªÍø
+     * ç”¨é€”ï¼šæ–‡ä»¶å†…å®¹è½¬ç¼–ç ,æ¥æºäº’è”ç½‘
      * 
      * @param sourceFile
      * @param targetFile
@@ -195,7 +195,7 @@ public class IOCVUtils {
         }
     }
     /**
-     * ÓÃÍ¾£ºÎÄ¼şÄÚÈİ×ª±àÂë
+     * ç”¨é€”ï¼šæ–‡ä»¶å†…å®¹è½¬ç¼–ç 
      * 
      * @param sourceFile
      * @param targetFile
@@ -208,15 +208,15 @@ public class IOCVUtils {
         changeEncoding(fl1, fo1);
     }
     /**
-     * ÓÃÍ¾£ºÎÄ¼şÄÚÈİ×ª±àÂë
+     * ç”¨é€”ï¼šæ–‡ä»¶å†…å®¹è½¬ç¼–ç 
      * 
      * @param sourceFile
      * @param targetFile
      * @param sourceEncoding
-     *            Ô´ÎÄ¼ş±àÂë Ä¬ÈÏÔ´ÎÄ¼şµÄÏµÍ³´æ´¢±àÂë 
+     *            æºæ–‡ä»¶ç¼–ç  é»˜è®¤æºæ–‡ä»¶çš„ç³»ç»Ÿå­˜å‚¨ç¼–ç  
      *            System.getProperty("file.encoding");
      * @param targetEncoding
-     *            Ä¿±ê±àÂë Ä¬ÈÏutf-8
+     *            ç›®æ ‡ç¼–ç  é»˜è®¤utf-8
      * @throws IOException
      */
     public static void changeEncoding(String sourceFile, String targetFile,
@@ -226,7 +226,7 @@ public class IOCVUtils {
         changeEncoding(sourceFile, targetFile);
     }
     public static void main(String[] args) throws IOException {
-         File file = new File("D://ÎÒµÄÎÄµµ//workspace//FinishWork");
+         File file = new File("D://æˆ‘çš„æ–‡æ¡£//workspace//FinishWork");
          List<File> list = listAll(file);
          System.out.println(list.size());
          for(File f: list){

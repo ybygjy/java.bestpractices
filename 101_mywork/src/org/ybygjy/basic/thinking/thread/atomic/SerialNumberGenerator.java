@@ -1,7 +1,7 @@
 package org.ybygjy.basic.thinking.thread.atomic;
 
 /**
- * ¸ºÔğĞòÁĞºÅÉú³É
+ * è´Ÿè´£åºåˆ—å·ç”Ÿæˆ
  * @author WangYanCheng
  * @version 2010-9-30
  */

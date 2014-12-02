@@ -11,7 +11,7 @@ import org.ybygjy.basic.TestInterface;
 import org.ybygjy.test.TestUtils;
 
 /**
- * ÒÔÂ·¾¶ÎªÌâµÄ²âÊÔ
+ * ä»¥è·¯å¾„ä¸ºé¢˜çš„æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-10-20
  */
@@ -23,15 +23,15 @@ public class PathTest implements TestInterface {
      * {@inheritDoc}
      */
     public void doTest() {
-        contentMap.put("user.dir(¹¤×÷Ä¿Â¼)", System.getProperty("user.dir"));
-        // Ïà¶ÔÂ·¾¶\¾ø¶ÔÂ·¾¶ÎÊÌâ
-        // µ±Ç°Àà²ã¼¶
+        contentMap.put("user.dir(å·¥ä½œç›®å½•)", System.getProperty("user.dir"));
+        // ç›¸å¯¹è·¯å¾„\ç»å¯¹è·¯å¾„é—®é¢˜
+        // å½“å‰ç±»å±‚çº§
         contentMap.put("this.getClass().getResource(\"\")", this.getClass().getResource("").toString());
-        // µ±Ç°classpathÀà²ã¼¶
+        // å½“å‰classpathç±»å±‚çº§
         contentMap.put("this.getClass().getResource(\"/\")", this.getClass().getResource("/").toString());
         contentMap.put("this.getClass().getClassLoader().getResource", this.getClass().getClassLoader()
             .getResource("").toString());
-        // µ±Ç°classpathÀà²ã¼¶
+        // å½“å‰classpathç±»å±‚çº§
         contentMap.put("Thread.currentThread().getContextClassLoader().getResource", Thread.currentThread()
             .getContextClassLoader().getResource("").toString());
         contentMap.put("Thread.currentThread().getContextClassLoader().getResource2", Thread.currentThread()
@@ -57,7 +57,7 @@ public class PathTest implements TestInterface {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

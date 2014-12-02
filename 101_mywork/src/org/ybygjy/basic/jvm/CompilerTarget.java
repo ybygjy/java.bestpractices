@@ -3,7 +3,7 @@ package org.ybygjy.basic.jvm;
 import java.util.Date;
 
 /**
- * ±àÒëÔ´ÎÄ¼ş
+ * ç¼–è¯‘æºæ–‡ä»¶
  * @author WangYanCheng
  * @version 2011-2-18
  */

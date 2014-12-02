@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.command.mrsluo;
 
 /**
- * »æÖÆÍÖÔ²
+ * ç»˜åˆ¶æ¤­åœ†
  * @author WangYanCheng
  * @version 2011-8-1
  */
@@ -18,7 +18,7 @@ public class DrawEllipseCommand implements ICommand {
      * {@inheritDoc}
      */
     public void redo() {
-        System.out.println("»æÖÆÍÖÔ²£û" + getObject() + "£ı");
+        System.out.println("ç»˜åˆ¶æ¤­åœ†ï½›" + getObject() + "ï½");
     }
 
     /**
@@ -32,7 +32,7 @@ public class DrawEllipseCommand implements ICommand {
      * {@inheritDoc}
      */
     public void undo() {
-        System.out.println("²Á³ıÍÖÔ²£û" + getObject() + "£ı");
+        System.out.println("æ“¦é™¤æ¤­åœ†ï½›" + getObject() + "ï½");
     }
 
 }

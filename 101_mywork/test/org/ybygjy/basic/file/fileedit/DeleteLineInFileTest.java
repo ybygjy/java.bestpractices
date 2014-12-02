@@ -12,7 +12,7 @@ import org.junit.Test;
 import org.ybygjy.basic.file.fileedit.DeleteLineInFile;
 
 /**
- * µ¥Ôª²âÊÔ
+ * å•å…ƒæµ‹è¯•
  * @author WangYanCheng
  * @version 2011-12-29
  */

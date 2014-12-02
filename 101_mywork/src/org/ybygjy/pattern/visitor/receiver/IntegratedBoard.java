@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.visitor.receiver;
 
 /**
- * ¼¯³ÉµçÂ·°å
+ * é›†æˆç”µè·¯æ¿
  * @author WangYanCheng
  * @version 2014-2-25
  */

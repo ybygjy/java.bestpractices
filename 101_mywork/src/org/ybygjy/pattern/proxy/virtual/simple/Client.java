@@ -4,15 +4,15 @@ package org.ybygjy.pattern.proxy.virtual.simple;
 
 /**
  * Virtual Proxy
- * <p>Ê¹ÓÃProxySubjectÀ´½âñîClientÓëRealSubject</p>
- * <p><b>ProxySubject</b>¸ºÔğ×¼±¸RealSubjectÊµÀı£¬µ±RealSubject·Ç³£ºÄÊ±Ê±Õâ·Ç³£ÓĞÓÃ¡£</p>
+ * <p>ä½¿ç”¨ProxySubjectæ¥è§£è€¦Clientä¸RealSubject</p>
+ * <p><b>ProxySubject</b>è´Ÿè´£å‡†å¤‡RealSubjectå®ä¾‹ï¼Œå½“RealSubjectéå¸¸è€—æ—¶æ—¶è¿™éå¸¸æœ‰ç”¨ã€‚</p>
  * @author WangYanCheng
  * @version 2009-12-22
  */
 public class Client {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Subject subjectInst = new ProxySubClass();

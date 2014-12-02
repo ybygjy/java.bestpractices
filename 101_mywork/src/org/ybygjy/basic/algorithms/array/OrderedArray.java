@@ -1,6 +1,6 @@
 package org.ybygjy.basic.algorithms.array;
 /**
- * ÅÅĞòÊı×é,¶ş·Ö²éÕÒ,ÏßĞÔ²éÕÒ
+ * æ’åºæ•°ç»„,äºŒåˆ†æŸ¥æ‰¾,çº¿æ€§æŸ¥æ‰¾
  * @author WangYanCheng
  * @version 2011-8-3
  */

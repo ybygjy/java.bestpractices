@@ -8,17 +8,17 @@ import java.sql.SQLException;
 import java.util.Arrays;
 
 /**
- * ²âÊÔStatement
+ * æµ‹è¯•Statement
  * @author WangYanCheng
  * @version 2011-2-21
  */
 public class StatementTest {
-    /** Á¬½Ó */
+    /** è¿žæŽ¥ */
     private Connection conn;
 
     /**
-     * ¸ºÔðPreparedStatement²âÆÀ
-     * @throws SQLException Å×³öÒì³£
+     * è´Ÿè´£PreparedStatementæµ‹è¯„
+     * @throws SQLException æŠ›å‡ºå¼‚å¸¸
      */
     public void preparedTest() throws SQLException {
         String[] paramValue = {"PL_YEAR", "PL_FEE"};
@@ -34,12 +34,12 @@ public class StatementTest {
 
     /**
      * Cursor Holdability
-     * @throws SQLException Å×³öÒì³£
+     * @throws SQLException æŠ›å‡ºå¼‚å¸¸
      */
     public void cursorHoldabilitySupport() throws SQLException {
         DatabaseMetaData dbMetaData = conn.getMetaData();
-        System.out.println("dbMetaData.getResultSetHoldability£º" + dbMetaData.getResultSetHoldability());
-        System.out.println("dbMetaData.supportsResultSetHoldability£º"
+        System.out.println("dbMetaData.getResultSetHoldabilityï¼š" + dbMetaData.getResultSetHoldability());
+        System.out.println("dbMetaData.supportsResultSetHoldabilityï¼š"
             + dbMetaData.supportsResultSetHoldability(ResultSet.HOLD_CURSORS_OVER_COMMIT));
         System.out.println(dbMetaData.supportsResultSetHoldability(ResultSet.CLOSE_CURSORS_AT_COMMIT));
         System.out.println("ResultSet.HOLD_CURSORS_OVER_COMMIT = " + ResultSet.HOLD_CURSORS_OVER_COMMIT);

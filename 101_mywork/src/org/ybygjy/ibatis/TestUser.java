@@ -17,7 +17,7 @@ import com.ibatis.sqlmap.client.SqlMapClientBuilder;
 import com.ibatis.sqlmap.client.event.RowHandler;
 
 /**
- * ²âÊÔÈë¿Ú
+ * æµ‹è¯•å…¥å£
  * @author WangYanCheng
  * @version 2010-11-26
  */
@@ -58,7 +58,7 @@ public class TestUser {
     }
 
     /**
-     * ³õÊ¼Log
+     * åˆå§‹Log
      */
     protected void doInitLogSys() {
         URL url = TestUser.class.getResource("log4j.properties");
@@ -66,9 +66,9 @@ public class TestUser {
     }
 
     /**
-     * queryAllUser£¬×¢ÒâÁ½ÖÖ²éÑ¯·½Ê½£º
-     * <li>Ö±½Óµ÷ÓÃList</li>
-     * <li>Ê¹ÓÃĞĞ¼àÌı»úÖÆ</li>
+     * queryAllUserï¼Œæ³¨æ„ä¸¤ç§æŸ¥è¯¢æ–¹å¼ï¼š
+     * <li>ç›´æ¥è°ƒç”¨List</li>
+     * <li>ä½¿ç”¨è¡Œç›‘å¬æœºåˆ¶</li>
      * @return rtnList rtnList
      * @throws SQLException SQLException
      */
@@ -133,13 +133,13 @@ public class TestUser {
         sqlMap.update("updateUserNo", user);
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      * @throws SQLException SQLException
      */
     public static void main(String[] args) throws SQLException {
-        String[] userNames = {"³¤Î÷", "¶«ÍØ", "Å©ì³", "ççìÏ", "Ì¶»Ô", "¾´°º", "ĞÒÏè", "Æµ·©", "µ´¾û", "¾üÀÅ", "ÃÉÑ§", "°¬Áˆ", "Îı³Ø",
-                "³ĞÊé", "ÉêÉÆ", "¸¶Òã"};
+        String[] userNames = {"é•¿è¥¿", "ä¸œæ‹“", "å†œæ–", "ç‘ç…œ", "æ½­è¾‰", "æ•¬æ˜‚", "å¹¸ç¿”", "é¢‘ç", "è¡é’§", "å†›ç…", "è’™å­¦", "è‰¾ç¿€", "é”¡æ± ",
+                "æ‰¿ä¹¦", "ç”³å–„", "ä»˜æ¯…"};
         Random rand = new Random();
         TestUser tuInst = new TestUser();
         List<User> userList = tuInst.queryAllUser();

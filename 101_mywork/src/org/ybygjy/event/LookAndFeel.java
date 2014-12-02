@@ -12,13 +12,13 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
- * 事件学习
+ * 浜嬩欢瀛︿範
  * @author WangYanCheng
  * @version 2011-1-21
  */
 public class LookAndFeel {
     /**
-     * 测试入口
+     * 娴嬭瘯鍏ュ彛
      * @param args args
      */
     public static void main(String[] args) {

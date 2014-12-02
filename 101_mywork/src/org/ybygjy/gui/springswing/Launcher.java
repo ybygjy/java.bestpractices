@@ -3,13 +3,13 @@ package org.ybygjy.gui.springswing;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
- * 负责加载引导初始化Swing框架
+ * 璐熻矗鍔犺浇寮曞鍒濆鍖朣wing妗嗘灦
  * @author WangYanCheng
  * @version 2011-2-16
  */
 public class Launcher {
     /**
-     * 负责加载spring相关配置
+     * 璐熻矗鍔犺浇spring鐩稿叧閰嶇疆
      */
     public void launch() {
         String[] contextPaths = new String[] {"org/ybygjy/gui/springswing/app-context.xml"};

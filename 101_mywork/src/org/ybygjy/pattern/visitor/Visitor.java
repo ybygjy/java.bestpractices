@@ -2,7 +2,7 @@ package org.ybygjy.pattern.visitor;
 
 
 /**
- * ·ÃÎÊÕß½Ó¿Ú£¬¶¨Òåµ÷ÓÃ±»·ÃÎÊÕß
+ * è®¿é—®è€…æ¥å£ï¼Œå®šä¹‰è°ƒç”¨è¢«è®¿é—®è€…
  * @author WangYanCheng
  * @version 2013-2-6
  */

@@ -1,12 +1,12 @@
 package org.ybygjy.basic.algorithms.queue;
 
 /**
- * ºó×º±í´ïÊ½ÇóÖµ
+ * åç¼€è¡¨è¾¾å¼æ±‚å€¼
  * <p>
- * 1¡¢ÀûÓÃInfix.java½«ÖĞ×º±í´ïÊ½×ª»»³Éºó×º±í´ïÊ½
+ * 1ã€åˆ©ç”¨Infix.javaå°†ä¸­ç¼€è¡¨è¾¾å¼è½¬æ¢æˆåç¼€è¡¨è¾¾å¼
  * </p>
  * <p>
- * 2¡¢½âÎöºó×º±í´ïÊ½Çó³öÊµ¼ÊÖµ
+ * 2ã€è§£æåç¼€è¡¨è¾¾å¼æ±‚å‡ºå®é™…å€¼
  * </p>
  * @author WangYanCheng
  * @version 2011-8-31
@@ -32,7 +32,7 @@ public class Postfix {
 
         public void push(int str) {
             if ((top + 1) == maxSize) {
-                throw new RuntimeException("Õ»Âú");
+                throw new RuntimeException("æ ˆæ»¡");
             }
             stackArr[++top] = str;
         }

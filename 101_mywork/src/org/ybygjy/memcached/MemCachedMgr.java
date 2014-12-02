@@ -7,40 +7,40 @@ import com.whalin.MemCached.MemCachedClient;
 import com.whalin.MemCached.SockIOPool;
 
 /**
- * MemCached×î¼ÑÊµ¼ù
+ * MemCachedæœ€ä½³å®è·µ
  * @author WangYanCheng
  * @version 2011-5-6
  */
 public class MemCachedMgr {
-    /** MemCached·şÎñÆ÷µØÖ· */
+    /** MemCachedæœåŠ¡å™¨åœ°å€ */
     private String[] serverAddr = {"172.16.0.75:11211", "localhost:11211"};
-    /** È¨ÖØ */
+    /** æƒé‡ */
     private Integer[] weights = {2, 3};
-    /** MemCachedÁ¬½Ó */
+    /** MemCachedè¿æ¥ */
     private MemCachedClient mccInst;
-    /** Á¬½Ó³Ø */
+    /** è¿æ¥æ±  */
     private SockIOPool sockPool;
-    /** ³ØÄ¬ÈÏÁ¬½ÓÊıÁ¿ */
+    /** æ± é»˜è®¤è¿æ¥æ•°é‡ */
     private int initConn = 5;
-    /** ³Ø×îĞ¡Á¬½ÓÊıÁ¿ */
+    /** æ± æœ€å°è¿æ¥æ•°é‡ */
     private int minConn = 5;
-    /** ³Ø×î´óÁ¬½ÓÊıÁ¿ */
+    /** æ± æœ€å¤§è¿æ¥æ•°é‡ */
     private int maxConn = 100;
-    /** ³ØÁ¬½Ó×î³¤¿ÕÏĞÊ±¼ä(ºÄÃë) */
+    /** æ± è¿æ¥æœ€é•¿ç©ºé—²æ—¶é—´(è€—ç§’) */
     private long maxIdle = 1000 * 60 * 60 * 6;
-    /** ³ØµÄÎ¬»¤Ïß³ÌÂÖÑ­Ê±¼ä */
+    /** æ± çš„ç»´æŠ¤çº¿ç¨‹è½®å¾ªæ—¶é—´ */
     private int maintSleep = 30;
-    /** ÍøÂç×Ö½Ú»º´æ±ê¼Ç£¬ÕâÀïÉæ¼°µ½Ò»¸öÃû½ĞNagleµÄËã·¨ */
+    /** ç½‘ç»œå­—èŠ‚ç¼“å­˜æ ‡è®°ï¼Œè¿™é‡Œæ¶‰åŠåˆ°ä¸€ä¸ªåå«Nagleçš„ç®—æ³• */
     private boolean nagle = false;
-    /** ÍøÂç³¬Ê±Ê±¼ä */
+    /** ç½‘ç»œè¶…æ—¶æ—¶é—´ */
     private int socketTo = 3000;
-    /** ÍøÂçÁ¬½Ó³¬Ê±Ê±¼ä */
+    /** ç½‘ç»œè¿æ¥è¶…æ—¶æ—¶é—´ */
     private int connectTo = 0;
 
     /**
-     * ¹¹Ôì·½·¨£¬Ìá¹©³õÊ¼»¯MemCached»·¾³²ÎÊı
-     * @param serverAddr MemCached·şÎñÆ÷µØÖ·×é
-     * @param weights MemCached·şÎñÆ÷¶ÔÓ¦µÄÈ¨ÖØÅäÖÃ
+     * æ„é€ æ–¹æ³•ï¼Œæä¾›åˆå§‹åŒ–MemCachedç¯å¢ƒå‚æ•°
+     * @param serverAddr MemCachedæœåŠ¡å™¨åœ°å€ç»„
+     * @param weights MemCachedæœåŠ¡å™¨å¯¹åº”çš„æƒé‡é…ç½®
      */
     public MemCachedMgr(String[] serverAddr, Integer[] weights) {
         this.serverAddr = serverAddr == null ? this.serverAddr : serverAddr;
@@ -50,7 +50,7 @@ public class MemCachedMgr {
     }
 
     /**
-     * ³õÊ¼»¯Á¬½Ó³Ø»·¾³
+     * åˆå§‹åŒ–è¿æ¥æ± ç¯å¢ƒ
      */
     private void initializeSocketPool() {
         sockPool = SockIOPool.getInstance();
@@ -68,17 +68,17 @@ public class MemCachedMgr {
     }
 
     /**
-     * É¾³ıMemCachedÖĞÓëÖ¸¶¨¼üÆ¥ÅäµÄÏî
-     * @param key Ö¸¶¨¼ü
-     * @return É¾³ı½á¹û true(³É¹¦É¾³ı)/false(Ê§°Ü)
+     * åˆ é™¤MemCachedä¸­ä¸æŒ‡å®šé”®åŒ¹é…çš„é¡¹
+     * @param key æŒ‡å®šé”®
+     * @return åˆ é™¤ç»“æœ true(æˆåŠŸåˆ é™¤)/false(å¤±è´¥)
      */
     public boolean delete(String key) {
         return mccInst.delete(key);
     }
 
     /**
-     * ´ÓMemCached»º´æÏµÍ³ÖĞÈ¡Êı¾İ
-     * @param key ¼ü
+     * ä»MemCachedç¼“å­˜ç³»ç»Ÿä¸­å–æ•°æ®
+     * @param key é”®
      * @return value/null
      */
     public Object get(String key) {
@@ -86,9 +86,9 @@ public class MemCachedMgr {
     }
 
     /**
-     * ÅúÁ¿´ÓMemCachedÖĞÈ¡³öÒ»×éÊı¾İ
-     * @param keys Ö¸¶¨¼ü£¬¶à¸öÓÃ<strong>¶ººÅ</strong>·Ö¸î
-     * @return dataArray Êı¾İ¼¯
+     * æ‰¹é‡ä»MemCachedä¸­å–å‡ºä¸€ç»„æ•°æ®
+     * @param keys æŒ‡å®šé”®ï¼Œå¤šä¸ªç”¨<strong>é€—å·</strong>åˆ†å‰²
+     * @return dataArray æ•°æ®é›†
      */
     public Map<String, Object> getMulti(String... keys) {
         if (null == keys || keys.length == 0) {
@@ -98,8 +98,8 @@ public class MemCachedMgr {
     }
 
     /**
-     * ¼ì²â¸ø¶¨¼üÊÇ·ñÒÑÔÚMemCachedÖĞ
-     * @param key Ö¸¶¨¼ü
+     * æ£€æµ‹ç»™å®šé”®æ˜¯å¦å·²åœ¨MemCachedä¸­
+     * @param key æŒ‡å®šé”®
      * @return true/false
      */
     public boolean isContain(String key) {
@@ -107,24 +107,24 @@ public class MemCachedMgr {
     }
 
     /**
-     * »º´æÊı¾İ
+     * ç¼“å­˜æ•°æ®
      * <p>
-     * <strong>×¢Òâ£º</strong>¸Ã·½·¨»á¸²¸Çµô»º´æÖĞÏàÍ¬keyµÄÊı¾İ
+     * <strong>æ³¨æ„ï¼š</strong>è¯¥æ–¹æ³•ä¼šè¦†ç›–æ‰ç¼“å­˜ä¸­ç›¸åŒkeyçš„æ•°æ®
      * </p>
-     * @param key ¼ü
-     * @param value Öµ
-     * @return ´æ´¢½á¹û£ºtrue(³É¹¦)/false(Ê§°Ü)
+     * @param key é”®
+     * @param value å€¼
+     * @return å­˜å‚¨ç»“æœï¼štrue(æˆåŠŸ)/false(å¤±è´¥)
      */
     public boolean set(String key, Object value) {
         return set(key, value, true);
     }
 
     /**
-     * »º´æÊı¾İ
-     * @param key ¼ü
-     * @param value Öµ
-     * @param overwrite ¸²¸Ç±ê¼Ç
-     * @return ´æ´¢½á¹û£ºtrue(³É¹¦)/false(Ê§°Ü)
+     * ç¼“å­˜æ•°æ®
+     * @param key é”®
+     * @param value å€¼
+     * @param overwrite è¦†ç›–æ ‡è®°
+     * @return å­˜å‚¨ç»“æœï¼štrue(æˆåŠŸ)/false(å¤±è´¥)
      */
     public boolean set(String key, Object value, boolean overwrite) {
         if (!overwrite && isContain(key)) {
@@ -134,31 +134,31 @@ public class MemCachedMgr {
     }
 
     /**
-     * »º´æÊı¾İ
-     * @param key ¼ü
-     * @param value Öµ
-     * @return ´æ´¢½á¹û£ºtrue(³É¹¦)/false(Ê§°Ü)
+     * ç¼“å­˜æ•°æ®
+     * @param key é”®
+     * @param value å€¼
+     * @return å­˜å‚¨ç»“æœï¼štrue(æˆåŠŸ)/false(å¤±è´¥)
      */
     public boolean add(String key, Object value) {
         return mccInst.add(key, value);
     }
 
     /**
-     * »º´æÊı¾İ
-     * @param key ¼ü
-     * @param value Öµ
-     * @param expiry Ê§Ğ§Ê±¼ä
-     * @return ´æ´¢½á¹û£ºtrue(³É¹¦)/false(Ê§°Ü)
+     * ç¼“å­˜æ•°æ®
+     * @param key é”®
+     * @param value å€¼
+     * @param expiry å¤±æ•ˆæ—¶é—´
+     * @return å­˜å‚¨ç»“æœï¼štrue(æˆåŠŸ)/false(å¤±è´¥)
      */
     public boolean add(String key, Object value, Date expiry) {
         return mccInst.add(key, value, expiry);
     }
 
     /**
-     * ¼õÈ¥¼ü¶ÔÓ¦µÄÊı¾İÏîµÄÖµ£¬Èç¹û¼ü¶ÔÓ¦µÄÊı¾İÏî²»´æÔÚÔò×Ô¶¯Êı¾İÏî
-     * @param key Ö¸¶¨¼ü
-     * @param value µİ¼õÁ¿
-     * @return Êı¾İÏîÖµ
+     * å‡å»é”®å¯¹åº”çš„æ•°æ®é¡¹çš„å€¼ï¼Œå¦‚æœé”®å¯¹åº”çš„æ•°æ®é¡¹ä¸å­˜åœ¨åˆ™è‡ªåŠ¨æ•°æ®é¡¹
+     * @param key æŒ‡å®šé”®
+     * @param value é€’å‡é‡
+     * @return æ•°æ®é¡¹å€¼
      */
     public long addOrDecr(String key, long value) {
         long tmpV = mccInst.addOrDecr(key, value);
@@ -166,48 +166,48 @@ public class MemCachedMgr {
     }
 
     /**
-     * Ôö¼Ó¼ü¶ÔÓ¦µÄÊı¾İÏîµÄÖµ£¬Èç¹û¼ü¶ÔÓ¦µÄÊı¾İÏî²»´æÔÚÔò×Ô¶¯Êı¾İÏî
-     * @param key Ö¸¶¨¼ü
-     * @param value ÔöÁ¿
-     * @return Êı¾İÏîÖµ
+     * å¢åŠ é”®å¯¹åº”çš„æ•°æ®é¡¹çš„å€¼ï¼Œå¦‚æœé”®å¯¹åº”çš„æ•°æ®é¡¹ä¸å­˜åœ¨åˆ™è‡ªåŠ¨æ•°æ®é¡¹
+     * @param key æŒ‡å®šé”®
+     * @param value å¢é‡
+     * @return æ•°æ®é¡¹å€¼
      */
     public long addOrIncr(String key, long value) {
         return mccInst.addOrIncr(key, value);
     }
 
     /**
-     * ¼ü¶ÔÓ¦µÄÊı¾İÏîµÄÖµ¼ÓÉÏÖ¸¶¨ÊıÖµ
+     * é”®å¯¹åº”çš„æ•°æ®é¡¹çš„å€¼åŠ ä¸ŠæŒ‡å®šæ•°å€¼
      * <p>
-     * <strong>×¢Òâ£º</strong>Èç¹û¼üÖµÀàĞÍ²»·ûºÏÒªÇóÔò×Ô¶¯×ªÎª0£¬ÇëÉ÷ÖØ£¡
+     * <strong>æ³¨æ„ï¼š</strong>å¦‚æœé”®å€¼ç±»å‹ä¸ç¬¦åˆè¦æ±‚åˆ™è‡ªåŠ¨è½¬ä¸º0ï¼Œè¯·æ…é‡ï¼
      * </p>
-     * @param key Ö¸¶¨¼ü
-     * @param value Ö¸¶¨ÊıÖµ
-     * @return Êı¾İÏîµÄÖµ/-1(±íÊ¾²Ù×÷Î´³É¹¦)
+     * @param key æŒ‡å®šé”®
+     * @param value æŒ‡å®šæ•°å€¼
+     * @return æ•°æ®é¡¹çš„å€¼/-1(è¡¨ç¤ºæ“ä½œæœªæˆåŠŸ)
      */
     public long incr(String key, long value) {
         return mccInst.incr(key, value);
     }
 
     /**
-     * ¼ü¶ÔÓ¦µÄÊı¾İÏîµÄÖµ¼õÈ¥Ö¸¶¨ÊıÖµ
+     * é”®å¯¹åº”çš„æ•°æ®é¡¹çš„å€¼å‡å»æŒ‡å®šæ•°å€¼
      * <p>
-     * <strong>×¢Òâ£º</strong>Èç¹û¼üÖµÀàĞÍ²»·ûºÏÒªÇóÔò×Ô¶¯×ªÎª0£¬ÇëÉ÷ÖØ£¡
+     * <strong>æ³¨æ„ï¼š</strong>å¦‚æœé”®å€¼ç±»å‹ä¸ç¬¦åˆè¦æ±‚åˆ™è‡ªåŠ¨è½¬ä¸º0ï¼Œè¯·æ…é‡ï¼
      * </p>
-     * @param key Ö¸¶¨¼ü
-     * @param value Ö¸¶¨ÊıÖµ
-     * @return Êı¾İÏîµÄÖµ/-1(±íÊ¾²Ù×÷Î´³É¹¦)
+     * @param key æŒ‡å®šé”®
+     * @param value æŒ‡å®šæ•°å€¼
+     * @return æ•°æ®é¡¹çš„å€¼/-1(è¡¨ç¤ºæ“ä½œæœªæˆåŠŸ)
      */
     public long decr(String key, long value) {
         return mccInst.decr(key, value);
     }
 
     /**
-     * Ë¢ĞÂÖ¸¶¨MemCached·şÎñÆ÷µÄ»º´æÊı¾İ
+     * åˆ·æ–°æŒ‡å®šMemCachedæœåŠ¡å™¨çš„ç¼“å­˜æ•°æ®
      * <p>
-     * <strong>×¢Òâ£º</strong>Ë¢ĞÂ¼´ÇåÀíÏàÓ¦·şÎñÆ÷ÉÏµÄÊı¾İ£¬ÇëÉ÷ÖØ£¡
+     * <strong>æ³¨æ„ï¼š</strong>åˆ·æ–°å³æ¸…ç†ç›¸åº”æœåŠ¡å™¨ä¸Šçš„æ•°æ®ï¼Œè¯·æ…é‡ï¼
      * </p>
-     * @param serverAddr MemCached·şÎñÆ÷µØÖ·
-     * @return ´¦Àí½á¹û true(³É¹¦)/false(Ê§°Ü)
+     * @param serverAddr MemCachedæœåŠ¡å™¨åœ°å€
+     * @return å¤„ç†ç»“æœ true(æˆåŠŸ)/false(å¤±è´¥)
      */
     public boolean flushAll(String... serverAddr) {
         if (null == serverAddr || serverAddr.length == 0) {
@@ -217,9 +217,9 @@ public class MemCachedMgr {
     }
 
     /**
-     * ¹¹½¨²âÊÔÊı¾İ¼¯
-     * @param size ²âÊÔÊı¾İ¼¯´óĞ¡
-     * @return testAttr ²âÊÔÊı¾İ¼¯
+     * æ„å»ºæµ‹è¯•æ•°æ®é›†
+     * @param size æµ‹è¯•æ•°æ®é›†å¤§å°
+     * @return testAttr æµ‹è¯•æ•°æ®é›†
      */
     public static String[][] getTestData(int size) {
         String[][] testAttr = new String[size][2];
@@ -231,8 +231,8 @@ public class MemCachedMgr {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         MemCachedMgr mcmInst = new MemCachedMgr(null, null);

@@ -4,17 +4,17 @@ import org.apache.log4j.PropertyConfigurator;
 
 
 /**
- * ÈÕÖ¾¹ÜÀí
+ * æ—¥å¿—ç®¡ç†
  * @author WangYanCheng
  * @version 2010-8-16
  */
 public class LogMgr {
     /**
-     * ³õÊ¼»¯ÈÕÖ¾¹ÜÀíÆ÷
-     * @param confFileUrl ÅäÖÃÎÄ¼þµØÖ·
+     * åˆå§‹åŒ–æ—¥å¿—ç®¡ç†å™¨
+     * @param confFileUrl é…ç½®æ–‡ä»¶åœ°å€
      */
     public void doInitLogProperty(String confFileUrl) {
-        System.out.println("ÈÕÖ¾¹ÜÀíÆ÷==>".concat(confFileUrl));
+        System.out.println("æ—¥å¿—ç®¡ç†å™¨==>".concat(confFileUrl));
         PropertyConfigurator.configure(confFileUrl);
     }
 }

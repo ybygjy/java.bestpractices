@@ -1,13 +1,13 @@
 package org.ybygjy.basic.thinking.innerclass;
 /**
- * ÄÚ²¿Àà²âÊÔ
+ * å†…éƒ¨ç±»æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-5-31
  */
 public class InnerClassTestPart1 {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         InnerClass icInst = new InnerClass();

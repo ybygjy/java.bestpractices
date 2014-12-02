@@ -5,7 +5,7 @@ import java.util.Calendar;
 import java.util.GregorianCalendar;
 
 /**
- * ¶¨Òå·ºĞÍÀà
+ * å®šä¹‰æ³›å‹ç±»
  * @author WangYanCheng
  * @version 2014-6-13
  */
@@ -31,18 +31,18 @@ public class Pair <T> implements Serializable {
         this.second = second;
     }
     /**
-     * ·ºĞÍ·½·¨
-     * @param <T> ÀàĞÍ±äÁ¿
-     * @param t ²ÎÊı
+     * æ³›å‹æ–¹æ³•
+     * @param <T> ç±»å‹å˜é‡
+     * @param t å‚æ•°
      * @return rtnValue T
      */
     public <T1 extends T> T1 getMiddle(T1[] t) {
         return t[t.length / 2];
     }
     /**
-     * ·ºĞÍÀàĞÍ±äÁ¿µÄÏŞ¶¨
-     * @param <T> ÀàĞÍ±äÁ¿£¬ÕâÀïÏŞ¶¨ÀàĞÍ±ØĞëÊµÏÖÁË{@link Comparable}½Ó¿Ú
-     * @param a ²ÎÊı
+     * æ³›å‹ç±»å‹å˜é‡çš„é™å®š
+     * @param <T> ç±»å‹å˜é‡ï¼Œè¿™é‡Œé™å®šç±»å‹å¿…é¡»å®ç°äº†{@link Comparable}æ¥å£
+     * @param a å‚æ•°
      * @return rtnT
      */
     public <T extends Comparable<T>> T min(T[] a) {
@@ -58,9 +58,9 @@ public class Pair <T> implements Serializable {
         return smallest;
     }
     /**
-     * ·ºĞÍ·½·¨#Ñ°ÕÒÊı×é×î´ó¡¢×îĞ¡Öµ
-     * @param <T> ÀàĞÍ±äÁ¿£¬±ØĞëÊµÏÖ{@link Comparable}½Ó¿Ú
-     * @param a ²ÎÊı
+     * æ³›å‹æ–¹æ³•#å¯»æ‰¾æ•°ç»„æœ€å¤§ã€æœ€å°å€¼
+     * @param <T> ç±»å‹å˜é‡ï¼Œå¿…é¡»å®ç°{@link Comparable}æ¥å£
+     * @param a å‚æ•°
      * @return rtnT
      */
     public static <T1 extends Comparable> Pair<T1> minMax(T1[] a) {
@@ -80,9 +80,9 @@ public class Pair <T> implements Serializable {
         return new Pair<T1>(max, min);
     }
     /**
-     * ÔÚÒì³£ÉùÃ÷ÖĞÊ¹ÓÃÀàĞÍ±äÁ¿
-     * @param <T> ÀàĞÍ±äÁ¿
-     * @throws T ÏŞ¶¨ÁË²ÎÊı±ØĞëÎª{@link Throwable}ÀàĞÍ×ÓÀà
+     * åœ¨å¼‚å¸¸å£°æ˜ä¸­ä½¿ç”¨ç±»å‹å˜é‡
+     * @param <T> ç±»å‹å˜é‡
+     * @throws T é™å®šäº†å‚æ•°å¿…é¡»ä¸º{@link Throwable}ç±»å‹å­ç±»
      */
     public static <T extends Throwable> void throwException(T t) throws T {
         int b = 10;
@@ -94,7 +94,7 @@ public class Pair <T> implements Serializable {
         }
     }
     /**
-     * ·ºĞÍÊı×é
+     * æ³›å‹æ•°ç»„
      */
     public static void genericTypeArray() {
         Pair<String>[] t = new Pair[10];
@@ -110,8 +110,8 @@ public class Pair <T> implements Serializable {
         return "Pair [first=" + first + ", second=" + second + "]";
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         testDoWork1();
@@ -120,7 +120,7 @@ public class Pair <T> implements Serializable {
         testGenericArray();
     }
     /**
-     * ²âÊÔ1
+     * æµ‹è¯•1
      */
     public static void testDoWork1() {
         String[] words = {"Mary", "had", "a", "little", "lamb"};
@@ -141,7 +141,7 @@ public class Pair <T> implements Serializable {
         System.out.println("MiddleName:" + middleName);
     }
     /**
-     * ²âÊÔ2
+     * æµ‹è¯•2
      */
     public static void testDoWork2() {
         GregorianCalendar[] gregorianCalendar = {
@@ -154,8 +154,8 @@ public class Pair <T> implements Serializable {
         System.out.println("Min:" + minMaxPair.getSecond());
     }
     /**
-     * ²âÊÔ3
-     * ÔÚÒì³£ÉùÃ÷ÖĞÊ¹ÓÃÁË·ºĞÍ±äÁ¿
+     * æµ‹è¯•3
+     * åœ¨å¼‚å¸¸å£°æ˜ä¸­ä½¿ç”¨äº†æ³›å‹å˜é‡
      */
     public static void testThrowException() {
         try {
@@ -165,9 +165,9 @@ public class Pair <T> implements Serializable {
         }
     }
     /**
-     * ²âÊÔ4
-     * ·ºĞÍÊı×é
-     * ²»ÄÜÊµÀı»¯²ÎÊı»¯ÀàĞÍµÄÊı×é
+     * æµ‹è¯•4
+     * æ³›å‹æ•°ç»„
+     * ä¸èƒ½å®ä¾‹åŒ–å‚æ•°åŒ–ç±»å‹çš„æ•°ç»„
      */
     public static void testGenericArray() {
         Pair.genericTypeArray();

@@ -7,7 +7,7 @@ import org.ybygjy.pattern.flyweight.complex.impl.CompositeFlyweight;
 import org.ybygjy.pattern.flyweight.complex.impl.ConcreteFlyweight;
 
 /**
- * Flyweight工厂
+ * Flyweight宸ュ巶
  * @author WangYanCheng
  * @version 2010-11-22
  */
@@ -23,7 +23,7 @@ public class FlyweightFactory {
         flyweightCollect = new HashMap<Character, AbstractFlyweight>();
     }
     /**
-     * 获取工厂实例
+     * 鑾峰彇宸ュ巶瀹炰緥
      * @return ffInst {@link FlyweightFactory}
      */
     public static FlyweightFactory getInstance() {
@@ -33,7 +33,7 @@ public class FlyweightFactory {
         return ffInst;
     }
     /**
-     * 获取flyweight实例
+     * 鑾峰彇flyweight瀹炰緥
      * @param character {@link Character}
      * @return flyweightInst {@link AbstractFlyweight}
      */
@@ -48,7 +48,7 @@ public class FlyweightFactory {
         return rtnFlyweight;
     }
     /**
-     * 获取flyweight实例
+     * 鑾峰彇flyweight瀹炰緥
      * @param compositeState {@link Character}
      * @return flyweightInst {@link AbstractFlyweight}
      */

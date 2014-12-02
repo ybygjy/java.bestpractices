@@ -1,26 +1,26 @@
 package org.ybygjy.pattern.factory.simplefac;
 
 /**
- * ³éÏó²úÆ·
+ * æŠ½è±¡äº§å“
  * @author WangYanCheng
  * @version 2009-12-2
  */
 public abstract class AbstractProduct {
     /**
-     * ÏÔÊ¾²úÆ·ĞÅÏ¢
+     * æ˜¾ç¤ºäº§å“ä¿¡æ¯
      * @return productInfo
      */
     protected abstract String showInfo();
     /**
-     * Éè¼Æ½×¶Î
+     * è®¾è®¡é˜¶æ®µ
      */
     protected abstract void desinging();
     /**
-     * Éú²ú½×¶Î
+     * ç”Ÿäº§é˜¶æ®µ
      */
     protected abstract void manufacturing();
     /**
-     * ÏúÊÛ
+     * é”€å”®
      */
     protected abstract void sale();
 }

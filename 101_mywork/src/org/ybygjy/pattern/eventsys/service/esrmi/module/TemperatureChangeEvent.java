@@ -1,6 +1,6 @@
 package org.ybygjy.pattern.eventsys.service.esrmi.module;
 /**
- * ÊÂ¼şÉÏÏÂÎÄÊı¾İÊµÌå
+ * äº‹ä»¶ä¸Šä¸‹æ–‡æ•°æ®å®ä½“
  * @author WangYanCheng
  * @version 2010-7-23
  */

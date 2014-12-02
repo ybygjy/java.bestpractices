@@ -4,12 +4,12 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 /**
- * ·â×°LDAP°²È«Ö÷ÌâÏà¹Ø²Ù×÷
+ * å°è£…LDAPå®‰å…¨ä¸»é¢˜ç›¸å…³æ“ä½œ
  * @author WangYanCheng
  * @version 2011-5-20
  */
 public class SecurityUtils {
-    /** Base64Ó³Éä±í */
+    /** Base64æ˜ å°„è¡¨ */
     private static final char emap[] = {
             'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', // A-H;0-7
             'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', // I-P; 8 -15
@@ -21,9 +21,9 @@ public class SecurityUtils {
             '4', '5', '6', '7', '8', '9', '+', '/'}; // 4-9, + /; 56-63
 
     /**
-     * ½«×Ö·û´®×ª»»ÎªMD5×Ö½Ú×é
-     * @param srcStr Ô´×Ö·û´®
-     * @return rtnByte MD5×Ö½Ú×é
+     * å°†å­—ç¬¦ä¸²è½¬æ¢ä¸ºMD5å­—èŠ‚ç»„
+     * @param srcStr æºå­—ç¬¦ä¸²
+     * @return rtnByte MD5å­—èŠ‚ç»„
      */
     public static final byte[] encodeMD5(String srcStr) {
         MessageDigest md = null;
@@ -38,9 +38,9 @@ public class SecurityUtils {
     }
     
     /**
-     * ½«×Ö½ÚÊı×é×ª»»ÎªÊ®Áù½øÖÆ×Ö·û´®ĞÎÊ½
-     * @param byteArr ×Ö½ÚÊı×é
-     * @return rtnStr Ê®Áù½øÖÆ±íÊ¾µÄ×Ö·û´®
+     * å°†å­—èŠ‚æ•°ç»„è½¬æ¢ä¸ºåå…­è¿›åˆ¶å­—ç¬¦ä¸²å½¢å¼
+     * @param byteArr å­—èŠ‚æ•°ç»„
+     * @return rtnStr åå…­è¿›åˆ¶è¡¨ç¤ºçš„å­—ç¬¦ä¸²
      */
     public static String toHexStr(byte[] byteArr) {
         StringBuilder rtnStr = new StringBuilder();
@@ -53,9 +53,9 @@ public class SecurityUtils {
     }
 
     /**
-     * ½«×Ö½ÚÊı×é×ª»»ÎªBase64±àÂë
-     * @param inputBytes ×Ö½ÚÊı×é
-     * @return rtnStr Base64´¦ÀíÍê³ÉºóµÄ×Ö·û´®
+     * å°†å­—èŠ‚æ•°ç»„è½¬æ¢ä¸ºBase64ç¼–ç 
+     * @param inputBytes å­—èŠ‚æ•°ç»„
+     * @return rtnStr Base64å¤„ç†å®Œæˆåçš„å­—ç¬¦ä¸²
      * @see com.novell.ldap.util.Base64
      */
     public static final String encodeBase64(byte[] inputBytes) {
@@ -101,7 +101,7 @@ public class SecurityUtils {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args
      */
     public static void main(String[] args) {
@@ -109,6 +109,6 @@ public class SecurityUtils {
         byte[] md5Bytes = SecurityUtils.encodeMD5(passwd);
         String base64Str = encodeBase64(md5Bytes);
         String hexStr = "{MD5}".concat(base64Str);
-        System.out.println(md5Bytes.length + "\n" + SecurityUtils.toHexStr(md5Bytes) + "\nBase64£º" + base64Str );
+        System.out.println(md5Bytes.length + "\n" + SecurityUtils.toHexStr(md5Bytes) + "\nBase64ï¼š" + base64Str );
     }
 }

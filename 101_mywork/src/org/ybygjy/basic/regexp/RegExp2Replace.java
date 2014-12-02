@@ -6,18 +6,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ¸ø¶¨×Ö·û´®£¬Ìæ»»ÏàÓ¦ÄÚÈİ
+ * ç»™å®šå­—ç¬¦ä¸²ï¼Œæ›¿æ¢ç›¸åº”å†…å®¹
  * @author WangYanCheng
  * @version 2010-4-25
  */
 public class RegExp2Replace {
     /**
-     * ·ÖÎöÎÄ¼şÃû<br>
-     * <pre><i>Àı£º</i><br>
+     * åˆ†ææ–‡ä»¶å<br>
+     * <pre><i>ä¾‹ï¼š</i><br>
      * String fileName = "HelloWorld.txt";
-     * <li>ÕâÖÖÇé¿ö²»×öÈÎºÎ´¦Àí</li>
+     * <li>è¿™ç§æƒ…å†µä¸åšä»»ä½•å¤„ç†</li>
      * String fileName = "HelloWorld";
-     * <li>ÕâÖÖÇé¿öĞèÒªÌí¼Ó.txt</li>
+     * <li>è¿™ç§æƒ…å†µéœ€è¦æ·»åŠ .txt</li>
      * </pre>
      */
     public void replaceFileName() {
@@ -31,7 +31,7 @@ public class RegExp2Replace {
     public void doBasicReplace() {
         String s = "ja;d110jfa;<<123>>dafadj;lf<<456>><<789>>adljfa;";
         Map<String, String> replaceMap = new HashMap<String, String>() {
-            { // ÄãµÄ¹æÔò
+            { // ä½ çš„è§„åˆ™
                 put("123", "[china]");
                 put("456", "[japan]");
                 put("789", "[american]");
@@ -48,7 +48,7 @@ public class RegExp2Replace {
         System.out.println(s);
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments
      */
     public static void main(String[] args) {

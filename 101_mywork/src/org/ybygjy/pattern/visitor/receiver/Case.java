@@ -3,7 +3,7 @@ package org.ybygjy.pattern.visitor.receiver;
 import org.ybygjy.pattern.visitor.Equipment;
 import org.ybygjy.pattern.visitor.Visitor;
 /**
- * »úÏä
+ * æœºç®±
  * @author WangYanCheng
  * @version 2014-2-25
  */

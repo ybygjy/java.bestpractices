@@ -24,9 +24,9 @@ import javax.net.ssl.TrustManagerFactory;
 import javax.net.ssl.X509TrustManager;
 
 /**
- * ×Ô¶¯°²×°SSL/TLSÍøÕ¾°²È«Ö¤Êé£¬Ö÷Òª´¦ÀíÁ÷³Ì
- * <p>1¡¢È¡±¾µØÄ¬ÈÏ°²È«ÅäÖÃÎÄ¼şÖ¤Êé¿â</p>
- * <p>2¡¢Ê¹ÓÃSSLContextÀûÓÃÖ¤ÊéÕìÌı»úÖÆ×ª´¢Ö¤ÊéÖÁ±¾µØĞÅÈÎÖ¤Êé¿â</p>
+ * è‡ªåŠ¨å®‰è£…SSL/TLSç½‘ç«™å®‰å…¨è¯ä¹¦ï¼Œä¸»è¦å¤„ç†æµç¨‹
+ * <p>1ã€å–æœ¬åœ°é»˜è®¤å®‰å…¨é…ç½®æ–‡ä»¶è¯ä¹¦åº“</p>
+ * <p>2ã€ä½¿ç”¨SSLContextåˆ©ç”¨è¯ä¹¦ä¾¦å¬æœºåˆ¶è½¬å‚¨è¯ä¹¦è‡³æœ¬åœ°ä¿¡ä»»è¯ä¹¦åº“</p>
  * @author WangYanCheng
  * @version 2014-4-14
  */
@@ -70,9 +70,9 @@ System.out.println("No errors, certificate is already trusted.");
         dumpX509Certificate(chain, ks);
     }
     /**
-     * ×ª´¢Ö¤Êé
-     * @param chain Ö¤ÊéÁ´
-     * @param ks Ö¤Êé¿â
+     * è½¬å‚¨è¯ä¹¦
+     * @param chain è¯ä¹¦é“¾
+     * @param ks è¯ä¹¦åº“
      * @throws NoSuchAlgorithmException 
      * @throws IOException 
      * @throws KeyStoreException 
@@ -116,9 +116,9 @@ System.out.println("No errors, certificate is already trusted.");
         System.out.println("Added certificate to keystore: 'jssecacerts' using alias '" + alias + "'");
     }
     /**
-     * Ê®Áù½øÖÆ×ª»»
-     * @param digest ×Ö½Ú´®
-     * @return rtnStr Ê®Áù½øÖÆ×Ö´®
+     * åå…­è¿›åˆ¶è½¬æ¢
+     * @param digest å­—èŠ‚ä¸²
+     * @return rtnStr åå…­è¿›åˆ¶å­—ä¸²
      */
     private String toHexString(byte[] digest) {
         char[] HEXDIGITS = "0123456789ABCDEF".toCharArray();
@@ -132,10 +132,10 @@ System.out.println("No errors, certificate is already trusted.");
         return sbud.toString();
     }
     /**
-     * ¼ÓÔØÖ¤Êé¿â
-     * @param cacertsFile Ö¤ÊéÎÄ¼ş
-     * @param passphrase ÃÜÂë´®
-     * @return keyStore Ö¤Êé¿â
+     * åŠ è½½è¯ä¹¦åº“
+     * @param cacertsFile è¯ä¹¦æ–‡ä»¶
+     * @param passphrase å¯†ç ä¸²
+     * @return keyStore è¯ä¹¦åº“
      */
     private KeyStore loadKeyStore(File cacertsFile, char[] passphrase) throws Exception {
         InputStream ins = new FileInputStream(cacertsFile);
@@ -144,9 +144,9 @@ System.out.println("No errors, certificate is already trusted.");
         return ks;
     }
     /**
-     * È·ÈÏÖ¤Êé¿âÎÄ¼ş
-     * @param passphrase Ö¤Êé
-     * @return rtnFile Ö¤Êé¿âÎÄ¼ş
+     * ç¡®è®¤è¯ä¹¦åº“æ–‡ä»¶
+     * @param passphrase è¯ä¹¦
+     * @return rtnFile è¯ä¹¦åº“æ–‡ä»¶
      */
     private File loadCacertsFile(char[] passphrase) {
         File file = new File("jssecacerts");
@@ -173,7 +173,7 @@ System.out.println("No errors, certificate is already trusted.");
     }
 }
 /**
- * ÊµÏÖX509Ö¤ÊéµÄÑéÖ¤½Ó¿Ú£¬ÑéÖ¤¹ı³ÌÖĞ´æ´¢ÁËÖ¤ÊéÁ´µÄÊµÌå¶ÔÏó£¬¹©Íâ²¿×ª´¢µ½±¾µØĞÅÈÎÖ¤Êé¿â
+ * å®ç°X509è¯ä¹¦çš„éªŒè¯æ¥å£ï¼ŒéªŒè¯è¿‡ç¨‹ä¸­å­˜å‚¨äº†è¯ä¹¦é“¾çš„å®ä½“å¯¹è±¡ï¼Œä¾›å¤–éƒ¨è½¬å‚¨åˆ°æœ¬åœ°ä¿¡ä»»è¯ä¹¦åº“
  * @author WangYanCheng
  * @version 2014-4-14
  */

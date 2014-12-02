@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * �߳��ڲ��ǹ�����Դ
+ * 线程内部非共享资源
  * @author WangYanCheng
  * @version 2013-1-10
  */
@@ -45,7 +45,7 @@ class InnerThread extends Thread {
     }
     public void run() {
         while (true) {
-            //��ֵ
+            //存值
             resourceMgr.put(getName(), String.valueOf(Math.random()*10));
             System.out.println(resourceMgr.getThreadLocal().toString());
             try {
@@ -53,8 +53,8 @@ class InnerThread extends Thread {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            //ȡֵ
-            System.out.println(getName().concat("ȡֵ-->").concat(resourceMgr.get(getName())));
+            //取值
+            System.out.println(getName().concat("取值-->").concat(resourceMgr.get(getName())));
         }
     }
 }

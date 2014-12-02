@@ -1,58 +1,58 @@
 package org.ybygjy.basic;
 
 /**
- * <h3>Java´«Öµ´«ÒıÓÃ</h3>
+ * <h3>Javaä¼ å€¼ä¼ å¼•ç”¨</h3>
  * <p>
- * 1¡¢¼òµ¥ÀàĞÍ°´Öµ´«µİ(pass by value)²»¿É¸Ä±äÖµ
+ * 1ã€ç®€å•ç±»å‹æŒ‰å€¼ä¼ é€’(pass by value)ä¸å¯æ”¹å˜å€¼
  * </p>
  * <p>
- * 2¡¢ÒıÓÃÀàĞÍ´«µİ¿É¸Ä±äÖµ
+ * 2ã€å¼•ç”¨ç±»å‹ä¼ é€’å¯æ”¹å˜å€¼
  * </p>
  * <p>
- * 3¡¢StringÊÇÌØÊâµÄ²»¿É±ä¶ÔÏó£¬´«µÄÊÇÖµ²»¿É¸Ä±äÖµ
+ * 3ã€Stringæ˜¯ç‰¹æ®Šçš„ä¸å¯å˜å¯¹è±¡ï¼Œä¼ çš„æ˜¯å€¼ä¸å¯æ”¹å˜å€¼
  * </p>
  * <p>
- * 4¡¢Êı×é´«µİÒıÓÃ£¬¿É¸Ä±äÊı×éÄÚ²¿Öµ£¬µ«²»¿É¸Ä±äÊı×é×ÔÉí¡£
+ * 4ã€æ•°ç»„ä¼ é€’å¼•ç”¨ï¼Œå¯æ”¹å˜æ•°ç»„å†…éƒ¨å€¼ï¼Œä½†ä¸å¯æ”¹å˜æ•°ç»„è‡ªèº«ã€‚
  * </p>
  * @author WangYanCheng
  * @version 2011-2-28
  */
 public class JavaRefAndVariable {
     /**
-     * ×Ö·û´®ÒıÓÃ²âÊÔ
-     * @param srcStr Ô´×Ö·û´®
+     * å­—ç¬¦ä¸²å¼•ç”¨æµ‹è¯•
+     * @param srcStr æºå­—ç¬¦ä¸²
      */
     public static void simpleType(String srcStr) {
         srcStr = srcStr.concat(srcStr).concat(srcStr);
-        System.out.println("·½·¨ÄÚ²¿¸Ä±ä±äÁ¿Öµ==>" + srcStr);
+        System.out.println("æ–¹æ³•å†…éƒ¨æ”¹å˜å˜é‡å€¼==>" + srcStr);
     }
 
     /**
-     * »ù±¾±äÁ¿ÒıÓÃ
+     * åŸºæœ¬å˜é‡å¼•ç”¨
      * @param i i
      */
     public static void simpleType(int i) {
         i = i++;
-        System.out.println("¸Ä±ä»ù±¾±äÁ¿ÀàÖµ==>" + i);
+        System.out.println("æ”¹å˜åŸºæœ¬å˜é‡ç±»å€¼==>" + i);
     }
 
     /**
-     * ´«µİÒıÓÃÀàĞÍ
-     * @param srcStr Ô´×Ö·û´®
+     * ä¼ é€’å¼•ç”¨ç±»å‹
+     * @param srcStr æºå­—ç¬¦ä¸²
      */
     public static void objectType(StringBuffer srcStr) {
-        srcStr.append("´«ÒıÓÃ£¬¿É¸Ä±äÖµ");
+        srcStr.append("ä¼ å¼•ç”¨ï¼Œå¯æ”¹å˜å€¼");
     }
 
     /**
-     * ´«µİÊı×éÒıÓÃ
+     * ä¼ é€’æ•°ç»„å¼•ç”¨
      * <p>
-     * 1¡¢¿É¸Ä±äÊı×éÖµ
+     * 1ã€å¯æ”¹å˜æ•°ç»„å€¼
      * </p>
      * <p>
-     * 2¡¢²»¿É¸Ä±äÊı×é±¾ÉíÒıÓÃ
+     * 2ã€ä¸å¯æ”¹å˜æ•°ç»„æœ¬èº«å¼•ç”¨
      * </p>
-     * @param a Êı¾İ
+     * @param a æ•°æ®
      */
     public static void arraySimpleType(int[] a) {
         a[2] = 10;
@@ -60,8 +60,8 @@ public class JavaRefAndVariable {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param arg ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param arg å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] arg) {
         String srcStr = "ABCDEF";

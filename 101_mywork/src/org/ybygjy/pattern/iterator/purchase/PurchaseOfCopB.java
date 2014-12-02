@@ -5,7 +5,7 @@ import org.ybygjy.pattern.iterator.Purchase;
 import org.ybygjy.pattern.iterator.iter.BackwardIterator;
 
 /**
- * ¾¯²ìB
+ * è­¦å¯ŸB
  * @author WangYanCheng
  * @version 2012-11-26
  */

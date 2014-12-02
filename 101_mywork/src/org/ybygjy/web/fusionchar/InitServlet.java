@@ -32,7 +32,7 @@ public class InitServlet {
         ctx.setAttribute("dbConn", dbConn);
         try {
             Connection conn = dbConn.getConnection();
-            System.out.println("Êı¾İ¿âÁ¬½Ó:" + conn.toString());
+            System.out.println("æ•°æ®åº“è¿æ¥:" + conn.toString());
             if (conn != null) {
                 conn.close();
             }

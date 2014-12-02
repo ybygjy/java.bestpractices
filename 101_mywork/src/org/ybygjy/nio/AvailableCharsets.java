@@ -5,13 +5,13 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * ¸ºÔğ´òÓ¡µ±Ç°ÏµÍ³¿ÉÓÃ×Ö·û¼¯
+ * è´Ÿè´£æ‰“å°å½“å‰ç³»ç»Ÿå¯ç”¨å­—ç¬¦é›†
  * @author WangYanCheng
  * @version 2010-11-10
  */
 public class AvailableCharsets {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments
      */
     public static void main(String[] args) {

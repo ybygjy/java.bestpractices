@@ -1,9 +1,9 @@
 package org.ybygjy.basic.thinking.thread;
 /**
- * {@link Thread#join()}Ñ§Ï°
+ * {@link Thread#join()}å­¦ä¹ 
  * <p>
- * {@link Thread#join()}Ê¹ÓÃ³¡¾°¼´µ±Ö÷Ïß³ÌÆôÓÃÁË×ÓÏß³Ì£¬×ÓÏß³Ì¸ºÔğ½øĞĞ´ó¹æÄ£¼ÆËã¡£ÕâÊ±Ö÷Ïß³ÌĞèÒª
- * ×ÓÏß³Ì¼ÆËã½á¹û£¬ÓÉ´ËµÃ³öÖ÷Ïß³ÌĞèÒªµÈ´ı×ÓÏß³ÌÔËËãÍê±ÏµÃ³öÔËËã½á¹ûºó£¬Ö÷Ïß³ÌÏÂÒ»²½¼ÆËã²ÅÓĞÒâÒå¡£
+ * {@link Thread#join()}ä½¿ç”¨åœºæ™¯å³å½“ä¸»çº¿ç¨‹å¯ç”¨äº†å­çº¿ç¨‹ï¼Œå­çº¿ç¨‹è´Ÿè´£è¿›è¡Œå¤§è§„æ¨¡è®¡ç®—ã€‚è¿™æ—¶ä¸»çº¿ç¨‹éœ€è¦
+ * å­çº¿ç¨‹è®¡ç®—ç»“æœï¼Œç”±æ­¤å¾—å‡ºä¸»çº¿ç¨‹éœ€è¦ç­‰å¾…å­çº¿ç¨‹è¿ç®—å®Œæ¯•å¾—å‡ºè¿ç®—ç»“æœåï¼Œä¸»çº¿ç¨‹ä¸‹ä¸€æ­¥è®¡ç®—æ‰æœ‰æ„ä¹‰ã€‚
  * </p>
  * @author WangYanCheng
  * @version 2011-6-1
@@ -34,7 +34,7 @@ public class ThreadJoin {
                     e.printStackTrace();
                 }
             }
-            System.out.println(threadName + "  over¡£¡£¡£");
+            System.out.println(threadName + "  overã€‚ã€‚ã€‚");
         }
     }
     class ThreadJoinTwo extends Thread {
@@ -49,7 +49,7 @@ public class ThreadJoin {
                     e.printStackTrace();
                 }
             }
-            System.out.println(threadName + "  over¡£¡£¡£");
+            System.out.println(threadName + "  overã€‚ã€‚ã€‚");
         }
     }
     public static void main(String[] args) {

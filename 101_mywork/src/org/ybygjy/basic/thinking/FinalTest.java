@@ -3,14 +3,14 @@ package org.ybygjy.basic.thinking;
 import java.util.Random;
 
 /**
- * ²âÊÔ<i>final</i>ĞŞÊÎ·û
+ * æµ‹è¯•<i>final</i>ä¿®é¥°ç¬¦
  * @author WangYanCheng
  * @version 2010-5-29
  * <br>
- * <i>½áÂÛ:</i>
- * <li>final¿ÉÒÔ±£ÕÏ»ù±¾ÀàĞÍ²»±»ĞŞ¸Ä[Ö»¶Á]</li>
- * <li>final¿ÉÒÔ±£ÕÏÒıÓÃÀàĞÍÄÚ´æµØÖ·²»±»ĞŞ¸Ä</li>
- * <li>final²»ÄÜ±£ÕÏÒıÓÃÀàĞÍ×ÔÉíÄÚÈİµÄĞŞ¸Ä(´Ó²âÊÔ¹ı³Ì£¬Êı×é²âÊÔ¿ÉÒÔ¿´µ½)</li>
+ * <i>ç»“è®º:</i>
+ * <li>finalå¯ä»¥ä¿éšœåŸºæœ¬ç±»å‹ä¸è¢«ä¿®æ”¹[åªè¯»]</li>
+ * <li>finalå¯ä»¥ä¿éšœå¼•ç”¨ç±»å‹å†…å­˜åœ°å€ä¸è¢«ä¿®æ”¹</li>
+ * <li>finalä¸èƒ½ä¿éšœå¼•ç”¨ç±»å‹è‡ªèº«å†…å®¹çš„ä¿®æ”¹(ä»æµ‹è¯•è¿‡ç¨‹ï¼Œæ•°ç»„æµ‹è¯•å¯ä»¥çœ‹åˆ°)</li>
  */
 public class FinalTest {
     /**randInst*/
@@ -43,28 +43,28 @@ public class FinalTest {
         return id + ": i4= " + i4 + ", i5=" + i5;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         FinalTest ftInst = new FinalTest("H");
         p("Instance print==>" + ftInst);
-        /*²âÊÔÊı×é BEGIN*/
+        /*æµ‹è¯•æ•°ç»„ BEGIN*/
         p("Array a toString==> " + ftInst.a + "::" + ftInst.a[0]);
         ftInst.a[0] = 100;
         p("Array a toString==> " + ftInst.a + "::" + ftInst.a[0]);
-        /*²âÊÔÊı×é END*/
-        /*²âÊÔ¶ÔÏóÊµÀı BEGIN*/
+        /*æµ‹è¯•æ•°ç»„ END*/
+        /*æµ‹è¯•å¯¹è±¡å®ä¾‹ BEGIN*/
         p("v2=BEGIN=>" + ftInst.v2.toString());
         ftInst.v2.refInst = new Object();
         for (int i = 0; i < 10; i++) {
             ftInst.v2.i++;
         }
         p("v2=END=>" + ftInst.v2.toString());
-        /*²âÊÔ¶ÔÏóÊµÀı END*/
+        /*æµ‹è¯•å¯¹è±¡å®ä¾‹ END*/
     }
     /**
-     * Êä³ö¶ÔÏñÊµÀı
+     * è¾“å‡ºå¯¹åƒå®ä¾‹
      * @param obj obj
      */
     public static void p(Object obj) {
@@ -72,7 +72,7 @@ public class FinalTest {
     }
 }
 /**
- * Öµ¶ÔÏó
+ * å€¼å¯¹è±¡
  * @author WangYanCheng
  * @version 2010-5-29
  */

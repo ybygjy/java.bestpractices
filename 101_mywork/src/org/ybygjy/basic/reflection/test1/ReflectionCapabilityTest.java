@@ -175,8 +175,8 @@ public class ReflectionCapabilityTest {
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         ReflectionCapabilityTest rctInst = new ReflectionCapabilityTest();

@@ -7,8 +7,8 @@ public class Test {
         Test.doPrintMT(9);
     }
     /**
-     * ´òÓ¡Ö±½Ç
-     * @param r ²ãÊı
+     * æ‰“å°ç›´è§’
+     * @param r å±‚æ•°
      */
     public static void doPrintRA(int r) {
         for (int i = 0; i < r; i++) {
@@ -19,8 +19,8 @@ public class Test {
         }
     }
     /**
-     * ´òÓ¡µÈ±ß
-     * @param r ²ãÊı
+     * æ‰“å°ç­‰è¾¹
+     * @param r å±‚æ•°
      */
     public static void doPrintES(int r) {
         for (int j = 0; j < r; j++) {
@@ -36,8 +36,8 @@ public class Test {
         }
     }
     /**
-     * ´òÓ¡³Ë·¨±í
-     * @param b ²ãÊı
+     * æ‰“å°ä¹˜æ³•è¡¨
+     * @param b å±‚æ•°
      */
     public static void doPrintMT(int b) {
         for (int i = 1; i <=b; i++) {

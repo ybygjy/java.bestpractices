@@ -16,7 +16,7 @@ public class EvenGenerator implements Invariant {
     private int i;
 
     /**
-     * ¿É³¢ÊÔ°Ñsynchronized¹Ø¼ü×ÖÈ¥µô
+     * å¯å°è¯•æŠŠsynchronizedå…³é”®å­—å»æ‰
      * self increment variable
      */
     public synchronized void next() {
@@ -45,8 +45,8 @@ public class EvenGenerator implements Invariant {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         EvenGenerator egInst = new EvenGenerator();

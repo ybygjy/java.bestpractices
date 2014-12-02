@@ -17,14 +17,14 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 /**
- * dom4j Ñ§Ï°
+ * dom4j å­¦ä¹ 
  * @author WangYanCheng
  * @version 2010-8-3
  */
 public class LeopardAnalyse {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         try {
@@ -52,12 +52,12 @@ public class LeopardAnalyse {
 }
 
 /**
- * Ñ§Ï°dom4j»ù´¡
+ * å­¦ä¹ dom4jåŸºç¡€
  * @author WangYanCheng
  * @version 2010-8-3
  */
 class Dom4JBasic {
-    /**´¦ÀíÊÂ¼şAOP*/
+    /**å¤„ç†äº‹ä»¶AOP*/
     private AOPListener aopImpInst = null;
     /**inner document instance*/
     private Document docInst = null;
@@ -76,15 +76,15 @@ class Dom4JBasic {
     }
     /**
      * Constructor
-     * @param xmlStr ·ûºÏxml¸ñÊ½µÄ×Ö·û´®
+     * @param xmlStr ç¬¦åˆxmlæ ¼å¼çš„å­—ç¬¦ä¸²
      * @throws DocumentException DocumentException
      */
     public Dom4JBasic(String xmlStr) throws DocumentException {
         docInst = DocumentHelper.parseText(xmlStr);
     }
     /**
-     * ½âÎö¸ø¶¨xmlÄ£Ê½µÄÎÄ¼ş
-     * @param fileInst xmlÄ£Ê½µÄÎÄ¼ş
+     * è§£æç»™å®šxmlæ¨¡å¼çš„æ–‡ä»¶
+     * @param fileInst xmlæ¨¡å¼çš„æ–‡ä»¶
      * @return docInst docInst
      * @throws DocumentException DocumentException
      */
@@ -99,8 +99,8 @@ class Dom4JBasic {
         return docInst;
     }
     /**
-     * ½âÎö²Ù×÷xmlÎÄ¼şÄÚÈİ
-     * @param docInst ÎÄ¼şÊµÀı
+     * è§£ææ“ä½œxmlæ–‡ä»¶å†…å®¹
+     * @param docInst æ–‡ä»¶å®ä¾‹
      */
     public void parseXml4Iterator(Document docInst) {
         boolean aopListFlag = null == this.aopImpInst ? false : true;
@@ -127,7 +127,7 @@ class Dom4JBasic {
         System.out.println(sbuStr);
     }
     /**
-     * ½âÎöxmlÎÄ¼şÊµÌåÄÚÈİ
+     * è§£æxmlæ–‡ä»¶å®ä½“å†…å®¹
      */
     public void parseXml4Iterator() {
         if (null != this.docInst) {
@@ -135,8 +135,8 @@ class Dom4JBasic {
         }
     }
     /**
-     * ½âÎö²Ù×÷xmlÎÄ¼şÄÚÈİ,Ê¹ÓÃXPath
-     * @param docInst xmlÎÄ¼şÊµÀı
+     * è§£ææ“ä½œxmlæ–‡ä»¶å†…å®¹,ä½¿ç”¨XPath
+     * @param docInst xmlæ–‡ä»¶å®ä¾‹
      */
     public void parseXml4Xpath(Document docInst) {
         StringBuilder sbuStr = new StringBuilder();
@@ -151,7 +151,7 @@ class Dom4JBasic {
         System.out.println(sbuStr);
     }
     /**
-     * ½âÎö²Ù×÷xmlÎÄ¼şÄÚÈİ,Ê¹ÓÃXPath
+     * è§£ææ“ä½œxmlæ–‡ä»¶å†…å®¹,ä½¿ç”¨XPath
      */
     public void parseXml4Xpath() {
         if (null != this.docInst) {
@@ -159,7 +159,7 @@ class Dom4JBasic {
         }
     }
     /**
-     * ´´½¨ÎÄµµÊµÀı
+     * åˆ›å»ºæ–‡æ¡£å®ä¾‹
      * @return docInst docInst
      */
     public Document createDocument() {
@@ -174,8 +174,8 @@ class Dom4JBasic {
         return docInst;
     }
     /**
-     * ³Ö¾Ã´æ´¢xmlÎÄµµ
-     * @param docInst xmlÎÄµµ
+     * æŒä¹…å­˜å‚¨xmlæ–‡æ¡£
+     * @param docInst xmlæ–‡æ¡£
      */
     public void saveDocument(Document docInst) {
         try {
@@ -188,7 +188,7 @@ class Dom4JBasic {
     }
     /**
      * prettyPrint
-     * @param docInst ÎÄµµÊµÀı
+     * @param docInst æ–‡æ¡£å®ä¾‹
      */
     public void prettyPrint(Document docInst) {
         OutputFormat formatInst = OutputFormat.createPrettyPrint();
@@ -205,7 +205,7 @@ class Dom4JBasic {
     }
     /**
      * compactPrint
-     * @param docInst ÎÄµµÊµÀı
+     * @param docInst æ–‡æ¡£å®ä¾‹
      */
     public void compactPrint(Document docInst) {
         OutputFormat formatInst = OutputFormat.createCompactFormat();
@@ -219,8 +219,8 @@ class Dom4JBasic {
         }
     }
     /**
-     * ¿ìËÙ³Ö¾Ã´æ´¢xmlÎÄµµ
-     * @param docInst xmlÎÄµµÊµÀı
+     * å¿«é€ŸæŒä¹…å­˜å‚¨xmlæ–‡æ¡£
+     * @param docInst xmlæ–‡æ¡£å®ä¾‹
      */
     public void quickSaveDocument(Document docInst) {
         FileWriter fwInst;
@@ -239,8 +239,8 @@ class Dom4JBasic {
         return this.docInst.asXML();
     }
     /**
-     * ×°Åäaop»úÖÆÊµÏÖÊµÀı
-     * @param aopImpInst aopÊµÏÖÊµÀı
+     * è£…é…aopæœºåˆ¶å®ç°å®ä¾‹
+     * @param aopImpInst aopå®ç°å®ä¾‹
      */
     public void setAopImpInst(AOPListener aopImpInst) {
         this.aopImpInst = aopImpInst;

@@ -19,19 +19,19 @@ public class FileTest {
     private Map<String, Object> contextInfo = new HashMap<String, Object>();
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         InnerTest innerTestInst = new FileTest().getInnerTest();
         innerTestInst.doTestGetFileInfo(new File(".classpath"));
         innerTestInst.doCreateFile(new File(".classpath"));
         innerTestInst.getSysInfo();
-        new FileTest().doModifySuffix("E:\\×Ü½á\\ÀÏ×Ó_µÂ¾­", "htm", "html");
+        new FileTest().doModifySuffix("E:\\æ€»ç»“\\è€å­_å¾·ç»", "htm", "html");
     }
 
     /**
-     * ±éÀú´òÓ¡mapĞÅÏ¢
+     * éå†æ‰“å°mapä¿¡æ¯
      */
     public void printMap() {
         for (Iterator iterator = contextInfo.entrySet().iterator(); iterator.hasNext();) {
@@ -48,7 +48,7 @@ public class FileTest {
      */
     public void insertInfo(String desName, Object desObj) {
         if (contextInfo.containsKey(desName)) {
-            throw new RuntimeException("ÒÑ°üº¬²âÊÔÃûÄ¿Îª@DN@£¬ÄÚÈİÎª@DO@".replace("@DN@", desName).replace("@DO@",
+            throw new RuntimeException("å·²åŒ…å«æµ‹è¯•åç›®ä¸º@DN@ï¼Œå†…å®¹ä¸º@DO@".replace("@DN@", desName).replace("@DO@",
                 desObj.toString()));
         }
         contextInfo.put(desName, desObj);
@@ -71,10 +71,10 @@ public class FileTest {
         return new InnerTest();
     }
     /**
-     * ĞŞ¸ÄÎÄ¼şºó×º
-     * @param fileDir ÎÄ¼şÄ¿Â¼
-     * @param oldSuffix Ô­ºó×º
-     * @param newSuffix ĞÂºó×º
+     * ä¿®æ”¹æ–‡ä»¶åç¼€
+     * @param fileDir æ–‡ä»¶ç›®å½•
+     * @param oldSuffix åŸåç¼€
+     * @param newSuffix æ–°åç¼€
      */
     public void doModifySuffix(String fileDir, final String oldSuffix, String newSuffix) {
         File fileInst = new File(fileDir);
@@ -102,13 +102,13 @@ public class FileTest {
     }
 
     /**
-     * ¸ºÔğ¾ßÌå²âÊÔÏ¸½ÚµÄÊµÏÖ
+     * è´Ÿè´£å…·ä½“æµ‹è¯•ç»†èŠ‚çš„å®ç°
      * @author WangYanCheng
      * @version 2010-8-20
      */
     class InnerTest {
         /**
-         * È¡µÃÎÄ¼şĞÅÏ¢
+         * å–å¾—æ–‡ä»¶ä¿¡æ¯
          * @param fileInst fileInst
          */
         public void doTestGetFileInfo(File fileInst) {
@@ -127,7 +127,7 @@ public class FileTest {
         }
 
         /**
-         * ´´½¨ÎÄ¼ş
+         * åˆ›å»ºæ–‡ä»¶
          * @param fileInst fileInst
          * @return rtnFlag true/false
          */
@@ -137,7 +137,7 @@ public class FileTest {
                 if (!fileInst.exists()) {
                     rtnFlag = fileInst.createNewFile();
                 } else {
-                    throw new IOException("ÎÄ¼şÒÑ´æÔÚ!");
+                    throw new IOException("æ–‡ä»¶å·²å­˜åœ¨!");
                 }
             } catch (IOException ioe) {
                 ioe.printStackTrace();

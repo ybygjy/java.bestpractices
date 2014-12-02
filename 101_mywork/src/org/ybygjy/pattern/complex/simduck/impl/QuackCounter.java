@@ -4,7 +4,7 @@ import org.ybygjy.pattern.complex.simduck.Observer;
 import org.ybygjy.pattern.complex.simduck.Quackable;
 
 /**
- * ¸¨ÖúDuck¼ÆÊı¹¦ÄÜ£¬×°ÊÎ
+ * è¾…åŠ©Duckè®¡æ•°åŠŸèƒ½ï¼Œè£…é¥°
  * @author WangYanCheng
  * @version 2011-1-24
  */

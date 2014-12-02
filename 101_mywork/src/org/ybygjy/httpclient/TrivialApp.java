@@ -47,7 +47,7 @@ import org.apache.commons.httpclient.methods.GetMethod;
  * how to use the Jakarta HttpClient API.
  *
  * @author <a href="mailto:jsdever@apache.org">Jeff Dever</a>
- * @author Ortwin Glück
+ * @author Ortwin Glé»žk
  */
 public class TrivialApp
 {

@@ -15,15 +15,15 @@ import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
 /**
- * ·â×°KeyStore»ù´¡²Ù×÷
+ * å°è£…KeyStoreåŸºç¡€æ“ä½œ
  * @author WangYanCheng
  * @version 2011-6-3
  */
 public class KeyStoreUtil {
     /**
-     * ¼ÓÔØÃÜÔ¿¿â
-     * @param keyStoreFile ÃÜÔ¿ÎÄ¼ş
-     * @param keyStorePWD ÃÜÔ¿ÃÜÂë
+     * åŠ è½½å¯†é’¥åº“
+     * @param keyStoreFile å¯†é’¥æ–‡ä»¶
+     * @param keyStorePWD å¯†é’¥å¯†ç 
      * @return keystore/null
      */
     public static KeyStore loadKeyStore(File keyStoreFile, char[] keyStorePWD) {
@@ -56,8 +56,8 @@ public class KeyStoreUtil {
     }
     /**
      * getKeyManager
-     * @param keyStore ÃØÔ¿¿â
-     * @param password ÃØÔ¿¿âÃÜÂë
+     * @param keyStore ç§˜é’¥åº“
+     * @param password ç§˜é’¥åº“å¯†ç 
      * @return keyMgr/null
      */
     public static KeyManager getKeyManager(KeyStore keyStore, char[] password) {
@@ -77,7 +77,7 @@ public class KeyStoreUtil {
     }
     /**
      * getTrustKeyManager
-     * @param keyStore ÃØÔ¿¿â
+     * @param keyStore ç§˜é’¥åº“
      * @return trustMgr/null
      */
     public static TrustManager getTrustKeyManager(KeyStore keyStore) {

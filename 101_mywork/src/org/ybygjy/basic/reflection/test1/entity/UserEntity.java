@@ -13,7 +13,7 @@ public class UserEntity {
     private String userName;
     /**userPassword*/
     private String userPassword;
-    /**µç»°ºÅÂë*/
+    /**ç”µè¯å·ç */
     private String[] telPhone;
     /**stepValue*/
     public int stepValue;

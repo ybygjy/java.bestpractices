@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * 封装表单提交
+ * 灏佽琛ㄥ崟鎻愪氦
  * @author WangYanCheng
  * @version 2012-9-19
  */

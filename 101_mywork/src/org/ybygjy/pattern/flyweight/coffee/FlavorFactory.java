@@ -3,7 +3,7 @@ package org.ybygjy.pattern.flyweight.coffee;
 import org.ybygjy.pattern.flyweight.coffee.impl.Flavor;
 
 /**
- * ÏíÔª¹¤³§
+ * äº«å…ƒå·¥å‚
  * @author WangYanCheng
  * @version 2010-11-22
  */
@@ -24,7 +24,7 @@ public class FlavorFactory {
     }
 
     /**
-     * Ìá¹©ÏíÔª¶ÔÏóÊµÀı
+     * æä¾›äº«å…ƒå¯¹è±¡å®ä¾‹
      * @param flavorToGet flavorToGet
      * @return orderInst {@link Order}
      */
@@ -49,7 +49,7 @@ public class FlavorFactory {
     }
 
     /**
-     * È¡¹¤³§ÊµÀı
+     * å–å·¥å‚å®ä¾‹
      * @return flavorFactory {@link FlavorFactory}
      */
     public static FlavorFactory getInstance() {

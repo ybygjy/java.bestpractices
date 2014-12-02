@@ -1,6 +1,6 @@
 package org.ybygjy.test;
 /**
- * 提供了http协议常用操作enum
+ * 鎻愪緵浜唄ttp鍗忚甯哥敤鎿嶄綔enum
  * @author WangYanCheng
  * @version 2010-7-30
  */

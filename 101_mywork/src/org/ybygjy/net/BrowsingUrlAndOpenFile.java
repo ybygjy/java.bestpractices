@@ -13,14 +13,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- * 操作系统命令使用 <li>打开URL链接</li> <li>打开文件</li>
+ * 鎿嶄綔绯荤粺鍛戒护浣跨敤 <li>鎵撳紑URL閾炬帴</li> <li>鎵撳紑鏂囦欢</li>
  * @author WangYanCheng
  * @version 2010-12-13
  */
 public class BrowsingUrlAndOpenFile {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      * @throws IOException IOException
      */
     public static void main(final String[] args) throws IOException {

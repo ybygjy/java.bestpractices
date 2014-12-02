@@ -1,8 +1,8 @@
 package org.ybygjy.basic.algorithms.stackAntQueue;
 
 /**
- * Õ»
- * <p>ºó½øÏÈ³ö(LIFO)</p>
+ * æ ˆ
+ * <p>åè¿›å…ˆå‡º(LIFO)</p>
  * @author WangYanCheng
  * @version 2011-8-5
  */
@@ -22,7 +22,7 @@ public class StackX {
     }
 
     /**
-     * ³öÕ»
+     * å‡ºæ ˆ
      * @return rtnValue
      */
     public int pop() {
@@ -30,7 +30,7 @@ public class StackX {
     }
 
     /**
-     * ÈëÕ»
+     * å…¥æ ˆ
      * @param i rtnValue
      */
     public void push(int i) {
@@ -38,7 +38,7 @@ public class StackX {
     }
 
     /**
-     * ÅĞ¶ÏÕ»Âú
+     * åˆ¤æ–­æ ˆæ»¡
      * @return true/false
      */
     public boolean isFull() {
@@ -46,7 +46,7 @@ public class StackX {
     }
 
     /**
-     * ÅĞ¶ÏÕ»¿Õ
+     * åˆ¤æ–­æ ˆç©º
      * @return true/false
      */
     public boolean isEmpty() {
@@ -54,16 +54,16 @@ public class StackX {
     }
 
     /**
-     * ²é¿´µ±Ç°Õ»¶¥Êı¾İÏî
-     * @return Êı¾İÏî
+     * æŸ¥çœ‹å½“å‰æ ˆé¡¶æ•°æ®é¡¹
+     * @return æ•°æ®é¡¹
      */
     public int peek() {
         return this.stackArray[top];
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         StackX stackX = new StackX(10);

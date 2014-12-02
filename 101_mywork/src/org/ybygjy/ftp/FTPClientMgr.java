@@ -13,7 +13,7 @@ import org.apache.commons.net.ftp.FTPSClient;
 import org.ybygjy.basic.security.KeyStoreUtil;
 
 /**
- * ¸ºÔğ·â×°FtpClientµÄ´´½¨
+ * è´Ÿè´£å°è£…FtpClientçš„åˆ›å»º
  * @author WangYanCheng
  * @version 2011-6-3
  */
@@ -30,8 +30,8 @@ public class FTPClientMgr {
     }
     /**
      * Constructor
-     * @param hostName Ö÷»úµØÖ·
-     * @param hostPort ¶Ë¿Ú
+     * @param hostName ä¸»æœºåœ°å€
+     * @param hostPort ç«¯å£
      */
     public FTPClientMgr(String hostName, int hostPort) {
         this.hostName = hostName;
@@ -43,7 +43,7 @@ public class FTPClientMgr {
         this.password = userPass;
     }
     /**
-     * È¡FTPÁ¬½Ó
+     * å–FTPè¿æ¥
      * @return ftpClient ftpClient
      */
     public FTPClient createFTPClient() {
@@ -53,7 +53,7 @@ public class FTPClientMgr {
             int reply = ftpClient.getReplyCode();
             if (!FTPReply.isPositiveCompletion(reply)) {
                 ftpClient.disconnect();
-                throw new RuntimeException("ÑéÖ¤Ê§°Ü£¡");
+                throw new RuntimeException("éªŒè¯å¤±è´¥ï¼");
             }
         } catch (SocketException e) {
             e.printStackTrace();
@@ -64,7 +64,7 @@ public class FTPClientMgr {
     }
 
     /**
-     * ´´½¨´øÓĞSSL
+     * åˆ›å»ºå¸¦æœ‰SSL
      * @param clientKeyStore
      * @param keyStorePassword
      * @return ftpsClient/null
@@ -80,11 +80,11 @@ public class FTPClientMgr {
         ftpClient.setControlEncoding(characterEncoding);
         ftpClient.addProtocolCommandListener(new ProtocolCommandListener() {
             public void protocolReplyReceived(ProtocolCommandEvent event) {
-                System.out.println("FTPSClient ÏìÓ¦ĞÅÏ¢:\t".concat(event.getMessage().trim()));
+                System.out.println("FTPSClient å“åº”ä¿¡æ¯:\t".concat(event.getMessage().trim()));
             }
 
             public void protocolCommandSent(ProtocolCommandEvent event) {
-                System.out.println("FTPSClient ÏìÓ¦ĞÅÏ¢:\t".concat(event.getMessage().trim()));
+                System.out.println("FTPSClient å“åº”ä¿¡æ¯:\t".concat(event.getMessage().trim()));
             }
         });
         try {
@@ -99,10 +99,10 @@ public class FTPClientMgr {
     }
 
     /**
-     * Éí·İÑéÖ¤
-     * @param ftpClient »á»°¶ÔÏó
-     * @param userName ÓÃ»§Ãû
-     * @param password ÃÜÂë
+     * èº«ä»½éªŒè¯
+     * @param ftpClient ä¼šè¯å¯¹è±¡
+     * @param userName ç”¨æˆ·å
+     * @param password å¯†ç 
      * @return true/false
      */
     public static boolean login(FTPClient ftpClient, String userName, String password) {

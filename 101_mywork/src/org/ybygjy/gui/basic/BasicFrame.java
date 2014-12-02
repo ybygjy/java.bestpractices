@@ -14,13 +14,13 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
- * Frame测试
+ * Frame娴嬭瘯
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class BasicFrame {
     /**
-     * 测试入口
+     * 娴嬭瘯鍏ュ彛
      * @param args args
      */
     public static void main(String[] args) {
@@ -55,7 +55,7 @@ class SideFrame extends JFrame {
 }
 
 class GrphicsTest extends JComponent implements Runnable {
-    /** 线程标记 */
+    /** 绾跨▼鏍囪 */
     private boolean startFlag;
     private int x = 10;
     private int y = 10;

@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.eventsys.service.esdecoupe;
 /**
- * ÊÂ¼þ´¦Àí»úÖÆ-->JavaBeanÊÂ¼þÄ£Ê½-->¶ÔÊÂ¼þ·þÎñ½øÐÐÍËñî<br>
- * ÉÏÉýÎÂ¶È¿ØÖÆ
+ * äº‹ä»¶å¤„ç†æœºåˆ¶-->JavaBeanäº‹ä»¶æ¨¡å¼-->å¯¹äº‹ä»¶æœåŠ¡è¿›è¡Œé€€è€¦<br>
+ * ä¸Šå‡æ¸©åº¦æŽ§åˆ¶
  * @author WangYanCheng
  * @version 2010-2-20
  */

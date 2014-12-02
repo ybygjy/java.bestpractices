@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 
 
 /**
- * Õ»Ó¦ÓÃ£¬·´×ªÊäÈë
+ * æ ˆåº”ç”¨ï¼Œåè½¬è¾“å…¥
  * @author WangYanCheng
  * @version 2011-8-8
  */
@@ -19,7 +19,7 @@ public class ReverseNumUsageStack {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String s = null;
         try {
-            System.out.println("ÇëÊäÈë£º");
+            System.out.println("è¯·è¾“å…¥ï¼š");
             while ((s = reader.readLine())!=null) {
                 if ("exit".equals(s)) {
                     while (!this.stack.isEmpty()) {
@@ -59,14 +59,14 @@ public class ReverseNumUsageStack {
             if (!ifFull()) {
                 arr[++top] = s;
             } else {
-                System.out.println("Õ»Âú==>" + this.max);
+                System.out.println("æ ˆæ»¡==>" + this.max);
             }
         }
         public String pop() {
             if (!isEmpty()) {
                 return arr[top--];
             } else {
-                System.out.println("Õ»¿Õ==>" + this.top);
+                System.out.println("æ ˆç©º==>" + this.top);
                 return null;
             }
         }

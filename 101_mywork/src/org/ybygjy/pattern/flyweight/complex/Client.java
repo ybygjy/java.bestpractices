@@ -1,13 +1,13 @@
 package org.ybygjy.pattern.flyweight.complex;
 /**
- * 负责对复合享元模式的测试
+ * 璐熻矗瀵瑰鍚堜韩鍏冩ā寮忕殑娴嬭瘯
  * @author WangYanCheng
  * @version 2010-11-22
  */
 public class Client {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         FlyweightFactory ffInst = FlyweightFactory.getInstance();

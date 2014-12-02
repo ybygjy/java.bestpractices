@@ -5,7 +5,7 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 /**
- * ²âÊÔÌ×¼ş
+ * æµ‹è¯•å¥—ä»¶
  * @author WangYanCheng
  * @version 2010-12-8
  */

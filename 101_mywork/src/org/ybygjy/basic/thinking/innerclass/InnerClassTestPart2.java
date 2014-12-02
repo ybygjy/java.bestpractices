@@ -1,7 +1,7 @@
 package org.ybygjy.basic.thinking.innerclass;
 
 /**
- * ÄÚ²¿Àà²âÊÔ
+ * å†…éƒ¨ç±»æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-5-31
  */

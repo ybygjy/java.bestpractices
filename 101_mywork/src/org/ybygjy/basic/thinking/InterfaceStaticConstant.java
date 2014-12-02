@@ -1,12 +1,12 @@
 package org.ybygjy.basic.thinking;
 /**
- * 接口常量
+ * 鎺ュ彛甯搁噺
  * @author WangYanCheng
  * @version 2010-5-30
  */
 public class InterfaceStaticConstant {
     /**
-     * 测试入口
+     * 娴嬭瘯鍏ュ彛
      * @param args arguments list
      */
     public static void main(String[] args) {
@@ -17,7 +17,7 @@ public class InterfaceStaticConstant {
     }
 }
 /**
- * 自定义安全的日期枚举
+ * 鑷畾涔夊畨鍏ㄧ殑鏃ユ湡鏋氫妇
  * @author WangYanCheng
  * @version 2010-5-30
  */
@@ -55,7 +55,7 @@ final class Month {
     public static final Month[] MONTH =
     {JAN, FEB, MAR, APR, MAY, JUN, JUL, AUG, SEP, OCT, NOV, DEC};
     /**
-     * 取得指定月份
+     * 鍙栧緱鎸囧畾鏈堜唤
      * @param ord ord
      * @return month
      */

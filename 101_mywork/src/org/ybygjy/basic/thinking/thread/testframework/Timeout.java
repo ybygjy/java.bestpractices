@@ -4,15 +4,15 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * ¶¨Ê±Æ÷
+ * å®šæ—¶å™¨
  * @author WangYanCheng
  * @version 2010-9-30
  */
 public class Timeout extends Timer {
     /**
      * Constructor
-     * @param delay ÑÓÊ±
-     * @param msg ÏûÏ¢
+     * @param delay å»¶æ—¶
+     * @param msg æ¶ˆæ¯
      */
     public Timeout(int delay, final String msg) {
         super(true); // daemon thread

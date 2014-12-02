@@ -20,44 +20,44 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.border.TitledBorder;
 public class FrmMain extends JFrame implements ActionListener {
     private static final long serialVersionUID = 8906317933020631699L;
-    /** °´Å¥ ×ª»» */
+    /** æŒ‰é’® è½¬æ¢ */
     JButton btn_change;
-    /** °´Å¥ ÍË³ö */
+    /** æŒ‰é’® é€€å‡º */
     JButton btn_exit;
-    /** ±êÇ© ÎÄ¼ş»òÎÄ¼ş¼Ğ */
+    /** æ ‡ç­¾ æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹ */
     JLabel lab_file;
-    /** ÊäÈëÎÄ±¾ ÎÄ¼şÂ·¾¶ */
+    /** è¾“å…¥æ–‡æœ¬ æ–‡ä»¶è·¯å¾„ */
     JTextField txt_file;
-    /** °´Å¥ "." Ñ¡ÔñÎÄ¼ş»òÎÄ¼ş¼Ğ */
+    /** æŒ‰é’® "." é€‰æ‹©æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹ */
     JButton btn_selectFile;
     
-    /** ±êÇ© ±£´æÎÄ¼ş¼Ğ */
+    /** æ ‡ç­¾ ä¿å­˜æ–‡ä»¶å¤¹ */
     JLabel lab_dir;
-    /** ÊäÈëÎÄ±¾ ±£´æÂ·¾¶ */
+    /** è¾“å…¥æ–‡æœ¬ ä¿å­˜è·¯å¾„ */
     JTextField txt_dir;
-    /** °´Å¥ "." Ñ¡Ôñ±£´æÎÄ¼ş¼Ğ */
+    /** æŒ‰é’® "." é€‰æ‹©ä¿å­˜æ–‡ä»¶å¤¹ */
     JButton btn_selectDir;
     
-    /** ÊäÈë¿é ×ª»»ĞÅÏ¢ */
+    /** è¾“å…¥å— è½¬æ¢ä¿¡æ¯ */
     JTextArea txt_show;
     
-    /** ±êÇ© Ñ¡Ôñ±àÂë: */
+    /** æ ‡ç­¾ é€‰æ‹©ç¼–ç : */
     JLabel lab_encoding;
-    /** ÏÂÀ­ÁĞ±í Ô´±àÂë */
+    /** ä¸‹æ‹‰åˆ—è¡¨ æºç¼–ç  */
     JComboBox jbx_source;
-    /** ÏÂÀ­ÁĞ±í Ä¿±ê±àÂë */
+    /** ä¸‹æ‹‰åˆ—è¡¨ ç›®æ ‡ç¼–ç  */
     JComboBox jbx_target;
-    /** ±êÇ© ÎÄ¼ş¹ıÂË: */
+    /** æ ‡ç­¾ æ–‡ä»¶è¿‡æ»¤: */
     JLabel lab_type;
-    /** ÊäÈëÎÄ±¾ ¹ıÂËÀàĞÍ,Èç".java" */
+    /** è¾“å…¥æ–‡æœ¬ è¿‡æ»¤ç±»å‹,å¦‚".java" */
     JTextField txt_type;
-    /** ³ÌĞò°æ±¾ */
+    /** ç¨‹åºç‰ˆæœ¬ */
     private String version = "V1.50base";
-    /** ³ÌĞò±êÌâ */
+    /** ç¨‹åºæ ‡é¢˜ */
     private String title = 
-        "JAVAÎÄ¼ş±àÂë×ª»»¹¤¾ß" + version;
+        "JAVAæ–‡ä»¶ç¼–ç è½¬æ¢å·¥å…·" + version;
     
-    /** ÏÂÀ­ÁĞ±íÖµ:Ä¬ÈÏ±àÂë */
+    /** ä¸‹æ‹‰åˆ—è¡¨å€¼:é»˜è®¤ç¼–ç  */
     private String[] encoding =
         "gbk,utf-8,gb2312,utf-16".split(",");
     
@@ -79,7 +79,7 @@ public class FrmMain extends JFrame implements ActionListener {
         this.setLocationRelativeTo(null);
 //      this.setVisible(true);
     }
-    /** Ö÷Ãæ°å */
+    /** ä¸»é¢æ¿ */
     private Container createContent() {
         JPanel pane = new JPanel(new BorderLayout());
         pane.setBorder(new EmptyBorder(8, 8, 8, 8));
@@ -89,7 +89,7 @@ public class FrmMain extends JFrame implements ActionListener {
         return pane;
     }
     
-    /** Ñ¡ÔñÃæ°å  */
+    /** é€‰æ‹©é¢æ¿  */
     private JPanel createSelect(){
         JPanel pane = new JPanel(new BorderLayout());
 //      pane.setBorder(new EmptyBorder(8, 0, 8, 0));
@@ -102,10 +102,10 @@ public class FrmMain extends JFrame implements ActionListener {
         return pane;
     }
     
-    /** Ñ¡ÔñÎÄ¼şÃæ°å */
+    /** é€‰æ‹©æ–‡ä»¶é¢æ¿ */
     private JPanel createSelectFile() {
         JPanel pane = new JPanel(new BorderLayout());
-        lab_file = new JLabel("ÎÄ¼ş»òÎÄ¼ş¼Ğ: ");
+        lab_file = new JLabel("æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹: ");
         txt_file = new JTextField();
         txt_file.setEditable(false);
         btn_selectFile = new JButton(".");
@@ -116,11 +116,11 @@ public class FrmMain extends JFrame implements ActionListener {
         return pane;
     }
     
-    /** Ñ¡Ôñ±£´æÂ·¾¶ */
+    /** é€‰æ‹©ä¿å­˜è·¯å¾„ */
     private JPanel createSelectSaveDir() {
         JPanel pane = new JPanel(new BorderLayout());
         pane.setBorder(new EmptyBorder(8, 0, 0, 0));
-        lab_dir = new JLabel("±£´æÎÄ¼ş¼Ğ:");
+        lab_dir = new JLabel("ä¿å­˜æ–‡ä»¶å¤¹:");
         txt_dir = new JTextField();
         txt_dir.setEditable(false);
         btn_selectDir = new JButton(".");
@@ -130,21 +130,21 @@ public class FrmMain extends JFrame implements ActionListener {
         pane.add(BorderLayout.EAST, btn_selectDir);
         return pane;
     }
-    /** ±àÂë,¹ıÂËÃæ°å */
+    /** ç¼–ç ,è¿‡æ»¤é¢æ¿ */
     private JPanel createSelectEncoding() {
         JPanel pane = new JPanel(
                 new FlowLayout(FlowLayout.LEFT));
         pane.setBorder(new EmptyBorder(8, 0, 0, 0));
-        lab_encoding = new JLabel("Ñ¡Ôñ±àÂë:");
+        lab_encoding = new JLabel("é€‰æ‹©ç¼–ç :");
         jbx_source = new JComboBox(encoding);
-        jbx_source.setSelectedIndex(0);// Ä¬ÈÏÏÔÊ¾µÚ0¸ö¶ÔÏóÖµ
+        jbx_source.setSelectedIndex(0);// é»˜è®¤æ˜¾ç¤ºç¬¬0ä¸ªå¯¹è±¡å€¼
         jbx_source.addActionListener(this);
         jbx_target = new JComboBox(encoding);
         jbx_target.setSelectedIndex(1);
         jbx_target.addActionListener(this);
-        lab_type = new JLabel("ÎÄ¼ş¹ıÂË:");
+        lab_type = new JLabel("æ–‡ä»¶è¿‡æ»¤:");
         txt_type = new JTextField();
-        txt_type.setColumns(10);// ÉèÖÃÁĞ³¤¶È,·ñÔòÏÔÊ¾ÓĞÎÊÌâ
+        txt_type.setColumns(10);// è®¾ç½®åˆ—é•¿åº¦,å¦åˆ™æ˜¾ç¤ºæœ‰é—®é¢˜
         txt_type.setText(".java");
         pane.add(lab_encoding);
         pane.add(jbx_source);
@@ -153,26 +153,26 @@ public class FrmMain extends JFrame implements ActionListener {
         pane.add(txt_type);
         return pane;
     }
-    /** Êä³öĞÅÏ¢Ãæ°å */
+    /** è¾“å‡ºä¿¡æ¯é¢æ¿ */
     private JScrollPane createShowPane() {
         JScrollPane pane = new JScrollPane();
-        pane.setBorder(new TitledBorder("ĞÅÏ¢"));
+        pane.setBorder(new TitledBorder("ä¿¡æ¯"));
         txt_show = new JTextArea(10, 10);
         txt_show.setEnabled(false);
-        txt_show.setLineWrap(true);// ÉèÖÃ×Ô¶¯»»ĞĞ
-        txt_show.setFont(new Font("ËÎÌå", Font.BOLD, 13));
+        txt_show.setLineWrap(true);// è®¾ç½®è‡ªåŠ¨æ¢è¡Œ
+        txt_show.setFont(new Font("å®‹ä½“", Font.BOLD, 13));
         txt_show.setDisabledTextColor(Color.red);
         pane.setHorizontalScrollBarPolicy(
                 JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         pane.getViewport().add(txt_show);
         return pane;
     }
-    /** ×ª»»ÍË³ö°´Å¥Ãæ°å */
+    /** è½¬æ¢é€€å‡ºæŒ‰é’®é¢æ¿ */
     private Component createBtnPane() {
         JPanel pane = new JPanel();
-        btn_change = new JButton("×ª»»");
+        btn_change = new JButton("è½¬æ¢");
         btn_change.addActionListener(this);
-        btn_exit = new JButton("ÍË³ö");
+        btn_exit = new JButton("é€€å‡º");
         btn_exit.addActionListener(this);
         pane.add(btn_change);
         pane.add(btn_exit);

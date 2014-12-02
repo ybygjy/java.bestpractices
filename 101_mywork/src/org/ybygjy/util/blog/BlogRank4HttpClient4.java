@@ -15,7 +15,7 @@ import org.apache.commons.httpclient.SimpleHttpConnectionManager;
 import org.apache.commons.httpclient.methods.PostMethod;
 
 /**
- * ÀûÓÃHttpClientÏÂÔØBlogÄÚÈİ
+ * åˆ©ç”¨HttpClientä¸‹è½½Blogå†…å®¹
  * @author WangYanCheng
  * @version 2014-4-22
  */
@@ -36,10 +36,10 @@ public class BlogRank4HttpClient4 {
     }
     public void doWork() {
         doRequest(blogSit + "/ybygjy");
-        System.out.println("¹²´¦Àí\r\n·ÖÒ³£º" + pageCount.get() + "\tÎÄÕÂ£º" + articleCount.get());
+        System.out.println("å…±å¤„ç†\r\nåˆ†é¡µï¼š" + pageCount.get() + "\tæ–‡ç« ï¼š" + articleCount.get());
     }
     /**
-     * ÇëÇóÖ¸¶¨URI
+     * è¯·æ±‚æŒ‡å®šURI
      * @param uri
      */
     public void doRequest(String uri) {
@@ -52,7 +52,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
             new HTMLParser(htmlContent, new HTMLParserCallback() {
                 @Override
                 public void afterParseUri(String[] pageUrls, String[] articleUrls) {
-                    //·ÃÎÊ·ÖÒ³£¬ĞèÒª¼ÇÂ¼µ±Ç°ÊÇµÚ¼¸Ò³£¬·ÀÖ¹³öÏÖµİ¹é£¬°ÑÄÚÈİ´æ´¢ÔÚHttpHeaderÖĞ
+                    //è®¿é—®åˆ†é¡µï¼Œéœ€è¦è®°å½•å½“å‰æ˜¯ç¬¬å‡ é¡µï¼Œé˜²æ­¢å‡ºç°é€’å½’ï¼ŒæŠŠå†…å®¹å­˜å‚¨åœ¨HttpHeaderä¸­
                     if (null != pageUrls) {
                         for (String pageUrl : pageUrls) {
                             String hashCode = String.valueOf(pageUrl.hashCode());
@@ -82,7 +82,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         }
     }
     /**
-     * ´´½¨ÇëÇóÊµÌå
+     * åˆ›å»ºè¯·æ±‚å®ä½“
      * @return
      */
     private HttpMethodBase createMethod(String uri) {
@@ -92,7 +92,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         return httpMethod;
     }
     /**
-     * Ìí¼ÓÇëÇó²ÎÊı
+     * æ·»åŠ è¯·æ±‚å‚æ•°
      * @param httpMethod
      */
     private void addRequestParam(HttpMethodBase httpMethod) {
@@ -103,7 +103,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         httpMethod.setQueryString(valuePairCollection.toArray(new NameValuePair[valuePairCollection.size()]));
     }
     /**
-     * Ìí¼ÓÇëÇóÍ·²ÎÊı
+     * æ·»åŠ è¯·æ±‚å¤´å‚æ•°
      * @param httpMethod
      */
     private void addRequestHeaderParam(HttpMethodBase httpMethod) {
@@ -112,7 +112,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         }
     }
     /**
-     * Ìí¼Ó²ÎÊı
+     * æ·»åŠ å‚æ•°
      * @param key
      * @param value
      */
@@ -120,7 +120,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         requestParam.put(key, value);
     }
     /**
-     * É¾³ı²ÎÊı
+     * åˆ é™¤å‚æ•°
      * @param key
      * @return
      */
@@ -128,7 +128,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         return requestParam.remove(key);
     }
     /**
-     * Ìí¼ÓÇëÇóÍ·²ÎÊı
+     * æ·»åŠ è¯·æ±‚å¤´å‚æ•°
      * @param key
      * @param value
      */
@@ -136,7 +136,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         requestHeaderParam.put(key, value);
     }
     /**
-     * ÒÆ³ıÇëÇóÍ·²ÎÊı
+     * ç§»é™¤è¯·æ±‚å¤´å‚æ•°
      * @param key
      * @return
      */
@@ -144,8 +144,8 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
         return requestHeaderParam.remove(key);
     }
     /**
-     * ³ÌĞòÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * ç¨‹åºå…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         BlogRank4HttpClient4 blogRank = new BlogRank4HttpClient4();
@@ -159,7 +159,7 @@ System.out.println(httpMethod.getURI() + "=>" + respCode);
     }
 }
 /**
- * ´ËÀà¸ºÔğ½âÎöHTMLÌáÈ¡ÌØ¶¨HTMLÄÚÈİ
+ * æ­¤ç±»è´Ÿè´£è§£æHTMLæå–ç‰¹å®šHTMLå†…å®¹
  * @author WangYanCheng
  * @version 2014-4-22
  */
@@ -175,21 +175,21 @@ class HTMLParser {
         this.htmlParseCallback = htmlParseCallback;
     }
     /**
-     * ¸ºÔğ½âÎö¡¢×ª´¢HTMLÌØ¶¨ÄÚÈİ
+     * è´Ÿè´£è§£æã€è½¬å‚¨HTMLç‰¹å®šå†…å®¹
      * @param htmlContent
      */
     public void doParseHTML() {
         parseURI(htmlContent);
     }
     /**
-     * ½âÎöÂß¼­
+     * è§£æé€»è¾‘
      * @param htmlContent
      */
     private void parseURI(String htmlContent) {
         String regexStr = "<a\\shref=\"(/[^\"]+)\">";
         Matcher matcher = Pattern.compile(regexStr).matcher(htmlContent);
         while (matcher.find()) {
-            //ÑéÖ¤ÊÇ·ñÊÇ·ÖÒ³Êı¾İ
+            //éªŒè¯æ˜¯å¦æ˜¯åˆ†é¡µæ•°æ®
             String articleUri = matcher.group(1);
             if (articleUri.matches(".*list/\\d+")) {
                 pageUrl.add(articleUri);
@@ -209,7 +209,7 @@ class HTMLParser {
     }
 }
 /**
- * HTML½âÎö»Øµ÷½Ó¿Ú
+ * HTMLè§£æå›è°ƒæ¥å£
  * @author WangYanCheng
  * @version 2014-4-22
  */

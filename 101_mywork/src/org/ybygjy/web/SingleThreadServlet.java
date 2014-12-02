@@ -9,17 +9,17 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ServletËùÎ½µÄµ¥ÊµÀı¶àÏß³Ì
- * <p>1¡¢Ê×ÏÈServletÉúÃüÖÜÆÚÊÇÓÉServlet Container¸ºÔğ<p>
- * <p>2¡¢ServletÊµÀıÔÚÍ¬Ò»¸öContainerÖĞÖ»ÓĞÒ»¸ö£¬¸ÃÊµÀı±»¶àÏß³Ì²¢·¢·ÃÎÊ</p>
- * <p>3¡¢¹Ø¼ü´Ê£ºÏß³Ì³Ø¡¢·ÖÅÉÏß³Ì¡¢¹¤×÷Ïß³Ì</p>
- * <p>4¡¢µ±ÈİÆ÷ÊÕµ½¶à¸öÍ¬Ò»servletÇëÇóÊ±£¬¸ÃservletµÄservices·½·¨½«±»¶à¸öÏß³Ì²¢·¢·ÃÎÊ</p>
+ * Servletæ‰€è°“çš„å•å®ä¾‹å¤šçº¿ç¨‹
+ * <p>1ã€é¦–å…ˆServletç”Ÿå‘½å‘¨æœŸæ˜¯ç”±Servlet Containerè´Ÿè´£<p>
+ * <p>2ã€Servletå®ä¾‹åœ¨åŒä¸€ä¸ªContainerä¸­åªæœ‰ä¸€ä¸ªï¼Œè¯¥å®ä¾‹è¢«å¤šçº¿ç¨‹å¹¶å‘è®¿é—®</p>
+ * <p>3ã€å…³é”®è¯ï¼šçº¿ç¨‹æ± ã€åˆ†æ´¾çº¿ç¨‹ã€å·¥ä½œçº¿ç¨‹</p>
+ * <p>4ã€å½“å®¹å™¨æ”¶åˆ°å¤šä¸ªåŒä¸€servletè¯·æ±‚æ—¶ï¼Œè¯¥servletçš„servicesæ–¹æ³•å°†è¢«å¤šä¸ªçº¿ç¨‹å¹¶å‘è®¿é—®</p>
  * @author WangYanCheng
  * @version 2011-4-7
  */
 @SuppressWarnings("serial")
 public class SingleThreadServlet extends HttpServlet {
-    /** ·ÇÏß³Ì°²È«*/
+    /** éçº¿ç¨‹å®‰å…¨*/
     private PrintWriter pw;
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException,

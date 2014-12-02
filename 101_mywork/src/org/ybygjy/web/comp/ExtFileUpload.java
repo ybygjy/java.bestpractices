@@ -13,14 +13,14 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
- * Ê¹ÓÃµÚÈı·½¿â¹¹½¨ÎÄ¼şÉÏ´«×é¼ş
+ * ä½¿ç”¨ç¬¬ä¸‰æ–¹åº“æ„å»ºæ–‡ä»¶ä¸Šä¼ ç»„ä»¶
  * @author WangYanCheng
  * @version 2010-12-16
  */
 public class ExtFileUpload {
     /**
-     * ½âÎöÁ÷ÌáÈ¡ÎÄ¼şÄÚÈİ
-     * @param request ÇëÇóÍ·
+     * è§£ææµæå–æ–‡ä»¶å†…å®¹
+     * @param request è¯·æ±‚å¤´
      */
     public void doParseContent(HttpServletRequest request) {
         FileItemFactory factory = new DiskFileItemFactory();

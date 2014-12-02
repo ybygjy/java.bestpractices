@@ -1,13 +1,13 @@
 package org.ybygjy.basic.array;
 
 /**
- * ¶àÎ¬Êı×é
+ * å¤šç»´æ•°ç»„
  * @author WangYanCheng
  * @version 2014-5-3
  */
 public class DimensionalTest {
     /**
-     * Ò»Î¬Êı×é
+     * ä¸€ç»´æ•°ç»„
      */
     public void oneDimension() {
         int[] oneDimensinal = {1, 2, 3, 4};
@@ -20,7 +20,7 @@ public class DimensionalTest {
         System.out.println("one-dimension end");
     }
     /**
-     * ¶şÎ¬Êı×é
+     * äºŒç»´æ•°ç»„
      */
     public void twoDimension() {
         int[][] twoDimension = {
@@ -40,7 +40,7 @@ public class DimensionalTest {
         System.out.println("one-dimension end");
     }
     /**
-     * ÈıÎ¬Êı×é
+     * ä¸‰ç»´æ•°ç»„
      */
     public void threeDimension() {
         int[][][] treeDimension = {
@@ -74,8 +74,8 @@ public class DimensionalTest {
         System.out.println("one-dimension end");
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         DimensionalTest dimInst = new DimensionalTest();

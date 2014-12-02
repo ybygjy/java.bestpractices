@@ -12,7 +12,7 @@ public class Thread_Priorities_01 extends Thread {
     private int threadDown;
     /** volatile variable */
     private volatile double d;
-    /** Ñ­»··§Öµ */
+    /** å¾ªçŽ¯é˜€å€¼ */
     public static int loopFlag = 100000;
     /**threadPriority*/
     private int threadPriority;

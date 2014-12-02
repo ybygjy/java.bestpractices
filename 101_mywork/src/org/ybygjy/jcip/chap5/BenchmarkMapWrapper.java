@@ -1,29 +1,29 @@
 package org.ybygjy.jcip.chap5;
 
 /**
- * ¶¨Òå²ÎÓë²âÊÔÈİÆ÷µÄĞĞÎª
+ * å®šä¹‰å‚ä¸æµ‹è¯•å®¹å™¨çš„è¡Œä¸º
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public interface BenchmarkMapWrapper {
 	/**
-	 * ¼üÖµ¶Ô´æ´¢
+	 * é”®å€¼å¯¹å­˜å‚¨
 	 * @param key
 	 * @param value
 	 */
 	public void put(Object key, Object value);
 	/**
-	 * ¸ø¶¨¼üÈ¡Öµ
+	 * ç»™å®šé”®å–å€¼
 	 * @param key
 	 * @return rtnObj
 	 */
 	public Object get(Object key);
 	/**
-	 * Çå¿ÕÈİÆ÷
+	 * æ¸…ç©ºå®¹å™¨
 	 */
 	public void clear();
 	/**
-	 * È¡ÈİÆ·±êÊ¶
+	 * å–å®¹å“æ ‡è¯†
 	 * @return rtnStr
 	 */
 	public String getName();

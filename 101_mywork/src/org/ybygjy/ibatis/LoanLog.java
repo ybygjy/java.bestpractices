@@ -1,7 +1,7 @@
 package org.ybygjy.ibatis;
 
 /**
- * POJO ½èÊé¼ÇÂ¼
+ * POJO å€Ÿä¹¦è®°å½•
  * @author WangYanCheng
  * @version 2010-11-27
  */
@@ -10,11 +10,11 @@ public class LoanLog {
     private Integer logId;
     /** bookId */
     private Integer bookId;
-    /** ½è³öÊ±¼ä */
+    /** å€Ÿå‡ºæ—¶é—´ */
     private String loanTime;
-    /** »¹ÊéÊ±¼ä */
+    /** è¿˜ä¹¦æ—¶é—´ */
     private String returnTime;
-    /** »¹ÊéÈË */
+    /** è¿˜ä¹¦äºº */
     private int readerId;
 
     /**

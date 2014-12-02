@@ -2,7 +2,7 @@ package org.ybygjy.basic.algorithms.queue;
 
 
 /**
- * ÓÅÏÈ¼¶¶ÓÁĞ
+ * ä¼˜å…ˆçº§é˜Ÿåˆ—
  * @author WangYanCheng
  * @version 2011-8-14
  */
@@ -32,15 +32,15 @@ public class PriorityQueue {
         }
     }
     /**
-     * É¾³ı(³ö¶Ó)
-     * @return Êı¾İÏî
+     * åˆ é™¤(å‡ºé˜Ÿ)
+     * @return æ•°æ®é¡¹
      */
     public int remove() {
         return arr[--nItems];
     }
     /**
-     * ²éµ±Ç°×îĞ¡Öµ
-     * @return Êı¾İÏî
+     * æŸ¥å½“å‰æœ€å°å€¼
+     * @return æ•°æ®é¡¹
      */
     public int peekMin() {
         return arr[nItems - 1];
@@ -52,8 +52,8 @@ public class PriorityQueue {
         return maxSize == nItems;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         PriorityQueue pqInst = new PriorityQueue(6);

@@ -15,18 +15,18 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ¸ºÔğÊµÏÖ»ùÓÚÕıÔòµÄÎÄ¼şÄÚÈİ²éÕÒ
+ * è´Ÿè´£å®ç°åŸºäºæ­£åˆ™çš„æ–‡ä»¶å†…å®¹æŸ¥æ‰¾
  * <ol>
- * <li>ÀûÓÃNIO»úÖÆ´¦ÀíÎÄ¼şÁ÷µÄ¶ÁÈ¡¹¤×÷</li>
- * <li>ÀûÓÃJavaÕıÔòÖ§³Ö´¦ÀíÆ¥Åä</li>
+ * <li>åˆ©ç”¨NIOæœºåˆ¶å¤„ç†æ–‡ä»¶æµçš„è¯»å–å·¥ä½œ</li>
+ * <li>åˆ©ç”¨Javaæ­£åˆ™æ”¯æŒå¤„ç†åŒ¹é…</li>
  * </ol>
  * @author WangYanCheng
  * @version 2011-11-1
  */
 public class FileGrep {
-    /** ÎÄ¼ş×Ö·û±àÂë */
+    /** æ–‡ä»¶å­—ç¬¦ç¼–ç  */
     private CharsetDecoder decoder;
-    /** ÎÄ¼şĞĞ */
+    /** æ–‡ä»¶è¡Œ */
     private static Pattern pattern = Pattern.compile(".*\r?\n");
 
     /**
@@ -38,8 +38,8 @@ public class FileGrep {
     }
 
     /**
-     * È¡ÊµÀı
-     * @param charsetInst ×Ö·û¼¯¶ÔÏó
+     * å–å®ä¾‹
+     * @param charsetInst å­—ç¬¦é›†å¯¹è±¡
      * @return fileGrepInst
      */
     public static FileGrep getInst(Charset charsetInst) {
@@ -47,11 +47,11 @@ public class FileGrep {
     }
 
     /**
-     * ÎÄ¼şÄÚÈİÆ¥ÅäÈë¿Ú
-     * @param pattern Æ¥Åä´®
-     * @param fileInst ÎÄ¼ş¶ÔÏó
-     * @return rtnStrArr/null ÎÄ¼şÄÚÈİÆ¥Åä½á¹û
-     * @throws IOException Òì³£ĞÅÏ¢
+     * æ–‡ä»¶å†…å®¹åŒ¹é…å…¥å£
+     * @param pattern åŒ¹é…ä¸²
+     * @param fileInst æ–‡ä»¶å¯¹è±¡
+     * @return rtnStrArr/null æ–‡ä»¶å†…å®¹åŒ¹é…ç»“æœ
+     * @throws IOException å¼‚å¸¸ä¿¡æ¯
      */
     public String[] findResult4Regexp(final String pattern, File fileInst, final int groupIndex)
         throws IOException {
@@ -76,8 +76,8 @@ public class FileGrep {
     }
 
     /**
-     * °´ĞĞÈ¡ÎÄ¼şÄÚÈİ
-     * @param fileInst ÎÄ¼ş
+     * æŒ‰è¡Œå–æ–‡ä»¶å†…å®¹
+     * @param fileInst æ–‡ä»¶
      * @return rtnArr/null
      * @throws IOException IOException
      */
@@ -98,25 +98,25 @@ public class FileGrep {
     }
 
     /**
-     * ÄÚÈİÆ¥Åä·µ»ØµÚÒ»´ÎÆ¥Åä½á¹û
+     * å†…å®¹åŒ¹é…è¿”å›ç¬¬ä¸€æ¬¡åŒ¹é…ç»“æœ
      * <p>
-     * Ê¾Àı:
+     * ç¤ºä¾‹:
      * <pre>
      * Matcher matcherInst = Pattern.compile("@author\s+((\w+\.?)+\w+)\r?\n?").matcher("@author org.ybygjy.FileGrep");
      * </pre>
      * </p>
      * <p>
-     * ×¢ÒâÆ¥Åä·Ö×é±ê¼Ç²ÎÊı£¬·Ö×é±ê¼Ç²ÎÊıÓë²ÎÓëÆ¥ÅäµÄÕıÔò±í´ïÊ½Ïà¹Ø
+     * æ³¨æ„åŒ¹é…åˆ†ç»„æ ‡è®°å‚æ•°ï¼Œåˆ†ç»„æ ‡è®°å‚æ•°ä¸å‚ä¸åŒ¹é…çš„æ­£åˆ™è¡¨è¾¾å¼ç›¸å…³
      * <ol>
-     * <li>0,±íÊ¾È¡µ±Ç°Æ¥Åä´®</li>
-     * <li>1,±íÊ¾È¡µ±Ç°Æ¥Åä´®µÄµÚÒ»¸ö×é</li>
-     * <li>2,±íÊ¾È¡µ±Ç°Æ¥Åä´®µÄµÚ¶ş¸ö×é</li>
-     * <li>3...ÒÀ´ÎÀàÍÆ</li>
+     * <li>0,è¡¨ç¤ºå–å½“å‰åŒ¹é…ä¸²</li>
+     * <li>1,è¡¨ç¤ºå–å½“å‰åŒ¹é…ä¸²çš„ç¬¬ä¸€ä¸ªç»„</li>
+     * <li>2,è¡¨ç¤ºå–å½“å‰åŒ¹é…ä¸²çš„ç¬¬äºŒä¸ªç»„</li>
+     * <li>3...ä¾æ¬¡ç±»æ¨</li>
      * </ol>
      * </p>
-     * @param charBuff ×Ö·ûĞòÁĞ
-     * @param pattern Æ¥ÅäÄ£Ê½
-     * @param groupIndex ÔÚÆ¥Åä³É¹¦Ê±·µ»ØµÄÕıÔòÄ£Ê½Æ¥Åä·Ö×é±ê¼Ç
+     * @param charBuff å­—ç¬¦åºåˆ—
+     * @param pattern åŒ¹é…æ¨¡å¼
+     * @param groupIndex åœ¨åŒ¹é…æˆåŠŸæ—¶è¿”å›çš„æ­£åˆ™æ¨¡å¼åŒ¹é…åˆ†ç»„æ ‡è®°
      * @return rtnArr/null
      */
     private String matchesResult4Single(CharSequence charBuff, Pattern pattern, int groupIndex) {
@@ -128,7 +128,7 @@ public class FileGrep {
     }
 
     /**
-     * ¶ÁÎÄ¼şÄÚÈİ
+     * è¯»æ–‡ä»¶å†…å®¹
      * @param fileInst
      * @throws IOException
      */
@@ -141,20 +141,20 @@ public class FileGrep {
     }
 
     /**
-     * ¶¨Òå»Øµ÷¹æÔò
+     * å®šä¹‰å›è°ƒè§„åˆ™
      * @author WangYanCheng
      * @version 2011-11-1
      */
     interface InnerCallback {
         /**
-         * »Øµ÷·½·¨
-         * @param charBuff ×Ö·ûĞòÁĞ¶ÔÏó
+         * å›è°ƒæ–¹æ³•
+         * @param charBuff å­—ç¬¦åºåˆ—å¯¹è±¡
          */
         void callBack(CharBuffer charBuff);
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args
      */
     public static void main(String[] args) {

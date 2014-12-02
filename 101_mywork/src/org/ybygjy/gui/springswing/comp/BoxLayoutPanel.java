@@ -8,15 +8,15 @@ import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 
 /**
- * ¶¨ÒåÁËÓ¦ÓÃ³ÌĞòµÄÄ³¸ö´øÓĞBoxLayout²¼¾ÖµÄ×é¼ş
+ * å®šä¹‰äº†åº”ç”¨ç¨‹åºçš„æŸä¸ªå¸¦æœ‰BoxLayoutå¸ƒå±€çš„ç»„ä»¶
  * @author WangYanCheng
  * @version 2011-2-16
  */
 @SuppressWarnings("serial")
 public class BoxLayoutPanel extends JPanel {
-    /** boxlayoutÓëÖáÀ©Õ¹Ïà¹Ø²ÎÊı {°´X/YÖáÀ©Õ¹}*/
+    /** boxlayoutä¸è½´æ‰©å±•ç›¸å…³å‚æ•° {æŒ‰X/Yè½´æ‰©å±•}*/
     private int axis;
-    /** µ±Ç°×é¼şÔªËØ¼¯ºÏ */
+    /** å½“å‰ç»„ä»¶å…ƒç´ é›†åˆ */
     private List panelComponents;
 
     /**
@@ -30,14 +30,14 @@ public class BoxLayoutPanel extends JPanel {
 
     /**
      * setter panelComponents
-     * @param panelComponents ×é¼ş¼¯ºÏ
+     * @param panelComponents ç»„ä»¶é›†åˆ
      */
     public void setPanelComponents(List panelComponents) {
         this.panelComponents = panelComponents;
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     public void init() {
         setLayout(new BoxLayout(this, axis));

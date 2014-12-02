@@ -12,7 +12,7 @@ import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 /**
- * °´Å¥Ñ¡ÔñĞ¡Ê¾Àı
+ * æŒ‰é’®é€‰æ‹©å°ç¤ºä¾‹
  * @author WangYanCheng
  * @version 2010-11-10
  */
@@ -50,7 +50,7 @@ public class ButtonSelection extends JFrame {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments
      */
     public static void main(String[] args) {

@@ -7,34 +7,34 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * ConcurrentHashMap#·Ö¶ÎËøÑ§Ï°Êµ¼ù
- * <p>1¡¢·Ö¶ÎËøÓ¦ÓÃÊµ¼ù</p>
- * <p>2¡¢·Ö¶ÎËøµÄÊµÏÖ·ÖÎö</p>
+ * ConcurrentHashMap#åˆ†æ®µé”å­¦ä¹ å®è·µ
+ * <p>1ã€åˆ†æ®µé”åº”ç”¨å®è·µ</p>
+ * <p>2ã€åˆ†æ®µé”çš„å®ç°åˆ†æ</p>
  * @author WangYanCheng
- * @version 2014Äê7ÔÂ30ÈÕ
+ * @version 2014å¹´7æœˆ30æ—¥
  */
 public class ConcurrentMapLockStriping {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      */
     public void doTest() {
-        //ÀûÓÃ¶àÏß³ÌÑéÖ¤ConcurrentHashMapÓëHashMapµÄĞÔÄÜ
-        //10¸öÏß³Ì¸ºÔğËæ»ú´æÊı¾İ
+        //åˆ©ç”¨å¤šçº¿ç¨‹éªŒè¯ConcurrentHashMapä¸HashMapçš„æ€§èƒ½
+        //10ä¸ªçº¿ç¨‹è´Ÿè´£éšæœºå­˜æ•°æ®
         doTestConcurrentHashMap(10);
         doTestHashMap(10);
     }
     /**
-     * Ö´ĞĞÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æ‰§è¡Œå…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         ConcurrentMapLockStriping cmlsInst = new ConcurrentMapLockStriping();
         cmlsInst.doTest();
     }
     private void doTestConcurrentHashMap(int nThreads) {
-        /** ±ÕËø_ÆğÊ¼ÃÅ*/
+        /** é—­é”_èµ·å§‹é—¨*/
         final CountDownLatch startGate = new CountDownLatch(1);
-        /** ±ÕËø_½áÊøÃÅ*/
+        /** é—­é”_ç»“æŸé—¨*/
         final CountDownLatch endGate = new CountDownLatch(nThreads);
         final ConcurrentHashMap<String, Object> concurrentHashMap = new ConcurrentHashMap<String, Object>();
         for (int i = 1; i <= nThreads; i++) {
@@ -57,7 +57,7 @@ public class ConcurrentMapLockStriping {
             long startTime = System.currentTimeMillis();
             startGate.countDown();
             endGate.await();
-            System.out.println("org.ybygjy.jcip.chap5.ConcurrentMapLockStriping.doTestConcurrentHashMap(int)#ºÄÊ±£º" + (new Double(System.currentTimeMillis() - startTime) / 1000));
+            System.out.println("org.ybygjy.jcip.chap5.ConcurrentMapLockStriping.doTestConcurrentHashMap(int)#è€—æ—¶ï¼š" + (new Double(System.currentTimeMillis() - startTime) / 1000));
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
@@ -87,13 +87,13 @@ public class ConcurrentMapLockStriping {
             long startTime = System.currentTimeMillis();
             startGate.countDown();
             endGate.await();
-            System.out.println("org.ybygjy.jcip.chap5.ConcurrentMapLockStriping.doTestHashMap(int)#ºÄÊ±£º" + new Double(System.currentTimeMillis() - startTime) / 1000 );
+            System.out.println("org.ybygjy.jcip.chap5.ConcurrentMapLockStriping.doTestHashMap(int)#è€—æ—¶ï¼š" + new Double(System.currentTimeMillis() - startTime) / 1000 );
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
     }
     class ConcurrentHashMapTest implements Runnable {
-        /** Ñ­»·´ÎÊı*/
+        /** å¾ªç¯æ¬¡æ•°*/
         private static final int MAX_CYCLECOUNT = 10;
         private ConcurrentHashMap<String, Object> concurrentHashMap;
         private String threadName;
@@ -117,7 +117,7 @@ public class ConcurrentMapLockStriping {
         }
     }
     class HashMapTest implements Runnable {
-        /** Ñ­»·´ÎÊı*/
+        /** å¾ªç¯æ¬¡æ•°*/
         private static final int MAX_CYCLECOUNT = 10;
         private Map<String, Object> hashMap;
         private String threadName;

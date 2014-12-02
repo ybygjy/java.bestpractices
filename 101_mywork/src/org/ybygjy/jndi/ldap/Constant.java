@@ -8,7 +8,7 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.InitialDirContext;
 
 /**
- * ¹²ÏíLDAPÊôĞÔÉè¶¨
+ * å…±äº«LDAPå±æ€§è®¾å®š
  * @author WangYanCheng
  * @version 2011-4-26
  */
@@ -37,7 +37,7 @@ public final class Constant {
     }
     /**
      * InnerGetContext
-     * @param env »·¾³
+     * @param env ç¯å¢ƒ
      * @return rtnCtx/null
      */
     private static DirContext innerCreateCtx(Hashtable<String, Object> env) {
@@ -50,11 +50,11 @@ public final class Constant {
         return rtnCtx;
     }
     /**
-     * ·â×°´´½¨Á¬½ÓÄ¿Â¼·şÎñ»·¾³ÅäÖÃ
-     * @param root ¸ù
-     * @param dn ¸ø¶¨dn
-     * @param passwd ÃÜÂë
-     * @return env »·¾³ÅäÖÃ
+     * å°è£…åˆ›å»ºè¿æ¥ç›®å½•æœåŠ¡ç¯å¢ƒé…ç½®
+     * @param root æ ¹
+     * @param dn ç»™å®šdn
+     * @param passwd å¯†ç 
+     * @return env ç¯å¢ƒé…ç½®
      */
     public static Hashtable<String, Object> buildCtxEnv(String root, String dn, String passwd) {
         Hashtable<String, Object> env = new Hashtable<String, Object>();
@@ -67,9 +67,9 @@ public final class Constant {
     }
     
     /**
-     * ÊÊÅä°ó¶¨ÈÏÖ¤
-     * @param dn ÓÃ»§ÌõÄ¿£¬<p><strong>Çë×¢Òâ£º</strong>´Ë²ÎÊıĞèÒªÖ¸¶¨ÓÃ»§ÌõÄ¿DN¶ø²»ÊÇµ¥´æµÄÓÃ»§±àÂë</p>
-     * @param passwd ÃÜÂë
+     * é€‚é…ç»‘å®šè®¤è¯
+     * @param dn ç”¨æˆ·æ¡ç›®ï¼Œ<p><strong>è¯·æ³¨æ„ï¼š</strong>æ­¤å‚æ•°éœ€è¦æŒ‡å®šç”¨æˆ·æ¡ç›®DNè€Œä¸æ˜¯å•å­˜çš„ç”¨æˆ·ç¼–ç </p>
+     * @param passwd å¯†ç 
      * @return ctx DirContext
      */
     public static DirContext createCtx(String dn, String passwd){

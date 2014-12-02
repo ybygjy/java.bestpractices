@@ -12,7 +12,7 @@ import org.ybygjy.pattern.factory.methodfac.gardenimpl.GrapeGardener;
 public class FarmsMgr {
     /**
      * debug portal
-     * @param args 参数列表
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         FruitGardener fruitGarden = new AppleGardener();

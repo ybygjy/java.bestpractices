@@ -70,7 +70,7 @@ public class Servlet extends HttpServlet {
         } else if ("calendar".equals(act)) {
             dispatchCalendar(request, response);
         } else {
-            request.setAttribute("userName", "ÍõÑÓ³É");
+            request.setAttribute("userName", "ç‹å»¶æˆ");
             request.getRequestDispatcher("testRedirecter.jsp").forward(request, response);
             response.sendRedirect("testRedirecter.jsp");
         }
@@ -79,7 +79,7 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * µÇÂ½
+     * ç™»é™†
      * @param request request4http Instance
      * @param response response4http Instance
      */
@@ -88,20 +88,20 @@ public class Servlet extends HttpServlet {
         boolean loginFlag = false;
         Map<String, Object> loginRtnData = new HashMap<String, Object>();
         if (null == userName || "".equals(userName)) {
-            loginRtnData.put("errorMessage", "µÇÂ½Ê§°Ü£¬ÓÃ»§ÃûÎª¿Õ£¡");
+            loginRtnData.put("errorMessage", "ç™»é™†å¤±è´¥ï¼Œç”¨æˆ·åä¸ºç©ºï¼");
         } else {
             String password = request.getParameter("userPW");
             if (null == password || "".equals(password)) {
-                loginRtnData.put("errorMessage", "µÇÂ½Ê§°Ü£¬ÃÜÂë²»ÄÜÎª¿Õ£¡");
+                loginRtnData.put("errorMessage", "ç™»é™†å¤±è´¥ï¼Œå¯†ç ä¸èƒ½ä¸ºç©ºï¼");
             } else if ("admin".equals(userName) || "123456".equals(password)) {
                 Map<String, String> tmpMap = new HashMap<String, String>();
-                tmpMap.put("name", "ÍõÑÓ³É");
+                tmpMap.put("name", "ç‹å»¶æˆ");
                 tmpMap.put("age", "28");
                 tmpMap.put("email", "ybygjy@gmail.com");
                 loginRtnData.put("data", tmpMap);
                 loginFlag = true;
                 request.getSession().setAttribute("LoginUser",
-                    new UserEntity("ÍõÑÓ³É", request.getContextPath()));
+                    new UserEntity("ç‹å»¶æˆ", request.getContextPath()));
             }
         }
         loginRtnData.put("success", loginFlag);
@@ -109,7 +109,7 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * ²éÑ¯
+     * æŸ¥è¯¢
      * @param request request
      * @param response response
      */
@@ -118,21 +118,21 @@ public class Servlet extends HttpServlet {
         if ("bbs".equals(category)) {
             Map<String, Object> resultMap = new HashMap<String, Object>();
             resultMap.put("PK_CODE", "00001");
-            resultMap.put("CONTENT", "ÄÚÈİ_1");
-            resultMap.put("TIME", "2009Äê12ÔÂ30ÈÕ");
+            resultMap.put("CONTENT", "å†…å®¹_1");
+            resultMap.put("TIME", "2009å¹´12æœˆ30æ—¥");
             resultMap.put("LEVEL", "5");
             resultMap.put("PK_CODE", "00002");
-            resultMap.put("CONTENT", "ÄÚÈİ_2");
-            resultMap.put("TIME", "2009Äê12ÔÂ31ÈÕ");
+            resultMap.put("CONTENT", "å†…å®¹_2");
+            resultMap.put("TIME", "2009å¹´12æœˆ31æ—¥");
             resultMap.put("LEVEL", "6");
             Map<String, Object> objInst = new HashMap<String, Object>();
             objInst.put("totalCount", "2");
-            objInst.put("mes", "ĞÅÏ¢");
+            objInst.put("mes", "ä¿¡æ¯");
             objInst.put("nbbs", resultMap);
             ResponseUtils.getInstance().doResponse(response, objInst);
         } else if ("getJavaScript".equals(category)) {
             String resStr = "var fourstPageObj = function(){return {onLoad:function()"
-                + " {currPageObj.callBack('µÚËÄÖÖ·½Ê½¼ÓÔØJavaScript¡£¡£');}}}();fourstPageObj.onLoad();";
+                + " {currPageObj.callBack('ç¬¬å››ç§æ–¹å¼åŠ è½½JavaScriptã€‚ã€‚');}}}();fourstPageObj.onLoad();";
             ResponseUtils.getInstance().doResponse(response, resStr);
         } else if ("doDownload".equals(category)) {
             try {
@@ -155,9 +155,9 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * Flex²âÊÔ¸¨Öú
-     * @param request ÇëÇóÍ·
-     * @param response ÏìÓ¦Ìå
+     * Flexæµ‹è¯•è¾…åŠ©
+     * @param request è¯·æ±‚å¤´
+     * @param response å“åº”ä½“
      */
     private void doTestFlex(HttpServletRequest request, HttpServletResponse response) {
         Map paramMap = request.getParameterMap();
@@ -169,9 +169,9 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * ½ÓÊÕÊı¾İ<br>
-     * <i>×¢Òâ£ºrequest.getInputStream()±È½ÏÌØÊâ</i> <li>
-     * request.getInputStream()Ç°²»ÄÜÊ¹ÓÃrequest»ñÈ¡get·½Ê½´«µİ</li>
+     * æ¥æ”¶æ•°æ®<br>
+     * <i>æ³¨æ„ï¼šrequest.getInputStream()æ¯”è¾ƒç‰¹æ®Š</i> <li>
+     * request.getInputStream()å‰ä¸èƒ½ä½¿ç”¨requestè·å–getæ–¹å¼ä¼ é€’</li>
      * @param request request
      * @param response response
      */
@@ -199,9 +199,9 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * ÎÄ¼şÉÏ´«
-     * @param request ÇëÇóÍ·
-     * @param response ÏìÓ¦Í·
+     * æ–‡ä»¶ä¸Šä¼ 
+     * @param request è¯·æ±‚å¤´
+     * @param response å“åº”å¤´
      * @throws IOException IOException
      */
     private void fileUpload(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -217,8 +217,8 @@ public class Servlet extends HttpServlet {
 
     /**
      * dataSwitch
-     * @param request ÇëÇóÍ·
-     * @param response ÏìÓ¦Í·
+     * @param request è¯·æ±‚å¤´
+     * @param response å“åº”å¤´
      */
     private void upload4PDA(HttpServletRequest request, HttpServletResponse response) {
         InputStream ins = null;
@@ -243,7 +243,7 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * ÏÂÔØ
+     * ä¸‹è½½
      * @param response response
      */
     private void download4PDA(HttpServletResponse response) {
@@ -275,7 +275,7 @@ public class Servlet extends HttpServlet {
     }
 
     /**
-     * ´ò¿ªÎÄ¼ş
+     * æ‰“å¼€æ–‡ä»¶
      * @param request {@link HttpServletRequest}
      * @param response {@link HttpServletResponse}
      */
@@ -304,15 +304,15 @@ public class Servlet extends HttpServlet {
         }
     }
     /**
-     * ¸ºÔğCalendarÄ£¿éÂß¼­´¦Àí
-     * @param request ÇëÇóÍ·
-     * @param response ÏìÓ¦Ìå
+     * è´Ÿè´£Calendaræ¨¡å—é€»è¾‘å¤„ç†
+     * @param request è¯·æ±‚å¤´
+     * @param response å“åº”ä½“
      */
     private void dispatchCalendar(HttpServletRequest request, HttpServletResponse response) {
         String subAct = request.getParameter("subAct");
 RequestUtils.doPrintParam(request);
         if ("qryEvent".equals(subAct)) {
-            //ÕûÀí²éÑ¯¶ÔÏó
+            //æ•´ç†æŸ¥è¯¢å¯¹è±¡
             Object queryBean = new Object();
             String rtnStr = new CalendarMgr().queryEvents2JSON(queryBean);
             ResponseUtils.getInstance().doResponse(response, rtnStr);

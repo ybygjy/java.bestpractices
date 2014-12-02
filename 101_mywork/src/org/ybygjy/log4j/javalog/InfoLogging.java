@@ -14,7 +14,7 @@ import java.util.logging.StreamHandler;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * InfoLogging基础应用
+ * InfoLogging鍩虹搴旂敤
  * @author WangYanCheng
  * @version 2010-10-19
  */
@@ -27,8 +27,8 @@ public class InfoLogging {
     }
 
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      * @throws Exception Exception
      */
     public static void main(String[] args) throws Exception {
@@ -124,7 +124,7 @@ class SimpleFilter implements TestInterface {
             handle.setFormatter(new Formatter() {
                 @Override
                 public String format(LogRecord record) {
-                    return "自定义数据Formatter:" + record.getLoggerName() + "$" + record.getMessage() + "==>"
+                    return "鑷畾涔夋暟鎹瓼ormatter:" + record.getLoggerName() + "$" + record.getMessage() + "==>"
                         + record.getMillis();
                 }
             });

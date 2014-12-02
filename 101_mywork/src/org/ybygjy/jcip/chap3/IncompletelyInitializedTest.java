@@ -1,12 +1,12 @@
 package org.ybygjy.jcip.chap3;
 
 /**
- * Î´ÍêÈ«³õÊ¼»¯
- * 1.Ê×ÏÈ²ÉÓÃÁË¼Ì³Ğ»úÖÆ
- * 2.¸¸ÀàºÍ×ÓÀà¶¼ÓĞgetName·½·¨
- * 3.×ÓÀàoverride¸¸ÀàgetName·½·¨
- * 4.×ÓÀà´ø²Î¹¹Ôìº¯Êıµ÷ÓÃ¸¸Àà´ø²Î¹¹Ôìº¯Êı
- * 5.×îÖØÒªµÄÒ»µã¾ÍÊÇ£¬ÀàÊµÀıÔÚ½øĞĞ³õÊ¼»¯¹ı³ÌÖĞ±»Íâ²¿ÆäËüÊµÀı·ÃÎÊ£¬µ¼ÖÂÍâ²¿ÊµÀı²úÉú·ÇÕı³£×´Ì¬
+ * æœªå®Œå…¨åˆå§‹åŒ–
+ * 1.é¦–å…ˆé‡‡ç”¨äº†ç»§æ‰¿æœºåˆ¶
+ * 2.çˆ¶ç±»å’Œå­ç±»éƒ½æœ‰getNameæ–¹æ³•
+ * 3.å­ç±»overrideçˆ¶ç±»getNameæ–¹æ³•
+ * 4.å­ç±»å¸¦å‚æ„é€ å‡½æ•°è°ƒç”¨çˆ¶ç±»å¸¦å‚æ„é€ å‡½æ•°
+ * 5.æœ€é‡è¦çš„ä¸€ç‚¹å°±æ˜¯ï¼Œç±»å®ä¾‹åœ¨è¿›è¡Œåˆå§‹åŒ–è¿‡ç¨‹ä¸­è¢«å¤–éƒ¨å…¶å®ƒå®ä¾‹è®¿é—®ï¼Œå¯¼è‡´å¤–éƒ¨å®ä¾‹äº§ç”Ÿéæ­£å¸¸çŠ¶æ€
  * @author WangYanCheng
  * @version 2014-7-22
  */
@@ -18,26 +18,26 @@ public class IncompletelyInitializedTest {
     }
 }
 /**
- * ¸¸Àà
+ * çˆ¶ç±»
  */
 class Node {
 	private String nodeName;
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * @param leaker {@link Leaker}
 	 */
     public Node(Leaker leaker) {
         leaker.leak(this);
     }
     /**
-     * ¹¹Ôìº¯Êı
+     * æ„é€ å‡½æ•°
      * @param nodeName nodeName
      */
     public Node(String nodeName) {
     	this.nodeName = nodeName;
     }
     /**
-     * ¿É±»×ÓÀà¸²¸ÇµÄ·½·¨
+     * å¯è¢«å­ç±»è¦†ç›–çš„æ–¹æ³•
      * @return nameStr
      */
     protected String getName() {
@@ -45,12 +45,12 @@ class Node {
     }
 }
 /**
- * ×ÓÀà
+ * å­ç±»
  */
 class NamingNode extends Node {
     private String nodeName;
     /**
-     * ¹¹Ôìº¯Êı
+     * æ„é€ å‡½æ•°
      * @param leaker {@link Leaker}
      * @param nodeName nameStr
      */
@@ -64,7 +64,7 @@ class NamingNode extends Node {
     }
 }
 /**
- * ¸ÃÀàÊµÀı¸ºÔğÔÚ{@link NamingNode}Î´ÍêÈ«³õÊ¼»¯¹ı³ÌÖĞ·ÃÎÊ{@link NamingNode}ÊµÀı
+ * è¯¥ç±»å®ä¾‹è´Ÿè´£åœ¨{@link NamingNode}æœªå®Œå…¨åˆå§‹åŒ–è¿‡ç¨‹ä¸­è®¿é—®{@link NamingNode}å®ä¾‹
  * @author WangYanCheng
  * @version 2014-07-22
  */

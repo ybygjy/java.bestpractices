@@ -8,14 +8,14 @@ import javax.swing.JFrame;
 import javax.swing.JSlider;
 
 /**
- * 监测事件信息测试
+ * 鐩戞祴浜嬩欢淇℃伅娴嬭瘯
  * @author WangYanCheng
  * @version 2011-1-26
  */
 public class EventTracerTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -29,7 +29,7 @@ public class EventTracerTest {
 }
 
 /**
- * Swing容器组件
+ * Swing瀹瑰櫒缁勪欢
  * @author WangYanCheng
  * @version 2011-1-26
  */

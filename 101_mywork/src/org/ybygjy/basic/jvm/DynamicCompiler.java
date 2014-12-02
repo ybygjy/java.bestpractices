@@ -12,18 +12,18 @@ import javax.tools.ToolProvider;
 import javax.tools.JavaCompiler.CompilationTask;
 
 /**
- * ²âÊÔ¶¯Ì¬±àÒë£¬Óë×÷ÓÃÓòÏà¹Ø
- * <p>1¡¢±àÒë²ÎÊýÉèÖÃÖ®±àÒëºóÎÄ¼þ´æ´¢Â·¾¶(¼û<code>options -d</code>ÊôÐÔ)<p>
- * <p>1.1¡¢½¨Òé´ËÏî²ÎÊý¹æ¶¨Îª±ØÑ¡</p>
- * <p>1.2¡¢Ä¬ÈÏ±àÒëºóµÄclassÎÄ¼þ»á´æ´¢ÔÚÄ¿Â¼¶¥²ã</p>
- * <p>1.3¡¢²¹³äËµÃ÷</p>
+ * æµ‹è¯•åŠ¨æ€ç¼–è¯‘ï¼Œä¸Žä½œç”¨åŸŸç›¸å…³
+ * <p>1ã€ç¼–è¯‘å‚æ•°è®¾ç½®ä¹‹ç¼–è¯‘åŽæ–‡ä»¶å­˜å‚¨è·¯å¾„(è§<code>options -d</code>å±žæ€§)<p>
+ * <p>1.1ã€å»ºè®®æ­¤é¡¹å‚æ•°è§„å®šä¸ºå¿…é€‰</p>
+ * <p>1.2ã€é»˜è®¤ç¼–è¯‘åŽçš„classæ–‡ä»¶ä¼šå­˜å‚¨åœ¨ç›®å½•é¡¶å±‚</p>
+ * <p>1.3ã€è¡¥å……è¯´æ˜Ž</p>
  * <table cellpadding=1 cellspacing=1 border=1 summary="Capturing group numberings">
- * <tr><th>Éè¶¨Öµ</th><th>¶ÔÓ¦Êä³ö</th></tr>
- * <tr><td>.</td><td>Ïà¶Ô¶¥²ãÄ¿Â¼Â·¾¶½øÐÐÊä³ö£¬ÔÚÊ¹ÓÃÃüÁîÐÐÊ±¿ÉÕý³£¹¤×÷£¬µ«Ê¹ÓÃIDEÔËÐÐÊ±³ÌÐòÏà¶ÔÄ¿Â¼Â·¾¶²»ÕýÈ·¡£</td></tr>
- * <tr><td>¾ø¶ÔÂ·¾¶Èç(C://)</td><td>¶ÔÓ¦Êä³öÔÚC://£¬µ«¿¼ÂÇµ½ClassLoader¼ÓÔØÊ±ÐèÒªÖ¸¶¨´ËÄ¿Â¼´øÀ´²»±ØÒªµÄÂé·³£¬¹Ê¿ÉÓÃÐÔ²»Ç¿¡£</td></tr>
- * <tr><td>³ÌÐòÄ¿Â¼¾ø¶ÔÂ·¾¶Èç(D:\\mywork\\webRoot\\classes)</td><td>¸ÃÅäÖÃÒ²²»ÍÆ¼ö£¬¸ÃÅäÖÃÔÚ½ñºó´úÂëÒÆÖ²Ê±ÎÊÌâ¾Í»áÍ¹ÏÔ</td></tr>
- * <tr><td>Ê¹ÓÃÄ¿Â¼Ïà¶ÔÂ·¾¶(./webRoot/WEB-INF/classes)</td><td>ÍÆ¼öÔÚÓÐÏÞÌõ¼þÏÂÊ¹ÓÃ´Ë°ì·¨</td></tr>
- * <tr><td>¿¼ÂÇ×÷ÎªÒ»¸öBeanµÄÊôÐÔ</td><td>´Ë·½·¨Áé»î£¬ÊÇ½â¾ö´ËÀàÎÊÌâµÄ²»¶þÑ¡Ôñ</td></tr>
+ * <tr><th>è®¾å®šå€¼</th><th>å¯¹åº”è¾“å‡º</th></tr>
+ * <tr><td>.</td><td>ç›¸å¯¹é¡¶å±‚ç›®å½•è·¯å¾„è¿›è¡Œè¾“å‡ºï¼Œåœ¨ä½¿ç”¨å‘½ä»¤è¡Œæ—¶å¯æ­£å¸¸å·¥ä½œï¼Œä½†ä½¿ç”¨IDEè¿è¡Œæ—¶ç¨‹åºç›¸å¯¹ç›®å½•è·¯å¾„ä¸æ­£ç¡®ã€‚</td></tr>
+ * <tr><td>ç»å¯¹è·¯å¾„å¦‚(C://)</td><td>å¯¹åº”è¾“å‡ºåœ¨C://ï¼Œä½†è€ƒè™‘åˆ°ClassLoaderåŠ è½½æ—¶éœ€è¦æŒ‡å®šæ­¤ç›®å½•å¸¦æ¥ä¸å¿…è¦çš„éº»çƒ¦ï¼Œæ•…å¯ç”¨æ€§ä¸å¼ºã€‚</td></tr>
+ * <tr><td>ç¨‹åºç›®å½•ç»å¯¹è·¯å¾„å¦‚(D:\\mywork\\webRoot\\classes)</td><td>è¯¥é…ç½®ä¹Ÿä¸æŽ¨èï¼Œè¯¥é…ç½®åœ¨ä»ŠåŽä»£ç ç§»æ¤æ—¶é—®é¢˜å°±ä¼šå‡¸æ˜¾</td></tr>
+ * <tr><td>ä½¿ç”¨ç›®å½•ç›¸å¯¹è·¯å¾„(./webRoot/WEB-INF/classes)</td><td>æŽ¨èåœ¨æœ‰é™æ¡ä»¶ä¸‹ä½¿ç”¨æ­¤åŠžæ³•</td></tr>
+ * <tr><td>è€ƒè™‘ä½œä¸ºä¸€ä¸ªBeançš„å±žæ€§</td><td>æ­¤æ–¹æ³•çµæ´»ï¼Œæ˜¯è§£å†³æ­¤ç±»é—®é¢˜çš„ä¸äºŒé€‰æ‹©</td></tr>
  * </table>
  * @author WangYanCheng
  * @version 2011-2-18
@@ -75,7 +75,7 @@ public class DynamicCompiler {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) throws Exception {

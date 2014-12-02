@@ -10,7 +10,7 @@ import org.ybygjy.basic.thinking.thread.testframework.state.InvariantOK;
 import org.ybygjy.basic.thinking.thread.testframework.state.InvariantState;
 
 /**
- * 线程主题_正确停止线程
+ * 绾跨▼涓婚_姝ｇ‘鍋滄绾跨▼
  * @author WangYanCheng
  * @version 2010-10-8
  */
@@ -70,8 +70,8 @@ public class Thread_Stop extends Thread implements Invariant {
     }
 
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         try {

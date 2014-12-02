@@ -4,7 +4,7 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 /**
- * 事件机制-->JavaBean模式-->bound property pattern
+ * 浜嬩欢鏈哄埗-->JavaBean妯″紡-->bound property pattern
  * @author WangYanCheng
  * @version 2010-2-20
  */
@@ -23,7 +23,7 @@ public class Thermostat implements PropertyChangeListener {
      */
     public void propertyChange(PropertyChangeEvent evt) {
         if (debug) {
-            String debugTmpl = "事件源{@ES@},事件标记{@FL@},PropagationId{@PI@},新值{@NV@},旧值{@OV@}";
+            String debugTmpl = "浜嬩欢婧恵@ES@},浜嬩欢鏍囪{@FL@},PropagationId{@PI@},鏂板�納@NV@},鏃у�納@OV@}";
             System.out.println(debugTmpl
                     .replaceAll("@ES@", evt.getSource().toString())
                     .replaceAll("@NV@", evt.getNewValue().toString())

@@ -4,12 +4,12 @@ import org.ybygjy.pattern.state.GumballMachine;
 import org.ybygjy.pattern.state.State;
 
 /**
- * 售出
+ * 鍞嚭
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public class SoldState implements State {
-    /**持有引用*/
+    /**鎸佹湁寮曠敤*/
     private GumballMachine gumballMachine;
     /**
      * Constructor

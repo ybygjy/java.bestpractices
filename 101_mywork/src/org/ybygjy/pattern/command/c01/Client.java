@@ -1,17 +1,17 @@
 package org.ybygjy.pattern.command.c01;
 
 /**
- * ¿Í»§¶Ë
+ * å®¢æˆ·ç«¯
  * @author WangYanCheng
  * @version 2012-12-10
  */
 public class Client {
     public static void main(String[] args) {
-        //ÃüÁîµÄ½ÓÊÕÕß
+        //å‘½ä»¤çš„æ¥æ”¶è€…
         Receiver receiver = new Receiver();
-        //ÃüÁî
+        //å‘½ä»¤
         Command command = new ConcreateCommand(receiver);
-        //ÃüÁîµÄµ÷ÓÃÕß
+        //å‘½ä»¤çš„è°ƒç”¨è€…
         Invoker invoker = new Invoker(command);
         invoker.invoke();
     }

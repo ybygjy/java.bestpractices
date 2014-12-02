@@ -3,20 +3,20 @@ package org.ybygjy.jcip.chap12;
 import junit.framework.TestCase;
 
 /**
- * ¶ÓÁĞĞÔÄÜ²âÊÔ
+ * é˜Ÿåˆ—æ€§èƒ½æµ‹è¯•
  * @author WangYanCheng
- * @version 2014Äê11ÔÂ6ÈÕ
+ * @version 2014å¹´11æœˆ6æ—¥
  */
 public class BoundedBufferTest extends TestCase {
 	/**
-	 * ¶ÓÁĞÎª¿Õ
+	 * é˜Ÿåˆ—ä¸ºç©º
 	 */
 	public void testIsEmptyWhenConstructed() {
 		BoundedBuffer<Integer> boundedBuffObj = new BoundedBuffer<Integer>(10);
 		assertTrue(boundedBuffObj.isEmpty());
 	}
 	/**
-	 * ¶ÓÁĞÂú
+	 * é˜Ÿåˆ—æ»¡
 	 * @throws InterruptedException
 	 */
 	public void testIsFullAfterPuts() throws InterruptedException {
@@ -28,9 +28,9 @@ public class BoundedBufferTest extends TestCase {
 		assertFalse(boundedBuffObj.isEmpty());
 	}
 	/**
-	 * ²âÊÔ×èÈûĞĞÎªÒÔ¼°¶ÔÖĞ¶ÏµÄÏìÓ¦ĞÔ
-	 * <p>´Ó²âÊÔÏß³Ì´´½¨Ò»¸ö¶ÀÁ¢µÄÏß³Ì£¬¸ÃÏß³Ì¸ºÔğ×èÈû²âÊÔµÄÊÂÇé¡£</p>
-	 * <p>Ö÷Ïß³Ì¿ÉÀûÓÃ´´½¨µÄ¶ÀÁ¢Ïß³Ì×´Ì¬È·¶¨²âÊÔÊÇ·ñ³É¹¦</p>
+	 * æµ‹è¯•é˜»å¡è¡Œä¸ºä»¥åŠå¯¹ä¸­æ–­çš„å“åº”æ€§
+	 * <p>ä»æµ‹è¯•çº¿ç¨‹åˆ›å»ºä¸€ä¸ªç‹¬ç«‹çš„çº¿ç¨‹ï¼Œè¯¥çº¿ç¨‹è´Ÿè´£é˜»å¡æµ‹è¯•çš„äº‹æƒ…ã€‚</p>
+	 * <p>ä¸»çº¿ç¨‹å¯åˆ©ç”¨åˆ›å»ºçš„ç‹¬ç«‹çº¿ç¨‹çŠ¶æ€ç¡®å®šæµ‹è¯•æ˜¯å¦æˆåŠŸ</p>
 	 */
 	public void testTakeBlocksWhenEmpty() {
 		final BoundedBuffer<Integer> boundedBuffObj = new BoundedBuffer<Integer>(10);

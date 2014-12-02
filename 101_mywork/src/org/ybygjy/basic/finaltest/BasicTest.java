@@ -1,6 +1,6 @@
 package org.ybygjy.basic.finaltest;
 /**
- * finalÀàĞÍ¹Ø¼ü×Ö²âÊÔ
+ * finalç±»å‹å…³é”®å­—æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-8-12
  */
@@ -13,9 +13,9 @@ public class BasicTest {
         return new InnerClass();
     }
     /**
-     * ×¢Òâ²ÎÊıÉùÃ÷ÁËfinal
-     * <p>1¡¢±êÊ¶¸Ãº¯Êı²»ÄÜĞŞ¸Ä´«µİ²ÎÊıÊµÀıµÄÄÚ´æµØÖ·
-     * <p>2¡¢µ«¿ÉÒÔĞŞ¸Ä¸Ã²ÎÊıÄÚ²¿±äÁ¿ÒıÓÃµÄÄÚ´æµØÖ·
+     * æ³¨æ„å‚æ•°å£°æ˜äº†final
+     * <p>1ã€æ ‡è¯†è¯¥å‡½æ•°ä¸èƒ½ä¿®æ”¹ä¼ é€’å‚æ•°å®ä¾‹çš„å†…å­˜åœ°å€
+     * <p>2ã€ä½†å¯ä»¥ä¿®æ”¹è¯¥å‚æ•°å†…éƒ¨å˜é‡å¼•ç”¨çš„å†…å­˜åœ°å€
      * @param innerClass
      */
     public void doWork(final InnerClass innerClass) {
@@ -66,8 +66,8 @@ public class BasicTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         new Thread(new Runnable() {

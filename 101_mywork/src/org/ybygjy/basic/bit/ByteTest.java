@@ -3,20 +3,20 @@ package org.ybygjy.basic.bit;
 import java.util.Random;
 
 /**
- * ÓëbyteÏà¹ØµÄ²âÊÔ
+ * ä¸byteç›¸å…³çš„æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-6-12
  */
 public class ByteTest {
     /**
-     * ÆÕÍ¨×Ö½Ú´òÓ¡
+     * æ™®é€šå­—èŠ‚æ‰“å°
      */
     public void doPrintByte() {
         byte b1 = 127;
         p(b1);
     }
     /**
-     * ÒÆÎ»ÔËËã
+     * ç§»ä½è¿ç®—
      * @param inParam inParam
      */
     public void doShiftTest(int[] inParam) {
@@ -27,7 +27,7 @@ public class ByteTest {
         }
     }
     /**
-     * ¸ºÔğ²âÊÔÊı×é×÷ÓÃÓò
+     * è´Ÿè´£æµ‹è¯•æ•°ç»„ä½œç”¨åŸŸ
      * @param byteArr byteArr
      */
     public void doDomainTest(byte[] byteArr) {
@@ -37,7 +37,7 @@ public class ByteTest {
         }
     }
     /**
-     * ¸ºÔğ²âÊÔÊı×é×÷ÓÃÓòÈë¿Ú
+     * è´Ÿè´£æµ‹è¯•æ•°ç»„ä½œç”¨åŸŸå…¥å£
      */
     public void doDomainTestMain() {
         byte[] byteArr = new byte[16];
@@ -45,48 +45,48 @@ public class ByteTest {
         System.out.println(new String(byteArr));
     }
     /**
-     * ²âÊÔ¶ş½øÖÆËÄÔòÔËËã
+     * æµ‹è¯•äºŒè¿›åˆ¶å››åˆ™è¿ç®—
      */
     public void doTest() {
         int flag = 0xF;
         p(Integer.toBinaryString(flag));
-        //ÓÒµÚ2Î»±ä³É1111-->1011
+        //å³ç¬¬2ä½å˜æˆ1111-->1011
         flag = flag & ~(1 << 2);
-        p("ÓÒµÚ3Î»±ä³É0:" + Integer.toBinaryString(flag));
+        p("å³ç¬¬3ä½å˜æˆ0:" + Integer.toBinaryString(flag));
         flag = flag ^ (1 << 2);
-        p("ÓÒµÚ3Î»È¡·´   :" + Integer.toBinaryString(flag));
+        p("å³ç¬¬3ä½å–å   :" + Integer.toBinaryString(flag));
         flag = flag & ((1 << 3) - 1);
-        p("È¡Î´3Î»        :" + Integer.toBinaryString(flag));
+        p("å–æœª3ä½        :" + Integer.toBinaryString(flag));
         flag = flag & ((1 << 2) - 1);
-        p("È¡Î´kÎ»k=2:" + Integer.toBinaryString(flag));
+        p("å–æœªkä½k=2:" + Integer.toBinaryString(flag));
         flag = (flag >> (2 - 1)) & 1;
-        p("È¡ÓÒÊıkÎ»k=2:" + Integer.toBinaryString(flag));
+        p("å–å³æ•°kä½k=2:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag | ((1 << 3) - 1);
-        p("ÓÒkÎ»±äÎª1,k=3:" + Integer.toBinaryString(flag));
+        p("å³kä½å˜ä¸º1,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag & (~((1 << 3) - 1));
-        p("ÓÒkÎ»±äÎª0,k=3:" + Integer.toBinaryString(flag));
+        p("å³kä½å˜ä¸º0,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag ^ ((1 << 3) - 1);
-        p("ÓÒkÎ»È¡·´,k=3:" + Integer.toBinaryString(flag));
+        p("å³kä½å–å,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag & (flag + 1);
-        p("Á¬ĞøµÄ1ÖÃÎª0,k=3:" + Integer.toBinaryString(flag));
+        p("è¿ç»­çš„1ç½®ä¸º0,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag | (flag + 1);
-        p("µÚÒ»¸ö0ÖÃÎª1,k=3:" + Integer.toBinaryString(flag));
+        p("ç¬¬ä¸€ä¸ª0ç½®ä¸º1,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag | (flag - 1);
-        p("Á¬ĞøµÄ0ÖÃÎª1,k=3:" + Integer.toBinaryString(flag));
+        p("è¿ç»­çš„0ç½®ä¸º1,k=3:" + Integer.toBinaryString(flag));
         flag = (flag ^ (flag + 1)) >> 1;
-        p("È¡Á¬ĞøµÄ1,k=3:" + Integer.toBinaryString(flag));
+        p("å–è¿ç»­çš„1,k=3:" + Integer.toBinaryString(flag));
         flag = 0xF;
         flag = flag & (flag ^ (flag - 1));
-        p("È¡µÚÒ»¸ö1ÓÒ±ß,k=3:" + Integer.toBinaryString(flag));
+        p("å–ç¬¬ä¸€ä¸ª1å³è¾¹,k=3:" + Integer.toBinaryString(flag));
     }
     /**
-     * ²âÊÔ¹¤¾ß,´òÓ¡
+     * æµ‹è¯•å·¥å…·,æ‰“å°
      * @param obj obj
      */
     public static void p(Object obj) {
@@ -101,8 +101,8 @@ public class ByteTest {
         System.out.println(sbuf.toString());
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         ByteTest btInst = new ByteTest();

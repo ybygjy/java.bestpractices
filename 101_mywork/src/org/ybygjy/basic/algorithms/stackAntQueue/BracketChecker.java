@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * ×Ö·û´®·Ö¸î·ûÑéÖ¤
+ * å­—ç¬¦ä¸²åˆ†å‰²ç¬¦éªŒè¯
  * @author WangYanCheng
  * @version 2011-8-8
  */
@@ -58,17 +58,17 @@ public class BracketChecker {
     }
 
     /**
-     * Âß¼­´¦ÀíÈë¿Ú
+     * é€»è¾‘å¤„ç†å…¥å£
      */
     public void doWork() {
-        System.out.println("ÇëÊäÈë£º");
+        System.out.println("è¯·è¾“å…¥ï¼š");
         System.out.flush();
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String tmpS;
         try {
             while ((tmpS = reader.readLine()) != null) {
                 if (doChecker(tmpS)) {
-                    System.out.println(tmpS + " ÑéÖ¤³É¹¦¡£");
+                    System.out.println(tmpS + " éªŒè¯æˆåŠŸã€‚");
                 } else if ("q!".equals(tmpS)) {
                     break;
                 }
@@ -87,8 +87,8 @@ public class BracketChecker {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         BracketChecker bcInst = new BracketChecker();
@@ -107,16 +107,16 @@ public class BracketChecker {
         }
 
         /**
-         * ÈëÕ»
-         * @param s ÔªËØ
+         * å…¥æ ˆ
+         * @param s å…ƒç´ 
          */
         public void push(char s) {
             this.arr[++top] = s;
         }
 
         /**
-         * ³öÕ»
-         * @return ÔªËØ
+         * å‡ºæ ˆ
+         * @return å…ƒç´ 
          */
         public char pop() {
             return this.arr[top--];

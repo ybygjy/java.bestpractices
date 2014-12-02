@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import org.ybygjy.web.log.LogMgr;
 
 /**
- * 负责应用服务器启动时的资源加载、初始化
+ * 璐熻矗搴旂敤鏈嶅姟鍣ㄥ惎鍔ㄦ椂鐨勮祫婧愬姞杞姐�佸垵濮嬪寲
  * @author WangYanCheng
  * @version 2010-8-16
  */

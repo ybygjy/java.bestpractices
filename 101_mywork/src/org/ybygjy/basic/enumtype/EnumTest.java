@@ -3,7 +3,7 @@ package org.ybygjy.basic.enumtype;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * Ñ§Ï°enumerationÀàĞÍ
+ * å­¦ä¹ enumerationç±»å‹
  * @author WangYanCheng
  * @version 2010-9-20
  */
@@ -25,7 +25,7 @@ public class EnumTest implements TestInterface {
     }
 
     /**
-     * ¶¨Òå²âÊÔÓÃÃ¶¾ÙÀàĞÍ
+     * å®šä¹‰æµ‹è¯•ç”¨æšä¸¾ç±»å‹
      * @author WangYanCheng
      * @version 2010-9-20
      */
@@ -52,12 +52,12 @@ public class EnumTest implements TestInterface {
     }
 
     /**
-     * ·½Ïò
+     * æ–¹å‘
      * @author WangYanCheng
      * @version 2010-9-20
      */
     public enum DirectionType {
-        /**·½Ïò{¶«,Î÷,ÄÏ,±±,¶«±±,Î÷±±,¶«ÄÏ,Î÷ÄÏ}*/
+        /**æ–¹å‘{ä¸œ,è¥¿,å—,åŒ—,ä¸œåŒ—,è¥¿åŒ—,ä¸œå—,è¥¿å—}*/
         NORTH, SOUTH, EAST, NORTHEAST, SOUTHEAST, WEST, NORTHWEST, SOUTHWEST
     }
     public enum ExtDirType {

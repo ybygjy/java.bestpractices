@@ -7,7 +7,7 @@ import java.util.Map;
 import org.ybygjy.pattern.flyweight.complex.AbstractFlyweight;
 
 /**
- * 组合单纯Flyweight策略
+ * 缁勫悎鍗曠函Flyweight绛栫暐
  * @author WangYanCheng
  * @version 2010-11-22
  */

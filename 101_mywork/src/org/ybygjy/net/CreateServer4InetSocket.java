@@ -17,8 +17,8 @@ public class CreateServer4InetSocket {
     /**httpServer*/
     private HttpServer httpServer = null;
     /**
-     * Æô¶¯·şÎñÆ÷
-     * @param port ¶Ë¿ÚºÅ
+     * å¯åŠ¨æœåŠ¡å™¨
+     * @param port ç«¯å£å·
      */
     public void doStartServer(int port) {
         InetSocketAddress address = new InetSocketAddress(port);

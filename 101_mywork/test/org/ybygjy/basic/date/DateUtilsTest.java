@@ -11,16 +11,16 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * ·â×°ÈÕÆÚ´¦Àí¹¤¾ß²âÊÔ
+ * å°è£…æ—¥æœŸå¤„ç†å·¥å…·æµ‹è¯•
  * @author WangYanCheng
  * @version 2012-9-6
  */
 public class DateUtilsTest {
-    /** ÈÕÆÚ1 */
+    /** æ—¥æœŸ1 */
     private Calendar date1;
-    /** ÈÕÆÚ2 */
+    /** æ—¥æœŸ2 */
     private Calendar date2;
-    /** Äê-ÔÂ-ÈÕ */
+    /** å¹´-æœˆ-æ—¥ */
     private String ymdPattern = "yyyy-MM-dd";
 
     @Before

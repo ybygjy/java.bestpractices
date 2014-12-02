@@ -10,7 +10,7 @@ public class SingletonPattern {
 }
 
 /**
- * ²»Ö§³Ö¶àÏß³ÌµÄ\´æÔÚÏß³Ì°²È«ÎÊÌâµÄsingleton pattern
+ * ä¸æ”¯æŒå¤šçº¿ç¨‹çš„\å­˜åœ¨çº¿ç¨‹å®‰å…¨é—®é¢˜çš„singleton pattern
  * @author WangYanCheng
  * @version 2010-10-25
  */
@@ -37,7 +37,7 @@ class SingletonPatternPart1 {
 }
 
 /**
- * Ë«ÖØ¼ì²é»úÖÆ£¬Ïß³Ì°²È«µÄsingleton pattern
+ * åŒé‡æ£€æŸ¥æœºåˆ¶ï¼Œçº¿ç¨‹å®‰å…¨çš„singleton pattern
  * @author WangYanCheng
  * @version 2010-10-25
  */
@@ -68,7 +68,7 @@ class SingletonPatternPart2 {
 }
 
 /**
- * ¶öºº²ßÂÔ
+ * é¥¿æ±‰ç­–ç•¥
  * @author WangYanCheng
  * @version 2010-10-25
  */
@@ -92,7 +92,7 @@ class SingletonPatternPart3 {
 }
 
 /**
- * Ò»ÖÖÀûÓÃJVM¼ÓÔØ»úÖÆÌæ»¯¶ÔÏó´´½¨Ê±µÄDouble Checked Locking
+ * ä¸€ç§åˆ©ç”¨JVMåŠ è½½æœºåˆ¶æ›¿åŒ–å¯¹è±¡åˆ›å»ºæ—¶çš„Double Checked Locking
  * @author WangYanCheng
  * @version 2010-12-7
  */
@@ -103,12 +103,12 @@ class InitializeOnDemand {
     private InitializeOnDemand() {
     }
     /**
-     * InnerCompiler,Ö»ÓĞInitalizeOnDemand±»µ÷ÓÃÊ±£¬¸ÃÀà²Å»á±»³õÊ¼»¯
+     * InnerCompiler,åªæœ‰InitalizeOnDemandè¢«è°ƒç”¨æ—¶ï¼Œè¯¥ç±»æ‰ä¼šè¢«åˆå§‹åŒ–
      * @author WangYanCheng
      * @version 2010-12-7
      */
     private static class InnerClass {
-        /** ÕæÊµÊµÀı */
+        /** çœŸå®å®ä¾‹ */
         public static InitializeOnDemand demand = new InitializeOnDemand();
     }
 

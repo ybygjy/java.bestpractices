@@ -7,13 +7,13 @@ import org.ybygjy.pattern.command.c02.impl.StopCommand;
 
 public class Client {
     private void generalTest() {
-        //½ÓÊÕÕß
+        //æ¥æ”¶è€…
         AudioPlayer audioPlayer = new AudioPlayer();
-        //ÃüÁî
+        //å‘½ä»¤
         Command stopCommand = new StopCommand(audioPlayer);
         Command rewindCommand = new RewindCommand(audioPlayer);
         Command playCommand = new PlayCommand(audioPlayer);
-        //µ÷ÓÃÕß
+        //è°ƒç”¨è€…
         Keypad keyPad = new Keypad(stopCommand, rewindCommand, playCommand);
         keyPad.play();
     }

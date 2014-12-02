@@ -4,20 +4,20 @@ import java.util.Iterator;
 import java.util.Vector;
 
 /**
- * Vector集合对象测试
+ * Vector闆嗗悎瀵硅薄娴嬭瘯
  * @author WangYanCheng
  * @version 2010-11-10
  */
 public class VectorTest {
     /**
-     * 重新并发访问异常
+     * 閲嶆柊骞跺彂璁块棶寮傚父
      */
     public void doTestConcurrency() {
         final Vector vecInst = new Vector();
         vecInst.add("Hi");
         vecInst.add("GoGo");
         /**
-         * ThreadA负责修改vecInst
+         * ThreadA璐熻矗淇敼vecInst
          * @author WangYanCheng
          * @version 2010-11-10
          */
@@ -39,7 +39,7 @@ public class VectorTest {
             }
         }
         /**
-         * 负责遍历vecInst
+         * 璐熻矗閬嶅巻vecInst
          * @author WangYanCheng
          * @version 2010-11-10
          */

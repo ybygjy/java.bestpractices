@@ -1,6 +1,6 @@
 package org.ybygjy.pattern.proxy.virtual.simple;
 /**
- * 定义主题规则
+ * 瀹氫箟涓婚瑙勫垯
  * @author WangYanCheng
  * @version 2009-12-22
  */

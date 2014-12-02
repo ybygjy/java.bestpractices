@@ -40,14 +40,14 @@ public class VectorProxy implements InvocationHandler {
                 for (Object tmpObj : args) {
                     System.out.println(tmpObj);
                 }
-                args[0] = "ÍõÑÓ³É";
+                args[0] = "ç‹å»¶æˆ";
             }
         }
         Object obj = method.invoke(proxyObj, args);
         return obj;
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

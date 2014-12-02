@@ -1,6 +1,6 @@
 package org.ybygjy.web;
 /**
- * 接口业务逻辑
+ * 鎺ュ彛涓氬姟閫昏緫
  * @author WangYanCheng
  * @version 2010-1-10
  */

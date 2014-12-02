@@ -26,21 +26,21 @@ import javax.swing.JTextArea;
 import javax.swing.filechooser.FileFilter;
 
 /**
- * JavaÈÕÖ¾ÏµÍ³Í¼ĞÎ³ÊÏÖ
+ * Javaæ—¥å¿—ç³»ç»Ÿå›¾å½¢å‘ˆç°
  * @author WangYanCheng
  * @version 2011-1-26
  */
 public class LoggingImageViewer {
-    /** ÅäÖÃÊµÏÖÀà */
+    /** é…ç½®å®ç°ç±» */
     private static String confClass = "java.util.logging.config.class";
-    /** ÅäÖÃÎÄ¼ş */
+    /** é…ç½®æ–‡ä»¶ */
     private static String confFile = "java.util.logging.config.file";
     /** LoggerName */
     private static String loggerName = LoggingImageViewer.class.getName();
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         initialLogCtx();
@@ -56,10 +56,10 @@ public class LoggingImageViewer {
     }
 
     /**
-     * ³õÊ¼ÈÕÖ¾»·¾³
+     * åˆå§‹æ—¥å¿—ç¯å¢ƒ
      * <ol>
-     * <li>ÈÕÖ¾¼¶±ğÉè¶¨</li>
-     * <li>ÈÕÖ¾´¦ÀíÆ÷Éè¶¨</li>
+     * <li>æ—¥å¿—çº§åˆ«è®¾å®š</li>
+     * <li>æ—¥å¿—å¤„ç†å™¨è®¾å®š</li>
      * </ol>
      */
     private static void initialLogCtx() {
@@ -78,7 +78,7 @@ public class LoggingImageViewer {
 }
 
 /**
- * ³ÊÏÖÍ¼Æ¬ÄÚÈİ
+ * å‘ˆç°å›¾ç‰‡å†…å®¹
  * @author WangYanCheng
  * @version 2011-1-26
  */
@@ -152,12 +152,12 @@ class ImageViewerFrame extends JFrame {
 }
 
 /**
- * ×Ô¶¨ÒåÈÕÖ¾´¦ÀíÆ÷
+ * è‡ªå®šä¹‰æ—¥å¿—å¤„ç†å™¨
  * @author WangYanCheng
  * @version 2011-1-26
  */
 class WindowHandler extends StreamHandler {
-    /** jframeÈÕÖ¾ÄÚÈİ×é¼şÈİÆ÷ */
+    /** jframeæ—¥å¿—å†…å®¹ç»„ä»¶å®¹å™¨ */
     private JFrame jframe;
 
     /**

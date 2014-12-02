@@ -8,7 +8,7 @@ public class ConcreateHandler implements Handler {
         this.setSuccessor(successor);
     }
     public void handleRequest() {
-        System.out.println("´¦ÀíÇëÇó==>".concat(handlerName));
+        System.out.println("å¤„ç†è¯·æ±‚==>".concat(handlerName));
         if (this.getSuccessor() != null) {
             System.out.println("The request is passed to ".concat(this.getSuccessor().toString()));
             successor.handleRequest();

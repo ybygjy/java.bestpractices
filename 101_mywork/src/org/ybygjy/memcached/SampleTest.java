@@ -6,25 +6,25 @@ import com.whalin.MemCached.MemCachedClient;
 import com.whalin.MemCached.SockIOPool;
 
 /**
- * Memcached×î¼ÑÊµ¼ù
- * <p>1¡¢MemcachedÁ¬½Ó</p>
+ * Memcachedæœ€ä½³å®è·µ
+ * <p>1ã€Memcachedè¿æ¥</p>
  * @author WangYanCheng
  * @version 2011-5-6
  */
 public class SampleTest {
-    /**Memcached·şÎñÆ÷µØÖ·*/
+    /**MemcachedæœåŠ¡å™¨åœ°å€*/
     public static final String[] SERVER_ADDRS= {"172.16.5.37:11211"};
-    /**È¨ÖØ*/
+    /**æƒé‡*/
     public static Integer[] weights = {1};
-    /**MemCachedÁ¬½Ó*/
+    /**MemCachedè¿æ¥*/
     private MemCachedClient mccInst;
     private SockIOPool sockPool;
-    /**²ÎÓë²âÊÔÓÃ»ù´¡Êı¾İ*/
+    /**å‚ä¸æµ‹è¯•ç”¨åŸºç¡€æ•°æ®*/
     private String[][] testData;
-    /**²ÎÓë²âÊÔÓÃ»ù´¡¶ÔÏóÊı¾İ*/
+    /**å‚ä¸æµ‹è¯•ç”¨åŸºç¡€å¯¹è±¡æ•°æ®*/
     private TestEntity[] testData4Obj;
     /**
-     * ¹¹Ôì·½·¨£¬ÓÃÓÚ³õÊ¼»¯²âÊÔ»·¾³
+     * æ„é€ æ–¹æ³•ï¼Œç”¨äºåˆå§‹åŒ–æµ‹è¯•ç¯å¢ƒ
      */
     public SampleTest() {
         mccInst = new MemCachedClient();
@@ -35,20 +35,20 @@ public class SampleTest {
         generalTestData(10);
     }
     /**
-     * ¹¹½¨²âÊÔÓÃ»ù´¡Êı¾İ
-     * @param size Êı¾İ¼¯´óĞ¡
+     * æ„å»ºæµ‹è¯•ç”¨åŸºç¡€æ•°æ®
+     * @param size æ•°æ®é›†å¤§å°
      */
     public void generalTestData(int size) {
         testData = new String[size][2];
         testData4Obj = new TestEntity[size];
         for (int i = size - 1; i>=0; i--) {
             testData[i][0] = "Key_" + i;
-            testData[i][1] = "Value¡ª¡ª" + Math.random();
-            testData4Obj[i] = new TestEntity("KeyObj_" + i, "µÚ" + i + "¸ö¶ÔÏó");
+            testData[i][1] = "Valueâ€”â€”" + Math.random();
+            testData4Obj[i] = new TestEntity("KeyObj_" + i, "ç¬¬" + i + "ä¸ªå¯¹è±¡");
         }
     }
     /**
-     * ²âÊÔset²Ù×÷
+     * æµ‹è¯•setæ“ä½œ
      */
     public void testSet() {
         for (int i = testData.length - 1; i >= 0; i--) {
@@ -56,7 +56,7 @@ public class SampleTest {
         }
     }
     /**
-     * ²âÊÔset¶ÔÏó²Ù×÷
+     * æµ‹è¯•setå¯¹è±¡æ“ä½œ
      */
     public void testSetObj() {
         for (int i = testData4Obj.length - 1; i >=0; i--) {
@@ -64,7 +64,7 @@ public class SampleTest {
         }
     }
     /**
-     * ²âÊÔget²Ù×÷
+     * æµ‹è¯•getæ“ä½œ
      */
     public void testGet() {
         Object[] obj = new Object[testData.length];
@@ -76,7 +76,7 @@ public class SampleTest {
         }
     }
     /**
-     * ²âÊÔget²Ù×÷
+     * æµ‹è¯•getæ“ä½œ
      */
     public void testGetObj() {
         Object[] obj = new Object[testData4Obj.length];
@@ -88,8 +88,8 @@ public class SampleTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         SampleTest st = new SampleTest();
@@ -100,7 +100,7 @@ public class SampleTest {
     }
 }
 /**
- * ²ÎÓë²âÊÔµÄÁÙÊ±¶ÔÏó
+ * å‚ä¸æµ‹è¯•çš„ä¸´æ—¶å¯¹è±¡
  * @author WangYanCheng
  * @version 2011-5-6
  */
@@ -109,9 +109,9 @@ class TestEntity implements Serializable {
      * serialVersion
      */
     private static final long serialVersionUID = 4011683150758956871L;
-    /**±àÂë*/
+    /**ç¼–ç */
     private String serialCode;
-    /**ĞÅÏ¢ÃèÊö*/
+    /**ä¿¡æ¯æè¿°*/
     private String testInfo;
     public TestEntity(String serialCode, String testInfo) {
         super();

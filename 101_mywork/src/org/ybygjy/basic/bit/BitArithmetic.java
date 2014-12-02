@@ -1,12 +1,12 @@
 package org.ybygjy.basic.bit;
 /**
- * Î»ÔËËã_»ù´¡
+ * ä½è¿ç®—_åŸºç¡€
  * @author WangYanCheng
  * @version 2010-3-31
  */
 public class BitArithmetic {
     /**
-     * Ê¹ÓÃÒì»òÍê³É²»ĞèÒª¼àÌı±äÁ¿,Á½±äÁ¿ÖµµÄ½»»»
+     * ä½¿ç”¨å¼‚æˆ–å®Œæˆä¸éœ€è¦ç›‘å¬å˜é‡,ä¸¤å˜é‡å€¼çš„äº¤æ¢
      * @param x x
      * @param y y
      */
@@ -18,7 +18,7 @@ public class BitArithmetic {
         System.out.println("after swap==>" + x + ":" + y);
     }
     /**
-     * È¡·´ÔËËã
+     * å–åè¿ç®—
      * @param x x
      */
     public void notArith(int x) {
@@ -30,7 +30,7 @@ public class BitArithmetic {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments
      */
     public static void main(String[] args) {

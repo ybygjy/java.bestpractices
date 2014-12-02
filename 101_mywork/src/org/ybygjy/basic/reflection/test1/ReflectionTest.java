@@ -164,7 +164,7 @@ public class ReflectionTest {
                     .replaceAll("@MR@", String.valueOf(methodResult))
                     );
             tmplMethodInst = instClass.getDeclaredMethod(templArray[1].concat(suffixStr), new Class[]{String.class});
-            tmplMethodInst.invoke(objInst, new Object[]{"ÍõÑÓ³É"});
+            tmplMethodInst.invoke(objInst, new Object[]{"ç‹å»¶æˆ"});
             debugInfo.add("Invoke Method @MN@".replaceAll("@MN@", tmplMethodInst.getName()));
             tmplMethodInst = instClass.getDeclaredMethod(templArray[0].concat(suffixStr), new Class[]{});
             methodResult = tmplMethodInst.invoke(objInst, new Object[0]);
@@ -195,13 +195,13 @@ public class ReflectionTest {
     /**debugInfo*/
     private static List<String> debugInfo = new ArrayList<String>();
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         ReflectionTest reflectTestInst = new ReflectionTest();
         reflectTestInst.doTestConstructor();
-        reflectTestInst.doTestField(new UserEntity("ÍõÑÓ³É", "wycPassword"));
+        reflectTestInst.doTestField(new UserEntity("ç‹å»¶æˆ", "wycPassword"));
         reflectTestInst.doTestComponentType(new UserEntity());
         reflectTestInst.doTestMethodRef(new UserEntity(), "userPassword");
         reflectTestInst.doShowDebugInfo();

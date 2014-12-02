@@ -4,23 +4,23 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * clone»úÖÆµÄ¸´Ï°
+ * cloneæœºåˆ¶çš„å¤ä¹ 
  * <p>
- * 1¡¢×¢ÒâObject#cloneÓëCloneableµÄ¹ØÏµ
+ * 1ã€æ³¨æ„Object#cloneä¸Cloneableçš„å…³ç³»
  * </p>
  * <p>
- * 2¡¢Éî²ã´Îclone£ºÖ÷Òª»úÖÆ¾ÍÊÇËùÓĞÊµÀıµÄÇ¶Ì×ÊµÀı¶¼ĞèÒª×öclone
+ * 2ã€æ·±å±‚æ¬¡cloneï¼šä¸»è¦æœºåˆ¶å°±æ˜¯æ‰€æœ‰å®ä¾‹çš„åµŒå¥—å®ä¾‹éƒ½éœ€è¦åšclone
  * <p>
- * 3¡¢Ç³²ã´Îclone£ºÄ¬ÈÏ»úÖÆ£¬ÊµÀıÇ¶Ì×¶ÔÏóÒıÓÃ»¹ÊÇ¹²ÏíµÄ¡£Ç³²ã´Îclone¿É¼òµ¥Àí½âÎª¶ÔÏóÒıÓÃÈç<br/>
+ * 3ã€æµ…å±‚æ¬¡cloneï¼šé»˜è®¤æœºåˆ¶ï¼Œå®ä¾‹åµŒå¥—å¯¹è±¡å¼•ç”¨è¿˜æ˜¯å…±äº«çš„ã€‚æµ…å±‚æ¬¡cloneå¯ç®€å•ç†è§£ä¸ºå¯¹è±¡å¼•ç”¨å¦‚<br/>
  * <code>Employee emp = new Employee();Employee emp2 = emp; emp2.doSomething();</code>
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class ReviewClone {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
-     * @throws CloneNotSupportedException cloneÄ¿±êÊµÀı¹ØÁªÊµÀı¿ÉÄÜÎ´ÊµÏÖCloneable½Ó¿Ú
+     * @throws CloneNotSupportedException cloneç›®æ ‡å®ä¾‹å…³è”å®ä¾‹å¯èƒ½æœªå®ç°Cloneableæ¥å£
      */
     public static void main(String[] args) throws CloneNotSupportedException {
         Employee empOne = new Employee("Mr.Wang", 1000);
@@ -33,7 +33,7 @@ public class ReviewClone {
 }
 
 /**
- * Éî²ã´Îclone
+ * æ·±å±‚æ¬¡clone
  * @author WangYanCheng
  * @version 2011-2-24
  */
@@ -53,8 +53,8 @@ class Employee implements Cloneable {
 
     /**
      * Contructor
-     * @param empName Ô±¹¤ĞÕÃû
-     * @param salary Ğ½Ë®
+     * @param empName å‘˜å·¥å§“å
+     * @param salary è–ªæ°´
      */
     public Employee(String empName, double salary) {
         super();
@@ -64,16 +64,16 @@ class Employee implements Cloneable {
     }
 
     /**
-     * ÉèÖÃÔ±¹¤Ãû³Æ
-     * @param empName Ô±¹¤Ãû³Æ
+     * è®¾ç½®å‘˜å·¥åç§°
+     * @param empName å‘˜å·¥åç§°
      */
     public void setEmpName(String empName) {
         this.empName = empName;
     }
 
     /**
-     * ÉèÖÃÈÕÆÚ
-     * @param hireDay ÈÕÆÚ
+     * è®¾ç½®æ—¥æœŸ
+     * @param hireDay æ—¥æœŸ
      */
     public void setHireDay(Date hireDay) {
         this.hireDay = hireDay;

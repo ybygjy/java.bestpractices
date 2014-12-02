@@ -4,12 +4,12 @@ import org.ybygjy.pattern.state.GumballMachine;
 import org.ybygjy.pattern.state.State;
 
 /**
- * Î´Í¶±Ò
+ * æœªæŠ•å¸
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public class NoQuarterState implements State {
-    /** ³ÖÓĞÒıÓÃ */
+    /** æŒæœ‰å¼•ç”¨ */
     private GumballMachine gumballMachine;
 
     /**

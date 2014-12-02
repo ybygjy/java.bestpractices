@@ -7,7 +7,7 @@ import java.security.KeyStoreException;
 import java.util.Enumeration;
 
 /**
- * KeyStoreTest ²âÊÔ
+ * KeyStoreTest æµ‹è¯•
  * @author WangYanCheng
  * @version 2013-9-27
  */
@@ -27,7 +27,7 @@ public class KeyStoreTest {
         doPrintAliases(keyStore);
     }
     /**
-     * ´òÓ¡³öKeyStore´æ´¢µÄÌõÄ¿
+     * æ‰“å°å‡ºKeyStoreå­˜å‚¨çš„æ¡ç›®
      * @param keyStore
      */
     private void doPrintAliases(KeyStore keyStore) {

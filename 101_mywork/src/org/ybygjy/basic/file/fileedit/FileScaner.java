@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
- * 负责扫描指定文件的关键词
+ * 璐熻矗鎵弿鎸囧畾鏂囦欢鐨勫叧閿瘝
  * @author WangYanCheng
  * @version 2011-12-27
  */

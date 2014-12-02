@@ -4,15 +4,15 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 /**
- * 线程主题_中断
+ * 绾跨▼涓婚_涓柇
  * @author WangYanCheng
  * @version 2010-10-8
  */
 public class Thread_Interrupted {
 
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         final InnerClass[] threadArray = new InnerClass[3];
@@ -65,7 +65,7 @@ class InnerClass extends Thread {
                 wait();
             }
         } catch (InterruptedException intrr) {
-            System.out.println("打破中断: " + intrr);
+            System.out.println("鎵撶牬涓柇: " + intrr);
         }
         System.out.println(this + "Exiting run()");
     }

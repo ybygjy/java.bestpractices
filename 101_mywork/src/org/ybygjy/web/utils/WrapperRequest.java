@@ -10,11 +10,11 @@ import javax.servlet.http.HttpServletRequest;
 public class WrapperRequest {
     /** ContentType */
     public enum ContentType {
-        /** MIMEÀàĞÍ-¶ş½øÖÆÊı¾İ±ê¼Ç */
+        /** MIMEç±»å‹-äºŒè¿›åˆ¶æ•°æ®æ ‡è®° */
         FORM_DATA("multipart/form-data"),
-        /** MIMEÀàĞÍ-±ê×¼±àÂë¸ñÊ½±ê¼Ç */
+        /** MIMEç±»å‹-æ ‡å‡†ç¼–ç æ ¼å¼æ ‡è®° */
         FORM_URLENCODE("application/x-www-form-urlencoded"),
-        /** MIMEÀàĞÍ-ÎÄ±¾¸ñÊ½±ê¼Ç */
+        /** MIMEç±»å‹-æ–‡æœ¬æ ¼å¼æ ‡è®° */
         FORM_TEXT("text/plain");
         /** inner type */
         private final String type;
@@ -78,8 +78,8 @@ public class WrapperRequest {
     }
 
     /**
-     * Æ¥ÅäÁ÷±ê¼ÇÍ·
-     * @param contentType Í·ĞÅÏ¢
+     * åŒ¹é…æµæ ‡è®°å¤´
+     * @param contentType å¤´ä¿¡æ¯
      * @return true/false
      */
     public static boolean matchFileContentType(String contentType) {
@@ -90,7 +90,7 @@ public class WrapperRequest {
     }
 
     /**
-     * ÊÇ·ñ¶şÖÆÊı¾İ¸ñÊ½
+     * æ˜¯å¦äºŒåˆ¶æ•°æ®æ ¼å¼
      * @return true/false
      */
     public boolean isBinaryData() {
@@ -103,7 +103,7 @@ public class WrapperRequest {
     }
 
     /**
-     * È¡µÃÄÚÈİ½ç¶¨·û
+     * å–å¾—å†…å®¹ç•Œå®šç¬¦
      * @return rtnStr/null
      */
     public String getBoundary() {
@@ -117,8 +117,8 @@ public class WrapperRequest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         // WrapperRequest.ContentType[] cts =
@@ -128,7 +128,7 @@ public class WrapperRequest {
         // }
         // System.out.println(WrapperRequest.getInstance(null).getBoundary());
         /*
-         * Matcher matcher = Pattern.compile("(\\s)+").matcher("Íõ\n\rÑÓ³É"); while
+         * Matcher matcher = Pattern.compile("(\\s)+").matcher("ç‹\n\rå»¶æˆ"); while
          * (matcher.find()) { int count = matcher.groupCount(); for (int i = 0;
          * i < count; i++) { byte[] tmpByte = matcher.group(i).getBytes(); for
          * (int tmpI : tmpByte) { System.out.print(tmpI); } } }

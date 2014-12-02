@@ -12,7 +12,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 public class StringUtilsTest {
-    /** ²âÊÔÀàÊµÀı */
+    /** æµ‹è¯•ç±»å®ä¾‹ */
     private StringUtils strUtil = null;
 
     @BeforeClass

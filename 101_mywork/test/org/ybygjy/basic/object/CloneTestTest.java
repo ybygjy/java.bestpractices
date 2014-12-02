@@ -21,14 +21,14 @@ public class CloneTestTest {
     @Test
     public void testDoTest() {
         tiInst.doTest();
-        // ÒýÓÃ´«µÝ
+        // å¼•ç”¨ä¼ é€’
         tiInst.doChange(tiInst.getObj());
         Assert.assertEquals(tiInst.getObjStr(), "Changed Value");
-        // Öµ´«µÝ
+        // å€¼ä¼ é€’
         int initParam = 10;
         tiInst.doChange(initParam);
         Assert.assertEquals(tiInst.getIntParam(), initParam);
-        // HashTableÕæµÄÄÜ´æ´¢¶ÔÏóÃ´?
+        // HashTableçœŸçš„èƒ½å­˜å‚¨å¯¹è±¡ä¹ˆ?
         Hashtable table = tiInst.initHashTable();
         for (Iterator iterator = table.entrySet().iterator(); iterator.hasNext();) {
             System.out.println(iterator.next());
@@ -42,7 +42,7 @@ public class CloneTestTest {
             e.printStackTrace();
         }
         Assert.assertNotSame(obj, tiInst.getObj());
-        //Éî²ãclone
+        //æ·±å±‚clone
         Assert.assertNotSame(obj.getShadow(), tiInst.getObj().getShadow());
     }
 }

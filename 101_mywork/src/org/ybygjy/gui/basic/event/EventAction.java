@@ -15,11 +15,11 @@ import javax.swing.JPanel;
 
 /**
  * <p>
- * 1��ע��Action�ӿ����¼�Դ�����Ƕ�Զ�
+ * 1、注意Action接口与事件源可以是多对多
  * <p>
- * 1.1��һ���¼�Դ��Ӧ���Action
+ * 1.1、一个事件源对应多个Action
  * <p>
- * 1.2��һ��Action��Ӧ����¼�Դ
+ * 1.2、一个Action对应多个事件源
  * @author WangYanCheng
  * @version 2011-2-25
  */

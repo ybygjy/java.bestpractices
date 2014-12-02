@@ -18,7 +18,7 @@ public class User {
     private String userNo;
     /** companyName */
     private String companyName;
-    /** ½èÊé¼ÇÂ¼ */
+    /** å€Ÿä¹¦è®°å½• */
     private List<LoanLog> loanLoges;
 
     /**

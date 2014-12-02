@@ -3,9 +3,9 @@ package org.ybygjy.basic.thinking.thread;
 import java.util.ArrayList;
 import java.util.List;
 /**
- * ´øÓĞÈ±ÏİµÄThreadÉú²úÕßºÍÏû·ÑÕßÄ£Ê½
- * <p>1¡¢¶àÏß³Ì¹²ÏíÄ³Ò»ÖÖ×ÊÔ´
- * <p>2¡¢Ã»ÓĞ¿¼ÂÇÏß³ÌµÈ´ıÖĞÍâ²¿ÖĞ¶ÏµÄÇé¿ö
+ * å¸¦æœ‰ç¼ºé™·çš„Threadç”Ÿäº§è€…å’Œæ¶ˆè´¹è€…æ¨¡å¼
+ * <p>1ã€å¤šçº¿ç¨‹å…±äº«æŸä¸€ç§èµ„æº
+ * <p>2ã€æ²¡æœ‰è€ƒè™‘çº¿ç¨‹ç­‰å¾…ä¸­å¤–éƒ¨ä¸­æ–­çš„æƒ…å†µ
  * @author WangYanCheng
  * @version 2012-8-30
  */
@@ -35,9 +35,9 @@ class Th1 extends Thread {
                         e.printStackTrace();
                     }
                 }
-                //Î´¿¼ÂÇÖĞ¶Ï
+                //æœªè€ƒè™‘ä¸­æ–­
                 if (cv.getLen() > 0) {
-                    System.out.println(getName() + "Ïû·ÑÁË==>" + cv.get(0));
+                    System.out.println(getName() + "æ¶ˆè´¹äº†==>" + cv.get(0));
                     cv.notifyAll();
                 }
             }
@@ -66,7 +66,7 @@ class Th2 extends Thread {
                     }
                 }
                 if (cv.getLen() <=0) {
-                    System.out.println(getName() + " Éú²úÁË£º" + counter);
+                    System.out.println(getName() + " ç”Ÿäº§äº†ï¼š" + counter);
                     cv.push(String.valueOf(counter));
                     counter++;
                     cv.notifyAll();

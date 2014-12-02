@@ -8,36 +8,36 @@ import java.net.URI;
 import java.net.URL;
 
 /**
- * ²Ù×÷ÏµÍ³´ò¿ªÎÄ¼ş»òÁ´½Ó
+ * æ“ä½œç³»ç»Ÿæ‰“å¼€æ–‡ä»¶æˆ–é“¾æ¥
  * @author WangYanCheng
  * @version 2011-10-18
  */
 public class OpenFile4OS {
-    /**Î¢ÈíÏµÍ³*/
+    /**å¾®è½¯ç³»ç»Ÿ*/
     public static String osWindow = "Windows";
-    /**Æ»¹ûÏµÍ³*/
+    /**è‹¹æœç³»ç»Ÿ*/
     public static String osMac = "Mac OS";
-    /**²Ù×÷ÏµÍ³Ãû³Æ*/
+    /**æ“ä½œç³»ç»Ÿåç§°*/
     public static final String osName = System.getProperty("os.name");;
-    /**ÀûÓÃJDK1.6ÌØĞÔ´ò¿ª/ä¯ÀÀÎÄ¼ş*/
+    /**åˆ©ç”¨JDK1.6ç‰¹æ€§æ‰“å¼€/æµè§ˆæ–‡ä»¶*/
     private static OpenFile4Java of4jInst = new OpenFile4Java();
-    /**WindowÆ½Ì¨ÏÂ´ò¿ª/ä¯ÀÀÎÄ¼ş*/
+    /**Windowå¹³å°ä¸‹æ‰“å¼€/æµè§ˆæ–‡ä»¶*/
     private static OpenFile4Window of4Win = new OpenFile4Window();
-    /**Mac OSÆ½Ì¨ÏÂ´ò¿ª/ä¯ÀÀÎÄ¼ş*/
+    /**Mac OSå¹³å°ä¸‹æ‰“å¼€/æµè§ˆæ–‡ä»¶*/
     private static OpenFile4Mac of4Mac = new OpenFile4Mac();
-    /**Linux Æ½Ì¨ÏÂ´ò¿ª/ä¯ÀÀÎÄ¼ş*/
+    /**Linux å¹³å°ä¸‹æ‰“å¼€/æµè§ˆæ–‡ä»¶*/
     private static OpenFile4Linux of4Linux = new OpenFile4Linux();
     /**
-     * ¹¹Ôìº¯Êı
+     * æ„é€ å‡½æ•°
      */
     public OpenFile4OS() {
     }
 
     /**
-     * ´ò¿ªÎÄ¼ş
-     * @param fileInst ÎÄ¼şÊµÀı
+     * æ‰“å¼€æ–‡ä»¶
+     * @param fileInst æ–‡ä»¶å®ä¾‹
      * @return rtnFlag true/false
-     * @throws IOException Å×³öÒì³£×öLog
+     * @throws IOException æŠ›å‡ºå¼‚å¸¸åšLog
      */
     public static boolean doOpenFile(File fileInst) throws IOException {
         if (osName.startsWith(osMac)) {
@@ -46,7 +46,7 @@ public class OpenFile4OS {
             return of4Win.openFile(fileInst);
         } else {
             if (of4jInst.openFile(fileInst)) {
-                System.out.println("ÎÄ¼ş±»´ò¿ªÁË");
+                System.out.println("æ–‡ä»¶è¢«æ‰“å¼€äº†");
                 return true;
             }
         }
@@ -54,8 +54,8 @@ public class OpenFile4OS {
     }
 
     /**
-     * ´ò¿ªÁ´½ÓµØÖ·
-     * @param urlInst µØÖ·ÊµÀı
+     * æ‰“å¼€é“¾æ¥åœ°å€
+     * @param urlInst åœ°å€å®ä¾‹
      * @throws IOException IOException
      */
     public static boolean doOpenURL(URL urlInst) throws IOException {
@@ -69,12 +69,12 @@ public class OpenFile4OS {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
-     * @throws IOException Å×³öÒì³£×öLog
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
+     * @throws IOException æŠ›å‡ºå¼‚å¸¸åšLog
      */
     public static void main(String[] args) throws IOException {
-        String tmpFile = "C:\\Documents and Settings\\dell\\×ÀÃæ\\OracleÌåÏµ½á¹¹.ppt";
+        String tmpFile = "C:\\Documents and Settings\\dell\\æ¡Œé¢\\Oracleä½“ç³»ç»“æ„.ppt";
         String tmpFile2 = "C:\\build\\DBCompare.LOG";
         File file = new File(tmpFile);
         OpenFile4OS of4OsInst = new OpenFile4OS();
@@ -84,14 +84,14 @@ public class OpenFile4OS {
 }
 
 /**
- * Linux/UnixÏµÍ³ÏÂ´ò¿ªÎÄ¼ş»òÁ´½Ó
+ * Linux/Unixç³»ç»Ÿä¸‹æ‰“å¼€æ–‡ä»¶æˆ–é“¾æ¥
  * @author WangYanCheng
  * @version 2011-10-19
  */
 class OpenFile4Linux {
-    /**UNIXÏµÍ³ä¯ÀÀÁ¬½ÓÃüÁî¼¯*/
+    /**UNIXç³»ç»Ÿæµè§ˆè¿æ¥å‘½ä»¤é›†*/
     public static String[] unixBrowseCmds = {"www-browser", "firefox", "opera", "konqueror", "mozilla", "netscape", "w3m"};
-    /**UnixÏµÍ³ÎÄ¼ş´ò¿ª·½Ê½ÃüÁî¼¯*/
+    /**Unixç³»ç»Ÿæ–‡ä»¶æ‰“å¼€æ–¹å¼å‘½ä»¤é›†*/
     public static String[] unixOpenCmds = {"run-mailcap", "pager", "less", "more"};
     
     public boolean browse(URL urlInst) throws IOException {
@@ -127,14 +127,14 @@ class OpenFile4Linux {
     }
 }
 /**
- * Window²Ù×÷ÏµÍ³ÏÂ´ò¿ªÎÄ¼ş»òÁ´½Ó
+ * Windowæ“ä½œç³»ç»Ÿä¸‹æ‰“å¼€æ–‡ä»¶æˆ–é“¾æ¥
  * @author WangYanCheng
  * @version 2011-10-18
  */
 class OpenFile4Window {
     /**
-     * ä¯ÀÀµØÖ·
-     * @param urlInst µØÖ·ÊµÀı
+     * æµè§ˆåœ°å€
+     * @param urlInst åœ°å€å®ä¾‹
      * @return rtnFlag true/false
      * @throws IOException IOException
      */
@@ -143,8 +143,8 @@ class OpenFile4Window {
         return true;
     }
     /**
-     * ´ò¿ªÎÄ¼ş
-     * @param fileInst ÎÄ¼şÊµÀı
+     * æ‰“å¼€æ–‡ä»¶
+     * @param fileInst æ–‡ä»¶å®ä¾‹
      * @return rtnFlag true/false
      * @throws IOException IOException
      */
@@ -154,14 +154,14 @@ class OpenFile4Window {
     }
 }
 /**
- * Mac OS ÏµÍ³ÊµÏÖ
+ * Mac OS ç³»ç»Ÿå®ç°
  * @author WangYanCheng
  * @version 2011-10-18
  */
 class OpenFile4Mac {
     /**
-     * Mac OSÏµÍ³ÏÂä¯ÀÀµØÖ·
-     * @param urlInst µØÖ·ÊµÀı
+     * Mac OSç³»ç»Ÿä¸‹æµè§ˆåœ°å€
+     * @param urlInst åœ°å€å®ä¾‹
      * @return rtnFlag true/false
      */
     public boolean browse(URL urlInst) {
@@ -190,8 +190,8 @@ class OpenFile4Mac {
         return true;
     }
     /**
-     * Mac OSÏµÍ³ÏÂ´ò¿ªÎÄ¼ş
-     * @param fileInst ÎÄ¼şÊµÀı
+     * Mac OSç³»ç»Ÿä¸‹æ‰“å¼€æ–‡ä»¶
+     * @param fileInst æ–‡ä»¶å®ä¾‹
      * @return rtnFlag true/false
      * @throws IOException IOException
      */
@@ -199,7 +199,7 @@ class OpenFile4Mac {
         return browse(new URL(fileInst.getAbsolutePath()));
     }
     /**
-     * È¡ÏµÍ³ÌØÓĞÊµÀı
+     * å–ç³»ç»Ÿç‰¹æœ‰å®ä¾‹
      * @return rtnClass rtnClass
      */
     public Class getAppleFileManagerClass() {
@@ -212,7 +212,7 @@ class OpenFile4Mac {
     }
 }
 /**
- * Ê¹ÓÃjava.awt.Desktop
+ * ä½¿ç”¨java.awt.Desktop
  * @author WangYanCheng
  * @version 2011-10-18
  */
@@ -240,10 +240,10 @@ class OpenFile4Java {
         return false;
     }
     /**
-     * ´ò¿ªÎÄ¼ş
-     * @param fileInst ÎÄ¼şÊµÀı
+     * æ‰“å¼€æ–‡ä»¶
+     * @param fileInst æ–‡ä»¶å®ä¾‹
      * @return rtnFlag true/false
-     * @throws IOException Å×³öÒì³£×öLog
+     * @throws IOException æŠ›å‡ºå¼‚å¸¸åšLog
      */
     public boolean openFile(File fileInst) throws IOException {
         Class desktopClass = getDesktopClass();
@@ -275,7 +275,7 @@ class OpenFile4Java {
     }
 
     /**
-     * È¡Àà¶¨ÒåÊµÀı
+     * å–ç±»å®šä¹‰å®ä¾‹
      * @return rtnClass rtnClass
      */
     private Class getDesktopClass() {
@@ -288,8 +288,8 @@ class OpenFile4Java {
     }
 
     /**
-     * È¡ÀàÊµÀı
-     * @param classTmpl Àà¶¨ÒåÊµÀı
+     * å–ç±»å®ä¾‹
+     * @param classTmpl ç±»å®šä¹‰å®ä¾‹
      * @return rtnObj rtnObj
      */
     private Object getDesktopClassInst(Class classTmpl) {
@@ -297,7 +297,7 @@ class OpenFile4Java {
             Method isDesktopSupportedMethod = classTmpl.getDeclaredMethod("isDesktopSupported");
             boolean isDesktopSupported = (Boolean) isDesktopSupportedMethod.invoke(null);
             if (!isDesktopSupported) {
-                System.out.println("µ±Ç°JDK°æ±¾²»Ö§³Öjava.awt.DesktopÌØĞÔ£¡");
+                System.out.println("å½“å‰JDKç‰ˆæœ¬ä¸æ”¯æŒjava.awt.Desktopç‰¹æ€§ï¼");
             }
             Method getDesktopMethod = classTmpl.getDeclaredMethod("getDesktop");
             return getDesktopMethod.invoke(null);

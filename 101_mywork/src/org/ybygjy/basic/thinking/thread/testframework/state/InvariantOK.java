@@ -1,7 +1,7 @@
 package org.ybygjy.basic.thinking.thread.testframework.state;
 
 /**
- * 成功信息标记
+ * 鎴愬姛淇℃伅鏍囪
  * @author WangYanCheng
  * @version 2010-9-30
  */

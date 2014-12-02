@@ -13,7 +13,7 @@ import javax.naming.NamingException;
  */
 public class TestJNDIServer {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

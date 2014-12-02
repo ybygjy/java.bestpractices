@@ -12,21 +12,21 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * JNDI¸ß¼¶Ö÷ÌâÖ®LDAPÖ§³Ö
+ * JNDIé«˜çº§ä¸»é¢˜ä¹‹LDAPæ”¯æŒ
  * @author WangYanCheng
  * @version 2011-5-2
  */
 public class BeyondBasic4LDAPTest {
-    /**²ÎÓë²âÊÔÊµÀı*/
+    /**å‚ä¸æµ‹è¯•å®ä¾‹*/
     private DirContext dirCtx;
     @Before
     public void before() {
         dirCtx = Constant.createCtx();
     }
     /**
-     * CompositeÓĞÁ½²ãº¬Òå
-     * <p>1¡¢(Ğ­Í¬´¦Àí²ßÂÔ)JNDIÖ§³ÖÄ¿Â¼»ìºÏ¹¤×÷£¬ÈçÊ¹ÓÃopenLDAP·şÎñ¶¨Î»£¬Ê¹ÓÃfileService¶ÔÏó¸ºÔğ²éÕÒÎÄ¼ş</p>
-     * <p>2¡¢(»ìºÏ´¦ÀíÓï·¨)ÀàËÆ£ºcn=homeDir,dc=ybygjy,dc=org/HelloWorld.txt</p>
+     * Compositeæœ‰ä¸¤å±‚å«ä¹‰
+     * <p>1ã€(ååŒå¤„ç†ç­–ç•¥)JNDIæ”¯æŒç›®å½•æ··åˆå·¥ä½œï¼Œå¦‚ä½¿ç”¨openLDAPæœåŠ¡å®šä½ï¼Œä½¿ç”¨fileServiceå¯¹è±¡è´Ÿè´£æŸ¥æ‰¾æ–‡ä»¶</p>
+     * <p>2ã€(æ··åˆå¤„ç†è¯­æ³•)ç±»ä¼¼ï¼šcn=homeDir,dc=ybygjy,dc=org/HelloWorld.txt</p>
      */
     @Test
     public void testCompositeName() {
@@ -48,7 +48,7 @@ public class BeyondBasic4LDAPTest {
         String name = "cn=userMgr,ou=hr,dc=dawoo,dc=com/userInfo.xls/password";
         try {
             CompositeName compositeName = new CompositeName(name);
-            System.out.println(name + "¹²ÓĞ" + (compositeName.size()) + "×é");
+            System.out.println(name + "å…±æœ‰" + (compositeName.size()) + "ç»„");
             System.out.println(compositeName.getPrefix(1));
             System.out.println(compositeName.getSuffix(2));
         } catch (InvalidNameException e) {

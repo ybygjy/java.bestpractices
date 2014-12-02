@@ -20,7 +20,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * µÚÒ»°æÎÄ¼şÌæ»»
+ * ç¬¬ä¸€ç‰ˆæ–‡ä»¶æ›¿æ¢
  * @author WangYanCheng
  * @version 2011-12-29
  */
@@ -34,9 +34,9 @@ public class FileReplaceBeta1 {
 
     /**
      * Constructor
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @param tokenArr ²ÎÊıÁĞ±í£¬{0:ÓÃÓÚÄÚÈİÆ¥ÅäµÄ±í´ïÊ½;1:ÓÃÓÚÆ¥ÅäÌæ»»µÄ±í´ïÊ½;2:ÓÃÓÚ¹ıÂËÆ¥ÅäÎÄ¼şµÄ±í´ïÊ½}
-     * @param charsetName ×Ö·û¼¯
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @param tokenArr å‚æ•°åˆ—è¡¨ï¼Œ{0:ç”¨äºå†…å®¹åŒ¹é…çš„è¡¨è¾¾å¼;1:ç”¨äºåŒ¹é…æ›¿æ¢çš„è¡¨è¾¾å¼;2:ç”¨äºè¿‡æ»¤åŒ¹é…æ–‡ä»¶çš„è¡¨è¾¾å¼}
+     * @param charsetName å­—ç¬¦é›†
      */
     public FileReplaceBeta1(File fileInst, String[] tokenArr, String charsetName) {
         this.fileInst = fileInst;
@@ -53,7 +53,7 @@ public class FileReplaceBeta1 {
      */
     public void doWork() throws IOException {
         if (this.fileInst == null) {
-            throw new RuntimeException("Ä¿±êÎÄ¼ş±ØĞë·Ç¿Õ£¡");
+            throw new RuntimeException("ç›®æ ‡æ–‡ä»¶å¿…é¡»éç©ºï¼");
         }
         recursingPFile(fileInst);
         try {
@@ -64,9 +64,9 @@ public class FileReplaceBeta1 {
     }
 
     /**
-     * µİ¹é´¦ÀíÎÄ¼ş
-     * @param fileInst ÎÄ¼ş/ÎÄ¼ş¼ĞÊµÀı
-     * @throws IOException IOÒì³£
+     * é€’å½’å¤„ç†æ–‡ä»¶
+     * @param fileInst æ–‡ä»¶/æ–‡ä»¶å¤¹å®ä¾‹
+     * @throws IOException IOå¼‚å¸¸
      */
     public void recursingPFile(File fileInst) throws IOException {
         if (fileInst.isFile()) {
@@ -89,9 +89,9 @@ public class FileReplaceBeta1 {
     }
 
     /**
-     * ¶ÁÎÄ¼şÄÚÈİ²¢ÅäºÏÆ¥Åä/Ìæ»»Âß¼­
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * è¯»æ–‡ä»¶å†…å®¹å¹¶é…åˆåŒ¹é…/æ›¿æ¢é€»è¾‘
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile(File fileInst) throws IOException {
         RandomAccessFile rafInst = null;
@@ -104,7 +104,7 @@ public class FileReplaceBeta1 {
                 LoggerUtils.logger(fileInst.getAbsolutePath());
             }
         } catch (IOException ioe) {
-            LoggerUtils.error("ÎÄ¼ş¶ÁÈ¡´íÎó ".concat(fileInst.getAbsolutePath()), ioe);
+            LoggerUtils.error("æ–‡ä»¶è¯»å–é”™è¯¯ ".concat(fileInst.getAbsolutePath()), ioe);
             throw ioe;
         } finally {
             if (null != fileChannel) {
@@ -118,10 +118,10 @@ public class FileReplaceBeta1 {
     }
 
     /**
-     * ¸ºÔğÆ¥Åä\Ìæ»»\»ØĞ´ÎÄ¼şÄÚÈİ
-     * @param charSeq Ô´ÄÚÈİ
-     * @param fileChannel Í¨µÀ
-     * @return rtnFlag {true:Æ¥ÅäÇÒÌæ»»;false:Î´Æ¥Åä}
+     * è´Ÿè´£åŒ¹é…\æ›¿æ¢\å›å†™æ–‡ä»¶å†…å®¹
+     * @param charSeq æºå†…å®¹
+     * @param fileChannel é€šé“
+     * @return rtnFlag {true:åŒ¹é…ä¸”æ›¿æ¢;false:æœªåŒ¹é…}
      * @throws IOException IOException
      */
     public boolean matchAndReplace(CharSequence charSeq, FileChannel fileChannel) throws IOException {
@@ -134,9 +134,9 @@ public class FileReplaceBeta1 {
                     fileChannel = fileChannel.truncate(tmpL);
                 }
             } catch (CharacterCodingException e) {
-                LoggerUtils.error("¶ÁÈ¡ÎÄ¼şÊ±µÄ×Ö·û´®×ª»»Òì³££¡", e);
+                LoggerUtils.error("è¯»å–æ–‡ä»¶æ—¶çš„å­—ç¬¦ä¸²è½¬æ¢å¼‚å¸¸ï¼", e);
             } catch (IOException e) {
-                LoggerUtils.error("¶ÁÈ¡ÎÄ¼şÊ±µÄI/OÒì³££¡", e);
+                LoggerUtils.error("è¯»å–æ–‡ä»¶æ—¶çš„I/Oå¼‚å¸¸ï¼", e);
             }
             return true;
         }
@@ -144,12 +144,12 @@ public class FileReplaceBeta1 {
     }
 
     /**
-     * ÈÕÖ¾¼ÇÂ¼Æ÷
+     * æ—¥å¿—è®°å½•å™¨
      * @author WangYanCheng
      * @version 2011-12-29
      */
     static class LoggerUtils {
-        private Logger logger = Logger.getLogger("ÎÄ¼şÄÚÈİÌæ»»");
+        private Logger logger = Logger.getLogger("æ–‡ä»¶å†…å®¹æ›¿æ¢");
         private File logFile;
         private static LoggerUtils luInst = new LoggerUtils();
         public LoggerUtils() {
@@ -168,7 +168,7 @@ public class FileReplaceBeta1 {
                     }
                 });
                 logger.addHandler(fhInst);
-                logger.info("LogÎÄ¼şµØÖ·".concat(logFile.getAbsolutePath()));
+                logger.info("Logæ–‡ä»¶åœ°å€".concat(logFile.getAbsolutePath()));
             } catch (SecurityException e) {
                 e.printStackTrace();
             } catch (IOException e) {

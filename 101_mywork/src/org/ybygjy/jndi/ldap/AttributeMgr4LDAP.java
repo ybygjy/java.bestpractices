@@ -10,29 +10,29 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.ModificationItem;
 
 /**
- * Attribute²Ù×÷LDAPÊµÏÖ
+ * Attributeæ“ä½œLDAPå®ç°
  * @author WangYanCheng
  * @version 2011-4-29
  */
 public class AttributeMgr4LDAP {
-    /** ·şÎñ¶ÔÏó */
+    /** æœåŠ¡å¯¹è±¡ */
     private DirContext dirCtx;
 
     /**
-     * ¹¹Ôìº¯Êı
-     * @param dirCtx Ä¿Â¼·şÎñ¶ÔÏó
+     * æ„é€ å‡½æ•°
+     * @param dirCtx ç›®å½•æœåŠ¡å¯¹è±¡
      */
     public AttributeMgr4LDAP(DirContext dirCtx) {
         this.dirCtx = dirCtx;
     }
     /**
-     * ÅúÁ¿ĞŞ¸Ä¸ø¶¨DNµÄAttribute
-     * <p>ÔÚreplace²Ù×÷Ê±»á²úÉú¶à¶ÔÒ»µÄÇé¿ö£¬ÏêÏ¸¼û{@linkplain AttributeMgr4LDAPTest#testModifyAttr()}</p>
-     * <p><strong>×¢Òâ£º</strong>attribute type undefinedÎÊÌâ</p>
-     * @param dn Ö¸¶¨DN
-     * @param flag ²Ù×÷±ê¼Ç
-     * @param attrMap ÊôĞÔ¼¯
-     * @see DirContext.REPLACE_ATTRIBUTE¡¢DirContext.ADD_ATTRIBUTE¡¢DirContext.REMOVE_ATTRIBUTE
+     * æ‰¹é‡ä¿®æ”¹ç»™å®šDNçš„Attribute
+     * <p>åœ¨replaceæ“ä½œæ—¶ä¼šäº§ç”Ÿå¤šå¯¹ä¸€çš„æƒ…å†µï¼Œè¯¦ç»†è§{@linkplain AttributeMgr4LDAPTest#testModifyAttr()}</p>
+     * <p><strong>æ³¨æ„ï¼š</strong>attribute type undefinedé—®é¢˜</p>
+     * @param dn æŒ‡å®šDN
+     * @param flag æ“ä½œæ ‡è®°
+     * @param attrMap å±æ€§é›†
+     * @see DirContext.REPLACE_ATTRIBUTEã€DirContext.ADD_ATTRIBUTEã€DirContext.REMOVE_ATTRIBUTE
      */
     public void modifyAttr(String dn, int flag, Map<String, Object> attrMap) {
         ModificationItem[] modifyArray = new ModificationItem[attrMap.size()];
@@ -46,10 +46,10 @@ public class AttributeMgr4LDAP {
         modifyAttr(dn, modifyArray);
     }
     /**
-     * ÅúÁ¿ĞŞ¸Ä¸ø¶¨DNµÄAttribute
-     * @param dn Ö¸¶¨DN
-     * @param flag ²Ù×÷±ê¼Ç
-     * @param attributes ÊôĞÔ¼¯
+     * æ‰¹é‡ä¿®æ”¹ç»™å®šDNçš„Attribute
+     * @param dn æŒ‡å®šDN
+     * @param flag æ“ä½œæ ‡è®°
+     * @param attributes å±æ€§é›†
      */
     public void modifyAttr(String dn, int flag, Attributes attributes) {
         try {
@@ -59,10 +59,10 @@ public class AttributeMgr4LDAP {
         }
     }
     /**
-     * ĞŞ¸ÄÖ¸¶¨DNµÄattribute
-     * @param dn Ö¸¶¨DN
-     * @param key attributeÃû³Æ
-     * @param value Öµ
+     * ä¿®æ”¹æŒ‡å®šDNçš„attribute
+     * @param dn æŒ‡å®šDN
+     * @param key attributeåç§°
+     * @param value å€¼
      */
     public void updateAttr(String dn, String key, Object value) {
         ModificationItem[] mods = new ModificationItem[1];
@@ -71,8 +71,8 @@ public class AttributeMgr4LDAP {
     }
 
     /**
-     * ¸øÖ¸¶¨dnÌí¼ÓAttribute
-     * @param dn Ö¸¶¨dn
+     * ç»™æŒ‡å®šdnæ·»åŠ Attribute
+     * @param dn æŒ‡å®šdn
      * @param key attributeId
      * @param value attributeValue
      */
@@ -83,10 +83,10 @@ public class AttributeMgr4LDAP {
     }
 
     /**
-     * É¾³ıÖ¸¶¨dnµÄattribute
-     * @param dn Ö¸¶¨dn
+     * åˆ é™¤æŒ‡å®šdnçš„attribute
+     * @param dn æŒ‡å®šdn
      * @param name attribute ID
-     * @param value attribute Value¿É´¦Àíname¶à¸öµÄÎÊÌâ£¬Èç£º
+     * @param value attribute Valueå¯å¤„ç†nameå¤šä¸ªçš„é—®é¢˜ï¼Œå¦‚ï¼š
      * <ul>
      *  <li>dn:cn=userName,dc=daowoo,dc=com</li>
      *  <li>sn:Kevin</li>
@@ -103,15 +103,15 @@ public class AttributeMgr4LDAP {
     }
 
     /**
-     * ²éÑ¯Ö¸¶¨DNµÄAttribute£¬Ö§³Ö¹ıÂË <strong>Ê¾Àı£º</strong>
+     * æŸ¥è¯¢æŒ‡å®šDNçš„Attributeï¼Œæ”¯æŒè¿‡æ»¤ <strong>ç¤ºä¾‹ï¼š</strong>
      * <p>
      * Attributes attrArray = new AttributeMgr4LDAP(dirCtx).qryAttr("o=hr,dc=daowoo,dc=com", new String[]{"id","name"});
      * </p>
      * <p>
-     * <strong>×¢Òâ£º</strong>¶ÔÊôĞÔÖµµÄ¸ü¸Ä´æÔÚÖĞÎÄÎÊÌâ
+     * <strong>æ³¨æ„ï¼š</strong>å¯¹å±æ€§å€¼çš„æ›´æ”¹å­˜åœ¨ä¸­æ–‡é—®é¢˜
      * </p>
-     * @param dn Ö¸¶¨DN
-     * @param filters ¹ıÂËÆ÷
+     * @param dn æŒ‡å®šDN
+     * @param filters è¿‡æ»¤å™¨
      */
     public Attributes qryAttr(String dn, String[] filters) {
         Attributes attrList = null;
@@ -128,9 +128,9 @@ public class AttributeMgr4LDAP {
     }
 
     /**
-     * ·â×°AttributeĞŞ¸Ä{CRUD}
-     * @param dn Ö¸¶¨dn
-     * @param mods ĞŞ¸ÄÊµÀı
+     * å°è£…Attributeä¿®æ”¹{CRUD}
+     * @param dn æŒ‡å®šdn
+     * @param mods ä¿®æ”¹å®ä¾‹
      */
     private void modifyAttr(String dn, ModificationItem[] mods) {
         try {

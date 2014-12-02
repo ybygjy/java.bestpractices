@@ -4,14 +4,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * ÊµÏÖThreadLocal¹¦ÄÜÀ©Õ¹
+ * å®ç°ThreadLocalåŠŸèƒ½æ‰©å±•
  * @author WangYanCheng
  * @version 2011-4-23
  */
 public final class ThreadLocalMap {
     private static final ThreadLocal<Map<String, Object>> threadLocal = new InnerThreadLocal();
     /**
-     * ¹¤¾ßÀà²»ÔÊĞíÊµÀı»¯
+     * å·¥å…·ç±»ä¸å…è®¸å®ä¾‹åŒ–
      */
     private ThreadLocalMap(){}
     public static Map<String, Object> getContext() {

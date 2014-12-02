@@ -29,17 +29,17 @@ public class Console {
         int choose = 
             JOptionPane.showConfirmDialog(
                 null, 
-                "ÄãÈ·¶¨ÒªÍË³öÂğ£¿",
-                "È·ÈÏÍË³ö", 
+                "ä½ ç¡®å®šè¦é€€å‡ºå—ï¼Ÿ",
+                "ç¡®è®¤é€€å‡º", 
                 JOptionPane.YES_NO_OPTION);
         if (choose == JOptionPane.YES_OPTION) {
             System.exit(0);
         }
     }
-    /** Ñ¡ÔñÎÄ¼ş»òÎÄ¼ş¼Ğ  */
+    /** é€‰æ‹©æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹  */
     public void selectFile() {
         JFileChooser jf = new JFileChooser();
-        jf.setDialogTitle("Ñ¡ÔñÎÄ¼ş»òÎÄ¼ş¼Ğ");
+        jf.setDialogTitle("é€‰æ‹©æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹");
         jf.setFileSelectionMode(
                 JFileChooser.FILES_AND_DIRECTORIES);
 //      FileNameExtensionFilter filter = 
@@ -55,10 +55,10 @@ public class Console {
         }
     }
     
-    /** Ñ¡Ôñ±£´æÂ·¾¶  */
+    /** é€‰æ‹©ä¿å­˜è·¯å¾„  */
     public void selectDir() {
         JFileChooser jf = new JFileChooser();
-        jf.setDialogTitle("Ñ¡Ôñ±£´æÎÄ¼ş¼Ğ");
+        jf.setDialogTitle("é€‰æ‹©ä¿å­˜æ–‡ä»¶å¤¹");
         jf.setFileSelectionMode(
                 JFileChooser.DIRECTORIES_ONLY);
         int result = jf.showOpenDialog(frm);
@@ -69,7 +69,7 @@ public class Console {
         }
     }
     
-    /** Ñ¡Ôñ±£´æÎÄ¼ş¼Ğºó×öµÄÊÂÇé  */
+    /** é€‰æ‹©ä¿å­˜æ–‡ä»¶å¤¹ååšçš„äº‹æƒ…  */
     private void todoChooserDir(File selectSaveDir) {
         if (selectSaveDir.exists()) {
             saveFilepath = 
@@ -77,16 +77,16 @@ public class Console {
             frm.txt_dir.setText(saveFilepath);
             frm.txt_show.append("\n\r");
             frm.txt_show.append(
-                        "±£´æÂ·¾¶: " + saveFilepath);
+                        "ä¿å­˜è·¯å¾„: " + saveFilepath);
         } else {
             this.selectSaveDir = null;
             JOptionPane.showMessageDialog(
                     null, 
-                    "ÎÄ¼ş¼Ğ²»´æÔÚ!");
+                    "æ–‡ä»¶å¤¹ä¸å­˜åœ¨!");
         }
     }
     
-    /**  Ñ¡ÔñÎÄ¼ş»òÎÄ¼ş¼Ğºó×öµÄÊÂÇé */
+    /**  é€‰æ‹©æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹ååšçš„äº‹æƒ… */
     private void todoChooser(File selectFile) {
         if (selectFile.exists()) {
             filepath = 
@@ -97,17 +97,17 @@ public class Console {
             if (selectFile.isFile()) {
                 flag = true;
                 frm.txt_show.append(
-                        "ÎÄ¼ş: " + filepath);
+                        "æ–‡ä»¶: " + filepath);
             } else {
                 flag = false;
                 frm.txt_show.append(
-                        "Ä¿Â¼: " + filepath);
+                        "ç›®å½•: " + filepath);
             }
         } else {
             this.selectFile = null;
             JOptionPane.showMessageDialog(
                     null, 
-                    "ÎÄ¼ş»òÎÄ¼ş¼Ğ²»´æÔÚ!");
+                    "æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹ä¸å­˜åœ¨!");
         }
     }
     public void setFrm(FrmMain frm) {
@@ -117,30 +117,30 @@ public class Console {
         return frm;
     }
     
-    /** ÏÔÊ¾´°Ìå  */
+    /** æ˜¾ç¤ºçª—ä½“  */
     public void show() {
         frm.setVisible(true);
     }
     
-    /** ÉèÖÃÔ´±àÂë  */
+    /** è®¾ç½®æºç¼–ç   */
     public void sourceEncodingChoose() {
         sourceEncoding =    (String) 
             frm.jbx_source.getSelectedItem();
 //      System.out.println(sourceEncoding);
     }
     
-    /** ÉèÖÃÄ¿±ê±àÂë  */
+    /** è®¾ç½®ç›®æ ‡ç¼–ç   */
     public void targetEncodingChoose() {
         targetEncoding = (String) 
             frm.jbx_target.getSelectedItem();
 //      System.out.println(targetEncoding);
     }
-    /** Ö´ĞĞ°´Å¥×ª»»µÄ·½·¨  */
+    /** æ‰§è¡ŒæŒ‰é’®è½¬æ¢çš„æ–¹æ³•  */
     public void change() {
         if(selectFile == null){
             JOptionPane.showMessageDialog(
                     null, 
-                    "ÇëÑ¡ÔñÎÄ¼ş»òÎÄ¼ş¼Ğ!");
+                    "è¯·é€‰æ‹©æ–‡ä»¶æˆ–æ–‡ä»¶å¤¹!");
         }
         
         String sourcePath = frm.txt_file.getText();
@@ -153,32 +153,32 @@ public class Console {
         }
     }   
     
-    /** ÎÄ¼ş¼Ğ×ª»»·½·¨  */
+    /** æ–‡ä»¶å¤¹è½¬æ¢æ–¹æ³•  */
     private void todoAllChage() {
         if((type = frm.txt_type.getText()) == null){
             JOptionPane.showMessageDialog(
                     frm,
-            "ÄãÑ¡ÔñµÄÊÇÎÄ¼ş¼Ğ,ÇëÖ¸¶¨ÎÄ¼ş¹ıÂË,Èç:.java");
+            "ä½ é€‰æ‹©çš„æ˜¯æ–‡ä»¶å¤¹,è¯·æŒ‡å®šæ–‡ä»¶è¿‡æ»¤,å¦‚:.java");
             return;
         }
         List<File> list = 
             IOCVUtils.listAll(filepath, type);
         if(list.size() == 0){
             JOptionPane.showMessageDialog(frm,
-            "¸ÃÎÄ¼ş¼ĞÏÂÃæÃ»ÓĞÄãĞèÒªµÄÎÄ¼ş!");
+            "è¯¥æ–‡ä»¶å¤¹ä¸‹é¢æ²¡æœ‰ä½ éœ€è¦çš„æ–‡ä»¶!");
         }else{
             frm.txt_show.append("\n\r");
-            frm.txt_show.append("ÄãÑ¡ÖĞµÄÎÄ¼ş¼Ğ°üº¬" + list.size() + "¸öÎÄ¼ş:");
+            frm.txt_show.append("ä½ é€‰ä¸­çš„æ–‡ä»¶å¤¹åŒ…å«" + list.size() + "ä¸ªæ–‡ä»¶:");
             for(File ls:list){
                 frm.txt_show.append("\n\r");
                 frm.txt_show.append(ls.getAbsolutePath());
             }
             int choose = JOptionPane.showConfirmDialog(frm, 
-                    "ÄãÈ·¶¨ÄãÒª×ª»»ÕâĞ©ÎÄ¼şÂğ?",
+                    "ä½ ç¡®å®šä½ è¦è½¬æ¢è¿™äº›æ–‡ä»¶å—?",
                     "Message", JOptionPane.YES_NO_OPTION);
             if (choose == JOptionPane.YES_OPTION) {
                 frm.txt_show.append("\n\r");
-                frm.txt_show.append("Ö´ĞĞÅúÁ¿×ª»».....");
+                frm.txt_show.append("æ‰§è¡Œæ‰¹é‡è½¬æ¢.....");
                 IOCVUtils.sourceEncoding = sourceEncoding;
                 IOCVUtils.targetEncoding = targetEncoding;
                 for(File ls:list){
@@ -193,7 +193,7 @@ public class Console {
         
     }
     
-    /** ÎÄ¼ş×ª»»·½·¨  */
+    /** æ–‡ä»¶è½¬æ¢æ–¹æ³•  */
     private void todoChange(String sourcePath, String targetPath) {
         IOCVUtils.rename(sourcePath, targetPath);
         try {
@@ -202,9 +202,9 @@ public class Console {
                     sourceEncoding, 
                     targetEncoding);
             frm.txt_show.append("\n\r");
-            frm.txt_show.append("ÎÄ¼ş×ª»»³É¹¦: " + sourcePath);
+            frm.txt_show.append("æ–‡ä»¶è½¬æ¢æˆåŠŸ: " + sourcePath);
             frm.txt_show.append("\n\r");
-            frm.txt_show.append(targetPath + "ÎªÔ´ÎÄ¼ş±¸·İ!");
+            frm.txt_show.append(targetPath + "ä¸ºæºæ–‡ä»¶å¤‡ä»½!");
         } catch (IOException e) {
 //          e.printStackTrace();
             System.out.println(e.getMessage());

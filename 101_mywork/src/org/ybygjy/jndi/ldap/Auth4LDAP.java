@@ -9,12 +9,12 @@ import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
 
 /**
- * LDAPÈÏÖ¤
+ * LDAPè®¤è¯
  * @author WangYanCheng
  * @version 2011-5-12
  */
 public class Auth4LDAP {
-    /**LDAPÉÏÏÂÎÄ·şÎñ¶ÔÏó*/
+    /**LDAPä¸Šä¸‹æ–‡æœåŠ¡å¯¹è±¡*/
     private DirContext dirCtx;
     /**
      * Constructor
@@ -24,14 +24,14 @@ public class Auth4LDAP {
         this.dirCtx = dirCtx;
     }
     /**
-     * ÑéÖ¤(²éÑ¯/°ó¶¨·½Ê½)
-     * @param userCode ÓÃ»§±àÂë
-     * @param passwd ÃÜÂë
-     * @return {true£ºÑéÖ¤Í¨¹ı;false£ºÑéÖ¤Ê§°Ü}
+     * éªŒè¯(æŸ¥è¯¢/ç»‘å®šæ–¹å¼)
+     * @param userCode ç”¨æˆ·ç¼–ç 
+     * @param passwd å¯†ç 
+     * @return {trueï¼šéªŒè¯é€šè¿‡;falseï¼šéªŒè¯å¤±è´¥}
      */
     public boolean auth4SBind(String userCode, String passwd) {
         boolean rtnFlag = false;
-        //²éÑ¯
+        //æŸ¥è¯¢
         String filterStr = "(&(uid=@UID@)(userPassword=*))".replaceAll("@UID@", userCode);
         SearchControls scInst = new SearchControls();
         scInst.setSearchScope(SearchControls.SUBTREE_SCOPE);
@@ -42,7 +42,7 @@ public class Auth4LDAP {
             SearchResult searchResult = null;
             if (resultEnum.hasMore()) {
                 searchResult = resultEnum.next();
-                //½øĞĞÈÏÖ¤
+                //è¿›è¡Œè®¤è¯
                 tmpCtx = Constant.createCtx(searchResult.getNameInNamespace(), passwd);
             }
         } catch (NamingException e) {
@@ -60,18 +60,18 @@ public class Auth4LDAP {
         return rtnFlag;
     }
     /**
-     * Éí·İÑéÖ¤(Ê¹ÓÃÖ±½Ó°ó¶¨LDAP·şÎñÆ÷²ßÂÔ)
-     * @param userDn È«¾ÖÌõÄ¿µØÖ·
-     * @param password ÃÜÂë
-     * @return {true:ÑéÖ¤³É¹¦;false:ÑéÖ¤Ê§°Ü}
+     * èº«ä»½éªŒè¯(ä½¿ç”¨ç›´æ¥ç»‘å®šLDAPæœåŠ¡å™¨ç­–ç•¥)
+     * @param userDn å…¨å±€æ¡ç›®åœ°å€
+     * @param password å¯†ç 
+     * @return {true:éªŒè¯æˆåŠŸ;false:éªŒè¯å¤±è´¥}
      */
     public boolean auth4Bind(String userDn, String password) {
         return (null != Constant.createCtx(userDn, password));
     }
     /**
-     * È¡µÃÄ³ÊôĞÔµÄÖµ
-     * @param attr ¸ø¶¨ÊôĞÔ¶ÔÏó
-     * @return ÊôĞÔÖµ,¶à¸öÒÔ¶ººÅ·Ö¸î
+     * å–å¾—æŸå±æ€§çš„å€¼
+     * @param attr ç»™å®šå±æ€§å¯¹è±¡
+     * @return å±æ€§å€¼,å¤šä¸ªä»¥é€—å·åˆ†å‰²
      * @throws NamingException NamingException
      */
     public String getAttrValue(Attribute attr) throws NamingException {

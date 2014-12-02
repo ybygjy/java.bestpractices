@@ -13,7 +13,7 @@ import javax.swing.JLabel;
  */
 public class TestDriver {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

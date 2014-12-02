@@ -12,25 +12,25 @@ import org.ybygjy.pattern.proxy.rmistate.IGumballMachine;
 /**
  * Server<br>
  * <p>
- * 1¡¢Java»·¾³Ìá¹©ÁËÒ»¸öµ¥»ú²âÊÔµÄRMI×¢²á»úÖÆ£¬µ«½öÏŞÓëµ¥»ú²âÊÔ£¬ÎŞ·¨ÓëÆäËüÖ÷»úÁªÍ¨²âÊÔ¡£
+ * 1ã€Javaç¯å¢ƒæä¾›äº†ä¸€ä¸ªå•æœºæµ‹è¯•çš„RMIæ³¨å†Œæœºåˆ¶ï¼Œä½†ä»…é™ä¸å•æœºæµ‹è¯•ï¼Œæ— æ³•ä¸å…¶å®ƒä¸»æœºè”é€šæµ‹è¯•ã€‚
  * </p>
- * 2¡¢¿ÉÊ¹ÓÃJavaÌá¹©µÄrmiregistryÖÕ¶ËÄ£ÄâÕæÊµ»·¾³<br>
+ * 2ã€å¯ä½¿ç”¨Javaæä¾›çš„rmiregistryç»ˆç«¯æ¨¡æ‹ŸçœŸå®ç¯å¢ƒ<br>
  * <ol>
- * <li>ÉùÃ÷remote½Ó¿Ú×ÓÀà</li>
- * <li>ÉùÃ÷¼Ì³ĞUnicastRemoteObject²¢ÇÒ¸ºÔğÊµÏÖÒµÎñ½Ó¿ÚµÄ¾ßÌåÊµÏÖÀà </li>
- * <li>Ê¹ÓÃrmic&nbsp;MyRemoteImpl Éú³ÉStub</li>
+ * <li>å£°æ˜remoteæ¥å£å­ç±»</li>
+ * <li>å£°æ˜ç»§æ‰¿UnicastRemoteObjectå¹¶ä¸”è´Ÿè´£å®ç°ä¸šåŠ¡æ¥å£çš„å…·ä½“å®ç°ç±» </li>
+ * <li>ä½¿ç”¨rmic&nbsp;MyRemoteImpl ç”ŸæˆStub</li>
  * </ol>
- * 3¡¢±àĞ´ClientÀà×¢Òâ
+ * 3ã€ç¼–å†™Clientç±»æ³¨æ„
  * <ol>
- * <li>ÒıÈëRemoteInterface.class</li>
- * <li>ÒıÈëRemoteImpl_Stub.class</li>
- * <li>ÎŞĞëÒıÈëRemoteImpl.class</li>
+ * <li>å¼•å…¥RemoteInterface.class</li>
+ * <li>å¼•å…¥RemoteImpl_Stub.class</li>
+ * <li>æ— é¡»å¼•å…¥RemoteImpl.class</li>
  * </ol>
- * 4¡¢ÆôÓÃ
+ * 4ã€å¯ç”¨
  * <ol>
- * <li>ÔÚÏà¶ÔclassesÄ¿Â¼ÏÂÖ´ĞĞrmiregistryÃüÁî</li>
- * <li>Ö´ĞĞServer¶Ë°ó¶¨</li>
- * <li>Ö´ĞĞÔ¶³ÌClient¶Ë²âÊÔ</li>
+ * <li>åœ¨ç›¸å¯¹classesç›®å½•ä¸‹æ‰§è¡Œrmiregistryå‘½ä»¤</li>
+ * <li>æ‰§è¡ŒServerç«¯ç»‘å®š</li>
+ * <li>æ‰§è¡Œè¿œç¨‹Clientç«¯æµ‹è¯•</li>
  * </ol>
  * @author WangYanCheng
  * @version 2010-12-24
@@ -40,7 +40,7 @@ public class Server {
     public static String rmiURL = "Gumball";
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      * @throws RemoteException RemoteException
      */

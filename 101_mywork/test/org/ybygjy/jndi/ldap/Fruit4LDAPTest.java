@@ -6,19 +6,19 @@ import org.junit.Test;
 import org.ybygjy.jndi.ldap.model.Fruit;
 
 /**
- * ¶ÔÊµÏÖReference½Ó¿ÚµÄÀàÊµÀıµÄ°ó¶¨
+ * å¯¹å®ç°Referenceæ¥å£çš„ç±»å®ä¾‹çš„ç»‘å®š
  * @author WangYanCheng
  * @version 2011-4-29
  */
 public class Fruit4LDAPTest {
-    /**·şÎñÊµÀı*/
+    /**æœåŠ¡å®ä¾‹*/
     private ContextMgr4LDAP cmLDAPInst;
-    /**²ÎÓë²âÊÔ¶ÔÏó*/
+    /**å‚ä¸æµ‹è¯•å¯¹è±¡*/
     private Fruit fruit;
     @Before
     public void setUP() {
         cmLDAPInst = ContextMgr4LDAP.getInstance();
-        fruit = new Fruit("Æ»¹û");
+        fruit = new Fruit("è‹¹æœ");
     }
     @Test
     public void testBind() {
@@ -28,7 +28,7 @@ public class Fruit4LDAPTest {
     public void testLookup() {
         Fruit fruit = (Fruit) cmLDAPInst.lookup(Fruit.dn);
         if (!this.fruit.equals(fruit)) {
-            throw new RuntimeException("°ó¶¨¶ÔÏó²»Ò»ÖÂ¡£¡£");
+            throw new RuntimeException("ç»‘å®šå¯¹è±¡ä¸ä¸€è‡´ã€‚ã€‚");
         }
     }
     @Test

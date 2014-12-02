@@ -5,7 +5,7 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 /**
- * 修改类的成员变量
+ * 淇敼绫荤殑鎴愬憳鍙橀噺
  * @author WangYanCheng
  * @version 2009-12-15
  */

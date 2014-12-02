@@ -4,16 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ÊµÀı·â±Õ
- * <p>½«Êı¾İ·â×°ÔÚ¶ÔÏóÄÚ²¿£¬¿ÉÒÔ½«Êı¾İµÄ·ÃÎÊÏŞÖÆÔÚ¶ÔÏóµÄ·½·¨ÉÏ£¬´Ó¶ø¸üÈİÒ×È·±£Ïß³ÌÔÚ·ÃÎÊÊı¾İÊ±×ÜÄÜ³ÖÓĞÕıÈ·µÄËø¡£</p>
- * <p>Í¨¹ı½«·â±Õ»úÖÆÓëºÏÊÊµÄ¼ÓËø²ßÂÔ½áºÏ£¬¿ÉÒÔÈ·±£ÒÔÏß³Ì°²È«µÄ·½Ê½À´Ê¹ÓÃ·ÇÏß³Ì°²È«µÄ¶ÔÏó¡£</p>
- * <p>DecoratorÄ£Ê½</p>
+ * å®ä¾‹å°é—­
+ * <p>å°†æ•°æ®å°è£…åœ¨å¯¹è±¡å†…éƒ¨ï¼Œå¯ä»¥å°†æ•°æ®çš„è®¿é—®é™åˆ¶åœ¨å¯¹è±¡çš„æ–¹æ³•ä¸Šï¼Œä»è€Œæ›´å®¹æ˜“ç¡®ä¿çº¿ç¨‹åœ¨è®¿é—®æ•°æ®æ—¶æ€»èƒ½æŒæœ‰æ­£ç¡®çš„é”ã€‚</p>
+ * <p>é€šè¿‡å°†å°é—­æœºåˆ¶ä¸åˆé€‚çš„åŠ é”ç­–ç•¥ç»“åˆï¼Œå¯ä»¥ç¡®ä¿ä»¥çº¿ç¨‹å®‰å…¨çš„æ–¹å¼æ¥ä½¿ç”¨éçº¿ç¨‹å®‰å…¨çš„å¯¹è±¡ã€‚</p>
+ * <p>Decoratoræ¨¡å¼</p>
  * @author WangYanCheng
  * @version 2014-7-21
  */
 public class InstanceConfinement {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args
      */
     public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class InstanceConfinement {
         new MonitorThread("MonitorThread", instanceConf).start();
     }
     /**
-     * Ğ´Ïß³Ì
+     * å†™çº¿ç¨‹
      * @author WangYanCheng
      * @version 2014-7-21
      */
@@ -47,7 +47,7 @@ public class InstanceConfinement {
         }
     }
     /**
-     * ¶ÁÏß³Ì
+     * è¯»çº¿ç¨‹
      * @author WangYanCheng
      * @version 2014-7-21
      */
@@ -63,11 +63,11 @@ public class InstanceConfinement {
                 for (Point point : points) {
                     System.out.println(getName() + ">>" + point);
                     this.instanceConfinement.removePoint(point);
-                    //ÑéÖ¤List#toArray]£¬´Ë´¦ÊµÀıµÄĞŞ¸Ä²»»áÓ°Ïìµ½±»·â±ÕµÄ·ÇÏß³Ì°²È«¼¯ºÏÖĞµÄ¶ÔÏó
-                    //ÒòÎª{@link Point}ÊÇ²»¿É±ä¶ÔÏó£¬ËùÒÔÎŞ·¨ĞŞ¸Ä¶ÔÏóµÄÊôĞÔ£¬µ«¿ÉÒÔ¸Ä±ä¶ÔÏóµÄÒıÓÃ
+                    //éªŒè¯List#toArray]ï¼Œæ­¤å¤„å®ä¾‹çš„ä¿®æ”¹ä¸ä¼šå½±å“åˆ°è¢«å°é—­çš„éçº¿ç¨‹å®‰å…¨é›†åˆä¸­çš„å¯¹è±¡
+                    //å› ä¸º{@link Point}æ˜¯ä¸å¯å˜å¯¹è±¡ï¼Œæ‰€ä»¥æ— æ³•ä¿®æ”¹å¯¹è±¡çš„å±æ€§ï¼Œä½†å¯ä»¥æ”¹å˜å¯¹è±¡çš„å¼•ç”¨
 //                    point.x = 0;
 //                    point.y = 0;
-//                    ÀàËÆ
+//                    ç±»ä¼¼
 //                    String s1 = "abc";
 //                    String s2 = "abc";
 //                    s2==s1?s2="abcd":s1;
@@ -82,7 +82,7 @@ public class InstanceConfinement {
         }
     }
     /**
-     * ¸ºÔğ·â±ÕÊµÀı×´Ì¬¼à¿Ø
+     * è´Ÿè´£å°é—­å®ä¾‹çŠ¶æ€ç›‘æ§
      * @author WangYanCheng
      * @version 2014-7-21
      */
@@ -105,9 +105,9 @@ public class InstanceConfinement {
     }
 }
 /**
- * ¸ºÔğÍ¨¹ı·â±Õ»úÖÆÈ·±£Ïß³Ì°²È«
- * <p>1¡¢·â±Õ·ÇÏß³Ì°²È«µÄ¼¯ºÏ¶ÔÏó</p>
- * <p>2¡¢²É¼¯Í¬²½»úÖÆÈ·±£¶Ô·ÇÏß³Ì°²È«¼¯ºÏ¶ÔÏóµÄ²Ù×÷ÊÇÏß³Ì°²È«µÄ</p>
+ * è´Ÿè´£é€šè¿‡å°é—­æœºåˆ¶ç¡®ä¿çº¿ç¨‹å®‰å…¨
+ * <p>1ã€å°é—­éçº¿ç¨‹å®‰å…¨çš„é›†åˆå¯¹è±¡</p>
+ * <p>2ã€é‡‡é›†åŒæ­¥æœºåˆ¶ç¡®ä¿å¯¹éçº¿ç¨‹å®‰å…¨é›†åˆå¯¹è±¡çš„æ“ä½œæ˜¯çº¿ç¨‹å®‰å…¨çš„</p>
  * @author WangYanCheng
  * @version 2014-7-21
  */
@@ -120,7 +120,7 @@ class InnerInstanceConfinement {
         return pointList.contains(point);
     }
     public synchronized boolean removePoint(Point point) {
-        //ÖØÈë
+        //é‡å…¥
         if (containsPoint(point)) {
             return pointList.remove(point);
         } else {
@@ -129,7 +129,7 @@ class InnerInstanceConfinement {
         return false;
     }
     /**
-     * deepCopy¿ìÕÕ
+     * deepCopyå¿«ç…§
      * @return rtnPoint {@link Point}
      */
     public Point[] getAllPoints() {

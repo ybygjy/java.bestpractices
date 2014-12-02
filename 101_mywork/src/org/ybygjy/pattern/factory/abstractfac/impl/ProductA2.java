@@ -3,7 +3,7 @@ package org.ybygjy.pattern.factory.abstractfac.impl;
 import org.ybygjy.pattern.factory.abstractfac.AbstractProductA;
 
 /**
- * 抽象产品规范实现
+ * 鎶借薄浜у搧瑙勮寖瀹炵幇
  * @author WangYanCheng
  * @version 2010-10-25
  */

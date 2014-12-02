@@ -1,10 +1,10 @@
 package org.ybygjy.basic.file.fileedit;
 
 /**
- * һ���ַ���ƥ������㷨 <br>
+ * 一种字符串匹配查找算法 <br>
  * <a href=
  * "http://en.wikipedia.org/wiki/Boyer%E2%80%93Moore_string_search_algorithm"
- * >�ο���ַ</a>
+ * >参考地址</a>
  * @author WangYanCheng
  * @version 2011-12-28
  */

@@ -1,12 +1,12 @@
 package org.ybygjy.pattern.eventsys.jbboundproperty;
 /**
- * 事件机制-->JavaBean模式-->Bound Property Pattern
+ * 浜嬩欢鏈哄埗-->JavaBean妯″紡-->Bound Property Pattern
  * @author WangYanCheng
  * @version 2010-2-20
  */
 public class Test {
     /**
-     * 测试入口
+     * 娴嬭瘯鍏ュ彛
      * @param args args
      */
     public static void main(String[] args) {

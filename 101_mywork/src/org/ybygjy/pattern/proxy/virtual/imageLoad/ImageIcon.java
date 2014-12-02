@@ -10,7 +10,7 @@ import javax.imageio.ImageIO;
 import javax.swing.Icon;
 
 /**
- * 负责耗时操作
+ * 璐熻矗鑰楁椂鎿嶄綔
  * @author WangYanCheng
  * @version 2011-1-13
  */

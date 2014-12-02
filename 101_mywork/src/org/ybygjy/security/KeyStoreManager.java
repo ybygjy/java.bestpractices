@@ -16,9 +16,9 @@ import java.security.cert.CertificateFactory;
 import java.util.Enumeration;
 
 /**
- * KeyStore¹ÜÀí
- * <p>1¡¢KeyStore¿â×ÔÉíµÄ¹ÜÀí</p>
- * <p>2¡¢ÌõÄ¿µÄÔö¼Ó¡¢É¾³ı</p>
+ * KeyStoreç®¡ç†
+ * <p>1ã€KeyStoreåº“è‡ªèº«çš„ç®¡ç†</p>
+ * <p>2ã€æ¡ç›®çš„å¢åŠ ã€åˆ é™¤</p>
  * @author WangYanCheng
  * @version 2013-10-7
  */
@@ -28,9 +28,9 @@ public class KeyStoreManager {
     private String keyStorePass;
 
     /**
-     * ¹¹Ôì·½·¨
-     * @param keyStoreFile KeyStoreÎÄ¼şÂ·¾¶
-     * @param keyStorePass KeyStoreÎÄ¼şÃÜÂë
+     * æ„é€ æ–¹æ³•
+     * @param keyStoreFile KeyStoreæ–‡ä»¶è·¯å¾„
+     * @param keyStorePass KeyStoreæ–‡ä»¶å¯†ç 
      */
     public KeyStoreManager(File keyStoreFile, String keyStorePass) {
         this.keyStoreFile = keyStoreFile;
@@ -39,9 +39,9 @@ public class KeyStoreManager {
     }
 
     /**
-     * ¼ÓÔØKeyStoreÎÄ¼şÄÚÈİ
-     * @param keyStoreFile ÎÄ¼şÊµÌå
-     * @param keyStorePass ÃÜÂëĞÅÏ¢
+     * åŠ è½½KeyStoreæ–‡ä»¶å†…å®¹
+     * @param keyStoreFile æ–‡ä»¶å®ä½“
+     * @param keyStorePass å¯†ç ä¿¡æ¯
      * @return rtnKeyStore {@link KeyStore}
      */
     private KeyStore loadKeyStore(File keyStoreFile, String keyStorePass) {
@@ -66,8 +66,8 @@ public class KeyStoreManager {
     }
 
     /**
-     * Ìí¼ÓĞÅÈÎÖ¤Êé
-     * @param trustFile Ö¤ÊéÎÄ¼ş
+     * æ·»åŠ ä¿¡ä»»è¯ä¹¦
+     * @param trustFile è¯ä¹¦æ–‡ä»¶
      */
     public void addTrustItem(File trustFile) {
         Certificate certificate = createCertificate(trustFile);
@@ -81,7 +81,7 @@ public class KeyStoreManager {
     }
 
     /**
-     * É¾³ı¸ø¶¨±ğÃûµÄÌõÄ¿
+     * åˆ é™¤ç»™å®šåˆ«åçš„æ¡ç›®
      * @param alias
      */
     public void deleteTrustItem(String alias) {
@@ -94,7 +94,7 @@ public class KeyStoreManager {
     }
 
     /**
-     * ´´½¨Ö¤ÊéÊµÀı
+     * åˆ›å»ºè¯ä¹¦å®ä¾‹
      * @return certInst {@link Certificate}
      */
     private Certificate createCertificate(File trustFile) {
@@ -119,7 +119,7 @@ public class KeyStoreManager {
     }
 
     /**
-     * ´òÓ¡µ±Ç°JVM¿ÉÑ¡°²È«ÊµÏÖÁĞ±í
+     * æ‰“å°å½“å‰JVMå¯é€‰å®‰å…¨å®ç°åˆ—è¡¨
      */
     public void showSecurityProvider() {
         Provider[] securityProviderArray = Security.getProviders();
@@ -129,7 +129,7 @@ public class KeyStoreManager {
     }
 
     /**
-     * ´òÓ¡µ±Ç°KeyStoreÌõ¼şĞÅÏ¢
+     * æ‰“å°å½“å‰KeyStoreæ¡ä»¶ä¿¡æ¯
      */
     private void showItemList() {
         Enumeration<String> aliasEnum = null;
@@ -137,7 +137,7 @@ public class KeyStoreManager {
             aliasEnum = keyStore.aliases();
             while (aliasEnum.hasMoreElements()) {
                 String aliasName = aliasEnum.nextElement();
-                System.out.println("ÌõÄ¿Begin==>" + aliasName);
+                System.out.println("æ¡ç›®Begin==>" + aliasName);
                 Entry entry = keyStore.getEntry(aliasName, null);
                 if (entry instanceof KeyStore.SecretKeyEntry) {
                     KeyStore.SecretKeyEntry kskeInst = (KeyStore.SecretKeyEntry) entry;
@@ -149,7 +149,7 @@ public class KeyStoreManager {
                     KeyStore.PrivateKeyEntry kskeInst = (KeyStore.PrivateKeyEntry) entry;
                     System.out.println(kskeInst.toString());
                 }
-                System.out.println("ÌõÄ¿End==>" + aliasName);
+                System.out.println("æ¡ç›®End==>" + aliasName);
             }
         } catch (KeyStoreException e) {
             e.printStackTrace();
@@ -161,7 +161,7 @@ public class KeyStoreManager {
     }
 
     /**
-     * ×ª´¢KeyStore
+     * è½¬å‚¨KeyStore
      * @param keyStore {@link KeyStore}
      */
     private void restoreKeyStore(KeyStore keyStore) {
@@ -183,19 +183,19 @@ public class KeyStoreManager {
     }
 
     /**
-     * Âß¼­Èë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * é€»è¾‘å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         File keyStoreFile = new File("D:\\dev\\trust.jks");
         File certFile = new File("D:\\dev\\alipay.com.cer");
         String keyStorePass = "1";
         KeyStoreManager kmInst = new KeyStoreManager(keyStoreFile, keyStorePass);
-        // Ìí¼ÓĞÅÈÎÖ¤Êé
+        // æ·»åŠ ä¿¡ä»»è¯ä¹¦
         kmInst.addTrustItem(certFile);
-        // É¾³ıĞÅÈÎÖ¤Êé
+        // åˆ é™¤ä¿¡ä»»è¯ä¹¦
         //kmInst.deleteTrustItem("org.ybygjy.autocert_22697208");
-        // ´òÓ¡Ö¤Êé¿âÌõÄ¿ĞÅÏ¢
+        // æ‰“å°è¯ä¹¦åº“æ¡ç›®ä¿¡æ¯
         kmInst.showItemList();
     }
 }

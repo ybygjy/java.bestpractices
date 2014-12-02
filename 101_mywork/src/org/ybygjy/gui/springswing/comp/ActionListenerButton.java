@@ -5,25 +5,25 @@ import java.awt.event.ActionListener;
 import javax.swing.JButton;
 
 /**
- * ¸ºÔğÀ©Õ¹JButton×é¼ş
+ * è´Ÿè´£æ‰©å±•JButtonç»„ä»¶
  * @author WangYanCheng
  * @version 2011-2-16
  */
 @SuppressWarnings("serial")
 public class ActionListenerButton extends JButton {
-    /** ÊÂ¼ş¼àÌıÆ÷ */
+    /** äº‹ä»¶ç›‘å¬å™¨ */
     private ActionListener actionListener;
 
     /**
-     * Ìí¼ÓÊÂ¼ş¼àÌıÆ÷
-     * @param actionListener ÊÂ¼ş¼àÌıÆ÷
+     * æ·»åŠ äº‹ä»¶ç›‘å¬å™¨
+     * @param actionListener äº‹ä»¶ç›‘å¬å™¨
      */
     public void setActionListener(ActionListener actionListener) {
         this.actionListener = actionListener;
     }
 
     /**
-     * ³õÊ¼»¯
+     * åˆå§‹åŒ–
      */
     public void init() {
         this.addActionListener(this.actionListener);

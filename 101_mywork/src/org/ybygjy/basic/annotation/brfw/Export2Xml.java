@@ -53,7 +53,7 @@ public class Export2Xml {
     }
     /**
      * doExportField
-     * @param fieldArray ×Ö¶Î¼¯
+     * @param fieldArray å­—æ®µé›†
      * @param targetObj targetObj
      * @return fieldXml
      */
@@ -169,8 +169,8 @@ public class Export2Xml {
     /**tmpl4Argu*/
     private String tmpl4Argu = "<ARGUMENT><TYPE>@TYPE@</TYPE><NAME>@NAME@</NAME></ARGUMENT>";
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         List<Address> addressArray = new ArrayList<Address>();

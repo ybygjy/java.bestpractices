@@ -21,7 +21,7 @@ import org.apache.ftpserver.usermanager.impl.WritePermission;
 import org.apache.ftpserver.util.EncryptUtils;
 
 /**
- * 适用于CNGI项目的FTP身份认证
+ * 閫傜敤浜嶤NGI椤圭洰鐨凢TP韬唤璁よ瘉
  * @author WangYanCheng
  * @version 2011-6-16
  */

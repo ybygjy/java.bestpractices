@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ¸ºÔğthisÒİ³öÑéÖ¤
+ * è´Ÿè´£thisé€¸å‡ºéªŒè¯
  * @author WangYanCheng
  * @version 2014-7-17
  */
@@ -14,30 +14,30 @@ public class ThisEscapeTest {
         thisEscape.fireEvent();
     }
     /**
-     * ¸ºÔğ¹¹ÔìÒşÊ½thisÒıÓÃÒİ³ö
+     * è´Ÿè´£æ„é€ éšå¼thiså¼•ç”¨é€¸å‡º
      * @author WangYanCheng
      * @version 2014-7-17
      */
     static class ThisEscape implements EventSource {
-        /** ÄÚ²¿ÊµÀı±äÁ¿*/
+        /** å†…éƒ¨å®ä¾‹å˜é‡*/
         private long price;
-        /** ·ÇÏß³Ì°²È«ÊÂ¼ş¶ÓÁĞ*/
+        /** éçº¿ç¨‹å®‰å…¨äº‹ä»¶é˜Ÿåˆ—*/
         private List<EventSourceEvent> eventArray = new ArrayList<EventSourceEvent>();
         /**
-         * ¹¹Ôìº¯Êı
+         * æ„é€ å‡½æ•°
          */
         public ThisEscape() {
-            //ÔÚ¹¹Ôìº¯ÊıÖĞ×¢²áÍâ²¿ÊÂ¼ş
+            //åœ¨æ„é€ å‡½æ•°ä¸­æ³¨å†Œå¤–éƒ¨äº‹ä»¶
             registerListener(new EventSourceEvent(){
-                //ThisEscapeÒİ³öÊµÀı
+                //ThisEscapeé€¸å‡ºå®ä¾‹
                 private ThisEscape thisEscape;
-                /** ×¢Òâ´ËÊ±{@link ThisEscape}¹¹Ôìº¯Êı²¢Î´·µ»Ø*/
+                /** æ³¨æ„æ­¤æ—¶{@link ThisEscape}æ„é€ å‡½æ•°å¹¶æœªè¿”å›*/
                 {
                     System.out.println(thisEscape.eventArray);
-                    //²»ºÏ¹æ·¨²Ù×÷_Begin
+                    //ä¸åˆè§„æ³•æ“ä½œ_Begin
                     //thisEscape.eventArray = Collections.synchronizedList(new ArrayList<EventSourceEvent>());
                     //thisEscape.price = 0;
-                    //²»ºÏ¹æ·¨²Ù×÷_End
+                    //ä¸åˆè§„æ³•æ“ä½œ_End
                 }
                 @Override
                 public void onEvent(Event e) {
@@ -55,7 +55,7 @@ public class ThisEscapeTest {
             return "ThisEscape [price=" + price + ", eventArray=" + eventArray + "]";
         }
         /**
-         * ÊÂ¼ş´¥·¢
+         * äº‹ä»¶è§¦å‘
          */
         public void fireEvent() {
             for (EventSourceEvent ese : eventArray) {

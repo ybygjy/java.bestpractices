@@ -1,27 +1,27 @@
 package org.ybygjy.pattern.command.mrsluo;
 
 /**
- * ·â×°ÃüÁî
+ * å°è£…å‘½ä»¤
  * @author WangYanCheng
  * @version 2011-8-1
  */
 public interface ICommand {
     /**
-     * È¡ÃüÁî²Ù×÷¶ÔÏó
-     * @return ÃüÁî²Ù×÷¶ÔÏó
+     * å–å‘½ä»¤æ“ä½œå¯¹è±¡
+     * @return å‘½ä»¤æ“ä½œå¯¹è±¡
      */
     public String getObject();
     /**
-     * ÉèÖÃÃüÁî²Ù×÷¶ÔÏó
-     * @param obj ÃüÁî²Ù×÷¶ÔÏó
+     * è®¾ç½®å‘½ä»¤æ“ä½œå¯¹è±¡
+     * @param obj å‘½ä»¤æ“ä½œå¯¹è±¡
      */
     public void setObject(String obj);
     /**
-     * ÖØ×ö
+     * é‡åš
      */
     public void redo();
     /**
-     * ³·Ïû
+     * æ’¤æ¶ˆ
      */
     public void undo();
 }

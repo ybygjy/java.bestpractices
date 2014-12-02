@@ -4,7 +4,7 @@ import org.ybygjy.pattern.iterator.Iterator;
 import org.ybygjy.pattern.iterator.Purchase;
 
 /**
- * ºóĞò±éÀú
+ * ååºéå†
  * @author WangYanCheng
  * @version 2012-11-26
  */

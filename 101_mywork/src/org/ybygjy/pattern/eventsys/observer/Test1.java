@@ -2,13 +2,13 @@ package org.ybygjy.pattern.eventsys.observer;
 
 
 /**
- * Java2平台事件处理机制-->Observer模式-->测试入口
+ * Java2骞冲彴浜嬩欢澶勭悊鏈哄埗-->Observer妯″紡-->娴嬭瘯鍏ュ彛
  * @author WangYanCheng
  * @version 2010-2-20
  */
 public class Test1 {
     /**
-     * 测试入口
+     * 娴嬭瘯鍏ュ彛
      * @param args args
      */
     public static void main(String[] args) {

@@ -9,14 +9,14 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.PatternLayout;
 
 /**
- * Log4j测试
+ * Log4j娴嬭瘯
  * @author WangYanCheng
  * @version 2010-8-18
  */
 public class Log4jTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         Logger logger = Logger.getLogger("HelloWorld");

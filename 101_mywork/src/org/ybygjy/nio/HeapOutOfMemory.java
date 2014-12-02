@@ -5,14 +5,14 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 /**
- * 利用ByteArrayOutputStream构造Java Heap Space Out of Memory
+ * 鍒╃敤ByteArrayOutputStream鏋勯�燡ava Heap Space Out of Memory
  * @author WangYanCheng
  * @version 2012-8-30
  */
 public class HeapOutOfMemory {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         HeapOutOfMemory hofmInst = new HeapOutOfMemory();
@@ -24,7 +24,7 @@ public class HeapOutOfMemory {
     }
 
     /**
-     * 不停的将数据存放到Output对象中，直接导致空间溢出
+     * 涓嶅仠鐨勫皢鏁版嵁瀛樻斁鍒癘utput瀵硅薄涓紝鐩存帴瀵艰嚧绌洪棿婧㈠嚭
      * @param baosInst {@link ByteArrayOutputStream}
      */
     public void doWork(ByteArrayOutputStream baosInst) {

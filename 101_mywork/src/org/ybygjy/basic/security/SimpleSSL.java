@@ -12,7 +12,7 @@ import javax.net.ssl.SSLServerSocketFactory;
 import javax.net.ssl.SSLSocket;
 
 /**
- * SimpleSSL，负责SSL实践
+ * SimpleSSL锛岃礋璐SL瀹炶返
  * @author WangYanCheng
  * @version 2011-5-30
  */
@@ -53,8 +53,8 @@ System.out.println(socket.getInetAddress());
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         SimpleSSL simpleSSLInst = new SimpleSSL();
