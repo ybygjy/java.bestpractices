@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
+		<!--[if lt IE9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+		<ol class="breadcrumb">
+			<li>
+				<a href="#">Home</a>
+			</li>
+			<li>
+				<a href="#">2014</a>
+			</li>
+			<li class="active">
+				<a href="#">十一月</a>
+			</li>
+		</ol>
+		<div>
+			<h4>总结</h4>
+			<div>
+				1.利用display:inline-block,指定li标签一行呈现
+				2.Bootstrap会在各li标签的前后插入分割线
+<pre>
+.breadcrumb > li + li:before {
+    color: #CCCCCC;
+    content: "/ ";
+    padding: 0 5px;
+}
+</pre>
+			</div>
+		</div>
+	</body>
+</html>
