@@ -1,18 +1,57 @@
-<!DOCTYPE>
+<!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<meta name="viewport" content="with=device-with, initial-scale=1.0">
-		<link href="css/bootstrap.css" rel="stylesheet">
-		<!-- HTML5 Shim 和Respond.js文件用于让IE8支持HTML5元素和媒体查询 -->
-		<!-- 注意:如果通过file://引入Respond.js文件，则该文件无法起效果 -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Bootstrap 核心CSS文件-->
+		<link href="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+		<!--Bootstrap主题(一般不使用)-->
+		<link src="http://apps.bdimg.com/libs/bootstrap/3.0.3/css/bootstrap-theme.min.css" rel="stylesheet">
+		<script src="http://apps.bdimg.com/libs/jquery/2.0.0/jquery.min.js"></script>
+		<script src="http://apps.bdimg.com/libs/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+		<!--HTML5 Shim 和Respond.js用于让IE8支持HTML5元素和媒体查询-->
+		<!--注意：如果通过file://引入Respond.js文件，则该文件无法起效果。-->
 		<!--[if lt IE9]>
-		<script src="http://oss.maxcdn.com.cn/libs/html5shiv/3.7.0/html5shiv.js"></script>
-		<script src="http://oss.maxcdn.com.cn/libs/respond.js/1.3.0/respond.min.js"></script>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
 		<![endif]-->
 	</head>
 	<body>
-		<div class="col-sm-3">
+		<div>
+		<nav class="navbar navbar-static-top navbar-blue navbar-fixed-top" role="navigation">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">Bootstrap导航</a>
+			</div>
+			<div>
+				<ul class="nav navbar-nav">
+					<li class="active">
+						<a href="#">IOS</a>
+					</li>
+					<li>
+						<a href="#">SVN</a>
+					</li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+							Java<b class="caret"></b>
+						</a>
+						<ul class="dropdown-menu">
+							<li>
+								<a href="#">JMeter</a>
+							</li>
+							<li>
+								<a href="#">JMS</a>
+							</li>
+							<li class="divider"></li>
+							<li>
+								<a href="#">Android</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		</div>
+		<div>
 			<h4>1001_HelloWorld</h4>
 			<div>
 				<a href="HelloBootstrap.html">HelloBootstrap</a>
@@ -54,7 +93,7 @@
 				<a href="1010_helpclass.html">1010_HelpClass</a>
 			</div>
 		</div>
-		<div class="col-sm-3">
+		<div>
 			<h4>1011_响应式实用工具</h4>
 			<div>
 				<a href="1011_responsive_utilities.html">1011_响应式实用工具</a>
@@ -86,7 +125,6 @@
 			<h4>1018_商品搭配</h4>
 			<div>
 				<a href="1018_product_collogation.html">1018_商品搭配</a>
-			</div>
 			<h4>1019_导航菜单元素</h4>
 			<div>
 				<a href="1019_naventry.html">1019_导航菜单元素</a>
@@ -99,36 +137,7 @@
 			<div>
 				<a href="1021_static_navbar.html">1021_静态导航栏</a>
 			</div>
-		</div>
-		<div class="col-sm-3">
-			<h4>1022_面包屑导航</h4>
-			<div>
-				<a href="1022_breadcrumbs_navbar.html">1022_面包屑导航</a>
-			</div>
-			<h4>1023_分页</h4>
-			<div>
-				<a href="1023_pagination.html">1023_分页</a>
-			</div>
-			<h4>1024_标签</h4>
-			<div>
-				<a href="1024_label.html">1024_标签</a>
-			</div>
-			<h4>1025_超大屏幕</h4>
-			<div>
-				<a href="1025_jumbotron.html">1025_超大屏幕</a>
-			</div>
-			<h4>1026_页面标题</h4>
-			<div>
-				<a href="1026_pageheader.html">1026_页面标题</a>
-			</div>
-			<h4>1027_Bootstrap缩略图</h4>
-			<div>
-				<a href="1027_thumnail.html">1027_Bootstrap缩略图</a>
 			</div>
 		</div>
-		<!-- JQuery(Bootstrap的JavaScript插件使用到了JQuery) -->
-		<script src="http://code.jquery.com/jquery.js"></script>
-		<!-- 包含已编译的Bootstrap -->
-		<script src="js/bootstrap.min.js"></script>
 	</body>
 </html>
