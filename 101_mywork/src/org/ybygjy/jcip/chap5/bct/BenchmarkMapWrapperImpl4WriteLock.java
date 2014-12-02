@@ -8,15 +8,15 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ²âÊÔÈİÆ÷ÊµÏÖ#
+ * æµ‹è¯•å®¹å™¨å®ç°#
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4WriteLock implements BenchmarkMapWrapper {
 	private Map<Object, Object> container;
 	private Lock lock;
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public BenchmarkMapWrapperImpl4WriteLock() {
 		this.container = new HashMap<Object, Object>();

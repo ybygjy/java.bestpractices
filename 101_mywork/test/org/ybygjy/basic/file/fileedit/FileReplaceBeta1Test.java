@@ -17,7 +17,7 @@ import org.junit.Test;
 import org.ybygjy.basic.file.fileedit.FileReplaceBeta1;
 
 /**
- * 测试用例
+ * 娴嬭瘯鐢ㄤ緥
  * @author WangYanCheng
  * @version 2011-12-29
  */
@@ -42,7 +42,7 @@ public class FileReplaceBeta1Test {
 
     @Test
     public void testDoWork() {
-        String filePath = "F:\\work\\nstc\\2_事务\\022_KettleN6N9数据迁移\\测试环境\\N9-SM-O\\newinstall\\bs\\web";
+        String filePath = "F:\\work\\nstc\\2_浜嬪姟\\022_KettleN6N9鏁版嵁杩佺Щ\\娴嬭瘯鐜\\N9-SM-O\\newinstall\\bs\\web";
         try {
             this.regExpStr = "127\\.0\\.0\\.1:7001";
             this.tokenArr = new String[] { regExpStr, "127.0.0.1:6004",

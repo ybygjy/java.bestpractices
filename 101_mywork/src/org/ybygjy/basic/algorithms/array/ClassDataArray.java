@@ -2,7 +2,7 @@ package org.ybygjy.basic.algorithms.array;
 
 
 /**
- * ¶ÔÏó´æ´¢
+ * å¯¹è±¡å­˜å‚¨
  * @author WangYanCheng
  * @version 2011-8-3
  */
@@ -60,7 +60,7 @@ class DataArray {
         nElems = 0;
     }
     public Person find(String searchName) {
-        //Ê¹ÓÃÏßĞÔ²éÕÒ
+        //ä½¿ç”¨çº¿æ€§æŸ¥æ‰¾
         int j = 0;
         for (j = 0; j < nElems; j++) {
             if (a[j].getLast().equals(searchName)) {

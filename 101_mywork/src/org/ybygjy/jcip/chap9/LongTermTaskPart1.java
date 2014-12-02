@@ -11,22 +11,22 @@ import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 
 /**
- * SwingÖ´ĞĞ³¤Ê±¼äÈÎÎñµÄ·½Ê½
- * <p>¸ÃÀàÃèÊöÁËSwingÖ´ĞĞºÄÊ±ÈÎÎñµÄ³£ÓÃ·½Ê½</p>
- * <p>1¡¢ÀûÓÃSwingUtilities#invokeLater¡¢invokeAndWait½«¶Ôswing×é¼ş×´Ì¬µÄ·ÃÎÊ·â±Õµ½ÊÂ¼şÏß³Ì</p>
- * <p>2¡¢ÈÎÎñÖ´ĞĞ·şÎñÌá¹©¶ÀÁ¢µÄºó¶ËÏß³ÌÓÃÓÚÖ´ĞĞºÄÊ±ÈÎÎñ</p>
+ * Swingæ‰§è¡Œé•¿æ—¶é—´ä»»åŠ¡çš„æ–¹å¼
+ * <p>è¯¥ç±»æè¿°äº†Swingæ‰§è¡Œè€—æ—¶ä»»åŠ¡çš„å¸¸ç”¨æ–¹å¼</p>
+ * <p>1ã€åˆ©ç”¨SwingUtilities#invokeLaterã€invokeAndWaitå°†å¯¹swingç»„ä»¶çŠ¶æ€çš„è®¿é—®å°é—­åˆ°äº‹ä»¶çº¿ç¨‹</p>
+ * <p>2ã€ä»»åŠ¡æ‰§è¡ŒæœåŠ¡æä¾›ç‹¬ç«‹çš„åç«¯çº¿ç¨‹ç”¨äºæ‰§è¡Œè€—æ—¶ä»»åŠ¡</p>
  * @author WangYanCheng
- * @version 2014Äê9ÔÂ8ÈÕ
+ * @version 2014å¹´9æœˆ8æ—¥
  */
 public class LongTermTaskPart1 {
-	/** ¸ºÔğÖ´ĞĞÈÎÎñµÄÏß³Ì³Ø*/
+	/** è´Ÿè´£æ‰§è¡Œä»»åŠ¡çš„çº¿ç¨‹æ± */
 	private static ExecutorService backgroundExec = Executors.newCachedThreadPool();
 	/**
-	 * ²âÊÔÈë¿Ú
-	 * @param args ²ÎÊıÁĞ±í
+	 * æµ‹è¯•å…¥å£
+	 * @param args å‚æ•°åˆ—è¡¨
 	 */
 	public static void main(String[] args) {
-		JFrame jframe = new JFrame("³¤Ê±¼äÈÎÎñ");
+		JFrame jframe = new JFrame("é•¿æ—¶é—´ä»»åŠ¡");
 		jframe.setSize(300, 300);
 		final JButton startBtn = new JButton("StartBtn");
 		startBtn.addActionListener(new ActionListener() {

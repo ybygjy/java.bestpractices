@@ -14,11 +14,11 @@ import org.ybygjy.pattern.proxy.rmistate.IState;
  * @version 2011-1-4
  */
 public class Client {
-    /**后缀*/
+    /**鍚庣紑*/
     private static String postfixx = "Gumball";
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         String rmiUrl = "rmi://127.0.0.1:1099/" + postfixx;

@@ -13,15 +13,15 @@ import java.io.Reader;
 import java.io.UnsupportedEncodingException;
 
 /**
- * ¶ÁÈ¡ÎÄ¼şÄÚÈİµÄ¶àÖÖ·½Ê½
+ * è¯»å–æ–‡ä»¶å†…å®¹çš„å¤šç§æ–¹å¼
  * @author WangYanCheng
  * @version 2011-12-27
  */
 public class ReadFile {
     /**
-     * °´ĞĞ¶ÁÈ¡
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * æŒ‰è¡Œè¯»å–
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4EachRow(File fileInst) throws IOException {
         BufferedReader brInst = null;
@@ -44,7 +44,7 @@ public class ReadFile {
         }
     }
     /**
-     * Á÷×ª×Ö·û
+     * æµè½¬å­—ç¬¦
      */
     public void streamReader() {
         File fileInst = new File("C://test.xsl");
@@ -66,9 +66,9 @@ public class ReadFile {
         }
     }
     /**
-     * Ëæ»ú¶ÁÎÄ¼şµÄÄ³Ò»¿é
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * éšæœºè¯»æ–‡ä»¶çš„æŸä¸€å—
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4Random(File fileInst) throws IOException {
         RandomAccessFile rafInst = null;
@@ -90,9 +90,9 @@ public class ReadFile {
     }
 
     /**
-     * °´×Ö·û×é¶Á
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * æŒ‰å­—ç¬¦ç»„è¯»
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4CharArr(File fileInst) throws IOException {
         Reader reader = null;
@@ -118,9 +118,9 @@ public class ReadFile {
     }
 
     /**
-     * °´µ¥¸ö×Ö·û¶Á
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * æŒ‰å•ä¸ªå­—ç¬¦è¯»
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4Char(File fileInst) throws IOException {
         Reader reader = null;
@@ -145,9 +145,9 @@ public class ReadFile {
     }
 
     /**
-     * °´×Ö½Ú×é¶ÁÈ¡
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * æŒ‰å­—èŠ‚ç»„è¯»å–
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4ByteArr(File fileInst) throws IOException {
         BufferedInputStream bis = null;
@@ -172,9 +172,9 @@ public class ReadFile {
     }
 
     /**
-     * °´×Ö½Ú¶ÁÈ¡
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @throws IOException Òì³£
+     * æŒ‰å­—èŠ‚è¯»å–
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @throws IOException å¼‚å¸¸
      */
     public void readFile4Byte(File fileInst) throws IOException {
         FileInputStream bis = null;
@@ -198,8 +198,8 @@ public class ReadFile {
     }
 
     /**
-     * Èë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      * @throws IOException IOException
      */
     public static void main(String[] args) throws IOException {

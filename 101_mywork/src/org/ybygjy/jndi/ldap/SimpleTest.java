@@ -10,7 +10,7 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.SearchResult;
 
 /**
- * ¸ºÔğÑéÖ¤Ò»Ğ©Íü¼ÇµÄAPI
+ * è´Ÿè´£éªŒè¯ä¸€äº›å¿˜è®°çš„API
  * @author WangYanCheng
  * @version 2011-6-9
  */
@@ -26,9 +26,9 @@ public class SimpleTest {
         this.dirCtx = dirCtx;
     }
     /**
-     * ÑéÖ¤»ñÈ¡Ö¸¶¨ÌõÄ¿µÄÊôĞÔ£¬Ğ¡½á
-     * <p>1¡¢¿ÉÒÔÎª¿Õ£¬Ôò±íÊ¾È¡ÌõÄ¿ËùÓĞÊôĞÔ£»</p>
-     * <p>2¡¢¿ÉÒÔÖ¸¶¨¹ıÂËÊôĞÔ×é£¬ÓÃÓÚÈ¡µÃÄ³Ò»Ğ¡¿éÊôĞÔ£»</p>
+     * éªŒè¯è·å–æŒ‡å®šæ¡ç›®çš„å±æ€§ï¼Œå°ç»“
+     * <p>1ã€å¯ä»¥ä¸ºç©ºï¼Œåˆ™è¡¨ç¤ºå–æ¡ç›®æ‰€æœ‰å±æ€§ï¼›</p>
+     * <p>2ã€å¯ä»¥æŒ‡å®šè¿‡æ»¤å±æ€§ç»„ï¼Œç”¨äºå–å¾—æŸä¸€å°å—å±æ€§ï¼›</p>
      */
     public void testGetAttr() {
         String tmpDN = "cn=WangYanCheng,".concat(dn);
@@ -41,15 +41,15 @@ public class SimpleTest {
     }
 
     /**
-     * ²âÊÔ²éÑ¯API£¬Ğ¡½á
+     * æµ‹è¯•æŸ¥è¯¢APIï¼Œå°ç»“
      * <p>
-     * 1¡¢searchÕâĞ©API¶¼ÊÇÕë¶ÔÊ÷½øĞĞËÑË÷µÄ£¬ÈçËÑË÷¸ø¶¨DNµÄÏÂÒ»¼¶Ò¶×Ó¡¢ÏÂN¼¶Ò¶×Ó;
+     * 1ã€searchè¿™äº›APIéƒ½æ˜¯é’ˆå¯¹æ ‘è¿›è¡Œæœç´¢çš„ï¼Œå¦‚æœç´¢ç»™å®šDNçš„ä¸‹ä¸€çº§å¶å­ã€ä¸‹Nçº§å¶å­;
      * </p>
      * <p>
-     * 2¡¢²éÑ¯µÄ¶¼ÊÇÏà¶Ô¸ø¶¨DNµÄÒ¶×Ó£¬¶ø²»ÊÇDN±¾ÉíµÄÊôĞÔ
+     * 2ã€æŸ¥è¯¢çš„éƒ½æ˜¯ç›¸å¯¹ç»™å®šDNçš„å¶å­ï¼Œè€Œä¸æ˜¯DNæœ¬èº«çš„å±æ€§
      * </p>
      * <p>
-     * 3¡¢¿ÉÉèÖÃÏà¹Ø²éÑ¯²ÎÊıÀ´¹ıÂËÒ¶×Ó
+     * 3ã€å¯è®¾ç½®ç›¸å…³æŸ¥è¯¢å‚æ•°æ¥è¿‡æ»¤å¶å­
      * </p>
      */
     public void testSearch() {
@@ -70,8 +70,8 @@ public class SimpleTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         SimpleTest verifyInst = new SimpleTest(Constant.createCtx());

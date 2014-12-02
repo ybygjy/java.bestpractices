@@ -11,7 +11,7 @@ import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameters;
 
 /**
- * ²ÎÊı»¯²âÊÔ
+ * å‚æ•°åŒ–æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-12-8
  */

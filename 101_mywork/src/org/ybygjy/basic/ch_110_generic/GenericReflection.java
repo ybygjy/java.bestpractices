@@ -5,12 +5,12 @@ import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
 /**
- * ÀûÓÃ·´Éä»úÖÆ·ÖÎö·ºĞÍÀà
+ * åˆ©ç”¨åå°„æœºåˆ¶åˆ†ææ³›å‹ç±»
  * @author WangYanCheng
  * @version 2014-6-16
  */
 public class GenericReflection {
-    /** ÀàÃû³Æ*/
+    /** ç±»åç§°*/
     private String className;
 
     public GenericReflection(String className) {
@@ -18,17 +18,17 @@ public class GenericReflection {
         this.className = className;
     }
     public void doWork() {
-        //¼ÓÔØÀà
+        //åŠ è½½ç±»
         Class clazz = null;
         try {
             clazz = Class.forName(className);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //´¦ÀíÀà½á¹¹
+        //å¤„ç†ç±»ç»“æ„
         parseClass(clazz);
-        //È¡Àà·½·¨¼¯ºÏ
-        //´¦Àí·½·¨
+        //å–ç±»æ–¹æ³•é›†åˆ
+        //å¤„ç†æ–¹æ³•
     }
     private void parseClass(Class clazz) {
         StringBuilder sbud = new StringBuilder();
@@ -39,11 +39,11 @@ public class GenericReflection {
         System.out.println(sbud.toString());
     }
     /**
-     * ¹¹ÔìÀàĞÍ×Ö´®
-     * @param types ÀàĞÍ×é
-     * @param prefix Ç°×º
-     * @param seprator ·Ö¸ô
-     * @param suffix ºó×º
+     * æ„é€ ç±»å‹å­—ä¸²
+     * @param types ç±»å‹ç»„
+     * @param prefix å‰ç¼€
+     * @param seprator åˆ†éš”
+     * @param suffix åç¼€
      * @return rtnStr
      */
     private String buildTypes(Type[] types, String prefix, String seprator, String suffix) {
@@ -58,7 +58,7 @@ public class GenericReflection {
         return sbud.toString();
     }
     /**
-     * ¹¹Ôì¾ßÌåÀàĞÍ×Ö´®
+     * æ„é€ å…·ä½“ç±»å‹å­—ä¸²
      * @param type
      * @return
      */

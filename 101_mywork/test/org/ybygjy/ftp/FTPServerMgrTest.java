@@ -7,7 +7,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
- * FTPServerÉúÃüÖÜÆÚ
+ * FTPServerç”Ÿå‘½å‘¨æœŸ
  * @author WangYanCheng
  * @version 2011-6-1
  */
@@ -27,7 +27,7 @@ public class FTPServerMgrTest {
     @AfterClass
     public static void closeFTP() {
         FTPServerMgr.stopFTPServer();
-        System.out.println("¹Ø±ÕFTPServerÍê³É");
+        System.out.println("å…³é—­FTPServerå®Œæˆ");
     }
 
     @Test
@@ -38,7 +38,7 @@ public class FTPServerMgrTest {
     public void testStartupFTP4SSL() {
         String keyStorePassword = "password";
         ftpServerMgr.startupFTPServer4SSL(21, keyStoreFile, keyStorePassword, userInfoFile);
-        System.out.println("SSL/TLS FTPServer Æô¶¯Íê³É¡£¡£¡£");
+        System.out.println("SSL/TLS FTPServer å¯åŠ¨å®Œæˆã€‚ã€‚ã€‚");
     }
     public void testAddUser() {
     }

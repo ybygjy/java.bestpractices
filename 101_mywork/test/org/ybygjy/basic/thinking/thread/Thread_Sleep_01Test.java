@@ -11,7 +11,7 @@ public class Thread_Sleep_01Test {
         for (int i = 0; i < 5; i++) {
             new Thread_Sleep_01();
         }
-        //¿¼ÂÇjoin()Ìæ´úÖ÷Ïß³Ìsleep(100);
+        //è€ƒè™‘join()æ›¿ä»£ä¸»çº¿ç¨‹sleep(100);
         Thread.sleep(10000);
     }
     @Test

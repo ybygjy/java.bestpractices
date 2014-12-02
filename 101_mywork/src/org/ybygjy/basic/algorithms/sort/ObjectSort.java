@@ -3,7 +3,7 @@ package org.ybygjy.basic.algorithms.sort;
 import java.util.Arrays;
 
 /**
- * ¶ÔÏóÅÅĞò
+ * å¯¹è±¡æ’åº
  * @author WangYanCheng
  * @version 2014-3-27
  */
@@ -54,7 +54,7 @@ class ArrayInOb {
         array[nElems++] = new Person(lastName, firstName, age);
     }
     /**
-     * ²åÈëÅÅĞò
+     * æ’å…¥æ’åº
      */
     public void insertionSort() {
         int out;

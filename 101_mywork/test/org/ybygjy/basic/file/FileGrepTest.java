@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * ²âÊÔÓÃÀı
+ * æµ‹è¯•ç”¨ä¾‹
  * @author WangYanCheng
  * @version 2011-11-1
  */

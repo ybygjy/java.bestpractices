@@ -1,12 +1,12 @@
 package org.ybygjy.basic;
 /**
- * ²âÊÔÓÃ½Ó¿ÚÉùÃ÷
+ * æµ‹è¯•ç”¨æ¥å£å£°æ˜
  * @author WangYanCheng
  * @version 2010-8-23
  */
 public interface TestInterface {
     /**
-     * Ö´ĞĞ²âÊÔ
+     * æ‰§è¡Œæµ‹è¯•
      */
     void doTest();
 }

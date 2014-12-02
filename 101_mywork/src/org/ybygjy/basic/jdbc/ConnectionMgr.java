@@ -6,12 +6,12 @@ import java.sql.SQLException;
 import oracle.jdbc.pool.OracleDataSource;
 
 /**
- * Á¬½Ó¹ÜÀí
+ * è¿æ¥ç®¡ç†
  * @author WangYanCheng
  * @version 2011-2-21
  */
 public class ConnectionMgr {
-    /**Êı¾İÔ´*/
+    /**æ•°æ®æº*/
     private static OracleDataSource ods;
     static {
         try {
@@ -24,8 +24,8 @@ public class ConnectionMgr {
     }
 
     /**
-     * È¡µÃConnection
-     * @return connInst Á¬½ÓÊµÀı
+     * å–å¾—Connection
+     * @return connInst è¿æ¥å®ä¾‹
      * @throws SQLException SQLException
      */
     public static Connection getConn() throws SQLException {
@@ -33,8 +33,8 @@ public class ConnectionMgr {
     }
 
     /**
-     * ¹Ø±ÕConnection
-     * @param conn Á¬½ÓÊµÀı
+     * å…³é—­Connection
+     * @param conn è¿æ¥å®ä¾‹
      */
     public static void closeConn(Connection conn) {
         try {

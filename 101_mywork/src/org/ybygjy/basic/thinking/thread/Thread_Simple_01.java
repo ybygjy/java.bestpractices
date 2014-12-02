@@ -3,7 +3,7 @@ package org.ybygjy.basic.thinking.thread;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * ¼òµ¥Ïß³Ì
+ * ç®€å•çº¿ç¨‹
  * @author WangYanCheng
  * @version 2010-9-25
  */

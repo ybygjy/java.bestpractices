@@ -3,7 +3,7 @@ package org.ybygjy.pattern.flyweight.complex.impl;
 import org.ybygjy.pattern.flyweight.complex.AbstractFlyweight;
 
 /**
- * 具体享元对象
+ * 鍏蜂綋浜厓瀵硅薄
  * @author WangYanCheng
  * @version 2010-11-22
  */

@@ -5,7 +5,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
- * Ê±¼ä¶Î²âÊÔ
+ * æ—¶é—´æ®µæµ‹è¯•
  * @author WangYanCheng
  * @version 2009-11-20
  */
@@ -19,15 +19,15 @@ public class CalendarTimeSubsectionTest {
     }
 
     /**
-     * ¼ÆËãÊ±¼ä¶Î
+     * è®¡ç®—æ—¶é—´æ®µ
      */
     public void doCalcSubSect() {
         String[] arg1 = timeSubsection[0], arg2 = timeSubsection[1], arg3 = timeSubsection[2], tmpArg;
         Calendar currObj = Calendar.getInstance();
-        //µ±Ç°Ê±¼ä
+        //å½“å‰æ—¶é—´
         long currTime = currObj.getTimeInMillis(), startTime = 0L, stopTime = 0L;
         tmpArg = arg1[0].split(":");
-        System.out.println("µ±Ç°Ê±¼ä:" + currObj.getTimeInMillis());
+        System.out.println("å½“å‰æ—¶é—´:" + currObj.getTimeInMillis());
         currObj.set(Calendar.HOUR_OF_DAY, Integer.parseInt(tmpArg[0]));
         currObj.set(Calendar.MINUTE, Integer.parseInt(tmpArg[1]));
         startTime = currObj.getTimeInMillis();
@@ -37,7 +37,7 @@ public class CalendarTimeSubsectionTest {
         stopTime = currObj.getTimeInMillis();
         if (startTime < currTime && currTime <= stopTime) {
             currObj.setTimeInMillis(currTime);
-            System.out.println("´ó°×°à" + doParseDate(currObj, "yyyy-MM-dd HH:mm:ss"));
+            System.out.println("å¤§ç™½ç­" + doParseDate(currObj, "yyyy-MM-dd HH:mm:ss"));
         }
         tmpArg = arg2[0].split(":");
         currObj.set(Calendar.HOUR_OF_DAY, Integer.parseInt(tmpArg[0]));
@@ -49,9 +49,9 @@ public class CalendarTimeSubsectionTest {
         stopTime = currObj.getTimeInMillis();
         if (startTime < currTime && currTime <= stopTime) {
             currObj.setTimeInMillis(currTime);
-            System.out.println("Ğ¡Ò¹°à:" + doParseDate(currObj, "yyyy-MM-dd HH:mm:ss"));
+            System.out.println("å°å¤œç­:" + doParseDate(currObj, "yyyy-MM-dd HH:mm:ss"));
         } else {
-            System.out.println("[\n@START@\n@STOP@\n[@CURR@]·ÇĞ¡Ò¹°à]"
+            System.out.println("[\n@START@\n@STOP@\n[@CURR@]éå°å¤œç­]"
                     .replaceAll("@START@", String.valueOf(startTime))
                     .replaceAll("@STOP@", String.valueOf(stopTime))
                     .replaceAll("@CURR@", String.valueOf(currTime))
@@ -67,9 +67,9 @@ public class CalendarTimeSubsectionTest {
         stopTime = currObj.getTimeInMillis();
         if (startTime < currTime && currTime <= stopTime) {
             currObj.setTimeInMillis(currTime);
-            System.out.println("´óÒ¹°à:" + doParseDate(currObj, "yyyy-MM-dd HH:mi:ss"));
+            System.out.println("å¤§å¤œç­:" + doParseDate(currObj, "yyyy-MM-dd HH:mi:ss"));
         } else {
-            System.out.println("[\n@START@\n@STOP@\n[@CURR@]·Ç´óÒ¹°à]"
+            System.out.println("[\n@START@\n@STOP@\n[@CURR@]éå¤§å¤œç­]"
                     .replaceAll("@START@", String.valueOf(startTime))
                     .replaceAll("@STOP@", String.valueOf(stopTime))
                     .replaceAll("@CURR@", String.valueOf(currTime))
@@ -77,12 +77,12 @@ public class CalendarTimeSubsectionTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments lists
      */
     public static void main(String[] args) {
         Calendar currObj = Calendar.getInstance();
-        String dateTemplate = "@HOUR@Ê±@MINUTE@·Ö@SECOND@Ãë";
+        String dateTemplate = "@HOUR@æ—¶@MINUTE@åˆ†@SECOND@ç§’";
         System.out.println(dateTemplate.replaceAll("@HOUR@", String.valueOf(currObj.get(Calendar.HOUR_OF_DAY)))
                 .replaceAll("@MINUTE@", String.valueOf(currObj.get(Calendar.MINUTE)))
                 .replaceAll("@SECOND@", String.valueOf(currObj.get(Calendar.SECOND))));
@@ -93,7 +93,7 @@ public class CalendarTimeSubsectionTest {
         DateFormat dateFObj = new SimpleDateFormat("yyyy-MM-dd");
         try {
             currObj = Calendar.getInstance();
-            doPrint("µ±Ç°Ê±¼äÔÚ{8:00,00:00}" + ctstObj.isShift(currTime, new String[]{"8:00", "00:00"}));
+            doPrint("å½“å‰æ—¶é—´åœ¨{8:00,00:00}" + ctstObj.isShift(currTime, new String[]{"8:00", "00:00"}));
             currObj.setTime(dateFObj.parse("2009-12-04 "));
             System.out.println(ctstObj.isShift(currTime, new String[]{"16:00", "00:00"}));
         } catch (Exception e) {
@@ -103,9 +103,9 @@ public class CalendarTimeSubsectionTest {
         System.out.println(resultFlag);
     }
     /**
-     * ÑéÖ¤Ä³Ò»Ê±¼äÊÇ·ñÔÚÄ³Ò»Ê±¼ä¶Î
-     * @param currTime Ä³Ò»Ê±¼ä
-     * @param timeSlot Ä³Ò»Ê±¼ä¶Î
+     * éªŒè¯æŸä¸€æ—¶é—´æ˜¯å¦åœ¨æŸä¸€æ—¶é—´æ®µ
+     * @param currTime æŸä¸€æ—¶é—´
+     * @param timeSlot æŸä¸€æ—¶é—´æ®µ
      * @return true/false
      */
     public boolean isShift(final long currTime, String[] timeSlot) {
@@ -131,9 +131,9 @@ public class CalendarTimeSubsectionTest {
         return ((startTime < currTime && currTime <= stopTime) ? true : false);
     }
     /**
-     * °à´Î¼ÆËã
-     * @param orgCode ËùÊôµ¥Î»
-     * @return result {1:´óÒ¹;2:°×°à;3:Ğ¡Ò¹;4:Ò¹°à;0:ÌØÊâ´¦Àí}
+     * ç­æ¬¡è®¡ç®—
+     * @param orgCode æ‰€å±å•ä½
+     * @return result {1:å¤§å¤œ;2:ç™½ç­;3:å°å¤œ;4:å¤œç­;0:ç‰¹æ®Šå¤„ç†}
      */
     public int doGetShift(String orgCode) {
         int result = 0;
@@ -148,13 +148,13 @@ public class CalendarTimeSubsectionTest {
         }
         return result;
     }
-    //Ê±¼ä¶Î 0:°×°à;1:Ğ¡Ò¹°à;2:´óÒ¹°à*/
+    //æ—¶é—´æ®µ 0:ç™½ç­;1:å°å¤œç­;2:å¤§å¤œç­*/
     private static String[][] timeSubsection = {{"8:00", "16:00"}, {"16:00", "00:00"}, {"00:00", "08:00"}};
     /**
-     * ÈÕÆÚ¸ñÊ½»¯
-     * @param calenObj ÈÕÆÚÊµÀı
-     * @param formatStr ¸ñÊ½»¯´®
-     * @return result ¸ñÊ½Íê³ÉµÄ´®
+     * æ—¥æœŸæ ¼å¼åŒ–
+     * @param calenObj æ—¥æœŸå®ä¾‹
+     * @param formatStr æ ¼å¼åŒ–ä¸²
+     * @return result æ ¼å¼å®Œæˆçš„ä¸²
      */
     public String doParseDate(Calendar calenObj, String formatStr) {
         DateFormat df = new SimpleDateFormat(formatStr);

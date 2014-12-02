@@ -2,14 +2,14 @@ package org.ybygjy.jcip.chap3;
 
 
 /**
- * ¸ºÔğ¹¹ÔìÒ»¸övolatile¶àÏß³ÌÈÎÎñ´¦Àí»·¾³
- * <p>1.1¡¢µ¥Ğ´¶à¶Á</p>
- * <p>1.2¡¢Ã»ÓĞËø</p>
- * <p>1.3¡¢volatileÈ·±£±äÁ¿µÄ¸üĞÂ²Ù×÷¶ÔÆäËüÏß³Ì¿É¼û</p>
- * <p>1.4¡¢volatile±äÁ¿²»»á»º´æÔÚ¼Ä´æÆ÷»òÆäËü´¦ÀíÆ÷²»¿É¼ûµÄµØ·½</p>
- * <p>1.5¡¢ÈÃÈË³ÁË¼µÄÒ»¾ä»°(volatile±äÁ¿¶Ô¿É¼ûĞÔµÄÓ°Ïì±Èvolatile±äÁ¿±¾Éí¸üÎªÖØÒª)</p>
- * ×¢Òâ
- * <p>2.1¡¢¶àÏß³Ì¶ÁµÄÎÊÌâ£¬volatileÖ»±£Ö¤±äÁ¿µÄ¸üĞÂ²Ù×÷ÔÚÎŞĞèÌØÊâÍ¬²½µÄÇé¿öÏÂ¶ÔÆäËüÏß³Ì¿É¼û</p>
+ * è´Ÿè´£æ„é€ ä¸€ä¸ªvolatileå¤šçº¿ç¨‹ä»»åŠ¡å¤„ç†ç¯å¢ƒ
+ * <p>1.1ã€å•å†™å¤šè¯»</p>
+ * <p>1.2ã€æ²¡æœ‰é”</p>
+ * <p>1.3ã€volatileç¡®ä¿å˜é‡çš„æ›´æ–°æ“ä½œå¯¹å…¶å®ƒçº¿ç¨‹å¯è§</p>
+ * <p>1.4ã€volatileå˜é‡ä¸ä¼šç¼“å­˜åœ¨å¯„å­˜å™¨æˆ–å…¶å®ƒå¤„ç†å™¨ä¸å¯è§çš„åœ°æ–¹</p>
+ * <p>1.5ã€è®©äººæ²‰æ€çš„ä¸€å¥è¯(volatileå˜é‡å¯¹å¯è§æ€§çš„å½±å“æ¯”volatileå˜é‡æœ¬èº«æ›´ä¸ºé‡è¦)</p>
+ * æ³¨æ„
+ * <p>2.1ã€å¤šçº¿ç¨‹è¯»çš„é—®é¢˜ï¼Œvolatileåªä¿è¯å˜é‡çš„æ›´æ–°æ“ä½œåœ¨æ— éœ€ç‰¹æ®ŠåŒæ­¥çš„æƒ…å†µä¸‹å¯¹å…¶å®ƒçº¿ç¨‹å¯è§</p>
  * @author WangYanCheng
  * @version 2014-7-17
  */
@@ -24,15 +24,15 @@ public class VolatileThreadTest {
         readThread2.start();
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         VolatileThreadTest volatileThreadTest = new VolatileThreadTest();
         volatileThreadTest.doWork();
     }
     /**
-     * ¸ºÔğ{@link VolatileVO} Ğ´²Ù×÷
+     * è´Ÿè´£{@link VolatileVO} å†™æ“ä½œ
      * @author WangYanCheng
      * @version 2014-7-17
      */
@@ -58,7 +58,7 @@ public class VolatileThreadTest {
         }
     }
     /**
-     * ¸ºÔğ{@link VolatileVO} ¶Á²Ù×÷
+     * è´Ÿè´£{@link VolatileVO} è¯»æ“ä½œ
      * @author WangYanCheng
      * @version 2014-7-17
      */
@@ -86,12 +86,12 @@ public class VolatileThreadTest {
     }
 }
 /**
- * ¶¨ÒåÊı¾İÊµÌå
+ * å®šä¹‰æ•°æ®å®ä½“
  * @author WangYanCheng
  * @version 2014-7-17
  */
 class VolatileVO {
-	/** Ê¹ÓÃvolatileÈ·±£²¢·¢»·¾³ÏÂÖµµÄ¿É¼ûĞÔ*/
+	/** ä½¿ç”¨volatileç¡®ä¿å¹¶å‘ç¯å¢ƒä¸‹å€¼çš„å¯è§æ€§*/
     private volatile int step;
 
     public int getStep() {

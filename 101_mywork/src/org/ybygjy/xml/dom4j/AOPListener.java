@@ -3,18 +3,18 @@ package org.ybygjy.xml.dom4j;
 import org.dom4j.Element;
 
 /**
- * ÀûÓëÊµÏÖAOP»úÖÆµÄ½Ó¿Ú¶¨Òå,¸ºÔğÌØ¶¨xmlÎÄµµ²Ù×÷µÄ¼àÌı
+ * åˆ©ä¸å®ç°AOPæœºåˆ¶çš„æ¥å£å®šä¹‰,è´Ÿè´£ç‰¹å®šxmlæ–‡æ¡£æ“ä½œçš„ç›‘å¬
  * @author WangYanCheng
  * @version 2010-8-3
  */
 public interface AOPListener {
     /**
-     * ´¦ÀíÎÄµµ½âÎöÖ®ElementÔªËØ
+     * å¤„ç†æ–‡æ¡£è§£æä¹‹Elementå…ƒç´ 
      * @param elemInst elemInst
      */
     void afterParseElement(Element elemInst);
     /**
-     * ´¦ÀíÎÄµµ½âÎöÖ®ElementÔªËØ
+     * å¤„ç†æ–‡æ¡£è§£æä¹‹Elementå…ƒç´ 
      * @param elemInst elemInst
      */
     void beforeParseElement(Element elemInst);

@@ -7,6 +7,6 @@ public class ClassB extends ClassA {
         serialNum = Math.random();
     }
     public ClassB() {
-        userName = "ÍõÑÓ³É";
+        userName = "ç‹å»¶æˆ";
     }
 }

@@ -28,16 +28,16 @@ public class ContextMgr4LDAPTest implements Serializable {
      * serialized
      */
     private static final long serialVersionUID = 6206511843081011637L;
-    /** ²âÊÔÄ¿Â¼*/
+    /** æµ‹è¯•ç›®å½•*/
     private String tmpSubCtxDN = "ou=Java,".concat(Constant.BASEDN);
-    /** È«¾ÖÊµÀıÒıÓÃ */
+    /** å…¨å±€å®ä¾‹å¼•ç”¨ */
     private transient ContextMgr4LDAP cmLDAPInst;
-    /** ±¾´Î²âÊÔËùÓÃÊµÀı¶ÔÏó*/
-    private transient LDAPTestUserEntity tmpInst = new LDAPTestUserEntity("ÍõÑÓ³É", "2011-10-20");
+    /** æœ¬æ¬¡æµ‹è¯•æ‰€ç”¨å®ä¾‹å¯¹è±¡*/
+    private transient LDAPTestUserEntity tmpInst = new LDAPTestUserEntity("ç‹å»¶æˆ", "2011-10-20");
 
     /**
-     * ²âÊÔ»·¾³³õÊ¼»¯
-     * @throws Exception ºöÂÔÒì³£ĞÅÏ¢
+     * æµ‹è¯•ç¯å¢ƒåˆå§‹åŒ–
+     * @throws Exception å¿½ç•¥å¼‚å¸¸ä¿¡æ¯
      */
     @Before
     public void setUp() throws Exception {
@@ -45,15 +45,15 @@ public class ContextMgr4LDAPTest implements Serializable {
         initTestCtx();
     }
     /**
-     * ¸ºÔğ³õÊ¼»¯²âÊÔ»·¾³
+     * è´Ÿè´£åˆå§‹åŒ–æµ‹è¯•ç¯å¢ƒ
      */
     public void initTestCtx() {
         testBind();
         testDestroySubCtx();
     }
     /**
-     * ²âÊÔÍê³Éºó£¬ÇåÀí²âÊÔ×ÊÔ´
-     * @throws Exception ºöÂÔÒì³£ĞÅÏ¢
+     * æµ‹è¯•å®Œæˆåï¼Œæ¸…ç†æµ‹è¯•èµ„æº
+     * @throws Exception å¿½ç•¥å¼‚å¸¸ä¿¡æ¯
      */
     @After
     public void tearDown() throws Exception {
@@ -100,41 +100,41 @@ public class ContextMgr4LDAPTest implements Serializable {
         }
     }
     /**
-     * ²âÊÔ»ñÈ¡Ä³¶ÔÏóµÄÊôĞÔ
+     * æµ‹è¯•è·å–æŸå¯¹è±¡çš„å±æ€§
      */
     @Test
     public void testGetAttributes() {
         String tmpDN = "cn=WangYanCheng,ou=People,".concat(Constant.BASEDN);
         //UserEntity.getDN()
         NamingEnumeration<Attribute> nameArray = (NamingEnumeration<Attribute>) (cmLDAPInst.getAttributes(tmpDN)).getAll();
-        System.out.println("¶ÔÏó".concat(tmpDN).concat("µÄÊôĞÔ£º"));
+        System.out.println("å¯¹è±¡".concat(tmpDN).concat("çš„å±æ€§ï¼š"));
         LDAPUtils.printAttr(nameArray);
     }
     /**
-     * ²éÑ¯Ä³Ä¿Â¼ÏÂµÄ×Ó½Úµã
+     * æŸ¥è¯¢æŸç›®å½•ä¸‹çš„å­èŠ‚ç‚¹
      * @throws NamingException NamingException
      */
     @Test
     public void testList() throws NamingException {
         NamingEnumeration<NameClassPair> nameEnum = cmLDAPInst.list(Constant.BASEDN);
         Assert.assertNotNull(nameEnum);
-        System.out.println("¸ù½Úµã[" + Constant.BASEDN + "]" + "Ä¿Â¼ÏÂµÄ¶ÔÏó£º");
+        System.out.println("æ ¹èŠ‚ç‚¹[" + Constant.BASEDN + "]" + "ç›®å½•ä¸‹çš„å¯¹è±¡ï¼š");
         LDAPUtils.printEnum(nameEnum);
     }
 
     /**
-     * µ±Ç°ÉÏÏÂÎÄ»·¾³ÏÂµÄ¶ÔÏó
+     * å½“å‰ä¸Šä¸‹æ–‡ç¯å¢ƒä¸‹çš„å¯¹è±¡
      */
     @Test
     public void testListBinding() {
         NamingEnumeration<Binding> nameEnum = cmLDAPInst.listBinding(Constant.BASEDN);
         Assert.assertNotNull(nameEnum);
-        System.out.println("¸ù½Úµã[" + Constant.BASEDN + "]" + "Ä¿Â¼ÏÂµÄ¶ÔÏó£º");
+        System.out.println("æ ¹èŠ‚ç‚¹[" + Constant.BASEDN + "]" + "ç›®å½•ä¸‹çš„å¯¹è±¡ï¼š");
         LDAPUtils.printEnum(nameEnum);
     }
 
     /**
-     * ²âÊÔÏòÄ¿Â¼½á¹¹ÉÏ°ó¶¨¶ÔÏóÊµÀı
+     * æµ‹è¯•å‘ç›®å½•ç»“æ„ä¸Šç»‘å®šå¯¹è±¡å®ä¾‹
      */
     @Test
     public void testBind() {
@@ -142,7 +142,7 @@ public class ContextMgr4LDAPTest implements Serializable {
     }
 
     /**
-     * ²âÊÔÔÚÄ¿Â¼·şÎñÉÏ²éÕÒ¶ÔÏó
+     * æµ‹è¯•åœ¨ç›®å½•æœåŠ¡ä¸ŠæŸ¥æ‰¾å¯¹è±¡
      */
     @Test
     public void testLookup() {
@@ -160,7 +160,7 @@ public class ContextMgr4LDAPTest implements Serializable {
     }
 
     /**
-     * »ùÓÚ¹ıÂË±í´ïÊ½²éÑ¯
+     * åŸºäºè¿‡æ»¤è¡¨è¾¾å¼æŸ¥è¯¢
      */
     @Test
     public void testSearch4Filter() {
@@ -168,7 +168,7 @@ public class ContextMgr4LDAPTest implements Serializable {
         String filterExp = "(&(sn=Wang)(telephoneNumber=15810779839))";
         NamingEnumeration<SearchResult> resultEnum = cmLDAPInst.search(tmpDN, filterExp);
         LDAPUtils.printEnum(resultEnum);
-        System.out.println("´øÓĞ¹ıÂËAttributeµÄsearch");
+        System.out.println("å¸¦æœ‰è¿‡æ»¤Attributeçš„search");
         String[] filterAttr = {"cn", "sn", "userPassword", "jpegPhoto"};
         resultEnum = cmLDAPInst.search(tmpDN, filterExp, filterAttr, SearchControls.SUBTREE_SCOPE);
         LDAPUtils.printResultEnum(resultEnum, tmpDN, filterExp);
@@ -204,7 +204,7 @@ public class ContextMgr4LDAPTest implements Serializable {
     }
 
     /**
-     * ²âÊÔ½Úµã¸üĞÂ
+     * æµ‹è¯•èŠ‚ç‚¹æ›´æ–°
      */
     @Test
     public void testRenaming() {
@@ -215,7 +215,7 @@ public class ContextMgr4LDAPTest implements Serializable {
     }
 
     /**
-     * ²âÊÔÒÆ³ı½Úµã
+     * æµ‹è¯•ç§»é™¤èŠ‚ç‚¹
      */
     @Test
     public void testUnBind() {

@@ -7,7 +7,7 @@ import java.net.URL;
 import javax.swing.Icon;
 
 /**
- * ImageIcon´úÀí
+ * ImageIconä»£ç†
  * @author WangYanCheng
  * @version 2011-1-13
  */
@@ -58,7 +58,7 @@ public class ImageProxy implements Icon {
         if (isRetrieval()) {
             imageIcon.paintIcon(c, g, x, y);
         } else {
-            g.drawString("ÕıÔÚ¼ÓÔØ£¬ÇëÉÔºò¡£¡£¡£¡£", x + 300, y + 300);
+            g.drawString("æ­£åœ¨åŠ è½½ï¼Œè¯·ç¨å€™ã€‚ã€‚ã€‚ã€‚", x + 300, y + 300);
             if (!retrieving) {
                 retrieving = true;
                 retrievalThread = new Thread(new Runnable() {

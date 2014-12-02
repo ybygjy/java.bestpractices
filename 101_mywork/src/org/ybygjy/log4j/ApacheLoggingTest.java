@@ -5,7 +5,7 @@ import org.apache.commons.logging.LogFactory;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * ²âÊÔApache Logging
+ * æµ‹è¯•Apache Logging
  * @author WangYanCheng
  * @version 2010-10-26
  */

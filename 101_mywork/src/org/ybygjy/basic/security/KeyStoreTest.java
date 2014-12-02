@@ -10,7 +10,7 @@ import java.security.KeyStore;
 import org.apache.ftpserver.FtpServerConfigurationException;
 
 /**
- * 证书相关主题学习
+ * 璇佷功鐩稿叧涓婚瀛︿範
  * @author WangYanCheng
  * @version 2011-6-1
  */
@@ -21,7 +21,7 @@ public class KeyStoreTest {
         return (KeyStore.getDefaultType());
     }
     /**
-     * 加载证书
+     * 鍔犺浇璇佷功
      * @param storeFile
      * @param storeType
      * @param storePass

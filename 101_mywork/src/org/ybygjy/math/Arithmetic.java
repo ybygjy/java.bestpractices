@@ -5,14 +5,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 /**
- * ÃèÊö³£ÓÃËã·¨
+ * æè¿°å¸¸ç”¨ç®—æ³•
  * @author WangYanCheng
  * @version 2011-3-8
  */
 public class Arithmetic {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      * @throws IOException IOException
      */
     public static void main(String[] args) throws IOException {
@@ -24,11 +24,11 @@ public class Arithmetic {
         String[] strArr = tmpStr.split(",");
         int a = Integer.parseInt(strArr[0]), b = Integer.parseInt(strArr[1]);
         Arithmetic arithObj = new Arithmetic();
-        System.out.printf("%dÓë%dµÄ×î´ó¹«Ô¼ÊıÎª:%d", a, b, arithObj.gcd(b, a));
+        System.out.printf("%dä¸%dçš„æœ€å¤§å…¬çº¦æ•°ä¸º:%d", a, b, arithObj.gcd(b, a));
     }
 
     /**
-     * Õ·×ªÏà³ı·¨(Çó×î´ó¹«Ô¼Êı)
+     * è¾—è½¬ç›¸é™¤æ³•(æ±‚æœ€å¤§å…¬çº¦æ•°)
      * @param a a
      * @param b b
      * @return value

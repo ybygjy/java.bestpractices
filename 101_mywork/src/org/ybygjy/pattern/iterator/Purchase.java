@@ -3,7 +3,7 @@ package org.ybygjy.pattern.iterator;
 import java.util.Vector;
 
 /**
- * ³éÏóµÄ¹ºÎï¿ò
+ * æŠ½è±¡çš„è´­ç‰©æ¡†
  * @author WangYanCheng
  * @version 2012-11-26
  */

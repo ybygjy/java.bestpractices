@@ -1,7 +1,7 @@
 package org.ybygjy.basic.thinking.thread;
 
 /**
- * 线程_资源共享
+ * 绾跨▼_璧勬簮鍏变韩
  * @author WangYanCheng
  * @version 2010-9-27
  */

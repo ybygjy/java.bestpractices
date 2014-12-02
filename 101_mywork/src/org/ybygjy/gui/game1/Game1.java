@@ -9,7 +9,7 @@ public class Game1 extends JFrame {
     private static final long serialVersionUID = -7308529441329488933L;
     public Game1() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setTitle("Java游戏中的地图");
+        setTitle("Java娓告垙涓殑鍦板浘");
         Game1MainPanel gmpInst = new Game1MainPanel();
         getContentPane().add(gmpInst);
         pack();

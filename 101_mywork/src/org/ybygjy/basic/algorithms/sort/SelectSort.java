@@ -3,15 +3,15 @@ package org.ybygjy.basic.algorithms.sort;
 import java.util.Arrays;
 
 /**
- * Ñ¡ÔñÅÅĞò(²éÕÒÅÅĞò)
+ * é€‰æ‹©æ’åº(æŸ¥æ‰¾æ’åº)
  * @author WangYanCheng
  * @version 2011-8-4
  */
 public class SelectSort {
     /**
-     * ÅÅĞò
-     * @param a ²ÎÓëÅÅĞòµÄÊı×é
-     * @return ÅÅĞòÍê³ÉµÄÊı×é
+     * æ’åº
+     * @param a å‚ä¸æ’åºçš„æ•°ç»„
+     * @return æ’åºå®Œæˆçš„æ•°ç»„
      */
     public int[] sortA(int[] a) {
         int flag = 0;
@@ -52,8 +52,8 @@ public class SelectSort {
         return a;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         int[] a = {7, 6, 5, 3, 4, 2, 0, 8, 1};

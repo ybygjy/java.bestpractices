@@ -45,7 +45,7 @@ import org.apache.commons.httpclient.methods.PostMethod;
  * to a remote web server using HTTP POST
  *
  * @author Sean C. Sullivan
- * @author Ortwin Glück
+ * @author Ortwin Glé»žk
  * @author Oleg Kalnichevski
  */
 public class PostXML {

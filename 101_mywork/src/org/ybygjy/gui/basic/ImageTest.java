@@ -13,14 +13,14 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
- * Swing 图像组件
+ * Swing 鍥惧儚缁勪欢
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class ImageTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {

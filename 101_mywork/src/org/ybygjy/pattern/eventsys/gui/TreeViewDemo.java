@@ -21,7 +21,7 @@ import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
 /**
- * ÒÔTreeViewÎªÊ¾Àı,ÑĞ¾¿ÊÂ¼ş´¦Àí»úÖÆ
+ * ä»¥TreeViewä¸ºç¤ºä¾‹,ç ”ç©¶äº‹ä»¶å¤„ç†æœºåˆ¶
  * @author WangYanCheng
  * @version 2010-9-14
  */
@@ -44,7 +44,7 @@ public class TreeViewDemo extends JPanel implements TreeSelectionListener {
      */
     public TreeViewDemo() {
         super(new GridLayout(1, 0));
-//        DefaultMutableTreeNode topNode = new DefaultMutableTreeNode("¸ù");
+//        DefaultMutableTreeNode topNode = new DefaultMutableTreeNode("æ ¹");
 //        createNodes(topNode);
 //        treeInst = new JTree(topNode);
         treeInst = new JTree();
@@ -95,18 +95,18 @@ public class TreeViewDemo extends JPanel implements TreeSelectionListener {
     }
 
     /**
-     * ÊµÌå
+     * å®ä½“
      * @author WangYanCheng
      * @version 2010-9-14
      */
     private class BookInfo {
-        /** Ãû³Æ */
+        /** åç§° */
         public String bookName;
         /** url */
         public URL bookURL;
 
         /**
-         * ¹¹Ôì
+         * æ„é€ 
          * @param book book
          * @param fileName fileName
          */
@@ -224,8 +224,8 @@ public class TreeViewDemo extends JPanel implements TreeSelectionListener {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         javax.swing.SwingUtilities.invokeLater(new Runnable() {

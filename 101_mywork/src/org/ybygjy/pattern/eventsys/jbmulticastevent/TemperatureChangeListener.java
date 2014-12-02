@@ -3,8 +3,8 @@ package org.ybygjy.pattern.eventsys.jbmulticastevent;
 import java.util.EventListener;
 
 /**
- * ÊÂ¼ş»úÖÆ-->JavaBeanÄ£Ê½-->Multicast Event<br>
- * ÕìÌıÆ÷½Ó¿Ú
+ * äº‹ä»¶æœºåˆ¶-->JavaBeanæ¨¡å¼-->Multicast Event<br>
+ * ä¾¦å¬å™¨æ¥å£
  * @author WangYanCheng
  * @version 2010-2-20
  */

@@ -14,15 +14,15 @@ import javax.naming.directory.SearchResult;
 import org.ybygjy.basic.security.SecurityUtils;
 
 /**
- * ·â×°¹«¹²²Ù×÷
+ * å°è£…å…¬å…±æ“ä½œ
  * @author WangYanCheng
  * @version 2011-6-9
  */
 public class LDAPUtils {
     /**
-     * È¡ÊôĞÔÖµ,¶à¸öÒÔ¶ººÅ·Ö¸î£¬ÈçuserPhone=phone1,phone2,phone3
-     * @param attr ÌõÄ¿ÊôĞÔ¶ÔÏó
-     * @return ÌõÄ¿Öµ
+     * å–å±æ€§å€¼,å¤šä¸ªä»¥é€—å·åˆ†å‰²ï¼Œå¦‚userPhone=phone1,phone2,phone3
+     * @param attr æ¡ç›®å±æ€§å¯¹è±¡
+     * @return æ¡ç›®å€¼
      */
     public static String getAttributeValue(Attribute attr) {
         StringBuffer sbud = new StringBuffer();
@@ -31,7 +31,7 @@ public class LDAPUtils {
             Object obj = null;
             while (nameEnum.hasMore()) {
                 obj = nameEnum.next();
-                // ×¢Òâ objÀàĞÍ¿ÉÒÔÊÇ×Ö½ÚµÈÆäËüÀàĞÍ
+                // æ³¨æ„ objç±»å‹å¯ä»¥æ˜¯å­—èŠ‚ç­‰å…¶å®ƒç±»å‹
                 if (obj instanceof String) {
                     sbud.append(obj.toString()).append(",");
                 } else if (obj instanceof byte[]) {
@@ -48,10 +48,10 @@ public class LDAPUtils {
     }
 
     /**
-     * ´ÓÌõÄ¿¼¯ÖĞÈ¡ÌõÄ¿Öµ£¬¶àÖµÒÔ¶ººÅ·Ö¸î
-     * @param attrs ÊôĞÔÌõÄ¿¼¯
-     * @param attrID ÌõÄ¿ID
-     * @return ÌõÄ¿Öµ
+     * ä»æ¡ç›®é›†ä¸­å–æ¡ç›®å€¼ï¼Œå¤šå€¼ä»¥é€—å·åˆ†å‰²
+     * @param attrs å±æ€§æ¡ç›®é›†
+     * @param attrID æ¡ç›®ID
+     * @return æ¡ç›®å€¼
      */
     public static String getAttributeValue(Attributes attrs, String attrID) {
         Attribute attr = attrs.get(attrID);
@@ -59,9 +59,9 @@ public class LDAPUtils {
     }
 
     /**
-     * ¹¹ÔìÊÊÓÃÓÚOpenLDAPµÄÌõÄ¿ÃÜÂë
-     * @param srcPassStr Ã÷ÎÄ
-     * @return cipherStr ÃÜÂë´®
+     * æ„é€ é€‚ç”¨äºOpenLDAPçš„æ¡ç›®å¯†ç 
+     * @param srcPassStr æ˜æ–‡
+     * @return cipherStr å¯†ç ä¸²
      */
     public static String getOpenLDAPEntryPassword(String srcPassStr) {
         String rtnStr = SecurityUtils.encodeBase64(SecurityUtils.encodeMD5(srcPassStr));
@@ -69,10 +69,10 @@ public class LDAPUtils {
     }
 
     /**
-     * ¹¤¾ß·½·¨£¬¸ºÔğ´òÓ¡¼ìË÷Öµ¼¯
-     * @param resultEnum ½á¹û¼¯
-     * @param tmpDN Ö¸¶¨DN
-     * @param filterExp ¹ıÂË±í´ïÊ½
+     * å·¥å…·æ–¹æ³•ï¼Œè´Ÿè´£æ‰“å°æ£€ç´¢å€¼é›†
+     * @param resultEnum ç»“æœé›†
+     * @param tmpDN æŒ‡å®šDN
+     * @param filterExp è¿‡æ»¤è¡¨è¾¾å¼
      */
     public static void printResultEnum(NamingEnumeration<SearchResult> resultEnum, String tmpDN,
                                        String filterExp) {
@@ -83,18 +83,18 @@ public class LDAPUtils {
                     printAttr((NamingEnumeration<Attribute>) ((resultEnum.next().getAttributes()).getAll()));
                 }
             } else {
-                System.out.println("Î´ÄÜÕÒµ½Æ¥Åä£º\n\tDN£º".concat(tmpDN).concat("\n\tfilterExp£º")
+                System.out.println("æœªèƒ½æ‰¾åˆ°åŒ¹é…ï¼š\n\tDNï¼š".concat(tmpDN).concat("\n\tfilterExpï¼š")
                     .concat(filterExp));
             }
         } catch (SizeLimitExceededException see) {
-            System.err.println("³¬³öÖ¸¶¨limit·¶Î§".concat(see.getMessage()));
+            System.err.println("è¶…å‡ºæŒ‡å®šlimitèŒƒå›´".concat(see.getMessage()));
         } catch (NamingException e) {
             e.printStackTrace();
         }
     }
 
     /**
-     * ¹¤¾ß·½·¨,¸ºÔğ´òÓ¡¼¯ºÏÖĞµÄÔªËØ
+     * å·¥å…·æ–¹æ³•,è´Ÿè´£æ‰“å°é›†åˆä¸­çš„å…ƒç´ 
      * @param resultEnum nameEnum
      */
     public static void printEnum(NamingEnumeration<?> resultEnum) {
@@ -105,9 +105,9 @@ public class LDAPUtils {
     }
 
     /**
-     * ¹¤¾ß·½·¨,¸ºÔğ´òÓ¡ÊôĞÔ¼¯ºÏÔªËØ
+     * å·¥å…·æ–¹æ³•,è´Ÿè´£æ‰“å°å±æ€§é›†åˆå…ƒç´ 
      * <p>
-     * <strong>×¢Òâ£º</strong>
+     * <strong>æ³¨æ„ï¼š</strong>
      * </p>
      * @param nameArray nameEnum
      */
@@ -131,9 +131,9 @@ public class LDAPUtils {
     }
 
     /**
-     * Éú³ÉÊÊÓÃÓÚOpenLDAPServer´æ´¢µÄMD5ÃÜÂë×Ö·û´®
-     * @param srcPasswdStr Ã÷ÎÄ
-     * @return rtnStr ´¦ÀíÍê³ÉµÄÃÜÂë´®
+     * ç”Ÿæˆé€‚ç”¨äºOpenLDAPServerå­˜å‚¨çš„MD5å¯†ç å­—ç¬¦ä¸²
+     * @param srcPasswdStr æ˜æ–‡
+     * @return rtnStr å¤„ç†å®Œæˆçš„å¯†ç ä¸²
      */
     public static String getOpenLDAPMD5(String srcPasswdStr) {
         byte[] md5Bytes = SecurityUtils.encodeMD5(srcPasswdStr);
@@ -143,29 +143,29 @@ public class LDAPUtils {
     }
 
     /**
-     * ½«¸ø¶¨Ô´×Ö·û´®×ª»»ÎªÊÊÓÃÓÚOpenLDAPMD5¸ñÊ½´æ´¢µÄ×Ö·û´®
+     * å°†ç»™å®šæºå­—ç¬¦ä¸²è½¬æ¢ä¸ºé€‚ç”¨äºOpenLDAPMD5æ ¼å¼å­˜å‚¨çš„å­—ç¬¦ä¸²
      * <p>
-     * <strong>´Ë·½·¨Ó¦ÓÃÔÚLDIFÎÄ¼şÄÚÈİ£¬¸ºÔğÉú³ÉMD5¼ÓÃÜµÄ×Ö·û´®ÓÃÒÔ´æ´¢ÔÚÌõÄ¿Ïà¹ØÊôĞÔ(ÈçuserPassword)ÖĞ¡£</strong>
+     * <strong>æ­¤æ–¹æ³•åº”ç”¨åœ¨LDIFæ–‡ä»¶å†…å®¹ï¼Œè´Ÿè´£ç”ŸæˆMD5åŠ å¯†çš„å­—ç¬¦ä¸²ç”¨ä»¥å­˜å‚¨åœ¨æ¡ç›®ç›¸å…³å±æ€§(å¦‚userPassword)ä¸­ã€‚</strong>
      * </p>
      * <p>
-     * OpenLDAPMD5¸ñÊ½»ù±¾Ô­Àí£º
+     * OpenLDAPMD5æ ¼å¼åŸºæœ¬åŸç†ï¼š
      * <ol>
-     * <li>OpenLDAPÒÔMD5¼ÓÃÜ·½Ê½´æ´¢µÄÃÜÂë´®ÊÇ¾­¹ıBase64±àÂëÖ®ºóµÄ×Ö·û´®£¬¶ø²»ÊÇµ¥´¿µÄMD5¼ÓÃÜºóµÄ16½øÖÆ¸ñÊ½µÄ×Ö·û´®¡£</li>
-     * <li>×ª»»·½Ê½Ö÷ÒªÓĞÁ½²½£º
+     * <li>OpenLDAPä»¥MD5åŠ å¯†æ–¹å¼å­˜å‚¨çš„å¯†ç ä¸²æ˜¯ç»è¿‡Base64ç¼–ç ä¹‹åçš„å­—ç¬¦ä¸²ï¼Œè€Œä¸æ˜¯å•çº¯çš„MD5åŠ å¯†åçš„16è¿›åˆ¶æ ¼å¼çš„å­—ç¬¦ä¸²ã€‚</li>
+     * <li>è½¬æ¢æ–¹å¼ä¸»è¦æœ‰ä¸¤æ­¥ï¼š
      * <p>
-     * µÚÒ»²½½«Ô´×Ö·û´®½øĞĞMD5×ª»»
+     * ç¬¬ä¸€æ­¥å°†æºå­—ç¬¦ä¸²è¿›è¡ŒMD5è½¬æ¢
      * </p>
      * <p>
-     * µÚ¶ş²½Base64¶Ô½øĞĞMD5×ª»»µÃµ½µÄ×Ö½Ú×é½øĞĞ±àÂë
+     * ç¬¬äºŒæ­¥Base64å¯¹è¿›è¡ŒMD5è½¬æ¢å¾—åˆ°çš„å­—èŠ‚ç»„è¿›è¡Œç¼–ç 
      * </p>
      * <p>
-     * µÚÈı²½Í¨¹ıJNDI(»òÆäËüLDAP Client)½«´¦ÀíÍê³ÉµÄ×Ö·û´®´æ´¢µ½ÌØ¶¨EntryµÄAttributeÖĞ
+     * ç¬¬ä¸‰æ­¥é€šè¿‡JNDI(æˆ–å…¶å®ƒLDAP Client)å°†å¤„ç†å®Œæˆçš„å­—ç¬¦ä¸²å­˜å‚¨åˆ°ç‰¹å®šEntryçš„Attributeä¸­
      * </p>
      * </li>
      * </ol>
      * </p>
-     * @param srcStr Ô´×Ö·û´®(ÃÜÂë´®)
-     * @return rtnStr ×ª»»Íê³ÉµÄ×Ö·û´®
+     * @param srcStr æºå­—ç¬¦ä¸²(å¯†ç ä¸²)
+     * @return rtnStr è½¬æ¢å®Œæˆçš„å­—ç¬¦ä¸²
      */
     public static String getOpenLDAPMD5LDIF(String srcStr) {
         String rtnStr = getOpenLDAPMD5(srcStr);

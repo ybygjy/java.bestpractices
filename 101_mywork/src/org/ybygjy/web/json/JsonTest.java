@@ -6,13 +6,13 @@ import java.util.Map;
 import org.ybygjy.web.json.jsoninjava.JSONObject;
 
 /**
- * Json ²âÊÔ
+ * Json æµ‹è¯•
  * @author WangYanCheng
  * @version 2009-12-26
  */
 public class JsonTest {
     /**
-     * Èë¿Ú
+     * å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

@@ -5,7 +5,7 @@ import java.awt.event.ActionEvent;
 import org.ybygjy.gui.springswing.comp.ListTableActionListener;
 
 /**
- * 负责删除按钮事件实现
+ * 璐熻矗鍒犻櫎鎸夐挳浜嬩欢瀹炵幇
  * @author WangYanCheng
  * @version 2011-2-16
  */

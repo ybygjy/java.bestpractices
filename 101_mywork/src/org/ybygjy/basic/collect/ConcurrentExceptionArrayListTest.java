@@ -6,25 +6,25 @@ import java.util.Random;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
- * ConcurrentModificationExceptionÒì³££¬´ËÒì³£Í¨³£ÔÚÒ»¸ö¼¯ºÏÎª¶à¸öÏß³ÌÊ¹ÓÃµÄ³¡¾°ÖĞ¡£
- * <p><strong>½â¾ö°ì·¨£º</strong></p>
+ * ConcurrentModificationExceptionå¼‚å¸¸ï¼Œæ­¤å¼‚å¸¸é€šå¸¸åœ¨ä¸€ä¸ªé›†åˆä¸ºå¤šä¸ªçº¿ç¨‹ä½¿ç”¨çš„åœºæ™¯ä¸­ã€‚
+ * <p><strong>è§£å†³åŠæ³•ï¼š</strong></p>
  * <p>
- * 1¡¢Ê¹ÓÃcopy°ì·¨£¬Èç<pre>
+ * 1ã€ä½¿ç”¨copyåŠæ³•ï¼Œå¦‚<pre>
  * String[] tmpStrArr = new String[arrayListInst.size()];
  * for (String tmp : tmpStrArr) {
  *  System.out.println(tmp);
  * }
  * </pre>
- * 2¡¢Ê¹ÓÃÌØ¶¨µÄ¼¯ºÏÊµÀı£¬ĞèÒª»¨·ÑĞÔÄÜ´ú¼Û
+ * 2ã€ä½¿ç”¨ç‰¹å®šçš„é›†åˆå®ä¾‹ï¼Œéœ€è¦èŠ±è´¹æ€§èƒ½ä»£ä»·
  * </p>
  * @author WangYanCheng
  * @version 2010-11-10
  */
 public class ConcurrentExceptionArrayListTest {
-    /** ¼¯ºÏ */
+    /** é›†åˆ */
     private List<String> rtnList = /*new ArrayList<String>();*/new CopyOnWriteArrayList<String>();/*Collections.synchronizedList(new ArrayList<String>());*/
     /**
-     * Êı¾İÉú²úÕß
+     * æ•°æ®ç”Ÿäº§è€…
      * @author WangYanCheng
      * @version 2011-6-16
      */
@@ -39,7 +39,7 @@ public class ConcurrentExceptionArrayListTest {
             randInst = new Random();
         }
         /**
-         * Ïß³ÌÍ£Ö¹
+         * çº¿ç¨‹åœæ­¢
          * @param startFlag
          */
         public void stopThread(boolean startFlag) {
@@ -60,14 +60,14 @@ public class ConcurrentExceptionArrayListTest {
         }
     }
     /**
-     * Êı¾İÏû·ÑÕß
+     * æ•°æ®æ¶ˆè´¹è€…
      * @author WangYanCheng
      * @version 2011-6-16
      */
     class ConsumerThread extends Thread {
         private boolean startFlag = true;
         /**
-         * Ïß³ÌÍ£Ö¹
+         * çº¿ç¨‹åœæ­¢
          * @param startFlag
          */
         public void stopThread(boolean startFlag) {
@@ -98,22 +98,22 @@ public class ConcurrentExceptionArrayListTest {
         System.out.println();
     }
     /**
-     * Éú³ÉÏû·ÑÕßÏß³Ì¶ÔÏó
+     * ç”Ÿæˆæ¶ˆè´¹è€…çº¿ç¨‹å¯¹è±¡
      * @return {@link ConsumerThread}
      */
     public ConsumerThread getConsumerThread() {
         return new ConsumerThread();
     }
     /**
-     * Éú³ÉÉú²úÕßÏß³Ì¶ÔÏó
+     * ç”Ÿæˆç”Ÿäº§è€…çº¿ç¨‹å¯¹è±¡
      * @return {@link ProducterThread}
      */
     public ProducterThread getProducterThread() {
         return new ProducterThread();
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         ConcurrentExceptionArrayListTest cowALT = new ConcurrentExceptionArrayListTest();

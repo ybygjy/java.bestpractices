@@ -13,13 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * javaÍâ²¿ÏµÍ³ÃüÁîÄ£Ê½±¸·İÊı¾İ¿â
+ * javaå¤–éƒ¨ç³»ç»Ÿå‘½ä»¤æ¨¡å¼å¤‡ä»½æ•°æ®åº“
  * @author WangYanCheng
  * @version 2010-6-19
  */
 public class BackupOracleDatabase {
     /**
-     * ·â×°Ö´ĞĞÈë¿Ú
+     * å°è£…æ‰§è¡Œå…¥å£
      */
     public void doWork() {
         InnerClass innerInst =
@@ -29,25 +29,25 @@ public class BackupOracleDatabase {
     }
 
     /**
-     * ÓÃÓÚ·Öµ£Ö´ĞĞÃüÁî
+     * ç”¨äºåˆ†æ‹…æ‰§è¡Œå‘½ä»¤
      * @author WangYanCheng
      * @version 2010-6-19
      */
     class InnerClass implements Runnable {
-        /** ÓÃ»§Ãû */
+        /** ç”¨æˆ·å */
         private String userName;
-        /** ÃÜÂë */
+        /** å¯†ç  */
         private String userPass;
-        /** ·şÎñµØÖ· */
+        /** æœåŠ¡åœ°å€ */
         private String serverAddr;
-        /** Êä³öÎÄ¼şÂ·¾¶ */
+        /** è¾“å‡ºæ–‡ä»¶è·¯å¾„ */
         private String outFilePath;
 
         /**
          * constructor
          * @param userName userName
          * @param userPass userPass
-         * @param serverAddr ·şÎñµØÖ·±ØĞë´ø<strong>¶Ë¿Ú</strong>\<strong>SID</strong>
+         * @param serverAddr æœåŠ¡åœ°å€å¿…é¡»å¸¦<strong>ç«¯å£</strong>\<strong>SID</strong>
          * @param outFilePath outPath
          */
         public InnerClass(String userName, String userPass, String serverAddr, String outFilePath) {
@@ -58,8 +58,8 @@ public class BackupOracleDatabase {
         }
 
         /**
-         * Ìá¹©Ö´ĞĞµÄÃüÁî´®
-         * @return commStr ÃüÁî´®
+         * æä¾›æ‰§è¡Œçš„å‘½ä»¤ä¸²
+         * @return commStr å‘½ä»¤ä¸²
          */
         private List<String> doBuildCommand() {
             List<String> rtnList = new ArrayList<String>();
@@ -71,9 +71,9 @@ public class BackupOracleDatabase {
             return rtnList;
         }
         /**
-         * ¹¹½¨ProcessBuilderÊµÀı
-         * @param workDir µ±Ç°½ø³Ì¹¤×÷Ä¿Â¼
-         * @return pbInst ProcessBuilderÊµÀı
+         * æ„å»ºProcessBuilderå®ä¾‹
+         * @param workDir å½“å‰è¿›ç¨‹å·¥ä½œç›®å½•
+         * @return pbInst ProcessBuilderå®ä¾‹
          * @see ProcessBuilder
          */
         private ProcessBuilder buildProcessBuilder(File workDir) {
@@ -89,7 +89,7 @@ public class BackupOracleDatabase {
             return pbInst;
         }
         /**
-         * Ïß³ÌÖ´ĞĞÈë¿Ú
+         * çº¿ç¨‹æ‰§è¡Œå…¥å£
          */
         public void run() {
             File tmpOutFile = new File(this.outFilePath);
@@ -125,8 +125,8 @@ public class BackupOracleDatabase {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         new BackupOracleDatabase().doWork();

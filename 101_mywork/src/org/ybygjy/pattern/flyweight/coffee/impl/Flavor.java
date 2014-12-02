@@ -4,7 +4,7 @@ import org.ybygjy.pattern.flyweight.coffee.Order;
 import org.ybygjy.pattern.flyweight.coffee.Table;
 
 /**
- * 单纯享元对象
+ * 鍗曠函浜厓瀵硅薄
  * @author WangYanCheng
  * @version 2010-11-22
  */

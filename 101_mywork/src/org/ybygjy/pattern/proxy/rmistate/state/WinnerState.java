@@ -52,21 +52,21 @@ public class WinnerState implements IState {
      * {@inheritDoc}
      */
     public void ejectQuarter() {
-        System.out.println("ÒÑ¾­·¢·ÅÌÇ¹û£¬²»ÄÜÍË±Ò¡£");
+        System.out.println("å·²ç»å‘æ”¾ç³–æœï¼Œä¸èƒ½é€€å¸ã€‚");
     }
 
     /**
      * {@inheritDoc}
      */
     public void insertQuarter() {
-        System.out.println("ÕıÔÚ·¢·ÅÌÇ¹û£¬ÇëÉÔºò¡£¡£");
+        System.out.println("æ­£åœ¨å‘æ”¾ç³–æœï¼Œè¯·ç¨å€™ã€‚ã€‚");
     }
 
     /**
      * {@inheritDoc}
      */
     public void turnCrank() {
-        System.out.println("ÖØ¸´×ª¶¯ÊÖ±úÒ²²»»á»ñµÃ¶à¸öÌÇ¹û¡£¡£");
+        System.out.println("é‡å¤è½¬åŠ¨æ‰‹æŸ„ä¹Ÿä¸ä¼šè·å¾—å¤šä¸ªç³–æœã€‚ã€‚");
     }
 
 }

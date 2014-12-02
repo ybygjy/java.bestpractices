@@ -3,14 +3,14 @@ package org.ybygjy.basic.reflection.test2;
 import java.lang.reflect.Method;
 
 /**
- * CSDN网友关于反射问题
+ * CSDN缃戝弸鍏充簬鍙嶅皠闂
  * @author WangYanCheng
  * @version 2010-8-5
  */
 public class ReflectionTest4CSDN {
     /**
-     * 取得子类非继承Method
-     * @param classInst 对象实例
+     * 鍙栧緱瀛愮被闈炵户鎵縈ethod
+     * @param classInst 瀵硅薄瀹炰緥
      */
     private void refChildClassMethod(Class classInst) {
         Method[] methodArr = classInst.getDeclaredMethods();
@@ -19,8 +19,8 @@ public class ReflectionTest4CSDN {
         }
     }
     /**
-     * 测试入口
-     * @param arg 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param arg 鍙傛暟鍒楄〃
      */
     public static void main(String[] arg) {
         ReflectionTest4CSDN rt4cInst = new ReflectionTest4CSDN();

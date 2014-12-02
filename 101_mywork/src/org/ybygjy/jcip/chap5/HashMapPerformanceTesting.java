@@ -9,28 +9,28 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * ¸ºÔğÊµÏÖ{@link HashMap}Óë{@link ConcurrentHashMap}ÈİÆ÷µÄĞÔÄÜ²âÊÔ
+ * è´Ÿè´£å®ç°{@link HashMap}ä¸{@link ConcurrentHashMap}å®¹å™¨çš„æ€§èƒ½æµ‹è¯•
  * @author WangYanCheng
- * @version 2014Äê7ÔÂ31ÈÕ
+ * @version 2014å¹´7æœˆ31æ—¥
  */
 public class HashMapPerformanceTesting {
-	/** ²âÊÔËùĞè´´½¨µÄÏß³ÌÊıÁ¿ */
+	/** æµ‹è¯•æ‰€éœ€åˆ›å»ºçš„çº¿ç¨‹æ•°é‡ */
 	private int threadNums;
-	/** ¸÷Ïß³ÌÑ­»·´ÎÊı */
+	/** å„çº¿ç¨‹å¾ªç¯æ¬¡æ•° */
 	private int loopNums;
-	/** ²âÊÔÄ¿±êÈİÆ÷µÄ¶Á/Ğ´±ÈÂÊ */
+	/** æµ‹è¯•ç›®æ ‡å®¹å™¨çš„è¯»/å†™æ¯”ç‡ */
 	private float rwRatio;
-	/** ±»²âÊÔÈİÆ÷ */
+	/** è¢«æµ‹è¯•å®¹å™¨ */
 	private final Map<Object, Object> targetContainer;
-	/** ¼ÇÂ¼×ÜºÄÊ± */
+	/** è®°å½•æ€»è€—æ—¶ */
 	private volatile long totalSpendTime;
 
 	/**
-	 * ¹¹Ôì·½·¨
-	 * @param threadNums Ïß³ÌÊıÁ¿
-	 * @param loopNums Ñ­»·´ÎÊı
-	 * @param rwRatio ¶Á/Ğ´±ÈÂÊ
-	 * @param targetContainer ±»²âÊÔÈİÆ÷
+	 * æ„é€ æ–¹æ³•
+	 * @param threadNums çº¿ç¨‹æ•°é‡
+	 * @param loopNums å¾ªç¯æ¬¡æ•°
+	 * @param rwRatio è¯»/å†™æ¯”ç‡
+	 * @param targetContainer è¢«æµ‹è¯•å®¹å™¨
 	 */
 	public HashMapPerformanceTesting(int threadNums, int loopNums,
 			float rwRatio, Map<Object, Object> targetContainer) {
@@ -41,8 +41,8 @@ public class HashMapPerformanceTesting {
 	}
 
 	/**
-	 * ²âÊÔÆô¶¯Èë¿Ú
-	 * @throws InterruptedException Ïß³ÌÖĞ¶ÏÒì³£
+	 * æµ‹è¯•å¯åŠ¨å…¥å£
+	 * @throws InterruptedException çº¿ç¨‹ä¸­æ–­å¼‚å¸¸
 	 */
 	public void doTest() throws InterruptedException {
 		final CountDownLatch beginGate = new CountDownLatch(1);
@@ -84,15 +84,15 @@ public class HashMapPerformanceTesting {
 	}
 
 	/**
-	 * ²âÊÔÈë¿Ú
-	 * @param args ²ÎÊıÁĞ±í
+	 * æµ‹è¯•å…¥å£
+	 * @param args å‚æ•°åˆ—è¡¨
 	 */
 	public static void main(String[] args) {
-		// ¶¨ÒåÈİÆ÷µÄ³éÏó
-		// ¶¨Òå±ÕËø#¿ªÊ¼ÃÅ
-		// ¶¨Òå±ÕËø#½áÊøÃÅ
-		// ¶¨Òå³õÊ¼Èë¿Ú£¬¸ºÔğ´´½¨Ïß³Ì
-		/* ÕâÀïÔÚ½øĞĞ²âÊÔµÄÊ±ºò³öÏÖÎÊÌâ£¬HashMap·ÇÏß³Ì°²È«£¬ÔÚ²âÊÔ¹ı³ÌÖĞ³öÏÖËÀËø£¡³öÏÖËÀËøµÄÔ­ÒòÎ´»¹Î´ÕÒµ½£¡ */
+		// å®šä¹‰å®¹å™¨çš„æŠ½è±¡
+		// å®šä¹‰é—­é”#å¼€å§‹é—¨
+		// å®šä¹‰é—­é”#ç»“æŸé—¨
+		// å®šä¹‰åˆå§‹å…¥å£ï¼Œè´Ÿè´£åˆ›å»ºçº¿ç¨‹
+		/* è¿™é‡Œåœ¨è¿›è¡Œæµ‹è¯•çš„æ—¶å€™å‡ºç°é—®é¢˜ï¼ŒHashMapéçº¿ç¨‹å®‰å…¨ï¼Œåœ¨æµ‹è¯•è¿‡ç¨‹ä¸­å‡ºç°æ­»é”ï¼å‡ºç°æ­»é”çš„åŸå› æœªè¿˜æœªæ‰¾åˆ°ï¼ */
 		Map[] mapArray = {
 			// new HashMap<Object, Object>(),
 			new ConcurrentHashMap<Object, Object>(),

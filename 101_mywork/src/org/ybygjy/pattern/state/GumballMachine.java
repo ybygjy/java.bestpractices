@@ -7,29 +7,29 @@ import org.ybygjy.pattern.state.impl.SoldState;
 import org.ybygjy.pattern.state.impl.WinnerState;
 
 /**
- * ÌÇ¹û»ú
+ * ç³–æœæœº
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public class GumballMachine {
-    /** ÏúÊÛ×´Ì¬ */
+    /** é”€å”®çŠ¶æ€ */
     private State soldState;
-    /** ÊÛóÀ×´Ì¬ */
+    /** å”®ç½„çŠ¶æ€ */
     private State soldOutState;
-    /** Í¶±Ò×´Ì¬ */
+    /** æŠ•å¸çŠ¶æ€ */
     private State hasQuarterState;
-    /** Î´Í¶±Ò×´Ì¬ */
+    /** æœªæŠ•å¸çŠ¶æ€ */
     private State noQuarterState;
     /** */
     private State winnerState;
-    /** µ±Ç°×´Ì¬ */
+    /** å½“å‰çŠ¶æ€ */
     private State currState;
-    /** ÌÇ¹ûÊıÁ¿ */
+    /** ç³–æœæ•°é‡ */
     private volatile int count;
 
     /**
      * Constructor
-     * @param count ³õÊ¼ÌÇ¹ûÊıÁ¿
+     * @param count åˆå§‹ç³–æœæ•°é‡
      */
     public GumballMachine(int count) {
         this.count = count;
@@ -45,19 +45,19 @@ public class GumballMachine {
         }
     }
     /**
-     * ³é±Ò
+     * æŠ½å¸
      */
     public void insertQuarter() {
         currState.insertQuarter();
     }
     /**
-     * ÍË±Ò
+     * é€€å¸
      */
     public void ejectQuarter() {
         currState.enjectQuarter();
     }
     /**
-     * ×ª¶¯ÊÖ±ú
+     * è½¬åŠ¨æ‰‹æŸ„
      */
     public void turnCrank() {
         currState.turnCrank();

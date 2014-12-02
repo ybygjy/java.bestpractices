@@ -9,47 +9,47 @@ import javax.crypto.Mac;
 import javax.crypto.SecretKey;
 
 /**
- * ÏûÏ¢ÈÏÖ¤ÂëÑéÖ¤
- * <p>Èç¹ûÃÜÔ¿±»ÓÃ×÷ÏûÏ¢ÕªÒªÉú³É¹ı³ÌµÄÒ»²¿·Ö£¬Ôò½«¸ÃËã·¨³ÆÎªÏûÏ¢ÈÏÖ¤Âë</p>
- * <p>¶şÖÖÏûÏ¢ÈÏÖ¤ÂëËã·¨µÄÖ§³Ö£ºHMAC/SHA-1¡¢HMAC/MD5</p>
+ * æ¶ˆæ¯è®¤è¯ç éªŒè¯
+ * <p>å¦‚æœå¯†é’¥è¢«ç”¨ä½œæ¶ˆæ¯æ‘˜è¦ç”Ÿæˆè¿‡ç¨‹çš„ä¸€éƒ¨åˆ†ï¼Œåˆ™å°†è¯¥ç®—æ³•ç§°ä¸ºæ¶ˆæ¯è®¤è¯ç </p>
+ * <p>äºŒç§æ¶ˆæ¯è®¤è¯ç ç®—æ³•çš„æ”¯æŒï¼šHMAC/SHA-1ã€HMAC/MD5</p>
  * @author WangYanCheng
  * @version 2011-7-4
  */
 public class MessageAuthenticationCodeExample {
     /**
-     * HMAC/MD5Ëã·¨²úÉúÏûÏ¢ÑéÖ¤Âë
-     * @param srcPlain Ã÷ÎÄÏûÏ¢´®
-     * @throws UnsupportedEncodingException Î´±»Ö§³ÖµÄ×Ö·û¼¯
-     * @throws NoSuchAlgorithmException Î´±»Ö§³ÖµÄËã·¨
-     * @throws InvalidKeyException ·Ç·¨µÄkeyÖµ¶ÔÏó
+     * HMAC/MD5ç®—æ³•äº§ç”Ÿæ¶ˆæ¯éªŒè¯ç 
+     * @param srcPlain æ˜æ–‡æ¶ˆæ¯ä¸²
+     * @throws UnsupportedEncodingException æœªè¢«æ”¯æŒçš„å­—ç¬¦é›†
+     * @throws NoSuchAlgorithmException æœªè¢«æ”¯æŒçš„ç®—æ³•
+     * @throws InvalidKeyException éæ³•çš„keyå€¼å¯¹è±¡
      */
     public void mac4MD5(String srcPlain) throws UnsupportedEncodingException, NoSuchAlgorithmException, InvalidKeyException {
         KeyGenerator keyGenerator = KeyGenerator.getInstance("HmacMD5");
-        //Ëã·¨Ö§³ÖĞÅÏ¢
+        //ç®—æ³•æ”¯æŒä¿¡æ¯
         String sysInfo = keyGenerator.getProvider().getInfo();
-System.out.println("Ëã·¨Ö§³ÖĞÅÏ¢£º".concat(sysInfo));
-        //ÀûÓÃHmacMD5¼ÆËãKey
+System.out.println("ç®—æ³•æ”¯æŒä¿¡æ¯ï¼š".concat(sysInfo));
+        //åˆ©ç”¨HmacMD5è®¡ç®—Key
         SecretKey secretMD5Key = keyGenerator.generateKey();
-System.out.println("HmacMD5¼ÆËãµÄKey£º".concat(secretMD5Key.toString()));
-        //´´½¨ÏûÏ¢ÈÏÖ¤Âë·şÎñ¶ÔÏó
+System.out.println("HmacMD5è®¡ç®—çš„Keyï¼š".concat(secretMD5Key.toString()));
+        //åˆ›å»ºæ¶ˆæ¯è®¤è¯ç æœåŠ¡å¯¹è±¡
         Mac mac = Mac.getInstance("HmacMD5");
         byte[] srcPlainByte = srcPlain.getBytes("UTF-8");
-        //³õÊ¼»¯¡¢¼ÆËãÏûÏ¢ÈÏÖ¤Âë
+        //åˆå§‹åŒ–ã€è®¡ç®—æ¶ˆæ¯è®¤è¯ç 
         mac.init(secretMD5Key);
         mac.update(srcPlainByte);
-        //Ëã·¨Ö§³ÖĞÅÏ¢
+        //ç®—æ³•æ”¯æŒä¿¡æ¯
         sysInfo = mac.getProvider().getInfo();
-System.out.println("Ëã·¨Ö§³ÖĞÅÏ¢£º".concat(sysInfo));
-        //¶ÁÈ¡½á¹û
+System.out.println("ç®—æ³•æ”¯æŒä¿¡æ¯ï¼š".concat(sysInfo));
+        //è¯»å–ç»“æœ
         String resultStr = new String(mac.doFinal(), "utf-8");
-        System.out.println("Ô­Ê¼ÏûÏ¢£º".concat(srcPlain).concat("\nÏûÏ¢ÈÏÖ¤Âë£º").concat(resultStr));
+        System.out.println("åŸå§‹æ¶ˆæ¯ï¼š".concat(srcPlain).concat("\næ¶ˆæ¯è®¤è¯ç ï¼š").concat(resultStr));
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
-     * @throws InvalidKeyException ·Ç·¨µÄKeyÖµ¶ÔÏó
-     * @throws UnsupportedEncodingException Î´±»Ö§³ÖµÄ×Ö·û¼¯
-     * @throws NoSuchAlgorithmException Î´±»Ö§³ÖµÄËã·¨
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
+     * @throws InvalidKeyException éæ³•çš„Keyå€¼å¯¹è±¡
+     * @throws UnsupportedEncodingException æœªè¢«æ”¯æŒçš„å­—ç¬¦é›†
+     * @throws NoSuchAlgorithmException æœªè¢«æ”¯æŒçš„ç®—æ³•
      */
     public static void main(String[] args) throws InvalidKeyException, UnsupportedEncodingException, NoSuchAlgorithmException {
         MessageAuthenticationCodeExample maceInst = new MessageAuthenticationCodeExample();

@@ -8,17 +8,17 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * LDAP Schema测试
+ * LDAP Schema娴嬭瘯
  * <p>
- * 对LDAP Schema测试在查询相关Schema属性是可以的，但在操纵Schema也就是更改并不可以， 原因在于LDAP Server
- * Schema更改、删除这块需要特殊的cn=config机制的处理，所以这块先放放(再议)
+ * 瀵筁DAP Schema娴嬭瘯鍦ㄦ煡璇㈢浉鍏砈chema灞炴�ф槸鍙互鐨勶紝浣嗗湪鎿嶇旱Schema涔熷氨鏄洿鏀瑰苟涓嶅彲浠ワ紝 鍘熷洜鍦ㄤ簬LDAP Server
+ * Schema鏇存敼銆佸垹闄よ繖鍧楅渶瑕佺壒娈婄殑cn=config鏈哄埗鐨勫鐞嗭紝鎵�浠ヨ繖鍧楀厛鏀炬斁(鍐嶈)
  * </p>
  * @author WangYanCheng
  * @version 2011-5-24
  */
 public class LDAPSchemaTest {
     private LDAPSchemaWrapper ldapSchema;
-    /** 参与测试DN */
+    /** 鍙備笌娴嬭瘯DN */
     private String testDN = "cn=WangYanCheng,ou=People,dc=daowoo,dc=com";
 
     @Before

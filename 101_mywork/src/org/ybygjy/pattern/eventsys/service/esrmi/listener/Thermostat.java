@@ -3,7 +3,7 @@ package org.ybygjy.pattern.eventsys.service.esrmi.listener;
 import java.rmi.RemoteException;
 
 /**
- * ºãÎÂ×°ÖÃ-->ÕìÌıÆ÷
+ * æ’æ¸©è£…ç½®-->ä¾¦å¬å™¨
  * @author WangYanCheng
  * @version 2010-7-23
  */

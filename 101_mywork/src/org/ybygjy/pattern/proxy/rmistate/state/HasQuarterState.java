@@ -32,13 +32,13 @@ public class HasQuarterState implements IState {
      * {@inheritDoc}
      */
     public void dispense() {
-        System.out.println("Ã»ÓĞÌÇ¹û¿ÉÓÃ");
+        System.out.println("æ²¡æœ‰ç³–æœå¯ç”¨");
     }
     /**
      * {@inheritDoc}
      */
     public void ejectQuarter() {
-        System.out.println("ÍË»ØÇ®±Ò.");
+        System.out.println("é€€å›é’±å¸.");
         gumballInst.setCurrState(gumballInst.getNoQuarterState());
     }
     /**

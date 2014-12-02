@@ -3,14 +3,14 @@ package org.ybygjy.basic.thinking.thread.collaborat;
 import java.util.Random;
 
 /**
- * Ïß³ÌÖ÷Ìâ_ÕÜÑ§¼Ò³Ô·¹ÎÊÌâ
+ * çº¿ç¨‹ä¸»é¢˜_å“²å­¦å®¶åƒé¥­é—®é¢˜
  * @author WangYanCheng
  * @version 2010-10-8
  */
 public class DeadLock {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Philosopher[] philosopher = new Philosopher[9];

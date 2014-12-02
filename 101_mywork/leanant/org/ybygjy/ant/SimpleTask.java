@@ -9,7 +9,7 @@ import org.apache.tools.ant.Project;
 import org.apache.tools.ant.Task;
 
 /**
- * 自定义Ant任务
+ * 鑷畾涔堿nt浠诲姟
  * @author WangYanCheng
  * @version 2011-10-20
  */

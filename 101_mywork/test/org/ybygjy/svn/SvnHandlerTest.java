@@ -15,7 +15,7 @@ import org.ybygjy.util.svn.SvnConstants;
 import org.ybygjy.util.svn.SvnHandler;
 
 /**
- * Svn²Ù×÷²âÊÔÓÃÀı
+ * Svnæ“ä½œæµ‹è¯•ç”¨ä¾‹
  * @author WangYanCheng
  * @version 2013-1-24
  */
@@ -77,8 +77,8 @@ public class SvnHandlerTest {
 
     @Test
     public void testDeleteAndCopyTo() {
-        //SvnHandler#copyToDirµÄ·´Ïò²Ù×÷
-        //Ê×ÏÈ½«desÉ¾³ı=>È»ºó½«srcÄÚÈİcopyµ½des
+        //SvnHandler#copyToDirçš„åå‘æ“ä½œ
+        //é¦–å…ˆå°†desåˆ é™¤=>ç„¶åå°†srcå†…å®¹copyåˆ°des
         try {
             svnHandler.deleteAndCopyTo(SvnConstants.ROOT_URL.concat(src), SvnConstants.ROOT_URL.concat(des), "org.ybygjy.util.svn.SvnHandlerTest.testDeleteAndCopyTo()");
         } catch (SVNException e) {
@@ -100,7 +100,7 @@ public class SvnHandlerTest {
 
     @Test
     public void testCommitFile() {
-        //´Ë¹¦ÄÜ²»Ö§³Ö×ÓÄ¿Â¼ÖĞÎŞ°æ±¾¿ØÖÆµÄ×ÊÔ´×Ô¶¯Ìá½»
+        //æ­¤åŠŸèƒ½ä¸æ”¯æŒå­ç›®å½•ä¸­æ— ç‰ˆæœ¬æ§åˆ¶çš„èµ„æºè‡ªåŠ¨æäº¤
         File commitFile = new File("J://svnClient//trunk//HelloSVN");
         try {
             svnHandler.commitFile(commitFile, "org.ybygjy.util.svn.SvnHandlerTest.testCommitFile()");
@@ -111,7 +111,7 @@ public class SvnHandlerTest {
 
     @Test
     public void testCommitFiles() {
-        //´Ë¹¦ÄÜ¿ÉÖ§³Ö×ÓÄ¿Â¼ÖĞÎŞ°æ±¾¿ØÖÆµÄ×ÊÔ´×Ô¶¯Ìá½»
+        //æ­¤åŠŸèƒ½å¯æ”¯æŒå­ç›®å½•ä¸­æ— ç‰ˆæœ¬æ§åˆ¶çš„èµ„æºè‡ªåŠ¨æäº¤
         File commitFile = new File("J://svnClient//trunk//HelloSVN");
         try {
             svnHandler.commitFiles(commitFile, "org.ybygjy.util.svn.SvnHandlerTest.testCommitFiles()");
@@ -133,7 +133,7 @@ public class SvnHandlerTest {
 
     @Test
     public void testDelete() {
-        //´Ë¹¦ÄÜÄ£Ê½×ßµÄÊÇÖ±½ÓÉ¾³ıÔ¶¶Ë·şÎñÆ÷·½Ê½£¬Ò²±¾µØ¹¤×÷¸±±¾Ã»ÓĞÈÎºÎ¹ØÏµ
+        //æ­¤åŠŸèƒ½æ¨¡å¼èµ°çš„æ˜¯ç›´æ¥åˆ é™¤è¿œç«¯æœåŠ¡å™¨æ–¹å¼ï¼Œä¹Ÿæœ¬åœ°å·¥ä½œå‰¯æœ¬æ²¡æœ‰ä»»ä½•å…³ç³»
         String remotePath = "trunk/TestImport";
         try {
             SVNURL svnUrl = SVNURL.parseURIEncoded(SvnConstants.ROOT_URL);
@@ -146,7 +146,7 @@ public class SvnHandlerTest {
 
     @Test
     public void testCheckOutFileToDir() {
-        //¼ì³ö
+        //æ£€å‡º
         File localDir = new File("J:\\svnTest\\checkoutDir");
         try {
             svnHandler.checkOutFileToDir(localDir, SvnConstants.ROOT_URL.concat(src));
@@ -157,7 +157,7 @@ public class SvnHandlerTest {
 
     @Test
     public void testDoExportFileToDir() {
-        //µ¼³ö
+        //å¯¼å‡º
         File localDir = new File("J:\\svnTest\\ExportDir");
         try {
             svnHandler.doExportFileToDir(localDir, SvnConstants.ROOT_URL);
@@ -167,7 +167,7 @@ public class SvnHandlerTest {
     }
 
     /**
-     * È¡µ±Ç°ClassÀàµÄÎÄ¼şÂ·¾¶
+     * å–å½“å‰Classç±»çš„æ–‡ä»¶è·¯å¾„
      * @return pathName
      */
     private String getCurrClassFile() {

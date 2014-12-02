@@ -5,7 +5,7 @@ import java.math.MathContext;
 import java.math.RoundingMode;
 
 /**
- * 数字相关类的学习
+ * 鏁板瓧鐩稿叧绫荤殑瀛︿範
  * @author WangYanCheng
  * @version 2014-7-1
  */

@@ -21,7 +21,7 @@ import jxl.write.WriteException;
 import jxl.write.biff.RowsExceededException;
 
 /**
- * ¸ºÔğEXCELÎÄ¼şµÄ²Ù×÷
+ * è´Ÿè´£EXCELæ–‡ä»¶çš„æ“ä½œ
  * @author WangYanCheng
  * @version 2010-11-15
  */
@@ -29,7 +29,7 @@ public class HelloJxl {
     /***/
     private String fileName = "ExcelTest";
     /**
-     * ´´½¨EXCELÎÄ¼ş
+     * åˆ›å»ºEXCELæ–‡ä»¶
      * @throws IOException IOException
      * @throws BiffException BiffException
      */
@@ -60,7 +60,7 @@ public class HelloJxl {
     }
 
     /**
-     * ¶ÁÈ¡ExcelÎÄ¼ş
+     * è¯»å–Excelæ–‡ä»¶
      * @throws IOException IOException
      * @throws BiffException BiffException
      */
@@ -68,7 +68,7 @@ public class HelloJxl {
         URL fileUrl = this.getClass().getResource(fileName);
         File excelFile = new File(fileUrl.getFile());
         if (!excelFile.exists()) {
-            System.err.println("ÎÄ¼ş" + excelFile.getPath() + "²»´æÔÚ!");
+            System.err.println("æ–‡ä»¶" + excelFile.getPath() + "ä¸å­˜åœ¨!");
         }
         Workbook workBook = Workbook.getWorkbook(excelFile);
         Sheet sheet = workBook.getSheet(0);
@@ -79,7 +79,7 @@ System.out.println(cellContent);
     }
 
     /**
-     * ĞŞ¸ÄExcel
+     * ä¿®æ”¹Excel
      * @throws IOException IOException
      * @throws BiffException BiffException
      * @throws WriteException WriteException
@@ -89,13 +89,13 @@ System.out.println(cellContent);
         File excelFile = new File(fileUrl.getFile());
         Workbook workBook = Workbook.getWorkbook(excelFile);
         WritableWorkbook writableBook = Workbook.createWorkbook(excelFile, workBook);
-        WritableSheet writableSheet = writableBook.createSheet("µÚ¶şÒ³", 1);
-        writableSheet.addCell(new Label(0, 0, "µÚ¶şÒ³Êı¾İ"));
+        WritableSheet writableSheet = writableBook.createSheet("ç¬¬äºŒé¡µ", 1);
+        writableSheet.addCell(new Label(0, 0, "ç¬¬äºŒé¡µæ•°æ®"));
         writableBook.write();
         writableBook.close();
     }
     /**
-     * ÀûÓÃFileÒıÓÃWorkbookÊµÀı
+     * åˆ©ç”¨Fileå¼•ç”¨Workbookå®ä¾‹
      * @return file file
      */
     public File doRefWorkbook() {
@@ -148,8 +148,8 @@ System.out.println(cellContent);
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         HelloJxl helloJxl = new HelloJxl();

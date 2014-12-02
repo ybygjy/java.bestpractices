@@ -1,23 +1,23 @@
 package org.ybygjy.pattern.memento.c02;
 
 /**
- * Memento Pattern¿Í»§¶Ë£¬²âÊÔÓëÑéÖ¤Èë¿Ú
+ * Memento Patternå®¢æˆ·ç«¯ï¼Œæµ‹è¯•ä¸éªŒè¯å…¥å£
  * @author WangYanCheng
  * @version 2013-1-7
  */
 public class Client {
     public static void main(String[] args) {
-        //¸ºÔğÈË
+        //è´Ÿè´£äºº
         Caretaker caretaker = new Caretaker();
-        //·¢ÆğÈË
+        //å‘èµ·äºº
         Originator originator = new Originator();
         originator.changeState("ON");
 System.out.println(originator.toString());
-        //×ª´¢×´Ì¬
+        //è½¬å‚¨çŠ¶æ€
         caretaker.saveMemento(originator.createMemenIF());
         originator.changeState("OFF");
 System.out.println(originator.toString());
-        //»Ö¸´×´Ì¬
+        //æ¢å¤çŠ¶æ€
         originator.restoreMemento(caretaker.retrieveMemento());
 System.out.println(originator.toString());
     }

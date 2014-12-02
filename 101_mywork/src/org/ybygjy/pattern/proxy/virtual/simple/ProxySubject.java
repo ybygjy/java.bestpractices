@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.proxy.virtual.simple;
 
 /**
- * 代理主题
+ * 浠ｇ悊涓婚
  * @author WangYanCheng
  * @version 2009-12-22
  */

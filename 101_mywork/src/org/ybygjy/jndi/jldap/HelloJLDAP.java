@@ -34,7 +34,7 @@ public class HelloJLDAP {
     }
 
     /**
-     * Ìí¼Ó
+     * æ·»åŠ 
      * @throws LDAPException
      */
     public void create() throws LDAPException {
@@ -50,7 +50,7 @@ public class HelloJLDAP {
     }
 
     /**
-     * ²éÑ¯
+     * æŸ¥è¯¢
      * @throws LDAPException
      */
     public void qryAttr() throws LDAPException {
@@ -68,7 +68,7 @@ public class HelloJLDAP {
     }
 
     /**
-     * ²éÑ¯
+     * æŸ¥è¯¢
      * @throws LDAPException
      */
     public void testSearch() throws LDAPException {
@@ -80,7 +80,7 @@ public class HelloJLDAP {
             System.out.println(entry.getDN());
             count++;
         }
-        System.out.println("¹²ÓĞ¼ÇÂ¼£º".concat(count + "") + "Ìõ");
+        System.out.println("å…±æœ‰è®°å½•ï¼š".concat(count + "") + "æ¡");
     }
 
     public void release() {
@@ -91,14 +91,14 @@ public class HelloJLDAP {
             } catch (LDAPException e) {
                 e.printStackTrace();
             } finally {
-                System.out.println("ÊÍ·ÅÁ¬½Ó¡£¡£¡£");
+                System.out.println("é‡Šæ”¾è¿æ¥ã€‚ã€‚ã€‚");
             }
         }
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      * @throws LDAPException LDAPException
      */
     public static void main(String[] args) throws LDAPException {

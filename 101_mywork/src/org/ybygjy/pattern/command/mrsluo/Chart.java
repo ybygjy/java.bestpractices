@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 实际图形绘制实例
+ * 瀹為檯鍥惧舰缁樺埗瀹炰緥
  * @author WangYanCheng
  * @version 2011-8-1
  */
 public class Chart {
-    /**重做*/
+    /**閲嶅仛*/
     private List<ICommand> redoCmdArray;
-    /**回滚*/
+    /**鍥炴粴*/
     private List<ICommand> undoCmdArray;
     public Chart() {
         redoCmdArray = new ArrayList<ICommand>();
@@ -22,7 +22,7 @@ public class Chart {
         undoCmdArray.add(cmd);
     }
     /**
-     * 重做
+     * 閲嶅仛
      */
     public void redo() {
         int size = redoCmdArray.size();
@@ -33,7 +33,7 @@ public class Chart {
         }
     }
     /**
-     * 回滚
+     * 鍥炴粴
      */
     public void undo() {
         int size = undoCmdArray.size();

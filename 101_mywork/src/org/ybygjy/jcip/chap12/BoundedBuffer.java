@@ -3,26 +3,26 @@ package org.ybygjy.jcip.chap12;
 import java.util.concurrent.Semaphore;
 
 /**
- * »ùÓÚĞÅºÅÁ¿µÄÓĞ½ç»º´æ
- * <p>1.Ê¹ÓÃ{@link Semaphore}¶ÔÏó¼ÆÊı×öÎª¶ÓÁĞµÄ±ß½ç</p>
+ * åŸºäºä¿¡å·é‡çš„æœ‰ç•Œç¼“å­˜
+ * <p>1.ä½¿ç”¨{@link Semaphore}å¯¹è±¡è®¡æ•°åšä¸ºé˜Ÿåˆ—çš„è¾¹ç•Œ</p>
  * <p>2.</p>
  * @author WangYanCheng
- * @version 2014Äê11ÔÂ6ÈÕ
+ * @version 2014å¹´11æœˆ6æ—¥
  */
 public class BoundedBuffer<E> {
-	/** ¶ÓÁĞ¿ÉÓÃÊı¾İÏîÊıÁ¿*/
+	/** é˜Ÿåˆ—å¯ç”¨æ•°æ®é¡¹æ•°é‡*/
 	private Semaphore availableItems;
-	/** ¶ÓÁĞ¿ÉÓÃ¿Õ¼ä*/
+	/** é˜Ÿåˆ—å¯ç”¨ç©ºé—´*/
 	private Semaphore availableSpaces;
-	/** ¶¨Òå·ºĞÍÊı×éÓÃÓÚ´æ´¢Êı¾İÏî*/
+	/** å®šä¹‰æ³›å‹æ•°ç»„ç”¨äºå­˜å‚¨æ•°æ®é¡¹*/
 	private final E[] items;
-	/** ÈëÁĞÎ»ÖÃ*/
+	/** å…¥åˆ—ä½ç½®*/
 	private int putPosition = 0;
-	/** ³öÁĞÎ»ÖÃ*/
+	/** å‡ºåˆ—ä½ç½®*/
 	private int takePosition = 0;
 	/**
-	 * ¹¹Ôìº¯Êı
-	 * @param capacity ¶ÓÁĞ³¤¶È
+	 * æ„é€ å‡½æ•°
+	 * @param capacity é˜Ÿåˆ—é•¿åº¦
 	 */
 	public BoundedBuffer(int capacity) {
 		this.availableItems = new Semaphore(0);
@@ -30,21 +30,21 @@ public class BoundedBuffer<E> {
 		this.items = ((E[]) new Object[capacity]);
 	}
 	/**
-	 * ¶ÓÁĞÊÇ·ñÎª¿Õ
+	 * é˜Ÿåˆ—æ˜¯å¦ä¸ºç©º
 	 * @return rtnBoolean true/false
 	 */
 	public boolean isEmpty() {
 		return this.availableItems.availablePermits() == 0;
 	}
 	/**
-	 * ¶ÓÁĞÊÇ·ñÒÑÂú
+	 * é˜Ÿåˆ—æ˜¯å¦å·²æ»¡
 	 * @return rtnBoolean true/false
 	 */
 	public boolean isFull() {
 		return this.availableSpaces.availablePermits() == 0;
 	}
 	/**
-	 * Èë¶Ó
+	 * å…¥é˜Ÿ
 	 * @param x
 	 * @throws InterruptedException
 	 */
@@ -54,7 +54,7 @@ public class BoundedBuffer<E> {
 		this.availableItems.release();
 	}
 	/**
-	 * ³ö¶Ó
+	 * å‡ºé˜Ÿ
 	 * @return
 	 * @throws InterruptedException
 	 */
@@ -65,7 +65,7 @@ public class BoundedBuffer<E> {
 		return item;
 	}
 	/**
-	 * Èë¶Ó
+	 * å…¥é˜Ÿ
 	 * @param x
 	 */
 	private synchronized void doInsert(E x) {
@@ -74,7 +74,7 @@ public class BoundedBuffer<E> {
 		this.putPosition = (++i == this.items.length) ? 0 : i;
 	}
 	/**
-	 * ³ö¶Ó
+	 * å‡ºé˜Ÿ
 	 * @return rtnObj
 	 */
 	private synchronized E doExtract() {

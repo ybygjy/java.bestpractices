@@ -16,26 +16,26 @@ import javax.tools.JavaCompiler.CompilationTask;
 import javax.tools.JavaFileObject.Kind;
 
 /**
- * Java×Ö½ÚÂëµÄ²Ù×İÖ®¶¯Ì¬±àÒë
+ * Javaå­—èŠ‚ç çš„æ“çºµä¹‹åŠ¨æ€ç¼–è¯‘
  * @author WangYanCheng
  * @version 2011-2-17
  */
 public class AutoCompiler {
-    /** Ô´´úÂë */
+    /** æºä»£ç  */
     private String source;
-    /** ÀàÃû³Æ */
+    /** ç±»åç§° */
     private String className;
-    /** ±àÒëÊä³öÂ·¾¶ */
+    /** ç¼–è¯‘è¾“å‡ºè·¯å¾„ */
     private String outPath = ".";
-    /** ÌáÈ¡°üÃû³Æ */
+    /** æå–åŒ…åç§° */
     private Pattern packPattern = Pattern.compile("^package\\s+([a-z0-9.]+);");
-    /** ÌáÈ¡ÀàÃû³Æ */
+    /** æå–ç±»åç§° */
     private Pattern classNamePattern = Pattern.compile("class\\s+([^{]+)");
 
     /**
      * Constructor
-     * @param source Ô´´úÂë
-     * @param outPath ¶¯Ì¬±àÒëÎÄ¼şµÄÊä³öÂ·¾¶
+     * @param source æºä»£ç 
+     * @param outPath åŠ¨æ€ç¼–è¯‘æ–‡ä»¶çš„è¾“å‡ºè·¯å¾„
      */
     public AutoCompiler(String source, String outPath) {
         this.outPath = outPath;
@@ -43,18 +43,18 @@ public class AutoCompiler {
     }
 
     /**
-     * ±àÒë
-     * @return ±àÒë½á¹û true/false
-     * @throws Exception Å×³öÒì³£ĞÅÏ¢
+     * ç¼–è¯‘
+     * @return ç¼–è¯‘ç»“æœ true/false
+     * @throws Exception æŠ›å‡ºå¼‚å¸¸ä¿¡æ¯
      */
     private boolean doCompile() throws Exception {
         return new InnerCompiler(new URI(className), Kind.SOURCE, this.source).compile();
     }
 
     /**
-     * µ÷ÓÃ
-     * @param methodName ·½·¨Ãû³Æ
-     * @return result µ÷ÓÃ½á¹û
+     * è°ƒç”¨
+     * @param methodName æ–¹æ³•åç§°
+     * @return result è°ƒç”¨ç»“æœ
      */
     public Object doInvoke(String methodName) {
         ClassLoader classLoader = InnerCompiler.class.getClassLoader();
@@ -70,10 +70,10 @@ public class AutoCompiler {
     }
 
     /**
-     * ×Ô¶¯µ÷ÓÃ
-     * @param methodName ·½·¨Ãû³Æ
-     * @return resultObj µ÷ÓÃ½á¹û
-     * @throws Exception ºöÂÔËùÓĞÒì³££¨½¨Òéµ÷Õû£©
+     * è‡ªåŠ¨è°ƒç”¨
+     * @param methodName æ–¹æ³•åç§°
+     * @return resultObj è°ƒç”¨ç»“æœ
+     * @throws Exception å¿½ç•¥æ‰€æœ‰å¼‚å¸¸ï¼ˆå»ºè®®è°ƒæ•´ï¼‰
      */
     public Object autoInvoke(String methodName) throws Exception {
         Object result = null;
@@ -84,7 +84,7 @@ public class AutoCompiler {
     }
 
     /**
-     * Éè¶¨²ÎÓë±àÒëµÄÔ´´úÂë
+     * è®¾å®šå‚ä¸ç¼–è¯‘çš„æºä»£ç 
      * @param source compiled source
      */
     public void setSource(String source) {
@@ -94,9 +94,9 @@ public class AutoCompiler {
     }
 
     /**
-     * ½âÎöÀàÃû³Æ
-     * @param source Ô´×Ö·û´®
-     * @return className ÀàÃû³Æ/¿Õ×Ö·û´®
+     * è§£æç±»åç§°
+     * @param source æºå­—ç¬¦ä¸²
+     * @return className ç±»åç§°/ç©ºå­—ç¬¦ä¸²
      */
     private String analyseClassName(String source) {
         String tmpName = "";
@@ -112,16 +112,16 @@ public class AutoCompiler {
     }
 
     /**
-     * Ö¸¶¨ÀàÃû³Æ
-     * @param className ÀàÃû³Æ
+     * æŒ‡å®šç±»åç§°
+     * @param className ç±»åç§°
      */
     public void setClassName(String className) {
         this.className = className;
     }
 
     /**
-     * Éè¶¨Êä³öÂ·¾¶
-     * @param outPath Êä³öÂ·¾¶
+     * è®¾å®šè¾“å‡ºè·¯å¾„
+     * @param outPath è¾“å‡ºè·¯å¾„
      */
     public void setOutPath(String outPath) {
         this.outPath = outPath;
@@ -143,7 +143,7 @@ public class AutoCompiler {
     }
 
     /**
-     * ¸ºÔğ×Ô¶¯±àÒë
+     * è´Ÿè´£è‡ªåŠ¨ç¼–è¯‘
      * @author WangYanCheng
      * @version 2011-2-17
      */
@@ -164,8 +164,8 @@ public class AutoCompiler {
 
         /**
          * Constructor
-         * @param uri ±àÒëÔ´ÎÄ¼şÂ·¾¶
-         * @param kind ÎÄ¼şÀàĞÍ
+         * @param uri ç¼–è¯‘æºæ–‡ä»¶è·¯å¾„
+         * @param kind æ–‡ä»¶ç±»å‹
          */
         protected InnerCompiler(URI uri, Kind kind) {
             super(uri, kind);
@@ -181,8 +181,8 @@ public class AutoCompiler {
         }
 
         /**
-         * ±àÒë
-         * @return result ³É¹¦±àÒë±ê¼Ç{true|false}
+         * ç¼–è¯‘
+         * @return result æˆåŠŸç¼–è¯‘æ ‡è®°{true|false}
          */
         public boolean compile() {
             boolean result = false;
@@ -197,9 +197,9 @@ public class AutoCompiler {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
-     * @throws Exception Å×³öÒì³£
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
+     * @throws Exception æŠ›å‡ºå¼‚å¸¸
      */
     public static void main(String[] args) throws Exception {
         String methodName = "compilerTest";

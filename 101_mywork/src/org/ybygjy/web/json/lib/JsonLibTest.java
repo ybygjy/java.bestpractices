@@ -23,15 +23,15 @@ public class JsonLibTest {
         return jsonData;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Map<String, String> srcMap = new HashMap<String, String>();
         srcMap.put("a", "");
         srcMap.put("b", "\"");
         srcMap.put("c", "!~@!#%&^)&()");
-        srcMap.put("d", "''~¡°'");
+        srcMap.put("d", "''~â€œ'");
         JsonLibTest jltInst = new JsonLibTest();
         doPrint(jltInst.jsonMap(srcMap));
     }

@@ -5,9 +5,9 @@ import java.util.Hashtable;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * Ñ§Ï°Java#¶ÔÏóµÄ#clone»úÖÆ
- * <li>Ó°×ÓCloneÎÊÌâ</li>
- * <li>Éî¶ÈCloneÎÊÌâ</li>
+ * å­¦ä¹ Java#å¯¹è±¡çš„#cloneæœºåˆ¶
+ * <li>å½±å­Cloneé—®é¢˜</li>
+ * <li>æ·±åº¦Cloneé—®é¢˜</li>
  * @author WangYanCheng
  * @version 2010-9-25
  */
@@ -31,7 +31,7 @@ public class CloneTest implements TestInterface {
     }
 
     /**
-     * hashTableÕæµÄÄÜ´æ´¢¶ÔÏóÃ´?
+     * hashTableçœŸçš„èƒ½å­˜å‚¨å¯¹è±¡ä¹ˆ?
      * @return table table
      */
     public java.util.Hashtable initHashTable() {
@@ -90,14 +90,14 @@ public class CloneTest implements TestInterface {
     }
 
     /**
-     * ÊµÀı¶ÔÏó
+     * å®ä¾‹å¯¹è±¡
      * @author WangYanCheng
      * @version 2010-9-25
      */
     protected class Obj implements Cloneable {
         /** shadowInst */
         private ObjShadow objShadow = new ObjShadow();
-        /** ÄÚ²¿±äÁ¿ */
+        /** å†…éƒ¨å˜é‡ */
         String str = "Init Value";
 
         @Override

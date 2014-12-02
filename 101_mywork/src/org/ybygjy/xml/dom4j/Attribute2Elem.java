@@ -15,7 +15,7 @@ import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 
 /**
- * ¸ºÔğ½âÎö[¹ÊÕÏ²éÑ¯.xml]ÔªËØÊôĞÔ×ª»»Îªelement
+ * è´Ÿè´£è§£æ[æ•…éšœæŸ¥è¯¢.xml]å…ƒç´ å±æ€§è½¬æ¢ä¸ºelement
  * @author WangYanCheng
  * @version 2010-11-18
  */
@@ -42,8 +42,8 @@ public class Attribute2Elem {
     }
 
     /**
-     * ½âÎö¸ø¶¨xmlÄ£Ê½µÄÎÄ¼ş
-     * @param fileInst xmlÄ£Ê½µÄÎÄ¼ş
+     * è§£æç»™å®šxmlæ¨¡å¼çš„æ–‡ä»¶
+     * @param fileInst xmlæ¨¡å¼çš„æ–‡ä»¶
      * @return docInst docInst
      * @throws DocumentException DocumentException
      */
@@ -59,7 +59,7 @@ public class Attribute2Elem {
     }
 
     /**
-     * ´´½¨ÎÄµµÊµÀı
+     * åˆ›å»ºæ–‡æ¡£å®ä¾‹
      * @return domInst domInst
      */
     public Document createDom() {
@@ -69,7 +69,7 @@ public class Attribute2Elem {
     }
 
     /**
-     * ³Ö¾Ã´æ´¢xmlÎÄµµ
+     * æŒä¹…å­˜å‚¨xmlæ–‡æ¡£
      */
     public void saveDocument() {
         try {
@@ -82,7 +82,7 @@ public class Attribute2Elem {
     }
 
     /**
-     * ×ª»»
+     * è½¬æ¢
      */
     public void doConvert() {
         Element elem = doc.getRootElement();
@@ -105,7 +105,7 @@ public class Attribute2Elem {
         }
     }
     /**
-     * ÌáÈ¡ÁĞ
+     * æå–åˆ—
      */
     private void doGetColumn() {
         List<Element> elemArr = rootElem.elements("ROW");
@@ -117,11 +117,11 @@ public class Attribute2Elem {
         }
     }
     /**
-     * ÌáÈ¡½Úµã£¬Ê¹ÓÃXPATH·½Ê½
+     * æå–èŠ‚ç‚¹ï¼Œä½¿ç”¨XPATHæ–¹å¼
      */
     private void doGetColumn4Path() {
         Element element = (Element) rootElem.selectSingleNode("ROW");
-        Element tmpElem = (Element) element.selectSingleNode("¹ÊÕÏ±àºÅ");
+        Element tmpElem = (Element) element.selectSingleNode("æ•…éšœç¼–å·");
 System.out.println(tmpElem.getName() + ":" + tmpElem.getStringValue());
     }
     /**
@@ -138,12 +138,12 @@ System.out.println(tmpElem.getName() + ":" + tmpElem.getStringValue());
         rootElem.add(elem);
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
-        File outFile = new File("src\\org\\ybygjy\\xml\\¹ÊÕÏĞÅÏ¢.xml");
-        File inFile = new File("src\\org\\ybygjy\\xml\\¹ÊÕÏ²éÑ¯.xml");
+        File outFile = new File("src\\org\\ybygjy\\xml\\æ•…éšœä¿¡æ¯.xml");
+        File inFile = new File("src\\org\\ybygjy\\xml\\æ•…éšœæŸ¥è¯¢.xml");
         try {
             Attribute2Elem att2Elem = new Attribute2Elem(inFile, outFile);
             att2Elem.doConvert();

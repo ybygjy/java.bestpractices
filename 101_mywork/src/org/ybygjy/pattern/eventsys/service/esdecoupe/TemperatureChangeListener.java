@@ -3,8 +3,8 @@ package org.ybygjy.pattern.eventsys.service.esdecoupe;
 import java.util.EventListener;
 
 /**
- * ÊÂ¼þ´¦Àí»úÖÆ-->JavaBeanÊÂ¼þ´¦Àí-->¶ÔÊÂ¼þ·þÎñ½øÐÐÍËñî<br>
- * ÕìÌýÆ÷½Ó¿Ú
+ * äº‹ä»¶å¤„ç†æœºåˆ¶-->JavaBeanäº‹ä»¶å¤„ç†-->å¯¹äº‹ä»¶æœåŠ¡è¿›è¡Œé€€è€¦<br>
+ * ä¾¦å¬å™¨æŽ¥å£
  * @author WangYanCheng
  * @version 2010-2-20
  */

@@ -4,11 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 对象调用顺序
+ * 瀵硅薄璋冪敤椤哄簭
  * @author WangYanCheng
  * @version 2010-3-20
  * <br>
- * <i>结论:</i>线程在构建方法中的启用顺序非常关键，因为线程已经脱离了实例构造的生命周期
+ * <i>缁撹:</i>绾跨▼鍦ㄦ瀯寤烘柟娉曚腑鐨勫惎鐢ㄩ『搴忛潪甯稿叧閿紝鍥犱负绾跨▼宸茬粡鑴辩浜嗗疄渚嬫瀯閫犵殑鐢熷懡鍛ㄦ湡
  */
 public class ObjectExecuteSeq4Thread {
     /**

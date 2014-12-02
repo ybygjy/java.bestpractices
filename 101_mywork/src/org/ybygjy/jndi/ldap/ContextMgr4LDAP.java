@@ -15,7 +15,7 @@ import javax.naming.directory.SearchControls;
 import javax.naming.directory.SearchResult;
 
 /**
- * ·â×°JNDI LDAPÊµÏÖ
+ * å°è£…JNDI LDAPå®ç°
  * @author WangYanCheng
  * @version 2010-12-31
  */
@@ -31,7 +31,7 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * µ¥Àı
+     * å•ä¾‹
      * Constructor
      */
     private ContextMgr4LDAP() {
@@ -39,12 +39,12 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * ĞŞ¸Ä¸ø¶¨DNÌõÄ¿µÄÃÜÂë
-     * <p><strong>×¢Òâ£ºÌõÄ¿±ØĞëÖ§³ÖuserPasswordÊôĞÔ</strong></p>
-     * @param dn ¸ø¶¨DN
-     * @param passwd ÃÜÂë
-     * @param type ÃÜÂë´æ´¢·½Ê½{MD5,SHA,etc}
-     * @return rtnFlag {true£º³É¹¦£»false£ºÊ§°Ü}
+     * ä¿®æ”¹ç»™å®šDNæ¡ç›®çš„å¯†ç 
+     * <p><strong>æ³¨æ„ï¼šæ¡ç›®å¿…é¡»æ”¯æŒuserPasswordå±æ€§</strong></p>
+     * @param dn ç»™å®šDN
+     * @param passwd å¯†ç 
+     * @param type å¯†ç å­˜å‚¨æ–¹å¼{MD5,SHA,etc}
+     * @return rtnFlag {trueï¼šæˆåŠŸï¼›falseï¼šå¤±è´¥}
      */
     public boolean modifyPassword(String dn, String passwd, int type) {
         Attributes attrs = new BasicAttributes();
@@ -91,9 +91,9 @@ public class ContextMgr4LDAP {
         return rtnObj;
     }
     /**
-     * ÔÚÖ¸¶¨dnÏÂ²éÑ¯°üº¬Ö¸¶¨attributeµÄ¶ÔÏó
-     * @param dn Ö¸¶¨dn
-     * @param param ÊôĞÔ¼¯ºÏ
+     * åœ¨æŒ‡å®šdnä¸‹æŸ¥è¯¢åŒ…å«æŒ‡å®šattributeçš„å¯¹è±¡
+     * @param dn æŒ‡å®šdn
+     * @param param å±æ€§é›†åˆ
      * @return resultEnum {@link SearchResult}
      */
     public NamingEnumeration<SearchResult> search(String dn, Map<String, Object> param) {
@@ -115,9 +115,9 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * ÔÚÖ¸¶¨DNÏÂ²éÑ¯·ûºÏ¹ıÂË±í´ïÊ½¹ıÂËµÄ¶ÔÏó
-     * @param dn Ö¸¶¨DN
-     * @param filterExp ¹ıÂË±í´ïÊ½
+     * åœ¨æŒ‡å®šDNä¸‹æŸ¥è¯¢ç¬¦åˆè¿‡æ»¤è¡¨è¾¾å¼è¿‡æ»¤çš„å¯¹è±¡
+     * @param dn æŒ‡å®šDN
+     * @param filterExp è¿‡æ»¤è¡¨è¾¾å¼
      * @return resultEnum {@link SearchResult}
      */
     public NamingEnumeration<SearchResult> search(String dn, String filterExp) {
@@ -125,11 +125,11 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * ²éÑ¯Ö¸¶¨DN£¬ÇÒ¾­¹ıÂË±í´ïÊ½¹ıÂËµÄ¶ÔÏó£¬
-     * @param dn Ö¸¶¨DN
-     * @param filterExp ¹ıÂË±í´ïÊ½
-     * @param filterAttr Ö¸¶¨ÌáÈ¡µÄ¶ÔÏóÊôĞÔ
-     * @param searchScope ²éÑ¯·¶Î§
+     * æŸ¥è¯¢æŒ‡å®šDNï¼Œä¸”ç»è¿‡æ»¤è¡¨è¾¾å¼è¿‡æ»¤çš„å¯¹è±¡ï¼Œ
+     * @param dn æŒ‡å®šDN
+     * @param filterExp è¿‡æ»¤è¡¨è¾¾å¼
+     * @param filterAttr æŒ‡å®šæå–çš„å¯¹è±¡å±æ€§
+     * @param searchScope æŸ¥è¯¢èŒƒå›´
      * @return resultEnum {@link SearchResult}
      */
     public NamingEnumeration<SearchResult> search(String dn, String filterExp, String[] filterAttr, int searchScope) {
@@ -142,10 +142,10 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * ²éÑ¯Ö¸¶¨DN£¬ÇÒ¾­¹ıÂË±í´ïÊ½¹ıÂËµÄ¶ÔÏó
-     * @param dn Ö¸¶¨DN
-     * @param filterExp ¹ıÂË±í´ïÊ½
-     * @param searchControl ÅäÖÃ¶ÔÏó
+     * æŸ¥è¯¢æŒ‡å®šDNï¼Œä¸”ç»è¿‡æ»¤è¡¨è¾¾å¼è¿‡æ»¤çš„å¯¹è±¡
+     * @param dn æŒ‡å®šDN
+     * @param filterExp è¿‡æ»¤è¡¨è¾¾å¼
+     * @param searchControl é…ç½®å¯¹è±¡
      * @return resultEnum {@link SearchResult}
      */
     public NamingEnumeration<SearchResult> search(String dn, String filterExp, SearchControls searchControl) {
@@ -158,9 +158,9 @@ public class ContextMgr4LDAP {
         return resultEnum;
     }
     /**
-     * È¡µÃÖ¸¶¨¶ÔÏóµÄËùÓĞÊôĞÔ
-     * @param name ¶ÔÏóµØÖ·
-     * @return ÊôĞÔ¼¯
+     * å–å¾—æŒ‡å®šå¯¹è±¡çš„æ‰€æœ‰å±æ€§
+     * @param name å¯¹è±¡åœ°å€
+     * @return å±æ€§é›†
      */
     public Attributes getAttributes(String name) {
         Attributes rtnAttr = null;
@@ -173,10 +173,10 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * È¡µÃÖ¸¶¨Ä¿Â¼µÄÏÂµÄ¶ÔÏó
-     * <p><strong>×¢Òâ£º</strong>¶Ôctx.list()²ÎÊıÔÚsubCtxÇé¿öÏÂ¿ÉÖ¸¶¨""£¬µ«ÔÚbaseCtxÇé¿öÏÂ²»¿ÉÒÔ</p>
-     * @param name Ä¿Â¼
-     * @return nameEnum Ä¿Â¼¶ÔÏó¼¯ºÏ
+     * å–å¾—æŒ‡å®šç›®å½•çš„ä¸‹çš„å¯¹è±¡
+     * <p><strong>æ³¨æ„ï¼š</strong>å¯¹ctx.list()å‚æ•°åœ¨subCtxæƒ…å†µä¸‹å¯æŒ‡å®š""ï¼Œä½†åœ¨baseCtxæƒ…å†µä¸‹ä¸å¯ä»¥</p>
+     * @param name ç›®å½•
+     * @return nameEnum ç›®å½•å¯¹è±¡é›†åˆ
      * @throws NamingException NamingException
      */
     public NamingEnumeration<NameClassPair> list(String name) throws NamingException {
@@ -190,11 +190,11 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * È¡µ±Ç°ÉÏÏÂÎÄ»·¾³µÄÄ¿Â¼ÏÂµÄ¶ÔÏó
-     * <p>¿ÉÀí½âÎªÕÒÈ«¾Ö¶ÔÏóµÄÊÊÓÃ×Ô¼ºµÄÄÇ²¿·Ö</p>
-     * <p><strong>×¢Òâ£º</strong>¸Ã·½·¨»á±È½ÏºÄÊ±</p>
-     * @param name Ä¿Â¼
-     * @return Ä¿Â¼¶ÔÏó¼¯ºÏ
+     * å–å½“å‰ä¸Šä¸‹æ–‡ç¯å¢ƒçš„ç›®å½•ä¸‹çš„å¯¹è±¡
+     * <p>å¯ç†è§£ä¸ºæ‰¾å…¨å±€å¯¹è±¡çš„é€‚ç”¨è‡ªå·±çš„é‚£éƒ¨åˆ†</p>
+     * <p><strong>æ³¨æ„ï¼š</strong>è¯¥æ–¹æ³•ä¼šæ¯”è¾ƒè€—æ—¶</p>
+     * @param name ç›®å½•
+     * @return ç›®å½•å¯¹è±¡é›†åˆ
      */
     public NamingEnumeration<Binding> listBinding(String name) {
         NamingEnumeration<Binding> nameEnum = null;
@@ -207,7 +207,7 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * °ó¶¨¶ÔÏó
+     * ç»‘å®šå¯¹è±¡
      * @param key key
      * @param obj value
      * @return true/false
@@ -242,12 +242,12 @@ public class ContextMgr4LDAP {
         return rtnBol;
     }
     /**
-     * É¾³ıÖ¸¶¨DN
-     * @param dn Ö¸¶¨DN
+     * åˆ é™¤æŒ‡å®šDN
+     * @param dn æŒ‡å®šDN
      * @throws NamingException NamingException
      */
     public void destroyCtx(String dn) throws NamingException {
-        //²édnÏÂµÄ×Ódn
+        //æŸ¥dnä¸‹çš„å­dn
         NamingEnumeration<NameClassPair> resultList = list(dn);
         if (resultList == null) {
             return;
@@ -264,9 +264,9 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * É¾³ıDN£¬µİ¹é²éÑ¯É¾³ı
-     * <p><strong>×¢Òâ£º</strong>Ö§³ÖÉ¾³ıÒ¶×Ó½Úµã</p>
-     * @param dn Ö¸¶¨DN
+     * åˆ é™¤DNï¼Œé€’å½’æŸ¥è¯¢åˆ é™¤
+     * <p><strong>æ³¨æ„ï¼š</strong>æ”¯æŒåˆ é™¤å¶å­èŠ‚ç‚¹</p>
+     * @param dn æŒ‡å®šDN
      * @throws NamingException NamingException
      */
     public void deleteDN(String dn) throws NamingException {
@@ -281,14 +281,14 @@ public class ContextMgr4LDAP {
     }
 
     /**
-     * È¡µÃ·şÎñÊµÀı
+     * å–å¾—æœåŠ¡å®ä¾‹
      * @return instance
      */
     public static ContextMgr4LDAP getInstance() {
         return InnerClass.cm4LDAP;
     }
     /**
-     * È¡µ±Ç°Ä¿Â¼ÉÏÏÂÎÄÊµÀı
+     * å–å½“å‰ç›®å½•ä¸Šä¸‹æ–‡å®ä¾‹
      * @return ctx {@link DirContext}
      */
     public DirContext getCtx() {

@@ -32,7 +32,7 @@ public class Itsukyu extends Frame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
-                new Itsukyu("Ò»ÐÝ");
+                new Itsukyu("ä¸€ä¼‘");
             }
         });
     }

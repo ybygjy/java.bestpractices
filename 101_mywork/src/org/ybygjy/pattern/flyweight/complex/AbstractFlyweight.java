@@ -1,13 +1,13 @@
 package org.ybygjy.pattern.flyweight.complex;
 /**
- * ¸ºÔğ¶¨ÒåÏíÔª¶ÔÏóÍ³Ò»¹æ·¶
+ * è´Ÿè´£å®šä¹‰äº«å…ƒå¯¹è±¡ç»Ÿä¸€è§„èŒƒ
  * @author WangYanCheng
  * @version 2010-11-22
  */
 public abstract class AbstractFlyweight {
     /**
-     * ÏàÓ¦²Ù×÷
-     * @param extrinsicState ÍâÔÌ¶ÔÏó×´Ì¬
+     * ç›¸åº”æ“ä½œ
+     * @param extrinsicState å¤–è•´å¯¹è±¡çŠ¶æ€
      */
     public abstract void doSomething(String extrinsicState);
 }

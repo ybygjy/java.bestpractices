@@ -6,9 +6,9 @@ import java.util.Map;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ÈİÆ÷²âÊÔ½Ó¿ÚHashTableÊµÏÖ
+ * å®¹å™¨æµ‹è¯•æ¥å£HashTableå®ç°
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4HashTable implements BenchmarkMapWrapper {
     private final Map<Object, Object> map;

@@ -7,16 +7,16 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ²âÊÔÈİÆ÷ÊµÏÖ#²ÉÓÃ¿ÉÖØÈë¶ÁĞ´Ëø¿ØÖÆÈİÆ÷²¢·¢
+ * æµ‹è¯•å®¹å™¨å®ç°#é‡‡ç”¨å¯é‡å…¥è¯»å†™é”æ§åˆ¶å®¹å™¨å¹¶å‘
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4RWLock implements BenchmarkMapWrapper {
 	private HashMap<Object, Object> container;
 	private Lock readLock;
 	private Lock writeLock;
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 */
 	public BenchmarkMapWrapperImpl4RWLock() {
 		this.container = new HashMap<Object, Object>();

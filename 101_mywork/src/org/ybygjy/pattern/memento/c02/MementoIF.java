@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.memento.c02;
 
 /**
- * ¶ÔÍâÌá¹©µÄMementoÄ£Ê½£¬±ê¼Ç½Ó¿Ú
+ * å¯¹å¤–æä¾›çš„Mementoæ¨¡å¼ï¼Œæ ‡è®°æ¥å£
  * @author WangYanCheng
  * @version 2013-1-7
  */

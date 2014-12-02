@@ -4,9 +4,9 @@ import java.util.Enumeration;
 import java.util.ResourceBundle;
 
 /**
- * 外部配置加载测试
- * <p>1、配置文件名称格式baseName_语言代码_国家代码.properties</p>
- * <p>2、注意native2assii</p>
+ * 澶栭儴閰嶇疆鍔犺浇娴嬭瘯
+ * <p>1銆侀厤缃枃浠跺悕绉版牸寮廱aseName_璇█浠ｇ爜_鍥藉浠ｇ爜.properties</p>
+ * <p>2銆佹敞鎰弉ative2assii</p>
  * @author WangYanCheng
  * @version 2009-12-7
  */
@@ -31,8 +31,8 @@ public class PropertiesTest {
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         PropertiesTest proTestInst = new PropertiesTest();

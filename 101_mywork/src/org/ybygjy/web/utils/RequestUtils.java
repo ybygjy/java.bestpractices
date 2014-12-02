@@ -5,13 +5,13 @@ import java.util.Enumeration;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * ·â×°ÇëÇóÍ·´¦Àí¹«¹²ĞĞÎª
+ * å°è£…è¯·æ±‚å¤´å¤„ç†å…¬å…±è¡Œä¸º
  * @author WangYanCheng
  * @version 2011-3-25
  */
 public class RequestUtils {
     /**
-     * ´òÓ¡¶ÔÏóÊôĞÔ
+     * æ‰“å°å¯¹è±¡å±æ€§
      * @param request request
      */
     public static final void doPrintParam(HttpServletRequest request) {

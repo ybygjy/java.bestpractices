@@ -4,9 +4,9 @@ import java.util.Iterator;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
- * Java²¢·¢ÈİÆ÷²âÊÔ
+ * Javaå¹¶å‘å®¹å™¨æµ‹è¯•
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ29ÈÕ
+ * @version 2014å¹´10æœˆ29æ—¥
  */
 public class CopyOnWriteArraySetTest {
 	public static void main(String[] args) {
@@ -41,9 +41,9 @@ public class CopyOnWriteArraySetTest {
 		}
 	}
 	/**
-	 * Ğ´Ïß³Ì
+	 * å†™çº¿ç¨‹
 	 * @author WangYanCheng
-	 * @version 2014Äê10ÔÂ29ÈÕ
+	 * @version 2014å¹´10æœˆ29æ—¥
 	 */
 	static class WriteThread extends Thread {
 		private CopyOnWriteArraySet<InnerObject> copyOnWriteArraySetObj;

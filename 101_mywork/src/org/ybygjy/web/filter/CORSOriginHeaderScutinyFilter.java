@@ -17,13 +17,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ¿çÕ¾×ÊÔ´·ÃÎÊ¼ì²é
- * <p>²Î¿¼×ÊÔ´£ºhttp://www.javaarch.net/jiagoushi/995.htm</p>
+ * è·¨ç«™èµ„æºè®¿é—®æ£€æŸ¥
+ * <p>å‚è€ƒèµ„æºï¼šhttp://www.javaarch.net/jiagoushi/995.htm</p>
  * @author WangYanCheng
  * @version 2014-6-25
  */
 public class CORSOriginHeaderScutinyFilter implements Filter {
-    /** ÓÃÓÚ»º´æÓò½âÎöµÄIPµØÖ·*/
+    /** ç”¨äºç¼“å­˜åŸŸè§£æçš„IPåœ°å€*/
     private Map<String, String> domainIPCache = null;
     @Override
     public void init(FilterConfig filterConfig) throws ServletException {

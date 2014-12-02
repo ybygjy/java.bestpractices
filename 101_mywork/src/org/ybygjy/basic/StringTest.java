@@ -1,15 +1,15 @@
 package org.ybygjy.basic;
 
 /**
- * <h3>×Ö·û´®Ïà¹Ø²âÊÔ</h3>
+ * <h3>å­—ç¬¦ä¸²ç›¸å…³æµ‹è¯•</h3>
  * @author WangYanCheng
  * @version 2011-2-28
  */
 public class StringTest {
     /**
-     * ²âÊÔ¸ø¶¨×Ö·û´®ÊÇ·ñ»ØÎÄ<strong>µİ¹é·½Ê½</strong>£¬Èç£º<br>
+     * æµ‹è¯•ç»™å®šå­—ç¬¦ä¸²æ˜¯å¦å›æ–‡<strong>é€’å½’æ–¹å¼</strong>ï¼Œå¦‚ï¼š<br>
      * <code>String str = "abcdcba</code>
-     * @param str Ô´×Ö·û´®
+     * @param str æºå­—ç¬¦ä¸²
      * @return true/false
      */
     public boolean isLoopStr(String str) {
@@ -18,19 +18,19 @@ public class StringTest {
     }
 
     /**
-     * »ØÎÄ¾ßÌåÑéÖ¤ <h4>È·¶¨±ß½ç</h4>
+     * å›æ–‡å…·ä½“éªŒè¯ <h4>ç¡®å®šè¾¹ç•Œ</h4>
      * <p>
-     * 1¡¢×Ö·û×é³¤¶ÈÎª1¡£
+     * 1ã€å­—ç¬¦ç»„é•¿åº¦ä¸º1ã€‚
      * <p>
      * <p>
-     * 2¡¢×Ö·û×é³¤¶ÈÎª2¡£
+     * 2ã€å­—ç¬¦ç»„é•¿åº¦ä¸º2ã€‚
      * </p>
      * <p>
-     * 3¡¢×Ö·û×éÊ×Î²ÏàÍ¬¡£
+     * 3ã€å­—ç¬¦ç»„é¦–å°¾ç›¸åŒã€‚
      * </p>
-     * @param charStr Ô´×Ö·û×é
-     * @param start ÆğÊ¼±ê¼ÇÎ»
-     * @param end ½áÊø±ê¼ÇÎ»
+     * @param charStr æºå­—ç¬¦ç»„
+     * @param start èµ·å§‹æ ‡è®°ä½
+     * @param end ç»“æŸæ ‡è®°ä½
      * @return true/false
      */
     private boolean innerIsLoopStr(char[] charStr, int start, int end) {
@@ -40,16 +40,16 @@ public class StringTest {
         return charStr[start] == charStr[end] ? innerIsLoopStr(charStr, ++start, --end) : false;
     }
     /**
-     * ²»¹»3Î»×Ô¶¯²¹Áã
+     * ä¸å¤Ÿ3ä½è‡ªåŠ¨è¡¥é›¶
      */
     public static void testFillupZero() {
         int value =(int)(Math.random() * 1000);
-        System.out.println("Ô­Öµ:".concat(String.valueOf(value)) + ",×ª»»Öµ" + String.format("-%03d", value));
+        System.out.println("åŸå€¼:".concat(String.valueOf(value)) + ",è½¬æ¢å€¼" + String.format("-%03d", value));
     }
     
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
 //        String str = "abcdcba";

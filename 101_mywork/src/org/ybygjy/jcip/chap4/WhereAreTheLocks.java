@@ -6,46 +6,46 @@ import java.util.List;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * ËøÔÚÄÄÀïµÄÎÊÌâ¡£
- * <p>1¡¢´Ë´úÂëÑéÖ¤¿Í»§¶ËÕýÈ·ºÍ²»ÕýÈ·¼ÓËøµÄ³¡¾°</p>
- * <p>2¡¢¿ÉÒÔ¹Û²ìµ½addIfAbsent²¢Î´·ûºÏÎÒÃÇµÄÒªÇó£¬´Ó½á¹û¿ÉÒÔ¿´µ½ÖØ¸´Öµ</p>
+ * é”åœ¨å“ªé‡Œçš„é—®é¢˜ã€‚
+ * <p>1ã€æ­¤ä»£ç éªŒè¯å®¢æˆ·ç«¯æ­£ç¡®å’Œä¸æ­£ç¡®åŠ é”çš„åœºæ™¯</p>
+ * <p>2ã€å¯ä»¥è§‚å¯Ÿåˆ°addIfAbsentå¹¶æœªç¬¦åˆæˆ‘ä»¬çš„è¦æ±‚ï¼Œä»Žç»“æžœå¯ä»¥çœ‹åˆ°é‡å¤å€¼</p>
  * <p>
- * 3¡¢²Ù×÷²½Öè
- * 3.1¡¢ÉùÃ÷Ò»¸öListµÄÀ©Õ¹Àà£¬¸ÃÀà¸ºÔðÀ©Õ¹ListµÄ¹¦ÄÜ¡£
- * 3.2¡¢ÔÚÀ©Õ¹ÀàÖÐÐÂ¼ÓÈëaddIfAbsentº¯Êý£¬¸Ãº¯Êý´íÎóµÄÊ¹ÓÃÁËËø£¬µ¼ÖÂÀ©Õ¹µÄlistÐÂÌØÐÔ²»¾ßÓÐÏß³Ì°²È«ÐÔ
- * 3.3¡¢´´½¨²âÊÔÏß³ÌÀà£¬¸ºÔðÄ£Äâ²âÊÔ»·¾³
- * 3.4¡¢´´½¨¶à¸öÏß³Ì£¬²¢·¢¶ÁÈ¡ºÍÐ´ÈëÊý¾Ýµ½listµÄÀ©Õ¹ÊµÀýÖÐ
- * 3.5¡¢´òÓ¡listÀ©Õ¹ÊµÀýÊý¾Ý£¬¹Û²ì²âÊÔ½á¹û
+ * 3ã€æ“ä½œæ­¥éª¤
+ * 3.1ã€å£°æ˜Žä¸€ä¸ªListçš„æ‰©å±•ç±»ï¼Œè¯¥ç±»è´Ÿè´£æ‰©å±•Listçš„åŠŸèƒ½ã€‚
+ * 3.2ã€åœ¨æ‰©å±•ç±»ä¸­æ–°åŠ å…¥addIfAbsentå‡½æ•°ï¼Œè¯¥å‡½æ•°é”™è¯¯çš„ä½¿ç”¨äº†é”ï¼Œå¯¼è‡´æ‰©å±•çš„listæ–°ç‰¹æ€§ä¸å…·æœ‰çº¿ç¨‹å®‰å…¨æ€§
+ * 3.3ã€åˆ›å»ºæµ‹è¯•çº¿ç¨‹ç±»ï¼Œè´Ÿè´£æ¨¡æ‹Ÿæµ‹è¯•çŽ¯å¢ƒ
+ * 3.4ã€åˆ›å»ºå¤šä¸ªçº¿ç¨‹ï¼Œå¹¶å‘è¯»å–å’Œå†™å…¥æ•°æ®åˆ°listçš„æ‰©å±•å®žä¾‹ä¸­
+ * 3.5ã€æ‰“å°listæ‰©å±•å®žä¾‹æ•°æ®ï¼Œè§‚å¯Ÿæµ‹è¯•ç»“æžœ
  * <p>
- * 4¡¢Ð¡½á
- * 4.1¡¢Í¨¹ýÌí¼ÓÔ­×Ó²Ù×÷À´À©Õ¹ÏÖ´æÀà·Ç³£´àÈõ£¬ÒòÎªÕâ»á½«ÀàµÄ¼ÓËø´úÂë·Ö²¼µ½¶à¸öÀàÖÐ¡£
- * 4.2¡¢¿Í»§¶Ë¼ÓËø¸ü¼Ó´àÈõ£¬ÒòÎªËü½«Ô­Ê¼ÀàµÄ¼ÓËø´úÂë·Åµ½ÓëÔ­Ê¼ÀàÍêÈ«ÎÞ¹ØµÄÆäËüÀàÖÐ¡£
+ * 4ã€å°ç»“
+ * 4.1ã€é€šè¿‡æ·»åŠ åŽŸå­æ“ä½œæ¥æ‰©å±•çŽ°å­˜ç±»éžå¸¸è„†å¼±ï¼Œå› ä¸ºè¿™ä¼šå°†ç±»çš„åŠ é”ä»£ç åˆ†å¸ƒåˆ°å¤šä¸ªç±»ä¸­ã€‚
+ * 4.2ã€å®¢æˆ·ç«¯åŠ é”æ›´åŠ è„†å¼±ï¼Œå› ä¸ºå®ƒå°†åŽŸå§‹ç±»çš„åŠ é”ä»£ç æ”¾åˆ°ä¸ŽåŽŸå§‹ç±»å®Œå…¨æ— å…³çš„å…¶å®ƒç±»ä¸­ã€‚
  * @author WangYanCheng
- * @version 2014Äê8ÔÂ13ÈÕ
+ * @version 2014å¹´8æœˆ13æ—¥
  */
 public class WhereAreTheLocks {
 	private static final CountDownLatch latch = new CountDownLatch(6);
 	/**
-	 * ²âÊÔÖ´ÐÐÈë¿Ú
-	 * @param args ²ÎÊýÁÐ±í
+	 * æµ‹è¯•æ‰§è¡Œå…¥å£
+	 * @param args å‚æ•°åˆ—è¡¨
 	 */
 	public static void main(String[] args) {
 		ListHelper calInst = new ListHelper();
-		//ÉùÃ÷6¸öÏß³Ì
+		//å£°æ˜Ž6ä¸ªçº¿ç¨‹
 		for (int i = 0; i < 6; i++) {
 			new TestThread("WhereAreTheLocks_" + i, calInst).start();
 		}
 	}
 	/**
-	 * ²âÊÔÏß³ÌÀà
+	 * æµ‹è¯•çº¿ç¨‹ç±»
 	 * @author WangYanCheng
-	 * @version 2014Äê8ÔÂ13ÈÕ
+	 * @version 2014å¹´8æœˆ13æ—¥
 	 */
 	static class TestThread extends Thread {
 		private ListHelper calInst;
 		/**
-		 * ¹¹Ôìº¯Êý
-		 * @param threadName Ïß³ÌÃû³Æ
+		 * æž„é€ å‡½æ•°
+		 * @param threadName çº¿ç¨‹åç§°
 		 * @param calInst {@link ListHelper}
 		 */
 		public TestThread(String threadName, ListHelper calInst) {
@@ -78,18 +78,18 @@ public class WhereAreTheLocks {
 	}
 }
 /**
- * ÉùÃ÷ListÀàµÄÀ©Õ¹Àà£¬¸ÃÀà¸ºÔðÀ©Õ¹ListµÄ¹¦ÄÜ£¬µ«ÊÇ¸ÃÀàÒòÎªÊ¹ÓÃÁË´íÎóµÄËø£¬ËùÒÔ²»¾ßÓÐÏß³Ì°²È«ÐÔ£¬¸ÃÀà½ö½ö´øÀ´ÁËÍ¬²½µÄ¼ÙÏó¡£
+ * å£°æ˜ŽListç±»çš„æ‰©å±•ç±»ï¼Œè¯¥ç±»è´Ÿè´£æ‰©å±•Listçš„åŠŸèƒ½ï¼Œä½†æ˜¯è¯¥ç±»å› ä¸ºä½¿ç”¨äº†é”™è¯¯çš„é”ï¼Œæ‰€ä»¥ä¸å…·æœ‰çº¿ç¨‹å®‰å…¨æ€§ï¼Œè¯¥ç±»ä»…ä»…å¸¦æ¥äº†åŒæ­¥çš„å‡è±¡ã€‚
  * @author WangYanCheng
- * @version 2014Äê8ÔÂ13ÈÕ
+ * @version 2014å¹´8æœˆ13æ—¥
  */
 class ListHelper {
 	/**
-	 * 1.ÉùÃ÷Ö§³Ö²¢·¢²Ù×÷µÄlist±äÁ¿
-	 * 2.×¢ÒâListÔÚÊµÏÖ¿Í»§¶Ë¼ÓËø»òÍâ²¿¼ÓËøÊ±Ê¹ÓÃÍ¬Ò»¸öËø¡£
+	 * 1.å£°æ˜Žæ”¯æŒå¹¶å‘æ“ä½œçš„listå˜é‡
+	 * 2.æ³¨æ„Liståœ¨å®žçŽ°å®¢æˆ·ç«¯åŠ é”æˆ–å¤–éƒ¨åŠ é”æ—¶ä½¿ç”¨åŒä¸€ä¸ªé”ã€‚
 	 */
 	public List<Object> list = (List<Object>) Collections.synchronizedList(new ArrayList<Object>());
 	/**
-	 * ÆÕÍ¨
+	 * æ™®é€š
 	 * @param obj
 	 */
 	public void add(Object obj) {
@@ -101,10 +101,10 @@ class ListHelper {
 		}
 	}
 	/**
-	 * Èç¹ûµ±Ç°listÖÐ²»´æÔÚ¸ÃÔªËØÔò¼ÓÈë£¬·ñÔò²»×öÈÎºÎ²Ù×÷
-	 * <p>ÎÞÂÛlistÊ¹ÓÃÄÄÒ»¸öËøÀ´±£»¤ËüµÄ×´Ì¬£¬ÎÒÃÇ¿ÉÒÔÈ·¶¨µÄÊÇ£¬Õâ¸öËø²¢²»ÊÇ</p>
+	 * å¦‚æžœå½“å‰listä¸­ä¸å­˜åœ¨è¯¥å…ƒç´ åˆ™åŠ å…¥ï¼Œå¦åˆ™ä¸åšä»»ä½•æ“ä½œ
+	 * <p>æ— è®ºlistä½¿ç”¨å“ªä¸€ä¸ªé”æ¥ä¿æŠ¤å®ƒçš„çŠ¶æ€ï¼Œæˆ‘ä»¬å¯ä»¥ç¡®å®šçš„æ˜¯ï¼Œè¿™ä¸ªé”å¹¶ä¸æ˜¯</p>
 	 * @param obj
-	 * @return rtnFlag {true:´æÔÚÎ´Ìí¼Ó,false:²»´æÔÚÒÑÌí¼Ó}
+	 * @return rtnFlag {true:å­˜åœ¨æœªæ·»åŠ ,false:ä¸å­˜åœ¨å·²æ·»åŠ }
 	 */
 	public boolean addIfAbsent(Object obj) {
 		synchronized(this) {

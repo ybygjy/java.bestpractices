@@ -13,7 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * É¾³ıÎÄ¼şĞĞ
+ * åˆ é™¤æ–‡ä»¶è¡Œ
  * @author WangYanCheng
  * @version 2011-12-29
  */
@@ -24,8 +24,8 @@ public class DeleteLineInFile {
 
     /**
      * Constructor
-     * @param fileInst ÎÄ¼şÊµÀı
-     * @param delLines É¾³ıÎÄ¼şĞĞ£¬´Ó0¿ªÊ¼³¬³ö·¶Î§µÄĞĞ½«±»ºöÂÔ
+     * @param fileInst æ–‡ä»¶å®ä¾‹
+     * @param delLines åˆ é™¤æ–‡ä»¶è¡Œï¼Œä»0å¼€å§‹è¶…å‡ºèŒƒå›´çš„è¡Œå°†è¢«å¿½ç•¥
      */
     public DeleteLineInFile(File fileInst, int[] delLines) {
         this.fileInst = fileInst;
@@ -35,7 +35,7 @@ public class DeleteLineInFile {
     }
 
     /**
-     * Ê¹ÓÃÒÆ¶¯ÎÄ¼ş¿éµÄ²ßÂÔÉ¾³ı
+     * ä½¿ç”¨ç§»åŠ¨æ–‡ä»¶å—çš„ç­–ç•¥åˆ é™¤
      */
     public void delete4Buffer() {
         ByteBuffer byteBuff = ByteBuffer.allocate(1024);
@@ -59,17 +59,17 @@ public class DeleteLineInFile {
     }
 
     /**
-     * ¸ºÔğÒÔ¿éµÄ·½Ê½Çø±ğÎÄ¼şĞĞ
-     * @param fileChannel Í¨µÀ
-     * @param byteBuff »º³åÇø
-     * @param fileSize ÎÄ¼şÊµ¼Ê´óĞ¡
-     * @throws IOException Òì³£
+     * è´Ÿè´£ä»¥å—çš„æ–¹å¼åŒºåˆ«æ–‡ä»¶è¡Œ
+     * @param fileChannel é€šé“
+     * @param byteBuff ç¼“å†²åŒº
+     * @param fileSize æ–‡ä»¶å®é™…å¤§å°
+     * @throws IOException å¼‚å¸¸
      */
     public void readFileLine(FileChannel fileChannel, ByteBuffer byteBuff, long fileSize) throws IOException {
         long cntTotal = 0L;
         while ((fileChannel.read(byteBuff)) != -1) {
             byteBuff.flip();
-            // ÑéÖ¤ºÍ¶¨Î»ĞĞ·Ö¶Î
+            // éªŒè¯å’Œå®šä½è¡Œåˆ†æ®µ
             int position = calcPosition(decoder.decode(byteBuff));
             if (position != -1 && (position + cntTotal)< fileSize) {
                 fileChannel = fileChannel.position(cntTotal + position);
@@ -81,9 +81,9 @@ public class DeleteLineInFile {
     }
 
     /**
-     * È¡×Ö·û´®×îºóÆ¥ÅäµÄÎ»ÖÃ£¬ÓÃ×÷ÎÄ¼ş¿éµÄposition
+     * å–å­—ç¬¦ä¸²æœ€ååŒ¹é…çš„ä½ç½®ï¼Œç”¨ä½œæ–‡ä»¶å—çš„position
      * @param cs {@link CharSequence}
-     * @return rtnPosition {-1:Î´ÕÒµ½Æ¥Åä/position:¾ßÌåÎ»ÖÃÖµ}
+     * @return rtnPosition {-1:æœªæ‰¾åˆ°åŒ¹é…/position:å…·ä½“ä½ç½®å€¼}
      */
     private int calcPosition(CharSequence cs) {
         Matcher matcherInst = pattern.matcher(cs);
@@ -97,8 +97,8 @@ public class DeleteLineInFile {
     private static Pattern pattern = Pattern.compile(".*\r?\n");
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         String tmpStr = "ABC";

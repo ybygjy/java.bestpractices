@@ -6,12 +6,12 @@ import org.ybygjy.pattern.state.GumballMachine;
 import org.ybygjy.pattern.state.State;
 
 /**
- * 投币
+ * 鎶曞竵
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public class HasQuarterState implements State {
-    /** 持有引用 */
+    /** 鎸佹湁寮曠敤 */
     private GumballMachine gumballMachine;
     /**random winner*/
     private Random randomWinner;

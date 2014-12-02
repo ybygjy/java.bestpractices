@@ -5,7 +5,7 @@ import java.util.List;
 import javax.swing.table.AbstractTableModel;
 
 /**
- * 负责定义列表组件相关内容
+ * 璐熻矗瀹氫箟鍒楄〃缁勪欢鐩稿叧鍐呭
  * @author WangYanCheng
  * @version 2011-2-16
  */

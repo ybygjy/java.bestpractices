@@ -16,21 +16,21 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * 使用FlashPaper将指定文件转换swf
+ * 浣跨敤FlashPaper灏嗘寚瀹氭枃浠惰浆鎹wf
  * @author WangYanCheng
  * @version 2009-11-25
  */
 public class ConvertFile2Swf {
-    /**调用外部程序名称*/
+    /**璋冪敤澶栭儴绋嬪簭鍚嶇О*/
     private static String commandStr = "FlashPrinter.exe";
-    /**转换后的文件名称*/
+    /**杞崲鍚庣殑鏂囦欢鍚嶇О*/
     private String fileName = "";
     /**
-     * 转换入口
-     * @param filePath 文件路径
-     * @param outputPath 输出路径
-     * @param logFileObj 日志文件
-     * @throws IOException io异常
+     * 杞崲鍏ュ彛
+     * @param filePath 鏂囦欢璺緞
+     * @param outputPath 杈撳嚭璺緞
+     * @param logFileObj 鏃ュ織鏂囦欢
+     * @throws IOException io寮傚父
      */
     public void doConvert(String filePath, String outputPath, File logFileObj) throws IOException {
         File fileObj = new File(filePath), outFile = new File(outputPath);
@@ -60,11 +60,11 @@ public class ConvertFile2Swf {
             }
             int exitValue = proObj.exitValue();
             System.out.println(exitValue);
-            System.out.println("转换完成");
+            System.out.println("杞崲瀹屾垚");
         }
     }
     /**
-     * 监听输入信息线程
+     * 鐩戝惉杈撳叆淇℃伅绾跨▼
      * @author WangYanCheng
      * @version 2009-11-26
      */
@@ -118,7 +118,7 @@ public class ConvertFile2Swf {
         }
     }
     /**
-     * 记录日志线程
+     * 璁板綍鏃ュ織绾跨▼
      * @author WangYanCheng
      * @version 2009-11-25
      */
@@ -182,7 +182,7 @@ public class ConvertFile2Swf {
         }
     }
     /**
-     * 抛出异常做Log
+     * 鎶涘嚭寮傚父鍋歀og
      * @param args arguments lists
      */
     public static void main(String[] args) {

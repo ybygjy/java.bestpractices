@@ -6,7 +6,7 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * ĞŞÊÎclassÀàĞÍ
+ * ä¿®é¥°classç±»å‹
  * @author WangYanCheng
  * @version 2009-12-15
  */

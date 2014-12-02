@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 
 /**
- * ¼à²âÊÂ¼şĞÅÏ¢£¬²¢Êä³ö¸øÏàÓ¦×é¼ş¡£ÕâÊÇJavaºËĞÄ¼¼Êõ¾íIµ÷ÊÔ¼¼ÊõÆª
+ * ç›‘æµ‹äº‹ä»¶ä¿¡æ¯ï¼Œå¹¶è¾“å‡ºç»™ç›¸åº”ç»„ä»¶ã€‚è¿™æ˜¯Javaæ ¸å¿ƒæŠ€æœ¯å·Iè°ƒè¯•æŠ€æœ¯ç¯‡
  * @author WangYanCheng
  * @version 2011-1-26
  */
@@ -32,8 +32,8 @@ public class EventTracer {
         };
     }
     /**
-     * ÀûÓÃJavaBean#Introspector»úÖÆ½âÎöÌáÈ¡×é¼ş½á¹¹£¬½«ÌáÈ¡µÄ½á¹¹ĞÅÏ¢ÓëProxy»úÖÆ°ó¶¨
-     * @param c ×é¼şÊµÀı
+     * åˆ©ç”¨JavaBean#Introspectoræœºåˆ¶è§£ææå–ç»„ä»¶ç»“æ„ï¼Œå°†æå–çš„ç»“æ„ä¿¡æ¯ä¸Proxyæœºåˆ¶ç»‘å®š
+     * @param c ç»„ä»¶å®ä¾‹
      */
     public void add(Component c) {
         BeanInfo info = null;
@@ -53,9 +53,9 @@ public class EventTracer {
         }
     }
     /**
-     * ¸ºÔğ½«JavaBeanÌáÈ¡µÄ½á¹¹ÊµÀıÀûÓÃProxy»úÖÆ½øĞĞ×é×°´Ó¶øÆğµ½¼àÌı¡¢»Øµ÷×÷ÓÃ
-     * @param c ¼à²âÊÂ¼ş×é¼ş
-     * @param eventSet ÊÂ¼şÃèÊöÊµÀı£¬´æ´¢×ÅÊÂ¼ş½Ó¿ÚĞÅÏ¢¡¢ÊÂ¼ş×é¼ş°ó¶¨ÊÂ¼şÄÚÈİµÈ
+     * è´Ÿè´£å°†JavaBeanæå–çš„ç»“æ„å®ä¾‹åˆ©ç”¨Proxyæœºåˆ¶è¿›è¡Œç»„è£…ä»è€Œèµ·åˆ°ç›‘å¬ã€å›è°ƒä½œç”¨
+     * @param c ç›‘æµ‹äº‹ä»¶ç»„ä»¶
+     * @param eventSet äº‹ä»¶æè¿°å®ä¾‹ï¼Œå­˜å‚¨ç€äº‹ä»¶æ¥å£ä¿¡æ¯ã€äº‹ä»¶ç»„ä»¶ç»‘å®šäº‹ä»¶å†…å®¹ç­‰
      */
     public void addListener(Component c, EventSetDescriptor eventSet) {
         Object proxy = Proxy.newProxyInstance(null, new Class[] {eventSet.getListenerType()}, handler);

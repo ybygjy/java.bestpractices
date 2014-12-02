@@ -1,14 +1,14 @@
 package org.ybygjy.pattern.command.mrsluo;
 /**
- * 命令工厂方法
+ * 鍛戒护宸ュ巶鏂规硶
  * @author WangYanCheng
  * @version 2011-8-1
  */
 public class CommandFactory {
     /**
-     * 获取命令实例
-     * @param commType 命令类型
-     * @return 命令实例
+     * 鑾峰彇鍛戒护瀹炰緥
+     * @param commType 鍛戒护绫诲瀷
+     * @return 鍛戒护瀹炰緥
      */
     public static ICommand getCommandInst(String commType) {
         if ("ellipse".equals(commType)) {

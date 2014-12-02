@@ -7,33 +7,33 @@ import javax.tools.JavaCompiler;
 import javax.tools.ToolProvider;
 
 /**
- * ¸ºÔğ¶¯Ì¬±àÒë
+ * è´Ÿè´£åŠ¨æ€ç¼–è¯‘
  * <p>
- * 1¡¢±ØĞëÒªÇótargetÎÄ¼şÔÚclasspathÏÂÄÜÕÒµ½(²âÊÔÎ´Í¨¹ı)
+ * 1ã€å¿…é¡»è¦æ±‚targetæ–‡ä»¶åœ¨classpathä¸‹èƒ½æ‰¾åˆ°(æµ‹è¯•æœªé€šè¿‡)
  * </p>
  * <p>
- * 2¡¢¿ÉÍ¨¹ıÖ¸¶¨targetÎÄ¼şÈ«Â·¾¶µÄ·½Ê½ÕÒµ½Ô´ÎÄ¼ş
+ * 2ã€å¯é€šè¿‡æŒ‡å®štargetæ–‡ä»¶å…¨è·¯å¾„çš„æ–¹å¼æ‰¾åˆ°æºæ–‡ä»¶
  * </p>
  * <p>
- * 3¡¢×¢Òâ<code>javac</code>¡¢<code>java</code>Á½¸ö³£ÓÃ²ÎÊı£º
+ * 3ã€æ³¨æ„<code>javac</code>ã€<code>java</code>ä¸¤ä¸ªå¸¸ç”¨å‚æ•°ï¼š
  * </p>
  * <p>
- * 3.1¡¢classpath£ºËÑË÷ÀàÂ·¾¶(Ç÷ÏòÓëclassÎÄ¼ş)£¬Õâ¿éÒ²¿ÉÔØÈëÇÒ±àÒëÏà¹ØjavaÎÄ¼ş
+ * 3.1ã€classpathï¼šæœç´¢ç±»è·¯å¾„(è¶‹å‘ä¸classæ–‡ä»¶)ï¼Œè¿™å—ä¹Ÿå¯è½½å…¥ä¸”ç¼–è¯‘ç›¸å…³javaæ–‡ä»¶
  * </p>
  * <p>
- * 3.2¡¢sourcepath: ÒıÓÃÔ´ÎÄ¼şÂ·¾¶£¬Ö¸¶¨±àÒëËù¹ØÁªµÄÔ´ÎÄ¼ş(.java)
+ * 3.2ã€sourcepath: å¼•ç”¨æºæ–‡ä»¶è·¯å¾„ï¼ŒæŒ‡å®šç¼–è¯‘æ‰€å…³è”çš„æºæ–‡ä»¶(.java)
  * </p>
  * @author WangYanCheng
  * @version 2011-2-18
  */
 public class Compiler {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      * @throws FileNotFoundException FileNotFoundException
      */
     public static void main(String[] args) throws FileNotFoundException {
-        // ×¢ÒâÂ·¾¶Ê¹ÓÃÈ«Â·¾¶
+        // æ³¨æ„è·¯å¾„ä½¿ç”¨å…¨è·¯å¾„
         String fullClassPath = "d:/work/workspace/mywork/src/org/ybygjy/basic/jvm/CompilerTarget.java";
         JavaCompiler compiler = ToolProvider.getSystemJavaCompiler();
         FileOutputStream err = new FileOutputStream("C:\\err.txt");

@@ -10,7 +10,7 @@ import java.lang.reflect.WildcardType;
 import java.util.Arrays;
 
 /**
- * 泛型反射
+ * 娉涘瀷鍙嶅皠
  * @author WangYanCheng
  * @version 2014-6-16
  */
@@ -99,8 +99,8 @@ public class GenericReflectionTest {
         }
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         String className = Pair.class.getName();

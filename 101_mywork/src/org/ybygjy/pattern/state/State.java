@@ -1,24 +1,24 @@
 package org.ybygjy.pattern.state;
 /**
- * ¶¨ÒåËùÓĞ×´Ì¬½Ó¿Ú¹æ·¶
+ * å®šä¹‰æ‰€æœ‰çŠ¶æ€æ¥å£è§„èŒƒ
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public interface State {
     /**
-     * Í¶ÈëÇ®±Ò
+     * æŠ•å…¥é’±å¸
      */
     public void insertQuarter();
     /**
-     * ÍË»ØÇ®±Ò
+     * é€€å›é’±å¸
      */
     public void enjectQuarter();
     /**
-     * ×ª¶¯Çú±ú
+     * è½¬åŠ¨æ›²æŸ„
      */
     public void turnCrank();
     /**
-     * ·¢·Å
+     * å‘æ”¾
      */
     public void dispense();
 }

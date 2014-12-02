@@ -11,7 +11,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 /**
- * 测试文件打开
+ * 娴嬭瘯鏂囦欢鎵撳紑
  * @author WangYanCheng
  * @version 2011-10-18
  */

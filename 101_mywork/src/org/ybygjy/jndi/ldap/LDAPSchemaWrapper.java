@@ -11,10 +11,10 @@ import javax.naming.directory.DirContext;
 import javax.naming.directory.SearchResult;
 
 /**
- * LDAP Schema²Ù×÷
+ * LDAP Schemaæ“ä½œ
  * <p>
  *  <ol>
- *      <li>ÇëÊ¹ÓÃDirectory¹ÜÀíÔ±½ÇÉ«</li>
+ *      <li>è¯·ä½¿ç”¨Directoryç®¡ç†å‘˜è§’è‰²</li>
  *      <li><strong>OpenLDAP: </strong>OpenLDAP does not support the modification of the RFC 2252 schema descriptions. Instead, you must add any new schema or updated schema descriptions statically to the server's schema files. See the OpenLDAP documentation for details. </li>
  *      <li><strong>Windows Active Directory: </strong>Active Directory does not support the modification of the RFC 2252 schema descriptions. Instead, you must update Active Directory's internal schema representation. See the Windows 2000 Planning Guide for details on how to enable and perform schema updates. </li>
  *  </ol>
@@ -23,18 +23,18 @@ import javax.naming.directory.SearchResult;
  * @version 2011-5-13
  */
 public class LDAPSchemaWrapper {
-    /**Ä¿Â¼·şÎñ*/
+    /**ç›®å½•æœåŠ¡*/
     private DirContext dirCtx;
     /**
-     * ¹¹Ôì·½·¨
+     * æ„é€ æ–¹æ³•
      * @param dirCtx dirCtx
      */
     public LDAPSchemaWrapper(DirContext dirCtx) {
         this.dirCtx = dirCtx;
     }
     /**
-     * È¡ÓëÖ¸¶¨DN¹ØÁªµÄSchema
-     * @param dn ¸ø¶¨DN
+     * å–ä¸æŒ‡å®šDNå…³è”çš„Schema
+     * @param dn ç»™å®šDN
      */
     public void getSchema(String dn) {
         DirContext tmpCtx = null;
@@ -51,9 +51,9 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * È¡¸ø¶¨DNÏÂµÄ£¬schema¶ÔÏóÏêÏ¸ĞÅÏ¢ÃèÊö£¬ÈçobjectClassÖµÎªtop£¬¼´¶ÔtopµÄÃèÊö
-     * <p>ÕâÀïÊ¹ÓÃµÄÊÇ±éÀúAttributes·½Ê½£¬´Ë·½·¨Òª±ÈLDAPSchemaWrapper#getSchemaClassDef4Lookup(String)Ğ§ÂÊ¸ß¡£</p>
-     * @param dn ¸ø¶¨DN
+     * å–ç»™å®šDNä¸‹çš„ï¼Œschemaå¯¹è±¡è¯¦ç»†ä¿¡æ¯æè¿°ï¼Œå¦‚objectClasså€¼ä¸ºtopï¼Œå³å¯¹topçš„æè¿°
+     * <p>è¿™é‡Œä½¿ç”¨çš„æ˜¯éå†Attributesæ–¹å¼ï¼Œæ­¤æ–¹æ³•è¦æ¯”LDAPSchemaWrapper#getSchemaClassDef4Lookup(String)æ•ˆç‡é«˜ã€‚</p>
+     * @param dn ç»™å®šDN
      * @see LDAPSchemaWrapper#getSchemaClassDef4Lookup(String)
      */
     public void getSchemaClassDef(String dn) {
@@ -92,8 +92,8 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * È¡¸ø¶¨DNµÄSchemaClass¶ÔÏóÃ÷Ï¸¶¨Òå
-     * <p><strong>×¢Òâ£º</strong>´Ë·½·¨µÄ×÷ÓÃÊÇ²éÑ¯²¢´òÓ¡³ö¸ø¶¨DN(ÌõÄ¿)ËùÓĞÊ¹ÓÃµ½µÄobjectclass£¬Ê¾Àı£º
+     * å–ç»™å®šDNçš„SchemaClasså¯¹è±¡æ˜ç»†å®šä¹‰
+     * <p><strong>æ³¨æ„ï¼š</strong>æ­¤æ–¹æ³•çš„ä½œç”¨æ˜¯æŸ¥è¯¢å¹¶æ‰“å°å‡ºç»™å®šDN(æ¡ç›®)æ‰€æœ‰ä½¿ç”¨åˆ°çš„objectclassï¼Œç¤ºä¾‹ï¼š
      * <pre>
      * dn:cn=WangYanCheng,ou=HR,dc=ybygjy,dc=com
      * objectclass:organizationalPerson
@@ -101,11 +101,11 @@ public class LDAPSchemaWrapper {
      * objectclass:person
      * objectclass:top
      * </pre>
-     * ÈôÒÔÉÏÌõÄ¿×÷²âÊÔ£¬ÊäÈëÄÚÈİÈçÏÂ
+     * è‹¥ä»¥ä¸Šæ¡ç›®ä½œæµ‹è¯•ï¼Œè¾“å…¥å†…å®¹å¦‚ä¸‹
      * <table border="1">
      *  <tr>
-     *      <th>Àà±ê¼Ç</th>
-     *      <th>Öµ</th>
+     *      <th>ç±»æ ‡è®°</th>
+     *      <th>å€¼</th>
      *  </tr>
      *  <tr>
      *      <td>NAME</td>
@@ -124,9 +124,9 @@ public class LDAPSchemaWrapper {
      *      <td>person</td>
      *  </tr>
      * </table>
-     * <tr>¡£¡£¡£¡£´Ë±íÄÚÈİºÜ¶à£¬¾Í²»Ò»Ò»ÁĞ³ö¡£</tr>
+     * <tr>ã€‚ã€‚ã€‚ã€‚æ­¤è¡¨å†…å®¹å¾ˆå¤šï¼Œå°±ä¸ä¸€ä¸€åˆ—å‡ºã€‚</tr>
      * </p>
-     * @param dn Ö¸¶¨DN
+     * @param dn æŒ‡å®šDN
      * @see LDAPSchemaWrapper#getSchemaClassDef(String)
      */
     public void getSchemaClassDef4Lookup(String dn) {
@@ -167,8 +167,8 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * È¡¸ø¶¨DNÏÂµÄËùÓĞObjectClass¶ÔÏó¶¨Òå
-     * @param dn Ö¸¶¨DN
+     * å–ç»™å®šDNä¸‹çš„æ‰€æœ‰ObjectClasså¯¹è±¡å®šä¹‰
+     * @param dn æŒ‡å®šDN
      */
     public void getSchemaClassDef4Search(String dn) {
         DirContext tmpCtx = null;
@@ -208,9 +208,9 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * ²éÕÒ¸ø¶¨DNÏÂµÄÖ¸¶¨objectClass½á¹¹¶¨Òå
-     * @param dn ¸ø¶¨DN
-     * @param objectClass ¸ø¶¨objectClass
+     * æŸ¥æ‰¾ç»™å®šDNä¸‹çš„æŒ‡å®šobjectClassç»“æ„å®šä¹‰
+     * @param dn ç»™å®šDN
+     * @param objectClass ç»™å®šobjectClass
      */
     public void lookUp4ClassDef(String dn, String objectClass) {
         String regStr = "ClassDefinition/@OBJ@";
@@ -250,15 +250,15 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * ¸øÖ¸¶¨DNÌí¼Óobjectclass
+     * ç»™æŒ‡å®šDNæ·»åŠ objectclass
      * <p>
-     *  <strong>×¢Òâ£º</strong>
-     *  1¡¢Çë¼ì²éÄ¿Â¼·şÎñÆ÷ÏàÓ¦°æ±¾£¬ÒÔÈ·ÈÏ¶ÔÄ¿Â¼¹æ·¶<a href="http://www.ietf.org/rfc/rfc2252.txt">RFC 2252</a>µÄÖ§³Ö
+     *  <strong>æ³¨æ„ï¼š</strong>
+     *  1ã€è¯·æ£€æŸ¥ç›®å½•æœåŠ¡å™¨ç›¸åº”ç‰ˆæœ¬ï¼Œä»¥ç¡®è®¤å¯¹ç›®å½•è§„èŒƒ<a href="http://www.ietf.org/rfc/rfc2252.txt">RFC 2252</a>çš„æ”¯æŒ
      * </p>
-     * @param dn Ö¸¶¨DN
-     * @param className objectClass½á¹¹Ãû³Æ
-     * @param attrs objectClass½á¹¹Êı¾İ
-     * @return rtnFlag {true:³É¹¦Ìí¼Ó;false:Î´³É¹¦}
+     * @param dn æŒ‡å®šDN
+     * @param className objectClassç»“æ„åç§°
+     * @param attrs objectClassç»“æ„æ•°æ®
+     * @return rtnFlag {true:æˆåŠŸæ·»åŠ ;false:æœªæˆåŠŸ}
      */
     public boolean addNewObjectClass(String dn, String className, Attributes attrs) {
         DirContext tmpCtx = null;
@@ -284,9 +284,9 @@ public class LDAPSchemaWrapper {
         return rtnFlag;
     }
     /**
-     * É¾³ı¸ø¶¨DNÏÂµÄÏàÓ¦objectClass
-     * @param dn ¸ø¶¨DN
-     * @param className ÒªÉ¾³ıµÄobjectClassÃû³Æ
+     * åˆ é™¤ç»™å®šDNä¸‹çš„ç›¸åº”objectClass
+     * @param dn ç»™å®šDN
+     * @param className è¦åˆ é™¤çš„objectClassåç§°
      * @return true/false
      * @see LDAPSchemaWrapper#addNewObjectClass(String, String, Attributes)
      */
@@ -310,12 +310,12 @@ public class LDAPSchemaWrapper {
         return rtnFlag;
     }
     /**
-     * ĞŞ¸Ä¸ø¶¨DNÏÂµÄobjectClass
+     * ä¿®æ”¹ç»™å®šDNä¸‹çš„objectClass
      * 
-     * @param dn ¸ø¶¨DN
-     * @param objectClassName ÒªĞŞ¸ÄµÄobjectclassÃû³Æ
-     * @param opFlag ²Ù×÷±ê¼Ç(ADD¡¢REMOVE¡¢REPLACE¡¢etc..)
-     * @param attrs ½á¹¹ĞÅÏ¢
+     * @param dn ç»™å®šDN
+     * @param objectClassName è¦ä¿®æ”¹çš„objectclassåç§°
+     * @param opFlag æ“ä½œæ ‡è®°(ADDã€REMOVEã€REPLACEã€etc..)
+     * @param attrs ç»“æ„ä¿¡æ¯
      * @return true/false
      */
     public boolean modifyObjectClass(String dn, String objectClassName, int opFlag, Attributes attrs) {
@@ -338,9 +338,9 @@ public class LDAPSchemaWrapper {
         return rtnFlag;
     }
     /**
-     * ²éÑ¯¸ø¶¨DNÏÂµÄAttribute½á¹¹¶¨Òå
-     * @param dn Ö¸¶¨DN
-     * @param attrName Òª²éÑ¯µÄAttribute½á¹¹Ãû³Æ
+     * æŸ¥è¯¢ç»™å®šDNä¸‹çš„Attributeç»“æ„å®šä¹‰
+     * @param dn æŒ‡å®šDN
+     * @param attrName è¦æŸ¥è¯¢çš„Attributeç»“æ„åç§°
      */
     public void getSchemaAttributeDef4Lookup(String dn, String attrName) {
         DirContext tmpCtx = null;
@@ -375,11 +375,11 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * È¡Attribute Schema
-     * <p><strong>²Ù×÷Á÷³Ì£º</strong>
-     * ¶¨Î»DNÌõÄ¿==>È¡ÌõÄ¿ÊôĞÔ¼¯==>±éÀúÊôĞÔ¼¯/È¡ÊôĞÔ==>È¡ÊôĞÔ½á¹¹ĞÅÏ¢==>È¡½á¹¹ĞÅÏ¢¼¯(½á¹¹µÄÊôĞÔ¼¯)==>±éÀúÊôĞÔ¼¯/È¡ÊôĞÔ==>±éÀúÈ¡ÊôĞÔÖµ
+     * å–Attribute Schema
+     * <p><strong>æ“ä½œæµç¨‹ï¼š</strong>
+     * å®šä½DNæ¡ç›®==>å–æ¡ç›®å±æ€§é›†==>éå†å±æ€§é›†/å–å±æ€§==>å–å±æ€§ç»“æ„ä¿¡æ¯==>å–ç»“æ„ä¿¡æ¯é›†(ç»“æ„çš„å±æ€§é›†)==>éå†å±æ€§é›†/å–å±æ€§==>éå†å–å±æ€§å€¼
      * </p>
-     * @param dn ¸ø¶¨DN
+     * @param dn ç»™å®šDN
      */
     public void getSchemaAttributeDef(String dn) {
         DirContext tmpDir = null;
@@ -398,7 +398,7 @@ public class LDAPSchemaWrapper {
                 NamingEnumeration<Attribute> attrEnumm = (NamingEnumeration<Attribute>) attrs.getAll();
                 while (attrEnumm.hasMore()) {
                     attr = attrEnumm.next();
-                    //ÕâÀïÎª±í´ïÒâË¼Ã÷È·£¬Ôö¼ÓÁË»ñÈ¡ÖµµÄÄÚ²ãÑ­»·Íê³É¿ÉÒÔÊ¹ÓÃ£¬ÆäÊµ¿ÉÒÔsbud.append(attr).append("\n");
+                    //è¿™é‡Œä¸ºè¡¨è¾¾æ„æ€æ˜ç¡®ï¼Œå¢åŠ äº†è·å–å€¼çš„å†…å±‚å¾ªç¯å®Œæˆå¯ä»¥ä½¿ç”¨ï¼Œå…¶å®å¯ä»¥sbud.append(attr).append("\n");
                     NamingEnumeration<Attribute> attrValueEnum = (NamingEnumeration<Attribute>) attr.getAll();
                     sbud.append(attr.getID()).append("\t");
                     while (attrValueEnum.hasMore()) {
@@ -423,13 +423,13 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * É¾³ı¸ø¶¨DNÏÂµÄÊôĞÔ½á¹¹
-     * <p><strong>×¢Òâ£º</strong>
-     * 1¡¢ÇëÈ·±£LDAP·şÎñÆ÷Ö§³Ö¶ÔSchema½á¹¹µÄÉ¾³ı£¬OpenLDAP 2.4 ÊÇ¿ÉÒÔÖ§³ÖµÄµ«2.3²»¿ÉÒÔ
-     * 2¡¢Çë²Î¿¼LDAP·şÎñÆ÷¾ßÌåËµÃ÷ÎÄµµ
+     * åˆ é™¤ç»™å®šDNä¸‹çš„å±æ€§ç»“æ„
+     * <p><strong>æ³¨æ„ï¼š</strong>
+     * 1ã€è¯·ç¡®ä¿LDAPæœåŠ¡å™¨æ”¯æŒå¯¹Schemaç»“æ„çš„åˆ é™¤ï¼ŒOpenLDAP 2.4 æ˜¯å¯ä»¥æ”¯æŒçš„ä½†2.3ä¸å¯ä»¥
+     * 2ã€è¯·å‚è€ƒLDAPæœåŠ¡å™¨å…·ä½“è¯´æ˜æ–‡æ¡£
      * </p>
-     * @param dn Ö¸¶¨DN
-     * @param attrName ÊôĞÔ½á¹¹Ãû³Æ
+     * @param dn æŒ‡å®šDN
+     * @param attrName å±æ€§ç»“æ„åç§°
      */
     public void removeAttributeSchema(String dn, String attrName) {
         DirContext tmpCtx = null;
@@ -449,7 +449,7 @@ public class LDAPSchemaWrapper {
         }
     }
     /**
-     * ²éÑ¯syntaxDefinition¶¨Òå
+     * æŸ¥è¯¢syntaxDefinitionå®šä¹‰
      * @return true/false
      */
     public boolean getSchemaSyntaxDef(String syntaxId) {
@@ -488,7 +488,7 @@ public class LDAPSchemaWrapper {
         return rtnFlag;
     }
     /**
-     * È¡µÃ¸ø¶¨DNÏÂµÄËùÓĞÊôĞÔÓÃµ½µÄÓï·¨
+     * å–å¾—ç»™å®šDNä¸‹çš„æ‰€æœ‰å±æ€§ç”¨åˆ°çš„è¯­æ³•
      * @param dn
      * @return
      */
@@ -496,8 +496,8 @@ public class LDAPSchemaWrapper {
         return false;
     }
     /**
-     * ´´½¨²âÊÔÓÃobjectClass
-     * @return rtnAttrs objectClass½á¹¹Êı¾İ
+     * åˆ›å»ºæµ‹è¯•ç”¨objectClass
+     * @return rtnAttrs objectClassç»“æ„æ•°æ®
      */
     public Attributes createTestObjectClass() {
         Attributes rtnAttrs = new BasicAttributes(true);
@@ -514,8 +514,8 @@ public class LDAPSchemaWrapper {
         return rtnAttrs;
     }
     /**
-     * ´´½¨²âÊÔĞŞ¸ÄobjectClass
-     * @return rtnAttrs objectClass½á¹¹Êı¾İ
+     * åˆ›å»ºæµ‹è¯•ä¿®æ”¹objectClass
+     * @return rtnAttrs objectClassç»“æ„æ•°æ®
      */
     public Attributes createModifyObjectClass() {
         Attributes rtnAttrs = new BasicAttributes(false);

@@ -15,7 +15,7 @@ import org.ybygjy.test.TestUtils;
  */
 public class ListTest {
     /**
-     * ²âÊÔList Size±ä»¯¡¢remove
+     * æµ‹è¯•List Sizeå˜åŒ–ã€remove
      */
     public void doTestListSize() {
         List<String> listInst = new ArrayList<String>();
@@ -31,9 +31,9 @@ public class ListTest {
     }
 
     /**
-     * ²âÊÔtoArray(T[] tInst) ÌØĞÔ
-     * <p>1¡¢toArray()ÊÇ¸´ÖÆÊµÀıÄÚ´æÒıÓÃµØÖ·,ËùÒÔÍâ²¿¶ÔÊı¾İµÄĞŞ¸Ä»á·´Ó¦µ½ListÄÚµÄÊµÀıÖĞ</p>
-     * <p>2¡¢toArray(T[] a) µÄÊµÏÖ»úÖÆ£¬µ±aÊı×éµÄ³¤¶ÈĞ¡ÓÚÔ´Array³¤¶ÈÊ±Ê¹ÓÃÔ´Array³¤¶È</p>
+     * æµ‹è¯•toArray(T[] tInst) ç‰¹æ€§
+     * <p>1ã€toArray()æ˜¯å¤åˆ¶å®ä¾‹å†…å­˜å¼•ç”¨åœ°å€,æ‰€ä»¥å¤–éƒ¨å¯¹æ•°æ®çš„ä¿®æ”¹ä¼šååº”åˆ°Listå†…çš„å®ä¾‹ä¸­</p>
+     * <p>2ã€toArray(T[] a) çš„å®ç°æœºåˆ¶ï¼Œå½“aæ•°ç»„çš„é•¿åº¦å°äºæºArrayé•¿åº¦æ—¶ä½¿ç”¨æºArrayé•¿åº¦</p>
      */
     public void doTestToArray() {
         List<InnerEntity> tmpListChild = new ArrayList<InnerEntity>();
@@ -56,10 +56,10 @@ public class ListTest {
     }
 
     /**
-     * ÑéÖ¤toArrayÓëtoArray(obj[] obj)Çø±ğ<br>
-     * ½áÂÛ£º <li>²»ÄÜÖ±½ÓÊ¹ÓÃ((String[])arrayList.toArray())Ç¿ÖÆÀàĞÍ×ª»»</li> <li>
-     * toArrayÖ´ĞĞµÄÊÇSystem.arrayCopyÄÚ´æcopy»úÖÆ</li> <li>
-     * ¿ÉÒÔÊ¹ÓÃÌî³äÊı×éµÄ·½Ê½£¬Íê³ÉtoArray(Object[] obj)ÀàĞÍ×ª»»</li>
+     * éªŒè¯toArrayä¸toArray(obj[] obj)åŒºåˆ«<br>
+     * ç»“è®ºï¼š <li>ä¸èƒ½ç›´æ¥ä½¿ç”¨((String[])arrayList.toArray())å¼ºåˆ¶ç±»å‹è½¬æ¢</li> <li>
+     * toArrayæ‰§è¡Œçš„æ˜¯System.arrayCopyå†…å­˜copyæœºåˆ¶</li> <li>
+     * å¯ä»¥ä½¿ç”¨å¡«å……æ•°ç»„çš„æ–¹å¼ï¼Œå®ŒæˆtoArray(Object[] obj)ç±»å‹è½¬æ¢</li>
      */
     public void doTestToArray2() {
         List<String> arrayList = new ArrayList<String>();
@@ -73,7 +73,7 @@ public class ListTest {
     }
 
     /**
-     * ²âÊÔList#sizeÎªÁãÊ±get(0)×´Ì¬¡£½áÂÛ£º<br>
+     * æµ‹è¯•List#sizeä¸ºé›¶æ—¶get(0)çŠ¶æ€ã€‚ç»“è®ºï¼š<br>
      * NullPointException
      */
     public void doTestListSizeE() {
@@ -82,8 +82,8 @@ public class ListTest {
     }
 
     /**
-     * ²âÊÔbinarySearch£¬½áÂÛ£º<br>
-     * ·Ç³£Á¿×Ö¶ÎÊı×é²»Ôö¼Ó¶îÍâ´úÂëÈçÊµÏÖcompareÒ²¿ÉÖ±½Ó²ÎÓë²éÕÒ
+     * æµ‹è¯•binarySearchï¼Œç»“è®ºï¼š<br>
+     * éå¸¸é‡å­—æ®µæ•°ç»„ä¸å¢åŠ é¢å¤–ä»£ç å¦‚å®ç°compareä¹Ÿå¯ç›´æ¥å‚ä¸æŸ¥æ‰¾
      */
     public void doTestBinarySearch() {
         String[] strArr = {"A", "B"};
@@ -92,8 +92,8 @@ public class ListTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
 //        ListTest listTestInst = new ListTest();

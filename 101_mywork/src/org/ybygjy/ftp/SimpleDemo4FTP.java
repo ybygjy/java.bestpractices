@@ -30,10 +30,10 @@ public class SimpleDemo4FTP {
         this.ftpClient = ftpClient;
     }
     /**
-     * ÏòÔ¶³Ì·şÎñÆ÷ÉÏ´«×ÊÔ´
-     * @param remoteDir Ô¶³ÌÄ¿Â¼£¬Îª¿ÕÔòÄ¬ÈÏµ±Ç°»î¶¯Ä¿Â¼
-     * @param destResource ÉÏ´«ÎÄ¼ş¶ÔÏó
-     * @return {true£º³É¹¦;false£ºÊ§°Ü}
+     * å‘è¿œç¨‹æœåŠ¡å™¨ä¸Šä¼ èµ„æº
+     * @param remoteDir è¿œç¨‹ç›®å½•ï¼Œä¸ºç©ºåˆ™é»˜è®¤å½“å‰æ´»åŠ¨ç›®å½•
+     * @param destResource ä¸Šä¼ æ–‡ä»¶å¯¹è±¡
+     * @return {trueï¼šæˆåŠŸ;falseï¼šå¤±è´¥}
      */
     public boolean uploadFile(String remoteDir, File destResource) {
         boolean rtnFlag = false;
@@ -42,7 +42,7 @@ public class SimpleDemo4FTP {
             ftpClient.changeWorkingDirectory("tmp");
             if (null != remoteDir) {
                 ftpClient.changeToParentDirectory();
-                //ĞèÒª×¢ÒâÏà¶ÔÂ·¾¶Óë¾ö¶ÔÂ·¾¶
+                //éœ€è¦æ³¨æ„ç›¸å¯¹è·¯å¾„ä¸å†³å¯¹è·¯å¾„
                 ftpClient.changeWorkingDirectory(remoteDir);
             }
             ins = (new FileInputStream(destResource));
@@ -64,9 +64,9 @@ public class SimpleDemo4FTP {
         return rtnFlag;
     }
     /**
-     * »ñÈ¡Ô¶³ÌÄ¿Â¼µÄ½á¹¹Ê÷
-     * @param rootPath Ä¿Â¼Â·¾¶
-     * @return ftpFiles ÎÄ¼şÏîÄ¿¶ÔÏó/null
+     * è·å–è¿œç¨‹ç›®å½•çš„ç»“æ„æ ‘
+     * @param rootPath ç›®å½•è·¯å¾„
+     * @return ftpFiles æ–‡ä»¶é¡¹ç›®å¯¹è±¡/null
      */
     public FTPFile[] listDir(String rootPath){
         FTPFile[] ftpFiles = null;
@@ -91,10 +91,10 @@ public class SimpleDemo4FTP {
         }
     }
     /**
-     * ÏÂÔØ×ÊÔ´
-     * @param remoteFile ×ÊÔ´Â·¾¶
-     * @param storeDir ÎÄ¼ş´æ´¢Ä¿Â¼
-     * @return refFileInst ±¾µØÎÄ¼ş¶ÔÏó/null
+     * ä¸‹è½½èµ„æº
+     * @param remoteFile èµ„æºè·¯å¾„
+     * @param storeDir æ–‡ä»¶å­˜å‚¨ç›®å½•
+     * @return refFileInst æœ¬åœ°æ–‡ä»¶å¯¹è±¡/null
      */
     public File download(String remoteFile, File storeDir) {
         if (remoteFile == null || !remoteFile.matches(".*[^\\\\]+$")) {
@@ -137,9 +137,9 @@ public class SimpleDemo4FTP {
         return tmpFile;
     }
     /**
-     * É¾³ıÎÄ¼ş
-     * @param filePath ÎÄ¼şÈ«Â·¾¶
-     * @return {true£º³É¹¦£»false£ºÊ§°Ü}
+     * åˆ é™¤æ–‡ä»¶
+     * @param filePath æ–‡ä»¶å…¨è·¯å¾„
+     * @return {trueï¼šæˆåŠŸï¼›falseï¼šå¤±è´¥}
      */
     public boolean delete(String filePath) {
         try {
@@ -154,7 +154,7 @@ public class SimpleDemo4FTP {
         FTPServerMgr.destroyFTPClient(ftpClient);
     }
     /**
-     * ´òÓ¡FTPFileÊı×éÄÚÈİ
+     * æ‰“å°FTPFileæ•°ç»„å†…å®¹
      * @param ftpFiles ftpFiles
      */
     static void printFTPFiles(FTPFile[] ftpFiles) {

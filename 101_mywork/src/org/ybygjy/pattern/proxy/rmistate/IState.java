@@ -3,7 +3,7 @@ package org.ybygjy.pattern.proxy.rmistate;
 import java.io.Serializable;
 
 /**
- * Gumball״̬��װ
+ * Gumball状态封装
  * @author WangYanCheng
  * @version 2010-12-24
  */

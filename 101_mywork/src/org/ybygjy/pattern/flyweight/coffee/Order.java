@@ -1,17 +1,17 @@
 package org.ybygjy.pattern.flyweight.coffee;
 /**
- * 订单
+ * 璁㈠崟
  * @author WangYanCheng
  * @version 2010-11-22
  */
 public abstract class Order {
     /**
-     * 将coffee卖给客人
+     * 灏哻offee鍗栫粰瀹汉
      * @param table {@link Table}
      */
     public abstract void serve(Table table);
     /**
-     * 取coffee名称
+     * 鍙朿offee鍚嶇О
      * @return coffeeName
      */
     public abstract String getFlavor();

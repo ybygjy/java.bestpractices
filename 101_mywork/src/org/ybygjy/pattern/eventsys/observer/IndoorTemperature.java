@@ -3,7 +3,7 @@ package org.ybygjy.pattern.eventsys.observer;
 import java.util.Observable;
 
 /**
- * Java2平台事件处理机制-->Observer模式-->Observable
+ * Java2骞冲彴浜嬩欢澶勭悊鏈哄埗-->Observer妯″紡-->Observable
  * @author WangYanCheng
  * @version 2010-2-20
  */

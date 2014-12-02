@@ -11,8 +11,8 @@ import javax.swing.JFrame;
 import javax.swing.JTextField;
 
 /**
- * <h2>ÀûÓÃJavaÊÂ¼ş´¦Àí»úÖÆÊµÏÖÂ¼ÖÆ¡¢»Ø·Å¹¦ÄÜ</h2> <h3><a
- * href="http://www.ibm.com/developerworks/cn/java/j-java-test/">Á´½Ó</a></h3>
+ * <h2>åˆ©ç”¨Javaäº‹ä»¶å¤„ç†æœºåˆ¶å®ç°å½•åˆ¶ã€å›æ”¾åŠŸèƒ½</h2> <h3><a
+ * href="http://www.ibm.com/developerworks/cn/java/j-java-test/">é“¾æ¥</a></h3>
  * @author WangYanCheng
  * @version 2011-2-25
  */

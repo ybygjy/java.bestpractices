@@ -1,6 +1,6 @@
 package org.ybygjy.pattern.flyweight.coffee;
 /**
- * ²Í×À
+ * é¤æ¡Œ
  * @author WangYanCheng
  * @version 2010-11-22
  */

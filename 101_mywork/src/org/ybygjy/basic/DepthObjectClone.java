@@ -4,9 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 深度克隆
- * <p>1、必须实现Cloneable接口</p>
- * <p>2、注意引用类型对象的copy
+ * 娣卞害鍏嬮殕
+ * <p>1銆佸繀椤诲疄鐜癈loneable鎺ュ彛</p>
+ * <p>2銆佹敞鎰忓紩鐢ㄧ被鍨嬪璞＄殑copy
  * @author WangYanCheng
  * @version 2014-05-03
  */

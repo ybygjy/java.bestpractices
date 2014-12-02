@@ -3,7 +3,7 @@ package org.ybygjy.basic.reflection.test3;
 import java.lang.reflect.Field;
 
 /**
- * ¸ºÔğÑéÖ¤Ä³ÊµÌåÔÚÃ»ÓĞsett/gettµÄÇé¿öÏÂ£¬Éè¶¨ÊµÌåÊôĞÔ
+ * è´Ÿè´£éªŒè¯æŸå®ä½“åœ¨æ²¡æœ‰sett/gettçš„æƒ…å†µä¸‹ï¼Œè®¾å®šå®ä½“å±æ€§
  * @author WangYanCheng
  * @version 2010-8-26
  */

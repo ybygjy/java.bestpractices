@@ -1,7 +1,7 @@
 package org.ybygjy.basic.thinking.thread.collaborat;
 
 /**
- * ²ÍÌüÖĞ¾­µäµÄÉú²úÕß¡¢Ïû·ÑÕßÎÊÌâ
+ * é¤å…ä¸­ç»å…¸çš„ç”Ÿäº§è€…ã€æ¶ˆè´¹è€…é—®é¢˜
  * @author WangYanCheng
  * @version 2010-10-8
  */
@@ -30,8 +30,8 @@ public class Restaurant {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Restaurant rest = new Restaurant();
@@ -41,14 +41,14 @@ public class Restaurant {
 }
 
 /**
- * ¶©µ¥
+ * è®¢å•
  * @author WangYanCheng
  * @version 2010-10-8
  */
 class Order {
-    /** ¶©µ¥±äÁ¿ */
+    /** è®¢å•å˜é‡ */
     private static int i = 0;
-    /** ¶©µ¥ÊıÁ¿ */
+    /** è®¢å•æ•°é‡ */
     private int count = i++;
 
     /**
@@ -68,7 +68,7 @@ class Order {
 }
 
 /**
- * Ïû·ÑÕß
+ * æ¶ˆè´¹è€…
  * @author WangYanCheng
  * @version 2010-10-8
  */
@@ -104,7 +104,7 @@ class WaitPerson extends Thread {
 }
 
 /**
- * Éú²úÕß
+ * ç”Ÿäº§è€…
  * @author WangYanCheng
  * @version 2010-10-8
  */

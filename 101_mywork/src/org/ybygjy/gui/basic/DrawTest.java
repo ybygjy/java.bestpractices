@@ -13,14 +13,14 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
- * Java对几何图形的支持
+ * Java瀵瑰嚑浣曞浘褰㈢殑鏀寔
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class DrawTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable(){

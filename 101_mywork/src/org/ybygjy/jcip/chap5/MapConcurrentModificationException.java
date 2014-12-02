@@ -5,32 +5,32 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * ÑéÖ¤²¢·¢³¡¾°ÏÂ¶ÔMapÈİÆ÷µÄµü´úÅ×³öConcurrentModificationExceptionÒì³£
- * <p>1.ÔçÆÚµÄ²¢·¢ÈİÆ÷ÈçHashTable£¬ËøµÄÁ£¶ÈÔÚÀàÊµÀı¼¶±ğ£¬ËùÓĞ¹«¿ªµÄ·½·¨¹²ÓÃÒ»¸öËø</p>
+ * éªŒè¯å¹¶å‘åœºæ™¯ä¸‹å¯¹Mapå®¹å™¨çš„è¿­ä»£æŠ›å‡ºConcurrentModificationExceptionå¼‚å¸¸
+ * <p>1.æ—©æœŸçš„å¹¶å‘å®¹å™¨å¦‚HashTableï¼Œé”çš„ç²’åº¦åœ¨ç±»å®ä¾‹çº§åˆ«ï¼Œæ‰€æœ‰å…¬å¼€çš„æ–¹æ³•å…±ç”¨ä¸€ä¸ªé”</p>
  * <p>2.</p>
- * HashTableÓëHashMapÔÚtoString·½·¨ÖĞµÄÊµÏÖÂß¼­²»Í¬,´ÓHashMapµÄ¼Ì³Ğ½á¹¹À´¿´£¬HashMap¸´ÓÃÁËÉÏ²ãAbstractMapµÄtoString·½·¨£¬¶øHashTableÊµÏÖÁË×Ô¼ºµÄtoString·½·¨¡£
- * HashMapµäĞÍIteratorÄ£Ê½ËùÒÔ»áÓĞConcurrentModificationException¡£
- * HashTableÒ²ÊÇµäĞÍµÄIteratorÄ£Ê½£¬µ«HashTable¶ÔÍâ±©Â¶µÄ¹«¹²·½·¨ÊÇ¼ÓËøµÄ£¬Èçput¡¢toString£¬
- * µ«Î¨ÓĞentrySet¡¢values·½·¨Î´Ö±½Ó¼ÓËø£¬ÕâÁ½¸ö·½·¨Ê¹ÓÃµÄÊÇÍ¬²½ÈİÆ÷¼ÓËø·½Ê½£¬Í¬²½ÈİÆ÷µÄ×÷ÓÃÊÇÎª·ÇÏß³Ì°²È«µÄÈİÆ÷Ôö¼Ó²¢·¢°²È«µÄÖ§³Ö£¨ÀàËÆ´úÀíÄ£Ê½ÎªÌØ¶¨ÀàÔö¼ÓIOC/AOPÖ§³ÖÒ»Ñù£©¡£
- * µ«ÔÚHashTableÖĞµÄentrySet¡¢values·½·¨µ÷ÓÃÍ¬²½ÈİÆ÷¹¤³§¶ÔÍâ·¢²¼µÄÊÇĞÂ¹¹ÔìµÄ¶ÔÏó£¬·Ö±ğÊÇEntryºÍCollection£¬µ«ĞèÒª×¢ÒâÕâÁ½¸öĞÂÊµÀıÊ¹ÓÃµÄËøÓëHashTableÊµÀıµÄËøÒ»ÖÂ¡£
+ * HashTableä¸HashMapåœ¨toStringæ–¹æ³•ä¸­çš„å®ç°é€»è¾‘ä¸åŒ,ä»HashMapçš„ç»§æ‰¿ç»“æ„æ¥çœ‹ï¼ŒHashMapå¤ç”¨äº†ä¸Šå±‚AbstractMapçš„toStringæ–¹æ³•ï¼Œè€ŒHashTableå®ç°äº†è‡ªå·±çš„toStringæ–¹æ³•ã€‚
+ * HashMapå…¸å‹Iteratoræ¨¡å¼æ‰€ä»¥ä¼šæœ‰ConcurrentModificationExceptionã€‚
+ * HashTableä¹Ÿæ˜¯å…¸å‹çš„Iteratoræ¨¡å¼ï¼Œä½†HashTableå¯¹å¤–æš´éœ²çš„å…¬å…±æ–¹æ³•æ˜¯åŠ é”çš„ï¼Œå¦‚putã€toStringï¼Œ
+ * ä½†å”¯æœ‰entrySetã€valuesæ–¹æ³•æœªç›´æ¥åŠ é”ï¼Œè¿™ä¸¤ä¸ªæ–¹æ³•ä½¿ç”¨çš„æ˜¯åŒæ­¥å®¹å™¨åŠ é”æ–¹å¼ï¼ŒåŒæ­¥å®¹å™¨çš„ä½œç”¨æ˜¯ä¸ºéçº¿ç¨‹å®‰å…¨çš„å®¹å™¨å¢åŠ å¹¶å‘å®‰å…¨çš„æ”¯æŒï¼ˆç±»ä¼¼ä»£ç†æ¨¡å¼ä¸ºç‰¹å®šç±»å¢åŠ IOC/AOPæ”¯æŒä¸€æ ·ï¼‰ã€‚
+ * ä½†åœ¨HashTableä¸­çš„entrySetã€valuesæ–¹æ³•è°ƒç”¨åŒæ­¥å®¹å™¨å·¥å‚å¯¹å¤–å‘å¸ƒçš„æ˜¯æ–°æ„é€ çš„å¯¹è±¡ï¼Œåˆ†åˆ«æ˜¯Entryå’ŒCollectionï¼Œä½†éœ€è¦æ³¨æ„è¿™ä¸¤ä¸ªæ–°å®ä¾‹ä½¿ç”¨çš„é”ä¸HashTableå®ä¾‹çš„é”ä¸€è‡´ã€‚
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ20ÈÕ
+ * @version 2014å¹´10æœˆ20æ—¥
  */
 public class MapConcurrentModificationException {
-	/**ÊµÀı±äÁ¿*/
+	/**å®ä¾‹å˜é‡*/
 	private final Map<String, String> containerObj;
 	/**
-	 * ¹¹Ôìº¯Êı³õÊ¹»¯
+	 * æ„é€ å‡½æ•°åˆä½¿åŒ–
 	 */
 	public MapConcurrentModificationException() {
 		this.containerObj = new Hashtable<String, String>();
 		//this.containerObj = new HashMap<String, String>();
 	}
 	/**
-	 * ²âÊÔÈë¿Ú
+	 * æµ‹è¯•å…¥å£
 	 */
 	public void doWork() {
-		//´´½¨¶à¸öÏß³Ì¸ºÔğĞ´Èë
+		//åˆ›å»ºå¤šä¸ªçº¿ç¨‹è´Ÿè´£å†™å…¥
 		for (int i = 0; i < 3; i++) {
 			new Thread(){
 				public void run() {
@@ -46,13 +46,13 @@ public class MapConcurrentModificationException {
 				}
 			}.start();
 		}
-		//´´½¨¶à¸öÏß³Ì¸ºÔğµü´úÈİÆ÷
+		//åˆ›å»ºå¤šä¸ªçº¿ç¨‹è´Ÿè´£è¿­ä»£å®¹å™¨
 		for (int i = 0; i < 10; i++) {
 			Thread thread = new Thread() {
 				public void run() {
 					while (true) {
 						System.out.println(containerObj.toString());
-						//HashTableÈİÆ÷µÄtoStringÊÇ¼ÓËøµÄ£¬ÔÚ´ËÍ¨¹ısleep³öÈÃcpuÑÓ³Ù¶ÔÈİÆ÷µÄµü´ú£¬ÕâÆÚ¼äĞ´Ïß³Ì»áĞ´ÈëĞÂµÄÔªËØ£¬ºóĞø¶ÔÈİÆ÷µÄµü´ú¸´ÏÖConcurrentModificationExceptionµÄ»úÂÊ¾Í¸ü´óÁË¡£
+						//HashTableå®¹å™¨çš„toStringæ˜¯åŠ é”çš„ï¼Œåœ¨æ­¤é€šè¿‡sleepå‡ºè®©cpuå»¶è¿Ÿå¯¹å®¹å™¨çš„è¿­ä»£ï¼Œè¿™æœŸé—´å†™çº¿ç¨‹ä¼šå†™å…¥æ–°çš„å…ƒç´ ï¼Œåç»­å¯¹å®¹å™¨çš„è¿­ä»£å¤ç°ConcurrentModificationExceptionçš„æœºç‡å°±æ›´å¤§äº†ã€‚
 						try {
 							sleep(2000);
 						} catch (InterruptedException e) {
@@ -70,8 +70,8 @@ public class MapConcurrentModificationException {
 		}
 	}
 	/**
-	 * ³ÌĞòÈë¿Ú
-	 * @param args ²ÎÊıÁĞ±í
+	 * ç¨‹åºå…¥å£
+	 * @param args å‚æ•°åˆ—è¡¨
 	 */
 	public static void main(String[] args) {
 		MapConcurrentModificationException mmeInst = new MapConcurrentModificationException();

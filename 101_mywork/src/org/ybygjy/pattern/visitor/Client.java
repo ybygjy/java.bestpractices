@@ -5,7 +5,7 @@ import org.ybygjy.pattern.visitor.visitor.InventoryVisitor;
 import org.ybygjy.pattern.visitor.visitor.PriceVisitor;
 
 /**
- * ¿Í»§¶Ë
+ * å®¢æˆ·ç«¯
  * @author WangYanCheng
  * @version 2013-2-6
  */
@@ -14,21 +14,21 @@ public class Client {
     private InventoryVisitor inventoryVisitor;
     private Equipment equipment;
     public Client() {
-        //Éè±¸
+        //è®¾å¤‡
         equipment = new Pc();
-        //¼Û¸ñVisitor
+        //ä»·æ ¼Visitor
         priceVisitor = new PriceVisitor();
-        //¿â´æVisitor
+        //åº“å­˜Visitor
         inventoryVisitor = new InventoryVisitor();
     }
     public void doWork() {
-        //Éè±¸½Ó¿Ú
+        //è®¾å¤‡æ¥å£
         equipment.accept(priceVisitor);
-        //Éè±¸½Ó¿Ú
+        //è®¾å¤‡æ¥å£
         equipment.accept(inventoryVisitor);
-        //Í³¼Æ½ğ¶î
+        //ç»Ÿè®¡é‡‘é¢
         System.out.println("Price: ".concat(String.valueOf(priceVisitor.value())));
-        //Í³¼Æ¿â´æ
+        //ç»Ÿè®¡åº“å­˜
         System.out.println("Number of parts: ".concat(String.valueOf(inventoryVisitor.getSize())));
     }
     public static void main(String[] args) {

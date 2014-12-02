@@ -1,7 +1,7 @@
 package org.ybygjy.jcip.chap4;
 
 /**
- * ¶şÎ¬Î»ÖÃ
+ * äºŒç»´ä½ç½®
  * @author WangYanCheng
  * @version 2014-7-18
  */

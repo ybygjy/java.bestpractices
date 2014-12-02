@@ -6,7 +6,7 @@ package org.ybygjy.pattern.proxy.test3;
  */
 public class Test3 {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args arguments list
      */
     public static void main(String[] args) {

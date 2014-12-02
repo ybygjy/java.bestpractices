@@ -10,7 +10,7 @@ import java.util.TreeMap;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * ¶Ô¶¥²ã½Ó¿ÚÎªMapµÄÏà¹Ø²âÊÔ
+ * å¯¹é¡¶å±‚æ¥å£ä¸ºMapçš„ç›¸å…³æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-8-23
  */
@@ -51,8 +51,8 @@ public class MapTest {
     }
 
     /**
-     * ²âÊÔMap#collection()·½·¨£¬½áÂÛ£º<br>
-     * <li>Í¨¹ıCollection#toArray(Type[] type)¿ÉÊµÏÖ½«MapÄÚÈİ×ª³ÉÊı×é</li>
+     * æµ‹è¯•Map#collection()æ–¹æ³•ï¼Œç»“è®ºï¼š<br>
+     * <li>é€šè¿‡Collection#toArray(Type[] type)å¯å®ç°å°†Mapå†…å®¹è½¬æˆæ•°ç»„</li>
      */
     public void doTestCollection() {
         Map<String, String> mapInst = new HashMap<String, String>();
@@ -66,8 +66,8 @@ public class MapTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         /*
@@ -145,7 +145,7 @@ public class MapTest {
     }
 
     /**
-     * Ö§³ÖKeyÅÅĞòµÄmapÊµÏÖ²âÊÔ
+     * æ”¯æŒKeyæ’åºçš„mapå®ç°æµ‹è¯•
      * @author WangYanCheng
      * @version 2010-8-23
      */
@@ -161,7 +161,7 @@ public class MapTest {
     }
 
     /**
-     * ÓĞµãÏñÁ´±íµÄList,¿ÉÒÔ´«µİÒ»Ğ©ÀàËÆLRU(×î½ü×îÉÙÊ¹ÓÃ)Ëã·¨,À´ÊµÏÖ¶¨ÆÚÇåÀíÔªËØ
+     * æœ‰ç‚¹åƒé“¾è¡¨çš„List,å¯ä»¥ä¼ é€’ä¸€äº›ç±»ä¼¼LRU(æœ€è¿‘æœ€å°‘ä½¿ç”¨)ç®—æ³•,æ¥å®ç°å®šæœŸæ¸…ç†å…ƒç´ 
      * @author WangYanCheng
      * @version 2010-8-23
      */

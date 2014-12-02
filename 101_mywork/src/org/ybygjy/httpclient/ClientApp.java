@@ -62,7 +62,7 @@ import org.apache.commons.httpclient.methods.GetMethod;
  * content as text and as rendered HTML.
  *
  * @author Sean C. Sullivan
- * @author Ortwin Glück
+ * @author Ortwin Glé»žk
  * @author Michael Becke
  */
 public class ClientApp {

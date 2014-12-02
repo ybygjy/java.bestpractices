@@ -1,6 +1,6 @@
 package org.ybygjy.basic.thinking;
 /**
- * Ƕ�׽ӿڲ���
+ * 嵌套接口测试
  * @author WangYanCheng
  * @version 2010-5-31
  */

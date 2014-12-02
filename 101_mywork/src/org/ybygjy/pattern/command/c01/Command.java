@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.command.c01;
 
 /**
- * ¶¨Òå³éÏóÃüÁîËù¾ßÓĞµÄĞĞÎª
+ * å®šä¹‰æŠ½è±¡å‘½ä»¤æ‰€å…·æœ‰çš„è¡Œä¸º
  * @author WangYanCheng
  * @version 2012-12-10
  */

@@ -8,13 +8,13 @@ import java.net.URI;
 import java.net.URISyntaxException;
 
 /**
- * ·â×°ÎÄ¼ş³£ÓÃ¹«¹²²Ù×÷
+ * å°è£…æ–‡ä»¶å¸¸ç”¨å…¬å…±æ“ä½œ
  * @author WangYanCheng
  * @version 2010-8-31
  */
 public class FileUtils {
     /**
-     * È¡µÃ²Ù×÷ÏµÍ³Ö§³ÖµÄÁÙÊ±ÎÄ¼ş¼ĞÂ·¾¶
+     * å–å¾—æ“ä½œç³»ç»Ÿæ”¯æŒçš„ä¸´æ—¶æ–‡ä»¶å¤¹è·¯å¾„
      * @return rtnStr rtnStr
      */
     public static String getTmpFilePath() {
@@ -23,9 +23,9 @@ public class FileUtils {
     }
 
     /**
-     * µ÷ÓÃOSÃüÁî´ò¿ªÎÄ¼ş<code>ÊÊÓÃÓÚµ÷ÊÔ</code>
+     * è°ƒç”¨OSå‘½ä»¤æ‰“å¼€æ–‡ä»¶<code>é€‚ç”¨äºè°ƒè¯•</code>
      * <ol>
-     * <li>Desktop°ì·¨ÔÚ´ò¿ª.htmlºó×ºÎÄ¼şÊ±²»Æğ×÷ÓÃ.</li>
+     * <li>DesktopåŠæ³•åœ¨æ‰“å¼€.htmlåç¼€æ–‡ä»¶æ—¶ä¸èµ·ä½œç”¨.</li>
      * </ol>
      * @param file fileInst
      */
@@ -34,7 +34,7 @@ public class FileUtils {
     }
 
     /**
-     * ´ò¿ªÁ´½Ó£¬¿ÉÖ§³Ö±¾µØÎÄ¼şä¯ÀÀ(´ò¿ª)
+     * æ‰“å¼€é“¾æ¥ï¼Œå¯æ”¯æŒæœ¬åœ°æ–‡ä»¶æµè§ˆ(æ‰“å¼€)
      * @param uri {@link URI}
      */
     public static void browseResource(URI uri) {
@@ -42,8 +42,8 @@ public class FileUtils {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         // FileUtils.doOpenFile4OS(new File("C:\\AntOpenCommand.java"));
@@ -58,7 +58,7 @@ public class FileUtils {
     }
 
     /**
-     * ÎÄ¼ş´ò¿ª¹ÜÀí
+     * æ–‡ä»¶æ‰“å¼€ç®¡ç†
      * @author WangYanCheng
      * @version 2010-12-16
      */
@@ -114,8 +114,8 @@ public class FileUtils {
         }
 
         /**
-         * ´ò¿ªÁ´½Ó
-         * @param uri uriµØÖ·
+         * æ‰“å¼€é“¾æ¥
+         * @param uri uriåœ°å€
          */
         protected static void doBrowse(URI uri) {
             if (doBrowse4Window(uri)) {
@@ -142,7 +142,7 @@ public class FileUtils {
         }
 
         /**
-         * Window´ò¿ªÁ´½Ó
+         * Windowæ‰“å¼€é“¾æ¥
          * @param uri {@link URI}
          * @return rtnBool rtnBool
          */

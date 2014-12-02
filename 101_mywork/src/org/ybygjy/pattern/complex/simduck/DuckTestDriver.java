@@ -7,7 +7,7 @@ import org.ybygjy.pattern.complex.simduck.impl.GooseAdapter;
 import org.ybygjy.pattern.complex.simduck.impl.QuackCounter;
 
 /**
- * ¸ºÔğ²âÊÔÇı¶¯
+ * è´Ÿè´£æµ‹è¯•é©±åŠ¨
  * @author WangYanCheng
  * @version 2011-1-24
  */
@@ -21,7 +21,7 @@ public class DuckTestDriver {
         Quackable redheadDuck = adfInst.createRedheadDuck();
         redheadDuck.registerObserver(new Observer() {
             public void update(Quackable duck) {
-                System.out.println("¼àÌı£º" + duck);
+                System.out.println("ç›‘å¬ï¼š" + duck);
             }
         });
         Quackable duckCall = adfInst.createDuckCall();

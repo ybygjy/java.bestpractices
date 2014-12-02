@@ -7,9 +7,9 @@ import java.util.concurrent.locks.ReentrantLock;
 import org.ybygjy.jcip.chap5.BenchmarkMapWrapper;
 
 /**
- * ²âÊÔÈİÆ÷ÊµÏÖ#²ÉÓÃÖØÈëËøÊµÏÖÈİÆ÷µÄ²¢·¢¿ØÖÆ
+ * æµ‹è¯•å®¹å™¨å®ç°#é‡‡ç”¨é‡å…¥é”å®ç°å®¹å™¨çš„å¹¶å‘æ§åˆ¶
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkMapWrapperImpl4ReentLock implements BenchmarkMapWrapper {
 	private HashMap<Object,Object> container;

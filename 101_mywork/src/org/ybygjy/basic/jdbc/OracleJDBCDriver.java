@@ -18,7 +18,7 @@ public class OracleJDBCDriver {
             e.printStackTrace();
         } finally {
             if (null == conn) {
-                throw new RuntimeException("获取连接失败");
+                throw new RuntimeException("鑾峰彇杩炴帴澶辫触");
             } else {
                 try {
                     conn.close();

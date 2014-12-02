@@ -10,32 +10,32 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * GB2312±àÂë¹æ·¶
+ * GB2312ç¼–ç è§„èŒƒ
  * @author WangYanCheng
  * @version 2014-6-21
  */
 public class CharsetGB2312 {
     /**
-     * Êä³öGB2312×Ö·û¼¯
+     * è¾“å‡ºGB2312å­—ç¬¦é›†
      * @param fileInst {@link File}
      */
     public void doPrint(HTMLOutput htmlOutput) {
-        //Ê×ÏÈ¶¨ÒåGB2312×Ö·û¼¯·¶Î§
+        //é¦–å…ˆå®šä¹‰GB2312å­—ç¬¦é›†èŒƒå›´
         String[][] charsetData = new String[0xFF][0xFF];
         Charset charset = Charset.forName("GB2312");
         int i = 0;
-        //Ìî³äÊı¾İ
+        //å¡«å……æ•°æ®
         for (; i < 0xFF; i++) {
             for (int j = 0; j < 0xFF; j++) {
                 charsetData[i][j] = charset.decode(ByteBuffer.wrap(new byte[]{(byte) i, (byte) j})).toString();
             }
         }
-        //Êä³ö´¦Àí
+        //è¾“å‡ºå¤„ç†
         doPrintArray(charsetData, htmlOutput);
     }
     /**
-     * ×Ö·û¼¯Êä³öÂß¼­´¦Àí
-     * @param charsetData ×Ö·û¼¯
+     * å­—ç¬¦é›†è¾“å‡ºé€»è¾‘å¤„ç†
+     * @param charsetData å­—ç¬¦é›†
      * @param htmlOutput {@link HTMLOutput}
      */
     private void doPrintArray(String[][] charsetData, HTMLOutput htmlOutput) {
@@ -69,8 +69,8 @@ public class CharsetGB2312 {
         return str;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         CharsetGB2312 charsetInst = new CharsetGB2312();
@@ -79,7 +79,7 @@ public class CharsetGB2312 {
     }
 }
 /**
- * HTML¸ñÊ½Êä³ö
+ * HTMLæ ¼å¼è¾“å‡º
  * @author WangYanCheng
  * @version 2014-6-21
  */
@@ -104,7 +104,7 @@ class HTMLOutput {
         }
     }
     /**
-     * Êä³ö
+     * è¾“å‡º
      * @param dataArr
      */
     public void doOutput(String[] dataArr) {

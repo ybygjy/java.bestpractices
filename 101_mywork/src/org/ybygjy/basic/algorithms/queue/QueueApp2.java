@@ -2,13 +2,13 @@ package org.ybygjy.basic.algorithms.queue;
 
 /**
  * <p>
- * ÀûÓÃfrontÓërearÍ¨¹ı¼ÆËãµÃ³ö¶ÓÁĞµÄ×´Ì¬ÒÔ¼°¶ÓÁĞÔªËØ¸öÊı
+ * åˆ©ç”¨frontä¸rearé€šè¿‡è®¡ç®—å¾—å‡ºé˜Ÿåˆ—çš„çŠ¶æ€ä»¥åŠé˜Ÿåˆ—å…ƒç´ ä¸ªæ•°
  * </p>
  * <p>
- * ²»Ê¹ÓÃÊı¾İÏî¼ÆÊı×Ö¶ÎÊµÏÖ¶ÓÁĞ
+ * ä¸ä½¿ç”¨æ•°æ®é¡¹è®¡æ•°å­—æ®µå®ç°é˜Ÿåˆ—
  * </p>
  * <p>
- * Ô¼¶¨ÉÙÓÃÒ»¸ö¶ÓÁĞ¿Õ¼ä±ê¼Ç¶ÓÁĞÂú
+ * çº¦å®šå°‘ç”¨ä¸€ä¸ªé˜Ÿåˆ—ç©ºé—´æ ‡è®°é˜Ÿåˆ—æ»¡
  * </p>
  * @author WangYanCheng
  * @version 2011-8-9
@@ -56,7 +56,7 @@ public class QueueApp2 {
 
         public void insert(int a) {
             if (isFull()) {
-                System.out.println("¶ÓÁĞÂú==>" + rear + ":" + front);
+                System.out.println("é˜Ÿåˆ—æ»¡==>" + rear + ":" + front);
                 return;
             }
             arr[rear] = a;
@@ -65,7 +65,7 @@ public class QueueApp2 {
 
         public int remove() {
             if (isEmpty()) {
-                throw new RuntimeException("¶ÓÁĞ¿Õ");
+                throw new RuntimeException("é˜Ÿåˆ—ç©º");
             }
             int tmp = arr[front];
             front = (front + 1) % maxSize;

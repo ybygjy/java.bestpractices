@@ -8,14 +8,14 @@ import java.util.List;
 import org.ybygjy.test.TestUtils;
 
 /**
- * Êı×éÏà¹ØÖ÷ÌâµÄ²âÊÔ
+ * æ•°ç»„ç›¸å…³ä¸»é¢˜çš„æµ‹è¯•
  * @author WangYanCheng
  * @version 2010-9-7
  */
 public class ArrayTest {
     /**
-     * ×Ô¶¨Òåcomparator½Ó¿ÚÊµÏÖ<br>
-     * <strong>×¢ÒâsortµÄÊ¹ÓÃ</strong>
+     * è‡ªå®šä¹‰comparatoræ¥å£å®ç°<br>
+     * <strong>æ³¨æ„sortçš„ä½¿ç”¨</strong>
      */
     public void customCompare() {
         String[] srcArray = {"ABCCCCCC", "ABC", "ABCD", "ABCDE"};
@@ -27,11 +27,11 @@ public class ArrayTest {
                 return (o1.equals(o2) ? 0 : -1);
             }
         });
-        System.out.println(rtI + (rtI != -1 ? "Æ¥Åä" : "²»Æ¥Åä"));
+        System.out.println(rtI + (rtI != -1 ? "åŒ¹é…" : "ä¸åŒ¹é…"));
     }
 
     /**
-     * ²âÊÔSystem#arrayCopyº¯Êı
+     * æµ‹è¯•System#arrayCopyå‡½æ•°
      */
     public void doTestSysArrCopy() {
         String[] srcArr = {"1", "2", "3"};
@@ -43,9 +43,9 @@ public class ArrayTest {
     }
 
     /**
-     * ²âÊÔSystem#arrayCopyº¯Êı <li>Ä£Äâ¶à¸öÔ´Êı×é²ÎÓëcopy²Ù×÷</li><br>
-     * ½áÂÛ <li>System#arrayCopy()</li> <li>System#arrayCopy(T[] a)</li> <li>
-     * Ç°Õß·µ»ØObject[]Êı×é,²¢ÇÒ²»Ö§³Ö×ª»»ÎªÌØ¶¨ÀàĞÍ</li> <li>ºó¶¼·µ»Ø²ÎÊıÀàĞÍÊı×é,¿ÉÖ§³Ö×ª»»</li>
+     * æµ‹è¯•System#arrayCopyå‡½æ•° <li>æ¨¡æ‹Ÿå¤šä¸ªæºæ•°ç»„å‚ä¸copyæ“ä½œ</li><br>
+     * ç»“è®º <li>System#arrayCopy()</li> <li>System#arrayCopy(T[] a)</li> <li>
+     * å‰è€…è¿”å›Object[]æ•°ç»„,å¹¶ä¸”ä¸æ”¯æŒè½¬æ¢ä¸ºç‰¹å®šç±»å‹</li> <li>åéƒ½è¿”å›å‚æ•°ç±»å‹æ•°ç»„,å¯æ”¯æŒè½¬æ¢</li>
      */
     public void doTestSysArrCopy2() {
         List<InnerEntity> arrA = new ArrayList<InnerEntity>();
@@ -64,7 +64,7 @@ public class ArrayTest {
         System.out.println(tmpIeArr.length);
     }
     /**
-     * ¶şÎ¬Êı×é²âÊÔ
+     * äºŒç»´æ•°ç»„æµ‹è¯•
      */
     public void doTestTwoDimensionTest() {
         String[][] twoDimTest = new String[1][7];

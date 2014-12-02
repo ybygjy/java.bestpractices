@@ -4,7 +4,7 @@ import org.ybygjy.pattern.factory.abstractfac.AbstractFactory;
 import org.ybygjy.pattern.factory.abstractfac.CompexBean;
 
 /**
- * 抽象工厂规范实现
+ * 鎶借薄宸ュ巶瑙勮寖瀹炵幇
  * @author WangYanCheng
  * @version 2010-10-25
  */

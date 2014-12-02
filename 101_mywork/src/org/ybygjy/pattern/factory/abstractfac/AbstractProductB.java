@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.factory.abstractfac;
 
 /**
- * 抽象产品规范
+ * 鎶借薄浜у搧瑙勮寖
  * @author WangYanCheng
  * @version 2010-10-25
  */

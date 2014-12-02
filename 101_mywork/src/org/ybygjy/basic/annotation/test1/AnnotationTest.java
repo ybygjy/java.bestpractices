@@ -44,8 +44,8 @@ public class AnnotationTest {
     public void calculateInterest4Group(float amount, float rate) {
     }
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         AnnotationTest anotTestInst = new AnnotationTest();

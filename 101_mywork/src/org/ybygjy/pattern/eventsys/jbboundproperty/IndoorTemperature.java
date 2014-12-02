@@ -5,8 +5,8 @@ import java.beans.PropertyChangeSupport;
 import java.io.Serializable;
 
 /**
- * ÊÂ¼ş»úÖÆ-->JavaBeanÄ£Ê½-->Bound Property Pattern<br>
- * ÊÒÎÂ
+ * äº‹ä»¶æœºåˆ¶-->JavaBeanæ¨¡å¼-->Bound Property Pattern<br>
+ * å®¤æ¸©
  * @author WangYanCheng
  * @version 2010-2-20
  */
@@ -17,7 +17,7 @@ public class IndoorTemperature implements Serializable {
     private boolean debug = false;
     /**temperature*/
     private int temperature = 60;
-    /**ÕìÌıÆ÷¹ÜÀí*/
+    /**ä¾¦å¬å™¨ç®¡ç†*/
     private PropertyChangeSupport pcsInst = null;
     /**max temperature*/
     public static final int MAX_TEMPERATURE = 70;
@@ -62,14 +62,14 @@ public class IndoorTemperature implements Serializable {
         pcsInst.firePropertyChange("temperature", oldTemperature, this.temperature);
     }
     /**
-     * ×¢²áÕìÌıÆ÷
+     * æ³¨å†Œä¾¦å¬å™¨
      * @param pclInst pclInst
      */
     public void addPropertyChangeListener(PropertyChangeListener pclInst) {
         pcsInst.addPropertyChangeListener(pclInst);
     }
     /**
-     * É¾³ıÖ¸¶¨ÕìÌıÆ÷
+     * åˆ é™¤æŒ‡å®šä¾¦å¬å™¨
      * @param pclInst pclInst
      */
     public void removePropertyChangeListener(PropertyChangeListener pclInst) {

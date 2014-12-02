@@ -10,31 +10,31 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ·ÖÎöClassÀàÂ·¾¶£¬×Ô¶¯Ìî³ä°üÃû³Æ
+ * åˆ†æClassç±»è·¯å¾„ï¼Œè‡ªåŠ¨å¡«å……åŒ…åç§°
  * @author WangYanCheng
  * @version 2014-4-22
  */
 public class AutomaticFillPackage4Class {
-    /**»ùÄ¿Â¼*/
+    /**åŸºç›®å½•*/
     private File sourceDir;
     private String fileEncode = "UTF-8";
     public AutomaticFillPackage4Class() {
         sourceDir = new File("D:\\DEV\\02_work\\02_financial_server_v1\\src\\main\\java");
         if (!sourceDir.isDirectory()) {
-            throw new RuntimeException("±ØĞëÖ¸¶¨ÎÄ¼ş¼Ğ£¡");
+            throw new RuntimeException("å¿…é¡»æŒ‡å®šæ–‡ä»¶å¤¹ï¼");
         }
     }
     public void doWork() {
         innerDoWork(sourceDir);
     }
     /**
-     * ±éÀúÄ¿Â¼È¡.javaÎÄ¼ş
+     * éå†ç›®å½•å–.javaæ–‡ä»¶
      * @param file
      */
     private void innerDoWork(File file) {
-        //1¡¢È¡Ä¿Â¼ÏÂ×ÓÎÄ¼ş
+        //1ã€å–ç›®å½•ä¸‹å­æ–‡ä»¶
         File[] tmpFiles = file.listFiles(new CustomerFileFilter());
-        //2¡¢ÑéÖ¤ÎÄ¼şÊÇ·ñ¿É¶Á/Ğ´£¬ÊÇ·ñÊÇ.javaÎÄ¼ş
+        //2ã€éªŒè¯æ–‡ä»¶æ˜¯å¦å¯è¯»/å†™ï¼Œæ˜¯å¦æ˜¯.javaæ–‡ä»¶
         for (File tmpFile : tmpFiles) {
             if (tmpFile.isDirectory()) {
                 innerDoWork(tmpFile);
@@ -44,14 +44,14 @@ public class AutomaticFillPackage4Class {
         }
     }
     /**
-     * ¸üĞÂÎÄ¼şpackage
+     * æ›´æ–°æ–‡ä»¶package
      * @param tmpFile
      */
     private void doUpdateFilePackage(File tmpFile) {
-        //2.1¡¢È¡.javaÎÄ¼şÄÚÈİÆ¥ÅäpackageÒ»ĞĞ
-        //2.2¡¢·ÖÎö.javaÎÄ¼şÂ·¾¶£¬È¡package°üÃû³Æ
-        //2.3¡¢ÀûÓÃÕıÔò±í´ïÊ½½øĞĞÌæ»»
-        //2.4¡¢Ğ´ÈëÎÄ¼ş£¬Ë¢ĞÂ»º³åÁ÷
+        //2.1ã€å–.javaæ–‡ä»¶å†…å®¹åŒ¹é…packageä¸€è¡Œ
+        //2.2ã€åˆ†æ.javaæ–‡ä»¶è·¯å¾„ï¼Œå–packageåŒ…åç§°
+        //2.3ã€åˆ©ç”¨æ­£åˆ™è¡¨è¾¾å¼è¿›è¡Œæ›¿æ¢
+        //2.4ã€å†™å…¥æ–‡ä»¶ï¼Œåˆ·æ–°ç¼“å†²æµ
         BufferedInputStream rafInst = null;
         ByteArrayOutputStream baos = null;
         FileOutputStream fout = null;
@@ -60,16 +60,16 @@ public class AutomaticFillPackage4Class {
             baos = new ByteArrayOutputStream();
             byte[] cbuf = new byte[2048];
             int flag = -1;
-            //¼ÓÔØÎÄ¼şÄÚÈİ
+            //åŠ è½½æ–‡ä»¶å†…å®¹
             while ((flag = rafInst.read(cbuf)) != -1) {
                 baos.write(cbuf, 0, flag);
             }
             String fileContent = baos.toString(fileEncode);
             rafInst.close();
             baos.close();
-            //·ÖÎöÎÄ¼şÂ·¾¶ÌáÈ¡°üÂ·¾¶
+            //åˆ†ææ–‡ä»¶è·¯å¾„æå–åŒ…è·¯å¾„
             String pagepath = "package " + analysisPackagePath(tmpFile) + ";";
-            //Ìæ»»/Ğ´Èë
+            //æ›¿æ¢/å†™å…¥
             fileContent = fileContent.replaceFirst("package([^\r\n]+)", pagepath);
             fout = new FileOutputStream(tmpFile, false);
             fout.write(fileContent.getBytes(fileEncode));
@@ -79,7 +79,7 @@ public class AutomaticFillPackage4Class {
         }
     }
     /**
-     * ·ÖÎöÎÄ¼şÂ·¾¶È¡packageÂ·¾¶
+     * åˆ†ææ–‡ä»¶è·¯å¾„å–packageè·¯å¾„
      * @param tmpFile
      * @return
      */
@@ -99,7 +99,7 @@ public class AutomaticFillPackage4Class {
     }
 }
 /**
- * ÎÄ¼ş¹ıÂË
+ * æ–‡ä»¶è¿‡æ»¤
  * @author WangYanCheng
  * @version 2014-4-22
  */

@@ -3,23 +3,23 @@ package org.ybygjy.basic.thinking.thread.pool;
 import java.util.LinkedList;
 
 /**
- * Ïß³Ì³ØÊµ¼ù
+ * çº¿ç¨‹æ± å®è·µ
  * @author WangYanCheng
  * @version 2012-11-31
  */
 public class ThreadPool_01 {
-    // ÓĞÒ»¸öÈÎÎñ¶ÓÁĞ
+    // æœ‰ä¸€ä¸ªä»»åŠ¡é˜Ÿåˆ—
     private final LinkedList<Runnable> queue;
-    // ÓĞÒ»¸ö¹¤×÷Ïß³ÌÊıÁ¿
+    // æœ‰ä¸€ä¸ªå·¥ä½œçº¿ç¨‹æ•°é‡
     private final int workerThreadNums;
-    // ÓĞÒ»¸ö¹¤×÷Ïß³Ì¼¯ºÏ
+    // æœ‰ä¸€ä¸ªå·¥ä½œçº¿ç¨‹é›†åˆ
     private final ThreadWorker[] threadWorkers;
-    // Êµ¼Ê¹¤×÷Ïß³ÌÊıÁ¿
+    // å®é™…å·¥ä½œçº¿ç¨‹æ•°é‡
     private int thNums;
 
     /**
      * Constructor
-     * @param workerThreadNums ³õÊ¼¹¤×÷Ïß³ÌÊıÁ¿
+     * @param workerThreadNums åˆå§‹å·¥ä½œçº¿ç¨‹æ•°é‡
      */
     public ThreadPool_01(int workerThreadNums) {
         this.queue = new LinkedList<Runnable>();
@@ -32,19 +32,19 @@ public class ThreadPool_01 {
     }
 
     /**
-     * Ìá¹©¸ø¿Í»§¶ËµÄAPI£¬¸ºÔğ½ÓÊÕÂß¼­ÈÎÎñ£¬²¢µ÷¶ÈÖ´ĞĞ
-     * @param r ¿ÉÖ´ĞĞÈÎÎñ
+     * æä¾›ç»™å®¢æˆ·ç«¯çš„APIï¼Œè´Ÿè´£æ¥æ”¶é€»è¾‘ä»»åŠ¡ï¼Œå¹¶è°ƒåº¦æ‰§è¡Œ
+     * @param r å¯æ‰§è¡Œä»»åŠ¡
      */
     public void execute(Runnable r) {
         synchronized (queue) {
             queue.add(r);
-            // ²»´æÔÚ¹²Ïí×ÊÔ´µÄÄ£Ê½£¬Ö»Í¨ÖªÒ»¸öµÈ´ıÏß³Ì¼´¿É
+            // ä¸å­˜åœ¨å…±äº«èµ„æºçš„æ¨¡å¼ï¼Œåªé€šçŸ¥ä¸€ä¸ªç­‰å¾…çº¿ç¨‹å³å¯
             queue.notify();
         }
     }
 
     /**
-     * Ïß³Ì³ØÖĞµÄ¹¤×÷Ïß³Ì£¬ÆäÉúÃüÖÜÆÚ±»³Ø¶ÔÏóÍêÈ«¿ØÖÆ£¬¸ºÔğÖ´ĞĞÈÎÎñ
+     * çº¿ç¨‹æ± ä¸­çš„å·¥ä½œçº¿ç¨‹ï¼Œå…¶ç”Ÿå‘½å‘¨æœŸè¢«æ± å¯¹è±¡å®Œå…¨æ§åˆ¶ï¼Œè´Ÿè´£æ‰§è¡Œä»»åŠ¡
      * @author WangYanCheng
      * @version 2012-11-31
      */
@@ -72,7 +72,7 @@ public class ThreadPool_01 {
                     }
                     run = queue.removeFirst();
                 }
-                // ÈÎÎñÂß¼­´¦ÀíÒì³£Ò»¶¨²»ÒªÓ°Ïìµ½»ù´¡Ïß³Ì
+                // ä»»åŠ¡é€»è¾‘å¤„ç†å¼‚å¸¸ä¸€å®šä¸è¦å½±å“åˆ°åŸºç¡€çº¿ç¨‹
                 try {
                     run.run();
                 } catch (Exception e) {
@@ -83,7 +83,7 @@ public class ThreadPool_01 {
     }
 
     /**
-     * ³äµ±¿Í»§¶Ë£¬¸ºÔğ¹¹Ôì¿ÉÖ´ĞĞµÄÈÎÎñ
+     * å……å½“å®¢æˆ·ç«¯ï¼Œè´Ÿè´£æ„é€ å¯æ‰§è¡Œçš„ä»»åŠ¡
      * @author WangYanCheng
      * @version 2012-11-31
      */
@@ -109,25 +109,25 @@ public class ThreadPool_01 {
     }
 
     /**
-     * ÈÎÎñÊµÀı
+     * ä»»åŠ¡å®ä¾‹
      * @author WangYanCheng
      * @version 2012-11-31
      */
     private class VirtualTask implements Runnable {
         private static final String TASKPREFIX = "CT_";
-        /** ÈÎÎñId */
+        /** ä»»åŠ¡Id */
         private String taskId;
 
         /**
          * Constructor
-         * @param taskId ÈÎÎñId
+         * @param taskId ä»»åŠ¡Id
          */
         public VirtualTask(String taskId) {
             this.taskId = taskId;
         }
 
         /**
-         * ÈÎÎñÂß¼­Èë¿Ú
+         * ä»»åŠ¡é€»è¾‘å…¥å£
          */
         public void run() {
             System.out.println(this);
@@ -145,8 +145,8 @@ public class ThreadPool_01 {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         ThreadPool_01 tp01 = new ThreadPool_01(2);

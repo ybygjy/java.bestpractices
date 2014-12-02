@@ -1,6 +1,6 @@
 package org.ybygjy.basic.thinking.innerclass;
 /**
- * 测试内部类引用外部类实例
+ * 娴嬭瘯鍐呴儴绫诲紩鐢ㄥ閮ㄧ被瀹炰緥
  * @author WangYanCheng
  * @version 2010-6-7
  */

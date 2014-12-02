@@ -3,13 +3,13 @@ package org.ybygjy.basic.bit;
 import java.util.Random;
 
 /**
- * Ëæ»úÊıÑ§Ï°_²¹Æë
+ * éšæœºæ•°å­¦ä¹ _è¡¥é½
  * @author WangYanCheng
  * @version 2014-6-30
  */
 public class RandomNumberTest {
     /**
-     * Í¨¹ıÄ£³ıÈ¡¸ø¶¨Çø¼äµÄËæ»úÊı
+     * é€šè¿‡æ¨¡é™¤å–ç»™å®šåŒºé—´çš„éšæœºæ•°
      * @param min
      * @param max
      * @return
@@ -21,7 +21,7 @@ public class RandomNumberTest {
         return tmp;
     }
     /**
-     * Í¨¹ıËæ»ú½á¹û²¹Î»
+     * é€šè¿‡éšæœºç»“æœè¡¥ä½
      * @return
      */
     public int nextIntS() {
@@ -30,7 +30,7 @@ public class RandomNumberTest {
         return x + 100000;
     }
     /**
-     * Í¨¹ıËæ»úÊı³Ë·¨ÔËËã¼ä½ÓÊµÏÖ²¹Î»
+     * é€šè¿‡éšæœºæ•°ä¹˜æ³•è¿ç®—é—´æ¥å®ç°è¡¥ä½
      * @return
      */
     public int nextIntT() {
@@ -41,7 +41,7 @@ public class RandomNumberTest {
         return n;
     }
     /**
-     * Ğ¡Êı·Å´ó²¹Õû¼ÌĞø·Å´óÈ¡Õû
+     * å°æ•°æ”¾å¤§è¡¥æ•´ç»§ç»­æ”¾å¤§å–æ•´
      * @return rtnC
      */
     public int nextIntFor() {
@@ -57,7 +57,7 @@ public class RandomNumberTest {
         return rtnV;
     }
     /**
-     * È¡¸ø¶¨Î»ÊıËæ»úÊı(ÏŞÖÆ2~8Î»)
+     * å–ç»™å®šä½æ•°éšæœºæ•°(é™åˆ¶2~8ä½)
      * @param radix
      * @return rtnValue
      */
@@ -65,8 +65,8 @@ public class RandomNumberTest {
         return ((int) ((Math.random() + 1) * (radix < 2 ? 100 : radix > 9 ? 100 : Math.pow(10D, radix))));
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         RandomNumberTest rntInst = new RandomNumberTest();

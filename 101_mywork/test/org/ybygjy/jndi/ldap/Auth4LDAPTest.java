@@ -7,12 +7,12 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * 认证测试
+ * 璁よ瘉娴嬭瘯
  * @author WangYanCheng
  * @version 2011-5-12
  */
 public class Auth4LDAPTest {
-    /**参与测试实例*/
+    /**鍙備笌娴嬭瘯瀹炰緥*/
     private Auth4LDAP authInst;
     private DirContext dirCtx;
     private String userCode;

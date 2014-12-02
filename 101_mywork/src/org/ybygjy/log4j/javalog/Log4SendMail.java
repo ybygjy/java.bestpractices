@@ -26,7 +26,7 @@ import javax.mail.internet.MimeMessage;
 import org.ybygjy.basic.TestInterface;
 
 /**
- * ÈÕÖ¾ÓëÓÊ¼şµÄÕûºÏ
+ * æ—¥å¿—ä¸é‚®ä»¶çš„æ•´åˆ
  * @author WangYanCheng
  * @version 2010-10-20
  */
@@ -78,8 +78,8 @@ public class Log4SendMail implements TestInterface {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Log4SendMail log4SendMailInst = new Log4SendMail();
@@ -87,24 +87,24 @@ public class Log4SendMail implements TestInterface {
     }
 
     /**
-     * ¸ºÔğÓÊ¼ş´¦Àí
+     * è´Ÿè´£é‚®ä»¶å¤„ç†
      * @author WangYanCheng
      * @version 2010-10-20
      */
     class MailModule {
-        /** ·¢ËÍÕß */
+        /** å‘é€è€… */
         private String fromAddr;
-        /** ½ÓÊÕÕß */
+        /** æ¥æ”¶è€… */
         private String[] receiveAddr;
-        /** Ö÷Ìâ */
+        /** ä¸»é¢˜ */
         private String subject;
-        /** ÄÚÈİ */
+        /** å†…å®¹ */
         private String content;
-        /** ·şÎñÆ÷µØÖ· */
+        /** æœåŠ¡å™¨åœ°å€ */
         private String serverAddr;
 
         /**
-         * ¹¹Ôìº¯Êı
+         * æ„é€ å‡½æ•°
          * @param fromAddr fromAddr
          * @param receiveAddr receiveAddr
          * @param subject subject
@@ -121,7 +121,7 @@ public class Log4SendMail implements TestInterface {
         }
 
         /**
-         * ·¢ËÍÓÊ¼ş
+         * å‘é€é‚®ä»¶
          */
         public void doSendMail() {
             Properties prop = new Properties();

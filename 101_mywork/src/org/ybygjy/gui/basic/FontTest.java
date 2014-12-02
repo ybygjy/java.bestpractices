@@ -15,17 +15,17 @@ import javax.swing.JComponent;
 import javax.swing.JFrame;
 
 /**
- * Swing×ÖÌå
+ * Swingå­—ä½“
  * @author WangYanCheng
  * @version 2011-2-24
  */
 public class FontTest {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
-        // "¿¬Ìå_GB2312"
+        // "æ¥·ä½“_GB2312"
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new FontFrame();
@@ -47,7 +47,7 @@ class FontFrame extends JFrame {
         int x = 70;
         int y = 70;
         String[] fontes = getFontes();
-        String message = "HelloÊÀ½ç£¡";
+        String message = "Helloä¸–ç•Œï¼";
         for (String font : fontes) {
             g2.setFont(new Font(font, Font.BOLD, 14));
             g2.drawString(message, x, y);

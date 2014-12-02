@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.command.mrsluo;
 
 /**
- * »æÖÆ¾ØĞÎ
+ * ç»˜åˆ¶çŸ©å½¢
  * @author WangYanCheng
  * @version 2011-8-1
  */
@@ -18,7 +18,7 @@ public class DrawRectCommand implements ICommand {
      * {@inheritDoc}
      */
     public void redo() {
-        System.out.println("»æÖÆ¾ØĞÎ£û" + this.getObject() + "£ı");
+        System.out.println("ç»˜åˆ¶çŸ©å½¢ï½›" + this.getObject() + "ï½");
     }
 
     /**
@@ -32,7 +32,7 @@ public class DrawRectCommand implements ICommand {
      * {@inheritDoc}
      */
     public void undo() {
-        System.out.println("²Á³ı¾ØĞÎ£û" + this.getObject() + "£ı");
+        System.out.println("æ“¦é™¤çŸ©å½¢ï½›" + this.getObject() + "ï½");
     }
 
 }

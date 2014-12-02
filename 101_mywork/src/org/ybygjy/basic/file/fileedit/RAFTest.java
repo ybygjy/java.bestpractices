@@ -6,7 +6,7 @@ import java.io.RandomAccessFile;
 import java.util.regex.Pattern;
 
 /**
- * ¸ºÔğÑéÖ¤RandomAccessFileµÄ·Ö¿é¶ÁºóĞø¸²¸ÇµÄÎÊÌâ
+ * è´Ÿè´£éªŒè¯RandomAccessFileçš„åˆ†å—è¯»åç»­è¦†ç›–çš„é—®é¢˜
  * @author WangYanCheng
  * @version 2011-12-29
  */
@@ -16,7 +16,7 @@ public class RAFTest {
 
     /**
      * Constructor
-     * @param fileInst ÎÄ¼şÊµÀı
+     * @param fileInst æ–‡ä»¶å®ä¾‹
      */
     public RAFTest(File fileInst) {
         this.fileInst = fileInst;
@@ -54,7 +54,7 @@ public class RAFTest {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

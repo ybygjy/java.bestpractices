@@ -1,7 +1,7 @@
 package org.ybygjy.pattern.iterator;
 
 /**
- * 定义迭代特为接口
+ * 瀹氫箟杩唬鐗逛负鎺ュ彛
  * @author WangYanCheng
  * @version 2012-11-26
  */

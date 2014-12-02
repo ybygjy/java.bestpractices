@@ -25,18 +25,18 @@ import org.apache.ftpserver.usermanager.PropertiesUserManagerFactory;
 import org.ybygjy.ftp.event.AbstractFileObserver;
 
 /**
- * ¸ºÔğ¹ÜÀíÓëFTP·şÎñÆ÷Á¬½Ó¶ÔÏóµÄÉúÃüÖÜÆÚ
+ * è´Ÿè´£ç®¡ç†ä¸FTPæœåŠ¡å™¨è¿æ¥å¯¹è±¡çš„ç”Ÿå‘½å‘¨æœŸ
  * @author WangYanCheng
  * @version 2011-5-27
  */
 public class FTPServerMgr {
-    /** µØÖ· */
+    /** åœ°å€ */
     private static String hostName = "127.0.0.1";
-    /** ¶Ë¿Ú */
+    /** ç«¯å£ */
     private static int hostPort = 21;
-    /** ÓÃ»§Ãû */
+    /** ç”¨æˆ·å */
     private static String userName = "admin";
-    /** ÃÜÂë */
+    /** å¯†ç  */
     private static String password = userName;
     /** ftpServer */
     private static FtpServer ftpServer;
@@ -65,8 +65,8 @@ public class FTPServerMgr {
     }
 
     /**
-     * Æô¶¯FTP¹¦ÄÜ
-     * @param port ¶Ë¿ÚºÅ
+     * å¯åŠ¨FTPåŠŸèƒ½
+     * @param port ç«¯å£å·
      * @param userInfoFile userInfoFile
      */
     public void startupSimpleFTPServer(final int port, final File userInfoFile) {
@@ -97,11 +97,11 @@ public class FTPServerMgr {
     }
 
     /**
-     * ´øÓĞSSL/TLS»úÖÆµÄFTP¹¦ÄÜ
-     * @param port ¶Ë¿ÚºÅ
-     * @param keyStoreFile °²È«Ö¤Êé
-     * @param keyStorePassword Ö¤ÊéÃÜÂë
-     * @param userInfoFile ftp·şÎñÓÃ»§ĞÅÏ¢ÎÄ¼ş
+     * å¸¦æœ‰SSL/TLSæœºåˆ¶çš„FTPåŠŸèƒ½
+     * @param port ç«¯å£å·
+     * @param keyStoreFile å®‰å…¨è¯ä¹¦
+     * @param keyStorePassword è¯ä¹¦å¯†ç 
+     * @param userInfoFile ftpæœåŠ¡ç”¨æˆ·ä¿¡æ¯æ–‡ä»¶
      */
     public void startupFTPServer4SSL(final int port, final File keyStoreFile,
                                      final String keyStorePassword, final File userInfoFile) {
@@ -151,7 +151,7 @@ public class FTPServerMgr {
     }
 
     /**
-     * Í£Ö¹FTP¹¦ÄÜ
+     * åœæ­¢FTPåŠŸèƒ½
      */
     public static void stopFTPServer() {
         if (null != ftpServer) {
@@ -160,7 +160,7 @@ public class FTPServerMgr {
     }
 
     /**
-     * ¸ºÔğ¼à¿ØFTPServerµÄÔËĞĞ×´Ì¬
+     * è´Ÿè´£ç›‘æ§FTPServerçš„è¿è¡ŒçŠ¶æ€
      * @author WangYanCheng
      * @version 2011-6-14
      */
@@ -183,7 +183,7 @@ public class FTPServerMgr {
                     FtpStatistics ftpStatis = defFtpServer.getServerContext().getFtpStatistics();
                     int connNum = ftpStatis.getCurrentConnectionNumber();
                     int loginNum = ftpStatis.getCurrentLoginNumber();
-                    System.out.println("µ±Ç°Á¬½ÓÊı\t" + connNum + "\nµ±Ç°µÇÂ½Êı\t" + loginNum);
+                    System.out.println("å½“å‰è¿æ¥æ•°\t" + connNum + "\nå½“å‰ç™»é™†æ•°\t" + loginNum);
                 }
                 try {
                     Thread.sleep(5000);
@@ -195,7 +195,7 @@ public class FTPServerMgr {
     }
 
     /**
-     * ×¢²á{@link Ftplet}ÊÂ¼ş¼àÌı
+     * æ³¨å†Œ{@link Ftplet}äº‹ä»¶ç›‘å¬
      * @param dfs {@link FtpServer}
      */
     private void registerFtplet(FtpServer ftpServer) {
@@ -207,13 +207,13 @@ public class FTPServerMgr {
             public void notifyUpload(FtpIoSession session, FtpFile file, long size) {
                 System.out.println(session.getUser());
                 //super.notifyUpload(session, file, size);
-                System.out.println("¼àÌıµ½ÉÏ´«ÎÄ¼şÃüÁî==>\n"/*.concat(session.getUserArgument())*/.concat("\n").concat(file.getAbsolutePath()).concat("\t").concat("" + file.getSize()).concat("\n" + size));
+                System.out.println("ç›‘å¬åˆ°ä¸Šä¼ æ–‡ä»¶å‘½ä»¤==>\n"/*.concat(session.getUserArgument())*/.concat("\n").concat(file.getAbsolutePath()).concat("\t").concat("" + file.getSize()).concat("\n" + size));
             }
         });
     }
     /**
-     * »ñµ±Ç°ÔÚÏß(µÇÂ½)ÓÃ»§ÊıÁ¿
-     * <p>ÒòÎªftpÓÃ»§¹ÜÀíÕâ¿éÒªÓëÓ¦ÓÃÏµÍ³Ä£¿é¼¯³É£¬ËùÒÔftp·şÎñÆ÷×ÔÉíÀíÂÛÉÏÀ´ËµÊÇÃ»ÓĞÓÃ»§µÄ</p>
+     * è·å½“å‰åœ¨çº¿(ç™»é™†)ç”¨æˆ·æ•°é‡
+     * <p>å› ä¸ºftpç”¨æˆ·ç®¡ç†è¿™å—è¦ä¸åº”ç”¨ç³»ç»Ÿæ¨¡å—é›†æˆï¼Œæ‰€ä»¥ftpæœåŠ¡å™¨è‡ªèº«ç†è®ºä¸Šæ¥è¯´æ˜¯æ²¡æœ‰ç”¨æˆ·çš„</p>
      */
     public void showUsers() {
         if (null == ftpServerFactory) {
@@ -227,12 +227,12 @@ public class FTPServerMgr {
         }
         if (userNames != null && userNames.length > 0) {
             for (String userName : userNames) {
-                System.out.println("ÓÃ»§£º\t" + userName);
+                System.out.println("ç”¨æˆ·ï¼š\t" + userName);
             }
         }
     }
     /**
-     * È¡·şÎñÆ÷µ±Ç°»î¶¯ÓÃ»§ÊıÁ¿
+     * å–æœåŠ¡å™¨å½“å‰æ´»åŠ¨ç”¨æˆ·æ•°é‡
      */
     public void showActiveUser() {
         Map<String, Listener> ftpListener = ftpServerFactory.getListeners();
@@ -241,7 +241,7 @@ public class FTPServerMgr {
         Listener tmpListener = null;
         for (String tmpStr : tmpStrArr) {
             tmpListener = ftpListener.get(tmpStr);
-            System.out.println("µ±Ç°ÉÏÏÂÎÄ£º".concat(tmpStr).concat("\t").concat("»î¶¯ÓÃ»§£º\t" + tmpListener.getActiveSessions().size()));
+            System.out.println("å½“å‰ä¸Šä¸‹æ–‡ï¼š".concat(tmpStr).concat("\t").concat("æ´»åŠ¨ç”¨æˆ·ï¼š\t" + tmpListener.getActiveSessions().size()));
         }
     }
     public void addUser(User user) {

@@ -10,29 +10,29 @@ import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4SynchroFactoryMap;
 import org.ybygjy.jcip.chap5.bct.BenchmarkMapWrapperImpl4WriteLock;
 
 /**
- * ¸ÃÀàÃèÊöÁË¶ÔJava¸÷ÈİÆ÷µÄ»ù±¾ĞÔÄÜ²âÊÔ£¬ĞèÒª×¢ÒâÔ­×÷ÕßµÄÉè¼ÆË¼Â··Ç³£¾ßÓĞÍ¨ÓÃĞÔ
- * <p>Ô´µØÖ·£ºhttp://www.kafka0102.com/2010/08/298.html</p>
- * <p>1¡¢Ê¹ÓÃ±ÕËø´¦ÀíµÈ´ı¶à¸öÏß³ÌÈ«²¿Ö´ĞĞÍê³ÉµÄÎÊÌâ</p>
- * <p>2¡¢¶¨Òå±»²âÊÔÈİÆ÷½Ó¿ÚÍ³Ò»²âÊÔÈë¿Ú</p>
- * @version 2014Äê7ÔÂ31ÈÕ
+ * è¯¥ç±»æè¿°äº†å¯¹Javaå„å®¹å™¨çš„åŸºæœ¬æ€§èƒ½æµ‹è¯•ï¼Œéœ€è¦æ³¨æ„åŸä½œè€…çš„è®¾è®¡æ€è·¯éå¸¸å…·æœ‰é€šç”¨æ€§
+ * <p>æºåœ°å€ï¼šhttp://www.kafka0102.com/2010/08/298.html</p>
+ * <p>1ã€ä½¿ç”¨é—­é”å¤„ç†ç­‰å¾…å¤šä¸ªçº¿ç¨‹å…¨éƒ¨æ‰§è¡Œå®Œæˆçš„é—®é¢˜</p>
+ * <p>2ã€å®šä¹‰è¢«æµ‹è¯•å®¹å™¨æ¥å£ç»Ÿä¸€æµ‹è¯•å…¥å£</p>
+ * @version 2014å¹´7æœˆ31æ—¥
  */
 public class BenchmarkTest {
-    /** ×ÜºÄÊ±*/
+    /** æ€»è€—æ—¶*/
     public volatile long totalTime;
-    /** ±ÕËø_ÓÃÓÚ¿ØÖÆ¶à¸ö²âÊÔÏß³ÌÍ¬Ê±¿ªÊ¼²¢µÈ´ıÍ¬Ê±½áÊø±êÊ¶*/
+    /** é—­é”_ç”¨äºæ§åˆ¶å¤šä¸ªæµ‹è¯•çº¿ç¨‹åŒæ—¶å¼€å§‹å¹¶ç­‰å¾…åŒæ—¶ç»“æŸæ ‡è¯†*/
     private CountDownLatch latch;
-    /** ¸÷Ïß³Ì¶Ô²ÎÓë²âÊÔµÄ¼¯ºÏÖ´ĞĞ¶Á»òĞ´Ñ­»·µÄ´ÎÊı*/
+    /** å„çº¿ç¨‹å¯¹å‚ä¸æµ‹è¯•çš„é›†åˆæ‰§è¡Œè¯»æˆ–å†™å¾ªç¯çš„æ¬¡æ•°*/
     private final int loop;
-    /** ²âÊÔÊ±Í¬Ê±ÔËĞĞµÄÏß³ÌÊıÁ¿*/
+    /** æµ‹è¯•æ—¶åŒæ—¶è¿è¡Œçš„çº¿ç¨‹æ•°é‡*/
     private final int threads;
-    /** ÆµÂÊÒò×Ó£¬ÓÃÓÚ¿ØÖÆ²ÎÓë²âÊÔÈİÆ÷µÄ¶Á/Ğ´ÆµÂÊ*/
+    /** é¢‘ç‡å› å­ï¼Œç”¨äºæ§åˆ¶å‚ä¸æµ‹è¯•å®¹å™¨çš„è¯»/å†™é¢‘ç‡*/
     private final float ratio;
 
     /**
-     * ¹¹Ôìº¯Êı
-     * @param loop Ñ­»·´ÎÊı
-     * @param threads ²âÊÔÏß³ÌÊıÁ¿
-     * @param ratio ²âÊÔÈİÆ÷¶Á/Ğ´ÆµÂÊÒò×Ó
+     * æ„é€ å‡½æ•°
+     * @param loop å¾ªç¯æ¬¡æ•°
+     * @param threads æµ‹è¯•çº¿ç¨‹æ•°é‡
+     * @param ratio æµ‹è¯•å®¹å™¨è¯»/å†™é¢‘ç‡å› å­
      */
     public BenchmarkTest(final int loop, final int threads, final float ratio) {
         this.loop = loop;
@@ -40,13 +40,13 @@ public class BenchmarkTest {
         this.ratio = ratio;
     }
     /**
-     * ²âÊÔ
+     * æµ‹è¯•
      * @param mapWrapper
      */
     private void doTest(final BenchmarkMapWrapper mapWrapper) {
         final float maxSize = loop * threads * ratio;
         totalTime = 0;
-        //Ö´ĞĞ4´ÎÈ¡Æ½¾ùºÄÊ±
+        //æ‰§è¡Œ4æ¬¡å–å¹³å‡è€—æ—¶
         for (int k = 0; k < 4; k++) {
             latch = new CountDownLatch(threads);
             for (int i = 0; i < threads; i++) {
@@ -73,14 +73,14 @@ public class BenchmarkTest {
             	e.printStackTrace();
             }
         }
-        System.out.println("[" + mapWrapper.getName() + "]Ïß³ÌÊı[" + threads + "]¶Á/Ğ´Òò×Ó[" + this.ratio + "]Æ½¾ùÊ±¼ä(Ãë)[" + (totalTime / 4.0)/(1000*1000*1000) + "]");
+        System.out.println("[" + mapWrapper.getName() + "]çº¿ç¨‹æ•°[" + threads + "]è¯»/å†™å› å­[" + this.ratio + "]å¹³å‡æ—¶é—´(ç§’)[" + (totalTime / 4.0)/(1000*1000*1000) + "]");
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param loop Ñ­»·´ÎÊı
-     * @param threads Ïß³ÌÊıÁ¿
-     * @param ratio R/WÒò×Ó
+     * æµ‹è¯•å…¥å£
+     * @param loop å¾ªç¯æ¬¡æ•°
+     * @param threads çº¿ç¨‹æ•°é‡
+     * @param ratio R/Wå› å­
      */
     public static void doTest(final int loop, final int threads, final float ratio) {
         final BenchmarkTest benchMark = new BenchmarkTest(loop, threads, ratio);
@@ -97,8 +97,8 @@ public class BenchmarkTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(final String[] args) {
         doTest(100, 10, 1);// r:w 1:1

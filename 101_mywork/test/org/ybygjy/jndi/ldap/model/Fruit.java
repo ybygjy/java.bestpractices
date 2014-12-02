@@ -18,7 +18,7 @@ public class Fruit implements Referenceable {
     private String fruitType;
     /**
      * Constructor
-     * @param fruitType 水果类型^_^
+     * @param fruitType 姘存灉绫诲瀷^_^
      */
     public Fruit(String fruitType) {
         this.fruitType = fruitType;

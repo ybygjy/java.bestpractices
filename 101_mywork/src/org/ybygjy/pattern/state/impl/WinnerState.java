@@ -4,12 +4,12 @@ import org.ybygjy.pattern.state.GumballMachine;
 import org.ybygjy.pattern.state.State;
 
 /**
- * Ùø¼Ò×´Ì¬
+ * å¬´å®¶çŠ¶æ€
  * @author WangYanCheng
  * @version 2010-11-13
  */
 public class WinnerState implements State {
-    /** ³ÖÓĞÒıÓÃ */
+    /** æŒæœ‰å¼•ç”¨ */
     private GumballMachine gumballMachine;
 
     /**
@@ -43,21 +43,21 @@ public class WinnerState implements State {
      * {@inheritDoc}
      */
     public void enjectQuarter() {
-        System.out.println("ÌÇ¹ûÒÑ¾­·¢·Å£¬²»ÄÜÍË±Ò.");
+        System.out.println("ç³–æœå·²ç»å‘æ”¾ï¼Œä¸èƒ½é€€å¸.");
     }
 
     /**
      * {@inheritDoc}
      */
     public void insertQuarter() {
-        System.out.println("ÇëÉÔµÈ¡£");
+        System.out.println("è¯·ç¨ç­‰ã€‚");
     }
 
     /**
      * {@inheritDoc}
      */
     public void turnCrank() {
-        System.out.println("²»ĞèÒªÖØ¸´×ª¶¯ÊÖ±ú.");
+        System.out.println("ä¸éœ€è¦é‡å¤è½¬åŠ¨æ‰‹æŸ„.");
     }
 
 }

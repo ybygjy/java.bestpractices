@@ -2,13 +2,13 @@ package org.ybygjy.basic.charset;
 
 
 /**
- * CharsetÑ§Ï°
+ * Charsetå­¦ä¹ 
  * @author WangYanCheng
  * @version 2014-5-20
  */
 public class CharsetTest {
     /**
-     * ¶ş½øÖÆ¸ñÊ½´òÓ¡ASCII×Ö·û¼¯ÄÚÈİ
+     * äºŒè¿›åˆ¶æ ¼å¼æ‰“å°ASCIIå­—ç¬¦é›†å†…å®¹
      */
     public void doPrintAscii() {
         int count = 1;
@@ -21,9 +21,9 @@ public class CharsetTest {
         }
     }
     /**
-     * ²¹Áã,¸ø¶¨×Ö·û´®ÑéÖ¤×Ö·ûÊı,²»¹»8¸ö×Ö·û×ó±ß²¹Áã,²»´¦Àí×Ö·û´®×Ö·ûÊı³¬8¸öµÄÇé¿ö
-     * @param str Ô´×Ö·û´®
-     * @return str ²¹ÁãºóµÄ×Ö·û´®
+     * è¡¥é›¶,ç»™å®šå­—ç¬¦ä¸²éªŒè¯å­—ç¬¦æ•°,ä¸å¤Ÿ8ä¸ªå­—ç¬¦å·¦è¾¹è¡¥é›¶,ä¸å¤„ç†å­—ç¬¦ä¸²å­—ç¬¦æ•°è¶…8ä¸ªçš„æƒ…å†µ
+     * @param str æºå­—ç¬¦ä¸²
+     * @return str è¡¥é›¶åçš„å­—ç¬¦ä¸²
      */
     public static String doFillInStr(String str) {
         int len = str.length();
@@ -38,7 +38,7 @@ public class CharsetTest {
         return sbuf.toString().concat(str);
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args
      */
     public static void main(String[] args) {

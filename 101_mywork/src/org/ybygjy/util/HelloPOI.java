@@ -19,7 +19,7 @@ public class HelloPOI {
     private static int COLNUM = 10;
 
     /**
-     * ´¦ÀíÂß¼­
+     * å¤„ç†é€»è¾‘
      */
     public void doWork() {
         FileOutputStream fous = null;
@@ -35,7 +35,7 @@ public class HelloPOI {
                 for (int colNum = 0; colNum < COLNUM; colNum++) {
                     c = r.createCell(colNum);
                     c.setCellValue("[".concat(String.valueOf(rowNum)).concat(",").concat(String.valueOf(colNum)).concat("]"));
-                    //width>>(256*10)/256=10>>µ«ÕæÊµÖµÎª9.29
+                    //width>>(256*10)/256=10>>ä½†çœŸå®å€¼ä¸º9.29
                     sheet.setColumnWidth(colNum, 256*10);
                 }
             }
@@ -55,14 +55,14 @@ public class HelloPOI {
     }
 
     /**
-     * ¹¹ÔìÊä³öÁ÷
-     * @param fileName ÎÄ¼şÃû³Æ
-     * @return fous ÎÄ¼şÊä³öÁ÷
+     * æ„é€ è¾“å‡ºæµ
+     * @param fileName æ–‡ä»¶åç§°
+     * @return fous æ–‡ä»¶è¾“å‡ºæµ
      */
     public FileOutputStream createFileOutputStream(String fileName) {
         FileOutputStream fous =null;
         File outputFile = new File(this.getClass().getResource(".").getFile(),fileName);
-        System.out.println("ÎÄ¼şÂ·¾¶>>".concat(outputFile.getAbsolutePath()));
+        System.out.println("æ–‡ä»¶è·¯å¾„>>".concat(outputFile.getAbsolutePath()));
         try {
             fous = new FileOutputStream(outputFile);
         } catch (FileNotFoundException e) {
@@ -72,8 +72,8 @@ public class HelloPOI {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         new HelloPOI().doWork();

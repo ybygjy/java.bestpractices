@@ -9,18 +9,18 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 
 /**
- * Ê¹ÓÃExecutorÊµÏÖSwingUtilities
- * <p>1¡¢Ê¹ÓÃExecutorÊµÏÖSwingÖĞSwingUtilitiesÊµÏÖ»úÖÆ</p>
- * <p>2¡¢×¢ÒâinvokeLaterÓëinvokeAndWaitµÄÇø±ğ</p>
+ * ä½¿ç”¨Executorå®ç°SwingUtilities
+ * <p>1ã€ä½¿ç”¨Executorå®ç°Swingä¸­SwingUtilitieså®ç°æœºåˆ¶</p>
+ * <p>2ã€æ³¨æ„invokeLaterä¸invokeAndWaitçš„åŒºåˆ«</p>
  * @author WangYanCheng
- * @version 2014Äê9ÔÂ8ÈÕ
+ * @version 2014å¹´9æœˆ8æ—¥
  */
 public class SwingUtilities {
-	/** ´´½¨executorService*/
+	/** åˆ›å»ºexecutorService*/
 	private static final ExecutorService executorService = Executors.newCachedThreadPool(new SwingThreadFactory());
 	/** swing thread*/
 	private static volatile Thread swingThread;
-	/** Ïß³Ì´´½¨¹¤³§*/
+	/** çº¿ç¨‹åˆ›å»ºå·¥å‚*/
 	private static class SwingThreadFactory implements ThreadFactory {
 		public Thread newThread(Runnable r) {
 			swingThread = new Thread(r);
@@ -47,12 +47,12 @@ public class SwingUtilities {
 		executorService.shutdown();
 	}
 	/**
-	 * ²âÊÔÈë¿Ú
-	 * @param args ²ÎÊıÁĞ±í
+	 * æµ‹è¯•å…¥å£
+	 * @param args å‚æ•°åˆ—è¡¨
 	 */
 	public static void main(String[] args) {
-		//´´½¨Ê®¸öÏß³Ì£¬Ã¿¸öÏß³ÌÌá½»Ê®¸öÈÎÎñ
-		//¶¨Òå±ÕËø£¬½â¾öµÈ´ı¹¤×÷Ïß³ÌÈ«²¿Ö´ĞĞÍê±ÏµÄÎÊÌâ
+		//åˆ›å»ºåä¸ªçº¿ç¨‹ï¼Œæ¯ä¸ªçº¿ç¨‹æäº¤åä¸ªä»»åŠ¡
+		//å®šä¹‰é—­é”ï¼Œè§£å†³ç­‰å¾…å·¥ä½œçº¿ç¨‹å…¨éƒ¨æ‰§è¡Œå®Œæ¯•çš„é—®é¢˜
 		final CountDownLatch endGate = new CountDownLatch(10);
 		for (int i = 0; i < 1; i++) {
 			new Thread(new Runnable(){
@@ -105,7 +105,7 @@ public class SwingUtilities {
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
-System.out.println("ÈÎÎñ½áÊø£¡");
+System.out.println("ä»»åŠ¡ç»“æŸï¼");
 		SwingUtilities.shutdown();
 	}
 }

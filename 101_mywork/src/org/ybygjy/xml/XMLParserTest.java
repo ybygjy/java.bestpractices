@@ -26,14 +26,14 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 /**
- * xmlÎÄ¼ş½âÎö
+ * xmlæ–‡ä»¶è§£æ
  * @author WangYanCheng
  * @version 2010-5-7
  */
 public class XMLParserTest {
 
     /**
-     * ½âÎö×Ö·û´®Îªxml
+     * è§£æå­—ç¬¦ä¸²ä¸ºxml
      * @param xmlSrc xmlSrc
      */
     public void parserStr2XML(String xmlSrc) {
@@ -60,7 +60,7 @@ public class XMLParserTest {
         }
     }
     /**
-     * Ê¹ÓÃdom·½Ê½½âÎöxml
+     * ä½¿ç”¨domæ–¹å¼è§£æxml
      * @param file fileInst
      */
     public void parserXMLUsedDom(File file) {
@@ -97,7 +97,7 @@ public class XMLParserTest {
         }
     }
     /**
-     * ¹¤¾ß·½·¨,´òÓ¡
+     * å·¥å…·æ–¹æ³•,æ‰“å°
      * @param nnm nnm
      */
     public void doPrint(NamedNodeMap nnm) {
@@ -108,7 +108,7 @@ public class XMLParserTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {
@@ -116,14 +116,14 @@ public class XMLParserTest {
 //        StringBuilder sbuilder = new StringBuilder();
 //        // sbuilder.append("<?xml version=\"1.0\" encoding=\"UTF-8\" ?>");
 //        sbuilder.append("<TaskList serviceName=\"task\">");
-//        sbuilder.append("<Task PKCODE=\"110\" NAME=\"B-208 ÓÍ½¬±ÃÇ°Öá³Ğ\" CHECKTYPE=\"2\" PERSONPKCODE=\"dongzhiyi\" />");
+//        sbuilder.append("<Task PKCODE=\"110\" NAME=\"B-208 æ²¹æµ†æ³µå‰è½´æ‰¿\" CHECKTYPE=\"2\" PERSONPKCODE=\"dongzhiyi\" />");
 //        sbuilder.append("</TaskList>");
         xmlTest.parserStr2XML("");
 //        xmlTest.parserXMLUsedDom(new File("C:\\12"));
     }
 
     /**
-     * XML½âÎö·½Ê½Ö®SAX
+     * XMLè§£ææ–¹å¼ä¹‹SAX
      * @author WangYanCheng
      * @version 2010-5-7
      */
@@ -138,21 +138,21 @@ public class XMLParserTest {
             return rtnList;
         }
         /**
-         * ÎÄµµ¶ÁÈ¡¿ªÊ¼<br/>
+         * æ–‡æ¡£è¯»å–å¼€å§‹<br/>
          * {@inheritDoc}
          */
         public void startDocument() throws SAXException {
             super.startDocument();
         }
         /**
-         * ÎÄµµ¶ÁÈ¡¿ªÊ¼<br/>
+         * æ–‡æ¡£è¯»å–å¼€å§‹<br/>
          * {@inheritDoc}
          */
         public void endDocument() throws SAXException {
             super.endDocument();
         }
         /**
-         * ¶ÁÈ¡ÔªËØ¿ªÊ¼<br/>
+         * è¯»å–å…ƒç´ å¼€å§‹<br/>
          * {@inheritDoc}
          */
         public void startElement(String uri, String localName, String qName, Attributes attributes)
@@ -173,7 +173,7 @@ public class XMLParserTest {
             System.out.println(rtnList.size());
         }
         /**
-         * ¶ÁÈ¡ÔªËØ½áÊø<br/>
+         * è¯»å–å…ƒç´ ç»“æŸ<br/>
          * {@inheritDoc}
          */
         public void endElement(String uri, String localName, String qName) throws SAXException {

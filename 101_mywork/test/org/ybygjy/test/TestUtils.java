@@ -9,13 +9,13 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * ¸ºÔğ·â×°ÏµÍ³²âÊÔ¹«¹²ĞĞÎª
+ * è´Ÿè´£å°è£…ç³»ç»Ÿæµ‹è¯•å…¬å…±è¡Œä¸º
  * @author WangYanCheng
  * @version 2010-7-30
  */
 public class TestUtils {
     /**
-     * ´´½¨URL
+     * åˆ›å»ºURL
      * 
      * <pre>
      * String domainStr = "http://localhost:8080";
@@ -25,9 +25,9 @@ public class TestUtils {
      * paramCollect.push("USER_PASS", "Anonymous");
      * URL urlInst = TestUtils.doCreateURL(domainStr, sourceStr, paramCollect);
      * </pre>
-     * @param domainStr ÓòÃû
-     * @param sourceDesc ÇëÇó×ÊÔ´ÃèÊö
-     * @param paramCollect ²ÎÊı¼¯
+     * @param domainStr åŸŸå
+     * @param sourceDesc è¯·æ±‚èµ„æºæè¿°
+     * @param paramCollect å‚æ•°é›†
      * @return rtnURL rtnURL
      */
     public static URL doCreateURL(String domainStr, String sourceDesc, Map<String, Object> paramCollect) {
@@ -52,7 +52,7 @@ public class TestUtils {
     }
 
     /**
-     * ´´½¨URLConnection,{@link URLConnection}
+     * åˆ›å»ºURLConnection,{@link URLConnection}
      * @param urlInst urlInst
      * @param rmeEnum HTTP method
      */
@@ -68,8 +68,8 @@ public class TestUtils {
     }
 
     /**
-     * ¸ºÔğ½«¶şÎ¬Êı×é×ª»»³ÉMap
-     * @param mapInst Íâ²¿mapInstÈç¹ûÎª¿ÕÔò»á×Ô¶¯´´½¨ÊµÀı
+     * è´Ÿè´£å°†äºŒç»´æ•°ç»„è½¬æ¢æˆMap
+     * @param mapInst å¤–éƒ¨mapInstå¦‚æœä¸ºç©ºåˆ™ä¼šè‡ªåŠ¨åˆ›å»ºå®ä¾‹
      * @param arrayInst
      * @return
      */
@@ -82,8 +82,8 @@ public class TestUtils {
     }
 
     /**
-     * ¸ºÔğ´òÓ¡MapÊµÀıĞÅÏ¢
-     * @param paramMap mapÊµÀı
+     * è´Ÿè´£æ‰“å°Mapå®ä¾‹ä¿¡æ¯
+     * @param paramMap mapå®ä¾‹
      */
     public static final void doPrint(Map<? extends Object, ? extends Object> paramMap) {
         doPrint("Begin TestUtils#doPrint...");
@@ -121,8 +121,8 @@ public class TestUtils {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         RequestMethodEnum[] rmeArray = RequestMethodEnum.values();

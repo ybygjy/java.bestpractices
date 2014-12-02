@@ -7,7 +7,7 @@ import java.util.Vector;
 import org.ybygjy.pattern.eventsys.service.esrmi.module.TemperatureChangeEvent;
 
 /**
- * ÕìÌıÆ÷½Ó¿ÚÊµÏÖ
+ * ä¾¦å¬å™¨æ¥å£å®ç°
  * @author WangYanCheng
  * @version 2010-7-23
  */

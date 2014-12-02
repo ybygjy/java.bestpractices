@@ -43,7 +43,7 @@ public class TagLibTest extends TagSupport {
     @Override
     public int doEndTag() throws JspException {
         try {
-            pageContext.getOut().write("ÄãºÃ:" + this.userName);
+            pageContext.getOut().write("ä½ å¥½:" + this.userName);
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,9 +1,9 @@
 package org.ybygjy.jcip.chap5;
 
 /**
- * ¶¨Òå»ù×¼²âÊÔ»Øµ÷ĞĞÎª
+ * å®šä¹‰åŸºå‡†æµ‹è¯•å›è°ƒè¡Œä¸º
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ17ÈÕ
+ * @version 2014å¹´10æœˆ17æ—¥
  */
 public interface BenchmarkRunnableCallback {
 	public void callback(BenchmarkRunnable benchmarkRunnable);

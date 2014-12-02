@@ -10,36 +10,36 @@ import com.sun.jndi.toolkit.chars.BASE64Encoder;
 import com.sun.mail.util.BASE64EncoderStream;
 
 /**
- * ¸ºÔğÑéÖ¤ÏûÏ¢ÕªÒª°üÀ¨ÕªÒªµÄ´´½¨¡¢¼ÆËãÓë¶ÁÈ¡
- * <p>Ê×ÏÈ´´½¨ÏûÏ¢ÕªÒª·şÎñÏà¹Ø¶ÔÏóMessageDigest£¬Æä´ÎÊÇ¼ÆËãÏûÏ¢ÕªÒªÒ²¾ÍÊÇ´«ÈëÓÃÓÚ¼ÆËãµÄÃ÷ÎÄ£¬È»ºó¶ÁÈ¡¼ÆËã½á¹û£»</p>
+ * è´Ÿè´£éªŒè¯æ¶ˆæ¯æ‘˜è¦åŒ…æ‹¬æ‘˜è¦çš„åˆ›å»ºã€è®¡ç®—ä¸è¯»å–
+ * <p>é¦–å…ˆåˆ›å»ºæ¶ˆæ¯æ‘˜è¦æœåŠ¡ç›¸å…³å¯¹è±¡MessageDigestï¼Œå…¶æ¬¡æ˜¯è®¡ç®—æ¶ˆæ¯æ‘˜è¦ä¹Ÿå°±æ˜¯ä¼ å…¥ç”¨äºè®¡ç®—çš„æ˜æ–‡ï¼Œç„¶åè¯»å–è®¡ç®—ç»“æœï¼›</p>
  * @author WangYanCheng
  * @version 2011-7-4
  */
 public class MessageDigestExample {
-	/**Ê®Áù½øÖÆ*/
+	/**åå…­è¿›åˆ¶*/
 	private static final char[] DIGITS = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f' };
     /**
-     * ÀûÓÃMD5Ëã·¨Éú³ÉÏûÏ¢ÕªÒª
-     * @param planText Ô­Ê¼ÏûÏ¢
+     * åˆ©ç”¨MD5ç®—æ³•ç”Ÿæˆæ¶ˆæ¯æ‘˜è¦
+     * @param planText åŸå§‹æ¶ˆæ¯
      * @throws NoSuchAlgorithmException NoSuchAlgorithmException
      * @throws UnsupportedEncodingException UnsupportedEncodingException
      */
     public void messageDigest4MD5(byte[] planText) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigest messageDigest = MessageDigest.getInstance("MD5");
-        //ÏûÏ¢ÕªÒªÄ£¿éÖ§³ÖĞÅÏ¢
+        //æ¶ˆæ¯æ‘˜è¦æ¨¡å—æ”¯æŒä¿¡æ¯
         String providerInfo = messageDigest.getProvider().getInfo();
-//        System.out.println("ÕªÒªÄ£¿éÖ§³ÖĞÅÏ¢£º".concat(providerInfo));
-        //¼ÆËãÕªÒª
+//        System.out.println("æ‘˜è¦æ¨¡å—æ”¯æŒä¿¡æ¯ï¼š".concat(providerInfo));
+        //è®¡ç®—æ‘˜è¦
         messageDigest.update(planText);
-        //¶ÁÈ¡ÕªÒª
+        //è¯»å–æ‘˜è¦
 //        providerInfo = new String(messageDigest.digest(), "UTF-8");
         System.out.println(new String(encodeHex(messageDigest.digest())));
-//        System.out.println("Ô­Ê¼ÏûÏ¢£º".concat(new String(planText, "UTF-8")).concat("\nÏûÏ¢ÕªÒª£º").concat(providerInfo));
+//        System.out.println("åŸå§‹æ¶ˆæ¯ï¼š".concat(new String(planText, "UTF-8")).concat("\næ¶ˆæ¯æ‘˜è¦ï¼š").concat(providerInfo));
     }
 
     /**
-     * ¶ş½øÖÆ×ªÊ®Áù½øÖÆ×Ö·û×é
-     * @param data ¶ş½øÖÆ×é
+     * äºŒè¿›åˆ¶è½¬åå…­è¿›åˆ¶å­—ç¬¦ç»„
+     * @param data äºŒè¿›åˆ¶ç»„
      * @return rtnCharArr
      */
     private String encodeHex(byte[] data) {
@@ -51,15 +51,15 @@ public class MessageDigestExample {
     	return sbuf.toString();
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
-     * @throws UnsupportedEncodingException Î´Ö§³ÖµÄ×Ö·û¼¯
-     * @throws NoSuchAlgorithmException Î´±»Ö§³ÖµÄËã·¨
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
+     * @throws UnsupportedEncodingException æœªæ”¯æŒçš„å­—ç¬¦é›†
+     * @throws NoSuchAlgorithmException æœªè¢«æ”¯æŒçš„ç®—æ³•
      */
     public static void main(String[] args) throws NoSuchAlgorithmException, UnsupportedEncodingException {
         MessageDigestExample mdeInst = new MessageDigestExample();
-        String srcPlain = "0f13970157d9c0d026126f375bf066bbaccountNo=6237000013790830168&accountType=1&applyNo=151609367235604021&bankCode=CCB&busiTypeId=HIGO&curId=CNY&customerName=ÖĞ¹ú½¨ÉèÒøĞĞ&customerNo=MLS_D_00258228&customerType=0&merchantId=MLS_I_00000008&openAccName=ÖĞ¹ú½¨ÉèÒøĞĞ&version=20131111";
-//        String srcPlain = "ea559fdaeb5dbb7668436f87df16e38eaccountNo=6237000013790830168&accountType=1&applyNo=151609367235604021&bankCode=CCB&busiTypeId=HIGO&curId=CNY&customerName=ÖĞ¹ú½¨ÉèÒøĞĞ&customerNo=MLS_D_00258228&customerType=0&merchantId=MLS_I_00000008&openAccName=ÖĞ¹ú½¨ÉèÒøĞĞ&version=20131111";
+        String srcPlain = "0f13970157d9c0d026126f375bf066bbaccountNo=6237000013790830168&accountType=1&applyNo=151609367235604021&bankCode=CCB&busiTypeId=HIGO&curId=CNY&customerName=ä¸­å›½å»ºè®¾é“¶è¡Œ&customerNo=MLS_D_00258228&customerType=0&merchantId=MLS_I_00000008&openAccName=ä¸­å›½å»ºè®¾é“¶è¡Œ&version=20131111";
+//        String srcPlain = "ea559fdaeb5dbb7668436f87df16e38eaccountNo=6237000013790830168&accountType=1&applyNo=151609367235604021&bankCode=CCB&busiTypeId=HIGO&curId=CNY&customerName=ä¸­å›½å»ºè®¾é“¶è¡Œ&customerNo=MLS_D_00258228&customerType=0&merchantId=MLS_I_00000008&openAccName=ä¸­å›½å»ºè®¾é“¶è¡Œ&version=20131111";
         mdeInst.messageDigest4MD5(srcPlain.getBytes("UTF-8"));
     }
 }

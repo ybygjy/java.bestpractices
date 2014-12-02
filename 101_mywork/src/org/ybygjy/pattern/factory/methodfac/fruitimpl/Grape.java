@@ -3,7 +3,7 @@ package org.ybygjy.pattern.factory.methodfac.fruitimpl;
 import org.ybygjy.pattern.factory.methodfac.Fruit;
 
 /**
- * фоля
+ * Х▒║Х░└
  * @author WangYanCheng
  * @version 2009-12-2
  */

@@ -8,14 +8,14 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
 /**
- * »ùÓÚÎ¯ÍĞµÄÏß³Ì°²È«µÄ³µÁ¾×·×ÙÆ÷
+ * åŸºäºå§”æ‰˜çš„çº¿ç¨‹å®‰å…¨çš„è½¦è¾†è¿½è¸ªå™¨
  * @author WangYanCheng
  * @version 2014-7-18
  */
 public class DelegatingVehicleTrackerTest {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         int vehicleNums = 3;
@@ -35,7 +35,7 @@ public class DelegatingVehicleTrackerTest {
 }
 
 /**
- * ¸ºÔğ³µÁ¾ĞÅÏ¢Êı¾İ²É¼¯
+ * è´Ÿè´£è½¦è¾†ä¿¡æ¯æ•°æ®é‡‡é›†
  * @author WangYanCheng
  * @version 2014-7-18
  */
@@ -47,25 +47,25 @@ class DelegatingVehicleTracker {
         unmodifiableMap = Collections.unmodifiableMap(locations);
     }
     /**
-     * È¡³µÁ¾Î»ÖÃĞÅÏ¢£¬ÊµÊ±·Ç¿ìÕÕ·½Ê½
+     * å–è½¦è¾†ä½ç½®ä¿¡æ¯ï¼Œå®æ—¶éå¿«ç…§æ–¹å¼
      * @return unmodifiableMap
      */
     public Map<String, Point> getLocations() {
         return unmodifiableMap;
     }
     /**
-     * ¸ø¶¨³µÁ¾µÄÎ»ÖÃĞÅÏ¢
-     * @param id »ú³µID
-     * @return rtnPoint {@link Point} Î»ÖÃĞÅÏ¢
+     * ç»™å®šè½¦è¾†çš„ä½ç½®ä¿¡æ¯
+     * @param id æœºè½¦ID
+     * @return rtnPoint {@link Point} ä½ç½®ä¿¡æ¯
      */
     public Point getLocation(String id) {
         return locations.get(id);
     }
     /**
-     * ¸üĞÂ³µÁ¾Î»ÖÃĞÅÏ¢
-     * @param id »ú³µID
-     * @param x ºá×ø±ê
-     * @param y ×İ×ø±ê
+     * æ›´æ–°è½¦è¾†ä½ç½®ä¿¡æ¯
+     * @param id æœºè½¦ID
+     * @param x æ¨ªåæ ‡
+     * @param y çºµåæ ‡
      */
     public void setLocation(String id, int x, int y) {
         if (null == locations.replace(id, new Point(x, y))) {
@@ -75,7 +75,7 @@ class DelegatingVehicleTracker {
 }
 
 /**
- * ¸ºÔğ¶¨Òå³µÁ¾¸ú×ÙÏß³Ì
+ * è´Ÿè´£å®šä¹‰è½¦è¾†è·Ÿè¸ªçº¿ç¨‹
  * @author WangYanCheng
  * @version 2014-7-18
  */
@@ -100,7 +100,7 @@ class Vehicle extends Thread {
 }
 
 /**
- * Ç°¶ËäÖÈ¾Ïß³Ì
+ * å‰ç«¯æ¸²æŸ“çº¿ç¨‹
  * @author WangYanCheng
  * @version 2014-7-18
  */

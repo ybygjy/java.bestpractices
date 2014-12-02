@@ -2,7 +2,7 @@ package org.ybygjy.pattern.flyweight.coffee;
 
 
 /**
- * ¸ºÔğÄ£ÄâÏû·ÑÕß\Ê¹ÓÃÕß
+ * è´Ÿè´£æ¨¡æ‹Ÿæ¶ˆè´¹è€…\ä½¿ç”¨è€…
  * @author WangYanCheng
  * @version 2010-11-22
  */
@@ -27,9 +27,9 @@ public class Client {
         orders[ordersMade++] = flavorFactory.getOrder(flavor);
     }
     /**
-     * Âô¸ø¿ÍÈË
-     * @param orderNum ÀàĞÍ±àÂë
-     * @param tableNumber ×ÀÎ»ºÅ
+     * å–ç»™å®¢äºº
+     * @param orderNum ç±»å‹ç¼–ç 
+     * @param tableNumber æ¡Œä½å·
      */
     public void serve(int orderNum, int tableNumber) {
         orders[orderNum].serve(new Table(tableNumber));
@@ -48,8 +48,8 @@ public class Client {
         return flavorFactory;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Client client = new Client();

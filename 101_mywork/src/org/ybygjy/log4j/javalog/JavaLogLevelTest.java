@@ -80,7 +80,7 @@ public class JavaLogLevelTest implements TestInterface {
         defaultHandler.setFormatter(new Formatter() {
             @Override
             public String format(LogRecord record) {
-                return "ÀàÃû³Æ¿Õ¼äFormatter×é¼şµÄ¼Ì³ĞĞÔ==>" + record.getLoggerName() + ":" + record.getMessage() + "\n";
+                return "ç±»åç§°ç©ºé—´Formatterç»„ä»¶çš„ç»§æ‰¿æ€§==>" + record.getLoggerName() + ":" + record.getMessage() + "\n";
             }
         });
         defaultHandler.setLevel(Level.ALL);
@@ -101,8 +101,8 @@ public class JavaLogLevelTest implements TestInterface {
     }
 
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         JavaLogLevelTest jlltInst = new JavaLogLevelTest();

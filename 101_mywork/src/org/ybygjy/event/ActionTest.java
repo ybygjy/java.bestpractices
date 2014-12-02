@@ -23,8 +23,8 @@ import javax.swing.KeyStroke;
  */
 public class ActionTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {

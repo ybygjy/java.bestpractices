@@ -12,7 +12,7 @@ import javax.naming.InitialContext;
  */
 public class SimpleTest {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {
@@ -21,7 +21,7 @@ public class SimpleTest {
         env.put(Context.PROVIDER_URL, "file:/tmp");
         try {
             Context ctx = new InitialContext(env);
-            Fruit fruit = new Fruit("ÍõÑÓ³É");
+            Fruit fruit = new Fruit("ç‹å»¶æˆ");
             ctx.rebind("fruit", fruit);
             Object obj = ctx.lookup("fruit");
 System.out.println(obj);

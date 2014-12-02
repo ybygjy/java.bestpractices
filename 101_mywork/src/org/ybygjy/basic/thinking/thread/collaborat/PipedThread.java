@@ -8,14 +8,14 @@ import java.util.Random;
 import org.ybygjy.basic.thinking.thread.testframework.Timeout;
 
 /**
- * 线程主题_内置线程通信管道测试
+ * 绾跨▼涓婚_鍐呯疆绾跨▼閫氫俊绠￠亾娴嬭瘯
  * @author WangYanCheng
  * @version 2010-10-8
  */
 public class PipedThread {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         Sender sender = new Sender();

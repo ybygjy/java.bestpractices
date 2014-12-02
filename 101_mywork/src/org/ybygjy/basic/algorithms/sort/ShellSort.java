@@ -4,15 +4,15 @@ import java.util.Arrays;
 
 
 /**
- * 希尔排序
+ * 甯屽皵鎺掑簭
  * @author WangYanCheng
  * @version 2014-3-27
  */
 public class ShellSort {
     /**
-     * 希尔排序
-     * <p>1、间隔序列是关键</p>
-     * <p>2、要求最终间隔为1（普通排入排序）</p>
+     * 甯屽皵鎺掑簭
+     * <p>1銆侀棿闅斿簭鍒楁槸鍏抽敭</p>
+     * <p>2銆佽姹傛渶缁堥棿闅斾负1锛堟櫘閫氭帓鍏ユ帓搴忥級</p>
      */
     public void shellSort() {
         int[] arr = new int[]{3, 5, 9, 6, 7, 2, 4, 8, 0, 1};
@@ -20,7 +20,7 @@ System.out.println("Begin=>" + Arrays.toString(arr));
         int inner, outer;
         int temp;
         int h = 1;
-        //间隔序列
+        //闂撮殧搴忓垪
         while (h <= arr.length / 3) {
             h = h * 3 + 1;
         }
@@ -35,7 +35,7 @@ System.out.println("Begin=>" + Arrays.toString(arr));
                 }
                 arr[inner] = temp;
             }
-            //倒推减少间隔
+            //鍊掓帹鍑忓皯闂撮殧
             h = (h - 1) / 3;
         }
 System.out.println("End=>" + Arrays.toString(arr));

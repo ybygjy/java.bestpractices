@@ -4,28 +4,28 @@ import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * ¸ºÔğÖ´ĞĞ¸ø¶¨ÈİÆ÷µÄ²âÊÔÈÎÎñ
+ * è´Ÿè´£æ‰§è¡Œç»™å®šå®¹å™¨çš„æµ‹è¯•ä»»åŠ¡
  * @author WangYanCheng
- * @version 2014Äê10ÔÂ15ÈÕ
+ * @version 2014å¹´10æœˆ15æ—¥
  */
 public class BenchmarkRunnable implements Runnable {
-	/**±»²âÊÔÈİÆ÷*/
+	/**è¢«æµ‹è¯•å®¹å™¨*/
 	private BenchmarkMapWrapper container;
-	/**×î´óÈİÆ÷´æ´¢ÔªËØ¸öÊı*/
+	/**æœ€å¤§å®¹å™¨å­˜å‚¨å…ƒç´ ä¸ªæ•°*/
 	private int maxSize;
-	/**Ñ­»·´ÎÊı*/
+	/**å¾ªç¯æ¬¡æ•°*/
 	private int loopTimes;
-	/**ºÄÊ±Í³¼Æ*/
+	/**è€—æ—¶ç»Ÿè®¡*/
 	private long timeConsume;
-	/**±ÕËø£¬¸ºÔğÔÚ²¢·¢³¡¾°ÖĞÍ³Ò»´¦ÀíÊÂ¼ş*/
+	/**é—­é”ï¼Œè´Ÿè´£åœ¨å¹¶å‘åœºæ™¯ä¸­ç»Ÿä¸€å¤„ç†äº‹ä»¶*/
 	private CountDownLatch latch;
-	/**»Øµ÷*/
+	/**å›è°ƒ*/
 	private BenchmarkRunnableCallback callback;
 	/**
-	 * ¹¹Ôìº¯Êı
+	 * æ„é€ å‡½æ•°
 	 * @param container {@link BenchmarkMapWrapper}
-	 * @param maxSize ×î´óÈİÆ÷´æ´¢ÔªËØ¸öÊı
-	 * @param loopTimes Ñ­»·´ÎÊı
+	 * @param maxSize æœ€å¤§å®¹å™¨å­˜å‚¨å…ƒç´ ä¸ªæ•°
+	 * @param loopTimes å¾ªç¯æ¬¡æ•°
 	 */
 	public BenchmarkRunnable(BenchmarkMapWrapper container, int maxSize, int loopTimes, CountDownLatch latch, BenchmarkRunnableCallback callback) {
 		super();
@@ -47,12 +47,12 @@ public class BenchmarkRunnable implements Runnable {
 	}
 
 	/**
-	 * ¸ºÔğ¾ßÌåÖ´ĞĞ²âÊÔÂß¼­
+	 * è´Ÿè´£å…·ä½“æ‰§è¡Œæµ‹è¯•é€»è¾‘
 	 */
 	private void innerDoWork() {
-		//1.³õÊ¼Ëæ»úÊı·¢ÉúÆ÷
+		//1.åˆå§‹éšæœºæ•°å‘ç”Ÿå™¨
 		Random random = new Random();
-		//2.Ñ­»·Ö¸¶¨´ÎÊı
+		//2.å¾ªç¯æŒ‡å®šæ¬¡æ•°
 		int i = 0;
 //		int writeTimes = 0;
 		while (i <= this.loopTimes) {
@@ -64,11 +64,11 @@ public class BenchmarkRunnable implements Runnable {
 			i++;
 		}
 //		System.out.println(Thread.currentThread().getName() + ":writeTimes:" + writeTimes);
-		//¸üĞÂ±ÕËø·§Öµ
+		//æ›´æ–°é—­é”é˜€å€¼
 		this.latch.countDown();
 	}
 	/**
-	 * È¡²Ù×÷ºÄÊ±£¨ºÁÃë£©
+	 * å–æ“ä½œè€—æ—¶ï¼ˆæ¯«ç§’ï¼‰
 	 * @return
 	 */
 	public long getTimeConsume() {

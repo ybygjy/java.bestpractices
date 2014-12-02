@@ -14,16 +14,16 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * ÊôĞÔ²âÊÔ
+ * å±æ€§æµ‹è¯•
  * @author WangYanCheng
  * @version 2011-5-24
  */
 public class AttributeMgr4LDAPTest {
-    /**²âÊÔÊµÀı*/
+    /**æµ‹è¯•å®ä¾‹*/
     private AttributeMgr4LDAP attrMgr;
-    /**Ä¿Â¼·şÎñ¶ÔÏó*/
+    /**ç›®å½•æœåŠ¡å¯¹è±¡*/
     private DirContext dirCtx;
-    /**²ÎÓë²âÊÔµÄDN*/
+    /**å‚ä¸æµ‹è¯•çš„DN*/
 //    private String testDN = "cn=Londo Mollari,ou=People,o=JNDITutorial,dc=ybygjy,dc=org";
     public static final String testDN = "cn=WangYanCheng,ou=People,dc=daowoo,dc=com";
     @Before
@@ -54,7 +54,7 @@ Assert.assertNotNull(attrBackup);
         Map<String, Object> tmpMap = new HashMap<String, Object>();
         tmpMap.put("userId", String.valueOf(Math.random()));
         attrMgr.modifyAttr(testDN, DirContext.REPLACE_ATTRIBUTE, tmpMap);
-        //»¹Ô­
+        //è¿˜åŸ
         attrMgr.modifyAttr(testDN, DirContext.REPLACE_ATTRIBUTE, attrBackup);
     }
 
@@ -69,12 +69,12 @@ Assert.assertNotNull(attrBackup);
 
     @Test
     public void testAddAttr() {
-        attrMgr.addAttr(testDN, "sn", "ÖĞÎÄ");
+        attrMgr.addAttr(testDN, "sn", "ä¸­æ–‡");
     }
 
     @Test
     public void testRemoveAttr() {
-        attrMgr.removeAttr(testDN, "sn", "ÖĞÎÄ");
+        attrMgr.removeAttr(testDN, "sn", "ä¸­æ–‡");
     }
     @After
     public void tearDown() {

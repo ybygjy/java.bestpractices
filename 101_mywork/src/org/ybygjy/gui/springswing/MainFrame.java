@@ -5,14 +5,14 @@ import java.awt.Dimension;
 import javax.swing.JFrame;
 
 /**
- * Ö÷¿ò¼Ü
+ * ä¸»æ¡†æ¶
  * @author WangYanCheng
  * @version 2011-2-16
  */
 @SuppressWarnings("serial")
 public class MainFrame extends JFrame {
     /**
-     * ¸ºÔğ³õÊ¼¿ò¼Ü»ù±¾²ÎÊı
+     * è´Ÿè´£åˆå§‹æ¡†æ¶åŸºæœ¬å‚æ•°
      */
     public void init() {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

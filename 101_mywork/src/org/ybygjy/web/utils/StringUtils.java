@@ -5,7 +5,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ¶Ô×Ö·û´®µÄ¹«¹²²Ù×÷
+ * å¯¹å­—ç¬¦ä¸²çš„å…¬å…±æ“ä½œ
  * @author WangYanCheng
  * @version 2010-8-25
  */
@@ -18,17 +18,17 @@ public class StringUtils {
     private StringUtils() {
     }
     /**
-     * È¡µÃ×Ö·û´®²Ù×÷ÊµÀı
-     * @return strUtil ×Ö·û´®¹«¹²²Ù×÷ÊµÀı
+     * å–å¾—å­—ç¬¦ä¸²æ“ä½œå®ä¾‹
+     * @return strUtil å­—ç¬¦ä¸²å…¬å…±æ“ä½œå®ä¾‹
      */
     public static final StringUtils getInstance() {
         return suInst;
     }
     /**
-     * ¸ºÔğ×Ö·û´®Õ¼Î»·ûµÄ·ÖÎöÌæ»»
-     * @param targetStr Ô´×Ö·û´®
-     * @param paramArray Ìæ»»¹æÔòÉè¶¨,Èç{{"@STR@", "Ìæ»»_1"}, {"@STR2@", "Ìæ»»_2"}}
-     * @return rtnStr Ìæ»»Íê³ÉµÄ×Ö·û´®
+     * è´Ÿè´£å­—ç¬¦ä¸²å ä½ç¬¦çš„åˆ†ææ›¿æ¢
+     * @param targetStr æºå­—ç¬¦ä¸²
+     * @param paramArray æ›¿æ¢è§„åˆ™è®¾å®š,å¦‚{{"@STR@", "æ›¿æ¢_1"}, {"@STR2@", "æ›¿æ¢_2"}}
+     * @return rtnStr æ›¿æ¢å®Œæˆçš„å­—ç¬¦ä¸²
      */
     public String doReplace(String targetStr, Map<String, String> paramArray) {
         Pattern pattern = Pattern.compile("(@(\\w+)@)", Pattern.UNICODE_CASE);

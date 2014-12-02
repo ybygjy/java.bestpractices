@@ -7,7 +7,7 @@ import org.ybygjy.pattern.proxy.rmistate.state.HasQuarterState;
 import org.ybygjy.pattern.proxy.rmistate.state.NoQuarterState;
 
 /**
- * ÌÇ¹û»úÊµÀý
+ * ç³–æžœæœºå®žä¾‹
  * @author WangYanCheng
  * @version 2010-12-24
  */

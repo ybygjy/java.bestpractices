@@ -14,8 +14,8 @@ import java.util.Map.Entry;
  */
 public class RandomTest {
     /**
-     * Éú³ÉËÄÎ»Ëæ»úÊı
-     * @param bound ±ß½ç
+     * ç”Ÿæˆå››ä½éšæœºæ•°
+     * @param bound è¾¹ç•Œ
      */
     static void genral4BitNum(int bound) {
         Map<Integer, Integer> tmpMap = new HashMap<Integer, Integer>();
@@ -33,17 +33,17 @@ public class RandomTest {
             Map.Entry entry = (Entry) iterator.next();
             System.out.println(entry.getKey() + ":" + entry.getValue() + "\t");
         }
-        System.out.println("ÖØ¸´");
+        System.out.println("é‡å¤");
         for (Iterator iterator = shiftMap.keySet().iterator(); iterator.hasNext();) {
             Integer key = (Integer) iterator.next();
-            System.out.println(key + ":" + shiftMap.get(key) + " ´Î");
+            System.out.println(key + ":" + shiftMap.get(key) + " æ¬¡");
         }
     }
     /**
-     * Éú³ÉÖ¸¶¨·¶Î§µÄËæ»úÊı
-     * @param bound ±ß½ç
-     * @param rangeB ÆğÊ¼
-     * @param rangeE ½áÊø
+     * ç”ŸæˆæŒ‡å®šèŒƒå›´çš„éšæœºæ•°
+     * @param bound è¾¹ç•Œ
+     * @param rangeB èµ·å§‹
+     * @param rangeE ç»“æŸ
      */
     static void generalAreaNum(int bound, int rangeB, int rangeE) {
         for (int i = 0; i < bound; i++) {
@@ -51,8 +51,8 @@ public class RandomTest {
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         /*new Thread(new Runnable() {

@@ -5,14 +5,14 @@ import java.util.List;
 
 import javax.swing.JTable;
 /**
- * ¸ºÔğÎ¬»¤TableÓëÊÂ¼ş¹ØÁª¹ØÏµ
+ * è´Ÿè´£ç»´æŠ¤Tableä¸äº‹ä»¶å…³è”å…³ç³»
  * @author WangYanCheng
  * @version 2011-2-16
  */
 public abstract class ListTableActionListener implements ActionListener {
-    /**table×é¼ş*/
+    /**tableç»„ä»¶*/
     protected JTable table;
-    /**tableÏà¹ØÄÚÈİ´æ´¢*/
+    /**tableç›¸å…³å†…å®¹å­˜å‚¨*/
     protected List list;
     /**
      * setter table

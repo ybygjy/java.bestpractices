@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ÓÃÓÚ²âÊÔHttpClientµÄServlet
+ * ç”¨äºæµ‹è¯•HttpClientçš„Servlet
  * @author WangYanCheng
  * @version 2014-2-25
  */
@@ -23,7 +23,7 @@ public class HttpClientServlet implements Servlet {
     private ServletConfig servletConfig;
     @Override
     public void destroy() {
-        System.out.println("org.ybygjy.web.servlet.HttpClientServlet#Ïú»Ù");
+        System.out.println("org.ybygjy.web.servlet.HttpClientServlet#é”€æ¯");
     }
 
     @Override

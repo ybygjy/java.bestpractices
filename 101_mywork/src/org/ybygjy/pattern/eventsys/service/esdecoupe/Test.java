@@ -2,13 +2,13 @@ package org.ybygjy.pattern.eventsys.service.esdecoupe;
 
 
 /**
- * ÊÂ¼ş´¦Àí»úÖÆ-->JavaBeanÊÂ¼şÄ£Ê½-->¶ÔÊÂ¼ş·şÎñ½øĞĞÍËñî
+ * äº‹ä»¶å¤„ç†æœºåˆ¶-->JavaBeanäº‹ä»¶æ¨¡å¼-->å¯¹äº‹ä»¶æœåŠ¡è¿›è¡Œé€€è€¦
  * @author WangYanCheng
  * @version 2010-2-20
  */
 public class Test {
     /**
-     * ²âÊÔÈë¿Ú
+     * æµ‹è¯•å…¥å£
      * @param args args
      */
     public static void main(String[] args) {

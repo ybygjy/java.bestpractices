@@ -4,14 +4,14 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 /**
- * ·ºĞÍÑ§Ï°
+ * æ³›å‹å­¦ä¹ 
  * @author WangYanCheng
  * @version 2014-6-16
  */
 public class Pair2 {
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         Manager ceo = new Manager("Gus Greedy", 800000, 2003, 12, 15);
@@ -30,7 +30,7 @@ public class Pair2 {
         System.out.println("first:" + result.getFirst().getName() + ", second:" + result.getSecond().getName());
     }
     /**
-     * ·ºĞÍÏŞ¶¨²ÎÊı
+     * æ³›å‹é™å®šå‚æ•°
      * @param p
      */
     public static void printBuddies(Pair<? extends Employee> p) {
@@ -39,7 +39,7 @@ public class Pair2 {
         System.out.println(first.getName() + " and " + second.getName() + " are buddies.");
     }
     /**
-     * ·ºĞÍÏŞ¶¨²ÎÊı
+     * æ³›å‹é™å®šå‚æ•°
      * @param a
      * @param result
      */
@@ -61,7 +61,7 @@ public class Pair2 {
         result.setSecond(max);
     }
     /**
-     * ·ºĞÍ³¬ÀàĞÍÏŞ¶¨²ÎÊı
+     * æ³›å‹è¶…ç±»å‹é™å®šå‚æ•°
      * @param a
      * @param result
      */

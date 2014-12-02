@@ -3,16 +3,16 @@ package org.ybygjy.basic.algorithms.sort;
 import java.util.Arrays;
 
 /**
- * Ã°ÅİÅÅĞò
+ * å†’æ³¡æ’åº
  * @author WangYanCheng
  * @version 2011-8-3
  */
 public class BubbleSort {
     /**
-     * ÅÅĞò
-     * <p>×ó±ßÏÈÓĞĞò£¬±éÀúÊı×éÕÒ×îĞ¡Öµ£¬ÑÏ¸ñÒâÒåÉÏ½²Õâ²»ÊÇÃ°ÅİÅÅĞò</p>
-     * @param array ²ÎÓëÅÅĞòµÄÊı×é
-     * @return ÅÅĞòÍê³ÉµÄÊı×é
+     * æ’åº
+     * <p>å·¦è¾¹å…ˆæœ‰åºï¼Œéå†æ•°ç»„æ‰¾æœ€å°å€¼ï¼Œä¸¥æ ¼æ„ä¹‰ä¸Šè®²è¿™ä¸æ˜¯å†’æ³¡æ’åº</p>
+     * @param array å‚ä¸æ’åºçš„æ•°ç»„
+     * @return æ’åºå®Œæˆçš„æ•°ç»„
      */
     public int[] sortA(int[] a) {
         int[] array = a;
@@ -28,9 +28,9 @@ public class BubbleSort {
         return array;
     }
     /**
-     * Ë¼Â·ÇåÎú
-     * @param a ²ÎÓëÅÅĞòµÄÊı×é
-     * @return ÅÅĞòÍê³ÉµÄÊı×é
+     * æ€è·¯æ¸…æ™°
+     * @param a å‚ä¸æ’åºçš„æ•°ç»„
+     * @return æ’åºå®Œæˆçš„æ•°ç»„
      */
     public int[] sortB(int[] a) {
         int[] array = a;
@@ -46,8 +46,8 @@ public class BubbleSort {
         return array;
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         int[] arr = {0,2,1,3,7,7,1,5,4,6};

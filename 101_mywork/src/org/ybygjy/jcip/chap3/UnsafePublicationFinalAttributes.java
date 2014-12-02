@@ -1,15 +1,15 @@
 package org.ybygjy.jcip.chap3;
 
 /**
- * ÑéÖ¤Òò¹¹Ôìº¯ÊıÎ´Ö´ĞĞÍê³É£¬Àà°üº¬final±äÁ¿¾ÍÒÑ¾­±»·¢²¼£¬µ¼ÖÂÔÚ²¢·¢Çé¿öÏÂ»á³öÏÖµÄBug
- * ²Î¿¼×ÊÁÏ
+ * éªŒè¯å› æ„é€ å‡½æ•°æœªæ‰§è¡Œå®Œæˆï¼Œç±»åŒ…å«finalå˜é‡å°±å·²ç»è¢«å‘å¸ƒï¼Œå¯¼è‡´åœ¨å¹¶å‘æƒ…å†µä¸‹ä¼šå‡ºç°çš„Bug
+ * å‚è€ƒèµ„æ–™
  * <ol>
  * <li><a href="http://docs.oracle.com/javase/specs/jls/se5.0/html/memory.html#65124/memory.html#17.5">Java Language Specification</a>
  * <li><a href="http://stackoverflow.com/questions/3705425/java-reference-escape">StackOverflow</a></li>
  * </ol>
- * ÑéÖ¤½á¹û
- * <p>1¡¢Î´ÄÜ¸´ÏÖÎÊÌâ</p>
- * <p>2¡¢Õâ¿éºÍÀà¼ÓÔØ³õÊ¼»¯Ë³ĞòÓĞÁªÏµ£¬µ«ÎÒÃÇÕâ¸ö±äÁ¿²¢·ÇÊÇstatic±äÁ¿£¬ËùÒÔ¸Ã±äÁ¿µÄ³õÊ¼Ê±»úÓ¦¸ÃÔÚ¹¹Ôìº¯ÊıÖ®Ç°</p>
+ * éªŒè¯ç»“æœ
+ * <p>1ã€æœªèƒ½å¤ç°é—®é¢˜</p>
+ * <p>2ã€è¿™å—å’Œç±»åŠ è½½åˆå§‹åŒ–é¡ºåºæœ‰è”ç³»ï¼Œä½†æˆ‘ä»¬è¿™ä¸ªå˜é‡å¹¶éæ˜¯staticå˜é‡ï¼Œæ‰€ä»¥è¯¥å˜é‡çš„åˆå§‹æ—¶æœºåº”è¯¥åœ¨æ„é€ å‡½æ•°ä¹‹å‰</p>
  * @author WangYanCheng
  * @version 2014-7-22
  */
@@ -40,15 +40,15 @@ public class UnsafePublicationFinalAttributes {
 class InnerUnsafe {
     public final int foo = 42;
     {
-        System.out.println("ÊµÀı¼¶±ğÓò³õÊ¼»¯¡£");
+        System.out.println("å®ä¾‹çº§åˆ«åŸŸåˆå§‹åŒ–ã€‚");
     }
     public InnerUnsafe (InnerUnsafe[] upfaInst) {
-        System.out.println("¹¹Ôìº¯ÊıBegin");
+        System.out.println("æ„é€ å‡½æ•°Begin");
         upfaInst[0] = this; //unsafe
         for (int i = 0; i < 20 * 1000000; i++) {
             doSomething();
         }
-        System.out.println("¹¹Ôìº¯ÊıEnd");
+        System.out.println("æ„é€ å‡½æ•°End");
     }
     static void doSomething() {
     }

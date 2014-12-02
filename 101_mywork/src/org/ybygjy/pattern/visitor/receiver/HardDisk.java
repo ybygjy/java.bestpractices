@@ -4,7 +4,7 @@ import org.ybygjy.pattern.visitor.Equipment;
 import org.ybygjy.pattern.visitor.Visitor;
 
 /**
- * Ó²ÅÌ
+ * ç¡¬ç›˜
  * @author WangYanCheng
  * @version 2014-2-25
  */

@@ -1,6 +1,6 @@
 package org.ybygjy.basic.thinking.thread.testframework.state;
 /**
- * 标记接口
+ * 鏍囪鎺ュ彛
  * @author WangYanCheng
  * @version 2010-9-30
  */

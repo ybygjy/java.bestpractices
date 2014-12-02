@@ -10,18 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * ¸ºÔğJQuery Ajax
+ * è´Ÿè´£JQuery Ajax
  * <p>
- * ²âÊÔµØÖ·:http://localhost:8080/org.ybygjy.web.ajax.JQueryAjax?recType=[xml|json]
+ * æµ‹è¯•åœ°å€:http://localhost:8080/org.ybygjy.web.ajax.JQueryAjax?recType=[xml|json]
  * </p>
  * <p>
- * ¹¦ÄÜÔğÈÎÃèÊö:
+ * åŠŸèƒ½è´£ä»»æè¿°:
  * </p>
  * <p>
- * 1¡¢Ìá¹©ajax²âÊÔÊı¾İµÄÁ½ÖÖ¸ñÊ½(xml/json)
+ * 1ã€æä¾›ajaxæµ‹è¯•æ•°æ®çš„ä¸¤ç§æ ¼å¼(xml/json)
  * </p>
  * <p>
- * 2¡¢Ìá¹©»ù±¾µÄCRUDÄ£Äâ²Ù×÷ÒÔÖ§³Öajax´¦ÀíÁ÷³Ì
+ * 2ã€æä¾›åŸºæœ¬çš„CRUDæ¨¡æ‹Ÿæ“ä½œä»¥æ”¯æŒajaxå¤„ç†æµç¨‹
  * </p>
  * @author WangYanCheng
  * @version 2011-7-11
@@ -29,13 +29,13 @@ import javax.servlet.http.HttpServletResponse;
 public class JQueryAjax extends HttpServlet {
     /** serialUID */
     private static final long serialVersionUID = -5890816541793988156L;
-    /** ½ÇÉ« */
-    private static String[] ROLEMGR = {"×Ü½ÌÁ·", "ÑĞ¾¿Ô±", "¶ÓÔ±"};
-    /** ³õÊ¼»¯²âÊÔÊı¾İ */
+    /** è§’è‰² */
+    private static String[] ROLEMGR = {"æ€»æ•™ç»ƒ", "ç ”ç©¶å‘˜", "é˜Ÿå‘˜"};
+    /** åˆå§‹åŒ–æµ‹è¯•æ•°æ® */
     private static List<JQueryAjaxPersonModel> objArray = new ArrayList<JQueryAjaxPersonModel>();
-    /** XML¸ñÊ½ */
+    /** XMLæ ¼å¼ */
     private String xmlTmpl = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><users count=\"@C\">@U</users>";
-    /** JSON¸ñÊ½ */
+    /** JSONæ ¼å¼ */
     private String jsonTmpl = "{\"count\":\"@C\",\"users\":[@U]}";
     
     @Override
@@ -75,9 +75,9 @@ public class JQueryAjax extends HttpServlet {
     }
 
     /**
-     * ´«ÊäÊı¾İ
-     * @param req ÇëÇóÊµÀı
-     * @param resp ÏìÓ¦ÊµÀı
+     * ä¼ è¾“æ•°æ®
+     * @param req è¯·æ±‚å®ä¾‹
+     * @param resp å“åº”å®ä¾‹
      * @throws ServletException ServletException
      * @throws IOException IOException
      */
@@ -86,7 +86,7 @@ public class JQueryAjax extends HttpServlet {
         String recType = req.getParameter("recType");
         byte[] strBuff = null;
         if ("xml".equals(recType)) {
-            // text/xml¡¢application/xml
+            // text/xmlã€application/xml
             resp.setContentType("text/xml");
             strBuff = generalXML(objArray).getBytes("UTF-8");
         } else if ("json".equals(recType)) {
@@ -98,10 +98,10 @@ public class JQueryAjax extends HttpServlet {
         resp.getOutputStream().write(strBuff);
     }
     /**
-     * ·¢ËÍÏìÓ¦
-     * @param req ÇëÇóÌå
-     * @param resp ÏìÓ¦Ìå
-     * @param dataContent ÏìÓ¦Êı¾İÄÚÈİ
+     * å‘é€å“åº”
+     * @param req è¯·æ±‚ä½“
+     * @param resp å“åº”ä½“
+     * @param dataContent å“åº”æ•°æ®å†…å®¹
      * @throws ServletException ServletException
      * @throws IOException IOException
      */
@@ -109,7 +109,7 @@ public class JQueryAjax extends HttpServlet {
         String recType = req.getParameter("recType");
         byte[] strBuff = null;
         if ("xml".equals(recType)) {
-            // text/xml¡¢application/xml
+            // text/xmlã€application/xml
             resp.setContentType("text/xml");
             strBuff = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><response><code>@C</code></response>".replace("@C", dataContent).getBytes("UTF-8");
         } else if ("json".equals(recType)) {
@@ -121,8 +121,8 @@ public class JQueryAjax extends HttpServlet {
         resp.getOutputStream().write(strBuff);
     }
     /**
-     * ¹¹½¨XML¸ñÊ½ĞÅÏ¢
-     * @return xml´®
+     * æ„å»ºXMLæ ¼å¼ä¿¡æ¯
+     * @return xmlä¸²
      */
     private String generalXML(List<JQueryAjaxPersonModel> objArray) {
         String rtnStr = xmlTmpl.replace("@C", String.valueOf(objArray.size()));
@@ -134,8 +134,8 @@ public class JQueryAjax extends HttpServlet {
     }
 
     /**
-     * ¹¹½¨JSON¸ñÊ½ĞÅÏ¢
-     * @return json´®
+     * æ„å»ºJSONæ ¼å¼ä¿¡æ¯
+     * @return jsonä¸²
      */
     private String generalJSON(List<JQueryAjaxPersonModel> objArray) {
         String rtnStr = jsonTmpl.replace("@C", String.valueOf(objArray.size()));
@@ -146,10 +146,10 @@ public class JQueryAjax extends HttpServlet {
         return rtnStr.replace("@U", sbud.substring(0, sbud.length() - 1));
     }
     /**
-     * ¹¹½¨²âÊÔÊı¾İ
-     * @param start ÆğÊ¼ÏÂ±ê
-     * @param end ½áÊøÏÂ±ê
-     * @return ÊµÌåÊı¾İ¼¯
+     * æ„å»ºæµ‹è¯•æ•°æ®
+     * @param start èµ·å§‹ä¸‹æ ‡
+     * @param end ç»“æŸä¸‹æ ‡
+     * @return å®ä½“æ•°æ®é›†
      */
     private List<JQueryAjaxPersonModel> buildTestData(int start, int end) {
         List<JQueryAjaxPersonModel> rtnList = new ArrayList<JQueryAjaxPersonModel>();
@@ -162,8 +162,8 @@ public class JQueryAjax extends HttpServlet {
         return rtnList;
     }
     /**
-     * Ìí¼Ó
-     * @param req Êı¾İ¶ÔÏó
+     * æ·»åŠ 
+     * @param req æ•°æ®å¯¹è±¡
      * @return rtnValue pkCode
      */
     private String doAddUser(HttpServletRequest req) {
@@ -173,7 +173,7 @@ public class JQueryAjax extends HttpServlet {
         return rtnStr;
     }
     /**
-     * ³õÊ¼»¯²âÊÔÊı¾İ
+     * åˆå§‹åŒ–æµ‹è¯•æ•°æ®
      */
     private void initTestData() {
         for (int start = 1, end = 101;start <= end; start ++) {
@@ -183,30 +183,30 @@ public class JQueryAjax extends HttpServlet {
 }
 
 /**
- * ÈËÔ±ÊµÌå
+ * äººå‘˜å®ä½“
  * @author WangYanCheng
  * @version 2011-7-20
  */
 class JQueryAjaxPersonModel {
-    /** ±àÂë */
+    /** ç¼–ç  */
     private String code;
-    /** Ãû³Æ */
+    /** åç§° */
     private String name;
-    /** ÄêÁä */
+    /** å¹´é¾„ */
     private String age;
-    /** ½ÇÉ« */
+    /** è§’è‰² */
     private String role;
-    /** xml¸ñÊ½ */
+    /** xmlæ ¼å¼ */
     private String xmlTmpl = "<user><code>@C</code><name>@N</name><age>@A</age><role>@R</role></user>";
-    /** json¸ñÊ½ */
+    /** jsonæ ¼å¼ */
     private String jsonTmpl = "{\"code\":\"@C\",\"name\":\"@N\",\"age\":\"@A\",\"role\":\"@R\"}";
 
     /**
-     * ÈËÔ±ÊµÌå
-     * @param code ±àÂë
-     * @param name Ãû³Æ
-     * @param age ÄêÁä
-     * @param role ½ÇÉ«
+     * äººå‘˜å®ä½“
+     * @param code ç¼–ç 
+     * @param name åç§°
+     * @param age å¹´é¾„
+     * @param role è§’è‰²
      */
     public JQueryAjaxPersonModel(String code, String name, String age, String role) {
         this.code = code;
@@ -216,7 +216,7 @@ class JQueryAjaxPersonModel {
     }
 
     /**
-     * ¹¹½¨XML¸ñÊ½ĞÅÏ¢
+     * æ„å»ºXMLæ ¼å¼ä¿¡æ¯
      */
     public String generalXML() {
         return xmlTmpl.replaceAll("@C", this.code).replaceAll("@N", this.name).replaceAll("@A", this.age)
@@ -224,8 +224,8 @@ class JQueryAjaxPersonModel {
     }
 
     /**
-     * ¹¹½¨JSON¸ñÊ½ĞÅÏ¢
-     * @return JSON¸ñÊ½
+     * æ„å»ºJSONæ ¼å¼ä¿¡æ¯
+     * @return JSONæ ¼å¼
      */
     public String generalJSON() {
         return jsonTmpl.replaceAll("@C", this.code).replaceAll("@N", this.name).replaceAll("@A", this.age)

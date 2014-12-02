@@ -5,7 +5,7 @@ import java.io.Serializable;
 import org.ybygjy.jndi.ldap.Constant;
 
 /**
- * 负责定义测试时绑定的对象实例
+ * 璐熻矗瀹氫箟娴嬭瘯鏃剁粦瀹氱殑瀵硅薄瀹炰緥
  * @author WangYanCheng
  * @version 2011-4-28
  */

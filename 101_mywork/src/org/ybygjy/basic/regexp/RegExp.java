@@ -8,13 +8,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ÕıÔò±í´ïÊ½
+ * æ­£åˆ™è¡¨è¾¾å¼
  * @author WangYanCheng
  * @version 2010-1-26
  */
 public class RegExp {
     /**
-     * Æ¥ÅäÎÄ¼ş²¿·ÖÄÚÈİ
+     * åŒ¹é…æ–‡ä»¶éƒ¨åˆ†å†…å®¹
      * @param srcStr srcStr
      */
     public void doMatchFileContent() {
@@ -29,21 +29,21 @@ public class RegExp {
     }
 
     /**
-     * ÌáÈ¡Ãû³Æ¿Õ¼ä
+     * æå–åç§°ç©ºé—´
      */
     public void doMatchNamespace() {
         String[] nsArr = new String[]{"Nstc.ibs.InnerQryRightAccountCombo", "Nstc.ibs.ChannelCombo", "Nstc.ibs.CustomerCombo", "Nstc.ibs.NetBankOrderDetailedConditionsPanel"};
         Pattern nsPattInst = Pattern.compile("(\\w+.*)\\.\\w+$");
         for (String tmpStr : nsArr) {
-            System.out.print("ÌáÈ¡Ãû³Æ¿Õ¼ä£º".concat(tmpStr));
+            System.out.print("æå–åç§°ç©ºé—´ï¼š".concat(tmpStr));
             Matcher matcherInst = nsPattInst.matcher(tmpStr);
             if (matcherInst.find()) {
-                System.out.print("\tÔ­Ê¼´®{" + tmpStr + "}Ãû³Æ¿Õ¼ä{" + matcherInst.group(1) + "}\n");
+                System.out.print("\tåŸå§‹ä¸²{" + tmpStr + "}åç§°ç©ºé—´{" + matcherInst.group(1) + "}\n");
             }
         }
     }
     /**
-     * Æ¥ÅäÎÄ¼şµØÖ·
+     * åŒ¹é…æ–‡ä»¶åœ°å€
      * @param srcPath srcPath
      */
     public void doMatchFilePath(String srcPath) {
@@ -57,27 +57,27 @@ public class RegExp {
         }
     }
     /**
-     * ÁîÈËµ°ÌÛµÄÓÊ¼şµØÖ·
-     * @param emailStr ÓÊ¼şµØÖ·
+     * ä»¤äººè›‹ç–¼çš„é‚®ä»¶åœ°å€
+     * @param emailStr é‚®ä»¶åœ°å€
      */
     public void doMatchEmail(String emailStr) {
         String regExp = "^(?=[^.])(?:\\w+[.]?)+@(([\\[](\\d+[.]?)+[\\]])|((\\w+[.]?)+[^.]){2,254})$";
         Matcher matcher = Pattern.compile(regExp).matcher(emailStr);
         if (matcher.matches()) {
             int groupCtn = matcher.groupCount();
-            System.out.println(matcher.pattern().pattern() + "\t Æ¥Åä£º" + emailStr);
+            System.out.println(matcher.pattern().pattern() + "\t åŒ¹é…ï¼š" + emailStr);
             for (int i = 0; i < groupCtn; i++) {
-                System.out.println("µÚ" + i + "×é£º" + matcher.group(i));
+                System.out.println("ç¬¬" + i + "ç»„ï¼š" + matcher.group(i));
             }
         }
     }
     /**
-     * ÎÄ¼şÃû³ÆÆ¥Åä
+     * æ–‡ä»¶åç§°åŒ¹é…
      * @param fileName fileName
      */
     public void doMatchFileName(String fileName) {
-        System.out.println("ºöÂÔÎÄ¼şÀ©Õ¹Ãû:".concat(fileName.replaceAll("[.]{1}.*", "")));
-        System.out.println("ºöÂÔÎÄ¼şÃû³Æ,Ö»È¡À©Õ¹Ãû:".concat(fileName.replaceAll(".*[.]{1}", ".")));
+        System.out.println("å¿½ç•¥æ–‡ä»¶æ‰©å±•å:".concat(fileName.replaceAll("[.]{1}.*", "")));
+        System.out.println("å¿½ç•¥æ–‡ä»¶åç§°,åªå–æ‰©å±•å:".concat(fileName.replaceAll(".*[.]{1}", ".")));
     }
 
     /**
@@ -115,9 +115,9 @@ public class RegExp {
     }
 
     /**
-     * ÕıÔòÆ¥Åä×é²âÊÔ
-     * @param pattInst Ä£Ê½
-     * @param srcStr Ô´Æ¥Åä´®
+     * æ­£åˆ™åŒ¹é…ç»„æµ‹è¯•
+     * @param pattInst æ¨¡å¼
+     * @param srcStr æºåŒ¹é…ä¸²
      */
     public void regGroupTest(Pattern pattInst, String srcStr) {
         Matcher maInst = pattInst.matcher(srcStr);
@@ -131,7 +131,7 @@ public class RegExp {
     }
 
     /**
-     * ½âÎöHTML×Ö·û´®ÌáÈ¡·Ö×éÊı¾İ£¬¸ñÊ½£º<br>
+     * è§£æHTMLå­—ç¬¦ä¸²æå–åˆ†ç»„æ•°æ®ï¼Œæ ¼å¼ï¼š<br>
      * &lt;div class="className"&gt;
      * @throws IOException IOException
      */
@@ -149,18 +149,18 @@ public class RegExp {
         }
     }
     /**
-     * È¡htmlÖĞinputÔªËØµÄÖµ£¬ÇÒÔªËØÀàĞÍ·Çhidden
-     * <p>1¡¢Ä¿Ç°²»Ö§³ÖÔªËØÖµÖĞ°üº¬'×Ö·û£¬Èçvalue='ab'c'</p>
+     * å–htmlä¸­inputå…ƒç´ çš„å€¼ï¼Œä¸”å…ƒç´ ç±»å‹éhidden
+     * <p>1ã€ç›®å‰ä¸æ”¯æŒå…ƒç´ å€¼ä¸­åŒ…å«'å­—ç¬¦ï¼Œå¦‚value='ab'c'</p>
      */
     public void doFetchInputValue() {
         String srcHTML = "<td><input type='text' value='12<3'/><input type='hidden' value='321'/><input type='text' value='456'/></td>";
         String regExpStr = "(<input\\s+)(type='[^h]+'\\s+)(value='([^']+)+')[^<]+";
         Matcher matcher = Pattern.compile(regExpStr).matcher(srcHTML);
         while (matcher.find()) {
-            System.out.println("Ô´×Ö·û´®\t".concat(srcHTML));
+            System.out.println("æºå­—ç¬¦ä¸²\t".concat(srcHTML));
             int count = matcher.groupCount();
             for (int i = 0; i <= count; i++) {
-                System.out.println("µÚ@T×éÆ¥Åä\t".replaceFirst("@T", "" + i).concat(matcher.group(i)));
+                System.out.println("ç¬¬@Tç»„åŒ¹é…\t".replaceFirst("@T", "" + i).concat(matcher.group(i)));
             }
             System.out.println();
         }
@@ -181,7 +181,7 @@ public class RegExp {
         return rtnStr;
     }
     /**
-     * ·ÖÎöSqlÌõ¼ş
+     * åˆ†æSqlæ¡ä»¶
      * @param sql SQL
      */
     public void doAnalyseSql(String sql) {
@@ -201,11 +201,11 @@ System.out.println(sql);
 System.out.println(sql);
     }
     /**
-     * È¡×Ö·û´®ÖĞµÄ\t¡¢\rµÈ±ê¼Ç
+     * å–å­—ç¬¦ä¸²ä¸­çš„\tã€\rç­‰æ ‡è®°
      * @param str str
      */
     public void doAnalyseFlag(String str) {
-        //ÆÕÍ¨{ÕÒÑ°Æ¥ÅäÔªËØ}
+        //æ™®é€š{æ‰¾å¯»åŒ¹é…å…ƒç´ }
         String reg1 = "(\r|\b|\n|\t)";
         Matcher matcher = Pattern.compile(reg1).matcher(str);
         while (matcher.find()) {
@@ -217,13 +217,13 @@ System.out.println(sql);
         System.out.println(str);
     }
     /**
-     * Ê¹ÓÃ»·ÊÓ²éÕÒÎ»ÖÃ
+     * ä½¿ç”¨ç¯è§†æŸ¥æ‰¾ä½ç½®
      * @param str str
      */
     public void doAnalyseFlag2(String str) {
-        //»·ÊÓ(ÕÒÑ°ÔªËØÎ»ÖÃ)
+        //ç¯è§†(æ‰¾å¯»å…ƒç´ ä½ç½®)
         String reg2 = "((?=\r))";
-        str = Pattern.compile(reg2).matcher(str).replaceAll("ÕâÊÇÎ»ÖÃ");
+        str = Pattern.compile(reg2).matcher(str).replaceAll("è¿™æ˜¯ä½ç½®");
         System.out.println(str);
     }
     /**
@@ -236,8 +236,8 @@ System.out.println(sql);
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊı
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°
      * @throws IOException IOException
      */
     public static void main(String[] args) throws IOException {
@@ -248,7 +248,7 @@ System.out.println(sql);
 //        regExpInst.doFetchInputValue();
 //        regExpInst.doAnalyseFlag(str);
 //        regExpInst.doAnalyseFlag2(str);
-        // System.out.println(regExpInst.includeChinese("¹¤ÊÇ"));
+        // System.out.println(regExpInst.includeChinese("å·¥æ˜¯"));
         // System.out.println("isNumber:".concat(String.valueOf(regExpInst.isDigitNumber("0.99"))));
         // System.out.println("isSignNumber:".concat(String.valueOf(regExpInst.isSignDigitNumber("-0.99"))));
         // System.out.println(Float.parseFloat("222"));

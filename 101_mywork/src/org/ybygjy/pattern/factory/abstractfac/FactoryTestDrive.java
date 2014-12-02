@@ -4,14 +4,14 @@ import org.ybygjy.pattern.factory.abstractfac.impl.ConcreteFactoryA;
 import org.ybygjy.pattern.factory.abstractfac.impl.ConcreteFactoryB;
 
 /**
- * 抽象工厂模式测试入口
+ * 鎶借薄宸ュ巶妯″紡娴嬭瘯鍏ュ彛
  * @author WangYanCheng
  * @version 2010-10-25
  */
 public class FactoryTestDrive {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         AbstractFactory af = new ConcreteFactoryA();

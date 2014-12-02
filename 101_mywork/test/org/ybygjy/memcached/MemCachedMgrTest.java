@@ -9,15 +9,15 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class MemCachedMgrTest {
-    /** ²ÎÓë²âÊÔÊı¾İ³¤¶È */
+    /** å‚ä¸æµ‹è¯•æ•°æ®é•¿åº¦ */
     private static int TEST_DATA_SIZE = 100;
-    /** ²ÎÓë²âÊÔÊı¾İ */
+    /** å‚ä¸æµ‹è¯•æ•°æ® */
     private static String[] tmpKeys = {"KEY_0", "UNKNOW", "KEY_1"};
-    /** ²ÎÓë²âÊÔ¶ÔÏó */
+    /** å‚ä¸æµ‹è¯•å¯¹è±¡ */
     private MemCachedMgr mcmInst;
-    /** ·şÎñÆ÷µØÖ· */
+    /** æœåŠ¡å™¨åœ°å€ */
     private static String[] serverAddr;
-    /** È¨ÖØ */
+    /** æƒé‡ */
     private static Integer[] weights;
 
     @Before
@@ -96,11 +96,11 @@ public class MemCachedMgrTest {
     public void testAdd4Expiry() {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DAY_OF_MONTH, 1);
-        // Ôö¼ÓÊı¾İÏî£¬Ö¸¶¨Éú´æÊ±¼äÎªÒ»Ìì(API»á×Ô¶¯¼ÆËã³Éms)
+        // å¢åŠ æ•°æ®é¡¹ï¼ŒæŒ‡å®šç”Ÿå­˜æ—¶é—´ä¸ºä¸€å¤©(APIä¼šè‡ªåŠ¨è®¡ç®—æˆms)
         mcmInst.add(tmpKeys[0], tmpKeys[0], cal.getTime());
         cal.add(Calendar.DAY_OF_MONTH, -1);
         mcmInst.add(tmpKeys[2], tmpKeys[2], cal.getTime());
-        // ÕâÀïÓÃµ½Ïß³ÌµÈ´ıÓÃÓÚ²âÊÔexpiryÊôĞÔµÄÊ±Ğ§ĞÔ
+        // è¿™é‡Œç”¨åˆ°çº¿ç¨‹ç­‰å¾…ç”¨äºæµ‹è¯•expiryå±æ€§çš„æ—¶æ•ˆæ€§
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -123,7 +123,7 @@ public class MemCachedMgrTest {
 
     @Test
     public void testSyncAll() {
-        Assert.fail("Î´ÊµÏÖ");
+        Assert.fail("æœªå®ç°");
     }
 
     @Test

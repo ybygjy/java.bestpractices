@@ -13,42 +13,42 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 
 /**
- * JarÎÄ¼ş¹¤¾ß
+ * Jaræ–‡ä»¶å·¥å…·
  * @author WangYanCheng
  * @version 2013-1-21
  */
 public class JarFileUtil {
 
     /**
-     * ½âÑ¹JarÎÄ¼ş
-     * @param jarFile Ö¸¶¨jarÎÄ¼ş
-     * @param tarDir Ö¸¶¨½âÑ¹ÎÄ¼ş¼Ğ
-     * @throws IOException Å×³öÒì³£
+     * è§£å‹Jaræ–‡ä»¶
+     * @param jarFile æŒ‡å®šjaræ–‡ä»¶
+     * @param tarDir æŒ‡å®šè§£å‹æ–‡ä»¶å¤¹
+     * @throws IOException æŠ›å‡ºå¼‚å¸¸
      */
     public static void uncompress(File jarFile, File tarDir) throws IOException {
         JarFile jfInst = new JarFile(jarFile);
         Enumeration<JarEntry> enumEntry = jfInst.entries();
         while (enumEntry.hasMoreElements()) {
             JarEntry jarEntry = enumEntry.nextElement();
-            //¹¹Ôì½âÑ¹ÎÄ¼şÊµÌå
+            //æ„é€ è§£å‹æ–‡ä»¶å®ä½“
             File tarFile = new File(tarDir, jarEntry.getName());
-            //´´½¨ÎÄ¼ş
+            //åˆ›å»ºæ–‡ä»¶
             makeFile(jarEntry, tarFile);
             if (jarEntry.isDirectory()) {
                 continue;
             }
-            //¹¹ÔìÊä³öÁ÷
+            //æ„é€ è¾“å‡ºæµ
             FileChannel fileChannel = new FileOutputStream(tarFile).getChannel();
-            //È¡ÊäÈëÁ÷
+            //å–è¾“å…¥æµ
             InputStream ins = jfInst.getInputStream(jarEntry);
             transferStream(ins, fileChannel);
         }
     }
 
     /**
-     * Á÷½»»»
-     * @param ins ÊäÈëÁ÷
-     * @param targetChannel Êä³öÁ÷
+     * æµäº¤æ¢
+     * @param ins è¾“å…¥æµ
+     * @param targetChannel è¾“å‡ºæµ
      */
     private static void transferStream(InputStream ins, FileChannel targetChannel) {
         ByteBuffer byteBuffer = ByteBuffer.allocate(1024 * 10);
@@ -80,8 +80,8 @@ public class JarFileUtil {
     }
 
     /**
-     * ´òÓ¡jarÎÄ¼şÄÚÈİĞÅÏ¢
-     * @param fileInst jarÎÄ¼ş
+     * æ‰“å°jaræ–‡ä»¶å†…å®¹ä¿¡æ¯
+     * @param fileInst jaræ–‡ä»¶
      */
     public static void printJarEntry(File fileInst) {
         JarFile jfInst = null;;
@@ -97,10 +97,10 @@ public class JarFileUtil {
     }
 
     /**
-     * ´´½¨ÎÄ¼ş
-     * @param jarEntry jarÊµÌå
-     * @param fileInst ÎÄ¼şÊµÌå
-     * @throws IOException Å×³öÒì³£
+     * åˆ›å»ºæ–‡ä»¶
+     * @param jarEntry jarå®ä½“
+     * @param fileInst æ–‡ä»¶å®ä½“
+     * @throws IOException æŠ›å‡ºå¼‚å¸¸
      */
     public static void makeFile(JarEntry jarEntry, File fileInst) {
         if (!fileInst.exists()) {
@@ -110,14 +110,14 @@ public class JarFileUtil {
                 try {
                     fileInst.createNewFile();
                 } catch (IOException e) {
-                    System.out.println("´´½¨ÎÄ¼şÊ§°Ü>>".concat(fileInst.getPath()));
+                    System.out.println("åˆ›å»ºæ–‡ä»¶å¤±è´¥>>".concat(fileInst.getPath()));
                 }
             }
         }
     }
     /**
-     * ²âÊÔÈë¿Ú
-     * @param args ²ÎÊıÁĞ±í
+     * æµ‹è¯•å…¥å£
+     * @param args å‚æ•°åˆ—è¡¨
      */
     public static void main(String[] args) {
         File jarFile = new File("D:\\DEV\\works\\HelloAnt\\build\\SmartPage-Web.jar");

@@ -17,14 +17,14 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 /**
- * 事件机制学习-鼠标事件
+ * 浜嬩欢鏈哄埗瀛︿範-榧犳爣浜嬩欢
  * @author WangYanCheng
  * @version 2011-1-24
  */
 public class MouseTest {
     /**
-     * 测试入口
-     * @param args 参数列表
+     * 娴嬭瘯鍏ュ彛
+     * @param args 鍙傛暟鍒楄〃
      */
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {

@@ -1,39 +1,39 @@
 package org.ybygjy.web.calendar;
 /**
- * ÊÂÎñ¶ÔÏóÄ£ĞÍ
+ * äº‹åŠ¡å¯¹è±¡æ¨¡å‹
  * @author WangYanCheng
  * @version 2011-3-24
  */
 public class EventModel {
-    /**±àÂë*/
+    /**ç¼–ç */
     private String id;
-    /**ÀàĞÍ*/
+    /**ç±»å‹*/
     private int type;
-    /**±êÌâ*/
+    /**æ ‡é¢˜*/
     private String title;
-    /**ÄÚÈİ*/
+    /**å†…å®¹*/
     private String content;
-    /**ÆğÊ¼ÈÕÆÚ*/
+    /**èµ·å§‹æ—¥æœŸ*/
     private String startDay;
-    /**ÆğÊ¼Ê±¼ä*/
+    /**èµ·å§‹æ—¶é—´*/
     private String startTime;
-    /**½áÊøÈÕÆÚ*/
+    /**ç»“æŸæ—¥æœŸ*/
     private String endDay;
-    /**½áÊøÊ±¼ä*/
+    /**ç»“æŸæ—¶é—´*/
     private String endTime;
-    /**È«Ìì±ê¼Ç*/
+    /**å…¨å¤©æ ‡è®°*/
     private boolean allDayFlag;
     /**
-     * ¹¹Ôìº¯Êı³õÊ¼»¯ÊôĞÔÖµ
-     * @param id ±àÂë
-     * @param type ÀàĞÍ
-     * @param title ±êÌâ
-     * @param content ÄÚÈİ
-     * @param startDay ÆğÊ¼ÈÕÆÚ
-     * @param startTime ÆğÊ¼Ê±¼ä
-     * @param endDay ½áÊøÈÕÆÚ
-     * @param endTime ½áÊøÊ±¼ä
-     * @param allDayFlag È«Ìì±ê¼Ç
+     * æ„é€ å‡½æ•°åˆå§‹åŒ–å±æ€§å€¼
+     * @param id ç¼–ç 
+     * @param type ç±»å‹
+     * @param title æ ‡é¢˜
+     * @param content å†…å®¹
+     * @param startDay èµ·å§‹æ—¥æœŸ
+     * @param startTime èµ·å§‹æ—¶é—´
+     * @param endDay ç»“æŸæ—¥æœŸ
+     * @param endTime ç»“æŸæ—¶é—´
+     * @param allDayFlag å…¨å¤©æ ‡è®°
      */
     public EventModel(String id, int type, String title, String content, String startDay, String startTime,
         String endDay, String endTime, boolean allDayFlag) {
@@ -49,8 +49,8 @@ public class EventModel {
         this.allDayFlag = allDayFlag;
     }
     /**
-     * ¸ºÔğ×ª»»ÎªJSON¸ñÊ½
-     * @return jsonStr JSON¸ñÊ½
+     * è´Ÿè´£è½¬æ¢ä¸ºJSONæ ¼å¼
+     * @return jsonStr JSONæ ¼å¼
      */
     public String toJSON() {
         StringBuilder sbud = new StringBuilder();

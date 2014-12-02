@@ -5,8 +5,8 @@ import java.util.EventListener;
 
 import javax.swing.event.EventListenerList;
 /**
- * 事件机制-->JavaBean模式-->Multicase Event Pattern<br>
- * 室温
+ * 浜嬩欢鏈哄埗-->JavaBean妯″紡-->Multicase Event Pattern<br>
+ * 瀹ゆ俯
  * @author WangYanCheng
  * @version 2010-2-20
  */

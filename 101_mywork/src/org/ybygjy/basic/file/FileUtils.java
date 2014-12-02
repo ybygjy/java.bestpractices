@@ -12,38 +12,38 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * ·â×°³£ÓÃÎÄ¼şÏà¹Ø²Ù×÷
+ * å°è£…å¸¸ç”¨æ–‡ä»¶ç›¸å…³æ“ä½œ
  * @author WangYanCheng
  * @version 2011-11-1
  */
 public class FileUtils {
     /***
-     * ´ÓÖ¸¶¨ÀàÂ·¾¶ÏÂ¼ÓÔØÍ¬¼¶ÎÄ¼ş£¬Èçµ±Ç°Â·¾¶ÊÇorg.ybygjy.HelloWorld£¬ÔòÒªÕÒHelloWorld.classÍ¬¼¶µÄ×ÊÔ´
-     * @param classInst Àà¼ÓÔØÆ÷
-     * @param fileName ÎÄ¼şÃû
+     * ä»æŒ‡å®šç±»è·¯å¾„ä¸‹åŠ è½½åŒçº§æ–‡ä»¶ï¼Œå¦‚å½“å‰è·¯å¾„æ˜¯org.ybygjy.HelloWorldï¼Œåˆ™è¦æ‰¾HelloWorld.classåŒçº§çš„èµ„æº
+     * @param classInst ç±»åŠ è½½å™¨
+     * @param fileName æ–‡ä»¶å
      * @return fileInst/null
      */
     public static File lookup(Class classInst, String fileName) {
         classInst = classInst == null ? FileUtils.class : classInst;
-System.out.println("¼ÓÔØÆ÷Â·¾¶£º" + classInst);
+System.out.println("åŠ è½½å™¨è·¯å¾„ï¼š" + classInst);
         URL urlInst = classInst.getResource(fileName);
-System.out.println("²éÕÒÎÄ¼ş£º\n ¼ÓÔØÆ÷Â·¾¶£º" + classInst.getResource("") + "\n ÎÄ¼şÂ·¾¶£º" + urlInst);
+System.out.println("æŸ¥æ‰¾æ–‡ä»¶ï¼š\n åŠ è½½å™¨è·¯å¾„ï¼š" + classInst.getResource("") + "\n æ–‡ä»¶è·¯å¾„ï¼š" + urlInst);
         return new File(urlInst.getFile());
     }
     /**
-     * ÎÄ¼şÄÚÈİÆ¥ÅäÊä³ö
-     * <p>¶ÔÎÄ¼şÄÚÈİ½øĞĞÔ¤¶¨µÄÕıÔòÆ¥Åä£¬²¢Êä³öÆ¥Åä½á¹û</p>
+     * æ–‡ä»¶å†…å®¹åŒ¹é…è¾“å‡º
+     * <p>å¯¹æ–‡ä»¶å†…å®¹è¿›è¡Œé¢„å®šçš„æ­£åˆ™åŒ¹é…ï¼Œå¹¶è¾“å‡ºåŒ¹é…ç»“æœ</p>
      * @param fileInst {@link File}
      * @param pattern {@link Pattern}
-     * @param fileEncoding ÎÄ¼ş±àÂë
+     * @param fileEncoding æ–‡ä»¶ç¼–ç 
      */
     public static void findAndOutput(File fileInst, Pattern pattern, String fileEncoding, FileUtilsCallback fucbInst) {
-        //¶ÁÎÄ¼ş
-        //ÎÄ¼ş½âÂë
+        //è¯»æ–‡ä»¶
+        //æ–‡ä»¶è§£ç 
         String fileContent = readFile(fileInst, fileEncoding);
-        //ÕıÔòÆ¥Åä
+        //æ­£åˆ™åŒ¹é…
         Matcher matcher = pattern.matcher(fileContent);
-        //Êä³ö½á¹û
+        //è¾“å‡ºç»“æœ
         while (matcher.find()) {
             int groupCount = matcher.groupCount();
             groupCount = groupCount + 1;
@@ -57,9 +57,9 @@ System.out.println("²éÕÒÎÄ¼ş£º\n ¼ÓÔØÆ÷Â·¾¶£º" + classInst.getResource("") + "\n
         }
     }
     /**
-     * ¶ÁÎÄ¼şÄÚÈİ
+     * è¯»æ–‡ä»¶å†…å®¹
      * @param fileInst {@link File}
-     * @param fileEncoding ÎÄ¼ş±àÂë
+     * @param fileEncoding æ–‡ä»¶ç¼–ç 
      * @return fileContent
      */
     private static String readFile(File fileInst, String fileEncoding) {
@@ -111,7 +111,7 @@ System.out.println("²éÕÒÎÄ¼ş£º\n ¼ÓÔØÆ÷Â·¾¶£º" + classInst.getResource("") + "\n
             }
         };
         String regexpStr = "\\({2}@SNAME@\\)([^\"]+(\"[^\"]+\").*\\)\\))\\.([^;]+);";
-        File baseDir = new File("D:\\DEV\\03_project\\20140414_²ÆÎñÏµÍ³²ğ·Ö\\1007_ÕûÀíÇ°¶ËService_·½·¨");
+        File baseDir = new File("D:\\DEV\\03_project\\20140414_è´¢åŠ¡ç³»ç»Ÿæ‹†åˆ†\\1007_æ•´ç†å‰ç«¯Service_æ–¹æ³•");
         File[] serviceFiles = baseDir.listFiles();
         for (File tmpFile : serviceFiles) {
             String fileName = tmpFile.getName();
@@ -133,8 +133,8 @@ System.out.println("²éÕÒÎÄ¼ş£º\n ¼ÓÔØÆ÷Â·¾¶£º" + classInst.getResource("") + "\n
 }
 interface FileUtilsCallback {
     /**
-     * Æ¥Åä³É¹¦»Øµ÷
-     * @param matcherGroups Æ¥Åä³É¹¦µÄÊı¾İ×é
+     * åŒ¹é…æˆåŠŸå›è°ƒ
+     * @param matcherGroups åŒ¹é…æˆåŠŸçš„æ•°æ®ç»„
      */
     public void doFindAndOutput(String[] matcherGroups);
 }

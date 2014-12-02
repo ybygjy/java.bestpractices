@@ -10,7 +10,7 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 /**
- * FTP²âÊÔ
+ * FTPæµ‹è¯•
  * @author WangYanCheng
  * @version 2011-5-31
  */
@@ -55,7 +55,7 @@ public class SimpleDemo4FTPTest {
         String remoteFilePath = "\\mkdir\\sqlnet.log";
         File tmpFile = sd4FTP.download(remoteFilePath, outFile);
         Assert.assertNotNull(tmpFile);
-        System.out.println("ºÄ·Ñ£º".concat(tmpFile.length() + "").concat("×Ö½Ú£¬ÏÂÔØÁËÎÄ¼þ£º").concat(tmpFile.getAbsolutePath()));
+        System.out.println("è€—è´¹ï¼š".concat(tmpFile.length() + "").concat("å­—èŠ‚ï¼Œä¸‹è½½äº†æ–‡ä»¶ï¼š").concat(tmpFile.getAbsolutePath()));
     }
 
     @Test

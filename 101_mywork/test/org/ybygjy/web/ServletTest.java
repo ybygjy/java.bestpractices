@@ -135,8 +135,8 @@ public class ServletTest {
     private String domainUrl = "http://localhost:8090";
     /** sourceDesc */
     private String sourceDesc = "/org.ybygjy.Servlet";
-    /**µÇÂ½²âÊÔ½á¹û*/
+    /**ç™»é™†æµ‹è¯•ç»“æœ*/
     String[] preOutResult = { "{\"success\":false}",
-        "{\"errorMessage\":\"µÇÂ½Ê§°Ü£¬ÓÃ»§ÃûÎª¿Õ£¡\",\"success\":false}",
-    "{\"errorMessage\":\"µÇÂ½Ê§°Ü£¬ÃÜÂë²»ÄÜÎª¿Õ£¡\",\"success\":false}" };
+        "{\"errorMessage\":\"ç™»é™†å¤±è´¥ï¼Œç”¨æˆ·åä¸ºç©ºï¼\",\"success\":false}",
+    "{\"errorMessage\":\"ç™»é™†å¤±è´¥ï¼Œå¯†ç ä¸èƒ½ä¸ºç©ºï¼\",\"success\":false}" };
 }
