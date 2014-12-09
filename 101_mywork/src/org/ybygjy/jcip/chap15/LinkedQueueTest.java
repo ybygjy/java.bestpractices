@@ -9,17 +9,51 @@ import java.util.concurrent.atomic.AtomicReference;
  * @author WangYanCheng
  * @version 2014-12-03
  */
-public class LinkQueueTest {
+public class LinkedQueueTest {
 	/**
-	 * 测试入口
-	 * @param args 参数列表
+	 * JDK非阻塞队列
 	 */
-	public static void main(String[] args) {
+	private void test1() {
 		ConcurrentLinkedQueue<Object> linkedQueue = new ConcurrentLinkedQueue<Object>();
 		linkedQueue.add("A");
 		linkedQueue.add("B");
 		linkedQueue.add("C");
 		System.out.println(Arrays.toString(linkedQueue.toArray()));
+	}
+	/**
+	 * 自定义非阻塞队列
+	 */
+	private void customerQueue() {
+		final LinkedQueue<String> linkedQueueObj = new LinkedQueue<String>();
+		Runnable runnable = new Runnable(){
+			public void run() {
+				int count = 0;
+				while (true) {
+					linkedQueueObj.put(String.valueOf(Math.random() * 100));
+					if (++count % 10 == 0) {
+						String rtnStr = linkedQueueObj.poll();
+						System.out.println(rtnStr);
+					}
+					try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+		};
+		for (int i = 0; i < 10; i++) {
+			new Thread(runnable, "Thread_" + i).start();
+		}
+	}
+	/**
+	 * 测试入口
+	 * @param args 参数列表
+	 */
+	public static void main(String[] args) {
+		LinkedQueueTest lqtInst = new LinkedQueueTest();
+		lqtInst.test1();
+		lqtInst.customerQueue();
 	}
 }
 class LinkedQueue<E> {
