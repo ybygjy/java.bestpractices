@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<style type="text/css">
+			h1,h2,h3,h4,h5,h6 {
+				margin:0;
+				padding:0;
+			}
+			div {
+				float: left;
+				margin:10px;
+			}
+			#ctx_01 {
+				width: 100%;
+				height: 100%;
+				margin:10px;
+				padding: 10px;
+			}
+			#ctx_01 > * {
+				display: inline;
+				padding: 10px;
+			}
+			ul{
+				width: 300px;
+				height:300px;
+				margin: 0px auto;
+				padding: 0px;
+				overflow: hidden;
+				background-image: url(/images/bg_color.jpg);
+				
+			}
+			li{
+				list-style: none;
+				width: 100px;
+				height:100px;
+				float:left;
+			}
+			li a {
+				display:block;
+				width:100px;
+				height:100px;
+				text-decoration: none;
+				background: url(/images/bg_gray.jpg);
+				background-repeat: no-repeat;
+				background-position: 500px 500px;
+			}
+			a#item1:hover{
+				background-position: 0 0;
+			}
+			a#item2:hover{
+				background-position: -100px 0;
+			}
+			a#item3:hover{
+				background-position: -200px 0;
+			}
+			a#item4:hover{
+				background-position: 0 -100px;
+			}
+			a#item5:hover{
+				background-position: -100px -100px;
+			}
+			a#item6:hover{
+				background-position: -200px -100px;
+			}
+			a#item7:hover{
+				background-position:0 -200px;
+			}
+			a#item8:hover{
+				background-position: -100px -200px;
+			}
+			a#item9:hover{
+				background-position: -200px -200px;
+			}
+		</style>
+	</head>
+	<body>
+		<div style="float:left;">
+			<ul>
+				<li>
+					<a id="item1" href="#" title="Item 1"></a>
+				</li>
+				<li>
+					<a id="item2" href="#" title="Item 2"></a>
+				</li>
+				<li>
+					<a id="item3" href="#" title="Item 3"></a>
+				</li>
+				<li>
+					<a id="item4" href="#" title="Item 4"></a>
+				</li>
+				<li>
+					<a id="item5" href="#" title="Item 5"></a>
+				</li>
+				<li>
+					<a id="item6" href="#" title="Item 6"></a>
+				</li>
+				<li>
+					<a id="item7" href="#" title="Item 7"></a>
+				</li>
+				<li>
+					<a id="item8" href="#" title="Item 8"></a>
+				</li>
+				<li>
+					<a id="item9" href="#" title="Item 9"></a>
+				</li>
+			</ul>
+		</div>
+		<div id="ctx_01">
+			<div>
+				<img alt="#" src="/images/bg_color.jpg">
+			</div>
+			<div>
+				<img alt="#" src="/images/bg_gray.jpg">
+			</div>
+		</div>
+		<style type="text/css">
+			.bp-ctx {
+				width:500px;
+				height:500px;
+				border:1px solid red;
+				background-image: url('/images/bg_color.jpg');background-repeat: no-repeat;
+			}
+		</style>
+		<div>
+			<h4>background-position:left top</h4>
+			<div class="bp-ctx" style="background-position: left top">
+				
+			</div>
+		</div>
+		<div>
+			<h4>background-position:left center</h4>
+			<div class="bp-ctx" style="background-position: left center"></div>
+		</div>
+		<div>
+			<h4>background-position:left bottom</h4>
+			<div class="bp-ctx" style="background-position: left bottom"></div>
+		</div>
+		<div>
+			<h4>background-position:right top</h4>
+			<div class="bp-ctx" style="background-position: right top"></div>
+		</div>
+		<div>
+			<h4>background-position:right center</h4>
+			<div class="bp-ctx" style="background-position: right center"></div>
+		</div>
+		<div>
+			<h4>background-position:right bottom</h4>
+			<div class="bp-ctx" style="background-position: right bottom"></div>
+		</div>
+		<div>
+			<h4>background-position:center center</h4>
+			<div class="bp-ctx" style="background-position: center center"></div>
+		</div>
+		<div>
+			<h4>background-position:50% 50%</h4>
+			<div class="bp-ctx" style="background-position: 50% 50%">
+				<p>x=(容器宽度-图片宽度)*50%</p>
+				<p>y=(容器高度-图片高度)*50%</p>
+			</div>
+		</div>
+		<div>
+			<h4>background-position:-50% -50%</h4>
+			<div class="bp-ctx" style="background-position: -50% -50%;text-align: right;">
+				<p>x=-(容器宽度-图片宽度)*50%</p>
+				<p>y=-(容器高度-图片高度)*50%</p>
+			</div>
+		</div>
+		<div>
+			<h4>background-position:-100 -100</h4>
+			<div class="bp-ctx" style="background-position: -100px -100px;text-align: right;">
+				<p>x=图片相对于元素(0,0)点向左偏移100px</p>
+				<p>y=图片相对于元素(0,0)点向上偏移100px</p>
+			</div>
+		</div>
+		<div>
+			<h4>background-position:100% 100%</h4>
+			<div class="bp-ctx" style="background-position: 100% 100%;text-align: left;">
+				<p>x=(容器宽度-图片宽度)*100%</p>
+				<p>y=(容器高度-图片高度)*100%</p>
+			</div>
+		</div>
+		<div style="float:left;">
+			<h4>溢出</h4>
+			<div style="background-color: blue;color:white;width: 200px;white-space:nowrap;overflow: hidden;text-overflow:ellipsis;">
+				<span>HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈</span>
+			</div>
+		</div>
+		<style type="text/css">
+			.text-over-test {
+				margin-right:0;
+				background-color: blue;
+				color: white;
+				width:200px;
+				white-space: nowrap;
+			}
+			.text-ctx:after {
+				margin:10px 10px 10px 0;
+				content: "这是溢出省略号...";
+				color:white;
+				background-color: green;
+				display: inline-block;
+			}
+		</style>
+		<div>
+			<h4>After伪类#单行文本溢出省略</h4>
+			<div class="text-ctx">
+				<div class="text-over-test">
+					<span id="ttt">HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈HelloWorld哈哈</span>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
