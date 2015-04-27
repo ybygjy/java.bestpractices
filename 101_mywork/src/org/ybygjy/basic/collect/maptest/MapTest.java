@@ -1,8 +1,10 @@
 package org.ybygjy.basic.collect.maptest;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 import java.util.TreeMap;
@@ -33,17 +35,18 @@ public class MapTest {
      * @return testInstArray
      */
     public TestInterface[] doBuildTestInst() {
-        TestInterface[] ti = new TestInterface[10];
-        ti[0] = new TreeMapTest();
-        ti[1] = new LinkedHashMapTest();
-        return ti;
+    	List<TestInterface> rtnList = new ArrayList<TestInterface>();
+    	rtnList.add(new TreeMapTest());
+    	rtnList.add(new LinkedHashMapTest());
+    	TestInterface[] tiInst = rtnList.toArray(new TestInterface[rtnList.size()]);
+        return tiInst;
     }
 
     /**
      * doFillMap
      * @param mapInst targetMapInst
      */
-    private void doFillMap(Map mapInst) {
+    private void doFillMap(Map<String, String> mapInst) {
         for (int index = ic.length - 1; index >= 0; index--) {
             InnerClass ict = ic[index];
             mapInst.put(ict.id, ict.label);
@@ -76,7 +79,11 @@ public class MapTest {
          * if (tiArray[i] != null) { tiArray[i].doTest(); } }
          */
         MapTest mtInst = new MapTest();
-        mtInst.doTestCollection();
+//        mtInst.doTestCollection();
+        TestInterface[] testInterface = mtInst.doBuildTestInst();
+        for(int i = 0; i < testInterface.length; i++) {
+        	testInterface[i].doTest();
+        }
     }
 
     /**
@@ -119,7 +126,7 @@ public class MapTest {
      * doPrint MapInst Content
      * @param tmInst tmInst
      */
-    private void doPrint(Map tmInst) {
+    private void doPrint(Map<String, String> tmInst) {
         doPrint(tmInst, true);
     }
 
@@ -128,9 +135,9 @@ public class MapTest {
      * @param tmInst targetMap
      * @param usedIter can used fail-fast iterator
      */
-    private void doPrint(Map tmInst, boolean usedIter) {
+    private void doPrint(Map<String, String>  tmInst, boolean usedIter) {
         if (usedIter) {
-            for (Iterator iterator = tmInst.keySet().iterator(); iterator.hasNext();) {
+            for (Iterator<String> iterator = tmInst.keySet().iterator(); iterator.hasNext();) {
                 Object key = iterator.next();
                 System.out.println(key + ":" + tmInst.get(key));
             }
@@ -154,9 +161,14 @@ public class MapTest {
          * {@inheritDoc}
          */
         public void doTest() {
-            TreeMap sortedMap = new TreeMap();
-            doFillMap(sortedMap);
-            doPrint(sortedMap);
+            TreeMap<String, String> treeMap = new TreeMap<String, String> ();
+            doFillMap(treeMap);
+            doPrint(treeMap);
+            for(int i = 0; i < 10; i++) {
+            	treeMap.put("Key_" + i, "Value_" + i);
+            }
+            Map<String, String> tmpMap = treeMap.tailMap("Key_");
+            System.out.println(tmpMap.toString());
         }
     }
 
@@ -179,5 +191,4 @@ public class MapTest {
             doPrint(lhmInst, false);
         }
     }
-
 }
