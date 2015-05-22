@@ -167,7 +167,7 @@ public class MapTest {
             for(int i = 0; i < 10; i++) {
             	treeMap.put("Key_" + i, "Value_" + i);
             }
-            Map<String, String> tmpMap = treeMap.tailMap("Key_");
+            Map<String, String> tmpMap = treeMap.tailMap("FromKey", false);
             System.out.println(tmpMap.toString());
         }
     }
