@@ -37,7 +37,7 @@ public class MapTest {
     public TestInterface[] doBuildTestInst() {
     	List<TestInterface> rtnList = new ArrayList<TestInterface>();
     	rtnList.add(new TreeMapTest());
-    	rtnList.add(new LinkedHashMapTest());
+//    	rtnList.add(new LinkedHashMapTest());
     	TestInterface[] tiInst = rtnList.toArray(new TestInterface[rtnList.size()]);
         return tiInst;
     }
@@ -49,7 +49,7 @@ public class MapTest {
     private void doFillMap(Map<String, String> mapInst) {
         for (int index = ic.length - 1; index >= 0; index--) {
             InnerClass ict = ic[index];
-            mapInst.put(ict.id, ict.label);
+            mapInst.put(String.valueOf(Math.abs(Long.parseLong(ict.id))), ict.label);
         }
     }
 
@@ -73,52 +73,10 @@ public class MapTest {
      * @param args 参数列表
      */
     public static void main(String[] args) {
-        /*
-         * MapTest mtIns = new MapTest(); TestInterface[] tiArray =
-         * mtIns.doBuildTestInst(); for (int i = 0; i < tiArray.length; i++) {
-         * if (tiArray[i] != null) { tiArray[i].doTest(); } }
-         */
         MapTest mtInst = new MapTest();
-//        mtInst.doTestCollection();
         TestInterface[] testInterface = mtInst.doBuildTestInst();
         for(int i = 0; i < testInterface.length; i++) {
         	testInterface[i].doTest();
-        }
-    }
-
-    /**
-     * InnerCompiler
-     * @author WangYanCheng
-     * @version 2010-8-23
-     */
-    private class InnerClass {
-        /** id */
-        String id;
-        /** label */
-        String label;
-
-        /**
-         * Constructor
-         * @param id id
-         * @param label label
-         */
-        public InnerClass(String id, String label) {
-            this.id = id;
-            this.label = label;
-        }
-
-        /**
-         * {@inheritDoc}
-         */
-        @Override
-        public String toString() {
-            StringBuilder builder = new StringBuilder();
-            builder.append("InnerCompiler [id=");
-            builder.append(id);
-            builder.append(", label=");
-            builder.append(label);
-            builder.append("]");
-            return builder.toString();
         }
     }
 
@@ -163,12 +121,8 @@ public class MapTest {
         public void doTest() {
             TreeMap<String, String> treeMap = new TreeMap<String, String> ();
             doFillMap(treeMap);
-            doPrint(treeMap);
-            for(int i = 0; i < 10; i++) {
-            	treeMap.put("Key_" + i, "Value_" + i);
-            }
-            Map<String, String> tmpMap = treeMap.tailMap("FromKey", false);
-            System.out.println(tmpMap.toString());
+            Map<String, String> tmpMap = treeMap.tailMap("3", false);
+            MapTest.this.doPrint(tmpMap);
         }
     }
 
@@ -182,13 +136,48 @@ public class MapTest {
          * {@inheritDoc}
          */
         public void doTest() {
-            LinkedHashMap lhmInst = new LinkedHashMap(16, 0.75f, true);
+            LinkedHashMap<String, String> lhmInst = new LinkedHashMap<String, String>(16, 0.75f, true);
             doFillMap(lhmInst);
             System.out.println(lhmInst);
             for (int index = 0; index < 7; index++) {
                 lhmInst.get(String.valueOf(index));
             }
             doPrint(lhmInst, false);
+        }
+    }
+    /**
+     * InnerCompiler
+     * @author WangYanCheng
+     * @version 2010-8-23
+     */
+    private class InnerClass {
+        /** id */
+        String id;
+        /** label */
+        String label;
+
+        /**
+         * Constructor
+         * @param id id
+         * @param label label
+         */
+        public InnerClass(String id, String label) {
+            this.id = id;
+            this.label = label;
+        }
+
+        /**
+         * {@inheritDoc}
+         */
+        @Override
+        public String toString() {
+            StringBuilder builder = new StringBuilder();
+            builder.append("InnerCompiler [id=");
+            builder.append(id);
+            builder.append(", label=");
+            builder.append(label);
+            builder.append("]");
+            return builder.toString();
         }
     }
 }
