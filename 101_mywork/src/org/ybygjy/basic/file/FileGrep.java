@@ -3,6 +3,10 @@ package org.ybygjy.basic.file;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
+import java.net.URLConnection;
 import java.nio.CharBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.FileChannel;
@@ -45,7 +49,26 @@ public class FileGrep {
     public static FileGrep getInst(Charset charsetInst) {
         return new FileGrep(charsetInst.newDecoder());
     }
-
+    public static void doConnURL(String url) {
+    	try {
+			URL urlObj = new URL(url);
+			URLConnection urlConn = urlObj.openConnection();
+			urlConn.setDoOutput(true);
+			urlConn.connect();
+			InputStream ins = urlConn.getInputStream();
+			byte[] buff = new byte[1024];
+			int flag = -1;
+			while ((flag = ins.read(buff)) != -1) {
+				System.out.println(new String(buff, 0, flag));
+			}
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    }
     /**
      * 文件内容匹配入口
      * @param pattern 匹配串
@@ -87,7 +110,7 @@ public class FileGrep {
             fins = new FileInputStream(fileInst);
             FileChannel fileCInst = fins.getChannel();
             MappedByteBuffer mbbInst = fileCInst.map(MapMode.READ_ONLY, 0, fileInst.length());
-            return (decoder.decode(mbbInst).toString().split("\\r\\n"));
+            return (decoder.decode(mbbInst).toString().split("\\n"));
         } catch (IOException e) {
             throw new IOException(e);
         } finally {
@@ -159,8 +182,8 @@ public class FileGrep {
      */
     public static void main(String[] args) {
         //String filePath = "D:\\work\\workspace\\mywork\\src\\org\\ybygjy\\basic\\file\\OpenFile4OS.java";
-        String filePath = "J:\\office\\cn_office_professional_plus_2010_x86_515.exe";
-        FileGrep fgInst = FileGrep.getInst(Charset.forName("ISO-8859-1"));
+        String filePath = "/Users/MLS/cancel_order.sql.txt";
+        FileGrep fgInst = FileGrep.getInst(Charset.forName("UTF-8"));
         try {
             String[] tmpArr = fgInst.readFileContent(new File(filePath));
             for (String str : tmpArr) {
