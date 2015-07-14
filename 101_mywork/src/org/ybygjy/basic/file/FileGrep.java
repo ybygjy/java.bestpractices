@@ -49,7 +49,7 @@ public class FileGrep {
     public static FileGrep getInst(Charset charsetInst) {
         return new FileGrep(charsetInst.newDecoder());
     }
-    public static void doConnURL(String url) {
+    public static boolean doConnURL(String url) {
     	try {
 			URL urlObj = new URL(url);
 			URLConnection urlConn = urlObj.openConnection();
@@ -61,13 +61,11 @@ public class FileGrep {
 			while ((flag = ins.read(buff)) != -1) {
 				System.out.println(new String(buff, 0, flag));
 			}
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
+		} catch (Exception e) {
 			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			return false;
 		}
+    	return true;
     }
     /**
      * 文件内容匹配入口
@@ -182,7 +180,7 @@ public class FileGrep {
      */
     public static void main(String[] args) {
         //String filePath = "D:\\work\\workspace\\mywork\\src\\org\\ybygjy\\basic\\file\\OpenFile4OS.java";
-        String filePath = "/Users/MLS/cancel_order.sql.txt";
+        String filePath = "/Users/MLS/Desktop/20150613_优惠券领券数据.xml.csv";
         FileGrep fgInst = FileGrep.getInst(Charset.forName("UTF-8"));
         try {
             String[] tmpArr = fgInst.readFileContent(new File(filePath));
