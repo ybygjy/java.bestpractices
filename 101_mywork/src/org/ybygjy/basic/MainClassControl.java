@@ -12,6 +12,7 @@ public class MainClassControl {
 		new Thread(new Runnable(){
 			public void run() {
 				try {
+					System.out.println("我是工作线程...");
 					Thread.sleep(1000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
