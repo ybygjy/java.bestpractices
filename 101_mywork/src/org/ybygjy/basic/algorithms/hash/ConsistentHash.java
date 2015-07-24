@@ -3,8 +3,7 @@ package org.ybygjy.basic.algorithms.hash;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 import java.nio.charset.Charset;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.SortedMap;
 import java.util.TreeMap;
 
 /**
@@ -12,18 +11,20 @@ import java.util.TreeMap;
  * @author WangYanCheng
  * @version 2015年4月7日
  */
-public class ConsistentHash<T> {
+public class ConsistentHash {
 	//虚拟节点
-	private TreeMap<Long, T> virtualNodes;
+	private TreeMap virtualNodes;
 	//真实节点
-	private List<T> rawNodes;
+	private NodeConfig[] rawNodes;
 	//各真实节点关联的虚拟节点个数
 	private final int NODE_NUM = 5;
+	//Hash函数
+	private static HashMethod hashMethod = new MurMurHash();
 	/**
 	 * 构造函数
 	 * @param nodes
 	 */
-	public ConsistentHash(List<T> nodes) {
+	public ConsistentHash(NodeConfig[] nodes) {
 		this.rawNodes = nodes;
 		init();
 	}
@@ -31,20 +32,97 @@ public class ConsistentHash<T> {
 	 * 构造Hash环
 	 */
 	private void init() {
-		this.virtualNodes = new TreeMap<Long, T>();
-		for(int i = 0; i != this.rawNodes.size(); ++i) {
-			final T nodesCfg = this.rawNodes.get(i);
+		this.virtualNodes = new TreeMap();
+		for(int i = 0; i != this.rawNodes.length; i++) {
+			final NodeConfig nodesCfg = this.rawNodes[i];
 			for (int n = 0; n < NODE_NUM; n++) {
-				this.virtualNodes.put(hash("SHARD-" + i + "-NODE-" + n), nodesCfg);
+				this.virtualNodes.put(hashMethod.hash("SHARD-" + i + "-NODE-" + n), nodesCfg);
 			}
 		}
 	}
+	public Object get(String key) {
+		Long hashValue = this.hashMethod.hash(key);
+		SortedMap tmpSortMap = this.virtualNodes.tailMap(hashValue);
+		NodeConfig nodeConfig = (NodeConfig) tmpSortMap.get(tmpSortMap.lastKey());
+		if (null != nodeConfig) {
+			//取值
+		}
+		return null;
+	}
+	@Override
+	public String toString() {
+		return "ConsistentHash [virtualNodes=" + virtualNodes + ", rawNodes=" + rawNodes + ", NODE_NUM=" + NODE_NUM + "]";
+	}
+	/**
+	 * 测试入口
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		//定义真实结点
+		NodeConfig[] rawNodeConfig = new NodeConfig[2];
+		rawNodeConfig[0] = (new NodeConfig("192.168.190.2", 8899, "RAWNode_001"));
+		rawNodeConfig[1] = (new NodeConfig("192.168.190.2", 8899, "RAWNode_002"));
+		ConsistentHash consistHash = new ConsistentHash(rawNodeConfig);
+	}
+}
+/**
+ * 配置节点
+ * @author WangYanCheng
+ * @version 2015年7月22日
+ */
+class NodeConfig {
+	private String host;
+	private int port;
+	private String nodeSerial;
+	
+	public NodeConfig(String host, int port, String nodeSerial) {
+		super();
+		this.host = host;
+		this.port = port;
+		this.nodeSerial = nodeSerial;
+	}
+	public String getHost() {
+		return host;
+	}
+	public void setHost(String host) {
+		this.host = host;
+	}
+	public int getPort() {
+		return port;
+	}
+	public void setPort(int port) {
+		this.port = port;
+	}
+	public String getNodeSerial() {
+		return nodeSerial;
+	}
+	public void setNodeSerial(String nodeSerial) {
+		this.nodeSerial = nodeSerial;
+	}
+}
+/**
+ * 抽象不同的Hash计算方式
+ * @author WangYanCheng
+ * @version 2015年7月22日
+ */
+abstract class HashMethod {
+	public Long hash(String key) {
+		return Long.valueOf(key.hashCode());
+	}
+}
+/**
+ * MurMurHash一种实现Hash的算法
+ * @author WangYanCheng
+ * @version 2015年7月22日
+ */
+class MurMurHash extends HashMethod {
 	/**
 	 * MurMurHash算法
+	 * @override
 	 * @param key
 	 * @return h
 	 */
-	public static final Long hash(String key) {
+	public Long hash(String key) {
 		ByteBuffer buff = ByteBuffer.wrap(key.getBytes(Charset.forName("UTF-8")));
 		int seed = 0x1234ABCD;
 		ByteOrder byteOrder = buff.order();
@@ -76,23 +154,5 @@ public class ConsistentHash<T> {
 		h ^= h >>> r;
 		buff.order(byteOrder);
 		return h;
-	}
-	
-	@Override
-	public String toString() {
-		return "ConsistentHash [virtualNodes=" + virtualNodes + ", rawNodes="
-				+ rawNodes + ", NODE_NUM=" + NODE_NUM + "]";
-	}
-	/**
-	 * 测试入口
-	 * @param args
-	 */
-	public static void main(String[] args) {
-		List<Object> nodes = new ArrayList<Object>();
-		nodes.add(new Object());
-		nodes.add(new Object());
-		nodes.add(new Object());
-		ConsistentHash<Object> consistentHashInst = new ConsistentHash<Object>(nodes);
-		System.out.println(consistentHashInst);
 	}
 }
