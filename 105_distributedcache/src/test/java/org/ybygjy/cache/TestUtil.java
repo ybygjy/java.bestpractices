@@ -1,4 +1,4 @@
-package org.ybygjy.cache.memcache.spymemcached;
+package org.ybygjy.cache;
 
 import java.io.IOException;
 import java.util.Properties;
