@@ -93,7 +93,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 			}
 			@Override
 			public AuthDescriptor getAuthDescriptor() {
-				return createAuthDescriptor();
+				return null;//createAuthDescriptor();
 			}
 		};
 		return binaryConnectionFactory;
@@ -147,7 +147,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 哈希算法
 	 * @return hashAlgorithm
 	 */
-	public HashAlgorithm getHashAlgorithm() {
+	private HashAlgorithm getHashAlgorithm() {
 		String tmpValue = properties.getProperty(PROP_HASH_ALGORITHM);
 		if (tmpValue == null) {
 			return DefaultHashAlgorithm.KETAMA_HASH;
@@ -158,7 +158,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 缓存长度，该长度用在缓存客户端与缓存服务端通信时Socket的缓冲区大小
 	 * @return buffSizeInt
 	 */
-	public int getReadBufferSize() {
+	private int getReadBufferSize() {
 		String tmpValue = properties.getProperty(PROP_READ_BUFFER_SIZE);
 		return tmpValue == null ? DefaultConnectionFactory.DEFAULT_READ_BUFFER_SIZE : Integer.parseInt(tmpValue);
 	}
@@ -166,7 +166,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 工作队列长度
 	 * @return rtnValueInt
 	 */
-	public int getOperationQueueLength() {
+	private int getOperationQueueLength() {
 		String tmpValue = properties.getProperty(PROP_OPERATION_QUEUE_LENGTH);
 		return tmpValue == null ? DefaultConnectionFactory.DEFAULT_OP_QUEUE_LEN : Integer.parseInt(tmpValue);
 	}
@@ -186,14 +186,14 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 缓存服务器列表
 	 * @return rtnServerList
 	 */
-	public String getServerList() {
+	private String getServerList() {
 		return properties.getProperty(PROP_SERVERS);
 	}
 	/**
 	 * 后台进程模式
 	 * @return isDaemon true/false
 	 */
-	public boolean isDaemonMode() {
+	private boolean isDaemonMode() {
 		String tmpValue = properties.getProperty(PROP_DAEMON_MODE);
 		return null == tmpValue ? false : Boolean.parseBoolean(tmpValue);
 	}
@@ -201,7 +201,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 操作超时时间(Millisecond)
 	 * @return rtnLong
 	 */
-	public long getOperationTimeoutMilli() {
+	private long getOperationTimeoutMilli() {
 		String tmpValue = properties.getProperty(PROP_OPERATION_TIMEOUT);
 		return null == tmpValue ? DefaultConnectionFactory.DEFAULT_OPERATION_TIMEOUT : Long.parseLong(tmpValue);
 	}
@@ -209,7 +209,7 @@ public class SpyMemcacheClientFactory implements CacheClientFactory {
 	 * 取配置的缓存连接工厂类名称，如果配置信息为空则取{@link DefaultConnectionFactory}
 	 * @return connFactoryName
 	 */
-	public String getConnectionFactoryName() {
+	private String getConnectionFactoryName() {
 		String rtnValue = properties.getProperty(PROP_CONNECTION_FACTORY);
 		if (rtnValue == null) {
 			rtnValue = DefaultConnectionFactory.class.getSimpleName();

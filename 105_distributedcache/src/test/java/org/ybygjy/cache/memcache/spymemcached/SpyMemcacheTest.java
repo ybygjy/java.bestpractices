@@ -11,6 +11,7 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.ybygjy.cache.CacheClient;
 import org.ybygjy.cache.CacheClientFactory;
+import org.ybygjy.cache.TestUtil;
 
 /**
  * SpyMemcache»º´æ¿Í»§¶Ë²âÊÔ
