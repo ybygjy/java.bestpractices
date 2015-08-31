@@ -33,7 +33,7 @@ public class Base64 {
         return encoded.substring(0, encoded.length() - paddingStr.length()) + paddingStr;
     }
     public static void main(String[] args) {
-        String str = Base64.encode("AB");
+        String str = Base64.encode("aa824cdd7d977aa43e5bb91fedb13fc9844585fd");
         System.out.println(str);
     }
 }
