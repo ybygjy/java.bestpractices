@@ -8,6 +8,7 @@ import java.nio.ByteBuffer;
 import java.nio.channels.AsynchronousServerSocketChannel;
 import java.nio.channels.AsynchronousSocketChannel;
 import java.nio.channels.CompletionHandler;
+import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
 
@@ -17,26 +18,59 @@ import java.util.concurrent.Future;
  * @version 2015年9月7日
  */
 public class AIOServerTest {
+	/**运行标识*/
+	private static volatile boolean running = true;
+	/**
+	 * 测试入口
+	 * @param args 参数列表
+	 */
 	public static void main(String[] args) {
 		final InnerAIOServer aioServer = new InnerAIOServer();
 		final InnerAIOClient aioClient = new InnerAIOClient(); 
+		final CountDownLatch cdlInst = new CountDownLatch(1);
 		new Thread(new Runnable() {
 			public void run() {
-				aioServer.doWork("localhost", 8888);
+				cdlInst.countDown();
+				aioServer.doWork("127.0.0.1", 8888);
 			}
 		}).start();
-		new Thread(new Runnable() {
-			public void run() {
-				aioClient.doWork("localhost", 8888);
-				aioClient.write((byte) 10);
+		for(int i = 0; i < 100; i++) {
+			try {
+				cdlInst.await();
+				new Thread(new Runnable() {
+					public void run() {
+						aioClient.doWork("127.0.0.1", 8888);
+					}
+				}).start();
+				Thread.sleep(500);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
 			}
-		}).start();
+		}
 		try {
 			Thread.currentThread().join();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+//		Runtime.getRuntime().addShutdownHook(new Thread() {
+//			public void run() {
+//				synchronized(AIOServerTest.class) {
+//					running = false;
+//					AIOServerTest.class.notify();
+//				}
+//			}
+//		});
+//		synchronized(AIOServerTest.class) {
+//			while (running) {
+//				System.out.println("等待退出!");
+//				try {
+//					AIOServerTest.class.wait();
+//					System.out.println("退出了！");
+//				} catch (InterruptedException e) {
+//					e.printStackTrace();
+//				}
+//			}
+//		}
 	}
 }
 /**
@@ -60,6 +94,11 @@ class InnerAIOServer {
 				public void failed(Throwable exc, Void attachment) {
 				}
 			});
+			try {
+				Thread.sleep(1000);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		} catch (UnknownHostException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -76,7 +115,7 @@ class InnerAIOServer {
 			e.printStackTrace();
 		}
 		byteBuffer.flip();
-		System.out.println(byteBuffer.get());
+		System.out.println("server=>" + byteBuffer.getDouble());
 	}	
 }
 /**
@@ -95,18 +134,17 @@ class InnerAIOClient {
 		Future<?> future = this.ascInst.connect(new InetSocketAddress(host, port));
 		try {
 			future.get();
+			this.write(Math.random());
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (ExecutionException e) {
 			e.printStackTrace();
 		}
 	}
-	public void write(byte bytee) {
+	public void write(double bytee) {
 		ByteBuffer byteBuffer = ByteBuffer.allocate(32);
-		System.out.println("byteBuffer#1=>" + byteBuffer.toString());
-		byteBuffer.put(byteBuffer);
+		byteBuffer.putDouble(bytee);
 		byteBuffer.flip();
-		System.out.println("byteBuffer#2=>" + byteBuffer.toString());
 		this.ascInst.write(byteBuffer);
 	}
 }
