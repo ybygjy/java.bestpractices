@@ -39,7 +39,7 @@ public class TestSynchronized {
 			start();
 		}
 		public void run() {
-			while (true) {
+//			while (true) {
 				try {
 					this.latch.await();
 					synchronized(this.lock) {
@@ -49,7 +49,11 @@ public class TestSynchronized {
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
-			}
+//			}
+		}
+		@Override
+		protected void finalize() throws Throwable {
+			System.out.println("finalizing...");
 		}
 	}
 }
