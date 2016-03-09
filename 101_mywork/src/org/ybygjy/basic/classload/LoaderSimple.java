@@ -14,6 +14,8 @@ public class LoaderSimple {
             System.out.println(cl);
         }
         printBootLoader();
+        System.out.println(LoaderSimple.class.getSimpleName());
+        System.out.println(LoaderSimple.class.getName());
     }
     public static void printBootLoader() {
         try {
