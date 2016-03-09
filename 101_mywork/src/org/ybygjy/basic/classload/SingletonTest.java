@@ -1,5 +1,10 @@
 package org.ybygjy.basic.classload;
 
+/**
+ * 类的静态变量的初始化
+ * @author WangYanCheng
+ * @version 2016年3月9日
+ */
 public class SingletonTest {
     public static void main(String[] args) {
         Singleton singInst = Singleton.getInst();
@@ -8,7 +13,7 @@ public class SingletonTest {
     }
 }
 class Singleton {
-    private static Singleton singleton = new Singleton();
+	private static final Singleton singleton = new Singleton();
     private static int count1;
     private static int count2 = 0;
     public Singleton() {
