@@ -1,5 +1,6 @@
 package org.ybygjy.basic.date;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -69,5 +70,22 @@ public class DateUtils {
     public static String dateFormat(Date date, String pattern) {
         return new SimpleDateFormat(pattern).format(date);
     }
-
+    /**
+     * 解析给定字符串为日期对象
+     * @param dateStr 日期字符串
+     * @param pattern 日期字符串格式
+     * @return rtnDate
+     */
+    public static Date str2Date(String dateStr, String pattern) {
+    	SimpleDateFormat sdf = new SimpleDateFormat(pattern);
+    	Date rtnDate = null;
+		try {
+			sdf.setLenient(false);
+			rtnDate = sdf.parse(dateStr);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+System.out.println(DateUtils.dateFormat(rtnDate, "yyyy-MM-dd HH:mm:ss"));
+    	return rtnDate;
+    }
 }
