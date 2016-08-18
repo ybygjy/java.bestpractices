@@ -1,4 +1,4 @@
-package org.ybygjy.interview;
+package org.ybygjy.basic;
 
 public class ClassB extends ClassA {
     public static double serialNum = Math.random();

@@ -1,4 +1,4 @@
-package org.ybygjy.interview;
+package org.ybygjy.basic;
 
 
 public class ClassA {
