@@ -153,8 +153,7 @@ public class MultipartFileUploadApp {
 
                     PostMethod filePost = new PostMethod(targetURL);
 
-                    filePost.getParams().setBooleanParameter(HttpMethodParams.USE_EXPECT_CONTINUE,
-                    cbxExpectHeader.isSelected());
+                    filePost.getParams().setBooleanParameter(HttpMethodParams.USE_EXPECT_CONTINUE, cbxExpectHeader.isSelected());
                     try {
                         appendMessage("Uploading " + targetFile.getName() + " to " + targetURL);
                         Part[] parts = {
